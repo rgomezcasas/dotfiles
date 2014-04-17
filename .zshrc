@@ -7,8 +7,8 @@ export ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="nebirhos"
 
-# Aliases
-alias gs="git status"
+# "Import" aliases
+source ~/.dotfiles/alias.sh
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
