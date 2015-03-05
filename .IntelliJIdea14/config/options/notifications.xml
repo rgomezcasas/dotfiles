@@ -1,0 +1,13 @@
+<application>
+  <component name="NotificationConfiguration" showBalloons="false">
+    <notification groupId="IDE Usage Statistics" displayType="STICKY_BALLOON" shouldLog="false" />
+    <toolWindow group="Find in Path" />
+    <toolWindow group="PHP Debugger" />
+    <toolWindow group="Web Deployment: Remote Host" />
+    <toolWindow group="Vcs Messages" />
+    <toolWindow group="Inspection Results" />
+    <toolWindow group="Debugger messages" />
+    <toolWindow group="JavaScript debugger" />
+    <toolWindow group="Grunt Console" />
+  </component>
+</application>

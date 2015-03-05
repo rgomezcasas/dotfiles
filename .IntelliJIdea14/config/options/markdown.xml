@@ -1,0 +1,3 @@
+<application>
+  <component name="MarkdownSettings" parsingTimeout="10000" smarts="false" quotes="false" abbreviations="false" hardWraps="false" autoLinks="false" wikiLinks="false" tables="false" definitions="false" fencedCodeBlocks="false" suppressHTMLBlocks="false" suppressInlineHTML="false" strikethrough="false" />
+</application>

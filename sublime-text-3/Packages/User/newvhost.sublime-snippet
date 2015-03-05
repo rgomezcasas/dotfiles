@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[
+<VirtualHost *:80>
+    ServerName ${1:domain}.dev
+    ServerAlias ${1:domain}.dev *.${1:domain}.dev
+    SetEnv APP_ENV dev
+    DocumentRoot /home/dotzecker/Sites${2:/Thatzad}/${1:domain}${3:.com}
+</VirtualHost>
+]]></content>
+    <tabTrigger>newvhost</tabTrigger>
+</snippet>

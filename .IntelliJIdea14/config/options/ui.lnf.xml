@@ -1,0 +1,13 @@
+<application>
+  <component name="UISettings">
+    <option name="FONT_FACE" value="DejaVu Sans" />
+    <option name="FONT_SIZE" value="14" />
+    <option name="EDITOR_TAB_LIMIT" value="12" />
+    <option name="WIDESCREEN_SUPPORT" value="true" />
+    <option name="SHOW_NAVIGATION_BAR" value="false" />
+    <option name="SHOW_CLOSE_BUTTON" value="false" />
+    <option name="USE_SMALL_LABELS_ON_TABS" value="true" />
+    <option name="MAX_LOOKUP_LIST_HEIGHT" value="5" />
+    <option name="MARK_MODIFIED_TABS_WITH_ASTERISK" value="true" />
+  </component>
+</application>

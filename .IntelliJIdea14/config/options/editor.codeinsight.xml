@@ -1,0 +1,34 @@
+<application>
+  <component name="CodeFoldingSettings">
+    <option name="COLLAPSE_IMPORTS" value="false" />
+    <option name="COLLAPSE_FILE_HEADER" value="false" />
+  </component>
+  <component name="CodeInsightSettings">
+    <option name="AUTO_POPUP_JAVADOC_INFO" value="true" />
+    <option name="COMPLETION_CASE_SENSITIVE" value="2" />
+    <option name="SURROUND_SELECTION_ON_QUOTE_TYPED" value="true" />
+    <option name="ADD_IMPORTS_ON_PASTE" value="1" />
+    <option name="HIGHLIGHT_SCOPE" value="true" />
+  </component>
+  <component name="CssFoldingSettings">
+    <option name="collapseDataUri" value="false" />
+  </component>
+  <component name="JavaCodeFoldingSettings">
+    <option name="collapseConstructorGenericParameters" value="false" />
+    <option name="collapseI18nMessages" value="false" />
+    <option name="collapseLambdas" value="false" />
+    <option name="collapseSuppressWarnings" value="false" />
+    <option name="COLLAPSE_ONE_LINE_METHODS" value="false" />
+    <option name="COLLAPSE_CLOSURES" value="false" />
+    <option name="COLLAPSE_CONSTRUCTOR_GENERIC_PARAMETERS" value="false" />
+    <option name="COLLAPSE_I18N_MESSAGES" value="false" />
+    <option name="COLLAPSE_SUPPRESS_WARNINGS" value="false" />
+  </component>
+  <component name="PhpCodeFoldingSettings">
+    <option name="COLLAPSE_IMPORTS" value="false" />
+  </component>
+  <component name="XmlFoldingSettings">
+    <option name="collapseHtmlStyleAttribute" value="false" />
+    <option name="COLLAPSE_HTML_STYLE_ATTRIBUTE" value="false" />
+  </component>
+</application>

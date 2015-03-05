@@ -1,0 +1,26 @@
+[user]
+    name = Rafa Gómez
+    email = dotzecker@gmail.com
+
+[push]
+    default = simple
+
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+    ui = true
+
+[core]
+    excludesfile = ~/.gitignore_global
+    editor = vim
+
+[help]
+    autocorrect = 1
+
+[alias]
+    apply-gitignore = !git ls-files -ci --exclude-standard -z | xargs -0r git rm --cached
+    undo = reset HEAD~1 --mixed
+    amend = commit -a --amend
+    discard-changes = reset --hard origin/master
+    force-pull = !git fetch --all && git reset --hard origin/master && git clean -df

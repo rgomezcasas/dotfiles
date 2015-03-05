@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[
+<?php namespace ${1:NAMESPACE};
+
+final class ${2:CLASS}
+{
+    ${3:// Haz el magnífico código que sabes hacer, Rafa :P}
+}]]></content>
+    <tabTrigger>newclass</tabTrigger>
+</snippet>

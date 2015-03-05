@@ -1,0 +1,45 @@
+# Sublime Stuff
+/sublime-text-3/Packages/User/Package Control.cache
+/sublime-text-3/Packages/User/Package Control.last-run
+/sublime-text-3/Packages/User/linters
+/sublime-text-3/Packages/User/SublimeLinter
+/sublime-text-3/Packages/User/Package Control.merged-ca-bundle
+/sublime-text-3/Packages/User/Package Control.user-ca-bundle
+/sublime-text-3/Packages/User/bh_unicode_properties.cache
+
+
+# Intellij Stuff
+/.IntelliJIdea14/config/*.key
+/.IntelliJIdea14/config/port
+/.IntelliJIdea14/config/tasks/
+/.IntelliJIdea14/config/componentVersions/
+/.IntelliJIdea14/config/eval/
+/.IntelliJIdea14/config/jdbc-drivers/
+/.IntelliJIdea14/config/options/appComponentVersions.xml
+/.IntelliJIdea14/config/options/applicationLibraries.xml
+/.IntelliJIdea14/config/options/browsers.xml
+/.IntelliJIdea14/config/options/dimensions.xml
+/.IntelliJIdea14/config/options/feature.usage.statistics.xml
+/.IntelliJIdea14/config/options/find.recents.xml
+/.IntelliJIdea14/config/options/filetypes.xml
+/.IntelliJIdea14/config/options/plugin_ui.xml
+/.IntelliJIdea14/config/options/updates.xml
+/.IntelliJIdea14/config/options/gemmanager.xml
+/.IntelliJIdea14/config/options/javarebel.xml
+/.IntelliJIdea14/config/options/jdk.table.xml
+/.IntelliJIdea14/config/options/options.xml
+/.IntelliJIdea14/config/options/other.xml
+/.IntelliJIdea14/config/options/packages.xml
+/.IntelliJIdea14/config/options/path.macros.xml
+/.IntelliJIdea14/config/options/recentProjects.xml
+/.IntelliJIdea14/config/options/runner.layout.xml
+/.IntelliJIdea14/config/options/security.xml
+/.IntelliJIdea14/config/options/statistics.application.usages.xml
+/.IntelliJIdea14/config/options/stubIndex.xml
+/.IntelliJIdea14/config/options/find.xml
+/.IntelliJIdea14/config/options/usage.statistics.xml
+/.IntelliJIdea14/config/options/updates.xml
+/.IntelliJIdea14/config/options/vcs.xml
+/.IntelliJIdea14/config/options/window.manager.xml
+/.IntelliJIdea14/config/plugins/availables.xml
+/.IntelliJIdea14/config/quicklists/Deployment.xml

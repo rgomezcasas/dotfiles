@@ -1,0 +1,35 @@
+{
+	"bold_folder_labels": true,
+	"color_scheme": "Packages/Seti_UX/Seti.tmTheme",
+	"detect_slow_plugins": true,
+	"enable_tab_scrolling": false,
+	"fade_fold_buttons": false,
+	"folder_exclude_patterns":
+	[
+		".git",
+		".vagrant",
+		".sass-cache",
+		".idea"
+	],
+	"font_face": "Ubuntu Mono",
+	"font_size": 14,
+	"highlight_line": true,
+	"highlight_modified_tabs": true,
+	"ignored_packages":
+	[
+		"Tag",
+		"Vintage"
+	],
+	"line_padding_bottom": 7,
+	"line_padding_top": 7,
+	"rulers":
+	[
+		80,
+		120
+	],
+	"tab_size": 4,
+	"theme": "Seti.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true,
+	"word_wrap": true
+}
