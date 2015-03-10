@@ -82,6 +82,9 @@ function diff_between() {
 alias normalize_perms='chmod 775'
 alias get_current_gnome_terminal_conf='gconftool-2 -a "/apps/gnome-terminal/profiles/Default"'
 alias copy_ssh_key='xclip -sel clip < ~/.ssh/id_rsa.pub'
+function find_in_content_of() {
+    find ./ -name "$1" -exec grep "$2" {} \; -print 2>/dev/null
+}
 
 # Common Ubuntu Errors
 alias ubuntu_solve_system_error_messages_on_startup='sudo rm /var/crash/*'
