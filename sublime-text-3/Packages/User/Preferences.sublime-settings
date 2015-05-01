@@ -17,8 +17,8 @@
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
-		"Tag",
-		"Vintage"
+		"Vintage",
+		"Tag"
 	],
 	"line_padding_bottom": 7,
 	"line_padding_top": 7,

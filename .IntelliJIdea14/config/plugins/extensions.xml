@@ -367,19 +367,6 @@
         </option>
       </plugins>
     </entry>
-    <entry key="*.clj">
-      <plugins>
-        <option name="myPlugins">
-          <set>
-            <plugin>
-              <option name="myPluginId" value="Clo-Jet" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-          </set>
-        </option>
-      </plugins>
-    </entry>
     <entry key="*.cmd">
       <plugins>
         <option name="myPlugins">
@@ -404,6 +391,19 @@
           <set>
             <plugin>
               <option name="myPluginId" value="com.codename1.plugin.intellij" />
+              <option name="myPluginName" />
+              <option name="myBundled" value="false" />
+            </plugin>
+          </set>
+        </option>
+      </plugins>
+    </entry>
+    <entry key="*.comp">
+      <plugins>
+        <option name="myPlugins">
+          <set>
+            <plugin>
+              <option name="myPluginId" value="GLSL" />
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
             </plugin>
@@ -469,6 +469,19 @@
           <set>
             <plugin>
               <option name="myPluginId" value="com.hoho.conkitty" />
+              <option name="myPluginName" />
+              <option name="myBundled" value="false" />
+            </plugin>
+          </set>
+        </option>
+      </plugins>
+    </entry>
+    <entry key="*.d">
+      <plugins>
+        <option name="myPlugins">
+          <set>
+            <plugin>
+              <option name="myPluginId" value="org.dlangplugin" />
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
             </plugin>
@@ -720,6 +733,19 @@
         </option>
       </plugins>
     </entry>
+    <entry key="*.frag">
+      <plugins>
+        <option name="myPlugins">
+          <set>
+            <plugin>
+              <option name="myPluginId" value="GLSL" />
+              <option name="myPluginName" />
+              <option name="myBundled" value="false" />
+            </plugin>
+          </set>
+        </option>
+      </plugins>
+    </entry>
     <entry key="*.fs">
       <plugins>
         <option name="myPlugins">
@@ -835,6 +861,19 @@
             </plugin>
             <plugin>
               <option name="myPluginId" value="org.jetbrains.plugins.ruby" />
+              <option name="myPluginName" />
+              <option name="myBundled" value="false" />
+            </plugin>
+          </set>
+        </option>
+      </plugins>
+    </entry>
+    <entry key="*.geom">
+      <plugins>
+        <option name="myPlugins">
+          <set>
+            <plugin>
+              <option name="myPluginId" value="GLSL" />
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
             </plugin>
@@ -1759,6 +1798,45 @@
           <set>
             <plugin>
               <option name="myPluginId" value="com.intellij.plugins.haxe" />
+              <option name="myPluginName" />
+              <option name="myBundled" value="false" />
+            </plugin>
+          </set>
+        </option>
+      </plugins>
+    </entry>
+    <entry key="*.npmignore">
+      <plugins>
+        <option name="myPlugins">
+          <set>
+            <plugin>
+              <option name="myPluginId" value="NodeJS" />
+              <option name="myPluginName" />
+              <option name="myBundled" value="false" />
+            </plugin>
+          </set>
+        </option>
+      </plugins>
+    </entry>
+    <entry key="*.nsh">
+      <plugins>
+        <option name="myPlugins">
+          <set>
+            <plugin>
+              <option name="myPluginId" value="com.krylysov.nsisplugin" />
+              <option name="myPluginName" />
+              <option name="myBundled" value="false" />
+            </plugin>
+          </set>
+        </option>
+      </plugins>
+    </entry>
+    <entry key="*.nsi">
+      <plugins>
+        <option name="myPlugins">
+          <set>
+            <plugin>
+              <option name="myPluginId" value="com.krylysov.nsisplugin" />
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
             </plugin>
@@ -2743,6 +2821,32 @@
         </option>
       </plugins>
     </entry>
+    <entry key="*.tesc">
+      <plugins>
+        <option name="myPlugins">
+          <set>
+            <plugin>
+              <option name="myPluginId" value="GLSL" />
+              <option name="myPluginName" />
+              <option name="myBundled" value="false" />
+            </plugin>
+          </set>
+        </option>
+      </plugins>
+    </entry>
+    <entry key="*.tese">
+      <plugins>
+        <option name="myPlugins">
+          <set>
+            <plugin>
+              <option name="myPluginId" value="GLSL" />
+              <option name="myPluginName" />
+              <option name="myBundled" value="false" />
+            </plugin>
+          </set>
+        </option>
+      </plugins>
+    </entry>
     <entry key="*.tex">
       <plugins>
         <option name="myPlugins">
@@ -2876,6 +2980,19 @@
           <set>
             <plugin>
               <option name="myPluginId" value="Gosu Debugger" />
+              <option name="myPluginName" />
+              <option name="myBundled" value="false" />
+            </plugin>
+          </set>
+        </option>
+      </plugins>
+    </entry>
+    <entry key="*.vert">
+      <plugins>
+        <option name="myPlugins">
+          <set>
+            <plugin>
+              <option name="myPluginId" value="GLSL" />
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
             </plugin>
