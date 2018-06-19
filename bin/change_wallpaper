@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+# change_wallpaper. Usage:
+#  - change_wallpaper: Pick a random wallpaper on the wallpaper folder
+#  - change_wallpaper colorName: Create a wallpaper with that color (you can use color names or hexadecimal(
+#  - change_wallpaper url: Downloads the wallpaper to your wallpaper folder
+
+WALLPAPER_DIR="$HOME/Pictures/Wallpapers"
+WALLPAPER_FILENAME=$1
+WALLPAPER_FILE_PATH="$WALLPAPER_DIR/$WALLPAPER_FILENAME"
+
+VALID_URL_REGEX='(https?|ftp|file)://[-A-Za-z0-9\+&@#/%?=~_|!:,.;]*[-A-Za-z0-9\+&@#/%=~_|]'
+
+if [[ $WALLPAPER_FILENAME =~ $VALID_URL_REGEX ]]
+then
+    wget -P $WALLPAPER_DIR $WALLPAPER_FILENAME
+
+    WALLPAPER_FILENAME=${WALLPAPER_FILENAME##*/}
+    WALLPAPER_FILE_PATH="$WALLPAPER_DIR/$WALLPAPER_FILENAME"
+else
+    if [ ! -z "$WALLPAPER_FILENAME" ]; then
+      WALLPAPER_FILE_PATH="$WALLPAPER_DIR/Colors/$WALLPAPER_FILENAME.jpg"
+
+      if [ ! -f $WALLPAPER_FILE_PATH ]; then
+        WALLPAPER_COLOR=$WALLPAPER_FILENAME
+
+        convert -size 128x128 xc:$WALLPAPER_COLOR $WALLPAPER_FILE_PATH
+      fi
+    else
+      WALLPAPER_FILENAME=$(ls -p $WALLPAPER_DIR | grep -v / | xargs gshuf -n1 -e )
+
+      WALLPAPER_FILE_PATH="$WALLPAPER_DIR/$WALLPAPER_FILENAME"
+    fi
+fi
+
+echo $WALLPAPER_FILE_PATH
+
+osascript -e 'tell application "System Events" to set picture of every desktop to ("'$WALLPAPER_FILE_PATH'" as POSIX file as alias)'
+sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db "update data set value = '$WALLPAPER_FILE_PATH'";
+killall Dock;

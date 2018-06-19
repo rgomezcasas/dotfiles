@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# Remove tracked files from control version (not the file) that are in the gitignore
+git ls-files --ignored --exclude-standard | xargs git rm --cached

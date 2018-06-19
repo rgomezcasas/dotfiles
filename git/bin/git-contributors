@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# List contributors with number of commits
+git shortlog --summary --numbered

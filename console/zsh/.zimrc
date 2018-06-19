@@ -1,0 +1,7 @@
+zmodules=(directory environment git-info history input \
+          syntax-highlighting history-substring-search completion \
+          autosuggestions)
+
+ztermtitle='%n@%m:%~'
+
+zhighlighters=(main brackets)

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# Git log filtering
+selected=$(git log --graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr by %an" | fzf --ansi --no-sort)

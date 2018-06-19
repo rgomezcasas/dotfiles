@@ -1,0 +1,50 @@
+{
+	"always_show_minimap_viewport": true,
+	"bold_folder_labels": true,
+	"color_scheme": "Packages/gruvbox/gruvbox (Dark) (Medium).tmTheme",
+	"detect_slow_plugins": true,
+	"enable_tab_scrolling": false,
+	"fade_fold_buttons": false,
+	"folder_exclude_patterns":
+	[
+		".git",
+		".vagrant",
+		".sass-cache",
+		".idea"
+	],
+	"font_face": "Roboto Mono Light for Powerline",
+	"font_options":
+	[
+	],
+	"font_size": 13,
+	"highlight_line": true,
+	"highlight_modified_tabs": true,
+	"hot_exit": false,
+	"ignored_packages":
+	[
+		"Tag",
+		"Vintage"
+	],
+	"indent_guide_options":
+	[
+		"draw_normal",
+		"draw_active"
+	],
+	"line_padding_bottom": 5,
+	"line_padding_top": 5,
+	"material_theme_accent_orange": true,
+	"material_theme_small_tab": true,
+	"material_theme_tree_headings": true,
+	"open_files_in_new_window": false,
+	"overlay_scroll_bars": "enabled",
+	"rulers":
+	[
+		120
+	],
+	"shift_tab_unindent": true,
+	"tab_size": 4,
+	"theme": "Adaptive.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true,
+	"word_wrap": true
+}

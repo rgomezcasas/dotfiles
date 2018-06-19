@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+# Reset the status to the last commit
+git add -A
+git reset --hard > /dev/null 2>&1
+echo 'All changes has been discarded!'

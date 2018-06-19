@@ -1,0 +1,15 @@
+<!--<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>im.rafa.scheduler.drink-water</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/rafa.gomez/.dotfiles/etc/notifications/drink-water.sh</string>
+    </array>
+    <key>StartInterval</key>
+    <integer>3600</integer>
+</dict>
+</plist>
+-->

@@ -1,0 +1,12 @@
+# Sublime Stuff
+/editors/sublime-text-3/Packages/User/Package Control.cache
+/editors/sublime-text-3/Packages/User/Package Control.last-run
+/editors/sublime-text-3/Packages/User/Package Control.merged-ca-bundle
+/editors/sublime-text-3/Packages/User/Package Control.user-ca-bundle
+/editors/sublime-text-3/Packages/User/oscrypto-ca-bundle.crt
+
+# Oh My Zsh Plugins
+/console/zsh/plugins
+
+# Private Stuff
+/**/**/private-*

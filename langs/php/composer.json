@@ -1,0 +1,10 @@
+{
+  "require": {
+    "squizlabs/php_codesniffer": "*",
+    "d11wtq/boris": "1.0.*",
+    "psy/psysh": "^0.7.2",
+    "phpmd/phpmd": "^2.3",
+    "laravel/lumen-installer": "dev-master"
+  },
+  "minimum-stability": "dev"
+}

@@ -1,0 +1,1 @@
+alias delete_mysql_db_starting_by='mysql_delete_db_starting_by'

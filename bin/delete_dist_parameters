@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+find . -type f -name "*parameters.yml.dist"| while read line
+do
+    rm $(echo ${line} | sed "s/.yml.dist/.yml/")
+    echo "$line deleted"
+done

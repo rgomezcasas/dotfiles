@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# Show all changed files to master
+git diff --name-only master

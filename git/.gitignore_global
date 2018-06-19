@@ -1,0 +1,15 @@
+# IntelliJ IDEA
+.idea
+*.iml
+*.iws
+.idea-compl
+*.sc
+
+# Mac
+.DS_Store
+
+# Other stuff
+.lein-repl-history
+.lein-failures
+completer.hist
+.nrepl-port

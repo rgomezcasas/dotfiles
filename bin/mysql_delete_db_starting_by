@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+mysql -uroot -N -B -e "SELECT CONCAT('DROP DATABASE ', SCHEMA_NAME, ';') AS QUERY FROM information_schema.SCHEMATA WHERE SCHEMA_NAME LIKE '$1%';" | while read line
+do
+    echo "Executing $line"
+    mysql -uroot -e "$line"
+done
