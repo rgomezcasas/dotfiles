@@ -10,7 +10,7 @@ brew outdated | xargs -n1 brew upgrade
 
 echo ''
 echo '♢ Updating Brew Cask apps'
-brew cask outdated | xargs -n1 brew cask install --force
+brew cask outdated | grep -v real-vnc | xargs -n1 brew cask install --force
 
 echo ''
 echo '♢ ZSH Zim'

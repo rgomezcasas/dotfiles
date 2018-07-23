@@ -10,4 +10,4 @@ brew outdated
 
 echo ''
 echo '♢ Outdated brew cask apps:'
-brew cask outdated
+brew cask outdated | grep -v real-vnc
