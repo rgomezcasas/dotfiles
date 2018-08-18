@@ -8,8 +8,11 @@
 # Mac
 .DS_Store
 
-# Other stuff
+# Clojure
 .lein-repl-history
 .lein-failures
 completer.hist
 .nrepl-port
+
+# Scala
+libsigar-universal64-macosx.dylib

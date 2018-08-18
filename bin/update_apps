@@ -14,7 +14,7 @@ brew cask outdated | grep -v real-vnc | xargs -n1 brew cask install --force
 
 echo ''
 echo '♢ ZSH Zim'
-zmanage update
+zsh ${ZIM_HOME}/tools/zim_update
 
 if [ "$1" == "--all" ]; then
     echo ''

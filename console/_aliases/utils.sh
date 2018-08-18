@@ -19,10 +19,12 @@ alias map="xargs -n1"
 alias r='realpath'
 alias reveal='open .'
 alias size_of_the_current_directory='du -ch | grep total'
+alias size_of_directories='ls | xargs -I _ du -sch "_" | grep -v total | sort -h'
 alias stt='subl .'
 alias watch_number_of_files='watch -n1 "find . -type f -print | wc -l"'
 alias t='time'
 alias pubkey='cat ~/.ssh/id_rsa.pub | pbcopy'
+alias fuck_sbt="ps aux | grep sbt | awk '{print $2}' | xargs kill -9"
 
 alias catimg='imgcat'
 alias editdotfiles='subl ~/.dotfiles'
