@@ -4,11 +4,13 @@ DOTFILES_PATH=$HOME/.dotfiles
 
 ### Console stuff ###
 # Bash
-ln -s -i ${DOTFILES_PATH}/console/bash/.bashrc $HOME/.bashrc
-ln -s -i ${DOTFILES_PATH}/console/bash/.bash_profile $HOME/.bash_profile
+ln -s -i ${DOTFILES_PATH}/terminal/bash/.bashrc $HOME/.bashrc
+ln -s -i ${DOTFILES_PATH}/terminal/bash/.bash_profile $HOME/.bash_profile
+ln -s -i ${DOTFILES_PATH}/terminal/bash/.profile $HOME/.profile
 
 # Zsh
-ln -s -i ${DOTFILES_PATH}/console/zsh/.zshrc $HOME/.zshrc
+ln -s -i ${DOTFILES_PATH}/terminal/zsh/.zshrc $HOME/.zshrc
+ln -s -i ${DOTFILES_PATH}/terminal/zsh/.zimrc $HOME/.zimrc
 
 ### Git stuff ###
 # Git
@@ -40,14 +42,9 @@ mkdir -p $HOME/.sbt/0.13/plugins
 ln -s -i ${DOTFILES_PATH}/langs/scala/plugins.sbt $HOME/.sbt/1.0/plugins/plugins.sbt
 
 ### MacOs stuff ###
-# Mac Plist
-ln -s -i ${DOTFILES_PATH}/etc/mac/plist/im.rafa.scheduler.drink-water.plist $HOME/Library/LaunchAgents/im.rafa.scheduler.drink-water.plist
-
-# Spectacle
-ln -s -i ${DOTFILES_PATH}/mac/spectacle/Shortcuts.json $HOME/Library/Application\ Support/Spectacle/Shortcuts.json
-
-# Karabiner Elements
-ln -s -i ${DOTFILES_PATH}/mac/karabiner-elements $HOME/.config/karabiner
-
 # Alfred
 ln -s -i ${DOTFILES_PATH}/mac/alfred $HOME/Library/Application\ Support/Alfred\ 3/Alfred.alfredpreferences
+# Karabiner Elements
+ln -s -i ${DOTFILES_PATH}/mac/karabiner-elements $HOME/.config/karabiner
+# Spectacle
+ln -s -i ${DOTFILES_PATH}/mac/spectacle/Shortcuts.json $HOME/Library/Application\ Support/Spectacle/Shortcuts.json

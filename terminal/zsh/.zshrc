@@ -17,9 +17,9 @@ zstyle ':completion:*' completer _complete _match _approximate
 zstyle ':completion:*:approximate:*' max-errors 3 numeric
 zstyle ':completion:*' matcher-list 'm:{a-z}={  A-Z}' # match upper from lower case
 
-source $DOTFILES_PATH/console/init.sh
+source $DOTFILES_PATH/terminal/init.sh
 
-fpath=(/${ZDOTDIR:-${DOTFILES_PATH}}/console/zsh/themes $fpath)
+fpath=(/${ZDOTDIR:-${DOTFILES_PATH}}/terminal/zsh/themes $fpath)
 
 autoload -Uz promptinit && promptinit
 prompt rafa
@@ -29,4 +29,4 @@ precmd() {
   echo -ne "\e]1;$(short_pwd)\a"
 }
 
-source $DOTFILES_PATH/console/zsh/key-bindings.zsh
+source $DOTFILES_PATH/terminal/zsh/key-bindings.zsh

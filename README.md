@@ -10,7 +10,7 @@
 
 <p align="center">
   <a href="install.sh">Install</a>&nbsp;&nbsp;&nbsp;
-  <a href="console">Terminal</a>&nbsp;&nbsp;&nbsp;
+  <a href="terminal">Terminal</a>&nbsp;&nbsp;&nbsp;
   <a href="git/.gitconfig">Git configuration</a>&nbsp;&nbsp;&nbsp;
   <a href="editors/intellij/settings.jar">Intellij settings</a>
 </p>
@@ -38,7 +38,7 @@ This is a way faster than using oh-my-zsh with the minimal setup.
 
 ## What's inside?
  * A [lot of custom binaries to play](bin)
- * [Aliases](console/_aliases), [aliases](console/_aliases) and [aliases](console/_aliases)
+ * [Aliases](terminal/_aliases), [aliases](terminal/_aliases) and [aliases](terminal/_aliases)
  * [Intellij](editors/intellij), [sublime](editors/sublime-text-3) and [vim](editors/vim) configurations
  * [Git](git/.gitconfig) configuration, and [git binaries](git/bin)
  * Some [clojure](langs/clojure), [scala](langs/scala) and [php](langs/php) configurations
