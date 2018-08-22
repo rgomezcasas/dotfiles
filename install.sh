@@ -2,6 +2,17 @@
 
 DOTFILES_PATH=$HOME/.dotfiles
 
+### MacOs stuff ###
+# All apps
+brew bundle --file=${DOTFILES_PATH}/mac/brew/Brewfile
+# Alfred
+ln -s -i ${DOTFILES_PATH}/mac/alfred $HOME/Library/Application\ Support/Alfred\ 3/Alfred.alfredpreferences
+# Karabiner Elements
+ln -s -i ${DOTFILES_PATH}/mac/karabiner-elements $HOME/.config/karabiner
+# Spectacle
+ln -s -i ${DOTFILES_PATH}/mac/spectacle/Shortcuts.json $HOME/Library/Application\ Support/Spectacle/Shortcuts.json
+
+
 ### Console stuff ###
 # Bash
 ln -s -i ${DOTFILES_PATH}/terminal/bash/.bashrc $HOME/.bashrc
@@ -40,11 +51,3 @@ ln -s -i ${DOTFILES_PATH}/langs/clojure/profiles.clj $HOME/.config/clojure/profi
 # Scala
 mkdir -p $HOME/.sbt/0.13/plugins
 ln -s -i ${DOTFILES_PATH}/langs/scala/plugins.sbt $HOME/.sbt/1.0/plugins/plugins.sbt
-
-### MacOs stuff ###
-# Alfred
-ln -s -i ${DOTFILES_PATH}/mac/alfred $HOME/Library/Application\ Support/Alfred\ 3/Alfred.alfredpreferences
-# Karabiner Elements
-ln -s -i ${DOTFILES_PATH}/mac/karabiner-elements $HOME/.config/karabiner
-# Spectacle
-ln -s -i ${DOTFILES_PATH}/mac/spectacle/Shortcuts.json $HOME/Library/Application\ Support/Spectacle/Shortcuts.json
