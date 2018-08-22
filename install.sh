@@ -17,6 +17,13 @@ ln -s -i ${DOTFILES_PATH}/mac/karabiner-elements $HOME/.config/karabiner
 # Spectacle
 mkdir -p $HOME/Library/Application\ Support/Spectacle
 ln -s -i ${DOTFILES_PATH}/mac/spectacle/Shortcuts.json $HOME/Library/Application\ Support/Spectacle/Shortcuts.json
+# ulimit
+sudo ln -s -i ${DOTFILES_PATH}/mac/plist/limit.maxfiles.plist /Library/LaunchDaemons/limit.maxfiles.plist
+sudo chown root:wheel /Library/LaunchDaemons/limit.maxfiles.plist
+sudo launchctl load -w /Library/LaunchDaemons/limit.maxfiles.plist
+sudo ln -s -i ${DOTFILES_PATH}/mac/plist/limit.maxproc.plist /Library/LaunchDaemons/limit.maxproc.plist
+sudo chown root:wheel /Library/LaunchDaemons/limit.maxproc.plist
+sudo launchctl load -w /Library/LaunchDaemons/limit.maxproc.plist
 
 
 ### Console stuff ###
