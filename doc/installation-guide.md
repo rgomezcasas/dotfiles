@@ -6,3 +6,5 @@
  3. Go to brew.sh and install
  4. Clone this repository to ~/.dotfiles
  5. Execute sh install.sh
+ 6. Login in Google Chrome
+ 7. Download iTerm nightly
