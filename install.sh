@@ -70,3 +70,4 @@ ln -s -i ${DOTFILES_PATH}/langs/scala/plugins.sbt $HOME/.sbt/1.0/plugins/plugins
 # Change default terminal to ZSH
 chsh -s $(which zsh)
 git clone --recursive https://github.com/zimfw/zimfw.git ${ZDOTDIR:-${HOME}}/.zim
+touch .z
