@@ -6,10 +6,13 @@ DOTFILES_PATH=$HOME/.dotfiles
 # All apps
 brew bundle --file=${DOTFILES_PATH}/mac/brew/Brewfile
 # Alfred
+mkdir -p $HOME/Library/Application\ Support/Alfred\ 3/
 ln -s -i ${DOTFILES_PATH}/mac/alfred $HOME/Library/Application\ Support/Alfred\ 3/Alfred.alfredpreferences
 # Karabiner Elements
+mkdir $HOME/.config
 ln -s -i ${DOTFILES_PATH}/mac/karabiner-elements $HOME/.config/karabiner
 # Spectacle
+mkdir -p $HOME/Library/Application\ Support/Spectacle
 ln -s -i ${DOTFILES_PATH}/mac/spectacle/Shortcuts.json $HOME/Library/Application\ Support/Spectacle/Shortcuts.json
 
 
@@ -35,8 +38,10 @@ ln -s -i ${DOTFILES_PATH}/editors/vim/.vimrc $HOME/.vimrc
 
 # Sublime
 rm -rf $HOME/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
-ln -s ${DOTFILES_PATH}/editors/sublime-text-3/Packages/User $HOME/Library/Application\ Support/Sublime\ Text\ 3//Packages
-sudo ln -s -i /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl $HOME/bin/subl
+mkdir -p $HOME/Library/Application\ Support/Sublime\ Text\ 3
+ln -s ${DOTFILES_PATH}/editors/sublime-text-3/Packages/User $HOME/Library/Application\ Support/Sublime\ Text\ 3/Packages
+mkdir $HOME/bin
+ln -s -i /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl $HOME/bin/subl
 
 ### Langs stuff ###
 # PHP
