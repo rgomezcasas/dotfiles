@@ -16,6 +16,11 @@ echo ''
 echo '♢ ZSH Zim'
 zsh ${ZIM_HOME}/tools/zim_update
 
+
+echo ''
+echo '♢ tldr'
+tldr --update
+
 if [ "$1" == "--all" ]; then
     echo ''
     echo '♢ Updating Composer (PHP)'

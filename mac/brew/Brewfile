@@ -93,7 +93,7 @@ brew "unrar"
 brew "vim"
 brew "watch"
 brew "wget"
-brew "yara", link: false
+brew "yara"
 brew "z"
 cask "alfred"
 cask "caffeine"
