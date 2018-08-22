@@ -6,6 +6,8 @@ DOTFILES_PATH=$HOME/.dotfiles
 # All apps (This line it's 2 times because there are dependencies between brew cask and brew)
 brew bundle --file=${DOTFILES_PATH}/mac/brew/Brewfile
 brew bundle --file=${DOTFILES_PATH}/mac/brew/Brewfile
+# Remove bash last login
+touch $HOME/.hushlogin
 # Alfred
 mkdir -p $HOME/Library/Application\ Support/Alfred\ 3/
 ln -s -i ${DOTFILES_PATH}/mac/alfred $HOME/Library/Application\ Support/Alfred\ 3/Alfred.alfredpreferences

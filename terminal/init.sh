@@ -8,4 +8,6 @@ for aliasToSource in $DOTFILES_PATH/terminal/_aliases/*; do source $aliasToSourc
 # Register all exports
 for exportToSource in $DOTFILES_PATH/terminal/_exports/*; do source $exportToSource; done
 # Functions
-function cdd { cd "$(ls -d -- */ | fzf)" }
+function cdd {
+  cd "$(ls -d -- */ | fzf)"
+}
