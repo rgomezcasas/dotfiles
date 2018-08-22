@@ -3,7 +3,8 @@
 DOTFILES_PATH=$HOME/.dotfiles
 
 ### MacOs stuff ###
-# All apps
+# All apps (This line it's 2 times because there are dependencies between brew cask and brew)
+brew bundle --file=${DOTFILES_PATH}/mac/brew/Brewfile
 brew bundle --file=${DOTFILES_PATH}/mac/brew/Brewfile
 # Alfred
 mkdir -p $HOME/Library/Application\ Support/Alfred\ 3/
@@ -50,9 +51,9 @@ ln -s -i ${DOTFILES_PATH}/langs/php/psysh-config.php $HOME/.config/psysh/config.
 ln -s -i ${DOTFILES_PATH}/langs/php/composer.json $HOME/.composer/composer.json
 
 # Clojure
-mkdir $HOME/.lein
+mkdir $HOME/.config/clojure
 ln -s -i ${DOTFILES_PATH}/langs/clojure/profiles.clj $HOME/.config/clojure/profiles.clj
 
 # Scala
-mkdir -p $HOME/.sbt/0.13/plugins
+mkdir -p $HOME/.sbt/1.0/plugins
 ln -s -i ${DOTFILES_PATH}/langs/scala/plugins.sbt $HOME/.sbt/1.0/plugins/plugins.sbt
