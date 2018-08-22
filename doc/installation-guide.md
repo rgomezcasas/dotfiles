@@ -7,4 +7,6 @@
  4. Clone this repository to ~/.dotfiles
  5. Execute sh install.sh
  6. Login in Google Chrome
+ * Open  
  7. Download iTerm nightly
+ 8. On iTerm preferences select load preferences from URL and use ~/.dotfiles/mac/iTerm. On the next prompt select "NOT copy"
