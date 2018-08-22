@@ -35,6 +35,7 @@ ln -s -i ${DOTFILES_PATH}/terminal/bash/.profile $HOME/.profile
 # Zsh
 ln -s -i ${DOTFILES_PATH}/terminal/zsh/.zshrc $HOME/.zshrc
 ln -s -i ${DOTFILES_PATH}/terminal/zsh/.zimrc $HOME/.zimrc
+ln -s -i ${DOTFILES_PATH}/terminal/zsh/.zlogin $HOME/.zlogin
 
 ### Git stuff ###
 # Git
@@ -70,4 +71,4 @@ ln -s -i ${DOTFILES_PATH}/langs/scala/plugins.sbt $HOME/.sbt/1.0/plugins/plugins
 # Change default terminal to ZSH
 chsh -s $(which zsh)
 git clone --recursive https://github.com/zimfw/zimfw.git ${ZDOTDIR:-${HOME}}/.zim
-touch .z
+touch $HOME/.z
