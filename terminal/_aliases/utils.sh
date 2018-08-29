@@ -39,3 +39,6 @@ alias showdesktop='defaults write com.apple.finder CreateDesktop -bool true; kil
 alias wall='change_wallpaper'
 alias out='outdated_apps'
 alias up='update_apps'
+function idea. {
+  idea $PWD 2>&1
+}

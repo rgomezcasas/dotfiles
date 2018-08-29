@@ -16,9 +16,6 @@ brew cleanup
 brew prune
 echo '[x] Brew cache cleared'
 
-brew cask cleanup
-echo '[x] Brew cask cache cleared'
-
 rm -rf ~/Library/Caches/com.tinyspeck.slackmacgap
 rm -rf ~/Library/Caches/com.tinyspeck.slackmacgap.ShipIt
 echo '[x] Slack cache cleared'
