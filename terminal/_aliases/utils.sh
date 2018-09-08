@@ -31,14 +31,11 @@ alias editdotfiles='subl ~/.dotfiles'
 
 alias optimize_zsh='source ${ZDOTDIR:-${HOME}}/.zlogin'
 
-# Utils for presentations. Hide/show all desktop icons.
-alias hidedesktop='defaults write com.apple.finder CreateDesktop -bool false; killall Finder'
-alias showdesktop='defaults write com.apple.finder CreateDesktop -bool true; killall Finder'
-
 # Mac
 alias wall='change_wallpaper'
 alias out='outdated_apps'
 alias up='update_apps'
+alias export_brew="brew bundle dump --file=${DOTFILES_PATH}/mac/brew/Brewfile --force"
 function idea. {
-  idea $PWD 2>&1
+  idea $PWD &>/dev/null
 }
