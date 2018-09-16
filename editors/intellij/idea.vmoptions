@@ -41,4 +41,4 @@
 -Dide.no.platform.update=true
 -Djdk.http.auth.tunneling.disabledSchemes=""
 -XX:MaxJavaStackTraceDepth=-1
--agentlib:yjpagent=probe_disable=*,disablealloc,disabletracing,onlylocal,disableexceptiontelemetry,delay=10000,sessionname=IntelliJIdea2018.2
+-agentlib:yjpagent=probe_disable=*,disablealloc,disabletracing,onlylocal,disableexceptiontelemetry,delay=10000,sessionname=IntelliJIdea2018.3
