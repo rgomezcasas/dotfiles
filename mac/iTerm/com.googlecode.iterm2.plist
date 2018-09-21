@@ -625,6 +625,13 @@
 			<key>Text</key>
 			<string></string>
 		</dict>
+		<key>0x50-0x120000</key>
+		<dict>
+			<key>Action</key>
+			<integer>12</integer>
+			<key>Text</key>
+			<string>gpl\n</string>
+		</dict>
 		<key>0x66-0x140000</key>
 		<dict>
 			<key>Action</key>
@@ -854,12 +861,18 @@
 	</data>
 	<key>NSTableView Supports v2 KeyBingingTable</key>
 	<true/>
+	<key>NSWindow Frame SUAutomaticUpdateAlert</key>
+	<string>412 544 616 174 0 0 1440 900 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>4330 636 620 392 3360 -150 2560 1440 </string>
+	<string>410 381 620 392 0 0 1440 900 </string>
+	<key>NSWindow Frame SessionsPreferences</key>
+	<string>269 126 606 469 0 0 1440 900 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>269 340 930 428 0 0 1440 900 </string>
+	<string>269 411 958 451 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>0 0 1440 900 0 0 1440 900 </string>
+	<key>NSWindow Frame iTerm Window 1</key>
+	<string>176 75 854 548 0 0 1440 900 </string>
 	<key>NeverWarnAboutShortLivedSessions_10B05570-B840-47B9-8682-D933DFEA6004</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_10B05570-B840-47B9-8682-D933DFEA6004_selection</key>
@@ -1464,6 +1477,7 @@
 			<string>session.jobPid</string>
 			<string>session.tmuxStatusLeft</string>
 			<string>session.lastCommand</string>
+			<string>session.mouseReportingMode</string>
 			<string>session.pid</string>
 			<string>session.presentationName</string>
 			<string>session.columns</string>
@@ -1476,25 +1490,33 @@
 			<string>currentTab</string>
 			<string>currentTab.currentSession.session.terminalWindowName</string>
 			<string>currentTab.currentSession.session.pid</string>
+			<string>currentTab.currentSession.session.mouseReportingMode</string>
 			<string>currentTab.currentSession.session.tty</string>
 			<string>currentTab.currentSession.session.autoName</string>
 			<string>currentTab.currentSession.session.presentationName</string>
 			<string>currentTab.currentSession.session.name</string>
 			<string>currentTab.currentSession.session.terminalIconName</string>
+			<string>currentTab.currentSession.session.username</string>
 			<string>currentTab.currentSession.session.jobName</string>
 			<string>currentTab.currentSession.session.rows</string>
 			<string>iterm2</string>
 			<string>currentTab.currentSession.session.termid</string>
+			<string>currentTab.currentSession.session.hostname</string>
 			<string>currentTab.currentSession.session.jobPid</string>
+			<string>currentTab.currentSession.session.path</string>
 		</array>
 		<key>2</key>
 		<array>
 			<string>currentSession</string>
 			<string>titleOverride</string>
+			<string>currentSession.session.username</string>
 			<string>currentSession.session.termid</string>
 			<string>currentSession.session.pid</string>
 			<string>currentSession.session.autoName</string>
 			<string>currentSession.session.name</string>
+			<string>currentSession.session.mouseReportingMode</string>
+			<string>currentSession.session.path</string>
+			<string>currentSession.session.hostname</string>
 			<string>currentSession.session.rows</string>
 			<string>currentSession.session.tty</string>
 			<string>currentSession.session.jobName</string>
@@ -1509,6 +1531,7 @@
 		<key>4</key>
 		<array>
 			<string>pid</string>
+			<string>localhostName</string>
 		</array>
 	</dict>
 	<key>NoSyncSuppressBroadcastInputWarning</key>
@@ -1560,6 +1583,8 @@
 	<integer>8</integer>
 	<key>RightOption</key>
 	<integer>3</integer>
+	<key>SUAutomaticallyUpdate</key>
+	<true/>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
@@ -1569,7 +1594,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-09-01T20:20:16Z</date>
+	<date>2018-09-20T11:14:50Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -1641,7 +1666,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.2.20180831-nightly</string>
+	<string>3.2.20180917-nightly</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>

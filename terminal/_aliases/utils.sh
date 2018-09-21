@@ -31,11 +31,27 @@ alias editdotfiles='subl ~/.dotfiles'
 
 alias optimize_zsh='source ${ZDOTDIR:-${HOME}}/.zlogin'
 
+# Start
+alias start-supervisor='supervisord -c /usr/local/etc/supervisord.ini'
+alias start-dynamo='dynamodb-local &'
+
+# Stop
+alias stop-all-brew-services="brew services stop --all"
+
+# Kill
+alias kill-supervisor="kill_named 'usr/local/bin/supervisord'"
+alias kill-dynamo="kill_named 'DynamoDB'"
+
+# Log
+alias log-supervisor='tail -f /usr/local/var/log/supervisord.log'
+
 # Mac
 alias wall='change_wallpaper'
 alias out='outdated_apps'
 alias up='update_apps'
 alias export_brew="brew bundle dump --file=${DOTFILES_PATH}/mac/brew/Brewfile --force"
+
+# Functions
 function idea. {
   idea $PWD &>/dev/null
 }

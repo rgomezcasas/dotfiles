@@ -1,0 +1,11 @@
+%YAML 1.2
+---
+# http://www.sublimetext.com/docs/3/syntax.html
+name: Plain Text (ESLint)
+hidden: true
+file_extensions:
+  - .eslintcache
+scope: text.plain.eslint
+contexts:
+  main:
+    - include: scope:text.plain

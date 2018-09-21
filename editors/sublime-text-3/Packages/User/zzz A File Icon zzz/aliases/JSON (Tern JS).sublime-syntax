@@ -1,0 +1,12 @@
+%YAML 1.2
+---
+# http://www.sublimetext.com/docs/3/syntax.html
+name: JSON (Tern JS)
+hidden: true
+file_extensions:
+  - .tern-project
+  - .tern-config
+scope: source.json.tern
+contexts:
+  main:
+    - include: scope:source.json

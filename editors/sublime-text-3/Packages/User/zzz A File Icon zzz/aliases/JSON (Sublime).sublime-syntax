@@ -1,0 +1,19 @@
+%YAML 1.2
+---
+# http://www.sublimetext.com/docs/3/syntax.html
+name: JSON (Sublime)
+hidden: true
+file_extensions:
+  - .no-sublime-package
+  - sublime-commands
+  - sublime-menu
+  - sublime-project
+  - sublime-settings
+  - sublime-theme
+  - sublime-workspace
+  - sublime-keymap
+  - sublime-mousemap
+scope: source.json.sublime
+contexts:
+  main:
+    - include: scope:source.json

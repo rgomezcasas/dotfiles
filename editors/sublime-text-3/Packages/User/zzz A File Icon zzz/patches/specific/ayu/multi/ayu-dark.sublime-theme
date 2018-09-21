@@ -1,0 +1,34 @@
+[
+  // ayu-dark Patch
+  // ==========================================================================
+
+  // Sidebar Row Padding
+  // --------------------------------------------------------------------------
+
+  {
+    "class": "sidebar_tree"
+  },
+
+  // Sidebar File Icons
+  // --------------------------------------------------------------------------
+
+  // Default
+
+  {
+    "class": "icon_file_type"
+  },
+
+  // Hovered
+
+  {
+    "class": "icon_file_type",
+    "parents": [{"class": "tree_row", "attributes": ["hover"]}]
+  },
+
+  // Selected
+
+  {
+    "class": "icon_file_type",
+    "parents": [{"class": "tree_row", "attributes": ["selected"]}]
+  }
+]

@@ -5,7 +5,8 @@
 	],
 	"installed_packages":
 	[
-		"DA UI",
+		"A File Icon",
+		"ayu",
 		"gruvbox",
 		"JSON Reindent",
 		"Package Control",

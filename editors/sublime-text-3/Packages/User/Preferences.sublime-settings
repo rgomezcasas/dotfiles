@@ -1,6 +1,7 @@
 {
 	"always_show_minimap_viewport": true,
 	"bold_folder_labels": true,
+	"color_scheme": "Packages/ayu/ayu-dark.tmTheme",
 	"detect_slow_plugins": true,
 	"enable_tab_scrolling": false,
 	"fade_fold_buttons": false,
@@ -31,9 +32,6 @@
 	],
 	"line_padding_bottom": 5,
 	"line_padding_top": 5,
-	"material_theme_accent_orange": true,
-	"material_theme_small_tab": true,
-	"material_theme_tree_headings": true,
 	"open_files_in_new_window": false,
 	"overlay_scroll_bars": "enabled",
 	"rulers":
@@ -42,7 +40,7 @@
 	],
 	"shift_tab_unindent": true,
 	"tab_size": 4,
-	"theme": "Adaptive.sublime-theme",
+	"theme": "ayu-dark.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
 	"word_wrap": true
