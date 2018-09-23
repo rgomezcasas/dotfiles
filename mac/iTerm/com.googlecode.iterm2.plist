@@ -625,6 +625,13 @@
 			<key>Text</key>
 			<string></string>
 		</dict>
+		<key>0x4b-0x120000</key>
+		<dict>
+			<key>Action</key>
+			<integer>12</integer>
+			<key>Text</key>
+			<string>git push\n</string>
+		</dict>
 		<key>0x50-0x120000</key>
 		<dict>
 			<key>Action</key>
@@ -638,6 +645,13 @@
 			<integer>23</integer>
 			<key>Text</key>
 			<string></string>
+		</dict>
+		<key>0x76-0x1c0000</key>
+		<dict>
+			<key>Action</key>
+			<integer>12</integer>
+			<key>Text</key>
+			<string>gs\n</string>
 		</dict>
 		<key>0x7f-0x100000</key>
 		<dict>
@@ -868,7 +882,7 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 126 606 469 0 0 1440 900 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>269 411 958 451 0 0 1440 900 </string>
+	<string>269 411 814 486 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>0 0 1440 900 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
@@ -1594,7 +1608,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-09-20T11:14:50Z</date>
+	<date>2018-09-21T13:41:16Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -1666,7 +1680,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.2.20180917-nightly</string>
+	<string>3.2.20180919-nightly</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>

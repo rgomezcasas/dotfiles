@@ -3,6 +3,7 @@ alias sudo='sudo '
 
 # Others
 alias aux='ps uax'
+alias cat='bat'
 alias brwe='brew'
 alias edithosts='sudo vim /etc/hosts'
 alias c='pbcopy'
@@ -16,10 +17,11 @@ alias fuck!='sudo $history[1]'
 alias flat_this_dir="sudo find . -mindepth 2 -type f -exec mv -i '{}' . ';'"
 alias k='kill -9'
 alias map="xargs -n1"
+alias ping='prettyping --nolegend'
+alias preview="fzf --preview 'bat --color \"always\" {}'"
 alias r='realpath'
 alias reveal='open .'
-alias size_of_the_current_directory='du -ch | grep total'
-alias size_of_directories='ls | xargs -I _ du -sch "_" | grep -v total | sort -h'
+alias size_of_directory="ncdu --color dark -rr -x"
 alias stt='subl .'
 alias watch_number_of_files='watch -n1 "find . -type f -print | wc -l"'
 alias t='time'

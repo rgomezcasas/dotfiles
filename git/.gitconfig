@@ -1,87 +1,87 @@
 [user]
-    name = Rafa Gómez
-    email = rgomezcasas@gmail.com
+	name = Rafa Gómez
+	email = rgomezcasas@gmail.com
 
 [fetch]
-    prune = true
+	prune = true
 
 [push]
-    default = simple
+	default = simple
 
 [color]
-    diff = auto
-    status = auto
-    branch = auto
-    ui = true
+	diff = auto
+	status = auto
+	branch = auto
+	ui = true
 
 [core]
-    excludesfile = ~/.gitignore_global
-    attributesfile = ~/.gitattributes
-    editor = vim
-    autocrlf = input
-    trustctime = false
-    precomposeunicode = false
+	excludesfile = ~/.gitignore_global
+	attributesfile = ~/.gitattributes
+	editor = vim
+	autocrlf = input
+	trustctime = false
+	precomposeunicode = false
 
 [commit]
-    # https://help.github.com/articles/signing-commits-using-gpg/
-    # gpgsign = true
+	# https://help.github.com/articles/signing-commits-using-gpg/
+	# gpgsign = true
 
 [help]
-    autocorrect = 1
+	autocorrect = 1
 
 [filter "hawser"]
-    clean = git hawser clean %f
-    smudge = git hawser smudge %f
-    required = true
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true
 
 [diff]
-    tool = vimdiff
-    compactionHeuristic = true
-    indentHeuristic = true
+	tool = vimdiff
+	compactionHeuristic = true
+	indentHeuristic = true
 
 [difftool]
-    prompt = false
+	prompt = false
 
 [diff "json"]
-    textconv = python -m json.tool
+	textconv = python -m json.tool
 
 [diff "word"]
-    textconv = docx2txt
+	textconv = docx2txt
 
 [credential]
-    helper = osxkeychain
+	helper = osxkeychain
 
 [pager]
-    diff = diff-so-fancy | less --tabs=4 -RFX
-    show = diff-so-fancy | less --tabs=4 -RFX
+	diff = diff-so-fancy | less --tabs=4 -RFX
+	show = diff-so-fancy | less --tabs=4 -RFX
 
 [color]
-    ui = always
+	ui = always
 
 [color "diff"]
-    meta = yellow bold
-    commit = green bold
-    frag = magenta bold
-    old = red bold
-    new = green bold
-    whitespace = red reverse
+	meta = yellow bold
+	commit = green bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
 
 [color "diff-highlight"]
-    oldNormal = red bold
-    oldHighlight = "red bold 52"
-    newNormal = "green bold"
-    newHighlight = "green bold 22"
+	oldNormal = red bold
+	oldHighlight = "red bold 52"
+	newNormal = "green bold"
+	newHighlight = "green bold 22"
 
 [color "branch"]
-    current = yellow reverse
-    local = yellow
-    remote = green
+	current = yellow reverse
+	local = yellow
+	remote = green
 
 [color "status"]
-    added = yellow
-    changed = green
-    untracked = cyan
+	added = yellow
+	changed = green
+	untracked = cyan
 
 [apply]
-    # Detect whitespace errors when applying a patch
-    whitespace = fix
+	# Detect whitespace errors when applying a patch
+	whitespace = fix
