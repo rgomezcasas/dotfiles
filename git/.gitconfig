@@ -1,6 +1,7 @@
 [user]
 	name = Rafa Gómez
 	email = rgomezcasas@gmail.com
+	signingkey = AC2C04F065F7ADB8
 
 [fetch]
 	prune = true
@@ -85,3 +86,7 @@
 [apply]
 	# Detect whitespace errors when applying a patch
 	whitespace = fix
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg

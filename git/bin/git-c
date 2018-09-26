@@ -3,7 +3,7 @@
 git add -A
 
 if [ -z "$1" ]; then
-    git commit
+    git commit -S
 else
-    git commit -m"$1"
+    git commit -S -m"$1"
 fi
