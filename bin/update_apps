@@ -21,6 +21,11 @@ echo ''
 echo '♢ tldr'
 tldr --update
 
+
+echo ''
+echo '♢ Export brew apps'
+export_brew
+
 if [ "$1" == "--all" ]; then
     echo ''
     echo '♢ Updating Composer (PHP)'

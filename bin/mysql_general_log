@@ -6,6 +6,7 @@ sudo rm $MYSQL_LOG_PATH;
 sudo touch $MYSQL_LOG_PATH;
 sudo chmod 777 $MYSQL_LOG_PATH;
 
+mkdir /usr/local/etc/my.cnf.d
 mysql -uroot -e "SET GLOBAL general_log = 'ON';"
 mysql -uroot -e "SET GLOBAL general_log_file = '$MYSQL_LOG_PATH';"
 

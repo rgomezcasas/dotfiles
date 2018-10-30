@@ -51,7 +51,6 @@ alias log-supervisor='tail -f /usr/local/var/log/supervisord.log'
 alias wall='change_wallpaper'
 alias out='outdated_apps'
 alias up='update_apps'
-alias export_brew="brew bundle dump --file=${DOTFILES_PATH}/mac/brew/Brewfile --force"
 
 # Functions
 function idea. {

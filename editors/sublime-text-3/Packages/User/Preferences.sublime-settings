@@ -1,7 +1,7 @@
 {
 	"always_show_minimap_viewport": true,
 	"bold_folder_labels": true,
-	"color_scheme": "Packages/ayu/ayu-dark.tmTheme",
+	"color_scheme": "Packages/gruvbox/gruvbox (Dark) (Medium).tmTheme",
 	"detect_slow_plugins": true,
 	"enable_tab_scrolling": false,
 	"fade_fold_buttons": false,
@@ -40,7 +40,7 @@
 	],
 	"shift_tab_unindent": true,
 	"tab_size": 4,
-	"theme": "ayu-dark.sublime-theme",
+	"theme": "gruvbox (Dark) (Soft).sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
 	"word_wrap": true
