@@ -878,11 +878,11 @@
 	<key>NSWindow Frame SUAutomaticUpdateAlert</key>
 	<string>412 544 616 174 0 0 1440 900 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>410 381 620 392 0 0 1440 900 </string>
+	<string>4330 636 620 392 3360 -150 2560 1440 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 126 606 469 0 0 1440 900 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>269 411 814 486 0 0 1440 900 </string>
+	<string>164 467 770 420 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>0 0 1440 900 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
@@ -1395,7 +1395,7 @@
 				<key>Green Component</key>
 				<real>0.0</real>
 				<key>Red Component</key>
-				<real>0.0</real>
+				<real>0.20989990234375</real>
 			</dict>
 			<key>Tags</key>
 			<array/>
@@ -1468,6 +1468,7 @@
 		<array>
 			<string>session.jobName</string>
 			<string>session.id</string>
+			<string>session.badge</string>
 			<string>session.profileName</string>
 			<string>session.name</string>
 			<string>session.terminalIconName</string>
@@ -1495,57 +1496,61 @@
 			<string>session.pid</string>
 			<string>session.presentationName</string>
 			<string>session.columns</string>
+			<string>session.autoNameFormat</string>
 		</array>
 		<key>16</key>
 		<array>
-			<string>titleOverride</string>
-			<string>currentTab.currentSession.session.columns</string>
-			<string>currentTab.currentSession</string>
-			<string>currentTab</string>
-			<string>currentTab.currentSession.session.terminalWindowName</string>
-			<string>currentTab.currentSession.session.pid</string>
 			<string>currentTab.currentSession.session.mouseReportingMode</string>
 			<string>currentTab.currentSession.session.tty</string>
-			<string>currentTab.currentSession.session.autoName</string>
-			<string>currentTab.currentSession.session.presentationName</string>
-			<string>currentTab.currentSession.session.name</string>
-			<string>currentTab.currentSession.session.terminalIconName</string>
 			<string>currentTab.currentSession.session.username</string>
-			<string>currentTab.currentSession.session.jobName</string>
-			<string>currentTab.currentSession.session.rows</string>
-			<string>iterm2</string>
+			<string>currentTab.currentSession.session.name</string>
 			<string>currentTab.currentSession.session.termid</string>
 			<string>currentTab.currentSession.session.hostname</string>
-			<string>currentTab.currentSession.session.jobPid</string>
+			<string>currentTab</string>
+			<string>currentTab.currentSession.session.pid</string>
 			<string>currentTab.currentSession.session.path</string>
+			<string>currentTab.currentSession</string>
+			<string>titleOverride</string>
+			<string>currentTab.currentSession.session.terminalWindowName</string>
+			<string>currentTab.currentSession.session.autoName</string>
+			<string>currentTab.currentSession.session.jobPid</string>
+			<string>currentTab.currentSession.session.autoNameFormat</string>
+			<string>iterm2</string>
+			<string>currentTab.currentSession.session.presentationName</string>
+			<string>currentTab.currentSession.session.columns</string>
+			<string>currentTab.currentSession.session.terminalIconName</string>
+			<string>currentTab.currentSession.session.rows</string>
+			<string>currentTab.currentSession.session.jobName</string>
 		</array>
 		<key>2</key>
 		<array>
-			<string>currentSession</string>
-			<string>titleOverride</string>
-			<string>currentSession.session.username</string>
+			<string>currentSession.session.jobName</string>
 			<string>currentSession.session.termid</string>
 			<string>currentSession.session.pid</string>
-			<string>currentSession.session.autoName</string>
+			<string>currentSession.session.hostname</string>
 			<string>currentSession.session.name</string>
 			<string>currentSession.session.mouseReportingMode</string>
-			<string>currentSession.session.path</string>
-			<string>currentSession.session.hostname</string>
-			<string>currentSession.session.rows</string>
-			<string>currentSession.session.tty</string>
-			<string>currentSession.session.jobName</string>
-			<string>currentSession.session.terminalWindowName</string>
-			<string>iterm2</string>
-			<string>tmuxWindow</string>
 			<string>currentSession.session.presentationName</string>
-			<string>currentSession.session.terminalIconName</string>
+			<string>currentSession.session.username</string>
 			<string>currentSession.session.jobPid</string>
+			<string>currentSession.session.terminalIconName</string>
+			<string>currentSession.session.rows</string>
+			<string>titleOverride</string>
+			<string>currentSession.session.tty</string>
+			<string>currentSession.session.terminalWindowName</string>
+			<string>currentSession.session.path</string>
+			<string>currentSession.session.autoNameFormat</string>
+			<string>iterm2</string>
+			<string>currentSession.session.autoName</string>
+			<string>tmuxWindow</string>
+			<string>currentSession</string>
 			<string>currentSession.session.columns</string>
 		</array>
 		<key>4</key>
 		<array>
 			<string>pid</string>
 			<string>localhostName</string>
+			<string>effectiveTheme</string>
 		</array>
 	</dict>
 	<key>NoSyncSuppressBroadcastInputWarning</key>
@@ -1608,7 +1613,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-09-21T13:41:16Z</date>
+	<date>2018-10-29T23:06:06Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -1637,6 +1642,8 @@
 	<integer>6</integer>
 	<key>TabStyle</key>
 	<integer>1</integer>
+	<key>TabStyleWithAutomaticOption</key>
+	<integer>4</integer>
 	<key>TabViewType</key>
 	<integer>1</integer>
 	<key>TerminalMargin</key>
@@ -1680,7 +1687,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.2.20180919-nightly</string>
+	<string>3.3.20181028-nightly</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
