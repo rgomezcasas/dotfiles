@@ -1,6 +1,7 @@
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
 
+
 # Others
 alias aux='ps uax'
 alias cat='bat'
@@ -11,6 +12,7 @@ alias copy='pbcopy'
 alias copy_ssh_key='xclip -sel clip < ~/.ssh/id_rsa.pub'
 alias count_files_recursive='find . -type f -print | wc -l'
 alias count_files_recursive_per_directory='ls -d */ | xargs -I _ sh -c "find \"_\" -type f | wc -l | xargs echo _"'
+alias dc='docker_connect'
 alias emptytrash='sudo empty_trash'
 alias find_broken_symlinks='find -L . -type l'
 alias fuck!='sudo $history[1]'
@@ -27,6 +29,9 @@ alias watch_number_of_files='watch -n1 "find . -type f -print | wc -l"'
 alias t='time'
 alias pubkey='cat ~/.ssh/id_rsa.pub | pbcopy'
 alias fuck_sbt="ps aux | grep sbt | awk '{print $2}' | xargs kill -9"
+
+alias privateip='ipconfig getifaddr en0'
+alias publicip="dig +short myip.opendns.com @resolver1.opendns.com"
 
 alias catimg='imgcat'
 alias editdotfiles='subl ~/.dotfiles'
