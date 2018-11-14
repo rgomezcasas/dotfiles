@@ -14,17 +14,17 @@
 I like to open/split the iTerm and immediately have all operative. I reached this goal with this configuration.
 
 ```bash
-λ ~/.dotfiles on master ✗ for i in $(seq 1 10); do /usr/bin/time zsh -i -c exit; done | awk '{print $1}'
-        0.05 real         0.03 user         0.02 sys
-        0.05 real         0.03 user         0.02 sys
-        0.05 real         0.03 user         0.02 sys
-        0.05 real         0.03 user         0.02 sys
-        0.05 real         0.03 user         0.02 sys
+λ ~/.dotfiles on master ✗ for i in $(seq 1 10); do /usr/bin/time zsh -i -c exit; done
         0.05 real         0.03 user         0.01 sys
-        0.05 real         0.03 user         0.02 sys
-        0.05 real         0.03 user         0.02 sys
-        0.05 real         0.03 user         0.02 sys
-        0.05 real         0.03 user         0.02 sys
+        0.04 real         0.02 user         0.01 sys
+        0.04 real         0.02 user         0.01 sys
+        0.05 real         0.03 user         0.01 sys
+        0.04 real         0.02 user         0.01 sys
+        0.04 real         0.02 user         0.01 sys
+        0.04 real         0.02 user         0.01 sys
+        0.04 real         0.02 user         0.01 sys
+        0.04 real         0.02 user         0.01 sys
+        0.05 real         0.02 user         0.01 sys
 ```
 
 This is a way faster than using oh-my-zsh with the minimal setup.
