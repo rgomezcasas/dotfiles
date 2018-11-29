@@ -10,7 +10,7 @@ alias ctree='exa -T'
 alias j='z'
 
 # Jumps
-alias tmp='cd /tmp'
+alias tmp='cd ~/Desktop/tmp'
 alias code='cd ~/Code'
 alias mines='cd ~/Code/mines'
 alias codely='cd ~/Code/codely'
