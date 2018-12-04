@@ -4,8 +4,8 @@ alias sudo='sudo '
 
 # Others
 alias aux='ps uax'
-alias cat='bat'
 alias brwe='brew'
+alias brew-list-deps="brew list | while read cask; do echo -n \"\e[1;34m$cask ->\e[0m\"; brew deps $cask | awk '{printf(\" %s \", $0)}'; echo \"\"; done"
 alias edithosts='sudo vim /etc/hosts'
 alias c='pbcopy'
 alias copy='pbcopy'
