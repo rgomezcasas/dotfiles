@@ -98,6 +98,9 @@ defaults write com.apple.screencapture type -string "png"
 # Reference: https://github.com/kevinSuttle/macOS-Defaults/issues/17#issuecomment-266633501
 defaults write NSGlobalDomain AppleFontSmoothing -int 1
 
+# Font rendering stuff
+defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO
+
 ###############################################################################
 # Finder                                                                      #
 ###############################################################################

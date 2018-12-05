@@ -47,12 +47,9 @@ ln -s -i ${DOTFILES_PATH}/git/.gitattributes $HOME/.gitattributes
 # Vim
 ln -s -i ${DOTFILES_PATH}/editors/vim/.vimrc $HOME/.vimrc
 
-# Sublime
-rm -rf $HOME/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
-mkdir -p $HOME/Library/Application\ Support/Sublime\ Text\ 3
-ln -s ${DOTFILES_PATH}/editors/sublime-text-3/Packages/User $HOME/Library/Application\ Support/Sublime\ Text\ 3/Packages
-mkdir $HOME/bin
-ln -s -i /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl $HOME/bin/subl
+# VS Code
+ln -s ${DOTFILES_PATH}/editors/vs-code/settings.json $HOME/Library/Application\ Support/Code/User/settings.json
+ln -s ${DOTFILES_PATH}/editors/vs-code/keybindings.json $HOME/Library/Application\ Support/Code/User/keybindings.json
 
 ### Langs stuff ###
 # PHP

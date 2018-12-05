@@ -11,7 +11,6 @@ alias j='z'
 
 # Jumps
 alias tmp='cd ~/Desktop/tmp'
-alias code='cd ~/Code'
 alias mines='cd ~/Code/mines'
 alias codely='cd ~/Code/codely'
 alias dotfiles='cd ~/.dotfiles'

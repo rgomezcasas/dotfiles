@@ -1,6 +1,7 @@
+#!/usr/bin/env bash
+
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
-
 
 # Others
 alias aux='ps uax'
@@ -24,7 +25,6 @@ alias preview="fzf --preview 'bat --color \"always\" {}'"
 alias r='realpath'
 alias reveal='open .'
 alias size_of_directory="ncdu --color dark -rr -x"
-alias stt='subl .'
 alias watch_number_of_files='watch -n1 "find . -type f -print | wc -l"'
 alias t='time'
 alias pubkey='cat ~/.ssh/id_rsa.pub | pbcopy'
@@ -34,7 +34,7 @@ alias privateip='ipconfig getifaddr en0'
 alias publicip="dig +short myip.opendns.com @resolver1.opendns.com"
 
 alias catimg='imgcat'
-alias editdotfiles='subl ~/.dotfiles'
+alias editdotfiles='code ~/.dotfiles'
 
 alias optimize_zsh='source ${ZDOTDIR:-${HOME}}/.zlogin'
 

@@ -102,7 +102,6 @@ brew "vim"
 brew "watch"
 brew "wget"
 brew "z"
-brew "garethr/kubeval/kubeval"
 cask "alfred"
 cask "caffeine"
 cask "contexts"
@@ -123,7 +122,6 @@ cask "slack-beta"
 cask "soda-player"
 cask "spectacle"
 cask "spotify"
-cask "sublime-text"
 cask "telegram"
 cask "visual-studio-code"
 cask "vlc"
@@ -135,5 +133,3 @@ mas "Keynote", id: 409183694
 mas "Logitech Camera Settings", id: 638332853
 mas "Microsoft OneNote", id: 784801555
 mas "Monosnap", id: 540348655
-mas "Pocket", id: 568494494
-mas "Trello", id: 1278508951
