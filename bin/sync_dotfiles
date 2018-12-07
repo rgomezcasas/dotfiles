@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+cd ${DOTFILES_PATH}
+git pull --rebase --autostash
+brew bundle --file=${DOTFILES_PATH}/mac/brew/Brewfile
+
+echo 'Done! 👯‍'
