@@ -27,6 +27,8 @@ alias reveal='open .'
 alias size_of_directory="ncdu --color dark -rr -x"
 alias watch_number_of_files='watch -n1 "find . -type f -print | wc -l"'
 alias t='time'
+alias c.='code .'
+alias i.='idea.'
 alias pubkey='cat ~/.ssh/id_rsa.pub | pbcopy'
 alias fuck_sbt="ps aux | grep sbt | awk '{print $2}' | xargs kill -9"
 
