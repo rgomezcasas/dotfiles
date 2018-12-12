@@ -32,5 +32,7 @@
     "workbench.sideBar.location": "left",
     "workbench.editor.showTabs": false,
     "workbench.colorTheme": "Base16 Dark Default",
-    "workbench.fontAliasing": "auto"
+    "workbench.fontAliasing": "auto",
+    "editor.renderWhitespace": "all",
+    "workbench.activityBar.visible": false
 }
