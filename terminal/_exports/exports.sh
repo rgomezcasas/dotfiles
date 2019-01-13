@@ -13,6 +13,7 @@ export FZF_DEFAULT_OPTS='--color=bg+:24 --reverse'
 export HOMEBREW_AUTO_UPDATE_SECS=86400
 export HOMEBREW_NO_ANALYTICS=true
 export HOMEBREW_INSTALL_BADGE="(ʘ‿ʘ)"
+export HOMEBREW_BUNDLE_FILE_PATH=${DOTFILES_PATH}/mac/brew/Brewfile
 
 export LANG=en_GB
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-brew bundle dump --file=${DOTFILES_PATH}/mac/brew/Brewfile --force
+brew bundle dump --file=${HOMEBREW_BUNDLE_FILE_PATH} --force
 
 echo 'Brew apps exported!'
