@@ -7,7 +7,7 @@ export GOPATH="$HOME/.go"
 export GEM_HOME="$HOME/.gem"
 
 export SBT_OPTS='-Xms512M -Xmx1024M -Xss2M -XX:MaxMetaspaceSize=512m -XX:ReservedCodeCacheSize=256M -Dfile.encoding=UTF8'
-
+export SBT_CREDENTIALS=$HOME/.sbt/.credentials
 export FZF_DEFAULT_OPTS='--color=bg+:24 --reverse'
 
 export HOMEBREW_AUTO_UPDATE_SECS=86400
