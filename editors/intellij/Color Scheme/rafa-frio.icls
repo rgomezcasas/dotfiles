@@ -1,10 +1,10 @@
 <scheme name="rafa-frio" version="142" parent_scheme="Default">
   <option name="FONT_SCALE" value="1.0" />
   <metaInfo>
-    <property name="created">2018-11-29T20:28:53</property>
+    <property name="created">2019-01-28T23:46:52</property>
     <property name="ide">idea</property>
-    <property name="ideVersion">2018.3.1.0.0</property>
-    <property name="modified">2018-11-29T20:29:09</property>
+    <property name="ideVersion">2019.1.0.0</property>
+    <property name="modified">2019-01-28T23:47:08</property>
     <property name="originalScheme">rafa-frio</property>
   </metaInfo>
   <option name="LINE_SPACING" value="1.9" />
@@ -84,8 +84,6 @@
         <option name="FOREGROUND" value="b8bb26" />
       </value>
     </option>
-    <option name="BASH.HERE_DOC" baseAttributes="DEFAULT_STRING" />
-    <option name="BASH.INTERNAL_COMMAND" baseAttributes="BASH.EXTERNAL_COMMAND" />
     <option name="BOOKMARKS_ATTRIBUTES">
       <value>
         <option name="ERROR_STRIPE_COLOR" value="b8bb26" />
