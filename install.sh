@@ -60,6 +60,7 @@ ln -s ${DOTFILES_PATH}/editors/vs-code/keybindings.json $HOME/Library/Applicatio
 # PHP
 mkdir $HOME/.config/psysh
 ln -s -i ${DOTFILES_PATH}/langs/php/psysh-config.php $HOME/.config/psysh/config.php
+mkdir $HOME/.composer/composer.json
 ln -s -i ${DOTFILES_PATH}/langs/php/composer.json $HOME/.composer/composer.json
 
 # Clojure
