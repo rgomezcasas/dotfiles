@@ -1,4 +1,7 @@
-#!/usr/bin/env bash
+#!/bin/zsh
 
 # Git log filtering
-selected=$(git log --graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr by %an" | fzf --ansi --no-sort)
+commit=$(git log --graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr by %an" | fzf --ansi --no-sort)
+commit_hash=$(echo ${commit}  | awk '{print $2}')
+
+echo ${commit_hash} | tr -d '\n' | pbcopy
