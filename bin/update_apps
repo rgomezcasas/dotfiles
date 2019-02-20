@@ -48,3 +48,8 @@ if [ "$1" == "--all" ]; then
     echo '♢ Updating npm (JS)'
     npm update -g
 fi
+
+echo ''
+echo '♢ Restarting some apps'
+killall Rocket
+open /Applications/Rocket.app

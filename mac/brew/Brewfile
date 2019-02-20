@@ -96,6 +96,7 @@ brew "python@2"
 brew "qt"
 brew "rabbitmq-c"
 brew "redis", restart_service: true
+brew "rename"
 brew "ruby", link: true
 brew "rust"
 brew "sbt"

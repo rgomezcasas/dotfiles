@@ -5,8 +5,6 @@ alias sudo='sudo '
 
 # Others
 alias aux='ps uax'
-alias brwe='brew'
-alias brew-list-deps="brew list | while read cask; do echo -n \"\e[1;34m$cask ->\e[0m\"; brew deps $cask | awk '{printf(\" %s \", $0)}'; echo \"\"; done"
 alias edithosts='sudo vim /etc/hosts'
 alias c='pbcopy'
 alias copy='pbcopy'
@@ -27,10 +25,11 @@ alias reveal='open .'
 alias size_of_directory="ncdu --color dark -rr -x"
 alias watch_number_of_files='watch -n1 "find . -type f -print | wc -l"'
 alias t='time'
-alias c.='code .'
+alias c.='/usr/local/bin/code .'
 alias i.='idea.'
 alias pubkey='cat ~/.ssh/id_rsa.pub | pbcopy'
 alias fuck_sbt="ps aux | grep sbt | awk '{print $2}' | xargs kill -9"
+alias available_commands='bash -c "compgen -c"'
 
 alias privateip='ipconfig getifaddr en0'
 alias publicip="dig +short myip.opendns.com @resolver1.opendns.com"
@@ -39,6 +38,15 @@ alias catimg='imgcat'
 alias editdotfiles='code ~/.dotfiles'
 
 alias optimize_zsh='source ${ZDOTDIR:-${HOME}}/.zlogin'
+
+# Brew
+alias brwe='brew'
+alias brew-list-deps="brew list | while read cask; do echo -n \"\e[1;34m$cask ->\e[0m\"; brew deps $cask | awk '{printf(\" %s \", $0)}'; echo \"\"; done"
+alias bs="brew services"
+alias bsl="brew services list"
+alias bsst="brew services start"
+alias bssp="brew services stop"
+alias bsspa="brew services stop --all"
 
 # Start
 alias start-supervisor='supervisord -c /usr/local/etc/supervisord.ini'

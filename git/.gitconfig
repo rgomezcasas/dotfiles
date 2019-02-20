@@ -23,10 +23,6 @@
 	trustctime = false
 	precomposeunicode = false
 
-[commit]
-	# https://help.github.com/articles/signing-commits-using-gpg/
-	# gpgsign = true
-
 [help]
 	autocorrect = 1
 
@@ -87,6 +83,8 @@
 	# Detect whitespace errors when applying a patch
 	whitespace = fix
 [commit]
+	gpgsign = true
+[tag]
 	gpgsign = true
 [gpg]
 	program = gpg
