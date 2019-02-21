@@ -3,7 +3,7 @@
 DOTFILES_PATH=$HOME/.dotfiles
 
 ### MacOs stuff ###
-# All apps (This line it's 2 times because there are dependencies between brew cask and brew)
+# All apps (This line is 2 times because there are dependencies between brew cask and brew)
 brew bundle --file=${DOTFILES_PATH}/mac/brew/Brewfile
 brew bundle --file=${DOTFILES_PATH}/mac/brew/Brewfile
 # Remove bash last login
