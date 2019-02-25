@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+if [[ -z $1 ]]; then
+  grep_by=""
+  else
+  grep_by="$1"
+  shift $#
+fi
+
+brew_packages=$(brew search | xargs -n1 echo "brew install $1")
+brew_cask_packages=$(brew search --cask | xargs -n1 echo "brew cask install $1")
+
+all_packages=("${brew_packages[@]}" "${brew_cask_packages[@]}")
+
+package_to_install=$(printf '%s\n' "${all_packages[@]}" | fzf -q "${grep_by}")
+
+eval ${package_to_install}

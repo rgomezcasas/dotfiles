@@ -13,7 +13,7 @@ sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delet
 echo '[x] Mac downloads history empty'
 
 brew cleanup
-brew prune
+brew cleanup --prune-prefix
 echo '[x] Brew cache cleared'
 
 rm -rf ~/Library/Caches/com.tinyspeck.slackmacgap
