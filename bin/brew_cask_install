@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 if [[ -z $1 ]]; then
-  package=$(brew search | fzf)
+  package=$(brew search --cask | fzf)
   else
-  package=$(brew search | grep $1 | fzf)
+  package=$(brew search --cask | grep $1 | fzf)
 fi
 
 if [[ -z ${package} ]]; then
@@ -12,4 +12,4 @@ if [[ -z ${package} ]]; then
   exit 1
 fi
 
-brew install ${package}
+brew cask install ${package}

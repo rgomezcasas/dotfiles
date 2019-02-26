@@ -1,0 +1,13 @@
+if [[ -z $1 ]]; then
+  to_uninstall=$(brew cask list | fzf)
+  else
+  to_uninstall=$(brew cask list | grep $1 | fzf)
+fi
+
+if [[ -z ${to_uninstall} ]]; then
+  echo "You haven't selected any package to uninstall! ༼つ◕_◕༽つ"
+
+  exit 1
+fi
+
+brew uninstall ${to_uninstall}

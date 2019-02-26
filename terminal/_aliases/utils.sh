@@ -47,6 +47,10 @@ alias bsl="brew services list"
 alias bsst="brew services start"
 alias bssp="brew services stop"
 alias bsspa="brew services stop --all"
+alias bi="brew_install"
+alias bu="brew_uninstall"
+alias bci="brew_cask_install"
+alias bcu="brew_cask_uninstall"
 
 # Start
 alias start-supervisor='supervisord -c /usr/local/etc/supervisord.ini'
