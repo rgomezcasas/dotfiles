@@ -18,7 +18,7 @@ ln -s -i ${DOTFILES_PATH}/mac/karabiner-elements $HOME/.config/karabiner
 mkdir -p $HOME/Library/Application\ Support/Spectacle
 ln -s -i ${DOTFILES_PATH}/mac/spectacle/Shortcuts.json $HOME/Library/Application\ Support/Spectacle/Shortcuts.json
 # Rocket
-ln -s ${DOTFILES_PATH}/mac/Rocket $HOME/Library/Application\ Support/Rocket
+ln -s ${DOTFILES_PATH}/mac/Rocket $HOME/Library/Application\ Support
 # Docker for Mac
 ln -s ${DOTFILES_PATH}/mac/docker/settings.json $HOME/Library/Group\ Containers/group.com.docker/settings.json
 

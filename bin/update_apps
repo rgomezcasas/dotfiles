@@ -28,7 +28,7 @@ cd ${DOTFILES_PATH}
 git pull --rebase --autostash
 brew bundle install --file=${HOMEBREW_BUNDLE_FILE_PATH}
 brew bundle dump --file=${HOMEBREW_BUNDLE_FILE_PATH} --force
-brew bundle cleanup --file=${HOMEBREW_BUNDLE_FILE_PATH} --foce
+brew bundle cleanup --file=${HOMEBREW_BUNDLE_FILE_PATH} --force
 
 if [ "$1" == "--all" ]; then
     echo ''
