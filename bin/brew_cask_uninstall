@@ -10,4 +10,4 @@ if [[ -z ${to_uninstall} ]]; then
   exit 1
 fi
 
-brew uninstall ${to_uninstall}
+brew cask uninstall ${to_uninstall}
