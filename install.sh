@@ -52,6 +52,9 @@ ln -s -i ${DOTFILES_PATH}/git/.gitattributes $HOME/.gitattributes
 # Vim
 ln -s -i ${DOTFILES_PATH}/editors/vim/.vimrc $HOME/.vimrc
 
+# Sublime Text
+ln -s -i ${DOTFILES_PATH}/editors/sublime-text-3 $HOME/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
+
 # VS Code
 ln -s ${DOTFILES_PATH}/editors/vs-code/settings.json $HOME/Library/Application\ Support/Code/User/settings.json
 ln -s ${DOTFILES_PATH}/editors/vs-code/keybindings.json $HOME/Library/Application\ Support/Code/User/keybindings.json

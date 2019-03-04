@@ -3,3 +3,10 @@
 
 # Licences
 mac/Rocket/.licence
+
+# Sublime Text
+/editors/sublime-text-3/Package Control.cache
+/editors/sublime-text-3/Package Control.last-run
+/editors/sublime-text-3/Package Control.merged-ca-bundle
+/editors/sublime-text-3/Package Control.user-ca-bundle
+/editors/sublime-text-3/oscrypto-ca-bundle.crt
