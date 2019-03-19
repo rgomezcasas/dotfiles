@@ -891,9 +891,9 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 126 606 469 0 0 1440 900 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>1904 540 644 187 1440 129 1920 1080 </string>
+	<string>4141 389 1018 447 3360 129 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1973 395 854 548 1440 129 1920 1080 </string>
+	<string>320 0 959 800 0 0 1280 800 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>176 75 854 548 0 0 1440 900 </string>
 	<key>NeverWarnAboutShortLivedSessions_10B05570-B840-47B9-8682-D933DFEA6004</key>
@@ -1470,7 +1470,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>5355D5F7-2557-4032-B6B0-FBEBE3F611D4</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>32</integer>
+	<integer>40</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -2661,6 +2661,8 @@
 	<false/>
 	<key>QuitWhenAllWindowsClosed</key>
 	<true/>
+	<key>RemapModifiersWithoutEventTap</key>
+	<true/>
 	<key>RightCommand</key>
 	<integer>8</integer>
 	<key>RightOption</key>
@@ -2676,7 +2678,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-02-26T09:59:23Z</date>
+	<date>2019-03-06T10:30:20Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
@@ -2684,7 +2686,7 @@
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>
-	<true/>
+	<false/>
 	<key>ShowBookmarkName</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
@@ -2754,7 +2756,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.3.20190226-nightly</string>
+	<string>3.3.20190306-nightly</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>

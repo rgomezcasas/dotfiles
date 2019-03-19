@@ -79,7 +79,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "/usr/local/bin/idea"
+                                        "shell_command": "/Users/rafa.gomez/.dotfiles/bin/open-intellij"
                                     }
                                 ],
                                 "type": "basic"
@@ -103,6 +103,29 @@
                                 "to": [
                                     {
                                         "shell_command": "open -a 'Google Chrome.app'"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "[keyboard] ctr + opt + cmd + s -> Slack",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "s",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control",
+                                            "left_option",
+                                            "left_command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -a /Applications/Slack.app"
                                     }
                                 ],
                                 "type": "basic"

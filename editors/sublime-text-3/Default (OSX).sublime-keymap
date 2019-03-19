@@ -7,5 +7,6 @@
     { "keys": ["alt+up"], "command": "expand_selection", "args": {"to": "scope"} },
     { "keys": ["super+delete"], "command": "run_macro_file", "args": {
         "file": "res://Packages/Default/Delete Line.sublime-macro"}
-    }
+    },
+    { "keys": ["super+1"], "command": "toggle_side_bar" }
 ]

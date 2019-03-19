@@ -60,8 +60,3 @@ alias log-supervisor='tail -f /usr/local/var/log/supervisord.log'
 # Mac
 alias out='outdated_apps'
 alias up='update_apps'
-
-# Functions
-function idea. {
-  idea $PWD &>/dev/null
-}
