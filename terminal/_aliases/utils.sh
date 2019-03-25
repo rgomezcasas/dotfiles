@@ -32,7 +32,6 @@ alias optimize_zsh='source ${ZDOTDIR:-${HOME}}/.zlogin'
 
 # Brew
 alias brwe='brew'
-alias brew-list-deps="brew list | while read cask; do echo -n \"\e[1;34m$cask ->\e[0m\"; brew deps $cask | awk '{printf(\" %s \", $0)}'; echo \"\"; done"
 alias bs="brew services"
 alias bsl="brew services list"
 alias bsst="brew services start"
