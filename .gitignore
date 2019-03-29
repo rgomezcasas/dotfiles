@@ -4,6 +4,9 @@
 # Licences
 mac/Rocket/.licence
 
+# Karabiner
+mac/karabiner-elements/automatic_backups
+
 # Sublime Text
 /editors/sublime-text-3/Package Control.cache
 /editors/sublime-text-3/Package Control.last-run
