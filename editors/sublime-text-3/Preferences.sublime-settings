@@ -1,8 +1,7 @@
 {
 	"always_show_minimap_viewport": true,
 	"bold_folder_labels": true,
-	"theme": "gruvbox (Dark) (Medium).sublime-theme",
-	"color_scheme": "Packages/gruvbox/gruvbox (Dark) (Medium).tmTheme",
+	"color_scheme": "Packages/gruvbox/gruvbox (Dark) (Hard).sublime-color-scheme",
 	"detect_slow_plugins": true,
 	"enable_tab_scrolling": false,
 	"fade_fold_buttons": false,
@@ -18,6 +17,8 @@
 	[
 	],
 	"font_size": 15,
+	"gruvbox_sidebar_compact": true,
+	"gruvbox_tabs_xxs": true,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"hot_exit": false,
@@ -42,9 +43,8 @@
 	],
 	"shift_tab_unindent": true,
 	"tab_size": 4,
+	"theme": "gruvbox (Dark) (Hard).sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
-	"word_wrap": true,
-	"gruvbox_tabs_xxs": true,
-	"gruvbox_sidebar_compact": true
+	"word_wrap": true
 }
