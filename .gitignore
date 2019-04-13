@@ -2,7 +2,7 @@
 /**/**/private-*
 
 # Licences
-mac/Rocket/.licence
+/mac/Rocket/.licence
 
 # Karabiner
 mac/karabiner-elements/automatic_backups
@@ -13,3 +13,6 @@ mac/karabiner-elements/automatic_backups
 /editors/sublime-text-3/Package Control.merged-ca-bundle
 /editors/sublime-text-3/Package Control.user-ca-bundle
 /editors/sublime-text-3/oscrypto-ca-bundle.crt
+
+# Others
+/mac/karabiner-elements/automatic_backups/*
