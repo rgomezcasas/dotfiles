@@ -696,6 +696,30 @@
                     "fn_function_keys": [
                         {
                             "from": {
+                                "key_code": "f6"
+                            },
+                            "to": {
+                                "consumer_key_code": "play_or_pause"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "f7"
+                            },
+                            "to": {
+                                "key_code": "f7"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "f8"
+                            },
+                            "to": {
+                                "key_code": "f8"
+                            }
+                        },
+                        {
+                            "from": {
                                 "key_code": "f9"
                             },
                             "to": {
@@ -720,6 +744,14 @@
                     "ignore": false,
                     "manipulate_caps_lock_led": false,
                     "simple_modifications": [
+                        {
+                            "from": {
+                                "key_code": "application"
+                            },
+                            "to": {
+                                "key_code": "fn"
+                            }
+                        },
                         {
                             "from": {
                                 "key_code": "grave_accent_and_tilde"
@@ -766,14 +798,6 @@
                             },
                             "to": {
                                 "key_code": "right_alt"
-                            }
-                        },
-                        {
-                            "from": {
-                                "key_code": "application"
-                            },
-                            "to": {
-                                "key_code": "fn"
                             }
                         }
                     ]
