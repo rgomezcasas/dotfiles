@@ -8,7 +8,6 @@ tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "moncho/dry"
-cask "java"
 brew "apr"
 brew "openssl"
 brew "autoconf"
@@ -47,16 +46,20 @@ brew "libtool"
 brew "unixodbc"
 brew "freetds"
 brew "fzf"
+brew "gcc"
 brew "jpeg"
 brew "libtiff"
 brew "webp"
 brew "gd"
 brew "libxml2"
+brew "libdap"
 brew "libgeotiff"
 brew "libpq"
 brew "python@2"
+brew "numpy"
 brew "openjpeg"
 brew "qt"
+brew "poppler"
 brew "zstd"
 brew "gdal"
 brew "gflags"
@@ -145,6 +148,7 @@ cask "google-backup-and-sync"
 cask "google-chrome-beta"
 cask "handbrake"
 cask "handshaker"
+cask "java"
 cask "jetbrains-toolbox"
 cask "jmc"
 cask "kafka-tool"
@@ -171,8 +175,8 @@ cask "vnc-viewer"
 cask "webviewscreensaver"
 cask "whatsapp"
 cask "zoomus"
-mas "GarageBand", id: 682658836
-mas "iMovie", id: 408981434
-mas "Keynote", id: 409183694
-mas "Microsoft OneNote", id: 784801555
-mas "Monosnap", id: 540348655
+mas "com.apple.garageband10", id: 682658836
+mas "com.apple.iMovieApp", id: 408981434
+mas "com.apple.iWork.Keynote", id: 409183694
+mas "com.microsoft.onenote.mac", id: 784801555
+mas "com.monosnap.monosnap", id: 540348655

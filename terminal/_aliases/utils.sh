@@ -4,6 +4,7 @@
 alias sudo='sudo '
 
 # Others
+alias available_jdks='ls /Library/Java/JavaVirtualMachines'
 alias aux='ps uax'
 alias c='pbcopy'
 alias copy='pbcopy'
@@ -34,8 +35,9 @@ alias optimize_zsh='source ${ZDOTDIR:-${HOME}}/.zlogin'
 alias brwe='brew'
 alias bs="brew services"
 alias bsl="brew services list"
-alias bsst="brew services start"
+alias bss="brew services start"
 alias bssp="brew services stop"
+alias bsr="brew services restart"
 alias bsspa="brew services stop --all"
 alias bi="brew_install"
 alias bu="brew_uninstall"
