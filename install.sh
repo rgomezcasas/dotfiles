@@ -2,9 +2,6 @@
 
 DOTFILES_PATH=$HOME/.dotfiles
 
-### To ensure ###
-* In `cat /etc/paths` `/usr/local/bin` should be the first
-
 ### MacOs stuff ###
 # All apps (This line is 2 times because there are dependencies between brew cask and brew)
 brew bundle --file=${DOTFILES_PATH}/mac/brew/Brewfile
@@ -33,6 +30,8 @@ sudo ln -s -i ${DOTFILES_PATH}/mac/plist/limit.maxproc.plist /Library/LaunchDaem
 sudo chown root:wheel /Library/LaunchDaemons/limit.maxproc.plist
 sudo launchctl load -w /Library/LaunchDaemons/limit.maxproc.plist
 
+# Correct paths (so, we handle all with $PATH)
+sudo truncate -s 0 /etc/paths
 
 ### Console stuff ###
 # Bash

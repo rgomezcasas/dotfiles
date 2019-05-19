@@ -18,19 +18,22 @@ export HOMEBREW_BUNDLE_FILE_PATH=${DOTFILES_PATH}/mac/brew/Brewfile
 export LANG=en_GB
 
 # @todo Migrate this to an array of paths (I don't like this inline because it's hard to read)
-PATH=/usr/local/sbin:$PATH
-PATH=/usr/local/bin:$PATH
-PATH=/usr/local/opt/fzf/bin:$PATH
-PATH=/usr/local/opt/make/libexec/gnubin:$PATH
-PATH=~/.composer/vendor/bin:$PATH
+PATH=~/.composer/vendor/bin
 PATH=${PHP_PATH}/sbin:$PATH
 PATH=${PHP_PATH}/bin:$PATH
 PATH=${PYTHON_PATH}/libexec/bin:$PATH
 PATH=${GEM_HOME}/bin:$PATH
 PATH=${GOPATH}/bin:$PATH
 PATH=${JAVA_HOME}/bin:$PATH
-PATH=~/bin:$PATH
 PATH=${DOTFILES_PATH}/git/bin:$PATH
 PATH=${DOTFILES_PATH}/scripts:$PATH
+PATH=$HOME/bin:$PATH
+PATH=/sbin:$PATH
+PATH=/usr/sbin:$PATH
+PATH=/usr/local/sbin:$PATH
+PATH=/usr/bin:$PATH
+PATH=/usr/local/opt/make/libexec/gnubin:$PATH
+PATH=/bin:$PATH
+PATH=/usr/local/bin:$PATH
 
 export PATH=$PATH

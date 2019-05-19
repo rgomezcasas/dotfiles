@@ -6,7 +6,7 @@ alias gd='git diff --color'
 alias gs='git status -sb'
 alias gf='git fetch --all -p'
 alias gps='git push'
+alias gpsf='git push --force'
 alias gpl='git pull --rebase --autostash'
-alias gpom='git pull origin master --rebase --autostash'
 alias gb='git branch'
 grn() { git rebase -i HEAD~"$1"; }
