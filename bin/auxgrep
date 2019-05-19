@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-ps aux | grep -v grep | grep $1

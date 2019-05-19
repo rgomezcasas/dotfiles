@@ -2,6 +2,9 @@
 
 DOTFILES_PATH=$HOME/.dotfiles
 
+### To ensure ###
+* In `cat /etc/paths` `/usr/local/bin` should be the first
+
 ### MacOs stuff ###
 # All apps (This line is 2 times because there are dependencies between brew cask and brew)
 brew bundle --file=${DOTFILES_PATH}/mac/brew/Brewfile
@@ -41,6 +44,9 @@ ln -s -i ${DOTFILES_PATH}/terminal/bash/.profile $HOME/.profile
 ln -s -i ${DOTFILES_PATH}/terminal/zsh/.zshrc $HOME/.zshrc
 ln -s -i ${DOTFILES_PATH}/terminal/zsh/.zimrc $HOME/.zimrc
 ln -s -i ${DOTFILES_PATH}/terminal/zsh/.zlogin $HOME/.zlogin
+
+# Dash
+ln -sf $(which dash) /usr/local/bin/sh
 
 ### Git stuff ###
 # Git

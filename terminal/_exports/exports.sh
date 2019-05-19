@@ -1,6 +1,6 @@
 export MY_SSH_USERNAME='rafa.gomez'
 
-export JAVA_HOME='/Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Contents/Home'
+export JAVA_HOME='/Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home'
 export PHP_PATH='/usr/local/opt/php@7.1'
 export PYTHON_PATH='/usr/local/opt/python'
 export GOPATH="$HOME/.go"
@@ -31,6 +31,6 @@ PATH=${GOPATH}/bin:$PATH
 PATH=${JAVA_HOME}/bin:$PATH
 PATH=~/bin:$PATH
 PATH=${DOTFILES_PATH}/git/bin:$PATH
-PATH=${DOTFILES_PATH}/bin:$PATH
+PATH=${DOTFILES_PATH}/scripts:$PATH
 
 export PATH=$PATH

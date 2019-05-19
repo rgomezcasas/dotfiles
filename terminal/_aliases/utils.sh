@@ -12,17 +12,14 @@ alias copy_ssh_key='xclip -sel clip < ~/.ssh/id_rsa.pub'
 alias count_files_recursive='find . -type f -print | wc -l'
 alias count_files_recursive_per_directory='ls -d */ | xargs -I _ sh -c "find \"_\" -type f | wc -l | xargs echo _"'
 alias dc='docker_connect'
-alias fuck!='sudo $history[1]'
 alias flat_this_dir="sudo find . -mindepth 2 -type f -exec mv -i '{}' . ';'"
 alias k='kill -9'
 alias ping='prettyping --nolegend'
 alias preview="fzf --preview 'bat --color \"always\" {}'"
-alias reveal='open .'
 alias size_of_directory="ncdu --color dark -rr -x"
 alias watch_number_of_files='watch -n1 "find . -type f -print | wc -l"'
 alias c.='subl .'
 alias i.='idea.'
-alias fuck_sbt="ps aux | grep sbt | awk '{print $2}' | xargs kill -9"
 alias available_commands='bash -c "compgen -c"'
 alias code='cd ~/Code'
 
