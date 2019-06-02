@@ -9,8 +9,8 @@ brew bundle --file=${DOTFILES_PATH}/mac/brew/Brewfile
 # Remove bash last login
 touch $HOME/.hushlogin
 # Alfred
-mkdir -p $HOME/Library/Application\ Support/Alfred\ 3/
-ln -s -i ${DOTFILES_PATH}/mac/alfred $HOME/Library/Application\ Support/Alfred\ 3/Alfred.alfredpreferences
+mkdir -p $HOME/Library/Application\ Support/Alfred
+ln -s -i ${DOTFILES_PATH}/mac/alfred $HOME/Library/Application\ Support/Alfred/Alfred.alfredpreferences
 # Karabiner Elements
 mkdir $HOME/.config
 ln -s -i ${DOTFILES_PATH}/mac/karabiner-elements $HOME/.config/karabiner

@@ -4,7 +4,5 @@
 <dict>
 	<key>advanced</key>
 	<false/>
-	<key>outputShowThousandsDelimiter</key>
-	<false/>
 </dict>
 </plist>

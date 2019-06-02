@@ -817,10 +817,34 @@
                     "simple_modifications": [
                         {
                             "from": {
-                                "key_code": "left_gui"
+                                "key_code": "f9"
                             },
                             "to": {
-                                "key_code": "left_option"
+                                "consumer_key_code": "scan_previous_track"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "f10"
+                            },
+                            "to": {
+                                "consumer_key_code": "scan_next_track"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "f11"
+                            },
+                            "to": {
+                                "consumer_key_code": "volume_decrement"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "f12"
+                            },
+                            "to": {
+                                "consumer_key_code": "volume_increment"
                             }
                         },
                         {
@@ -829,6 +853,22 @@
                             },
                             "to": {
                                 "key_code": "left_command"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "left_gui"
+                            },
+                            "to": {
+                                "key_code": "left_option"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "f5"
+                            },
+                            "to": {
+                                "consumer_key_code": "play_or_pause"
                             }
                         }
                     ]
