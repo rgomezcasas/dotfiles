@@ -1,5 +1,7 @@
 export MY_SSH_USERNAME='rafa.gomez'
 
+ export GPG_TTY=$(tty)
+
 export JAVA_HOME='/Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home'
 export PHP_PATH='/usr/local/opt/php@7.1'
 export PYTHON_PATH='/usr/local/opt/python'
@@ -15,7 +17,10 @@ export HOMEBREW_NO_ANALYTICS=true
 export HOMEBREW_INSTALL_BADGE="(ʘ‿ʘ)"
 export HOMEBREW_BUNDLE_FILE_PATH=${DOTFILES_PATH}/mac/brew/Brewfile
 
-export LANG=en_GB
+export LANG=en_US
+
+export _JAVA_AWT_WM_NONREPARENTING=1
+
 
 # @todo Migrate this to an array of paths (I don't like this inline because it's hard to read)
 PATH=~/.composer/vendor/bin

@@ -1,0 +1,58 @@
+configuration {
+    modi: 				"drun";
+    me-select-entry:	"MouseSecondary";
+    me-accept-entry:	"MousePrimary";
+    scroll-method:      1;
+    display-windowcd:   "Window: ";
+    show-icons:         true;
+    window-format:		"{c} - {t}";
+}
+
+* {
+    background:                  #292f34FF;
+    background-color:            #00000000;
+    foreground:                  #F6F9FFFF;
+    selected:                    #1ABB9BFF;
+
+    active-background:           #3A464BFF;
+    urgent-background:           #800000FF;
+    urgent-foreground:           @foreground;
+    selected-urgent-background:  @urgent-foreground;
+    selected-urgent-foreground:  @urgent-background;
+
+    font:                        "xos4 Terminus 18px";
+    text-color:                  @foreground;
+
+    border:                      0px;
+    padding:                     0px;
+    spacing:                     0px;
+}
+window {
+    location:         northwest;
+    width:            200px;
+    background-color: @background;
+    padding:          4px;
+    y-offset:		  25px;
+}
+listview {
+    lines:        17;
+    fixed-height: false;
+    spacing:      2px;
+    scrollbar:    false;
+}
+element.normal.active,
+element.alternate.active {
+    background-color: @active-background;
+}
+element.selected {
+    background-color: @selected;
+}
+element.normal.urgent,
+element.alternate.urgent {
+    background-color: @urgent-background;
+    text-color:       @urgent-foreground;
+}
+element.selected.urgent {
+    background-color: @selected-urgent-background;
+    text-color:       @selected-urgent-foreground;
+}

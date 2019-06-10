@@ -1,0 +1,180 @@
+configuration {
+	me-select-entry:	"MouseSecondary";
+	me-accept-entry:	"MousePrimary";
+	scroll-method:      1;
+    show-icons:         true;
+    sidebar-mode:		true;
+    kb-custom-1:        "";
+    kb-custom-2:        "";
+    kb-custom-3:        "";
+    kb-custom-4:        "";
+    kb-custom-5:        "";
+    kb-custom-6:        "";
+    kb-custom-7:        "";
+    kb-custom-8:        "";
+    kb-custom-9:        "";
+    kb-custom-10:       "";
+    kb-select-1:        "Alt+1";
+    kb-select-2:        "Alt+2";
+    kb-select-3:        "Alt+3";
+    kb-select-4:        "Alt+4";
+    kb-select-5:        "Alt+5";
+    kb-select-6:        "Alt+6";
+    kb-select-7:        "Alt+7";
+    kb-select-8:        "Alt+8";
+    kb-select-9:        "Alt+9";
+    kb-select-10:       "Alt+0";
+}
+
+* {
+////	COLORS	////
+
+////	uncomment to match bspwm edition theme
+	background:                  #222D32FF;
+	background-color:            #29353BFF;
+	foreground:                  #F6F9FFFF;
+	selected:                    #1ABB9BFF;
+	selected-foreground:         @foreground;
+
+////	 uncomment to match Adapta Nokto theme
+//	background:                  #222D32E8;
+//	background-color:            #00000000;
+//	foreground:                  #CFD8DCFF;
+//	selected:                    #00BCD4FF;
+//	selected-foreground:         #FFFFFFFF;
+
+////	common - active and urgent
+    active-background:           #3A464BFF;
+    urgent-background:           #800000FF;
+    urgent-foreground:           @foreground;
+    selected-urgent-background:  @urgent-foreground;
+    selected-urgent-foreground:  @urgent-background;
+
+////	TEXT	////
+
+	font:				"xos4 Terminus 18px";
+//    font:				"Knack Nerd Font 16px";
+    text-color:			@foreground;
+
+////	PADDING ETC	////
+
+	margin:				0px;
+	border:				0px;
+	padding:			0px;
+	spacing:			0px;
+	elementpadding:		2px 0px;
+	elementmargin:		0px 2px;
+	listmargin:			0px 2px 0px 0px;
+
+////	SIZE	////
+
+	windowwidth:	40ch;
+	buttonwidth:	18ch;
+	lines:			12;
+	fixed-height:	false;
+
+////	POSITION	////
+
+	location:		northwest;
+	anchor:			northwest;
+	x-offset:		0px;
+	y-offset:		24px;
+
+////	LAYOUT	////
+
+	scrollbar:		true;
+
+////	uncomment to get submenu-like style
+	menustyle:		[ sb-mainbox ];
+	buttonpadding:	2px 1ch;
+	button-bg:		@background;
+	dynamic:		true;
+
+////	uncomment to get tabs-like style	
+//	menustyle:		[ tb-mainbox ];
+//	buttonpadding:	14px 1ch;
+//	dynamic:		false;
+}
+//////////////////////////////////////////
+window {
+	width:			@windowwidth;
+	children:		@menustyle;
+}
+//submenu-style
+sb-mainbox {
+	orientation:	horizontal;
+	children:		[ sidebar, vertibox ];
+}
+//tabs-style
+tb-mainbox {
+	orientation:	vertical;
+	children:		[ inputbar, horibox ];
+	background-color:	@background;
+}
+//desktop-submenu
+dt-mainbox {
+	orientation:	vertical;
+	children:		[ boxdummy, sb-mainbox ];
+}
+horibox {
+	orientation:	horizontal;
+	children:		[ listview, sidebar ];
+}
+sidebar {
+	orientation:	vertical;
+}
+button {
+	horizontal-align:	0;
+	padding:		@buttonpadding;
+	width:			@buttonwidth;
+	background-color:	@button-bg;
+	expand:			false;
+}
+vertibox {
+	orientation:	vertical;
+	children:		[ inputbar, listview ];
+	background-color:	@background;
+}
+prompt {
+	enabled:		false;
+}
+listview {
+	margin:			@listmargin;
+}
+scrollbar {
+	handle-width:	0.5ch;
+	handle-color:	@selected;
+}
+boxdummy {
+	enabled:		false;
+	orientation:	vertical;
+	expand:			false;
+	children:		[ textboxdummy ];
+}
+textboxdummy {
+	str:			" ";
+}
+element, inputbar, textboxdummy {
+	padding:		@elementpadding;
+	margin:			@elementmargin;
+	width:			@elementwidth;
+}
+element.normal.active,
+element.alternate.active {
+	background-color:	@active-background;
+	text-color:			@selected-foreground;
+}
+element.selected,
+button.selected {
+	background-color:	@selected;
+	text-color:			@selected-foreground;
+}
+element.normal.urgent,
+element.alternate.urgent {
+	background-color:	@urgent-background;
+	text-color:			@urgent-foreground;
+}
+element.selected.urgent {
+	background-color:	@selected-urgent-background;
+	text-color:			@selected-urgent-foreground;
+}
