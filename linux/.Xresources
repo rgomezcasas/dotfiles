@@ -1,6 +1,8 @@
 ! Base16 Eighties
 ! Scheme: Chris Kempson (http://chriskempson.com)
 
+xft.dpi: 166
+
 *foreground:   #d3d0c8
 #ifdef background_opacity
 *background:   [background_opacity]#2d2d2d
