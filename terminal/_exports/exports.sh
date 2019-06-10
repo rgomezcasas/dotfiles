@@ -1,7 +1,5 @@
 export MY_SSH_USERNAME='rafa.gomez'
 
- export GPG_TTY=$(tty)
-
 export JAVA_HOME='/Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home'
 export PHP_PATH='/usr/local/opt/php@7.1'
 export PYTHON_PATH='/usr/local/opt/python'
