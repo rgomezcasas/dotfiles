@@ -1,6 +1,3 @@
-! Base16 Eighties
-! Scheme: Chris Kempson (http://chriskempson.com)
-
 xft.dpi: 166
 
 *foreground:   #d3d0c8
@@ -38,12 +35,11 @@ xft.dpi: 166
 *color20:      #a09f93
 *color21:      #e8e6df
 
-
-! URxvt.font:                       9x15,xft:TerminessTTFNerdFontMono
-
-! alternative font settings with 'terminus':
-URxvt.font:      -xos4-terminus-medium-r-normal--16-160-72-72-c-80-iso10646-1
-!URxvt.bold.font: -xos4-terminus-bold-r-normal--16-160-72-72-c-80-iso10646-1
+! Custom by Rafa
+URxvt*font: xft:DejaVu Sans Mono:size=13
+URxvt.boldFont:
+URxvt.internalBorder:  7
+! End custom
 
 URxvt*scrollBar:                  false
 URxvt*mouseWheelScrollPage:       false
