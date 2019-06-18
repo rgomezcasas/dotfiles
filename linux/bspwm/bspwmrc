@@ -15,13 +15,12 @@ bspc config bottom_padding -$gap
 bspc config gapless_monocle     false #Default setup uses negative padding, and gapless monocle looks really weird like that
 bspc config borderless_monocle  true
 bspc config single_monocle true
-bspc config paddingless_monocle false
 #bspc config ignore_ewmh_focus      true
 #bspc config initial_polarity second_child
 bspc config remove_disabled_monitors true
 bspc config remove_unplugged_monitors true
 ## Honor size hints: do not make windows smaller than they wish to be
-#bspc config honor_size_hints true 
+#bspc config honor_size_hints true
 
 ##Color settings
 bspc config focused_border_color "#1ABB9B"
@@ -91,10 +90,10 @@ bspc rule -a tint2 border=off manage=off
 ##  windows on the desktop. Using it disables negative window gap.
 #autogap &
 
-##  This script balances all windows when new one is spawned 
+##  This script balances all windows when new one is spawned
 #euclid_balancer &
 
-##Edge-switcher switches to next workspace when moves moves to the 
+##Edge-switcher switches to next workspace when moves moves to the
 ##edge of the monitor (behavior similar to enlightenment)
 #edge-switcher &
 

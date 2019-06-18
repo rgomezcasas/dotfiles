@@ -5,7 +5,7 @@
 <img src="https://user-images.githubusercontent.com/1331435/36755901-df80a99c-1c0d-11e8-86cd-2f0f0003d28b.gif" alt="rgomezcasas/dotfiles">
 
 <p align="center">
-  <a href="install.sh">Install</a>&nbsp;&nbsp;&nbsp;
+  <a href="install-linux.sh">Install</a>&nbsp;&nbsp;&nbsp;
   <a href="terminal">Terminal</a>&nbsp;&nbsp;&nbsp;
   <a href="git/.gitconfig">Git configuration</a>
 </p>

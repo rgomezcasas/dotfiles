@@ -2,7 +2,10 @@
 
 DOTFILES_PATH=$HOME/.dotfiles
 
-### MacOs stuff ###
+### Linux stuff ###
+# Fonts
+# mkdir -p .local/share/fonts
+# fc-cache
 
 ### Console stuff ###
 # Bash
