@@ -1,5 +1,5 @@
 #! /bin/sh
-gap=15
+gap=0
 PANEL_HEIGHT=25
 export gap
 export PANEL_HEIGHT

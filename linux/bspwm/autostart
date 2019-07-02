@@ -8,14 +8,14 @@ xsetroot -cursor_name left_ptr &
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0" &
 xrdb merge .Xresources &
 #xfsettingsd &
-## Wallpaper. Nitrogen just draws wallpaper, 
+## Wallpaper. Nitrogen just draws wallpaper,
 ## while xfdesktop can also give applications menu and icons on desktop.
-## It uses a lot more resources however. It you enable it you may want to 
+## It uses a lot more resources however. It you enable it you may want to
 ## adjust ~/scripts/MouseLaunch to use xfdesktops app menu.
 #nitrogen --restore &
 sh ~/.fehbg &
 #xfdesktop -D &
-## compositing. Required for shadows, transparency and stuff. 
+## compositing. Required for shadows, transparency and stuff.
 ## Reduces flicker. Disabling saves resources.
 #compton -b &
 ## hides mouse when you are not using it. When mouse is hidden, rootmenu considers mouse on desktop, so actions can be triggered.
@@ -35,14 +35,14 @@ xset s noexpose &
 xset c on &
 xset -dpms &
 xbacklight -set 15 &
-## Panel. The default is lemonbar script. Xfce4-panel can be more 
+## Panel. The default is lemonbar script. Xfce4-panel can be more
 ## easily configurable if you prefer that. Not installed by default
 #run_once xfce4-panel -d
 #lemonpanel &
 #limepanel &
 sleep 2s && bspc config top_padding 10 &
 #mylime &
-## Light system tray to use with lemonbar. Disable if you dont need it. 
+## Light system tray to use with lemonbar. Disable if you dont need it.
 ## Edit ~/.stalonetrayrc if it is in wrong place.
 #sleep 2s && stalonetray --dockapp-mode simple &
 ## Welcome message

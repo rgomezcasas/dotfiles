@@ -4,8 +4,13 @@ DOTFILES_PATH=$HOME/.dotfiles
 
 ### Linux stuff ###
 # Fonts
-# mkdir -p .local/share/fonts
-# fc-cache
+mkdir -p .local/share/fonts
+ln -s -i ${DOTFILES_PATH}/fonts/Courier $HOME/.local/share/fonts
+ln -s -i ${DOTFILES_PATH}/fonts/Helvetica $HOME/.local/share/fonts
+ln -s -i ${DOTFILES_PATH}/fonts/Times $HOME/.local/share/fonts
+ln -s -i ${DOTFILES_PATH}/fonts/Osaka $HOME/.local/share/fonts
+
+fc-cache
 
 ### Console stuff ###
 # Bash

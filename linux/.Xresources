@@ -35,9 +35,11 @@ Xft.dpi: 120
 
 !!! URcvt Settings
 ! Theme
-URxvt*font: xft:DejaVu Sans Mono:size=10
+URxvt*font: xft:DejaVu Sans Mono:size=11
 URxvt.boldFont:
 URxvt.internalBorder:  7
+URxvt.iso14755: false
+URxvt.iso14755_52: false
 ! End custom
 
 URxvt*scrollBar:                  false
