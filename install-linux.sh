@@ -12,6 +12,9 @@ ln -s -i ${DOTFILES_PATH}/fonts/Osaka $HOME/.local/share/fonts
 
 fc-cache
 
+# Configs
+ln -s -i ${DOTFILES_PATH}/linux/.Xmodmap $HOME/.Xmodmap
+
 ### Console stuff ###
 # Bash
 ln -s -i ${DOTFILES_PATH}/terminal/bash/.bashrc $HOME/.bashrc
