@@ -817,6 +817,14 @@
                     "simple_modifications": [
                         {
                             "from": {
+                                "key_code": "f5"
+                            },
+                            "to": {
+                                "consumer_key_code": "play_or_pause"
+                            }
+                        },
+                        {
+                            "from": {
                                 "key_code": "f9"
                             },
                             "to": {
@@ -861,14 +869,6 @@
                             },
                             "to": {
                                 "key_code": "left_option"
-                            }
-                        },
-                        {
-                            "from": {
-                                "key_code": "f5"
-                            },
-                            "to": {
-                                "consumer_key_code": "play_or_pause"
                             }
                         }
                     ]

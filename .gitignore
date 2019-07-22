@@ -1,12 +1,25 @@
-# Private Stuff
-/**/**/private-*
-/**/**/__pycache__/
+# MacOS
+# ----------------------------------
 
 # Licences
 /mac/Rocket/.licence
 
 # Karabiner
-mac/karabiner-elements/automatic_backups
+/mac/karabiner-elements/automatic_backups
+
+# Alfred
+/mac/alfred/remote
+
+
+# Linux
+# ----------------------------------
+
+
+# Common
+# ----------------------------------
+
+# Private Stuff
+/**/**/private-*
 
 # Sublime Text
 /editors/sublime-text-3/Package Control.cache
@@ -15,5 +28,3 @@ mac/karabiner-elements/automatic_backups
 /editors/sublime-text-3/Package Control.user-ca-bundle
 /editors/sublime-text-3/oscrypto-ca-bundle.crt
 
-# Others
-/mac/karabiner-elements/automatic_backups/*
