@@ -44,7 +44,7 @@ ln -s -i "$DOTFILES_PATH/terminal/zsh/.zimrc" "$HOME/.zimrc"
 ln -s -i "$DOTFILES_PATH/terminal/zsh/.zlogin" "$HOME/.zlogin"
 
 # Dash
-ln -sf "$(command -v dash)" "/usr/local/bin/sh"
+#ln -sf "$(command -v dash)" "/usr/local/bin/sh"
 
 ### Git stuff ###
 # Git
@@ -58,13 +58,13 @@ ln -s -i "$DOTFILES_PATH/editors/vim/.vimrc" "$HOME/.vimrc"
 
 ### Langs stuff ###
 # PHP
-mkdir "$HOME/.config/psysh"
+mkdir -p "$HOME/.config/psysh"
 ln -s -i "$DOTFILES_PATH/langs/php/psysh-config.php" "$HOME/.config/psysh/config.php"
-mkdir "$HOME/.composer/"
+mkdir -p "$HOME/.composer/"
 ln -s -i "$DOTFILES_PATH/langs/php/composer.json" "$HOME/.composer/composer.json"
 
 # Clojure
-mkdir "$HOME/.config/clojure"
+mkdir -p "$HOME/.config/clojure"
 ln -s -i "$DOTFILES_PATH/langs/clojure/profiles.clj" "$HOME/.config/clojure/profiles.clj"
 
 # Scala

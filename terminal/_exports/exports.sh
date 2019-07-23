@@ -19,6 +19,7 @@ export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 
 export _JAVA_AWT_WM_NONREPARENTING=1
+#export GPG_TTY=`tty`
 
 
 # @todo Migrate this to an array of paths (I don't like this inline because it's hard to read)
