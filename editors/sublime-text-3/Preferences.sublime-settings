@@ -1,7 +1,7 @@
 {
 	"always_show_minimap_viewport": true,
 	"bold_folder_labels": true,
-	"color_scheme": "Packages/gruvbox/gruvbox (Dark) (Hard).sublime-color-scheme",
+	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
 	"detect_slow_plugins": true,
 	"enable_tab_scrolling": false,
 	"fade_fold_buttons": false,
@@ -16,7 +16,7 @@
 	"font_options":
 	[
 	],
-	"font_size": 22,
+	"font_size": 20,
 	"gruvbox_sidebar_compact": true,
 	"gruvbox_tabs_xxs": true,
 	"highlight_line": true,
