@@ -31,6 +31,7 @@ PATH=${JAVA_HOME}/bin:$PATH
 PATH=${DOTFILES_PATH}/git/bin:$PATH
 PATH=${DOTFILES_PATH}/scripts:$PATH
 PATH=$HOME/bin:$PATH
+PATH=/snap/bin:$PATH
 PATH=/sbin:$PATH
 PATH=/usr/sbin:$PATH
 PATH=/usr/local/sbin:$PATH

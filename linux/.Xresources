@@ -35,7 +35,7 @@ Xft.dpi: 120
 
 !!! URcvt Settings
 ! Theme
-URxvt*font: xft:Dank Mono:size=12
+URxvt*font: xft:Ubuntu Mono:size=10
 URxvt.boldFont:
 URxvt.internalBorder:  7
 URxvt.iso14755: false
@@ -68,3 +68,7 @@ URxvt.keysym.Control-Up:          \033[1;5A
 URxvt.keysym.Shift-Control-Up:    \033[1;6A
 URxvt.keysym.Control-Down:        \033[1;5B
 URxvt.keysym.Shift-Control-Down:  \033[1;6B
+
+! Tabs
+!URxvt.perl-ext-common:  default,tabbed
+!URxvt.tabbed.new-button: false

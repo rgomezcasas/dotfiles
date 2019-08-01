@@ -19,7 +19,7 @@ alias preview="fzf --preview 'bat --color \"always\" {}'"
 alias size_of_directory="ncdu --color dark -rr -x"
 alias watch_number_of_files='watch -n1 "find . -type f -print | wc -l"'
 alias c.='subl .'
-alias i.='idea.'
+alias i.='idea. &'
 alias available_commands='bash -c "compgen -c"'
 alias code='cd ~/Code'
 
@@ -40,7 +40,7 @@ alias bi="brew_install"
 alias bu="brew_uninstall"
 alias bci="brew_cask_install"
 alias bcu="brew_cask_uninstall"
-
+alias tldr="tldr --theme=base16"
 # Start
 alias start-supervisor='supervisord -c /usr/local/etc/supervisord.ini'
 alias start-dynamo='dynamodb-local &'

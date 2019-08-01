@@ -1,10 +1,4 @@
 [Desktop Entry]
-Type=Application
-Exec=xmodmap /home/rafa/.Xmodmap
-Hidden=false
-NoDisplay=false
-X-GNOME-Autostart-enabled=true
-Name[en_US]=pgupdn
 Name=pgupdn
-Comment[en_US]=
-Comment=
+Exec=xmodmap /home/rafa/.Xmodmap
+Type=Application
