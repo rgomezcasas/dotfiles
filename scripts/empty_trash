@@ -21,4 +21,8 @@ rm -rf ~/Library/Caches/com.tinyspeck.slackmacgap
 rm -rf ~/Library/Caches/com.tinyspeck.slackmacgap.ShipIt
 echo '[x] Slack cache cleared'
 
+rm -rf ~/.zcompdump
+source "${ZDOTDIR:-${HOME}}"/.zlogin
+echo '[x] Compinit cleared'
+
 echo 'Done!'
