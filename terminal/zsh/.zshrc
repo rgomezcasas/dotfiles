@@ -1,6 +1,9 @@
 export DOTFILES_PATH=$HOME/.dotfiles
 export ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
 
+# ZSH Ops
+setopt HIST_IGNORE_ALL_DUPS
+
 # Start zim
 source ${ZIM_HOME}/init.zsh
 
