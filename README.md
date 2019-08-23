@@ -14,17 +14,17 @@
 I like to open/split the iTerm and immediately have all operative. I reached this goal with this configuration.
 
 ```bash
-λ ~ for i in $(seq 1 10); do /usr/bin/time zsh -i -c exit; done
-        0.03 real         0.02 user         0.01 sys
-        0.03 real         0.02 user         0.01 sys
-        0.04 real         0.02 user         0.01 sys
-        0.04 real         0.02 user         0.01 sys
-        0.03 real         0.02 user         0.01 sys
-        0.03 real         0.02 user         0.01 sys
-        0.03 real         0.02 user         0.01 sys
-        0.04 real         0.02 user         0.01 sys
-        0.03 real         0.02 user         0.01 sys
-        0.03 real         0.02 user         0.01 sys
+λ ~ TIMEFMT=$'real %E\tuser %U\tsys %S'; repeat 10 {time zsh -i -c exit}
+real 0.01s      user 0.00s      sys 0.00s
+real 0.01s      user 0.00s      sys 0.00s
+real 0.01s      user 0.00s      sys 0.00s
+real 0.01s      user 0.00s      sys 0.00s
+real 0.01s      user 0.00s      sys 0.01s
+real 0.01s      user 0.00s      sys 0.00s
+real 0.01s      user 0.00s      sys 0.00s
+real 0.01s      user 0.00s      sys 0.01s
+real 0.01s      user 0.00s      sys 0.00s
+real 0.01s      user 0.00s      sys 0.00s
 ```
 
 This is a way faster than using oh-my-zsh with the minimal setup.
