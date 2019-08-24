@@ -80,7 +80,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "/Users/rafa.gomez/.dotfiles/bin/open-intellij"
+                                        "shell_command": "/Users/rafa.gomez/.dotfiles/scripts/open-intellij"
                                     }
                                 ],
                                 "type": "basic"
