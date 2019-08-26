@@ -1,6 +1,9 @@
 ulimit -n 65536
 ulimit -u 1000
 
+# Enable aliases to be sudo’ed
+alias sudo='sudo '
+
 # Register all aliases
 for aliasToSource in "$DOTFILES_PATH/terminal/_aliases/"*; do source $aliasToSource; done
 # Register all exports

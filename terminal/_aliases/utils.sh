@@ -1,35 +1,11 @@
 #!/usr/bin/env bash
 
-# Enable aliases to be sudo’ed
-alias sudo='sudo '
-
-# Others
-alias available_jdks='ls /Library/Java/JavaVirtualMachines'
-alias aux='ps uax'
-alias c='pbcopy'
-alias copy='pbcopy'
-alias copy_ssh_key='xclip -sel clip < ~/.ssh/id_rsa.pub'
-alias count_files_recursive='find . -type f -print | wc -l'
-alias count_files_recursive_per_directory='ls -d */ | xargs -I _ sh -c "find \"_\" -type f | wc -l | xargs echo _"'
-alias dc='docker_connect'
-alias flat_this_dir="sudo find . -mindepth 2 -type f -exec mv -i '{}' . ';'"
-alias k='kill -9'
-alias ping='prettyping --nolegend'
-alias preview="fzf --preview 'bat --color \"always\" {}'"
-alias size_of_directory="ncdu --color dark -rr -x"
-alias watch_number_of_files='watch -n1 "find . -type f -print | wc -l"'
-alias c.='subl .'
-alias i.='(idea $PWD &>/dev/null &)'
-alias available_commands='bash -c "compgen -c"'
-alias code='cd ~/Code'
-
-alias privateip='ipconfig getifaddr en0'
-alias publicip="dig +short myip.opendns.com @resolver1.opendns.com"
-
-alias optimize_zsh='source ${ZDOTDIR:-${HOME}}/.zlogin'
+# Mac
+alias out="outdated_apps"
+alias up="update_apps"
 
 # Brew
-alias brwe='brew'
+alias brwe="brew"
 alias bs="brew services"
 alias bsl="brew services list"
 alias bss="brew services start"
@@ -40,11 +16,25 @@ alias bi="brew_install"
 alias bu="brew_uninstall"
 alias bci="brew_cask_install"
 alias bcu="brew_cask_uninstall"
-alias tldr="tldr --theme=base16"
 
-# Log
-alias log-supervisor='tail -f /usr/local/var/log/supervisord.log'
+# Others
+alias available_commands='bash -c "compgen -c"'
+alias available_jdks='ls /Library/Java/JavaVirtualMachines'
+alias aux='ps uax'
+alias c='pbcopy'
+alias count_files_recursive='find . -type f -print | wc -l'
+alias count_files_recursive_per_directory='ls -d */ | xargs -I _ sh -c "find \"_\" -type f | wc -l | xargs echo _"'
+alias dc='docker_connect'
+alias flat_this_dir="sudo find . -mindepth 2 -type f -exec mv -i '{}' . ';'"
+alias ping='prettyping --nolegend'
+alias size_of_directory="ncdu --color dark -rr -x"
 
-# Mac
-alias out='outdated_apps'
-alias up='update_apps'
+alias k='kill -9'
+alias t="fzf --preview 'bat --color \"always\" {}'"
+alias i.='(idea $PWD &>/dev/null &)'
+alias o.='open .'
+
+alias privateip="ipconfig getifaddr en0"
+alias publicip="dig +short myip.opendns.com @resolver1.opendns.com"
+
+alias optimize_zsh='source ${ZDOTDIR:-${HOME}}/.zlogin'

@@ -1,5 +1,3 @@
-export MY_SSH_USERNAME='rafa.gomez'
-
 export JAVA_HOME='/Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home'
 export PHP_PATH='/usr/local/opt/php@7.2'
 export PYTHON_PATH='/usr/local/opt/python'
@@ -7,7 +5,8 @@ export GOPATH="$HOME/.go"
 export GEM_HOME="$HOME/.gem"
 
 export SBT_OPTS='-Xms512M -Xmx1024M -Xss2M -XX:MaxMetaspaceSize=512m -XX:ReservedCodeCacheSize=256M -Dfile.encoding=UTF8'
-export SBT_CREDENTIALS=$HOME/.sbt/.credentials
+export SBT_CREDENTIALS="$HOME/.sbt/.credentials"
+
 export FZF_DEFAULT_OPTS='--color=bg+:24 --reverse'
 
 export HOMEBREW_AUTO_UPDATE_SECS=86400
@@ -19,26 +18,28 @@ export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 
 export _JAVA_AWT_WM_NONREPARENTING=1
-#export GPG_TTY=`tty`
 
+paths=(
+  "$PHP_PATH/bin"
+  "$PHP_PATH/sbin"
+  "/usr/local/bin"
+  "/bin"
+  "/usr/local/opt/make/libexec/gnubin"
+  "/usr/bin"
+  "/usr/local/sbin"
+  "/usr/sbin"
+  "/sbin"
+  "/snap/bin"
+  "$HOME/bin"
+  "$DOTFILES_PATH/scripts"
+  "$DOTFILES_PATH/git/bin"
+  "$JAVA_HOME/bin"
+  "$GOPATH/bin"
+  "$GEM_HOME/bin"
+  "$PYTHON_PATH/libexec/bin"
+  "$HOME/.composer/vendor/bin"
+)
 
-# @todo Migrate this to an array of paths (I don't like this inline because it's hard to read)
-PATH=~/.composer/vendor/bin
-PATH=${PYTHON_PATH}/libexec/bin:$PATH
-PATH=${GEM_HOME}/bin:$PATH
-PATH=${GOPATH}/bin:$PATH
-PATH=${JAVA_HOME}/bin:$PATH
-PATH=${DOTFILES_PATH}/git/bin:$PATH
-PATH=${DOTFILES_PATH}/scripts:$PATH
-PATH=$HOME/bin:$PATH
-PATH=/snap/bin:$PATH
-PATH=/sbin:$PATH
-PATH=/usr/sbin:$PATH
-PATH=/usr/local/sbin:$PATH
-PATH=/usr/bin:$PATH
-PATH=/usr/local/opt/make/libexec/gnubin:$PATH
-PATH=/bin:$PATH
-PATH=/usr/local/bin:$PATH
-PATH=${PHP_PATH}/sbin:$PATH
-PATH=${PHP_PATH}/bin:$PATH
-export PATH=$PATH
+PATH=$(IFS=":"; echo "${paths[*]}";)
+
+export PATH
