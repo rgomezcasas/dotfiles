@@ -28,6 +28,7 @@ alias dc='docker_connect'
 alias flat_this_dir="sudo find . -mindepth 2 -type f -exec mv -i '{}' . ';'"
 alias ping='prettyping --nolegend'
 alias size_of_directory="ncdu --color dark -rr -x"
+alias completion="subl ~/Google\ Drive/Me/Other/autocompletion.txt"
 
 alias k='kill -9'
 alias t="fzf --preview 'bat --color \"always\" {}'"

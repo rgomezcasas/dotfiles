@@ -28,6 +28,7 @@ brew "pcre"
 brew "glib"
 brew "pixman"
 brew "cairo"
+brew "choose-gui"
 brew "cmake"
 brew "cmatrix"
 brew "coreutils"
@@ -171,3 +172,4 @@ mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
 mas "Microsoft OneNote", id: 784801555
 mas "Monosnap", id: 540348655
+mas "Xcode", id: 497799835

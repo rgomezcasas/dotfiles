@@ -3,6 +3,7 @@ export ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
 
 # ZSH Ops
 setopt HIST_IGNORE_ALL_DUPS
+setopt autopushd
 
 # Start zim
 source ${ZIM_HOME}/init.zsh

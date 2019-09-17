@@ -4,10 +4,10 @@
 # In order to have emoij support I needed to copy and paste with applescript instead of
 # using `pbcopy`
 
-dictionary_path=$1
-separator=$2
-#dictionary_path="/Users/rafa.gomez/Google Drive/Me/Other/autocompletion.txt"
-#separator="->"
+#dictionary_path=$1
+#separator=$2
+dictionary_path="/Users/rafa.gomez/Google Drive/Me/Other/autocompletion.txt"
+separator="->"
 
 autocomplete_abbrev=()
 autocomplete_text=()
