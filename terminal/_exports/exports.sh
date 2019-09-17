@@ -31,7 +31,7 @@ paths=(
   "/sbin"
   "/snap/bin"
   "$HOME/bin"
-  "$DOTFILES_PATH/scripts"
+  "$DOTFILES_PATH/bin"
   "$DOTFILES_PATH/git/bin"
   "$JAVA_HOME/bin"
   "$GOPATH/bin"
