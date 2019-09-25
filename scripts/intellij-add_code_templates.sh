@@ -7,4 +7,4 @@ intellij_code_templates_folder="$preferences_dir/$intellij_version/fileTemplates
 rm -rf "$intellij_code_templates_folder"
 ln -s -i "$DOTFILES_PATH/editors/intellij/Code Templates/" "$intellij_code_templates_folder"
 
-echo "Done!"
+echo "Done for $intellij_version!"
