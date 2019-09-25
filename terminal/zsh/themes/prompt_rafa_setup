@@ -1,4 +1,5 @@
-FIRST_CHARACTER="λ"
+FIRST_CHARACTER_OK="♪"
+FIRST_CHARACTER_KO="♫"
 AHEAD="↑"
 BEHIND="↓"
 DIVERGED="⥄"
@@ -7,7 +8,6 @@ NONE="✓"
 
 prompt_rafa_pwd() {
   prompt_short_dir=$(short_pwd)
-#  git_root=$(command git rev-parse --show-toplevel 2> /dev/null) && prompt_short_dir=${prompt_short_dir#${$(short_pwd $git_root):h}/}
   print -n "%F{yellow}${prompt_short_dir}"
 }
 
@@ -20,7 +20,7 @@ prompt_rafa_precmd() {
 }
 
 prompt_rafa_setup() {
-  local prompt_rafa_status='%(?:%F{green}:%F{red})$FIRST_CHARACTER '
+  local prompt_rafa_status='%(?:%F{green}$FIRST_CHARACTER_OK:%F{red}$FIRST_CHARACTER_KO) '
 
   autoload -Uz add-zsh-hook && add-zsh-hook precmd prompt_rafa_precmd
 

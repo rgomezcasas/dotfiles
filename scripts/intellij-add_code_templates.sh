@@ -5,6 +5,6 @@ intellij_version=$(ls "$preferences_dir" | grep 'IntelliJIdea' | sort -r | head 
 intellij_code_templates_folder="$preferences_dir/$intellij_version/fileTemplates"
 
 rm -rf "$intellij_code_templates_folder"
-ln -s -i "$DOTFILES_PATH/editors/intellij/Code\ Templates/" "$intellij_code_templates_folder"
+ln -s -i "$DOTFILES_PATH/editors/intellij/Code Templates/" "$intellij_code_templates_folder"
 
 echo "Done!"

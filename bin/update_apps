@@ -46,6 +46,7 @@ if [ "$1" == "--all" ]; then
 
     echo ''
     echo '♢ Updating npm (JS)'
+    npm install -g npm
     npm update -g
 fi
 
