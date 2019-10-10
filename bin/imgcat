@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # tmux requires unrecognized OSC sequences to be wrapped with DCS tmux;
 # <sequence> ST, and for all ESCs in <sequence> to be replaced with ESC ESC. It
@@ -24,7 +24,7 @@ function print_st() {
 #   filename: Filename to convey to client
 #   inline: 0 or 1
 #   base64contents: Base64-encoded contents
-#   print_filename: If non-empty, print the filename 
+#   print_filename: If non-empty, print the filename
 #                   before outputting the image
 function print_image() {
     print_osc

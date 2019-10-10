@@ -1,4 +1,4 @@
-#!/usr/bin/osascript
+#!/usr/bin/env osascript
 
 on run args
   tell app "System Events"

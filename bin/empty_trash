@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 sudo rm -rfv /Volumes/*/.Trashes
 echo '[x] Volumes trash empty'

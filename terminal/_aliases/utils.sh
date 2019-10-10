@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 # Mac
 alias out="outdated_apps"
 alias up="update_apps"
