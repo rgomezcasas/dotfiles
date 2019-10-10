@@ -1,6 +1,7 @@
 export JAVA_HOME='/Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home'
 export PHP_PATH='/usr/local/opt/php@7.2'
 export PYTHON_PATH='/usr/local/opt/python'
+export RUBY_PATH='/usr/local/opt/ruby'
 export GOPATH="$HOME/.go"
 export GEM_HOME="$HOME/.gem"
 
@@ -20,8 +21,17 @@ export LC_ALL="en_US.UTF-8"
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 paths=(
+  "$HOME/bin"
+  "$DOTFILES_PATH/bin"
+  "$DOTFILES_PATH/git/bin"
   "$PHP_PATH/bin"
   "$PHP_PATH/sbin"
+  "$RUBY_PATH/bin"
+  "$JAVA_HOME/bin"
+  "$GOPATH/bin"
+  "$GEM_HOME/bin"
+  "$PYTHON_PATH/libexec/bin"
+  "$HOME/.composer/vendor/bin"
   "/usr/local/bin"
   "/bin"
   "/usr/local/opt/make/libexec/gnubin"
@@ -29,15 +39,6 @@ paths=(
   "/usr/local/sbin"
   "/usr/sbin"
   "/sbin"
-  "/snap/bin"
-  "$HOME/bin"
-  "$DOTFILES_PATH/bin"
-  "$DOTFILES_PATH/git/bin"
-  "$JAVA_HOME/bin"
-  "$GOPATH/bin"
-  "$GEM_HOME/bin"
-  "$PYTHON_PATH/libexec/bin"
-  "$HOME/.composer/vendor/bin"
 )
 
 PATH=$(IFS=":"; echo "${paths[*]}";)
