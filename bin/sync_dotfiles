@@ -2,6 +2,7 @@
 
 cd "$DOTFILES_PATH" || exit
 
+brew services stop --all
 brew bundle dump --file="$HOMEBREW_BUNDLE_FILE_PATH" --force
 
 git pull --rebase --autostash
