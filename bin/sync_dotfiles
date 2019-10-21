@@ -1,7 +1,12 @@
 #!/usr/bin/env bash
 
-cd ${DOTFILES_PATH}
+cd "$DOTFILES_PATH" || exit
+
+brew bundle dump --file="$HOMEBREW_BUNDLE_FILE_PATH" --force
+
 git pull --rebase --autostash
-brew bundle --file=${DOTFILES_PATH}/mac/brew/Brewfile
+
+brew bundle cleanup --file="$HOMEBREW_BUNDLE_FILE_PATH" --force
+brew bundle install --file="$HOMEBREW_BUNDLE_FILE_PATH"
 
 echo 'Done! 👯‍'
