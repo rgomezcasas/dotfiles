@@ -1,9 +1,11 @@
+PHP_PATH='/usr/local/opt/php@7.2'
+GLOBAL_COMPOSER_PATH="$HOME/.composer"
+PYTHON_PATH='/usr/local/opt/python'
+RUBY_PATH='/usr/local/opt/ruby'
+
 export JAVA_HOME='/Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home'
-export PHP_PATH='/usr/local/opt/php@7.2'
-export PYTHON_PATH='/usr/local/opt/python'
-export RUBY_PATH='/usr/local/opt/ruby'
-export GOPATH="$HOME/.go"
 export GEM_HOME="$HOME/.gem"
+export GOPATH="$HOME/.go"
 
 export SBT_OPTS='-Xms512M -Xmx1024M -Xss2M -XX:MaxMetaspaceSize=512m -XX:ReservedCodeCacheSize=256M -Dfile.encoding=UTF8'
 export SBT_CREDENTIALS="$HOME/.sbt/.credentials"
@@ -18,8 +20,6 @@ export HOMEBREW_BUNDLE_FILE_PATH=${DOTFILES_PATH}/mac/brew/Brewfile
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 
-export _JAVA_AWT_WM_NONREPARENTING=1
-
 paths=(
   "$HOME/bin"
   "$DOTFILES_PATH/bin"
@@ -31,7 +31,7 @@ paths=(
   "$GOPATH/bin"
   "$GEM_HOME/bin"
   "$PYTHON_PATH/libexec/bin"
-  "$HOME/.composer/vendor/bin"
+  "$GLOBAL_COMPOSER_PATH/vendor/bin"
   "/usr/local/bin"
   "/bin"
   "/usr/local/opt/make/libexec/gnubin"
@@ -41,6 +41,9 @@ paths=(
   "/sbin"
 )
 
-PATH=$(IFS=":"; echo "${paths[*]}";)
+PATH=$(
+  IFS=":"
+  echo "${paths[*]}"
+)
 
 export PATH
