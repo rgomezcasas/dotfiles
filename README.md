@@ -2,8 +2,8 @@
   🐧 rgomezcasas/dotfiles
 </h1>
 <p align="center">
-    <img src="https://user-images.githubusercontent.com/1331435/36755901-df80a99c-1c0d-11e8-86cd-2f0f0003d28b.gif" alt="rgomezcasas/dotfiles">
-    <sub>Simple, fast, productivity-increaser dotfiles</sub>
+  <img src="https://user-images.githubusercontent.com/1331435/36755901-df80a99c-1c0d-11e8-86cd-2f0f0003d28b.gif" alt="rgomezcasas/dotfiles">
+  <sub>Simple, fast, productivity-increaser dotfiles</sub>
 </p>
 <p align="center">
   <a href="#-installation">Install</a>&nbsp;&nbsp;&nbsp;
@@ -11,6 +11,7 @@
   <a href="scripts">Bash Scripts</a>&nbsp;&nbsp;&nbsp;
   <a href="git/.gitconfig">Git configuration</a>
 </p>
+
 
 ## 🚀 Installation
 ```bash
@@ -38,16 +39,22 @@ This is a way faster than using oh-my-zsh with the minimal setup.
 
 
 ## 🥳 Usage
-Execute `dot` in your terminal and you'll see all the scripts (and its documentation).
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/1331435/67591559-fa9b1f00-f75d-11e9-8b87-d8f2b2f0be51.gif" alt="rgomezcasas/dotfiles">
+  Execute <code>dot</code> in your terminal and you'll see all the scripts (and its documentation).
+</p>
+
 
 ## 🔰 Update
 ```bash
 dot self update
 ```
 
+
 ## 🔥 Other dotfiles I like
  * https://github.com/Tuurlijk/dotfiles
  * https://github.com/denisidoro/dotfiles
+
 
 ## ⚖️ License
 The MIT License (MIT). Please see [License](LICENSE) for more information.
