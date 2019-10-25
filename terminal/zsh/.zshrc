@@ -28,7 +28,7 @@ prompt rafa
 
 # iTerm tab name
 precmd() {
-  echo -ne "\e]1;$(short_pwd)\a"
+  echo -ne "\e]1;$(dot filesystem short_pwd)\a"
 }
 
 source $DOTFILES_PATH/terminal/zsh/key-bindings.zsh

@@ -1,0 +1,19 @@
+#!/usr/bin/env zsh
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Short the current $PWD
+#?? 1.0.0
+##?
+##? Usage:
+##?    short_pwd
+
+docs::eval_zsh "$0" "$@"
+
+if [[ $(pwd) == $HOME ]] ; then
+  echo "~"
+else
+  echo ${${${:-/${(j:/:)${(M)${(s:/:)${(D)PWD:h}}#(|.)[^.]}}/${PWD:t}}//\/~/\~}/\/\//\/}
+fi

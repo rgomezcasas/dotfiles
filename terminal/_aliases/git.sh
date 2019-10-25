@@ -9,4 +9,4 @@ alias gps="git push"
 alias gpsf="git push --force"
 alias gpl="git pull --rebase --autostash"
 alias gb="git branch"
-grn() { git rebase -i HEAD~"$1"; }
+alias gl="dot git git-log-pretty"

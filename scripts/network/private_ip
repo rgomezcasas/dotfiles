@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Show the private ip
+#?? 1.0.0
+##?
+##? Usage:
+##?    private_ip
+
+docs::eval "$@"
+
+ipconfig getifaddr en0

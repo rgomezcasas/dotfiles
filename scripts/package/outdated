@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Print all outdated packages
+#?? 1.0.0
+##?
+##? Usage:
+##?    outdated
+
+docs::eval "$@"
+
+echo '♢ Outdated App Store apps:'
+mas outdated
+
+echo ''
+echo '♢ Outdated brew apps:'
+brew update >/dev/null
+brew outdated
+
+echo ''
+echo '♢ Outdated brew cask apps:'
+brew cask outdated | grep -v real-vnc

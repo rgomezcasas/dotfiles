@@ -1,7 +1,0 @@
-#!/usr/bin/env zsh
-
-if [[ $(pwd) == $HOME ]] ; then
-  echo "~"
-else
-  echo ${${${:-/${(j:/:)${(M)${(s:/:)${(D)PWD:h}}#(|.)[^.]}}/${PWD:t}}//\/~/\~}/\/\//\/}
-fi

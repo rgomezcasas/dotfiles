@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Sync the dotfiles
+#?? 1.0.0
+##?
+##? Usage:
+##?    sync_dotfiles
+
+docs::eval "$@"
+
+
+cd "$DOTFILES_PATH" || exit
+
+brew services stop --all
+brew bundle dump --file="$HOMEBREW_BUNDLE_FILE_PATH" --force
+
+git pull --rebase --autostash
+
+brew bundle cleanup --file="$HOMEBREW_BUNDLE_FILE_PATH" --force
+brew bundle install --file="$HOMEBREW_BUNDLE_FILE_PATH"
+
+echo 'Done! 👯‍'

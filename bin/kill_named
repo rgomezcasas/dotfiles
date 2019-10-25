@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-ps aux | grep $1 | grep -v grep | grep -v kill_named | awk '{print $2}' | xargs kill -9
-
-echo 'done!'

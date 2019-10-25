@@ -16,7 +16,7 @@
 I like to open/split the iTerm and immediately have all operative. I've reached this goal with this configuration.
 
 ```bash
-λ ~ TIMEFMT=$'real %E\tuser %U\tsys %S'; repeat 10 {time zsh -i -c exit}
+λ ~ dot shell zsh test_performance
 real 0.01s      user 0.00s      sys 0.00s
 real 0.01s      user 0.00s      sys 0.00s
 real 0.01s      user 0.00s      sys 0.00s

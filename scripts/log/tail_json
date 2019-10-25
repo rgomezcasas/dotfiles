@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Tail json logs
+#?? 1.0.0
+##?
+##? Usage:
+##?    tail_json <filename>   # Accept wildcards
+
+docs::eval "$@"
+
+tail -f $1 | egrep -v "$2" | jq

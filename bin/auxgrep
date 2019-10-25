@@ -1,3 +1,0 @@
-#!/usr/bin/env sh
-
-ps aux | grep -v grep | grep "$1"

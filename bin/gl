@@ -1,7 +1,0 @@
-#!/usr/bin/env zsh
-
-# Git log filtering
-commit=$(git log --graph --color=always --date=human --format="%C(auto)%h%d %s %C(black)%C(bold)%ad by %an" | fzf --ansi --no-sort)
-commit_hash=$(echo ${commit}  | awk '{print $2}')
-
-echo ${commit_hash} | tr -d '\n' | pbcopy

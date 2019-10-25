@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Show all available commands
+#?? 1.0.0
+##?
+##? Usage:
+##?    available_commands
+
+docs::eval "$@"
+
+bash -c "compgen -c"

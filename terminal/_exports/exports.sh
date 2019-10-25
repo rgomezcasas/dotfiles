@@ -23,7 +23,7 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 paths=(
   "$HOME/bin"
   "$DOTFILES_PATH/bin"
-  "$DOTFILES_PATH/git/bin"
+  "$DOTFILES_PATH/scripts/git"
   "$PHP_PATH/bin"
   "$PHP_PATH/sbin"
   "$RUBY_PATH/bin"

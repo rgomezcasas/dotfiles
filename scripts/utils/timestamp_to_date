@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Convert a timestamp to a date
+#?? 1.0.0
+##?
+##? Usage:
+##?    timestamp_to_date
+
+docs::eval "$@"
+
+let DATE_FORMATTED=$1/1000
+
+gdate -d @$DATE_FORMATTED

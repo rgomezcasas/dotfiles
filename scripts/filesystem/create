@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Create a file with all the involved folders
+#?? 1.0.0
+##?
+##? Usage:
+##?    create <filename>
+
+docs::eval "$@"
+
+mkdir -p "$(dirname "$1")" && touch "$1"

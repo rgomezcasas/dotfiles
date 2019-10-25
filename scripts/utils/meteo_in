@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Show the meteo in a city
+#?? 1.0.0
+##?
+##? Usage:
+##?    meteo_in <city>
+
+docs::eval "$@"
+
+curl -4 http://wttr.in/$1

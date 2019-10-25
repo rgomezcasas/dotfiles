@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Install a package
+#?? 1.0.0
+##?
+##? Usage:
+##?    install
+
+docs::eval "$@"
+
+if [[ -z $1 ]]; then
+  package=$(brew search | fzf)
+  else
+  package=$(brew search | grep $1 | fzf)
+fi
+
+if [[ -z ${package} ]]; then
+  echo "You haven't selected any package to install! ༼つ◕_◕༽つ"
+
+  exit 1
+fi
+
+brew install ${package}

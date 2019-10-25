@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Kill process named
+#?? 1.0.0
+##?
+##? Usage:
+##?    kill_named
+
+docs::eval "$@"
+
+ps aux | grep $1 | grep -v grep | grep -v kill_named | awk '{print $2}' | xargs kill -9
+
+echo 'done!'

@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Preview all files (in all folders) for the current directory
+#?? 1.0.0
+##?
+##? Usage:
+##?    navigate_and_preview_flatten_files
+
+docs::eval "$@"
+
+fzf --preview 'bat --color \"always\" {}'

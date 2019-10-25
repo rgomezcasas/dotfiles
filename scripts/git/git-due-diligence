@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Visualize repository information
+#?? 1.0.0
+##?
+##? Usage:
+##?    git-due-diligence
+
+docs::eval "$@"
+
+first_commit=$(git rev-list --max-parents=0 HEAD)
+date_of_first_commit=$(git show -s --format='%ci' $first_commit)
+author_of_first_commit=$(git show -s --format='%an <%ae>' $first_commit)
+
+
+echo '------------------------'
+echo "First commit date: $date_of_first_commit"
+echo "First commit author: $author_of_first_commit"
+echo '------------------------'

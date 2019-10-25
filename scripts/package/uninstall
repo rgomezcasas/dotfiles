@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Uninstall a paclage
+#?? 1.0.0
+##?
+##? Usage:
+##?    uninstall
+
+docs::eval "$@"
+
+if [[ -z $1 ]]; then
+  to_uninstall=$(brew leaves | fzf)
+  else
+  to_uninstall=$(brew leaves | grep $1 | fzf)
+fi
+
+if [[ -z ${to_uninstall} ]]; then
+  echo "You haven't selected any package to uninstall! ༼つ◕_◕༽つ"
+
+  exit 1
+fi
+
+brew uninstall ${to_uninstall}

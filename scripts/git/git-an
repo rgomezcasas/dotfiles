@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Add all files and then executes an amend (without executing the hooks)
+#?? 1.0.0
+##?
+##? Usage:
+##?    git-an
+
+docs::eval "$@"
+
+git add -A
+git commit -n --amend

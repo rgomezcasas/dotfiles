@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Show all available jdks
+#?? 1.0.0
+##?
+##? Usage:
+##?    available_jdks
+
+docs::eval "$@"
+
+ls /Library/Java/JavaVirtualMachines

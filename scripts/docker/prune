@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Prune all docker stuff
+#?? 1.0.0
+##?
+##? Usage:
+##?    prune
+
+docs::eval "$@"
+
+docker stop $(docker ps -a -q)
+yes | docker system prune -a

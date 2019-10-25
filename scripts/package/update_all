@@ -1,0 +1,68 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Update all packages
+#?? 1.0.0
+##?
+##? Usage:
+##?    update_all
+
+docs::eval "$@"
+
+echo '♢ Updating App Store apps'
+mas upgrade
+
+echo ''
+echo '♢ Updating Brew apps'
+brew update >/dev/null
+brew outdated | xargs -n1 brew upgrade
+
+echo ''
+echo '♢ Updating Brew Cask apps'
+brew cask outdated | grep -v real-vnc | xargs -n1 brew cask install --force
+
+echo ''
+echo '♢ ZSH Zim'
+zsh ${ZIM_HOME}/tools/zim_update
+
+
+echo ''
+echo '♢ tldr'
+tldr --update
+
+# @todo Create a `sync` command for sync the dotfiles
+#echo ''
+#echo '♢ Update dotfiles'
+#cd ${DOTFILES_PATH}
+#git pull --rebase --autostash
+#brew bundle install --file=${HOMEBREW_BUNDLE_FILE_PATH}
+#brew bundle dump --file=${HOMEBREW_BUNDLE_FILE_PATH} --force
+#brew bundle cleanup --file=${HOMEBREW_BUNDLE_FILE_PATH} --force
+
+if [ "$1" == "--all" ]; then
+    echo ''
+    echo '♢ Updating Composer (PHP)'
+    composer global update
+
+    echo ''
+    echo '♢ Updating Pip (Python)'
+    pip2 freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip2 install -U
+    pip3 freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip3 install -U
+
+    echo ''
+    echo '♢ Updating gem (Ruby)'
+    gem update
+
+    echo ''
+    echo '♢ Updating npm (JS)'
+    npm install -g npm
+    npm update -g
+fi
+
+echo ''
+echo '♢ Restarting some apps'
+killall Rocket
+open /Applications/Rocket.app

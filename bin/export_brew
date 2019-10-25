@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-brew services stop --all
-
-brew bundle dump --file=${HOMEBREW_BUNDLE_FILE_PATH} --force
-
-echo 'Brew apps exported!'

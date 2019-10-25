@@ -7,7 +7,7 @@ DIRTY="✗"
 NONE="✓"
 
 prompt_rafa_pwd() {
-  prompt_short_dir=$(short_pwd)
+  prompt_short_dir=$(dot filesystem short_pwd)
   print -n "%F{yellow}${prompt_short_dir}"
 }
 

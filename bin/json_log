@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-tail -f $1 | egrep -v "$2" | jq

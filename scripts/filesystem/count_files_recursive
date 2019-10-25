@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Count files recursives in the current direcory
+#?? 1.0.0
+##?
+##? Usage:
+##?    count_files_recursive
+
+docs::eval "$@"
+
+find . -type f -print | wc -l

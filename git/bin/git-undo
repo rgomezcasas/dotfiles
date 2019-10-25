@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-
-# Delete the last commit, but not the files
-git reset HEAD~1 --mixed

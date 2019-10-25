@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-toolbox_intellij_dir="$HOME/Library/Application Support/JetBrains/Toolbox/apps/IDEA-U/ch-0"
-intellij_version=$(ls "${toolbox_intellij_dir}" | sort -r | head -n 1)
-intellij_folder=$(ls "$toolbox_intellij_dir/$intellij_version" | grep '.app$')
-intellij_bin_path="$toolbox_intellij_dir/$intellij_version/$intellij_folder/Contents/MacOS/idea"
-
-open -a "$intellij_bin_path"

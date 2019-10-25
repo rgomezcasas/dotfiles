@@ -1,7 +1,0 @@
-#!/usr/bin/env osascript
-
-on run args
-  tell app "System Events"
-    keystroke "v" using command down
-  end tell
-end

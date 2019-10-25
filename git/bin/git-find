@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-
-# Find commits by commit message
-git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --regexp-ignore-case --grep=$1;

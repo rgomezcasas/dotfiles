@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? ZSH helpers
+#?? 1.0.0
+##?
+##? Usage:
+##?    zsh optimize           # Optimize ZSH
+##?    zsh test_performance   # Print the current ZSH performance
+
+docs::eval_help "$@"
+
+case $1 in
+"optimize")
+  /bin/zsh -c "source ${ZDOTDIR:-${HOME}}/.zlogin"
+  echo "👌 Done!"
+  ;;
+"test_performance")
+  for i in $(seq 1 10); do /usr/bin/time /bin/zsh -i -c exit; done
+  ;;
+*)
+  docs::eval_help --help
+  ;;
+esac

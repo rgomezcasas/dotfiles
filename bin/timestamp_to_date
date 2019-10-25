@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-let DATE_FORMATTED=$1/1000
-
-gdate -d @$DATE_FORMATTED

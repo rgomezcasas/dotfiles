@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Shows the size of the current directory
+#?? 1.0.0
+##?
+##? Usage:
+##?    size_of_directory
+
+docs::eval "$@"
+
+ncdu --color dark -rr -x
