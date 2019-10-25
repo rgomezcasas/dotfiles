@@ -1,5 +1,6 @@
 #!/bin/user/env bash
 
+ZIMFW_DIR="modules/zimfw"
 DOTBOT_DIR="modules/dotbot"
 DOTBOT_BIN="bin/dotbot"
 
@@ -19,6 +20,7 @@ update_submodules() {
   git submodule init
   git submodule update
   git submodule status
+  git submodule update --init --recursive "$ZIMFW_DIR"
   git submodule update --init --recursive "$DOTBOT_DIR"
 }
 
