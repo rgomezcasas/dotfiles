@@ -13,7 +13,7 @@ source "$DOTFILES_PATH/scripts/self/utils/install.sh"
 
 docs::eval_help "$@"
 
-"$DOTFILES_PATH/bin/dot self update"
+"$DOTFILES_PATH/bin/dot" self update
 
 if platform::is_macos; then
   log::note "Installing MacOS  custom packages"
