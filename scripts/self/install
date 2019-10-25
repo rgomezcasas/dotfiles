@@ -30,4 +30,14 @@ fi
 log::note "Setting ZSH as the default shell"
 chsh -s "$(command -v zsh)"
 
-log::warning "Remember to modify the $DOTFILES_PATH/git/.gitconfig!"
+read -rp "🦑 Git config: What is you email? " git_email
+read -rp "🐙 Git config: And your name? " git_name
+
+git config --global user.email "$git_email"
+git config --global user.name "$git_name"
+git config --global --unset user.signingkey
+git config --global --unset commit.gpgsign
+git config --global --unset tag.gpgsign
+git config --global --unset gpg.program
+
+log::warning "Remember to add the origin of your fork!"
