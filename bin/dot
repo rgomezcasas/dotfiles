@@ -9,6 +9,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?
 ##? Usage:
 ##?    dot
+##?    dot update                         # Update the dotfiles
 ##?    dot <context>
 ##?    dot <context> <cmd> [<args>...]
 
@@ -36,7 +37,17 @@ fzf_prompt() {
 if args::has_no_args "$@"; then
   fzf_prompt "$(list_command_paths)"
 elif args::total_is 1 "$@"; then
-  fzf_prompt "$(list_command_paths | grep "/$1/")"
+  case $1 in
+  "update")
+    cd "$DOTFILES_PATH"
+    git pull --rebase --autostash
+    git submodule update --recursive
+    echo "🚀 Done!"
+    ;;
+  *)
+    fzf_prompt "$(list_command_paths | grep "/$1/")"
+    ;;
+  esac
 else
   ctx="$1"
   cmd="$2"

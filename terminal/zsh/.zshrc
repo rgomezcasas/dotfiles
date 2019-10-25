@@ -1,5 +1,5 @@
 export DOTFILES_PATH=$HOME/.dotfiles
-export ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
+export ZIM_HOME=${ZDOTDIR:-${HOME}}/.dotfiles/modules/zimfw
 
 # ZSH Ops
 setopt HIST_IGNORE_ALL_DUPS

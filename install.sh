@@ -70,7 +70,6 @@ ln -s -i "$DOTFILES_PATH/langs/scala/plugins.sbt" "$HOME/.sbt/1.0/plugins/plugin
 
 # Change default terminal to ZSH
 chsh -s "$(command -v zsh)"
-git clone --recursive https://github.com/zimfw/zimfw.git "${ZDOTDIR:-${HOME}}/.zim"
 
 # Create the autojump historic file
 touch "$HOME/.z"
