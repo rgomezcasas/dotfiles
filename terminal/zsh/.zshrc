@@ -21,7 +21,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={  A-Z}' # match upper from lower c
 
 source $DOTFILES_PATH/terminal/init.sh
 
-fpath=(/${ZDOTDIR:-${DOTFILES_PATH}}/terminal/zsh/themes $fpath)
+fpath=($DOTFILES_PATH/terminal/zsh/themes $DOTFILES_PATH/terminal/zsh/completions $fpath)
 
 autoload -Uz promptinit && promptinit
 prompt rafa

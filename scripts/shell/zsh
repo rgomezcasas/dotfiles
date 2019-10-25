@@ -6,8 +6,9 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 #?? 1.0.0
 ##?
 ##? Usage:
-##?    zsh optimize           # Optimize ZSH
-##?    zsh test_performance   # Print the current ZSH performance
+##?    zsh optimize             # Optimize ZSH
+##?    zsh test_performance     # Print the current ZSH performance
+##?    zsh reload_completions   # Print the current ZSH performance
 
 docs::eval_help "$@"
 
@@ -18,6 +19,9 @@ case $1 in
   ;;
 "test_performance")
   for i in $(seq 1 10); do /usr/bin/time /bin/zsh -i -c exit; done
+  ;;
+"reload_completions")
+  /bin/zsh -c "autoload -U compaudit && compinit"
   ;;
 *)
   docs::eval_help --help
