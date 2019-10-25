@@ -29,3 +29,5 @@ fi
 
 log::note "Setting ZSH as the default shell"
 chsh -s "$(command -v zsh)"
+
+log::warning "Remember to modify the $DOTFILES_PATH/git/.gitconfig!"

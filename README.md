@@ -33,7 +33,7 @@ This is a way faster than using oh-my-zsh with the minimal setup.
 
 ## 🚀 Installation
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/rgomezcasas/dotfiles/installer)
+bash <(curl -s https://raw.githubusercontent.com/rgomezcasas/dotfiles/master/installer)
 ```
 
 ## 🍩 Other dotfiles I like
