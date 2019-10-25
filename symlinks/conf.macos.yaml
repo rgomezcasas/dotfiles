@@ -1,0 +1,20 @@
+- clean: ['~']
+
+- defaults:
+    link:
+      create: true
+      force: true
+
+- link:
+    /Library/LaunchDaemons/limit.maxfiles.plist: mac/plist/limit.maxfiles.plist
+    /Library/LaunchDaemons/limit.maxproc.plist: mac/plist/limit.maxproc.plist
+    ~/Library/Application Support/Alfred/Alfred.alfredpreferences: mac/alfred
+    ~/Library/Application Support/Spectacle/Shortcuts.json: mac/spectacle/Shortcuts.json
+    ~/Library/Application Support/Sublime Text 3/Packages/User: editors/sublime-text-3
+    ~/Library/Application Support/Code/User/settings.json: editors/vs-code/settings.json
+    ~/Library/Application Support/Code/User/keybindings.json: editors/vs-code/keybindings.json
+    ~/Library/Group Containers/group.com.docker/settings.json: mac/docker/settings.json
+    ~/.config/karabiner: mac/karabiner-elements
+
+- create:
+    - ~/.hushlogin

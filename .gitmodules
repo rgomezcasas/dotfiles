@@ -1,3 +1,7 @@
 [submodule "modules/zimfw"]
 	path = modules/zimfw
 	url = git@github.com:zimfw/zimfw.git
+[submodule "modules/dotbot"]
+	path = modules/dotbot
+	url = git@github.com:anishathalye/dotbot.git
+	ignore = dirty

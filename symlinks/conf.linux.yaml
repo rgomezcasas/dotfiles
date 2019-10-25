@@ -1,0 +1,13 @@
+- clean: ['~']
+
+- defaults:
+    link:
+      create: true
+      force: true
+
+- link:
+    ~/.Xmodmap: linux/.Xmodmap
+    ~/.Xresources: linux/.Xresources
+    ~/.config/autostart: linux/autostart
+    /etc/default/keyboard: linux/configs/keyboard
+    /usr/share/X11/xorg.conf.d/00-keyboard.conf: linux/xorg.conf.d/00-keyboard.conf

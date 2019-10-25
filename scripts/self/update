@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+source "$DOTFILES_PATH/scripts/self/utils/update.sh"
+
+##? Updates submodules, dotfiles and attempts to do some setup
+#?? 1.0.0
+##?
+##? Usage:
+##?    update
+
+docs::eval_help "$@"
+
+log::note "Updating dotfiles"
+self_update
+
+log::note "Updating submodules"
+update_submodules
+
+log::note "Applying common Symlinks"
+apply_common_symlinks
+
+log::note "Applying macOS Symlinks"
+apply_macos_symlinks

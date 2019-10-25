@@ -33,8 +33,7 @@ This is a way faster than using oh-my-zsh with the minimal setup.
 
 ## 🚀 Installation
 ```bash
-git clone --recursive git@github.com:rgomezcasas/dotfiles.git
-git submodule update --init --recursive
+bash <(curl -s https://raw.githubusercontent.com/rgomezcasas/dotfiles/installer)
 ```
 
 ## 🍩 Other dotfiles I like

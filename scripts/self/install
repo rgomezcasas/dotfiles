@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+source "$DOTFILES_PATH/scripts/self/utils/install.sh"
+
+##? Install the dotfiles
+#?? 1.0.0
+##?
+##? Usage:
+##?    install
+
+docs::eval_help "$@"
+
+"$DOTFILES_PATH/bin/dot self update"
+
+if platform::is_macos; then
+  log::note "Installing MacOS  custom packages"
+
+  install_macos_custom
+fi
+
+if platform::is_linux; then
+  log::note "Installing Linux 🐧 custom packages"
+
+  install_linux_custom
+fi
+
+log::note "Setting ZSH as the default shell"
+chsh -s "$(command -v zsh)"
