@@ -10,12 +10,17 @@ export GOPATH="$HOME/.go"
 export SBT_OPTS='-Xms512M -Xmx1024M -Xss2M -XX:MaxMetaspaceSize=512m -XX:ReservedCodeCacheSize=256M -Dfile.encoding=UTF8'
 export SBT_CREDENTIALS="$HOME/.sbt/.credentials"
 
-export FZF_DEFAULT_OPTS='--color=bg+:24 --reverse'
+export FZF_DEFAULT_OPTS='
+  --color=bg+:24
+  --reverse
+'
 
 export HOMEBREW_AUTO_UPDATE_SECS=86400
 export HOMEBREW_NO_ANALYTICS=true
 export HOMEBREW_INSTALL_BADGE="(ʘ‿ʘ)"
 export HOMEBREW_BUNDLE_FILE_PATH=${DOTFILES_PATH}/mac/brew/Brewfile
+
+export NAVI_PATH="$DOTFILES_PATH/doc/navi"
 
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"

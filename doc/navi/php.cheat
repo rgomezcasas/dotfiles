@@ -1,0 +1,7 @@
+% php
+
+# Composer install ignoring dependencies
+composer install --ignore-platform-reqs
+
+# Symfony server reload php paths
+symfony serve --force-php-discovery

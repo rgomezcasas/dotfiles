@@ -2,7 +2,7 @@ __fzfcmd() {
   echo "fzf"
 }
 
-# CTRL-R - Paste the selected command from history into the command line
+# ctrl+r - Paste the selected command from history into the command line
 fzf-history-widget() {
   local selected num
   setopt localoptions noglobsubst noposixbuiltins pipefail HIST_FIND_NO_DUPS 2> /dev/null
@@ -23,4 +23,13 @@ fzf-history-widget() {
 zle     -N   fzf-history-widget
 bindkey '^R' fzf-history-widget
 
-
+# ctrl+g - Paste the selected command from history into the command line
+_call_navi() {
+   local navi_path=$(command -v navi)
+   local buff="$BUFFER"
+   zle kill-whole-line
+   local cmd="$(NAVI_USE_FZF_ALL_INPUTS=true "$navi_path" --print <> /dev/tty)"
+   zle -U "${buff}${cmd}"
+}
+zle     -N   _call_navi
+bindkey '^g' _call_navi
