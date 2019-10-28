@@ -11,7 +11,7 @@ export SBT_OPTS='-Xms512M -Xmx1024M -Xss2M -XX:MaxMetaspaceSize=512m -XX:Reserve
 export SBT_CREDENTIALS="$HOME/.sbt/.credentials"
 
 export FZF_DEFAULT_OPTS='
-  --color=bg+:24
+  --color=pointer:#ebdbb2,bg+:#3c3836,fg:#ebdbb2,fg+:#fbf1c7,hl:#8ec07c,info:#928374,header:#fb4934
   --reverse
 '
 

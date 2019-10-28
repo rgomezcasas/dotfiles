@@ -23,7 +23,7 @@ fzf_prompt() {
 
   match="$(echo "$paths" |
     xargs -I % sh -c 'echo "$(basename $(dirname %)) $(basename %)"' |
-    fzf-tmux --height 50% --preview 'dot $(echo {} | cut -d" " -f 1) $(echo {} | cut -d" " -f 2) -h')"
+    fzf --height 100% --preview 'dot $(echo {} | cut -d" " -f 1) $(echo {} | cut -d" " -f 2) -h | bat --style=numbers --color=always')"
   printf "$match "
   read args
   if coll::is_empty "$args"; then
