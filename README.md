@@ -53,7 +53,11 @@ dot self update
 
 ## 🔥 Other dotfiles I like
  * https://github.com/Tuurlijk/dotfiles
+   - Good performance
  * https://github.com/denisidoro/dotfiles
+   - `dot` command "inspiration" (almost copy and paste 😳)
+   - The dotfiles are from the creator of [navi](https://github.com/denisidoro/navi)
+   - Also has a [great blog](https://medium.com/@den.isidoro) with good tips about bash and clojure
 
 
 ## ⚖️ License

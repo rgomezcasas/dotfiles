@@ -17,6 +17,6 @@ echo
 dotfiles_path="$HOME/.dotfiles"
 echo "👉  Cloning into: '$dotfiles_path'"
 
-git clone git@github.com:rgomezcasas/dotfiles.git "$dotfiles_path"
+git clone --depth 1 git@github.com:rgomezcasas/dotfiles.git "$dotfiles_path"
 
 "$dotfiles_path/bin/dot" self install
