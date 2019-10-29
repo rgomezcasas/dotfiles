@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Creates a QR code with the specified content
+#?? 0.1.0
+##?
+##? Usage:
+##?    qr <contents>
+##?
+##? Examples:
+##?    qr foo
+
+docs::eval "$@"
+
+echo "$contents" | curl -F-=\<- qrenco.de

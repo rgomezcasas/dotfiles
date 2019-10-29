@@ -8,7 +8,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 #?? 1.0.0
 ##?
 ##? Usage:
-##?    mysql_delete_db_starting_by <preffix_to_delete>
+##?    delete_db_starting_by <preffix_to_delete>
 
 docs::eval "$@"
 
