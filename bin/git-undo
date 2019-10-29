@@ -4,13 +4,12 @@ set -euo pipefail
 
 source "$DOTFILES_PATH/scripts/core/_main.sh"
 
-##? Add all files and then executes an amend (without executing the hooks)
+##? Delete the last commit, but not the files
 #?? 1.0.0
 ##?
 ##? Usage:
-##?    git-an
+##?    git undo
 
 docs::eval "$@"
 
-git add -A
-git commit -n --amend
+git reset HEAD~1 --mixed

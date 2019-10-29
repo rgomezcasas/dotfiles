@@ -9,7 +9,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 #?? 1.0.0
 ##?
 ##? Usage:
-##?    git-effort [--above <value>] [<path>...] [-- [<log options>...]]
+##?    effort [--above <value>] [<path>...] [-- [<log options>...]]
 
 docs::eval "$@"
 

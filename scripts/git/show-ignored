@@ -4,12 +4,12 @@ set -euo pipefail
 
 source "$DOTFILES_PATH/scripts/core/_main.sh"
 
-##? Delete the last commit, but not the files
+##? Show all ignored files
 #?? 1.0.0
 ##?
 ##? Usage:
-##?    git-undo
+##?    show-ignored
 
 docs::eval "$@"
 
-git reset HEAD~1 --mixed
+git status --ignored -s | grep "\!\!"

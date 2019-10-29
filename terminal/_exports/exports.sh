@@ -28,7 +28,6 @@ export LC_ALL="en_US.UTF-8"
 paths=(
   "$HOME/bin"
   "$DOTFILES_PATH/bin"
-  "$DOTFILES_PATH/scripts/git"
   "$PHP_PATH/bin"
   "$PHP_PATH/sbin"
   "$RUBY_PATH/bin"
