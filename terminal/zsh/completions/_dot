@@ -1,7 +1,7 @@
 #compdef dot
 
 _command_for() {
-  ls "$DOTFILES_PATH/scripts/$1" | grep -v core | xargs echo
+  ls -p "$DOTFILES_PATH/scripts/$1" | grep -v / | xargs echo
 }
 
 _dot() {
