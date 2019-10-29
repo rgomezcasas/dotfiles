@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Find additional subdomains on GitHub. Very useful during you recon phase, you will probably get some extras
+##? subdomains other tools didn’t find because not public
+#?? 1.0.0
+##?
+##? Usage:
+##?    subdomains <domain>
+##?
+##? Example:
+##?    subdomains codely.tv
+
+docs::eval "$@"
+
+python "$DOTFILES_PATH/scripts/github/utils/github-subdomains.py" -t "$GITHUB_TOKEN" -d "$@"

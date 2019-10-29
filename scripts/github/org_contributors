@@ -8,10 +8,10 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 #?? 1.0.0
 ##?
 ##? Usage:
-##?    organization_contributors <organization>
+##?    org_contributors <organization>
 ##?
 ##? Example:
-##?    organization_contributors codelytv
+##?    org_contributors codelytv
 
 docs::eval "$@"
 
