@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-set -euo pipefail
-
 source "$DOTFILES_PATH/scripts/core/_main.sh"
 
 ##? Opens the GitHub page for a repo/branch in your browser
@@ -9,8 +7,8 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 #?? 1.0.0
 ##?
 ##? Usage:
-##?    git open
-##?    git open [remote] [branch]
+##?    git-open
+##?    git-open [remote] [branch]
 
 docs::eval "$@"
 

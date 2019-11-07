@@ -1,0 +1,4 @@
+% brew
+
+# Sync audio 200ms of all files inside a directory
+ls | xargs -I _ ffmpeg -i "_" -itsoffset 0.20 -i "_" -map 0:v -map 1:a -c copy "_.sync.mp4"

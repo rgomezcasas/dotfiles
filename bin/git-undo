@@ -8,8 +8,8 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 #?? 1.0.0
 ##?
 ##? Usage:
-##?    git undo
+##?    git-undo
 
-docs::eval "$@"
+docs::eval "$@"y
 
 git reset HEAD~1 --mixed
