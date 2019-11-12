@@ -28,4 +28,4 @@ cp "$filename" "$original_filename"
 
 jpegoptim -q $filename $extra_options
 
-echo "⚡️ File <$filename> compressed!"
+echo "⚡️ File <$filename> optimized!"
