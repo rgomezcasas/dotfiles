@@ -16,7 +16,6 @@ first_commit=$(git rev-list --max-parents=0 HEAD)
 date_of_first_commit=$(git show -s --format='%ci' $first_commit)
 author_of_first_commit=$(git show -s --format='%an <%ae>' $first_commit)
 
-
 echo '------------------------'
 echo "First commit date: $date_of_first_commit"
 echo "First commit author: $author_of_first_commit"

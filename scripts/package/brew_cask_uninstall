@@ -14,7 +14,7 @@ docs::eval "$@"
 
 if [[ -z $1 ]]; then
   to_uninstall=$(brew cask list | fzf)
-  else
+else
   to_uninstall=$(brew cask list | grep $1 | fzf)
 fi
 

@@ -14,7 +14,7 @@ docs::eval "$@"
 
 if [[ -z $1 ]]; then
   package=$(brew search | fzf)
-  else
+else
   package=$(brew search | grep $1 | fzf)
 fi
 

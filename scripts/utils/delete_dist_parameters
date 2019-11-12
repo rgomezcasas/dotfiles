@@ -12,8 +12,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 
 docs::eval "$@"
 
-find . -type f -name "*parameters.yml.dist"| while read line
-do
-    rm $(echo ${line} | sed "s/.yml.dist/.yml/")
-    echo "$line deleted"
+find . -type f -name "*parameters.yml.dist" | while read line; do
+  rm $(echo ${line} | sed "s/.yml.dist/.yml/")
+  echo "$line deleted"
 done

@@ -13,4 +13,4 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 docs::eval "$@"
 
 # cd to Finder open folder
-cd "`osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)'`"
+cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')"

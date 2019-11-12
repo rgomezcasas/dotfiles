@@ -17,7 +17,6 @@ docs::eval "$@"
 
 log::warning "This could take a while!"
 
-
 repo_name=${repo/\//_}
 path="$(mktemp -d -t gh_repo_stargazers)/$repo_name.csv"
 

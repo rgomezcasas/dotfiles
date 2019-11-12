@@ -21,7 +21,7 @@ original_filename=$(echo "$filename" | sed 's/\(.*\)\./\1.original./')
 extra_options=""
 
 if $thumb; then
-   extra_options="$extra_options --size=250"
+  extra_options="$extra_options --size=250"
 fi
 
 cp "$filename" "$original_filename"

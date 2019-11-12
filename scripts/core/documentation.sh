@@ -13,26 +13,26 @@ _compose_version() {
 }
 
 docs::eval() {
-   local -r file="$0"
-   local -r help="$(extract_help "$file")"
+  local -r file="$0"
+  local -r help="$(extract_help "$file")"
 
-   docopts="${DOTFILES_PATH}/scripts/core/utils/docopts"
+  docopts="${DOTFILES_PATH}/scripts/core/utils/docopts"
 
-   if [[ ${1:-} == "--version" ]]; then
-      local -r version="$(_compose_version "$file")"
-      eval "$($docopts -h "${help}" -V "${version}" : "${@:1}")"
-   else
-      eval "$($docopts -h "${help}" : "${@:1}")"
-   fi
+  if [[ ${1:-} == "--version" ]]; then
+    local -r version="$(_compose_version "$file")"
+    eval "$($docopts -h "${help}" -V "${version}" : "${@:1}")"
+  else
+    eval "$($docopts -h "${help}" : "${@:1}")"
+  fi
 }
 
 docs::eval_help() {
-   local -r file="$0"
+  local -r file="$0"
 
-   case "${!#:-}" in
-      -h|--help) extract_help "$file"; exit 0 ;;
-      --version) _compose_version "$file"; exit 0 ;;
-   esac
+  case "${!#:-}" in
+     -h|--help) extract_help "$file"; exit 0 ;;
+     --version) _compose_version "$file"; exit 0 ;;
+  esac
 }
 
 docs::eval_zsh() {

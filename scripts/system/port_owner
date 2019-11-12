@@ -12,5 +12,4 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 
 docs::eval "$@"
 
-
 lsof -n -i4TCP:$1 | grep LISTEN
