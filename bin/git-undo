@@ -10,6 +10,6 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##? Usage:
 ##?    git-undo
 
-docs::eval "$@"y
+docs::eval "$@"
 
 git reset HEAD~1 --mixed

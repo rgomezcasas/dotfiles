@@ -8,8 +8,8 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 #?? 1.0.0
 ##?
 ##? Usage:
-##?    git-co
+##?    git-co <thing>
 
 docs::eval "$@"
 
-git checkout $1
+git checkout $thing

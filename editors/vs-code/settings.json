@@ -31,8 +31,11 @@
     "git.showPushSuccessNotification": true,
     "workbench.sideBar.location": "left",
     "workbench.editor.showTabs": false,
-    "workbench.colorTheme": "Base16 Dark Default",
+    "workbench.colorTheme": "Gruvbox Dark Medium",
     "workbench.fontAliasing": "auto",
     "editor.renderWhitespace": "all",
-    "workbench.activityBar.visible": false
+    "workbench.activityBar.visible": false,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "java.configuration.checkProjectSettingsExclusions": false
 }
