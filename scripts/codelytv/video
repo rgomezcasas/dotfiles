@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Edits in the CodelyTV way our videos (for CodelyTV Pro)
+##? This command should be executed in the directory containing all video lessons
+#?? 1.0.0
+##?
+##? Usage:
+##?    video
+##?
+##? Options:
+##?    -h --help   Show this screen.
+
+docs::eval "$@"
+
+php "$DOTFILES_PATH/scripts/codelytv/utils/codelytv-video-manager.php" "$PWD" "mp4"
