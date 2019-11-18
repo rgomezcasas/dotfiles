@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? DDD
+#?? 1.0.0
+##?
+##? Usage:
+##?    ddd hexagonal <path>
+
+docs::eval "$@"
+
+mkdir -p "$path/application"
+mkdir -p "$path/domain"
+mkdir -p "$path/infrastructure"
+
+echo "😬 Dooone!"
