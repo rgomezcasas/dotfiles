@@ -214,6 +214,9 @@ defaults write com.apple.dock showhidden -bool true
 # Dock in the left
 defaults write com.apple.dock orientation -string left
 
+# Disable recent applications
+defaults write com.apple.dock show-recents -bool false
+
 ###############################################################################
 # Terminal & iTerm 2                                                          #
 ###############################################################################

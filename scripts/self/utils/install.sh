@@ -10,11 +10,7 @@ install_macos_custom() {
   brew bundle --file="$DOTFILES_PATH/mac/brew/Brewfile"
   brew bundle --file="$DOTFILES_PATH/mac/brew/Brewfile"
 
-  # ulimit
-#  sudo chown root:wheel "/Library/LaunchDaemons/limit.maxfiles.plist"
-#  sudo launchctl load -w "/Library/LaunchDaemons/limit.maxfiles.plist"
-#  sudo chown root:wheel "/Library/LaunchDaemons/limit.maxproc.plist"
-#  sudo launchctl load -w "/Library/LaunchDaemons/limit.maxproc.plist"
+  pip install -r "$DOTFILES_PATH/langs/python/requirements.txt"
 
   # Correct paths (so, we handle all with $PATH)
   sudo truncate -s 0 /etc/paths
