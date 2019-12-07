@@ -97,9 +97,10 @@ defaults write com.apple.screencapture type -string "png"
 # Enable subpixel font rendering on non-Apple LCDs
 # Reference: https://github.com/kevinSuttle/macOS-Defaults/issues/17#issuecomment-266633501
 defaults write NSGlobalDomain AppleFontSmoothing -int 1
+defaults -currentHost write -globalDomain AppleFontSmoothing -int 1
 
 # Font rendering stuff
-defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO
+defaults write -g CGFontRenderingFontSmoothingDisabled -bool YES
 
 ###############################################################################
 # Finder                                                                      #
