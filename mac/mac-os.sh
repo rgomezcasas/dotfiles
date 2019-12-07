@@ -44,6 +44,9 @@ defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
 # Disable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
+# Disable reopen apps when restarting
+defaults write -g ApplePersistence -bool no
+
 ###############################################################################
 # SSD-specific tweaks                                                         #
 ###############################################################################
@@ -101,6 +104,12 @@ defaults -currentHost write -globalDomain AppleFontSmoothing -int 1
 
 # Font rendering stuff
 defaults write -g CGFontRenderingFontSmoothingDisabled -bool YES
+
+# Reduce transparency
+defaults write com.apple.universalaccess reduceTransparency 1
+
+# Autohide the menu bar
+defaults write NSGlobalDomain _HIHideMenuBar -bool true
 
 ###############################################################################
 # Finder                                                                      #
@@ -165,7 +174,7 @@ defaults write NSGlobalDomain com.apple.springing.delay -float 0
 # Enable highlight hover effect for the grid view of a stack (Dock)
 defaults write com.apple.dock mouse-over-hilite-stack -bool true
 
-defaults write com.apple.dock tilesize -int 45
+defaults write com.apple.dock tilesize -int 35
 
 # Change minimize/maximize window effect
 defaults write com.apple.dock mineffect -string "genie"
@@ -201,6 +210,9 @@ defaults write com.apple.dock autohide -bool true
 
 # Make Dock icons of hidden applications translucent
 defaults write com.apple.dock showhidden -bool true
+
+# Dock in the left
+defaults write com.apple.dock orientation -string left
 
 ###############################################################################
 # Terminal & iTerm 2                                                          #
@@ -238,3 +250,7 @@ defaults write com.apple.ActivityMonitor ShowCategory -int 0
 # Sort Activity Monitor results by CPU usage
 defaults write com.apple.ActivityMonitor SortColumn -string "CPUUsage"
 defaults write com.apple.ActivityMonitor SortDirection -int 0
+
+###############################################################################
+# Keyboard Shortcuts                                                          #
+###############################################################################

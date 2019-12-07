@@ -88,4 +88,4 @@
 [tag]
 	gpgsign = true
 [gpg]
-	program = gpg
+	program = /usr/local/bin/gpg

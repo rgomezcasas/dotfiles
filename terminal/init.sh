@@ -1,5 +1,5 @@
-ulimit -n 65536
-ulimit -u 1000
+ulimit -n 200000
+ulimit -u 2048
 
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
