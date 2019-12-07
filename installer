@@ -11,12 +11,12 @@ set -euo pipefail
 echo "🚀 Welcome to the rgomezcasas/dotfiles installer!"
 echo "-------------------------------------------------"
 echo
-read -rp "🤔  Where do you want to clone the dotfiles? (default ~/.dotfiles): " dotfiles_path
+read -rp "🤔  Where do you want to clone the dotfiles? (default ~/.dotfiles): " DOTFILES_PATH
 echo
-#dotfiles_path="${dotfiles_path:-~/.dotfiles}"
-dotfiles_path="$HOME/.dotfiles"
-echo "👉  Cloning into: '$dotfiles_path'"
+#DOTFILES_PATH="${DOTFILES_PATH:-~/.dotfiles}"
+export DOTFILES_PATH="$HOME/.dotfiles"
+echo "👉  Cloning into: '$DOTFILES_PATH'"
 
-git clone --depth 1 git@github.com:rgomezcasas/dotfiles.git "$dotfiles_path"
+git clone --depth 1 git@github.com:rgomezcasas/dotfiles.git "$DOTFILES_PATH"
 
-"$dotfiles_path/bin/dot" self install
+"$DOTFILES_PATH/bin/dot" self install
