@@ -7,13 +7,16 @@ install_macos_custom() {
   fi
 
   # All apps (This line is 2 times because there are dependencies between brew cask and brew)
-  brew bundle --file="$DOTFILES_PATH/mac/brew/Brewfile"
+  brew bundle --file="$DOTFILES_PATH/mac/brew/Brewfile" || true
   brew bundle --file="$DOTFILES_PATH/mac/brew/Brewfile"
 
   pip install -r "$DOTFILES_PATH/langs/python/requirements.txt"
 
   # Correct paths (so, we handle all with $PATH)
   sudo truncate -s 0 /etc/paths
+
+  # Custom macOS "defaults"
+  sh "$DOTFILES_PATH/mac/mac-os.sh"
 }
 
 install_linux_custom() {
