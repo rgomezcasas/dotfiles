@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Clean junk files
+#?? 1.0.0
+##?
+##? Usage:
+##?    clean
+
+docs::eval_zsh "$0" "$@"
+
+sudo rm -f "/Library/LaunchDaemons/com.adobe."*
+sudo rm -f "/Library/LaunchAgents/com.adobe."*
+sudo rm -f "$HOME/Library/LaunchAgents/com.adobe."*
+echo '[x] Adoble junk cleaned'
+
+echo 'Done!'

@@ -13,6 +13,9 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
 
+# Play user interface sound effects: false
+defaults write com.apple.systemsound 'com.apple.sound.uiaudio.enabled' -int 0
+
 defaults write NSGlobalDomain AppleShowScrollBars -string "WhenScrolling"
 
 # Disable the over-the-top focus ring animation
@@ -44,8 +47,8 @@ defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
 # Disable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
-# Disable reopen apps when restarting
-defaults write -g ApplePersistence -bool no
+# Use Apple persistence
+defaults write -g ApplePersistence -bool yes
 
 ###############################################################################
 # SSD-specific tweaks                                                         #

@@ -44,4 +44,6 @@
      - Select load preferences from URL and use ~/.dotfiles/mac/iTerm. On the next prompt select "NOT copy"
  * Customize Finder (compare against mac/SetUp)
  * Customize Mac menu bar (compare against mac/SetUp)
+ * Extra:
+     - [Prevent a volume from mounting at startup](https://discussions.apple.com/docs/DOC-7942)
  * Restart

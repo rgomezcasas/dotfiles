@@ -1,4 +1,4 @@
-PHP_PATH='/usr/local/opt/php@7.2'
+PHP_PATH='/usr/local/opt/php@7.4'
 GLOBAL_COMPOSER_PATH="$HOME/.composer"
 PYTHON_PATH='/usr/local/opt/python'
 RUBY_PATH='/usr/local/opt/ruby'
