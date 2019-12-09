@@ -10,9 +10,6 @@ install_macos_custom() {
   brew bundle --file="$DOTFILES_PATH/mac/brew/Brewfile" || true
   brew bundle --file="$DOTFILES_PATH/mac/brew/Brewfile"
 
-  pip install -r "$DOTFILES_PATH/langs/python/requirements.txt" || true
-  pip install -r "$DOTFILES_PATH/langs/python/requirements.txt"
-
   # Correct paths (so, we handle all with $PATH)
   sudo truncate -s 0 /etc/paths
 

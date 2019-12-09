@@ -58,3 +58,4 @@
 * Restart
   - When Google Drive is synced, install all the fonts
     - Also download Osaka Mono from Font Book
+* Execute `dot shell zsh reload_completions` and then `compinit`
