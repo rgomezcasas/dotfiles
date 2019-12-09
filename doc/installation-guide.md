@@ -7,12 +7,11 @@
   - `chmod -R 700 ~/.ssh`
   - `chmod -R 700 ~/.gnupg`
 * Execute the dotfiles installer
-* Login in Google Chrome
 * Open Karabiner-Elements
+* Open Authy and login
+* Login in Google Chrome
 * Open Google Backup and Sync
   - Disable "USB Devices & SD Cards"
-  - When synced install all the fonts
-  - Also download Osaka Mono from Font Book
 * Open Spectacle
   - Gran permissions
   - Start on login
@@ -37,12 +36,25 @@
   - Configure for cmd+space
 * Open JetBrains Toolbox and login
   - Login
+  - Enable "generate shell scripts in ~/bin"
   - Install IntelliJ
-  - Install DataGrip
+* Open IntelliJ
+  - Import from JetBrains account
+  - Sync plugins
+  - Execute `dot intellij add_code_templates`
 * Open Dato (and configure in bar)
+  - Preferences/Show Date
+* Open Slack
+  - Login CodelyTV
+  - Login BcnEng
+* Open Spotify
+  - Set streaming quality to very high
+  - Disable automatic startup
 * Download iTerm nightly
   - Install
   - Select load preferences from URL and use ~/.dotfiles/mac/iTerm. On the next prompt select "NOT copy"
 * Extra:
   - [Prevent a volume from mounting at startup](https://discussions.apple.com/docs/DOC-7942)
 * Restart
+  - When Google Drive is synced, install all the fonts
+    - Also download Osaka Mono from Font Book
