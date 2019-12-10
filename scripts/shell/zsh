@@ -14,6 +14,9 @@ docs::eval_help "$@"
 
 case $1 in
 "optimize")
+  find "$DOTFILES_PATH/terminal/zsh" -name '*.zwc' -exec rm -rf {} \;
+  find "$DOTFILES_PATH/terminal/zsh" -name '*.old' -exec rm -rf {} \;
+
   /bin/zsh -c "source ${ZDOTDIR:-${HOME}}/.zlogin"
   echo "👌 Done!"
   ;;

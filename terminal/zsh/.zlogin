@@ -25,13 +25,13 @@
     zrecompile -pq ${file}
   done
 
-  for file in ${HOME}/.dotfiles/terminal/zsh/**/*; do
+  for file in $DOTFILES_PATH/terminal/zsh/**/*; do
     if [[ -f $file ]]; then
       zrecompile -pq ${file}
     fi
   done
 
-  for file in ${HOME}/.dotfiles/terminal/zsh/**/.*; do
+  for file in $DOTFILES_PATH/terminal/zsh/**/.*; do
     if [[ -f $file ]]; then
       zrecompile -pq ${file}
     fi
