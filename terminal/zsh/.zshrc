@@ -6,28 +6,25 @@ export ZIM_HOME=${ZDOTDIR:-${HOME}}/.dotfiles/modules/zimfw
 
 # ZSH Ops
 setopt HIST_IGNORE_ALL_DUPS
-setopt autopushd
+setopt HIST_FCNTL_LOCK
+# setopt autopushd
 
 # Start zim
 source ${ZIM_HOME}/init.zsh
 
 # Removing the waiting dots from completion (...). Original: ~/.zim/modules/input/init.zsh
-expand-or-complete-with-redisplay() {
-  zle expand-or-complete
-  zle redisplay
-}
+# expand-or-complete-with-redisplay() {
+#   zle expand-or-complete
+#   zle redisplay
+# }
 
 # Async mode for autocompletion
 ZSH_AUTOSUGGEST_USE_ASYNC=true
-
-# Fuzzy Autocompletion
-zstyle ':completion:*' completer _complete _match _approximate
-zstyle ':completion:*:approximate:*' max-errors 3 numeric
-zstyle ':completion:*' matcher-list 'm:{a-z}={  A-Z}' # match upper from lower case
+ZSH_HIGHLIGHT_MAXLENGTH=300
 
 source $DOTFILES_PATH/terminal/init.sh
 
-fpath=($DOTFILES_PATH/terminal/zsh/themes $DOTFILES_PATH/terminal/zsh/completions $fpath)
+fpath=("$DOTFILES_PATH/terminal/zsh/themes" "$DOTFILES_PATH/terminal/zsh/completions" $fpath)
 
 autoload -Uz promptinit && promptinit
 prompt rafa
