@@ -12,4 +12,4 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 
 docs::eval "$@"
 
-ls -d */ | xargs -I _ sh -c "find \"_\" -type f | wc -l | xargs echo _"
+ls -d ./*/ | xargs -I _ sh -c "find \"_\" -type f | wc -l | xargs echo \"_\""

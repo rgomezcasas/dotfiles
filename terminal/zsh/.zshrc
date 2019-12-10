@@ -1,3 +1,6 @@
+# Uncomment for debuf with `zprof`
+# zmodload zsh/zprof
+
 export DOTFILES_PATH=$HOME/.dotfiles
 export ZIM_HOME=${ZDOTDIR:-${HOME}}/.dotfiles/modules/zimfw
 
@@ -14,6 +17,9 @@ expand-or-complete-with-redisplay() {
   zle redisplay
 }
 
+# Async mode for autocompletion
+ZSH_AUTOSUGGEST_USE_ASYNC=true
+
 # Fuzzy Autocompletion
 zstyle ':completion:*' completer _complete _match _approximate
 zstyle ':completion:*:approximate:*' max-errors 3 numeric
@@ -27,8 +33,8 @@ autoload -Uz promptinit && promptinit
 prompt rafa
 
 # iTerm tab name
-precmd() {
-  echo -ne "\e]1;$(dot filesystem short_pwd)\a"
-}
+# precmd() {
+#   echo -ne "\e]1;$(dot filesystem short_pwd)\a"
+# }
 
 source $DOTFILES_PATH/terminal/zsh/key-bindings.zsh
