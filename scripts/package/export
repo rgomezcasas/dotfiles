@@ -18,6 +18,6 @@ brew bundle dump --file="$HOMEBREW_BUNDLE_FILE_PATH" --force
 
 echo 'Brew apps exported!'
 
-pip freeze > "$DOTFILES_PATH/langs/python/requirements.txt"
+pip freeze >"$DOTFILES_PATH/langs/python/requirements.txt"
 
 echo 'Python apps exported!'
