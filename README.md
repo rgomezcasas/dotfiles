@@ -1,5 +1,6 @@
 <h3 align="center">
-  <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/apple.svg" alt="Apple">
+<img height="32" width="32" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/apple.svg" />
+<img height="32" width="32" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/linux.svg" />
   rgomezcasas/dotfiles
 </h3>
 <p align="center">
