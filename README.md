@@ -6,9 +6,9 @@
   <br>
   <sub>
     Simple, fast, productivity-increaser dotfiles.
+    <img height="12" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/apple.svg" />
     <img height="12" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/linux.svg" />
     <img height="12" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/windows.svg" />
-    <img height="12" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/apple.svg" />
   </sub>
 
 </p>
