@@ -34,6 +34,9 @@ pip install -r "$DOTFILES_PATH/langs/python/requirements.txt"
 log::note "Installing php packages"
 composer global install
 
+log::note "Installing npm packages"
+xargs npm install -g <"$DOTFILES_PATH/langs/js/global_modules.txt"
+
 log::note "Setting ZSH as the default shell"
 chsh -s "$(command -v zsh)"
 

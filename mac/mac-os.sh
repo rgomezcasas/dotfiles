@@ -18,7 +18,7 @@ done 2>/dev/null &
 sudo nvram SystemAudioVolume=" "
 
 # Play user interface sound effects: false
-defaults write com.apple.systemsound 'com.apple.sound.uiaudio.enabled' -int 0
+defaults write com.apple.systemsound "com.apple.sound.uiaudio.enabled" -int 0
 
 defaults write NSGlobalDomain AppleShowScrollBars -string "WhenScrolling"
 
