@@ -13,7 +13,6 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 docs::eval "$@"
 
 brew services stop --all
-
 brew bundle dump --file="$HOMEBREW_BUNDLE_FILE_PATH" --force
 echo 'Brew apps exported!'
 

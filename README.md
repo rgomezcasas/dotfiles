@@ -1,14 +1,18 @@
-<h1 align="center">
-  🐧 rgomezcasas/dotfiles
-</h1>
+<h3 align="center">
+    rgomezcasas/dotfiles
+    <a href="mac"><img height="12" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/apple.svg" /></a>
+    <a href="linux"><img height="12" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/linux.svg" /></a>
+    <a href="linux"><img height="12" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/windows.svg" /></a>
+</h3>
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/1331435/36755901-df80a99c-1c0d-11e8-86cd-2f0f0003d28b.gif" alt="rgomezcasas/dotfiles">
+  <img src="https://user-images.githubusercontent.com/1331435/70709921-530e8780-1cde-11ea-814c-7b63566670d4.gif" alt="rgomezcasas/dotfiles" width="80%">
+  <br>
   <sub>Simple, fast, productivity-increaser dotfiles</sub>
 </p>
 <p align="center">
-  <a href="#-installation">Install</a>&nbsp;&nbsp;&nbsp;
-  <a href="terminal">Terminal</a>&nbsp;&nbsp;&nbsp;
-  <a href="scripts">Bash Scripts</a>&nbsp;&nbsp;&nbsp;
+  <a href="#-installation">Install</a>&nbsp;&nbsp;•&nbsp;
+  <a href="terminal">Terminal</a>&nbsp;&nbsp;•&nbsp;
+  <a href="scripts">Bash Scripts</a>&nbsp;&nbsp;•&nbsp;
   <a href="git/.gitconfig">Git configuration</a>
 </p>
 
@@ -53,12 +57,8 @@ dot self update
 
 
 ## 🔥 Other dotfiles I like
- * https://github.com/Tuurlijk/dotfiles
-   - Good performance
- * https://github.com/denisidoro/dotfiles
-   - `dot` command "inspiration" (almost copy and paste 😳)
-   - The dotfiles are from the creator of [navi](https://github.com/denisidoro/navi)
-   - Also has a [great blog](https://medium.com/@den.isidoro) with good tips about bash and clojure
+ * https://github.com/Tuurlijk/dotfiles: Good performance
+ * https://github.com/denisidoro/dotfiles: `dot` command "inspiration"
 
 
 ## ⚖️ License
