@@ -2,7 +2,7 @@
   🐧 rgomezcasas/dotfiles
 </h1>
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/1331435/70707733-2a37c380-1cd9-11ea-96a4-9b0203a9d24e.gif" alt="rgomezcasas/dotfiles">
+  <img src="https://user-images.githubusercontent.com/1331435/70709102-6587c180-1cdc-11ea-87a0-5e789b280c4f.gif" alt="rgomezcasas/dotfiles">
   <sub>Simple, fast, productivity-increaser dotfiles</sub>
 </p>
 <p align="center">
