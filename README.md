@@ -1,14 +1,14 @@
 <h1 align="center">
-  🐧 rgomezcasas/dotfiles
+  🐧 rgomezcasas/dotfiles 
 </h1>
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/1331435/36755901-df80a99c-1c0d-11e8-86cd-2f0f0003d28b.gif" alt="rgomezcasas/dotfiles">
+  <img src="https://user-images.githubusercontent.com/1331435/70672490-b2897a80-1c7f-11ea-91d4-1f379af0b0f1.gif" alt="rgomezcasas/dotfiles">
   <sub>Simple, fast, productivity-increaser dotfiles</sub>
 </p>
 <p align="center">
-  <a href="#-installation">Install</a>&nbsp;&nbsp;&nbsp;
-  <a href="terminal">Terminal</a>&nbsp;&nbsp;&nbsp;
-  <a href="scripts">Bash Scripts</a>&nbsp;&nbsp;&nbsp;
+  <a href="#-installation">Install</a>&nbsp;&nbsp;•&nbsp;
+  <a href="terminal">Terminal</a>&nbsp;&nbsp;•&nbsp;
+  <a href="scripts">Bash Scripts</a>&nbsp;&nbsp;•&nbsp;
   <a href="git/.gitconfig">Git configuration</a>
 </p>
 
