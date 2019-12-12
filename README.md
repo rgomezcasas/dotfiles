@@ -46,10 +46,6 @@ This is a way faster than using oh-my-zsh with the minimal setup.
   Execute <code>dot</code> in your terminal and you'll see all the scripts (and its documentation).
 </p>
 
-```bash
-dot <cmd> <args>... # `dot git standup`, for example
-```
-
 
 ## 🔰 Update
 ```bash
@@ -58,10 +54,8 @@ dot self update
 
 
 ## 🔥 Other dotfiles I like
- * https://github.com/Tuurlijk/dotfiles
-   - Good performance
- * https://github.com/denisidoro/dotfiles
-   - `dot` command "inspiration"
+ * https://github.com/Tuurlijk/dotfiles: Good performance
+ * https://github.com/denisidoro/dotfiles: `dot` command "inspiration"
 
 
 ## ⚖️ License
