@@ -1,7 +1,7 @@
 <h3 align="center">
-<img height="32" width="32" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/apple.svg" />
-<img height="32" width="32" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/linux.svg" />
+  <img height="16" width="16" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/linux.svg" />
   rgomezcasas/dotfiles
+  <img height="16" width="16" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/apple.svg" />
 </h3>
 <p align="center">
   <img src="https://user-images.githubusercontent.com/1331435/70709921-530e8780-1cde-11ea-814c-7b63566670d4.gif" alt="rgomezcasas/dotfiles" width="80%">
