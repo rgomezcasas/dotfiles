@@ -1,6 +1,6 @@
-<h1 align="center">
+<h2 align="center">
   🐧 rgomezcasas/dotfiles
-</h1>
+</h2>
 <p align="center">
   <img src="https://user-images.githubusercontent.com/1331435/70709921-530e8780-1cde-11ea-814c-7b63566670d4.gif" alt="rgomezcasas/dotfiles" width="80%">
   <br>
