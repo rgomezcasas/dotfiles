@@ -54,7 +54,10 @@
   - Install
   - Select load preferences from URL and use ~/.dotfiles/mac/iTerm. On the next prompt select "NOT copy"
 * Extra:
-  - [Prevent a volume from mounting at startup](https://discussions.apple.com/docs/DOC-7942)
+  - Prevent other volumes to be mounted on the startup
+    - `sudo vim /etc/fstab`
+    - Add at the bottom `UUID=6F34F6C2-1E7D-4A94-A765-1CEDB127E04D none ntfs rw,noauto`
+    - The UUID is obtained from `diskutil info /Volumes/{Disk Name} | grep 'Volume UUID'`
 * Restart
   - When Google Drive is synced, install all the fonts
     - Also download Osaka Mono from Font Book
