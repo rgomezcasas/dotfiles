@@ -1,18 +1,11 @@
 # MacOS
 # ----------------------------------
 
-# Licences
-/mac/Rocket/.licence
-
 # Karabiner
 /mac/karabiner-elements/automatic_backups
 
 # Alfred
 /mac/alfred/remote
-
-
-# Linux
-# ----------------------------------
 
 
 # Common
@@ -24,4 +17,3 @@ terminal/zsh/**/**.zwc.old
 
 # Private Stuff
 /**/**/private-*
-
