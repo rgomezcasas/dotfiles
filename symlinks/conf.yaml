@@ -9,9 +9,10 @@
     ~/.bashrc: terminal/bash/.bashrc
     ~/.bash_profile: terminal/bash/.bash_profile
     ~/.profile: terminal/bash/.profile
-    ~/.zshrc: terminal/zsh/.zshrc
     ~/.zimrc: terminal/zsh/.zimrc
     ~/.zlogin: terminal/zsh/.zlogin
+    ~/.zshenv: terminal/zsh/.zshenv
+    ~/.zshrc: terminal/zsh/.zshrc
     ~/.gitconfig: git/.gitconfig
     ~/.gitignore_global: git/.gitignore_global
     ~/.gitattributes: git/.gitattributes

@@ -29,9 +29,4 @@ fpath=("$DOTFILES_PATH/terminal/zsh/themes" "$DOTFILES_PATH/terminal/zsh/complet
 autoload -Uz promptinit && promptinit
 prompt rafa
 
-# iTerm tab name
-# precmd() {
-#   echo -ne "\e]1;$(dot filesystem short_pwd)\a"
-# }
-
 source $DOTFILES_PATH/terminal/zsh/key-bindings.zsh

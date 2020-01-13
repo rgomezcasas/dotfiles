@@ -15,6 +15,8 @@ docs::eval_help "$@"
 
 "$DOTFILES_PATH/bin/dot" self update
 
+source "$DOTFILES_PATH/modules/zimfw/zimfw.zsh" install
+
 if platform::is_macos; then
   log::note "Installing MacOS  custom packages"
 

@@ -24,9 +24,9 @@ case $1 in
   for i in $(seq 1 10); do /usr/bin/time /bin/zsh -i -c exit; done
   ;;
 "reload_completions")
-  /bin/zsh -c "autoload -U compaudit"
+  /bin/zsh -c "autoload -U compaudit && autoload -Uz compinit && compinit"
 
-  echo "Done! Now execute: compinit"
+  echo "👌 Done!"
   ;;
 *)
   docs::eval_help --help
