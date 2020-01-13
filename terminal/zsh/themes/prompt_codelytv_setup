@@ -1,27 +1,27 @@
 #!/usr/bin/env zsh
 
-FIRST_CHARACTER_OK="♪"
-FIRST_CHARACTER_KO="♫"
+FIRST_CHARACTER_OK="▶"
+FIRST_CHARACTER_KO="▶"
 DIRTY="✗"
 NONE="✓"
 
-prompt_rafa_pwd() {
+prompt_codelytv_pwd() {
   prompt_short_dir=$(dot filesystem short_pwd)
   print -n "%F{yellow}${prompt_short_dir}"
 }
 
-prompt_rafa_git() {
+prompt_codelytv_git() {
   [[ -n ${git_info} ]] && print -n "%F{white} on${(e)git_info[prompt]}"
 }
 
-prompt_rafa_precmd() {
+prompt_codelytv_precmd() {
   (( ${+functions[git-info]} )) && git-info
 }
 
-prompt_rafa_setup() {
-  local prompt_rafa_status='%(?:%F{green}$FIRST_CHARACTER_OK:%F{red}$FIRST_CHARACTER_KO)'
+prompt_codelytv_setup() {
+  local prompt_codelytv_status='%(?:%F{green}{%F{white}▸%F{green}}:%F{red}{%F{white}▸%F{red}})'
 
-  autoload -Uz add-zsh-hook && add-zsh-hook precmd prompt_rafa_precmd
+  autoload -Uz add-zsh-hook && add-zsh-hook precmd prompt_codelytv_precmd
 
   prompt_opts=(cr percent sp subst)
 
@@ -31,8 +31,8 @@ prompt_rafa_setup() {
   zstyle ':zim:git-info:dirty' format '%F{yellow}$DIRTY'
   zstyle ':zim:git-info:keys' format 'prompt' ' %F{cyan}%b%c %C%D'
 
-  PS1="${prompt_rafa_status} \$(prompt_rafa_pwd)\$(prompt_rafa_git)%f "
+  PS1="${prompt_codelytv_status} \$(prompt_codelytv_pwd)\$(prompt_codelytv_git)%f "
   RPS1=''
 }
 
-prompt_rafa_setup "${@}"
+prompt_codelytv_setup "${@}"

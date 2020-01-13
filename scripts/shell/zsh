@@ -16,17 +16,20 @@ case $1 in
 "optimize")
   find "$DOTFILES_PATH/terminal/zsh" -name '*.zwc' -exec rm -rf {} \;
   find "$DOTFILES_PATH/terminal/zsh" -name '*.old' -exec rm -rf {} \;
+  find "$DOTFILES_PATH/modules/zimfw" -name '*.zwc' -exec rm -rf {} \;
+  find "$DOTFILES_PATH/modules/zimfw" -name '*.old' -exec rm -rf {} \;
 
   /bin/zsh -c "source ${ZDOTDIR:-${HOME}}/.zlogin"
-  echo "👌 Done!"
+
+  dot shell zsh reload_completions
   ;;
 "test_performance")
   for i in $(seq 1 10); do /usr/bin/time /bin/zsh -i -c exit; done
   ;;
 "reload_completions")
-  /bin/zsh -c "autoload -U compaudit && autoload -Uz compinit && compinit"
-
-  echo "👌 Done!"
+  echo "Now execute (copied to your clipboard):"
+  echo "autoload -U compaudit && autoload -Uz compinit && compinit"
+  echo -n "autoload -U compaudit && autoload -Uz compinit && compinit" | pbcopy
   ;;
 *)
   docs::eval_help --help

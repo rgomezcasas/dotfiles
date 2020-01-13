@@ -27,6 +27,6 @@ source $DOTFILES_PATH/terminal/init.sh
 fpath=("$DOTFILES_PATH/terminal/zsh/themes" "$DOTFILES_PATH/terminal/zsh/completions" $fpath)
 
 autoload -Uz promptinit && promptinit
-prompt rafa
+prompt codelytv
 
 source $DOTFILES_PATH/terminal/zsh/key-bindings.zsh

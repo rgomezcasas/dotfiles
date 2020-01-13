@@ -19,7 +19,7 @@
     "editor.wordWrap": "on",
     "editor.wrappingIndent": "indent",
     "workbench.editor.highlightModifiedTabs": true,
-    "workbench.tree.horizontalScrolling": true,
+    "workbench.list.horizontalScrolling": true,
     "terminal.integrated.fontFamily": "Dank Mono, Hack, Menlo, Monaco, monospace",
     "terminal.integrated.fontSize": 16,
     "terminal.integrated.lineHeight": 1.4,
@@ -36,6 +36,13 @@
     "editor.renderWhitespace": "all",
     "workbench.activityBar.visible": false,
     "editor.suggestSelection": "first",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "java.configuration.checkProjectSettingsExclusions": false
+    "json.schemas": [
+        {
+            "fileMatch": [
+                "ci.yml"
+            ],
+            "url": "http://json.schemastore.org/github-workflow"
+        }
+    ],
+    "[yaml]": {}
 }
