@@ -36,8 +36,8 @@ paths=(
   "$GEM_HOME/bin"
   "$PYTHON_PATH/libexec/bin"
   "$GLOBAL_COMPOSER_PATH/vendor/bin"
-  "/usr/local/bin"
   "/bin"
+  "/usr/local/bin" # This contains Brew ZSH. If it's below `/bin` it won't be executed.
   "/usr/local/opt/make/libexec/gnubin"
   "/usr/bin"
   "/usr/local/sbin"
