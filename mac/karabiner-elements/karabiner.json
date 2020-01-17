@@ -134,6 +134,27 @@
                         ]
                     },
                     {
+                        "description": "[keyboard] opt + / -> ¿",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "slash",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_alt"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "osascript -e 'tell application \"System Events\" to keystroke \"¿\"'"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "[mouse] Up key -> Restore last hidden",
                         "manipulators": [
                             {
