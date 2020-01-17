@@ -51,8 +51,8 @@
 	helper = osxkeychain
 
 [pager]
-	diff = diff-so-fancy | less --tabs=4 -RFX
-	show = diff-so-fancy | less --tabs=4 -RFX
+	diff = pretty-diff | less --tabs=4 -RFX
+	show = pretty-diff | less --tabs=4 -RFX
 
 [color]
 	ui = always
