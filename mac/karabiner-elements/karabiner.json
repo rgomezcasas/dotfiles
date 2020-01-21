@@ -134,7 +134,7 @@
                         ]
                     },
                     {
-                        "description": "[keyboard] opt + / -> ¿",
+                        "description": "[keyboard] left opt + / -> ¿",
                         "manipulators": [
                             {
                                 "from": {
@@ -142,6 +142,27 @@
                                     "modifiers": {
                                         "mandatory": [
                                             "left_alt"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "osascript -e 'tell application \"System Events\" to keystroke \"¿\"'"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "[keyboard] right opt + / -> ¿",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "slash",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_alt"
                                         ]
                                     }
                                 },
