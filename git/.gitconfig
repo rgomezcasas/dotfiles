@@ -50,10 +50,6 @@
 [credential]
 	helper = osxkeychain
 
-[pager]
-	diff = pretty-diff | less --tabs=4 -RFX
-	show = pretty-diff | less --tabs=4 -RFX
-
 [color]
 	ui = always
 
