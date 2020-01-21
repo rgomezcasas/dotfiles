@@ -8,10 +8,10 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 #?? 1.0.0
 ##?
 ##? Usage:
-##?    git-c             # A prompt appears askign for the commit message
-##?    git-c <message>
+##?    commit            # A prompt appears askign for the commit message
+##?    commit <message>
 
-docs::eval "$@"
+docs::eval_help "$@"
 
 git add -A
 
