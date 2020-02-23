@@ -12,7 +12,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 
 docs::eval "$@"
 
-preferences_dir="$HOME/Library/Preferences"
+preferences_dir="$HOME/Library/Application Support/JetBrains"
 intellij_version=$(ls "$preferences_dir" | grep 'IntelliJIdea' | sort -r | head -n 1)
 intellij_code_templates_folder="$preferences_dir/$intellij_version/fileTemplates"
 
