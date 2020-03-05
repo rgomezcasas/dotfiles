@@ -18,4 +18,4 @@ completer.hist
 libsigar-universal64-macosx.dylib
 
 # Custom
-.no-commit
+*.no-commit.*
