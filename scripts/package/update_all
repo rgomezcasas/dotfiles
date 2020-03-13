@@ -34,8 +34,7 @@ fi
 echo ''
 echo '⚡️ ZSH Zim'
 zsh "$ZIM_HOME/zimfw.zsh" upgrade
-zsh "$ZIM_HOME/zimfw.zsh" update
-zsh "$ZIM_HOME/zimfw.zsh" uninstall & zsh "$ZIM_HOME/zimfw.zsh" install
+rm -rf "$ZIM_HOME/modules/"* && zsh "$ZIM_HOME/zimfw.zsh" install
 
 echo ''
 echo '📜 tldr'

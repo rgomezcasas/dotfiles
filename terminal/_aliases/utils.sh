@@ -10,6 +10,7 @@ alias bsl="brew services list"
 alias copy='pbcopy'
 alias dc='dot docker connect'
 alias ping='prettyping --nolegend'
+alias htop='glances'
 
 alias k='kill -9'
 alias t="dot filesystem navigate_and_preview_flatten_files"
