@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
 set -euo pipefail
 
@@ -10,31 +10,43 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##? Usage:
 ##?    empty_trash
 
-docs::eval_zsh "$0" "$@"
+docs::eval_help "$@"
 
 sudo rm -rfv /Volumes/*/.Trashes
-echo '[x] Volumes trash empty'
-
-sudo rm -rfv ~/.Trash
-echo '[x] Local trash empty'
+sudo rm -rfv ~/.Trash/*
+echo '🗑    All trashes empty'
 
 sudo rm -rfv /private/var/log/asl/*.asl
 sudo rm -rfv /var/log/asl/*.asl
-echo '[x] Mac logs empty'
+echo '📜   Mac logs empty'
 
 sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'
-echo '[x] Mac downloads history empty'
+echo '⏬   Mac downloads history empty'
 
-brew cleanup
-brew cleanup --prune-prefix
-echo '[x] Brew cache cleared'
+#brew cleanup
+#brew cleanup --prune-prefix
+echo '🍺   Brew cache cleared'
 
 rm -rf ~/Library/Caches/com.tinyspeck.slackmacgap
 rm -rf ~/Library/Caches/com.tinyspeck.slackmacgap.ShipIt
-echo '[x] Slack cache cleared'
+rm -rf ~/Library/Application Support/Slack/Cache
+rm -rf "$HOME/Library/Application Support/Slack/Service Worker/CacheStorage"
+echo '💬   Slack cache cleared'
 
-zimfwq clean
-zimfwq compile
-echo '[x] Compinit cleared'
+rm -rf ~/Library/Caches/com.spotify.client/Data
+echo '🎶   Spotify cache cleared'
+
+rm -rf ~/Library/Caches/JetBrains
+echo '🅸   JetBrains cache cleared'
+
+rm -rf ~/Library/Caches/Yarn/
+echo '💪   Yarn cache cleared'
+
+rm -rf ~/Library/Caches/Google/Chrome
+rm -rf "$HOME/Library/Application Support/Google/Chrome/Default/Service Worker/CacheStorage"
+rm -rf "$HOME/Library/Application Support/Google/Chrome/Default/Application Cache/Cache"
+rm -rf "$HOME/Library/Application Support/Google/Chrome/Profile 1/Service Worker/CacheStorage"
+rm -rf "$HOME/Library/Application Support/Google/Chrome/Profile 1/Application Cache/Cache"
+echo '🟡   Chrome cache cleared'
 
 echo 'Done!'
