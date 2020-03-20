@@ -23,8 +23,11 @@ echo '📜   Mac logs empty'
 sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'
 echo '⏬   Mac downloads history empty'
 
-#brew cleanup
-#brew cleanup --prune-prefix
+rm -rf "$HOME/Movies/"*.fcpbundle"/"*"/Render Files/High Quality Media"
+echo '🎬   Final Cut rendered media cleared'
+
+brew cleanup
+brew cleanup --prune-prefix
 echo '🍺   Brew cache cleared'
 
 rm -rf ~/Library/Caches/com.tinyspeck.slackmacgap
