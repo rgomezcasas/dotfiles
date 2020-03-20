@@ -903,7 +903,7 @@
 	<key>NSWindow Frame SUAutomaticUpdateAlert</key>
 	<string>-1268 679 616 174 -1920 0 1920 1080 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>650 516 620 392 0 0 1920 1080 </string>
+	<string>2570 516 620 392 1920 0 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>1920 0 1920 1080 1920 0 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
@@ -1090,13 +1090,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.0087890625</real>
+				<real>0.05426025390625</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.0087890625</real>
+				<real>0.05426025390625</real>
 				<key>Red Component</key>
-				<real>0.0087890625</real>
+				<real>0.05426025390625</real>
 			</dict>
 			<key>Background Image Is Tiled</key>
 			<false/>
@@ -2097,7 +2097,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>C7A4CF29-EBCB-4FBB-90FE-02562EC34905</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>136</integer>
+	<integer>138</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -2904,11 +2904,11 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-03-11T17:29:51Z</date>
+	<date>2020-03-13T10:22:04Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
-	<false/>
+	<true/>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
