@@ -12,6 +12,12 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 
 docs::eval_help "$@"
 
+free_space_in_home() {
+  df -h ~ | tail -n1 | awk '{print $4}'
+}
+
+free_space_before_empty=$(free_space_in_home)
+
 sudo rm -rfv /Volumes/*/.Trashes
 sudo rm -rfv ~/.Trash/*
 echo '🗑    All trashes empty'
@@ -52,4 +58,6 @@ rm -rf "$HOME/Library/Application Support/Google/Chrome/Profile 1/Service Worker
 rm -rf "$HOME/Library/Application Support/Google/Chrome/Profile 1/Application Cache/Cache"
 echo '🟡   Chrome cache cleared'
 
-echo 'Done!'
+free_space_after_empty=$(free_space_in_home)
+
+echo "Done! Free space before: $free_space_before_empty, free space now: $free_space_after_empty"
