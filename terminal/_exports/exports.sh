@@ -38,7 +38,8 @@ paths=(
   "$GLOBAL_COMPOSER_PATH/vendor/bin"
   "/bin"
   "/usr/local/bin" # This contains Brew ZSH. If it's below `/bin` it won't be executed.
-  "/usr/local/opt/make/libexec/gnubin"
+  "/usr/local/opt/gnu-sed/libexec/gnubin" # Use gnu-sed (mac version is from BSD 2005)
+  "/usr/local/opt/make/libexec/gnubin"  # Use gnu-make
   "/usr/bin"
   "/usr/local/sbin"
   "/usr/sbin"
