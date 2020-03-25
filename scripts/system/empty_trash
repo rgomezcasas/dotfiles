@@ -52,6 +52,13 @@ echo '🅸   JetBrains cache cleared'
 rm -rf ~/Library/Caches/Yarn/
 echo '💪  Yarn cache cleared'
 
+rm -rf ~/.gradle/wrapper/dists/
+rm -rf ~/.gradle/caches/
+echo '🐘  Gradle cache cleared'
+
+rm -rf ~/.composer/cache/
+echo '👨‍🎤  Composer cache cleared'
+
 rm -rf ~/Library/Caches/Google/Chrome
 rm -rf "$HOME/Library/Application Support/Google/Chrome/"*"/Service Worker/CacheStorage"
 rm -rf "$HOME/Library/Application Support/Google/Chrome/"*"/Application Cache/Cache"

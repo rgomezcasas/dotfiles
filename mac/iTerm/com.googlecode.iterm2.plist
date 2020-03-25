@@ -1278,7 +1278,7 @@
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>0 0 1920 454 0 0 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>0 0 1094 762 0 0 1920 1080 </string>
+	<string>2880 0 959 1080 1920 0 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>-1920 0 1920 1080 -1920 0 1920 1080 </string>
 	<key>NeverWarnAboutShortLivedSessions_10B05570-B840-47B9-8682-D933DFEA6004</key>
@@ -1523,13 +1523,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.15686274509803921</real>
+				<real>0.160247802734375</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.15686274509803921</real>
+				<real>0.160247802734375</real>
 				<key>Red Component</key>
-				<real>0.15686274509803921</real>
+				<real>0.160247802734375</real>
 			</dict>
 			<key>Background Image Is Tiled</key>
 			<false/>
@@ -2651,7 +2651,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>C7A4CF29-EBCB-4FBB-90FE-02562EC34905</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>160</integer>
+	<integer>162</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
