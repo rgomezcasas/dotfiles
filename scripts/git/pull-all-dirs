@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Update each repository inside a folder
+#?? 1.0.0
+##?
+##? Usage:
+##?    pull-all-dirs
+
+docs::eval "$@"
+
+ls | xargs -I{} git -C {} pull
