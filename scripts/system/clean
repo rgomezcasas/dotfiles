@@ -13,6 +13,8 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 docs::eval_zsh "$0" "$@"
 
 sudo rm -rf /Applications/Utilities/Adobe\ Creative\ Cloud/ACC/Creative\ Cloud.app
+sudo rm -rf /Applications/Utilities/Adobe\ Creative\ Cloud/AppsPanel/Updater/Adobe\ Application\ Updater.app
+sudo find /Applications/Utilities/Adobe\ Application\ Manager/ -name "*.app" -exec rm -rf "{}" \;
 sudo rm -f "/Library/LaunchDaemons/com.adobe."*
 sudo rm -f "/Library/LaunchAgents/com.adobe."*
 sudo rm -f "$HOME/Library/LaunchAgents/com.adobe."*
