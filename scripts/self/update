@@ -13,6 +13,9 @@ source "$DOTFILES_PATH/scripts/self/utils/update.sh"
 
 docs::eval_help "$@"
 
+log::note "Closing Apps"
+killall Rocket || true
+
 log::note "Updating dotfiles"
 self_update
 
@@ -24,3 +27,6 @@ apply_common_symlinks
 
 log::note "Applying macOS Symlinks"
 apply_macos_symlinks
+
+log::note "Opening apps"
+open /Applications/Rocket.app
