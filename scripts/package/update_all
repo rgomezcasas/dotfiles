@@ -32,9 +32,8 @@ else
 fi
 
 echo ''
-echo '⚡️ ZSH Zim'
-zsh "$ZIM_HOME/zimfw.zsh" upgrade
-rm -rf "$ZIM_HOME/modules/"* && zsh "$ZIM_HOME/zimfw.zsh" install
+echo '⚡️ System: Symlinks, Zim…'
+dot self update
 
 echo ''
 echo '📜 tldr'

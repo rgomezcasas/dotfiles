@@ -15,12 +15,11 @@ self_update() {
 
 update_submodules() {
   cd "$DOTFILES_PATH" || exit
-  git pull
-  git submodule init
-  git submodule update
-  git submodule status
 
-  for submodule in "$DOTFILES_PATH/modules/"*; do git submodule update --init --recursive --remote --merge "$submodule"; done
+  zsh "$ZIM_HOME/zimfw.zsh" upgrade
+  rm -rf "$ZIM_HOME/modules/"* && zsh "$ZIM_HOME/zimfw.zsh" install
+
+  git submodule foreach git reset --hard
 }
 
 apply_symlinks() {
