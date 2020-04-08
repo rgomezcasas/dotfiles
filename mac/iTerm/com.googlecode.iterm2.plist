@@ -971,6 +971,8 @@
 	<false/>
 	<key>DisableFullscreenTransparency</key>
 	<true/>
+	<key>DisableWindowSizeSnap</key>
+	<true/>
 	<key>DoubleClickPerformsSmartSelection</key>
 	<true/>
 	<key>EnableDivisionView</key>
@@ -1221,7 +1223,7 @@
 	<key>MaxVertically</key>
 	<false/>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/Desktop/tmp</string>
+	<string>~/Desktop</string>
 	<key>NSNavLastUserSetHideExtensionButtonState</key>
 	<false/>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
@@ -1270,15 +1272,15 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSNavPanelAutosaveName</key>
-	<string>560 474 799 448 0 0 1920 1080 </string>
+	<string>2459 457 841 470 0 0 1920 1080 </string>
 	<key>NSWindow Frame SUAutomaticUpdateAlert</key>
 	<string>2572 679 616 174 1920 0 1920 1080 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>2570 516 620 392 1920 0 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1920 454 0 0 1920 1080 </string>
+	<string>1920 0 960 1080 1920 0 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>2880 0 959 1080 1920 0 1920 1080 </string>
+	<string>0 0 1920 1080 0 0 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>-1920 0 1920 1080 -1920 0 1920 1080 </string>
 	<key>NeverWarnAboutShortLivedSessions_10B05570-B840-47B9-8682-D933DFEA6004</key>
@@ -2610,13 +2612,14 @@
 	<array>
 		<string>3.3.20200315-nightly</string>
 		<string>3.3.20200305-nightly</string>
-		<string>3.3.20200204-nightly</string>
+		<string>3.3.20200304-nightly</string>
 		<string>3.3.20191218-nightly</string>
 		<string>3.3.20191209-nightly</string>
 		<string>3.3.20191230-nightly</string>
 		<string>3.3.20200127-nightly</string>
 		<string>3.3.10beta2</string>
 		<string>3.3.20200128-nightly</string>
+		<string>3.3.10beta3</string>
 		<string>3.3.20200129-nightly</string>
 		<string>3.3.20200221-nightly</string>
 		<string>3.3.20200101-nightly</string>
@@ -2635,7 +2638,7 @@
 		<string>3.3.20200202-nightly</string>
 		<string>3.3.20200313-nightly</string>
 		<string>3.3.20200323-nightly</string>
-		<string>3.3.20200304-nightly</string>
+		<string>3.3.20200204-nightly</string>
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
@@ -2651,7 +2654,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>C7A4CF29-EBCB-4FBB-90FE-02562EC34905</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>162</integer>
+	<integer>181</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -3458,7 +3461,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-03-23T09:34:09Z</date>
+	<date>2020-04-08T09:17:47Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
@@ -3540,7 +3543,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.3.10beta2</string>
+	<string>3.3.10beta3</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
