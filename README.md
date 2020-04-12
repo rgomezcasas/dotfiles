@@ -11,7 +11,7 @@
 </p>
 <p align="center">
   <a href="#-installation">Install</a>&nbsp;&nbsp;•&nbsp;
-  <a href="terminal">Terminal</a>&nbsp;&nbsp;•&nbsp;
+  <a href="shell">Shell</a>&nbsp;&nbsp;•&nbsp;
   <a href="scripts">Bash Scripts</a>&nbsp;&nbsp;•&nbsp;
   <a href="git/.gitconfig">Git configuration</a>
 </p>
