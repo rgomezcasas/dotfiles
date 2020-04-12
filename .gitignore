@@ -12,8 +12,8 @@
 # ----------------------------------
 
 # Compiled zsh
-terminal/zsh/**/**.zwc
-terminal/zsh/**/**.zwc.old
+shell/zsh/**/**.zwc
+shell/zsh/**/**.zwc.old
 
 # Private Stuff
 /**/**/private-*

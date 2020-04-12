@@ -59,9 +59,9 @@ echo '🐘  Gradle cache cleared'
 rm -rf ~/.composer/cache/
 echo '👨‍🎤  Composer cache cleared'
 
-rm -rf ~/Library/Caches/Google/Chrome
-rm -rf "$HOME/Library/Application Support/Google/Chrome/"*"/Service Worker/CacheStorage"
-rm -rf "$HOME/Library/Application Support/Google/Chrome/"*"/Application Cache/Cache"
+rm -rf ~/Library/Caches/Google/Chrome || true
+rm -rf "$HOME/Library/Application Support/Google/Chrome/"*"/Service Worker/CacheStorage" || true
+rm -rf "$HOME/Library/Application Support/Google/Chrome/"*"/Application Cache/Cache" || true
 echo '🟡  Chrome cache cleared'
 
 free_space_after_empty=$(free_space_in_home)
