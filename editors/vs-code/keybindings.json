@@ -1,19 +1,19 @@
 [
-    {
-        "key": "ctrl+g",
-        "command": "editor.action.addSelectionToNextFindMatch"
-    },
-    {
-        "key": "cmd+1",
-        "command": "workbench.action.toggleSidebarVisibility"
-    },
-    {
-        "key": "cmd+e",
-        "command": "workbench.action.quickOpen"
-    },
-    {
-        "key": "cmd+d",
-        "command": "editor.action.copyLinesDownAction",
-        "when": "editorTextFocus && !editorReadonly"
-    }
+  {
+    "key": "ctrl+g",
+    "command": "editor.action.addSelectionToNextFindMatch"
+  },
+  {
+    "key": "cmd+1",
+    "command": "workbench.action.toggleSidebarVisibility"
+  },
+  {
+    "key": "cmd+e",
+    "command": "workbench.action.quickOpen"
+  },
+  {
+    "key": "cmd+d",
+    "command": "editor.action.copyLinesDownAction",
+    "when": "editorTextFocus && !editorReadonly"
+  }
 ]

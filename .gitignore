@@ -1,6 +1,5 @@
 # MacOS
 # ----------------------------------
-
 # Karabiner
 /mac/karabiner-elements/automatic_backups
 
@@ -10,7 +9,6 @@
 
 # Common
 # ----------------------------------
-
 # Compiled zsh
 shell/zsh/**/**.zwc
 shell/zsh/**/**.zwc.old

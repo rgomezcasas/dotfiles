@@ -17,8 +17,7 @@ export FZF_DEFAULT_OPTS='
 
 export HOMEBREW_AUTO_UPDATE_SECS=86400
 export HOMEBREW_NO_ANALYTICS=true
-export HOMEBREW_INSTALL_BADGE="(ʘ‿ʘ)"
-export HOMEBREW_BUNDLE_FILE_PATH=${DOTFILES_PATH}/mac/brew/Brewfile
+export HOMEBREW_BUNDLE_FILE_PATH="${DOTFILES_PATH}/mac/brew/Brewfile"
 
 export NAVI_PATH="$DOTFILES_PATH/doc/navi"
 
@@ -39,7 +38,7 @@ paths=(
   "/bin"
   "/usr/local/bin" # This contains Brew ZSH. If it's below `/bin` it won't be executed.
   "/usr/local/opt/gnu-sed/libexec/gnubin" # Use gnu-sed (mac version is from BSD 2005)
-  "/usr/local/opt/make/libexec/gnubin"  # Use gnu-make
+  "/usr/local/opt/make/libexec/gnubin" # Use gnu-make
   "/usr/bin"
   "/usr/local/sbin"
   "/usr/sbin"
