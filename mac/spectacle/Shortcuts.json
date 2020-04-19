@@ -9,7 +9,7 @@
   },
   {
     "shortcut_key_binding" : null,
-    "shortcut_name" : "MoveToLowerRight"
+    "shortcut_name" : "MoveToUpperLeft"
   },
   {
     "shortcut_key_binding" : null,
@@ -65,10 +65,10 @@
   },
   {
     "shortcut_key_binding" : null,
-    "shortcut_name" : "MoveToUpperLeft"
+    "shortcut_name" : "MoveToPreviousThird"
   },
   {
     "shortcut_key_binding" : null,
-    "shortcut_name" : "MoveToPreviousThird"
+    "shortcut_name" : "MoveToLowerRight"
   }
 ]

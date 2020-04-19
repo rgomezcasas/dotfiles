@@ -1,0 +1,18 @@
+#                   Apps
+# --------------------------------------------
+
+# iTerm
+lctrl + lalt + lcmd - space : open -a 'iTerm.app'
+# IntelliJ
+lctrl + lalt + lcmd - i : dot utils open_intellij
+# Chrome
+lctrl + lalt + lcmd - c : open -a 'Google Chrome.app'
+# Slack
+lctrl + lalt + lcmd - s : open -a /Applications/Slack.app
+
+
+#                 Remapping
+# --------------------------------------------
+
+# `right option` + `/` to `¿`
+ralt - 0x2C : osascript -e 'tell application "System Events" to keystroke "¿"'
