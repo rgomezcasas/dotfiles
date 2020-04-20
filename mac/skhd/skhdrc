@@ -10,14 +10,6 @@ lctrl + alt + cmd - c : open -a 'Google Chrome.app'
 # Slack
 lctrl + alt + cmd - s : open -a /Applications/Slack.app
 
-#                 Multimedia
-# --------------------------------------------
-f10 : $HOME/.dotfiles/bin/sdot system media previous
-f11 : $HOME/.dotfiles/bin/sdot system media toggle_play
-f12 : $HOME/.dotfiles/bin/sdot system media next
-f13 : $HOME/.dotfiles/bin/sdot system volume decrease
-f15 : $HOME/.dotfiles/bin/sdot system volume increase
-
 
 #                 Remapping
 # --------------------------------------------
