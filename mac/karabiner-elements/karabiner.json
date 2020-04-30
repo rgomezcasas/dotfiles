@@ -727,18 +727,10 @@
                         },
                         {
                             "from": {
-                                "key_code": "left_command"
+                                "key_code": "end"
                             },
                             "to": {
-                                "key_code": "left_option"
-                            }
-                        },
-                        {
-                            "from": {
-                                "key_code": "left_option"
-                            },
-                            "to": {
-                                "key_code": "left_command"
+                                "key_code": "page_down"
                             }
                         },
                         {
@@ -767,10 +759,42 @@
                         },
                         {
                             "from": {
-                                "key_code": "print_screen"
+                                "key_code": "home"
                             },
                             "to": {
-                                "key_code": "volume_decrement"
+                                "key_code": "delete_or_backspace"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "left_command"
+                            },
+                            "to": {
+                                "key_code": "left_option"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "left_option"
+                            },
+                            "to": {
+                                "key_code": "left_command"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "page_down"
+                            },
+                            "to": {
+                                "key_code": "page_up"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "page_up"
+                            },
+                            "to": {
+                                "key_code": "backslash"
                             }
                         },
                         {
@@ -779,6 +803,14 @@
                             },
                             "to": {
                                 "key_code": "volume_increment"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "print_screen"
+                            },
+                            "to": {
+                                "key_code": "volume_decrement"
                             }
                         }
                     ]
@@ -795,6 +827,44 @@
                     "ignore": false,
                     "manipulate_caps_lock_led": false,
                     "simple_modifications": []
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 598,
+                        "vendor_id": 1452
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [
+                        {
+                            "from": {
+                                "key_code": "caps_lock"
+                            },
+                            "to": {
+                                "key_code": "fn"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "grave_accent_and_tilde"
+                            },
+                            "to": {
+                                "key_code": "non_us_backslash"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "non_us_backslash"
+                            },
+                            "to": {
+                                "key_code": "grave_accent_and_tilde"
+                            }
+                        }
+                    ]
                 }
             ],
             "fn_function_keys": [

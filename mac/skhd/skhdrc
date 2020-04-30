@@ -11,6 +11,13 @@ lctrl + alt + cmd - c : open -a 'Google Chrome.app'
 lctrl + alt + cmd - s : open -a /Applications/Slack.app
 
 
+#                   Util
+# --------------------------------------------
+
+# Generate uuid to the clipboard
+lctrl + alt + cmd - u : $HOME/.dotfiles/bin/sdot utils uuid_code
+
+
 #                 Remapping
 # --------------------------------------------
 
