@@ -44,5 +44,6 @@
       "url": "http://json.schemastore.org/github-workflow"
     }
   ],
-  "[yaml]": {}
+  "[yaml]": {},
+  "window.zoomLevel": 5
 }

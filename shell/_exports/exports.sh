@@ -33,10 +33,11 @@ paths=(
   "$JAVA_HOME/bin"
   "$GOPATH/bin"
   "$GEM_HOME/bin"
+  "$GEM_HOME/ruby/2.7.0/bin/bin"
   "$PYTHON_PATH/libexec/bin"
   "$GLOBAL_COMPOSER_PATH/vendor/bin"
+  "/usr/local/bin" # This contains all Brew binaries (bash...)
   "/bin"
-  "/usr/local/bin" # This contains Brew ZSH. If it's below `/bin` it won't be executed.
   "/usr/local/opt/gnu-sed/libexec/gnubin" # Use gnu-sed (mac version is from BSD 2005)
   "/usr/local/opt/make/libexec/gnubin" # Use gnu-make
   "/usr/bin"

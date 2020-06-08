@@ -730,7 +730,7 @@
                                 "key_code": "end"
                             },
                             "to": {
-                                "key_code": "page_down"
+                                "key_code": "up_arrow"
                             }
                         },
                         {
@@ -786,7 +786,7 @@
                                 "key_code": "page_down"
                             },
                             "to": {
-                                "key_code": "page_up"
+                                "key_code": "return_or_enter"
                             }
                         },
                         {

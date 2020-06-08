@@ -24,8 +24,8 @@ if $thumb; then
   extra_options="$extra_options --size=250"
 fi
 
-cp "$filename" "$original_filename"
+#cp "$filename" "$original_filename"
 
-jpegoptim -q $filename $extra_options
+jpegoptim --max 85 -q $filename $extra_options
 
 echo "⚡️ File <$filename> optimized!"

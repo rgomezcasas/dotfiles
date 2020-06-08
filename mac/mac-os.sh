@@ -172,7 +172,7 @@ defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
 defaults write NSGlobalDomain com.apple.springing.enabled -bool true
 
 # Remove the spring loading delay for directories
-defaults write NSGlobalDomain com.apple.springing.delay -float 0
+defaults write NSGlobalDomain com.apple.springing.delay -float 0.2
 
 ###############################################################################
 # Dock, Dashboard, and hot corners                                            #

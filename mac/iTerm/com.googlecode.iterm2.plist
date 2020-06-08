@@ -1278,7 +1278,7 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>2570 516 620 392 1920 0 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1920 362 1157 718 1920 0 1920 1080 </string>
+	<string>2880 0 960 1080 1920 0 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>0 0 1920 1080 0 0 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -2629,6 +2629,7 @@
 		<string>3.3.20191225-nightly</string>
 		<string>3.3.20191223-nightly</string>
 		<string>3.3.20191226-nightly</string>
+		<string>3.3.10beta4</string>
 		<string>3.3.20200106-nightly</string>
 		<string>3.3.20191210-nightly</string>
 		<string>3.3.20200228-nightly</string>
@@ -2647,16 +2648,16 @@
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{1920, 0}, {1920, 1080}}</string>
+		<string>{{0, 0}, {1920, 1080}}</string>
 		<key>topLeft</key>
-		<string>{2312, 786}</string>
+		<string>{638, 646}</string>
 	</dict>
 	<key>NoSyncHaveUsedCopyMode</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>C7A4CF29-EBCB-4FBB-90FE-02562EC34905</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>228</integer>
+	<integer>256</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -3463,7 +3464,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-04-26T19:28:59Z</date>
+	<date>2020-05-11T14:57:50Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
@@ -3545,7 +3546,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.3.10beta3</string>
+	<string>3.3.10beta4</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
