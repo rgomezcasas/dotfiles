@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Open a project in intellij
+#?? 1.0.0
+##?
+##? Usage:
+##?    open_project_in_intellij
+
+project=$(dot utils list_projects -f choose)
+
+idea "$project"

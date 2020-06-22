@@ -17,6 +17,9 @@ lctrl + alt + cmd - s : open -a /Applications/Slack.app
 # Generate uuid to the clipboard
 lctrl + alt + cmd - u : $HOME/.dotfiles/bin/sdot utils uuid_code
 
+# List projects and open with intellij
+lshift + alt + cmd - i : $HOME/.dotfiles/bin/sdot utils open_project_in_intellij
+
 
 #                 Remapping
 # --------------------------------------------

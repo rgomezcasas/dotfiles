@@ -23,9 +23,3 @@ function go_to_project() {
 
   cd "$project" || exit
 }
-
-function open_project_idea() {
-  project=$(dot utils list_projects "$@")
-
-  idea "$project"
-}
