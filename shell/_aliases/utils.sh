@@ -15,5 +15,6 @@ alias htop='glances'
 alias k='kill -9'
 alias t="dot filesystem navigate_and_preview_flatten_files"
 alias i.='(idea $PWD &>/dev/null &)'
+alias i='open_project_idea'
 alias c.='(code $PWD &>/dev/null &)'
 alias o.='open .'

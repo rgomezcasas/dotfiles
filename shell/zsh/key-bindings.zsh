@@ -33,3 +33,11 @@ _call_navi() {
 }
 zle     -N   _call_navi
 bindkey '^g' _call_navi
+
+# ctrl+p - Go to project
+zle     -N   go_to_project
+bindkey '^p' go_to_project
+
+# ctrl+i - Open project in intellij
+zle     -N   open_project_idea
+bindkey '^i' open_project_idea

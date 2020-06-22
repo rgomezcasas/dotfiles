@@ -17,3 +17,15 @@ function recent_dirs() {
 
   cd "$(echo "$selected" | sed "s/\~/$escaped_home/")" || echo "Invalid directory"
 }
+
+function go_to_project() {
+  project=$(dot utils list_projects "$@")
+
+  cd "$project" || exit
+}
+
+function open_project_idea() {
+  project=$(dot utils list_projects "$@")
+
+  idea "$project"
+}

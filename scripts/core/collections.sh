@@ -16,3 +16,26 @@ coll::contains_element() {
   done
   return 0
 }
+
+coll::new() {
+   for x in "$@"; do
+      echo "$x"
+   done
+}
+
+coll::map() {
+   local -r fn="$1"
+
+   for x in $(cat); do
+      "$fn" "$x"
+   done
+}
+
+coll::map2() {
+   local -r fn="$1"
+   local -r arg1="$2"
+
+   for x in $(cat); do
+      "$fn" "$arg1" "$x"
+   done
+}
