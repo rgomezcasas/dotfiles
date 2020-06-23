@@ -24,4 +24,3 @@ case $1 in
   osascript -e 'tell application "Spotify" to playpause'
   ;;
 esac
-

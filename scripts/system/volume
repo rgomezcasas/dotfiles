@@ -10,7 +10,6 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##? Usage:
 ##?   volume
 
-
 chunk_size=5
 current_volume=$(osascript -e 'output volume of (get volume settings)')
 case $1 in
