@@ -7,11 +7,10 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 #?? 1.0.0
 ##?
 ##? Usage:
-##?    list_projects [<project_filter>] [options]
+##?    list_projects [<project_filter>] [--choose]
 ##?
 ##? Options:
-##?   -f --filterer_to_use Filterer to use
-
+##?   --choose  Use choose instead fzf
 docs::eval "$@"
 
 project_root_directories=(
@@ -20,8 +19,7 @@ project_root_directories=(
   "$HOME/Code/rgomezcasas/"*
   "$DOTFILES_PATH"
 )
-[[ -z "$filterer_to_use" ]] && filterer="fzf" || filterer="choose"
-
+[[ "$choose" == "false" ]] && filterer="fzf" || filterer="choose -c 181818"
 project_directories=$(printf '%s\n' "${project_root_directories[@]}" | xargs ls -d | grep -v "_")
 
 if [[ -z "$project_filter" ]]; then

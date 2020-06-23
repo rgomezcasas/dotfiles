@@ -13,17 +13,7 @@ _compose_version() {
 }
 
 docs::eval() {
-  local -r file="$0"
-  local -r help="$(extract_help "$file")"
-
-  docopts="${DOTFILES_PATH}/scripts/core/utils/docopts"
-
-  if [[ ${1:-} == "--version" ]]; then
-    local -r version="$(_compose_version "$file")"
-    eval "$($docopts -h "${help}" -V "${version}" : "${@:1}")"
-  else
-    eval "$($docopts -h "${help}" : "${@:1}")"
-  fi
+  eval "$(docpars -h "$(grep "^##?" "$0" | cut -c 5-)" : "$@")"
 }
 
 docs::eval_help() {

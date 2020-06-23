@@ -9,7 +9,15 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?
 ##? Usage:
 ##?    debug <thing>
+docs::eval "$@"
 
-project=$("$HOME/.dotfiles/bin/sdot" utils list_projects --choose)
+case "$thing" in
+kbhd)
+  tail -f /usr/local/var/log/skhd/skhd.*
+  ;;
 
-"$HOME/bin/idea" "$project"
+*)
+  echo "\`$thing\` not known"
+  exit 1
+  ;;
+esac
