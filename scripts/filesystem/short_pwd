@@ -9,9 +9,8 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?
 ##? Usage:
 ##?   short_pwd
-docs::eval_zsh "$0" "$@"
 
-if [[ $(pwd) == $HOME ]] ; then
+if [[ $(pwd) == "$HOME" ]] ; then
   echo "~"
 else
   echo ${${${:-/${(j:/:)${(M)${(s:/:)${(D)PWD:h}}#(|.)[^.]}}/${PWD:t}}//\/~/\~}/\/\//\/}

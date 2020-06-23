@@ -10,8 +10,7 @@ source "$DOTFILES_PATH/scripts/self/utils/install.sh"
 ##?
 ##? Usage:
 ##?   install
-
-docs::eval_help "$@"
+docs::eval "$@"
 
 "$DOTFILES_PATH/bin/dot" self update
 

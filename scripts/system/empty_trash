@@ -9,8 +9,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?
 ##? Usage:
 ##?   empty_trash
-
-docs::eval_help "$@"
+docs::eval "$@"
 
 free_space_in_home() {
   df -h ~ | tail -n1 | awk '{print $4}'

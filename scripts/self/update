@@ -10,8 +10,7 @@ source "$DOTFILES_PATH/scripts/self/utils/update.sh"
 ##?
 ##? Usage:
 ##?   update
-
-docs::eval_help "$@"
+docs::eval "$@"
 
 log::note "Updating dotfiles"
 self_update

@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
 set -euo pipefail
 
@@ -9,8 +9,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?
 ##? Usage:
 ##?   pretty-log
-
-docs::eval_zsh "$0" "$@"
+docs::eval "$@"
 
 commit=$(
   git log --graph \

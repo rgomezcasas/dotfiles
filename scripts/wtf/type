@@ -10,8 +10,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?
 ##? Examples:
 ##?   type 'foo bar' 100
-
-docs::eval_help "$@"
+docs::eval "$@"
 
 text="$1"
 speed_in_ms="${2:-80}"

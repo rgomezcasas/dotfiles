@@ -10,12 +10,11 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##? Usage:
 ##?   commit
 ##?   commit <message>
-
-docs::eval_help "$@"
+docs::eval "$@"
 
 git add -A
 
-if [ -z "$1" ]; then
+if [ -z "$message" ]; then
   git commit -S
 else
   git commit -S -m"$1"
