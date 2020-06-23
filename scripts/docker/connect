@@ -8,8 +8,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 #?? 1.0.0
 ##?
 ##? Usage:
-##?    connect
-
+##?   connect
 docs::eval "$@"
 
 if docker ps >/dev/null 2>&1; then

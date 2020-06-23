@@ -7,7 +7,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 #?? 1.0.0
 ##?
 ##? Usage:
-##?    list_projects [<project_filter>] [--choose]
+##?   list_projects [<project_filter>] [--choose]
 ##?
 ##? Options:
 ##?   --choose  Use choose instead fzf

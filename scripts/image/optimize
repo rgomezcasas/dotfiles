@@ -8,13 +8,12 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 #?? 1.0.0
 ##?
 ##? Usage:
-##?    optimize <filename>
-##?    optimize <filename> --thumb
+##?   optimize <filename>
+##?   optimize <filename> --thumb
 ##?
 ##? Options:
-##?    -h --help   Show this screen.
-##?    -t --thumb  Optimizes for thumbnail (for CodelyTV YouTube videos :)
-
+##?   -h --help   Show this screen.
+##?   -t --thumb  Optimizes for thumbnail (for CodelyTV YouTube videos :)
 docs::eval "$@"
 
 original_filename=$(echo "$filename" | sed 's/\(.*\)\./\1.original./')

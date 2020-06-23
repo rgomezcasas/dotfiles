@@ -11,8 +11,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?    org_contributors <organization>
 ##?
 ##? Example:
-##?    org_contributors codelytv
-
+##?   org_contributors codelytv
 docs::eval "$@"
 
 python "$DOTFILES_PATH/scripts/github/utils/github-contributors.py" -t "$GITHUB_TOKEN" -o "$@"

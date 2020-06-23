@@ -8,7 +8,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 #?? 0.1.0
 ##?
 ##? Usage:
-##?    pipes
+##?   pipes
 
 docs::eval_help "$@"
 

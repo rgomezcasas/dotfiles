@@ -9,7 +9,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?    type <text> <speed_in_ms>
 ##?
 ##? Examples:
-##?    type 'foo bar' 100
+##?   type 'foo bar' 100
 
 docs::eval_help "$@"
 

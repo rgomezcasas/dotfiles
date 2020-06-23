@@ -8,8 +8,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 #?? 1.0.0
 ##?
 ##? Usage:
-##?    sync_dotfiles
-
+##?   sync_dotfiles
 docs::eval "$@"
 
 cd "$DOTFILES_PATH" || exit

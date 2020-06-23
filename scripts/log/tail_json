@@ -8,8 +8,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 #?? 1.0.0
 ##?
 ##? Usage:
-##?    tail_json <filename>   # Accept wildcards
-
+##?   tail_json <filename>  Accept wildcards
 docs::eval "$@"
 
 tail -f $1 | egrep -v "$2" | jq

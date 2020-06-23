@@ -8,8 +8,8 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 #?? 1.0.0
 ##?
 ##? Usage:
-##?    commit            # A prompt appears askign for the commit message
-##?    commit <message>
+##?   commit
+##?   commit <message>
 
 docs::eval_help "$@"
 

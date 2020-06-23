@@ -8,8 +8,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 #?? 1.0.0
 ##?
 ##? Usage:
-##?    pull-all-dirs
-
+##?   pull-all-dirs
 docs::eval "$@"
 
 ls | xargs -I{} git -C {} pull

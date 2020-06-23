@@ -9,11 +9,10 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 #?? 1.0.0
 ##?
 ##? Usage:
-##?    when_i_starred_a_repo <repo>
+##?   when_i_starred_a_repo <repo>
 ##?
 ##? Example:
-##?    when_i_starred_a_repo rgomezcasas/dotfiles
-
+##?   when_i_starred_a_repo rgomezcasas/dotfiles
 docs::eval "$@"
 
 if [ -z "$GITHUB_TOKEN" ]; then

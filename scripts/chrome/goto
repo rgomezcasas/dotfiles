@@ -9,8 +9,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 #?? 1.0.0
 ##?
 ##? Usage:
-##?    goto
-
+##?   goto
 docs::eval "$@"
 
 function getTabs() {

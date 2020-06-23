@@ -8,8 +8,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 #?? 1.0.0
 ##?
 ##? Usage:
-##?    find_broken_symlinks
-
+##?   find_broken_symlinks
 docs::eval "$@"
 
 find -L . -type l

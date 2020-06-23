@@ -8,7 +8,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 #?? 1.0.0
 ##?
 ##? Usage:
-##?    update_all [--all]
+##?   update_all [--all]
 
 docs::eval_help "$@"
 

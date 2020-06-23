@@ -8,8 +8,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 #?? 1.0.0
 ##?
 ##? Usage:
-##?    meteo_in <city>
-
+##?   meteo_in <city>
 docs::eval "$@"
 
 curl -4 http://wttr.in/$1

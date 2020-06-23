@@ -6,9 +6,8 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##? Transforms a video to gif
 ##?
 ##? Usage:
-##?    to-gif <video_path>
+##?   to-gif <video_path>
 ##?
-
 docs::eval "$@"
 
 ffmpeg \

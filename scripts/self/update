@@ -9,7 +9,7 @@ source "$DOTFILES_PATH/scripts/self/utils/update.sh"
 #?? 1.0.0
 ##?
 ##? Usage:
-##?    update
+##?   update
 
 docs::eval_help "$@"
 

@@ -8,13 +8,12 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 #?? 1.0.0
 ##?
 ##? Usage:
-##?    show_app_open_files
-##?    show_app_open_files --watch
+##?   show_app_open_files
+##?   show_app_open_files --watch
 ##?
 ##? Options:
-##?    -h --help   Show this screen.
-##?    -w --watch  Watch the changes
-
+##?   -h --help   Show this screen.
+##?   -w --watch  Watch the changes
 docs::eval "$@"
 
 selected=$(dot system list_opened_apps | fzf)

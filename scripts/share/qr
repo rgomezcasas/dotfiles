@@ -8,11 +8,10 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 #?? 0.1.0
 ##?
 ##? Usage:
-##?    qr <contents>
+##?   qr <contents>
 ##?
 ##? Examples:
-##?    qr foo
-
+##?   qr foo
 docs::eval "$@"
 
 echo "$contents" | curl -F-=\<- qrenco.de

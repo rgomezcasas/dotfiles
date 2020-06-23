@@ -8,8 +8,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 #?? 1.0.0
 ##?
 ##? Usage:
-##?    count_files_recursive
-
+##?   count_files_recursive
 docs::eval "$@"
 
 find . -type f -print | wc -l

@@ -8,8 +8,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 #?? 1.0.0
 ##?
 ##? Usage:
-##?    due-diligence
-
+##?   due-diligence
 docs::eval "$@"
 
 first_commit=$(git rev-list --max-parents=0 HEAD)

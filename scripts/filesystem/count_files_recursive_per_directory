@@ -8,8 +8,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 #?? 1.0.0
 ##?
 ##? Usage:
-##?    count_files_recursive_per_directory
-
+##?   count_files_recursive_per_directory
 docs::eval "$@"
 
 ls -d ./*/ | xargs -I _ sh -c "find \"_\" -type f | wc -l | xargs echo \"_\""

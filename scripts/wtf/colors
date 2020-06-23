@@ -13,7 +13,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?   colors (default + 8 escapes).
 ##?
 ##? Usage:
-##?    colors
+##?   colors
 
 docs::eval_help "$@"
 

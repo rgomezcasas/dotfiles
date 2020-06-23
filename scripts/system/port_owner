@@ -8,8 +8,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 #?? 1.0.0
 ##?
 ##? Usage:
-##?    port_owner <port>
-
+##?   port_owner <port>
 docs::eval "$@"
 
 lsof -n -i4TCP:$1 | grep LISTEN

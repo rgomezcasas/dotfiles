@@ -6,9 +6,9 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 #?? 1.0.0
 ##?
 ##? Usage:
-##?    zsh optimize             # Optimize ZSH
-##?    zsh test_performance     # Print the current ZSH performance
-##?    zsh reload_completions   # Print the current ZSH performance
+##?   zsh optimize
+##?   zsh test_performance
+##?   zsh reload_completions
 
 docs::eval_help "$@"
 

@@ -8,8 +8,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 #?? 1.0.0
 ##?
 ##? Usage:
-##?    size_of_directory
-
+##?   size_of_directory
 docs::eval "$@"
 
 ncdu --color dark -rr -x

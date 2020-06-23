@@ -12,8 +12,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?    subdomains <domain>
 ##?
 ##? Example:
-##?    subdomains codely.tv
-
+##?   subdomains codely.tv
 docs::eval "$@"
 
 python "$DOTFILES_PATH/scripts/github/utils/github-subdomains.py" -t "$GITHUB_TOKEN" -d "$@"

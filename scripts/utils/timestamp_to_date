@@ -8,8 +8,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 #?? 1.0.0
 ##?
 ##? Usage:
-##?    timestamp_to_date
-
+##?   timestamp_to_date
 docs::eval "$@"
 
 let DATE_FORMATTED=$1/1000

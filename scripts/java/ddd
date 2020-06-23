@@ -8,8 +8,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 #?? 1.0.0
 ##?
 ##? Usage:
-##?    ddd hexagonal <path>
-
+##?   ddd hexagonal <path>
 docs::eval "$@"
 
 mkdir -p "$path/application"

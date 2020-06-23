@@ -8,11 +8,10 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 #?? 1.0.0
 ##?
 ##? Usage:
-##?    change_wallpaper               # Pick a random wallpaper on the wallpaper folder
-##?    change_wallpaper <colorName>   # Create a wallpaper with that color (you can use color names or hexadecimal)
-##?    change_wallpaper <url>         # Downloads the wallpaper to your wallpaper folder
+##?   change_wallpaper <colorName>
+##?   change_wallpaper <url>
 
-docs::eval_help "$@"
+docs::eval "$@"
 
 WALLPAPER_DIR="$HOME/Pictures/Wallpapers"
 WALLPAPER_FILENAME=$1
