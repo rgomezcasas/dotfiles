@@ -50,13 +50,11 @@ EOF
 }
 
 function main() {
-  local selected
-  IFS=$'\t' read -r -a selected < <(
-    getTabs | sed '/^$/d' | fzf --delimiter $'\t' --with-nth 4 --preview 'echo {3}' --preview-window up:1 "$@"
-  )
-  [ ${#selected[@]} -lt 2 ] && return 130
+  local -r selected=$(getTabs | choose)
+  local -r windows_num=$(echo "$selected" | awk '{print $1}')
+  local -r tab_num=$(echo "$selected" | awk '{print $2}')
 
-  setActiveTab ${selected[0]} ${selected[1]}
+  setActiveTab "$windows_num" "$tab_num"
 }
 
-main "$@"
+main
