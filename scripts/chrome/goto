@@ -22,7 +22,7 @@ function getTabs() {
             repeat with t in tabs of w
                 set _title to get title of t
                 set _url to get URL of t
-                set _output to (_output & _window_index & "\t" & _tab_index & "\t" & _url & "\t" & _title & "\n")
+                set _output to (_output & _title & " - " & _url & " " & _window_index & " " & _tab_index & "\n")
                 set _tab_index to _tab_index + 1
             end repeat
             set _window_index to _window_index + 1
@@ -50,9 +50,13 @@ EOF
 }
 
 function main() {
-  local -r selected=$(getTabs | choose)
-  local -r windows_num=$(echo "$selected" | awk '{print $1}')
-  local -r tab_num=$(echo "$selected" | awk '{print $2}')
+  local -r pretty_formatted_tabs=$(getTabs)
+  local -r selected=$(echo "$pretty_formatted_tabs" | choose)
+  local -r windows_num=$(echo "$selected" | rev | awk '{print $2}')
+  local -r tab_num=$(echo "$selected" | rev | awk '{print $1}')
+
+#  echo "WIN $windows_num"
+#  echo "TAB $tab_num"
 
   setActiveTab "$windows_num" "$tab_num"
 }

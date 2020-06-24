@@ -37,4 +37,3 @@ bindkey '^g' _call_navi
 # ctrl+p - Go to project
 zle     -N   go_to_project
 bindkey '^p' go_to_project
-
