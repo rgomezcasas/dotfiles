@@ -13,6 +13,10 @@ docs::eval "$@"
 
 case $1 in
 "optimize")
+  asl_conf=$(sed 's/notice] store/critical] store/g' /etc/asl.conf)
+  sudo sh -c "echo '$asl_conf' > /etc/asl.conf"
+  echo "ASL only storing critical files!"
+
   find "$DOTFILES_PATH/shell/zsh" -name '*.zwc' -exec rm -rf {} \;
   find "$DOTFILES_PATH/shell/zsh" -name '*.old' -exec rm -rf {} \;
   find "$DOTFILES_PATH/modules/zimfw" -name '*.zwc' -exec rm -rf {} \;

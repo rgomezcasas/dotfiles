@@ -167,7 +167,6 @@ brew "z"
 brew "zsh"
 brew "zstd"
 brew "dandavison/delta/git-delta"
-brew "denisidoro/tools/navi"
 brew "github/gh/gh"
 brew "koekeishiya/formulae/skhd", args: ["with-logging"]
 cask "alfred"

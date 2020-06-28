@@ -2654,8 +2654,7 @@
           }
         }
       },
-      "dandavison/delta/git-delta": null,
-      "denisidoro/tools/navi": null
+      "dandavison/delta/git-delta": null
     },
     "cask": {
       "alfred": {

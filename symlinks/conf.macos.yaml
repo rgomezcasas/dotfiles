@@ -12,7 +12,6 @@
     ~/Library/Application Support/Code/User/keybindings.json: editors/vs-code/keybindings.json
     ~/Library/Application Support/Code/User/settings.json: editors/vs-code/settings.json
     ~/Library/Application Support/Code/User/snippets: editors/vs-code/snippets
-    ~/Library/Application Support/Rocket/rocket.db: mac/rocket/rocket.db
     ~/Library/Application Support/Spectacle/Shortcuts.json: mac/spectacle/Shortcuts.json
     ~/Library/Group Containers/group.com.docker/settings.json: mac/docker/settings.json
 

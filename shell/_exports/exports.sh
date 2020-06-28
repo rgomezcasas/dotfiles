@@ -7,9 +7,6 @@ export JAVA_HOME='/Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Conten
 export GEM_HOME="$HOME/.gem"
 export GOPATH="$HOME/.go"
 
-export SBT_OPTS='-Xms512M -Xmx1024M -Xss2M -XX:MaxMetaspaceSize=512m -XX:ReservedCodeCacheSize=256M -Dfile.encoding=UTF8'
-export SBT_CREDENTIALS="$HOME/.sbt/.credentials"
-
 export FZF_DEFAULT_OPTS='
   --color=pointer:#ebdbb2,bg+:#3c3836,fg:#ebdbb2,fg+:#fbf1c7,hl:#8ec07c,info:#928374,header:#fb4934
   --reverse
@@ -19,12 +16,10 @@ export HOMEBREW_AUTO_UPDATE_SECS=86400
 export HOMEBREW_NO_ANALYTICS=true
 export HOMEBREW_BUNDLE_FILE_PATH="${DOTFILES_PATH}/mac/brew/Brewfile"
 
-export NAVI_PATH="$DOTFILES_PATH/doc/navi"
-
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 
-paths=(
+path=(
   "$HOME/bin"
   "$DOTFILES_PATH/bin"
   "$PHP_PATH/bin"
@@ -45,10 +40,3 @@ paths=(
   "/usr/sbin"
   "/sbin"
 )
-
-PATH=$(
-  IFS=":"
-  echo "${paths[*]}"
-)
-
-export PATH
