@@ -37,6 +37,6 @@ export path=(
   "/usr/local/opt/make/libexec/gnubin" # Use gnu-make
   "/usr/bin"
 #  "/usr/local/sbin"
-#  "/usr/sbin"
+  "/usr/sbin"
   "/sbin"
 )
