@@ -7,7 +7,5 @@ alias la="exa -la"
 alias ~="cd ~"
 alias tmp="cd ~/Desktop/tmp"
 alias c='cd ~/Code'
-alias p='go_to_project'
 alias mines="cd ~/Code/mines"
-alias dotfiles="cd ~/.dotfiles"
 alias codely="cd ~/Code/codely"
