@@ -5,7 +5,8 @@
     "psy/psysh": "^0.9",
     "phpmd/phpmd": "^2.7",
     "hirak/prestissimo": "^0.3",
-    "laravel/installer": "^3.0@dev"
+    "laravel/installer": "^3.0@dev",
+    "laravel/lumen-installer": "dev-master"
   },
   "minimum-stability": "dev"
 }

@@ -6,6 +6,6 @@ alias la="exa -la"
 # Jumps
 alias ~="cd ~"
 alias tmp="cd ~/Desktop/tmp"
-alias c='cd ~/Code'
+alias code='cd ~/Code'
 alias mines="cd ~/Code/mines"
 alias codely="cd ~/Code/codely"

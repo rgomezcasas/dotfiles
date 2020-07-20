@@ -3,7 +3,7 @@
 PYTHON_PATH='/usr/local/opt/python'
 RUBY_PATH='/usr/local/opt/ruby'
 
-export JAVA_HOME='/Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home'
+export JAVA_HOME='/Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Contents/Home'
 export GEM_HOME="$HOME/.gem"
 export GOPATH="$HOME/.go"
 
@@ -12,9 +12,9 @@ export FZF_DEFAULT_OPTS='
   --reverse
 '
 
-export HOMEBREW_AUTO_UPDATE_SECS=86400
+export HOMEBREW_AUTO_UPDATE_SECS=604800
 export HOMEBREW_NO_ANALYTICS=true
-export HOMEBREW_BUNDLE_FILE_PATH="${DOTFILES_PATH}/mac/brew/Brewfile"
+export HOMEBREW_BUNDLE_FILE_PATH="$DOTFILES_PATH/mac/brew/Brewfile"
 
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
