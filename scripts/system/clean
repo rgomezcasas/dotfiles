@@ -19,6 +19,7 @@ sudo rm -rf "/Library/Application Support/Adobe/Adobe Desktop Common/ADS/Adobe D
 sudo rm -rf "/Applications/Utilities/Adobe Sync/CoreSync/Core Sync.app"
 sudo rm -rf "/Applications/Utilities/Adobe Creative Cloud Experience/CCXProcess/CCXProcess.app"
 sudo find /Applications/Utilities/Adobe\ Application\ Manager/ -name "*.app" -exec rm -rf "{}" \;
+sudo find /Applications/Utilities/Adobe\ Creative\ Cloud -name "*.app" -exec rm -rf "{}" \;
 sudo rm -f "/Library/LaunchDaemons/com.adobe."*
 sudo rm -f "/Library/LaunchAgents/com.adobe."*
 sudo rm -f "$HOME/Library/LaunchAgents/com.adobe."*
