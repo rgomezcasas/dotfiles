@@ -4,5 +4,7 @@
 <dict>
 	<key>advanced</key>
 	<false/>
+	<key>inputType</key>
+	<integer>3</integer>
 </dict>
 </plist>
