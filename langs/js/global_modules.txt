@@ -1,3 +1,2 @@
-ikea-availability-checker
 terminalizer
 typescript
