@@ -23,6 +23,8 @@ lshift + alt + cmd - i : $HOME/.dotfiles/bin/sdot utils open_project_in_intellij
 # List open tabs and focus it with chrome
 lshift + alt + cmd - c : $HOME/.dotfiles/bin/sdot chrome goto
 
+# List all Codely Pro courses and open it on the default browser
+lshift + alt + cmd - p : $HOME/.dotfiles/bin/sdot codely open_course
 
 #                 Remapping
 # --------------------------------------------
