@@ -14,7 +14,7 @@ self_update() {
 }
 
 update_submodules() {
-  cd "$DOTFILES_PATH" || exit
+  cd "$ZIM_HOME" || exit
 
   zsh "$ZIM_HOME/zimfw.zsh" upgrade
   rm -rf "$ZIM_HOME/modules/"* && zsh "$ZIM_HOME/zimfw.zsh" install
