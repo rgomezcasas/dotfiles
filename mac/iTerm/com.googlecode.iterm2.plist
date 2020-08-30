@@ -1280,7 +1280,7 @@
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>398 269 592 584 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1440 24 2560 1416 1440 0 2560 1440 </string>
+	<string>1793 13 1094 762 1440 -180 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>0 0 1440 900 0 0 1440 900 </string>
 	<key>NeverWarnAboutShortLivedSessions_10B05570-B840-47B9-8682-D933DFEA6004</key>
@@ -1708,11 +1708,11 @@
 			<key>Name</key>
 			<string>Rafa Dark</string>
 			<key>Non Ascii Font</key>
-			<string>Menlo-Regular 18</string>
+			<string>Menlo-Regular 16</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>DankMono-Regular 18</string>
+			<string>DankMono-Regular 16</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<true/>
 			<key>Open Toolbelt</key>
@@ -2612,32 +2612,41 @@
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
+		<string>3.4.20200823-nightly</string>
+		<string>3.3.10beta3</string>
+		<string>3.4.20200822-nightly</string>
 		<string>3.3.10beta2</string>
 		<string>3.4.20200626-nightly</string>
-		<string>3.3.10beta1</string>
-		<string>3.4.20200718-nightly</string>
-		<string>3.3.10beta3</string>
 		<string>3.3.20200621-nightly</string>
+		<string>3.4.20200719-nightly</string>
+		<string>3.4.20200718-nightly</string>
+		<string>3.3.10beta1</string>
+	</array>
+	<key>NoSyncBFPRecents</key>
+	<array>
+		<string>Dank Mono</string>
 	</array>
 	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
 	<true/>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{1440, 0}, {2560, 1440}}</string>
+		<string>{{0, 0}, {1440, 900}}</string>
 		<key>topLeft</key>
-		<string>{1665, 764}</string>
+		<string>{261, 756}</string>
 	</dict>
 	<key>NoSyncHaveUsedCopyMode</key>
+	<true/>
+	<key>NoSyncIgnoreSystemWindowRestoration</key>
 	<true/>
 	<key>NoSyncInstallUtilities</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>138E2B1D-C552-4C26-AC15-55CBA9D22594</string>
 	<key>NoSyncLastOSVersion</key>
-	<string>Version 10.15.6 (Build 19G73)</string>
+	<string>Version 10.16 (Build 20A5354i)</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>91</integer>
+	<integer>129</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -3448,6 +3457,10 @@
 	<real>604925148.49338806</real>
 	<key>NoSyncTurnOffBracketedPasteOnHostChange</key>
 	<false/>
+	<key>NoSyncVeryOldNightlyBuildWarning_SilenceUntil</key>
+	<real>622194456.79047799</real>
+	<key>NoSyncVeryOldNightlyBuildWarning_selection</key>
+	<integer>1</integer>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
@@ -3500,11 +3513,11 @@
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/nightly_new.xml?shard=14</string>
+	<string>https://iterm2.com/appcasts/nightly_modern.xml?shard=14</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-07-19T00:14:36Z</date>
+	<date>2020-08-24T17:38:19Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
@@ -3586,7 +3599,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.4.20200718-nightly</string>
+	<string>3.4.20200823-nightly</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>

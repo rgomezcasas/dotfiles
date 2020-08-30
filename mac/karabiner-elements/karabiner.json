@@ -910,6 +910,22 @@
                             "to": {
                                 "key_code": "left_shift"
                             }
+                        },
+                        {
+                            "from": {
+                                "key_code": "equal_sign"
+                            },
+                            "to": {
+                                "pointing_button": "button4"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "hyphen"
+                            },
+                            "to": {
+                                "pointing_button": "button5"
+                            }
                         }
                     ]
                 }
