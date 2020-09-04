@@ -18,8 +18,9 @@ update_submodules() {
 
   zsh "$ZIM_HOME/zimfw.zsh" upgrade
   rm -rf "$ZIM_HOME/modules/"* && zsh "$ZIM_HOME/zimfw.zsh" install
+  zsh "$ZIM_HOME/zimfw.zsh" update
 
-  git submodule foreach git reset --hard
+  git submodule foreach "git discard"
 }
 
 apply_symlinks() {
