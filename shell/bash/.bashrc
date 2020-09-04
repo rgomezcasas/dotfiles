@@ -8,4 +8,4 @@ PATH=$(
 )
 export PATH
 
-source "$DOTFILES_PATH/shell/bash/themes/rafa.sh"
+source "$DOTFILES_PATH/shell/bash/themes/codely.sh"
