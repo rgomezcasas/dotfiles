@@ -7,7 +7,7 @@
 	<key>AboutToPasteTabsWithCancel_selection</key>
 	<integer>2</integer>
 	<key>AdjustWindowForFontSizeChange</key>
-	<true/>
+	<false/>
 	<key>AllowClipboardAccess</key>
 	<false/>
 	<key>AlternateMouseScroll</key>
@@ -1280,7 +1280,7 @@
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>398 269 592 584 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1793 13 1094 762 1440 -180 1920 1080 </string>
+	<string>1440 0 2560 1440 1440 0 2560 1440 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>0 0 1440 900 0 0 1440 900 </string>
 	<key>NeverWarnAboutShortLivedSessions_10B05570-B840-47B9-8682-D933DFEA6004</key>
@@ -1289,6 +1289,10 @@
 	<integer>0</integer>
 	<key>NeverWarnAboutShortLivedSessions_19E95149-BB88-4DEB-8233-24FDE05E579F</key>
 	<true/>
+	<key>NeverWarnAboutShortLivedSessions_2DE1C46F-C620-4182-8B81-936B8D147E20</key>
+	<true/>
+	<key>NeverWarnAboutShortLivedSessions_2DE1C46F-C620-4182-8B81-936B8D147E20_selection</key>
+	<integer>0</integer>
 	<key>NeverWarnAboutShortLivedSessions_B6494F29-B158-4A41-9451-9D898153B7AF</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_B6494F29-B158-4A41-9451-9D898153B7AF_selection</key>
@@ -1304,6 +1308,18 @@
 		<dict>
 			<key>ASCII Anti Aliased</key>
 			<true/>
+			<key>AWDS Pane Directory</key>
+			<string></string>
+			<key>AWDS Pane Option</key>
+			<string>Recycle</string>
+			<key>AWDS Tab Directory</key>
+			<string></string>
+			<key>AWDS Tab Option</key>
+			<string>No</string>
+			<key>AWDS Window Directory</key>
+			<string></string>
+			<key>AWDS Window Option</key>
+			<string>No</string>
 			<key>Allow Title Reporting</key>
 			<false/>
 			<key>Ambiguous Double Width</key>
@@ -1525,13 +1541,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.160247802734375</real>
+				<real>0.11764705882352941</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.160247802734375</real>
+				<real>0.11764705882352941</real>
 				<key>Red Component</key>
-				<real>0.160247802734375</real>
+				<real>0.11764705882352941</real>
 			</dict>
 			<key>Background Image Is Tiled</key>
 			<false/>
@@ -1584,7 +1600,7 @@
 			<key>Columns</key>
 			<integer>120</integer>
 			<key>Command</key>
-			<string>/bin/zsh</string>
+			<string>/usr/local/bin/zsh</string>
 			<key>Cursor Boost</key>
 			<real>0.0</real>
 			<key>Cursor Color</key>
@@ -1631,7 +1647,7 @@
 			<key>Custom Command</key>
 			<string>Yes</string>
 			<key>Custom Directory</key>
-			<string>Recycle</string>
+			<string>Advanced</string>
 			<key>Default Bookmark</key>
 			<string>No</string>
 			<key>Disable Printing</key>
@@ -2621,6 +2637,7 @@
 		<string>3.4.20200719-nightly</string>
 		<string>3.4.20200718-nightly</string>
 		<string>3.3.10beta1</string>
+		<string>3.4.20200830-nightly</string>
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
@@ -2633,7 +2650,7 @@
 		<key>screenFrame</key>
 		<string>{{0, 0}, {1440, 900}}</string>
 		<key>topLeft</key>
-		<string>{261, 756}</string>
+		<string>{261, 762}</string>
 	</dict>
 	<key>NoSyncHaveUsedCopyMode</key>
 	<true/>
@@ -2646,7 +2663,7 @@
 	<key>NoSyncLastOSVersion</key>
 	<string>Version 10.16 (Build 20A5354i)</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>129</integer>
+	<integer>147</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -2765,6 +2782,14 @@
 				<true/>
 				<key>name</key>
 				<string>selectionLength</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>processTitle</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -3074,6 +3099,14 @@
 				<string>currentTab</string>
 				<key>nonterminalContext</key>
 				<integer>2</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>currentTab.currentSession.processTitle</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
 			</dict>
 			<dict>
 				<key>isTerminal</key>
@@ -3508,6 +3541,8 @@
 	<integer>8</integer>
 	<key>RightOption</key>
 	<integer>3</integer>
+	<key>SUAutomaticallyUpdate</key>
+	<true/>
 	<key>SUEnableAutomaticChecks</key>
 	<false/>
 	<key>SUFeedAlternateAppNameKey</key>
@@ -3517,13 +3552,15 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-08-24T17:38:19Z</date>
+	<date>2020-08-30T09:58:30Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>SavePasteHistory</key>
 	<false/>
+	<key>SeparateWindowTitlePerTab</key>
+	<true/>
 	<key>ShowBookmarkName</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
@@ -3599,7 +3636,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.4.20200823-nightly</string>
+	<string>3.4.20200830-nightly</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>

@@ -15,6 +15,9 @@
     ~/Library/Preferences/com.knollsoft.Rectangle.plist: mac/rectangle/com.knollsoft.Rectangle.plist
     ~/Library/Preferences/com.lwouis.alt-tab-macos.plist: mac/alt-tab/com.lwouis.alt-tab-macos.plist
     ~/Library/Group Containers/group.com.docker/settings.json: mac/docker/settings.json
+    ~/bin/bash: /usr/local/bin/bash
+    ~/bin/sed: /usr/local/opt/gnu-sed/libexec/gnubin/sed
+    ~/bin/make: /usr/local/opt/make/libexec/gnubin/make
 
 - create:
     - ~/.hushlogin

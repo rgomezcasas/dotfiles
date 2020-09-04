@@ -21,7 +21,6 @@
     ~/.composer/composer.json: langs/php/composer.json
     ~/.config/clojure/profiles.clj: langs/clojure/profiles.clj
     ~/.sbt/1.0/plugins/plugins.sbt: langs/scala/plugins.sbt
-    ~/bin/bash: /usr/local/bin/bash
 
 - create:
     - ~/.z

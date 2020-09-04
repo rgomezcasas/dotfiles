@@ -1,9 +1,4 @@
-#PHP_PATH='/usr/local/opt/php@7.4'
-#GLOBAL_COMPOSER_PATH="$HOME/.composer"
-PYTHON_PATH='/usr/local/opt/python'
-RUBY_PATH='/usr/local/opt/ruby'
-
-export JAVA_HOME='/Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Contents/Home'
+export JAVA_HOME='/Library/Java/JavaVirtualMachines/openjdk-14.0.2.jdk/Contents/Home'
 export GEM_HOME="$HOME/.gem"
 export GOPATH="$HOME/.go"
 
@@ -12,7 +7,7 @@ export FZF_DEFAULT_OPTS='
   --reverse
 '
 
-export HOMEBREW_AUTO_UPDATE_SECS=604800
+export HOMEBREW_AUTO_UPDATE_SECS=604800 # 1 week
 export HOMEBREW_NO_ANALYTICS=true
 export HOMEBREW_BUNDLE_FILE_PATH="$DOTFILES_PATH/mac/brew/Brewfile"
 
@@ -22,21 +17,15 @@ export LC_ALL="en_US.UTF-8"
 export path=(
   "$HOME/bin"
   "$DOTFILES_PATH/bin"
-#  "$PHP_PATH/bin"
-#  "$PHP_PATH/sbin"
-  "$RUBY_PATH/bin"
   "$JAVA_HOME/bin"
-  "$GOPATH/bin"
   "$GEM_HOME/bin"
-#  "$GEM_HOME/ruby/2.7.0/bin/bin"
-  "$PYTHON_PATH/libexec/bin"
-#  "$GLOBAL_COMPOSER_PATH/vendor/bin"
-  "/bin"
-  "/usr/local/bin" # This contains all Brew binaries (bash...)
-  "/usr/local/opt/gnu-sed/libexec/gnubin" # Use gnu-sed (mac version is from BSD 2005)
-  "/usr/local/opt/make/libexec/gnubin" # Use gnu-make
+  "$GOPATH/bin"
+  "/usr/local/opt/ruby/bin"
+  "/usr/local/opt/python/libexec/bin"
+  "/usr/local/bin"  # This contains all Brew binaries (zsh...)
+  "/usr/local/sbin" # This contains all Brew binaries
+  "/bin"            # macOS zsh is here
   "/usr/bin"
-#  "/usr/local/sbin"
   "/usr/sbin"
   "/sbin"
 )
