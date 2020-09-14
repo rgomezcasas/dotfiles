@@ -20,6 +20,7 @@ sudo nvram SystemAudioVolume=" "
 # Play user interface sound effects: false
 defaults write com.apple.systemsound "com.apple.sound.uiaudio.enabled" -int 0
 
+# Show scrollbar when scrolling
 defaults write NSGlobalDomain AppleShowScrollBars -string "WhenScrolling"
 
 # Disable the over-the-top focus ring animation
@@ -36,27 +37,26 @@ defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
 # Save to disk (not to iCloud) by default
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
-# Automatically quit printer app once the print jobs complete
-defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
-
 # Disable the “Are you sure you want to open this application?” dialog
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 
 # Restart automatically if the computer freezes
 sudo systemsetup -setrestartfreeze on
 
-# Disable automatic capitalization as it’s annoying when typing code
+# Disable automatic capitalization
 defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
 
 # Disable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
+# Disable macOS text expansion
+defaults write -g WebAutomaticTextReplacementEnabled -bool false
+
 # Use Apple persistence
 defaults write -g ApplePersistence -bool yes
 
-###############################################################################
-# SSD-specific tweaks                                                         #
-###############################################################################
+# Sped up dialogue boxes https://robservatory.com/speed-up-your-mac-via-hidden-prefs/
+defaults write NSGlobalDomain NSWindowResizeTime 0.001
 
 # Disable hibernation (speeds up entering sleep mode)
 sudo pmset -a hibernatemode 0
@@ -79,7 +79,7 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 12
 # Set language and text formats
 # Note: if you’re in the US, replace `EUR` with `USD`, `Centimeters` with
 # `Inches`, `en_GB` with `en_US`, and `true` with `false`.
-defaults write NSGlobalDomain AppleLanguages -array "en-GB" "es-GB" "en"
+defaults write NSGlobalDomain AppleLanguages -array "en-US" "es-GB" "en"
 defaults write NSGlobalDomain AppleLocale -string "en_GB@currency=EUR"
 defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
 defaults write NSGlobalDomain AppleMetricUnits -bool true
@@ -107,7 +107,6 @@ defaults write com.apple.screencapture type -string "png"
 # Enable subpixel font rendering on non-Apple LCDs
 # Reference: https://github.com/kevinSuttle/macOS-Defaults/issues/17#issuecomment-266633501
 defaults write NSGlobalDomain AppleFontSmoothing -int 1
-defaults -currentHost write -globalDomain AppleFontSmoothing -int 1
 
 # Font rendering stuff
 defaults write -g CGFontRenderingFontSmoothingDisabled -bool YES
@@ -181,7 +180,7 @@ defaults write NSGlobalDomain com.apple.springing.delay -float 0.2
 # Enable highlight hover effect for the grid view of a stack (Dock)
 defaults write com.apple.dock mouse-over-hilite-stack -bool true
 
-defaults write com.apple.dock tilesize -int 35
+defaults write com.apple.dock tilesize -int 42
 
 # Change minimize/maximize window effect
 defaults write com.apple.dock mineffect -string "genie"
@@ -210,7 +209,7 @@ defaults write com.apple.dock dashboard-in-overlay -bool true
 # Don’t automatically rearrange Spaces based on most recent use
 defaults write com.apple.dock mru-spaces -bool false
 
-defaults write com.apple.Dock autohide-delay -float 0.5
+defaults write com.apple.Dock autohide-delay -float 0.3
 
 # Automatically hide and show the Dock
 defaults write com.apple.dock autohide -bool true
@@ -223,19 +222,6 @@ defaults write com.apple.dock orientation -string left
 
 # Disable recent applications
 defaults write com.apple.dock show-recents -bool false
-
-###############################################################################
-# Terminal & iTerm 2                                                          #
-###############################################################################
-
-# Only use UTF-8 in Terminal.app
-defaults write com.apple.terminal StringEncodings -array 4
-
-# Disable the annoying line marks
-defaults write com.apple.Terminal ShowLineMarks -int 0
-
-# Don’t display the annoying prompt when quitting iTerm
-defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 
 ###############################################################################
 # Time Machine                                                                #
@@ -260,7 +246,3 @@ defaults write com.apple.ActivityMonitor ShowCategory -int 0
 # Sort Activity Monitor results by CPU usage
 defaults write com.apple.ActivityMonitor SortColumn -string "CPUUsage"
 defaults write com.apple.ActivityMonitor SortDirection -int 0
-
-###############################################################################
-# Keyboard Shortcuts                                                          #
-###############################################################################
