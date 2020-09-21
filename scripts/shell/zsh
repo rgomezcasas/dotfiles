@@ -27,16 +27,15 @@ case $1 in
   dot shell zsh reload_completions
   ;;
 "test_performance")
-  echo "With native macOS ZSH /bin/zsh"
-  /bin/zsh --version
-  for i in $(seq 1 10); do /usr/bin/time /bin/zsh -i -c exit; done
-  echo ""
-  echo "With Brew ZSH /usr/local/bin/zsh"
-  /usr/local/bin/zsh --version
-  for i in $(seq 1 10); do /usr/bin/time /usr/local/bin/zsh -i -c exit; done
+  hyperfine '/bin/zsh -i -c exit' '/usr/local/bin/zsh -i -c exit' --warmup 1
 
   echo ""
-  echo "Currently using $(command -v zsh)"
+  echo "ZSH INFO:"
+  echo "  🍎 macOS ZSH 📂 /bin/zsh           - $(/bin/zsh --version)"
+  echo "  🍺 Brew ZSH  📂 /usr/local/bin/zsh - $(/usr/local/bin/zsh --version)"
+
+  echo ""
+  echo "✨ Currently using $(command -v zsh) ✨"
   ;;
 "reload_completions")
   echo "Now execute (copied to your clipboard):"
