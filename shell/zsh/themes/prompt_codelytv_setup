@@ -5,7 +5,7 @@ NONE="✓"
 
 prompt_codelytv_pwd() {
   prompt_short_dir=$(dot filesystem short_pwd)
-  print -n "%F{yellow}%{\x1b[3m%}${prompt_short_dir}%{\x1b[0m%}"
+  print -n "%F{yellow}${prompt_short_dir}"
 }
 
 prompt_codelytv_git() {
