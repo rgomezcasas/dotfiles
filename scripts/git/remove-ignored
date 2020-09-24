@@ -4,11 +4,11 @@ set -euo pipefail
 
 source "$DOTFILES_PATH/scripts/core/_main.sh"
 
-##? Remove all ignored files
+##? Show all ignored files
 #?? 1.0.0
 ##?
 ##? Usage:
-##?   remove-ignored
+##?   show-ignored
 docs::eval "$@"
 
-git clean -f -X
+git status --ignored -s | grep "\!\!"

@@ -11,6 +11,11 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?   git-discard
 docs::eval "$@"
 
-git add -A
+
+git clean -xfd >/dev/null 2>&1
+git submodule foreach --recursive git clean -xfd >/dev/null 2>&1
 git reset --hard >/dev/null 2>&1
+git submodule foreach --recursive git reset --hard >/dev/null 2>&1
+git submodule update --init --recursive >/dev/null 2>&1
+
 echo 'All changes has been discarded!'
