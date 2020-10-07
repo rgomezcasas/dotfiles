@@ -9,7 +9,7 @@ prompt_codelytv_pwd() {
 }
 
 prompt_codelytv_git() {
-  [[ -n ${git_info} ]] && print -n "%F{white} on%{\x1b[3m%}${(e)git_info[prompt]}%{\x1b[0m%}"
+  [[ -n ${git_info} ]] && print -n "%F{white} on%{\e[3m%}${(e)git_info[prompt]}%{\e[0m%}"
 }
 
 prompt_codelytv_precmd() {

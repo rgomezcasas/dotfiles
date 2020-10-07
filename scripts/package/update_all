@@ -21,7 +21,7 @@ brew outdated | xargs -n1 brew upgrade
 
 echo ''
 echo '🍻 Updating Brew Cask apps'
-OUTDATED_CASKS=$(brew cask outdated)
+OUTDATED_CASKS=$(brew outdated --cask)
 
 if [ -n "$OUTDATED_CASKS" ]; then
   echo "$OUTDATED_CASKS" | grep -v real-vnc | xargs -n1 brew cask install --force
