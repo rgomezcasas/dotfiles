@@ -18,6 +18,8 @@
     ~/bin/bash: /usr/local/bin/bash
     ~/bin/sed: /usr/local/opt/gnu-sed/libexec/gnubin/sed
     ~/bin/make: /usr/local/opt/make/libexec/gnubin/make
+    ~/bin/date: /usr/local/bin/gdate
+    ~/bin/touch: /usr/local/bin/gtouch
 
 - create:
     - ~/.hushlogin
