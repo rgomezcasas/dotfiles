@@ -1,2 +1,3 @@
+jest
 terminalizer
 typescript

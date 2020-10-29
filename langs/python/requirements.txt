@@ -1,10 +1,6 @@
-numpy==1.19.1
-protobuf==3.12.3
-pygame==2.0.0.dev6
-PyQt5==5.15.0
-PyQt5-sip==4.19.23
-pyusb==1.0.2
-PyYAML==5.3.1
+numpy==1.19.3
+protobuf==3.13.0
+PyQt5==5.15.1
+PyQt5-sip==4.19.24
 six==1.15.0
 TBB==0.1
-usb==0.0.83.dev0
