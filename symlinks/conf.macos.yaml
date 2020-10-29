@@ -1,25 +1,26 @@
 - clean: ['~']
 
 - defaults:
-    link:
-      create: true
-      force: true
+      link:
+          create: true
+          force: true
 
 - link:
-    ~/.config/karabiner: mac/karabiner-elements
-    ~/.config/skhd: mac/skhd
-    ~/Library/Application Support/Alfred/Alfred.alfredpreferences: mac/alfred
-    ~/Library/Application Support/Code/User/keybindings.json: editors/vs-code/keybindings.json
-    ~/Library/Application Support/Code/User/settings.json: editors/vs-code/settings.json
-    ~/Library/Application Support/Code/User/snippets: editors/vs-code/snippets
-    ~/Library/Preferences/com.knollsoft.Rectangle.plist: mac/rectangle/com.knollsoft.Rectangle.plist
-    ~/Library/Preferences/com.contextsformac.Contexts.plist: mac/contexts/com.contextsformac.Contexts.plist
-    ~/Library/Group Containers/group.com.docker/settings.json: mac/docker/settings.json
-    ~/bin/bash: /usr/local/bin/bash
-    ~/bin/sed: /usr/local/opt/gnu-sed/libexec/gnubin/sed
-    ~/bin/make: /usr/local/opt/make/libexec/gnubin/make
-    ~/bin/date: /usr/local/bin/gdate
-    ~/bin/touch: /usr/local/bin/gtouch
+      ~/.config/karabiner: mac/karabiner-elements
+      ~/.config/skhd: mac/skhd
+      ~/Library/Application Support/Code/User/keybindings.json: editors/vs-code/keybindings.json
+      ~/Library/Application Support/Code/User/settings.json: editors/vs-code/settings.json
+      ~/Library/Application Support/Code/User/snippets: editors/vs-code/snippets
+      ~/Library/Application Support/ueli/Preferences: mac/ueli/Preferences
+      ~/Library/Application Support/ueli/config.json: mac/ueli/config.json
+      ~/Library/Group Containers/group.com.docker/settings.json: mac/docker/settings.json
+      ~/Library/Preferences/com.contextsformac.Contexts.plist: mac/contexts/com.contextsformac.Contexts.plist
+      ~/Library/Preferences/com.knollsoft.Rectangle.plist: mac/rectangle/com.knollsoft.Rectangle.plist
+      ~/bin/bash: /usr/local/bin/bash
+      ~/bin/date: /usr/local/bin/gdate
+      ~/bin/make: /usr/local/opt/make/libexec/gnubin/make
+      ~/bin/sed: /usr/local/opt/gnu-sed/libexec/gnubin/sed
+      ~/bin/touch: /usr/local/bin/gtouch
 
 - create:
-    - ~/.hushlogin
+      - ~/.hushlogin
