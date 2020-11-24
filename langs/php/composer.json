@@ -4,9 +4,9 @@
     "d11wtq/boris": "^1.0",
     "psy/psysh": "^0.9",
     "phpmd/phpmd": "^2.7",
-    "hirak/prestissimo": "^0.3",
     "laravel/installer": "^3.0@dev",
-    "laravel/lumen-installer": "dev-master"
+    "laravel/lumen-installer": "dev-master",
+    "rector/rector": "9999999-dev"
   },
   "minimum-stability": "dev"
 }

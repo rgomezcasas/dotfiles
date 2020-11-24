@@ -1885,7 +1885,7 @@
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
-			<integer>0</integer>
+			<integer>12</integer>
 			<key>Working Directory</key>
 			<string>/Users/rafael.antonio</string>
 		</dict>
@@ -2637,7 +2637,7 @@
 	<key>TabStyleWithAutomaticOption</key>
 	<integer>5</integer>
 	<key>TabViewType</key>
-	<integer>0</integer>
+	<integer>1</integer>
 	<key>TerminalMargin</key>
 	<integer>7</integer>
 	<key>TerminalVMargin</key>
