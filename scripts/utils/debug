@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Debug things
+#?? 1.0.0
+##?
+##? Usage:
+##?   debug <thing>
+docs::eval "$@"
+
+case "$thing" in
+kbhd)
+  tail -f /usr/local/var/log/skhd/skhd.*
+  ;;
+
+*)
+  echo "\`$thing\` not known"
+  exit 1
+  ;;
+esac

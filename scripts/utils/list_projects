@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? List all projects
+##? If a second argument is passed it is filtered
+#?? 1.0.0
+##?
+##? Usage:
+##?   list_projects [<project_filter>] [--choose]
+##?
+##? Options:
+##?   --choose  Use choose instead fzf
+docs::eval "$@"
+
+project_root_directories=(
+  "$HOME/Code/codely/"*
+  "$HOME/Code/lambdish/"*
+  "$HOME/Code/rgomezcasas/"*
+  "$DOTFILES_PATH"
+)
+[[ "$choose" == "false" ]] && filterer="fzf" || filterer="choose -c 181818"
+project_directories=$(printf '%s\n' "${project_root_directories[@]}" | xargs ls -d | grep -v "_")
+
+if [[ -z "$project_filter" ]]; then
+  echo "$project_directories" | $filterer
+else
+  filtered_projects=$(echo "$project_directories" | grep "$project_filter")
+
+  if [[ $(echo "$filtered_projects" | wc -l) -le 1 ]]; then
+    echo "$filtered_projects"
+  else
+    echo "$filtered_projects" | $filterer
+  fi
+fi

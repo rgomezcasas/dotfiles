@@ -1,0 +1,64 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Fuzzy search and activate Chrome tab from terminal
+##? Based on: https://github.com/Rasukarusan/fzf-chrome-active-tab
+#?? 1.0.0
+##?
+##? Usage:
+##?   goto
+docs::eval "$@"
+
+function getTabs() {
+  osascript <<EOF
+    set _output to ""
+    tell application "Google Chrome"
+        set _window_index to 1
+        repeat with w in windows
+            set _tab_index to 1
+            repeat with t in tabs of w
+                set _title to get title of t
+                set _url to get URL of t
+                set _output to (_output & _title & " - " & _url & " " & _window_index & " " & _tab_index & "\n")
+                set _tab_index to _tab_index + 1
+            end repeat
+            set _window_index to _window_index + 1
+            if _window_index > count windows then exit repeat
+        end repeat
+    end tell
+    return _output
+EOF
+}
+
+function setActiveTab() {
+  local _window_index=$1
+  local _tab_index=$2
+  osascript -- - "$_window_index" "$_tab_index" <<EOF
+  on run argv
+      set _window_index to item 1 of argv
+      set _tab_index to item 2 of argv
+      tell application "Google Chrome"
+          activate
+          set index of window (_window_index as number) to (_window_index as number)
+          set active tab index of window (_window_index as number) to (_tab_index as number)
+      end tell
+  end run
+EOF
+}
+
+function main() {
+  local -r pretty_formatted_tabs=$(getTabs)
+  local -r selected=$(echo "$pretty_formatted_tabs" | choose)
+  local -r windows_num=$(echo "$selected" | rev | awk '{print $2}')
+  local -r tab_num=$(echo "$selected" | rev | awk '{print $1}')
+
+#  echo "WIN $windows_num"
+#  echo "TAB $tab_num"
+
+  setActiveTab "$windows_num" "$tab_num"
+}
+
+main

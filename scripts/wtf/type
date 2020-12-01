@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+set -eo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Simulates typing
+##?
+##? Usage:
+##?    type <text> <speed_in_ms>
+##?
+##? Examples:
+##?   type 'foo bar' 100
+docs::eval "$@"
+
+text="$1"
+speed_in_ms="${2:-80}"
+
+for ((i = 0; i < ${#text}; i++)); do
+  echo "after $speed_in_ms" | tclsh
+  printf "${text:$i:1}"
+done
+echo

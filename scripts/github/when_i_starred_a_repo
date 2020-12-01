@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+
+set -o pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Find additional subdomains on GitHub. Very useful during you recon phase, you will probably get some extras
+##? subdomains other tools didn’t find because not public
+#?? 1.0.0
+##?
+##? Usage:
+##?   when_i_starred_a_repo <repo>
+##?
+##? Example:
+##?   when_i_starred_a_repo rgomezcasas/dotfiles
+docs::eval "$@"
+
+if [ -z "$GITHUB_TOKEN" ]; then
+  echo "You need to setup a GITHUB_TOKEN export"
+
+  exit 2
+fi
+
+for i in $(seq 1 100); do
+  found=$(
+    curl -s -H "Authorization: token $GITHUB_TOKEN" \
+      -H "Accept: application/vnd.github.v3.star+json" \
+      -XGET https://api.github.com/users/rgomezcasas/starred\?page="$i" |
+      jq '.[] | .starred_at, .repo.full_name' |
+      grep -B1 "$repo" |
+      head -n1 |
+      tr -d '"' | tr 'T' ' ' | tr -d 'Z'
+  )
+
+  if [ -n "$found" ]; then
+    echo "$found"
+
+    exit 0
+  fi
+done
+
+exit 1

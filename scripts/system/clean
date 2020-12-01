@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Clean junk files
+#?? 1.0.0
+##?
+##? Usage:
+##?   clean
+docs::eval "$@"
+
+sudo rm -rf /Applications/Utilities/Adobe\ Creative\ Cloud/ACC/Creative\ Cloud.app
+sudo rm -rf /Applications/Utilities/Adobe\ Creative\ Cloud/AppsPanel/Updater/Adobe\ Application\ Updater.app
+sudo rm -rf "/Library/Application Support/Adobe/Adobe Desktop Common/AppsPanel/Updater/Adobe Application Updater.app"
+sudo rm -rf "/Library/Application Support/Adobe/Adobe Desktop Common/ADS/Adobe Desktop Service.app"
+# sudo rm -rf "/Library/Application Support/Adobe/Adobe Desktop Common/IPCBox/AdobeIPCBroker.app" <- don't
+sudo rm -rf "/Applications/Utilities/Adobe Sync/CoreSync/Core Sync.app"
+sudo rm -rf "/Applications/Utilities/Adobe Creative Cloud Experience/CCXProcess/CCXProcess.app"
+sudo find /Applications/Utilities/Adobe\ Application\ Manager/ -name "*.app" -exec rm -rf "{}" \;
+sudo find /Applications/Utilities/Adobe\ Creative\ Cloud -name "*.app" -exec rm -rf "{}" \;
+sudo rm -f "/Library/LaunchDaemons/com.adobe."*
+sudo rm -f "/Library/LaunchAgents/com.adobe."*
+sudo rm -f "$HOME/Library/LaunchAgents/com.adobe."*
+echo '[x] Adobe junk cleaned'
+
+sudo find /usr/local/Cellar/python* -name "IDLE*.app" -exec rm -rf "{}" \;
+echo '[x] Python junk cleaned'
+
+echo 'Done!'

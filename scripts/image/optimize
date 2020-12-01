@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Optimize an image preserving the original
+#?? 1.0.0
+##?
+##? Usage:
+##?   optimize <filename>
+##?   optimize <filename> --thumb
+##?
+##? Options:
+##?   -h --help   Show this screen.
+##?   -t --thumb  Optimizes for thumbnail (for CodelyTV YouTube videos :)
+docs::eval "$@"
+
+original_filename=$(echo "$filename" | sed 's/\(.*\)\./\1.original./')
+extra_options=""
+
+if $thumb; then
+  extra_options="$extra_options --size=250"
+fi
+
+#cp "$filename" "$original_filename"
+
+jpegoptim --max 85 -q $filename $extra_options
+
+echo "⚡️ File <$filename> optimized!"

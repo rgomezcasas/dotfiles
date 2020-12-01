@@ -1,0 +1,68 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Empty the trash and remove cache files
+#?? 1.0.0
+##?
+##? Usage:
+##?   empty_trash
+docs::eval "$@"
+
+free_space_in_home() {
+  df -h ~ | tail -n1 | awk '{print $4}'
+}
+
+free_space_before_empty=$(free_space_in_home)
+
+ls /Volumes | grep -v GoogleDrive | xargs -I_ sudo rm -rfv /Volumes/_/.Trashes
+sudo rm -rfv ~/.Trash/*
+echo '🗑   All trashes empty'
+
+sudo rm -rfv /private/var/log/asl/*.asl
+sudo rm -rfv /var/log/asl/*.asl
+echo '📜  Mac logs empty'
+
+sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'
+echo '⏬  Mac downloads history empty'
+
+rm -rf "$HOME/Movies/"*.fcpbundle"/"*"/Render Files/High Quality Media"
+echo '🎬  Final Cut rendered media cleared'
+
+brew cleanup
+brew cleanup --prune-prefix
+rm -rf ~/Library/Caches/Homebrew
+echo '🍺  Brew cache cleared'
+
+rm -rf ~/Library/Caches/com.tinyspeck.slackmacgap
+rm -rf ~/Library/Caches/com.tinyspeck.slackmacgap.ShipIt
+rm -rf ~/Library/Application Support/Slack/Cache
+rm -rf "$HOME/Library/Application Support/Slack/Service Worker/CacheStorage"
+echo '💬  Slack cache cleared'
+
+rm -rf ~/Library/Caches/com.spotify.client/Data
+echo '🎶  Spotify cache cleared'
+
+rm -rf ~/Library/Caches/JetBrains
+echo '🅸   JetBrains cache cleared'
+
+rm -rf ~/Library/Caches/Yarn/
+echo '💪  Yarn cache cleared'
+
+rm -rf ~/.gradle/wrapper/dists/
+rm -rf ~/.gradle/caches/
+echo '🐘  Gradle cache cleared'
+
+rm -rf ~/.composer/cache/
+echo '👨‍🎤  Composer cache cleared'
+
+rm -rf ~/Library/Caches/Google/Chrome || true
+rm -rf "$HOME/Library/Application Support/Google/Chrome/"*"/Service Worker/CacheStorage" || true
+rm -rf "$HOME/Library/Application Support/Google/Chrome/"*"/Application Cache/Cache" || true
+echo '🟡  Chrome cache cleared'
+
+free_space_after_empty=$(free_space_in_home)
+
+echo "Done! Free space before: $free_space_before_empty, free space now: $free_space_after_empty"

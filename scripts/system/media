@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Media keys
+##? cat /Applications/Spotify.app/Contents/Resources/Spotify.sdef
+#?? 1.0.0
+##?
+##? Usage:
+##?   media
+
+case $1 in
+"next")
+  osascript -e 'tell application "Spotify" to next track'
+
+  ;;
+"previous")
+  osascript -e 'tell application "Spotify" to previous track'
+
+  ;;
+"toggle_play")
+  osascript -e 'tell application "Spotify" to playpause'
+  ;;
+esac

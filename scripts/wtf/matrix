@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Matrix effect
+#?? 0.1.0
+##?
+##? Usage:
+##?   matrix
+docs::eval "$@"
+
+cmatrix

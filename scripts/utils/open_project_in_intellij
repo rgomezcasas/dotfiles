@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Debug things
+#?? 1.0.0
+##?
+##? Usage:
+##?   debug <thing>
+
+project=$("$HOME/.dotfiles/bin/sdot" utils list_projects --choose)
+
+"$HOME/bin/idea" "$project"

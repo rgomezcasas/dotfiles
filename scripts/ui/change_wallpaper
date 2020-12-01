@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Change the wallpaper
+#?? 1.0.0
+##?
+##? Usage:
+##?   change_wallpaper <colorName>
+##?   change_wallpaper <url>
+
+docs::eval "$@"
+
+WALLPAPER_DIR="$HOME/Pictures/Wallpapers"
+WALLPAPER_FILENAME=$1
+WALLPAPER_FILE_PATH="$WALLPAPER_DIR/$WALLPAPER_FILENAME"
+
+VALID_URL_REGEX='(https?|ftp|file)://[-A-Za-z0-9\+&@#/%?=~_|!:,.;]*[-A-Za-z0-9\+&@#/%=~_|]'
+
+if [[ $WALLPAPER_FILENAME =~ $VALID_URL_REGEX ]]; then
+  wget -P $WALLPAPER_DIR $WALLPAPER_FILENAME
+
+  WALLPAPER_FILENAME=${WALLPAPER_FILENAME##*/}
+  WALLPAPER_FILE_PATH="$WALLPAPER_DIR/$WALLPAPER_FILENAME"
+else
+  if [ ! -z "$WALLPAPER_FILENAME" ]; then
+    WALLPAPER_FILE_PATH="$WALLPAPER_DIR/Colors/$WALLPAPER_FILENAME.jpg"
+
+    if [ ! -f $WALLPAPER_FILE_PATH ]; then
+      WALLPAPER_COLOR=$WALLPAPER_FILENAME
+
+      convert -size 128x128 xc:$WALLPAPER_COLOR $WALLPAPER_FILE_PATH
+    fi
+  else
+    WALLPAPER_FILENAME=$(ls -p $WALLPAPER_DIR | grep -v / | xargs gshuf -n1 -e)
+
+    WALLPAPER_FILE_PATH="$WALLPAPER_DIR/$WALLPAPER_FILENAME"
+  fi
+fi
+
+echo $WALLPAPER_FILE_PATH
+
+osascript -e 'tell application "System Events" to tell every desktop to set picture to "'$WALLPAPER_FILE_PATH'"'

@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Opens the cd directory with the Finder
+#?? 1.0.0
+##?
+##? Usage:
+##?   cdf
+docs::eval "$@"
+
+# cd to Finder open folder
+cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')"

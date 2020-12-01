@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Truncate all tables for a given database
+#?? 1.0.0
+##?
+##? Usage:
+##?   truncate_database <database_name>
+docs::eval "$@"
+
+mysql -uroot -N -B -e "SELECT CONCAT('SET FOREIGN_KEY_CHECKS=0; TRUNCATE TABLE $database_name.', TABLE_NAME, '; SET FOREIGN_KEY_CHECKS=1;') AS QUERY FROM information_schema.tables WHERE TABLE_SCHEMA = '$database_name';" | while read line; do
+  echo "🔥 Executing: $line"
+  mysql -uroot -e "$line"
+done

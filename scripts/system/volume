@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Vulume stuff
+#?? 1.0.0
+##?
+##? Usage:
+##?   volume
+
+chunk_size=5
+current_volume=$(osascript -e 'output volume of (get volume settings)')
+case $1 in
+"increase")
+  new_volume=$((current_volume + chunk_size))
+  osascript -e "set volume output volume $new_volume"
+  ;;
+"decrease")
+  new_volume=$((current_volume - chunk_size))
+  osascript -e "set volume output volume $new_volume"
+  ;;
+"toggle_mute")
+  [[ "true" == $(osascript -e 'output muted of (get volume settings)') ]] && is_muted="false" || is_muted="true"
+
+  osascript -e "set volume output muted $is_muted"
+  ;;
+esac
+
+afplay /System/Library/Sounds/Pop.aiff

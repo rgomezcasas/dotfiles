@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Information about the people listed as contributors of every repositories of an organization
+#?? 1.0.0
+##?
+##? Usage:
+##?    org_contributors <organization>
+##?
+##? Example:
+##?   org_contributors codelytv
+docs::eval "$@"
+
+python "$DOTFILES_PATH/scripts/github/utils/github-contributors.py" -t "$GITHUB_TOKEN" -o "$@"

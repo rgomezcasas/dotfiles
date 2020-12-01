@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Force discover new [beta] updates. Then go to the update app.
+#?? 1.0.0
+##?
+##? Usage:
+##?   foce_discover_updates
+docs::eval "$@"
+
+sudo /System/Library/PrivateFrameworks/Seeding.framework/Versions/A/Resources/seedutil unenroll
+sudo /System/Library/PrivateFrameworks/Seeding.framework/Versions/A/Resources/seedutil enroll DeveloperSeed
+
+echo "⚙️ Now open Update preferences!"

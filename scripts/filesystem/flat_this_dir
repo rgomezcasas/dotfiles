@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Flat the current directory
+#?? 1.0.0
+##?
+##? Usage:
+##?   flat_this_dir
+docs::eval "$@"
+
+sudo find . -mindepth 2 -type f -exec mv -i '{}' . ';'

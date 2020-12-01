@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Clean an entire slack channel (from bots)
+#?? 1.0.0
+##?
+##? Usage:
+##?   clean_slack_channel <channel>
+docs::eval "$@"
+
+#slack-cleaner --token $SLACK_LEGACY_TOKEN --message --group $channel --rate="0.8" --bot
+slack-cleaner --token $SLACK_LEGACY_TOKEN --message --group $channel --bot --rate="0.8" --perform

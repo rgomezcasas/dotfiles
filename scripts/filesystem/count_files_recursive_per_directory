@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Count files recursives in the current direcory disgregated per subdirectory
+#?? 1.0.0
+##?
+##? Usage:
+##?   count_files_recursive_per_directory
+docs::eval "$@"
+
+ls -d ./*/ | xargs -I _ sh -c "find \"_\" -type f | wc -l | xargs echo \"_\""
