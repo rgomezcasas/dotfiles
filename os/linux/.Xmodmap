@@ -1,0 +1,3 @@
+! PgUp and PgDn as left and right
+keycode 112 = Left
+keycode 117 = Right

@@ -1,0 +1,19 @@
+configuration {
+    modi: "combi";
+    combi-modi: "drun,run";
+    me-select-entry: "MouseSecondary";
+    me-accept-entry: "MousePrimary";
+    scroll-method: 1;
+    lines: 7;
+    location: 0;
+    yoffset: -100;
+    hide-scrollbar: true;
+    display-ssh:    "ssh";
+    display-run:     "> ";
+    display-drun:    "";
+    display-window:  "";
+    display-combi:   "";
+    show-icons: true;
+}
+
+@import "rafa-theme.rasi"

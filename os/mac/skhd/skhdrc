@@ -1,0 +1,33 @@
+#                   Apps
+# --------------------------------------------
+
+# iTerm
+lctrl + alt + cmd - space : open -a 'iTerm.app'
+# IntelliJ
+lctrl + alt + cmd - i : $HOME/.dotfiles/bin/sdot utils open_intellij
+# Chrome
+lctrl + alt + cmd - c : open -a 'Google Chrome.app'
+# Slack
+lctrl + alt + cmd - s : open -a /Applications/Slack.app
+
+
+#                   Util
+# --------------------------------------------
+
+# Generate uuid to the clipboard
+lctrl + alt + cmd - u : $HOME/.dotfiles/bin/sdot utils uuid_code
+
+# List projects and open with intellij
+lshift + alt + cmd - i : $HOME/.dotfiles/bin/sdot utils open_project_in_intellij
+
+# List open tabs and focus it with chrome
+lshift + alt + cmd - c : $HOME/.dotfiles/bin/sdot chrome goto
+
+# List all Codely Pro courses and open it on the default browser
+lshift + alt + cmd - p : $HOME/.dotfiles/bin/sdot codely open_course
+
+#                 Remapping
+# --------------------------------------------
+
+# `right option` + `/` to `¿`
+ralt - 0x2C : skhd -t "¿"

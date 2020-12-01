@@ -1,0 +1,49 @@
+{
+  "explorer.openEditors.visible": 0,
+  "terminal.external.osxExec": "iTerm.app",
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "search.useGlobalIgnoreFiles": true,
+  "files.autoSave": "onFocusChange",
+  "files.associations": {
+    "Dockerfile-*": "dockerfile"
+  },
+  "editor.minimap.enabled": false,
+  "editor.formatOnSave": true,
+  "editor.fontFamily": "Dank Mono, Hack, Menlo, Monaco, monospace",
+  "editor.fontSize": 16,
+  "editor.lineHeight": 32,
+  "editor.rulers": [
+    120
+  ],
+  "editor.wordWrap": "on",
+  "editor.wrappingIndent": "indent",
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.list.horizontalScrolling": true,
+  "terminal.integrated.fontFamily": "Dank Mono, Hack, Menlo, Monaco, monospace",
+  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.lineHeight": 1.4,
+  "php.executablePath": "/usr/local/bin/php",
+  "git.autofetch": true,
+  "git.alwaysSignOff": true,
+  "git.fetchOnPull": true,
+  "git.rebaseWhenSync": true,
+  "git.showPushSuccessNotification": true,
+  "workbench.sideBar.location": "left",
+  "workbench.editor.showTabs": false,
+  "workbench.colorTheme": "Gruvbox Dark Medium",
+  "workbench.fontAliasing": "auto",
+  "editor.renderWhitespace": "all",
+  "workbench.activityBar.visible": false,
+  "editor.suggestSelection": "first",
+  "json.schemas": [
+    {
+      "fileMatch": [
+        "ci.yml"
+      ],
+      "url": "http://json.schemastore.org/github-workflow"
+    }
+  ],
+  "[yaml]": {},
+  "window.zoomLevel": 1
+}

@@ -1,0 +1,115 @@
+configuration {
+	me-select-entry:	"MouseSecondary";
+	me-accept-entry:	"MousePrimary";
+	scroll-method:      1;
+    show-icons:         true;
+    sidebar-mode:		true;
+    kb-custom-1:        "";
+    kb-custom-2:        "";
+    kb-custom-3:        "";
+    kb-custom-4:        "";
+    kb-custom-5:        "";
+    kb-custom-6:        "";
+    kb-custom-7:        "";
+    kb-custom-8:        "";
+    kb-custom-9:        "";
+    kb-custom-10:       "";
+    kb-select-1:        "Alt+1";
+    kb-select-2:        "Alt+2";
+    kb-select-3:        "Alt+3";
+    kb-select-4:        "Alt+4";
+    kb-select-5:        "Alt+5";
+    kb-select-6:        "Alt+6";
+    kb-select-7:        "Alt+7";
+    kb-select-8:        "Alt+8";
+    kb-select-9:        "Alt+9";
+    kb-select-10:       "Alt+0";
+}
+
+
+* {
+    background:                  #292f34FF;
+    background-color:            #00000000;
+    foreground:                  #F6F9FFFF;
+    selected:                    #1ABB9BFF;
+    selected-foreground:         #FFFFFFFF;
+
+    active-background:           #00BCD420;
+    urgent-background:           #800000FF;
+    urgent-foreground:           @selected-normal-foreground;
+    selected-urgent-background:  @urgent-foreground;
+    selected-urgent-foreground:  @urgent-background;
+
+    font:                        "xos4 Terminus 20px";
+    text-color:                  @foreground;
+
+	margin:                      0px;
+    border:                      0px;
+    padding:                     0px;
+    spacing:                     0px;
+    addpadding:                  2px 1ch;
+}
+element.normal.active,
+element.alternate.active {
+    background-color: @active-background;
+    text-color:       @selected-foreground;
+}
+element.selected,
+button.selected {
+    background-color: @selected;
+    text-color:       @selected-foreground;
+}
+element.normal.urgent,
+element.alternate.urgent {
+    background-color: @urgent-background;
+    text-color:       @urgent-foreground;
+}
+element.selected.urgent {
+    background-color: @selected-urgent-background;
+    text-color:       @selected-urgent-foreground;
+}
+window {
+	location:		northwest;
+	anchor:			northwest;
+	x-offset:		0;
+	y-offset:		24;
+	width:			60ch;
+}
+mainbox {
+	orientation:	horizontal;
+	children:		[ sidebar, vertibox ];
+}
+vertibox {
+	orientation:	vertical;
+	children:		[ inputbar, listview ];
+	background-color:	@background;
+}
+inputbar {
+	children:		[ entry, ci ];
+}
+entry {
+	padding:		@addpadding;
+}
+listview {
+	lines:			20;
+	fixed-height:	false;
+	dynamic:		false;
+	scrollbar:		true;
+}
+scrollbar {
+	width:			1ch;
+	handle-color:	@selected;
+}
+element {
+	padding:		@addpadding;
+}
+sidebar {
+	orientation:	vertical;
+}
+button {
+	horizontal-align:	0;
+	expand:			false;
+	padding:		@addpadding;
+	width:			18ch;
+	background-color:	@background;
+}

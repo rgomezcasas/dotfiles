@@ -1,0 +1,74 @@
+! xft.dpi: 266
+
+Xft.dpi: 120
+
+*foreground:   #d3d0c8
+*background:   #2d2d2d
+*cursorColor:  #d3d0c8
+
+*color0:       #2d2d2d
+*color1:       #f2777a
+*color2:       #99cc99
+*color3:       #ffcc66
+*color4:       #6699cc
+*color5:       #cc99cc
+*color6:       #66cccc
+*color7:       #d3d0c8
+
+*color8:       #747369
+*color9:       #f2777a
+*color10:      #99cc99
+*color11:      #ffcc66
+*color12:      #6699cc
+*color13:      #cc99cc
+*color14:      #66cccc
+*color15:      #f2f0ec
+
+! Note: colors beyond 15 might not be loaded (e.g., xterm, urxvt),
+! use 'shell' template to set these if necessary
+*color16:      #f99157
+*color17:      #d27b53
+*color18:      #393939
+*color19:      #515151
+*color20:      #a09f93
+*color21:      #e8e6df
+
+!!! URcvt Settings
+! Theme
+URxvt*font: xft:Ubuntu Mono:size=10
+URxvt.boldFont:
+URxvt.internalBorder:  7
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+! End custom
+
+URxvt*scrollBar:                  false
+URxvt*mouseWheelScrollPage:       false
+URxvt*cursorBlink:                true
+URxvt*saveLines:                  5000
+
+! Shortcuts
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+URxvt.keysym.Mod4-c:          eval:selection_to_clipboard
+
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Mod4-v:          eval:paste_clipboard
+
+URxvt.keysym.Mod4-k: echo -ne '\\033c'\n
+
+!! Cursor word movement
+URxvt*altSendsEscape: true
+URxvt.clipboard.autocopy: true
+
+URxvt.keysym.Control-Left:        \033[1;5D
+URxvt.keysym.Shift-Control-Left:  \033[1;6D
+URxvt.keysym.Control-Right:       \033[1;5C
+URxvt.keysym.Shift-Control-Right: \033[1;6C
+URxvt.keysym.Control-Up:          \033[1;5A
+URxvt.keysym.Shift-Control-Up:    \033[1;6A
+URxvt.keysym.Control-Down:        \033[1;5B
+URxvt.keysym.Shift-Control-Down:  \033[1;6B
+
+! Tabs
+!URxvt.perl-ext-common:  default,tabbed
+!URxvt.tabbed.new-button: false

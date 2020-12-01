@@ -7,3 +7,8 @@
 
 - link:
     ~/.dotly: os/linux/.dotly
+    ~/.Xmodmap: os/linux/.Xmodmap
+    ~/.Xresources: os/linux/.Xresources
+    ~/.config/autostart: os/linux/autostart
+    /etc/default/keyboard: os/linux/configs/keyboard
+    /usr/share/X11/xorg.conf.d/00-keyboard.conf: os/linux/xorg.conf.d/00-keyboard.conf

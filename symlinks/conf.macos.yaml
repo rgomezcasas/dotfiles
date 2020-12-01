@@ -16,3 +16,12 @@
     ~/bin/sed: /usr/local/opt/gnu-sed/libexec/gnubin/sed
     ~/bin/touch: /usr/local/bin/gtouch
     ~/bin/find: /usr/local/opt/findutils/bin/gfind
+    ~/.config/karabiner: os/mac/karabiner-elements
+    ~/.config/skhd: os/mac/skhd
+    ~/Library/Application Support/Alfred/Alfred.alfredpreferences: os/mac/alfred
+    ~/Library/Application Support/Code/User/keybindings.json: editors/code/keybindings.json
+    ~/Library/Application Support/Code/User/settings.json: editors/code/settings.json
+    ~/Library/Application Support/Code/User/snippets: editors/code/snippets
+    ~/Library/Group Containers/group.com.docker/settings.json: os/mac/docker/settings.json
+    ~/Library/Preferences/com.contextsformac.Contexts.plist: os/mac/contexts/com.contextsformac.Contexts.plist
+    ~/Library/Preferences/com.knollsoft.Rectangle.plist: os/mac/rectangle/com.knollsoft.Rectangle.plist

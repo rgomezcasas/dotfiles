@@ -1,0 +1,18 @@
+{
+  "displayedWelcomeMessage": true,
+  "filesharingDirectories": [
+    "/Users/rafa.gomez/Code"
+  ],
+  "proxyHttpMode": "system",
+  "channelID": "stable",
+  "linuxDaemonConfigCreationDate": "2018-10-03 15:58:48 +0000",
+  "buildNumber": "31259",
+  "dockerAppLaunchPath": "/Applications/Docker.app",
+  "diskPath": "Library/Containers/com.docker.docker/Data/vms/0/Docker.raw",
+  "version": "2.0.0.3",
+  "displayedWelcomeWhale": true,
+  "memoryMiB": 2048,
+  "settingsVersion": 1,
+  "diskSizeMiB": 61035,
+  "cpus": 2
+}

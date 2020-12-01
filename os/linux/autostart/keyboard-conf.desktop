@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=setxkbmap -option altwin:ctrl_alt_win
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=keyboardconf
+Name=keyboardconf
+Comment[en_US]=
+Comment=
