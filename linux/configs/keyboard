@@ -1,6 +1,0 @@
-XKBMODEL="pc105"
-XKBLAYOUT="us"
-XKBVARIANT=""
-XKBOPTIONS="altwin:swap_lalt_lwin"
-
-BACKSPACE="guess"

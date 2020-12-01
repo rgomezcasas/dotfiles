@@ -1,10 +1,10 @@
 # MacOS
 # ----------------------------------
 # Karabiner
-/mac/karabiner-elements/automatic_backups
+/os//mac/karabiner-elements/automatic_backups
 
 # Alfred
-/mac/alfred/remote
+os//mac/alfred/remote
 
 
 # Common

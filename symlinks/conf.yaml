@@ -5,22 +5,11 @@
       create: true
       force: true
 
+- create:
+      - ~/.z
+
 - link:
-    ~/.bashrc: shell/bash/.bashrc
-    ~/.bash_profile: shell/bash/.bash_profile
-    ~/.profile: shell/bash/.profile
     ~/.zimrc: shell/zsh/.zimrc
     ~/.zlogin: shell/zsh/.zlogin
     ~/.zshenv: shell/zsh/.zshenv
     ~/.zshrc: shell/zsh/.zshrc
-    ~/.gitconfig: git/.gitconfig
-    ~/.gitignore_global: git/.gitignore_global
-    ~/.gitattributes: git/.gitattributes
-    ~/.vimrc: editors/vim/.vimrc
-    ~/.config/psysh/config.php: langs/php/psysh-config.php
-    ~/.composer/composer.json: langs/php/composer.json
-    ~/.config/clojure/profiles.clj: langs/clojure/profiles.clj
-    ~/.sbt/1.0/plugins/plugins.sbt: langs/scala/plugins.sbt
-
-- create:
-    - ~/.z

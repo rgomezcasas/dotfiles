@@ -7,15 +7,9 @@ export FZF_DEFAULT_OPTS='
   --reverse
 '
 
-export HOMEBREW_AUTO_UPDATE_SECS=604800 # 1 week
-export HOMEBREW_NO_ANALYTICS=true
-export HOMEBREW_BUNDLE_FILE_PATH="$DOTFILES_PATH/mac/brew/Brewfile"
-
-export LANG="en_US.UTF-8"
-export LC_ALL="en_US.UTF-8"
-
 export path=(
   "$HOME/bin"
+  "$DOTLY_PATH/bin"
   "$DOTFILES_PATH/bin"
   "$JAVA_HOME/bin"
   "$GEM_HOME/bin"
@@ -23,9 +17,9 @@ export path=(
   "$HOME/.cargo/bin"
   "/usr/local/opt/ruby/bin"
   "/usr/local/opt/python/libexec/bin"
-  "/usr/local/bin"  # This contains all Brew binaries (zsh...)
-  "/usr/local/sbin" # This contains all Brew binaries
-  "/bin"            # macOS zsh is here
+  "/usr/local/bin"
+  "/usr/local/sbin"
+  "/bin"
   "/usr/bin"
   "/usr/sbin"
   "/sbin"
