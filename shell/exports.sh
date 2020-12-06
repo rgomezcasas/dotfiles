@@ -16,6 +16,7 @@ export LC_ALL="en_US.UTF-8"
 
 export path=(
   "$HOME/bin"
+  "$DOTLY_PATH/bin"
   "$DOTFILES_PATH/bin"
   "$JAVA_HOME/bin"
   "$GEM_HOME/bin"
