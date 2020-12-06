@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-source "$DOTFILES_PATH/scripts/core/_main.sh"
+source "$DOTLY_PATH/scripts/core/_main.sh"
 
 ##? Optimize an image preserving the original
 #?? 1.0.0
@@ -14,7 +14,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##? Options:
 ##?   -h --help   Show this screen.
 ##?   -t --thumb  Optimizes for thumbnail (for CodelyTV YouTube videos :)
-docs::eval "$@"
+docs::parse "$@"
 
 original_filename=$(echo "$filename" | sed 's/\(.*\)\./\1.original./')
 extra_options=""

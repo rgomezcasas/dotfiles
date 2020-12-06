@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source "$DOTFILES_PATH/scripts/core/_main.sh"
+source "$DOTLY_PATH/scripts/core/_main.sh"
 
 ##? Animated pipes terminal screensaver
 ##?
@@ -9,7 +9,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?
 ##? Usage:
 ##?   pipe
-docs::eval "$@"
+docs::parse "$@"
 
 M=32768
 p=1

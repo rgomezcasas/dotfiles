@@ -2,14 +2,14 @@
 
 set -euo pipefail
 
-source "$DOTFILES_PATH/scripts/core/_main.sh"
+source "$DOTLY_PATH/scripts/core/_main.sh"
 
 ##? Open a CodelyTV Pro Course
 #?? 1.0.0
 ##?
 ##? Usage:
 ##?   open_course
-docs::eval "$@"
+docs::parse "$@"
 
 # fzf version
 #curl -s 'https://pro.codely.tv/api/private/library/resource/?page_size=50&page=1&ordering=featured&order=featured&type=course&filters%5Border%5D=featured&filters%5Btype%5D=course' |

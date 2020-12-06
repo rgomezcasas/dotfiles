@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-source "$DOTFILES_PATH/scripts/core/_main.sh"
+source "$DOTLY_PATH/scripts/core/_main.sh"
 
 ##? Vulume stuff
 #?? 1.0.0

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -eo pipefail
 
-source "$DOTFILES_PATH/scripts/core/_main.sh"
+source "$DOTLY_PATH/scripts/core/_main.sh"
 
 ##? Downloads a video audio in the current directory
 ##?

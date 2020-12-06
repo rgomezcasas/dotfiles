@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -eo pipefail
 
-source "$DOTFILES_PATH/scripts/core/_main.sh"
+source "$DOTLY_PATH/scripts/core/_main.sh"
 
 ##? Colors
 #?? 0.1.0
@@ -14,7 +14,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?
 ##? Usage:
 ##?   colors
-docs::eval "$@"
+docs::parse "$@"
 
 T='gYw'
 

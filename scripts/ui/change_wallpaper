@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-source "$DOTFILES_PATH/scripts/core/_main.sh"
+source "$DOTLY_PATH/scripts/core/_main.sh"
 
 ##? Change the wallpaper
 #?? 1.0.0
@@ -11,7 +11,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?   change_wallpaper <colorName>
 ##?   change_wallpaper <url>
 
-docs::eval "$@"
+docs::parse "$@"
 
 WALLPAPER_DIR="$HOME/Pictures/Wallpapers"
 WALLPAPER_FILENAME=$1

@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 set -eo pipefail
 
-source "$DOTFILES_PATH/scripts/core/_main.sh"
+source "$DOTLY_PATH/scripts/core/_main.sh"
 
 ##? Prints the sum of all videos duration
 ##?
 ##? Usage:
 ##?   folder_duration
-docs::eval "$@"
+docs::parse "$@"
 
 ls | grep mp4 | xargs -I~ ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 "~"

@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-source "$DOTFILES_PATH/scripts/core/_main.sh"
+source "$DOTLY_PATH/scripts/core/_main.sh"
 
 ##? Information about the people listed as contributors of every repositories of an organization
 #?? 1.0.0
@@ -12,6 +12,6 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?
 ##? Example:
 ##?   org_contributors codelytv
-docs::eval "$@"
+docs::parse "$@"
 
 python "$DOTFILES_PATH/scripts/github/utils/github-contributors.py" -t "$GITHUB_TOKEN" -o "$@"

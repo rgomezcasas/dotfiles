@@ -2,14 +2,14 @@
 
 set -euo pipefail
 
-source "$DOTFILES_PATH/scripts/core/_main.sh"
+source "$DOTLY_PATH/scripts/core/_main.sh"
 
 ##? Connects to a running docker instance
 #?? 1.0.0
 ##?
 ##? Usage:
 ##?   connect
-docs::eval "$@"
+docs::parse "$@"
 
 if docker ps >/dev/null 2>&1; then
   container=$(docker ps | awk '{if (NR!=1) print $1 ": " $(NF)}' | fzf --height 40%)

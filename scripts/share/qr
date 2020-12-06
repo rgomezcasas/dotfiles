@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-source "$DOTFILES_PATH/scripts/core/_main.sh"
+source "$DOTLY_PATH/scripts/core/_main.sh"
 
 ##? Creates a QR code with the specified content
 #?? 0.1.0
@@ -12,6 +12,6 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?
 ##? Examples:
 ##?   qr foo
-docs::eval "$@"
+docs::parse "$@"
 
 echo "$contents" | curl -F-=\<- qrenco.de
