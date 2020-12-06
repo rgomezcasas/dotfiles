@@ -1,6 +1,5 @@
 numpy==1.19.4
 protobuf==3.14.0
-PyQt5==5.15.1
-PyQt5-sip==4.19.24
+PyQt5==5.15.2
+PyQt5-sip==12.8.1
 six==1.15.0
-TBB==0.1
