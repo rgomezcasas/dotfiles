@@ -2,14 +2,14 @@
 
 set -euo pipefail
 
-source "$DOTFILES_PATH/scripts/core/_main.sh"
+source "$DOTLY_PATH/scripts/core/_main.sh"
 
 ##? Debug things
 #?? 1.0.0
 ##?
 ##? Usage:
 ##?   debug <thing>
-docs::eval "$@"
+docs::parse "$@"
 
 case "$thing" in
 kbhd)

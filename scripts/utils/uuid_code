@@ -2,14 +2,14 @@
 
 set -euo pipefail
 
-source "$DOTFILES_PATH/scripts/core/_main.sh"
+source "$DOTLY_PATH/scripts/core/_main.sh"
 
 ##? Generates and copy to the clipboard a UUID
 #?? 1.0.0
 ##?
 ##? Usage:
 ##?   uuid_code
-docs::eval "$@"
+docs::parse "$@"
 
 uuid=$(uuidgen | tr '[:upper:]' '[:lower:]')
 echo -n $uuid | pbcopy

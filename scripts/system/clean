@@ -2,14 +2,14 @@
 
 set -euo pipefail
 
-source "$DOTFILES_PATH/scripts/core/_main.sh"
+source "$DOTLY_PATH/scripts/core/_main.sh"
 
 ##? Clean junk files
 #?? 1.0.0
 ##?
 ##? Usage:
 ##?   clean
-docs::eval "$@"
+docs::parse "$@"
 
 sudo rm -rf /Applications/Utilities/Adobe\ Creative\ Cloud/ACC/Creative\ Cloud.app
 sudo rm -rf /Applications/Utilities/Adobe\ Creative\ Cloud/AppsPanel/Updater/Adobe\ Application\ Updater.app

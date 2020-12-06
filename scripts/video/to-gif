@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 set -eo pipefail
 
-source "$DOTFILES_PATH/scripts/core/_main.sh"
+source "$DOTLY_PATH/scripts/core/_main.sh"
 
 ##? Transforms a video to gif
 ##?
 ##? Usage:
 ##?   to-gif <video_path>
 ##?
-docs::eval "$@"
+docs::parse "$@"
 
 ffmpeg \
   -i "$video_path" \

@@ -2,14 +2,14 @@
 
 set -euo pipefail
 
-source "$DOTFILES_PATH/scripts/core/_main.sh"
+source "$DOTLY_PATH/scripts/core/_main.sh"
 
 ##? Prints the mysql general log
 #?? 1.0.0
 ##?
 ##? Usage:
 ##?   general_log
-docs::eval "$@"
+docs::parse "$@"
 
 MYSQL_LOG_PATH="/var/log/mysql_general.log"
 

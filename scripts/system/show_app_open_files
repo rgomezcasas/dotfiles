@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-source "$DOTFILES_PATH/scripts/core/_main.sh"
+source "$DOTLY_PATH/scripts/core/_main.sh"
 
 ##? Show open files by an app
 #?? 1.0.0
@@ -14,7 +14,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##? Options:
 ##?   -h --help   Show this screen.
 ##?   -w --watch  Watch the changes
-docs::eval "$@"
+docs::parse "$@"
 
 selected=$(dot system list_opened_apps | fzf)
 

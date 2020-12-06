@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-source "$DOTFILES_PATH/scripts/core/_main.sh"
+source "$DOTLY_PATH/scripts/core/_main.sh"
 
 ##? List the top stargazers for a repository
 #?? 1.0.0
@@ -12,7 +12,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?
 ##? Example:
 ##?   top_stargazers rgomezcasas/dotfiles
-docs::eval "$@"
+docs::parse "$@"
 
 log::warning "This could take a while!"
 

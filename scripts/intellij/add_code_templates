@@ -2,14 +2,14 @@
 
 set -euo pipefail
 
-source "$DOTFILES_PATH/scripts/core/_main.sh"
+source "$DOTLY_PATH/scripts/core/_main.sh"
 
 ##? Add intellij Code Templates symlink (since it's not synced via JetBrains Toolbox)
 #?? 1.0.0
 ##?
 ##? Usage:
 ##?   add_code_templates
-docs::eval "$@"
+docs::parse "$@"
 
 preferences_dir="$HOME/Library/Application Support/JetBrains"
 intellij_version=$(ls "$preferences_dir" | grep 'IntelliJIdea' | sort -r | head -n 1)

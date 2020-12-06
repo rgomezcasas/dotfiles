@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source "$DOTFILES_PATH/scripts/core/_main.sh"
+source "$DOTLY_PATH/scripts/core/_main.sh"
 
 ##? List all projects
 ##? If a second argument is passed it is filtered
@@ -11,7 +11,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?
 ##? Options:
 ##?   --choose  Use choose instead fzf
-docs::eval "$@"
+docs::parse "$@"
 
 project_root_directories=(
   "$HOME/Code/codely/"*

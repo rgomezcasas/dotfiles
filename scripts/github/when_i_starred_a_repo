@@ -2,7 +2,7 @@
 
 set -o pipefail
 
-source "$DOTFILES_PATH/scripts/core/_main.sh"
+source "$DOTLY_PATH/scripts/core/_main.sh"
 
 ##? Find additional subdomains on GitHub. Very useful during you recon phase, you will probably get some extras
 ##? subdomains other tools didn’t find because not public
@@ -13,7 +13,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?
 ##? Example:
 ##?   when_i_starred_a_repo rgomezcasas/dotfiles
-docs::eval "$@"
+docs::parse "$@"
 
 if [ -z "$GITHUB_TOKEN" ]; then
   echo "You need to setup a GITHUB_TOKEN export"

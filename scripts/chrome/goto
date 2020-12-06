@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-source "$DOTFILES_PATH/scripts/core/_main.sh"
+source "$DOTLY_PATH/scripts/core/_main.sh"
 
 ##? Fuzzy search and activate Chrome tab from terminal
 ##? Based on: https://github.com/Rasukarusan/fzf-chrome-active-tab
@@ -10,7 +10,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?
 ##? Usage:
 ##?   goto
-docs::eval "$@"
+docs::parse "$@"
 
 function getTabs() {
   osascript <<EOF
