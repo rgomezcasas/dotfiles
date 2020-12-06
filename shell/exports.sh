@@ -9,7 +9,6 @@ export FZF_DEFAULT_OPTS='
 
 export HOMEBREW_AUTO_UPDATE_SECS=604800 # 1 week
 export HOMEBREW_NO_ANALYTICS=true
-export HOMEBREW_BUNDLE_FILE_PATH="$DOTFILES_PATH/mac/brew/Brewfile"
 
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
