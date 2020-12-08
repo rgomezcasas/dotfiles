@@ -17,6 +17,7 @@
     ~/bin/touch: /usr/local/bin/gtouch
     ~/bin/find: /usr/local/opt/findutils/bin/gfind
     ~/.config/karabiner: os/mac/karabiner-elements
+    ~/.config/karabiner.edn: os/mac/karabiner-goku/karabiner.edn
     ~/.config/skhd: os/mac/skhd
     ~/Library/Application Support/Alfred/Alfred.alfredpreferences: os/mac/alfred
     ~/Library/Application Support/Code/User/keybindings.json: editors/code/keybindings.json

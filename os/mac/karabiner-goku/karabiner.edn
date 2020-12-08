@@ -1,0 +1,20 @@
+{:main [{:des "[keyboard] ctr + cmd + ↑ as ↓" :rules [[:!CTdown_arrow :!CTup_arrow]]}
+        {:des   "[mouse] Up key -> Restore last hidden"
+         :rules [[{:pkey :button5} :!Ctab]]}
+        {:des   "[mouse] Down key -> Hide"
+         :rules [[{:pkey :button4} [{:pkey :button1} :!Ch]]]}]}
+
+;; !  | means mandatory
+;; #  | means optional
+
+;; C  | left_command
+;; T  | left_control
+;; O  | left_option
+;; S  | left_shift
+;; F  | fn
+;; Q  | right_command
+;; W  | right_control
+;; E  | right_option
+;; R  | right_shift
+;; !! | mandatory command + control + optional + shift (hyper)
+;; ## | optional any
