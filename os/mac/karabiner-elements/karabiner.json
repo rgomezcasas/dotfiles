@@ -53,6 +53,118 @@
           } ],
           "type" : "basic"
         } ]
+      }, {
+        "description" : "Open iTerm",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "spacebar",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_control", "left_option" ]
+            }
+          },
+          "to" : [ {
+            "shell_command" : "open -a 'iTerm.app'"
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "Open IntelliJ",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "i",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_control", "left_option" ]
+            }
+          },
+          "to" : [ {
+            "shell_command" : "$HOME/.dotfiles/bin/sdot utils open_intellij"
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "Open Chrome",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "c",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_control", "left_option" ]
+            }
+          },
+          "to" : [ {
+            "shell_command" : "open -a 'Google Chrome.app'"
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "Open Slack",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "s",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_control", "left_option" ]
+            }
+          },
+          "to" : [ {
+            "shell_command" : "open -a 'Slack.app'"
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "List projects and open with intellij",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "i",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_option", "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "shell_command" : "$HOME/.dotfiles/bin/sdot utils open_project_in_intellij"
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "List open tabs and focus it with chrome",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "c",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_option", "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "shell_command" : "$HOME/.dotfiles/bin/sdot chrome goto"
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "List all Codely Pro courses and open it on the default browser",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "p",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_option", "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "shell_command" : "$HOME/.dotfiles/bin/sdot codely open_course"
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "Generate uuid to the clipboard",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "u",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_control", "left_option" ]
+            }
+          },
+          "to" : [ {
+            "shell_command" : "$HOME/.dotfiles/bin/sdot utils uuid_code"
+          } ],
+          "type" : "basic"
+        } ]
       } ]
     },
     "devices" : [ {
