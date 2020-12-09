@@ -91,7 +91,7 @@
             }
           },
           "to" : [ {
-            "shell_command" : "open -a 'Google Chrome.app'"
+            "shell_command" : "open -a 'Google Chrome Beta.app'"
           } ],
           "type" : "basic"
         } ]
@@ -162,6 +162,25 @@
           },
           "to" : [ {
             "shell_command" : "$HOME/.dotfiles/bin/sdot utils uuid_code"
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "Google Chrome",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "e",
+            "modifiers" : {
+              "mandatory" : [ "left_command" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "a",
+            "modifiers" : [ "left_command", "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "bundle_identifiers" : [ "com.google.Chrome", "com.google.Chrome.beta" ],
+            "type" : "frontmost_application_if"
           } ],
           "type" : "basic"
         } ]

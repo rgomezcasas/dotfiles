@@ -1,4 +1,6 @@
-{:main [;; Remaps
+{:applications
+ {:Chrome ["com.google.Chrome", "com.google.Chrome.beta"]}
+ :main [;; Remaps
          {:des   "[keyboard] ctr + cmd + ↑ as ↓"
           :rules [[:!CTdown_arrow :!CTup_arrow]]}
          {:des   "[mouse] Up key -> Restore last hidden"
@@ -12,7 +14,7 @@
          {:des   "Open IntelliJ"
           :rules [[:!CTOi "$HOME/.dotfiles/bin/sdot utils open_intellij"]]}
          {:des   "Open Chrome"
-          :rules [[:!CTOc "open -a 'Google Chrome.app'"]]}
+          :rules [[:!CTOc "open -a 'Google Chrome Beta.app'"]]}
          {:des   "Open Slack"
           :rules [[:!CTOs "open -a 'Slack.app'"]]}
 
@@ -26,6 +28,9 @@
          ;; Util
          {:des   "Generate uuid to the clipboard"
           :rules [[:!CTOu "$HOME/.dotfiles/bin/sdot utils uuid_code"]]}
+         ;; Application specific
+         {:des   "Google Chrome"
+          :rules [:Chrome [:!Ce :!CSa]]}
          ;;
          ]}
 

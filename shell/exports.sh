@@ -10,6 +10,8 @@ export FZF_DEFAULT_OPTS='
 export HOMEBREW_AUTO_UPDATE_SECS=604800 # 1 week
 export HOMEBREW_NO_ANALYTICS=true
 
+export GPG_TTY=$(tty)
+
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 
