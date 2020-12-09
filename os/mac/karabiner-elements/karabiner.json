@@ -54,7 +54,7 @@
           "type" : "basic"
         } ]
       }, {
-        "description" : "Open iTerm",
+        "description" : "[launch] iTerm",
         "manipulators" : [ {
           "from" : {
             "key_code" : "spacebar",
@@ -68,7 +68,7 @@
           "type" : "basic"
         } ]
       }, {
-        "description" : "Open IntelliJ",
+        "description" : "[launch] IntelliJ",
         "manipulators" : [ {
           "from" : {
             "key_code" : "i",
@@ -82,7 +82,7 @@
           "type" : "basic"
         } ]
       }, {
-        "description" : "Open Chrome",
+        "description" : "[launch] Chrome",
         "manipulators" : [ {
           "from" : {
             "key_code" : "c",
@@ -96,7 +96,7 @@
           "type" : "basic"
         } ]
       }, {
-        "description" : "Open Slack",
+        "description" : "[launch] Slack",
         "manipulators" : [ {
           "from" : {
             "key_code" : "s",
@@ -110,7 +110,7 @@
           "type" : "basic"
         } ]
       }, {
-        "description" : "List projects and open with intellij",
+        "description" : "[launch] List projects and open with intellij",
         "manipulators" : [ {
           "from" : {
             "key_code" : "i",
@@ -124,7 +124,7 @@
           "type" : "basic"
         } ]
       }, {
-        "description" : "List open tabs and focus it with chrome",
+        "description" : "[launch] List open tabs and focus it with Chrome",
         "manipulators" : [ {
           "from" : {
             "key_code" : "c",
@@ -138,7 +138,7 @@
           "type" : "basic"
         } ]
       }, {
-        "description" : "List all Codely Pro courses and open it on the default browser",
+        "description" : "[launch] List all Codely Pro courses and open it on the default browser",
         "manipulators" : [ {
           "from" : {
             "key_code" : "p",
@@ -152,7 +152,7 @@
           "type" : "basic"
         } ]
       }, {
-        "description" : "Generate uuid to the clipboard",
+        "description" : "[util] Generate uuid to the clipboard",
         "manipulators" : [ {
           "from" : {
             "key_code" : "u",
@@ -166,7 +166,29 @@
           "type" : "basic"
         } ]
       }, {
-        "description" : "Google Chrome",
+        "description" : "[util] Extend selection",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "up_arrow",
+            "modifiers" : {
+              "mandatory" : [ "left_option" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "left_arrow",
+            "modifiers" : [ "left_option" ]
+          }, {
+            "key_code" : "right_arrow",
+            "modifiers" : [ "left_option", "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "bundle_identifiers" : [ "com.jetbrains.intellij" ],
+            "type" : "frontmost_application_unless"
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "[chrome] Show recent tabs",
         "manipulators" : [ {
           "from" : {
             "key_code" : "e",
@@ -185,7 +207,45 @@
           "type" : "basic"
         } ]
       }, {
-        "description" : "Slack",
+        "description" : "[chrome] Inspect element",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "i",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "c",
+            "modifiers" : [ "left_command", "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "bundle_identifiers" : [ "com.google.Chrome", "com.google.Chrome.beta" ],
+            "type" : "frontmost_application_if"
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "[chrome] Toggle console",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "t",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_control", "left_option" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "j",
+            "modifiers" : [ "left_command", "left_option" ]
+          } ],
+          "conditions" : [ {
+            "bundle_identifiers" : [ "com.google.Chrome", "com.google.Chrome.beta" ],
+            "type" : "frontmost_application_if"
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "[slack] Navigate channels",
         "manipulators" : [ {
           "from" : {
             "key_code" : "p",
@@ -204,7 +264,26 @@
           "type" : "basic"
         } ]
       }, {
-        "description" : "Notion",
+        "description" : "[slack] Toggle sidebar",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "1",
+            "modifiers" : {
+              "mandatory" : [ "left_command" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "d",
+            "modifiers" : [ "left_command", "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "bundle_identifiers" : [ "com.tinyspeck.slackmacgap" ],
+            "type" : "frontmost_application_if"
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "[notion] Show recent pages",
         "manipulators" : [ {
           "from" : {
             "key_code" : "e",
@@ -221,7 +300,10 @@
             "type" : "frontmost_application_if"
           } ],
           "type" : "basic"
-        }, {
+        } ]
+      }, {
+        "description" : "[notion] Toggle sidebar",
+        "manipulators" : [ {
           "from" : {
             "key_code" : "1",
             "modifiers" : {

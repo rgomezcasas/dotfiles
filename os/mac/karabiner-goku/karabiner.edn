@@ -1,8 +1,9 @@
 {:applications
- {;; To obtain the app ID: grep -A1 "CFBundleIdentifier" /Applications/The.app/Contents/Info.plist
-   :Chrome ["com.google.Chrome", "com.google.Chrome.beta"]
-   :Slack  ["com.tinyspeck.slackmacgap"]
-   :Notion ["notion.id"]}
+ {;; To obtain the app ID: `grep -A1 "CFBundleIdentifier" /Applications/The.app/Contents/Info.plist`
+   :Chrome   ["com.google.Chrome", "com.google.Chrome.beta"]
+   :Slack    ["com.tinyspeck.slackmacgap"]
+   :Notion   ["notion.id"]
+   :IntelliJ ["com.jetbrains.intellij"]}
  :main
  [;; Remaps
    {:des   "[keyboard] ctr + cmd + ↑ as ↓"
@@ -13,35 +14,36 @@
     :rules [[{:pkey :button4} [{:pkey :button1} :!Ch]]]}
 
    ;; Launchers
-   {:des   "Open iTerm"
+   {:des   "[launch] iTerm"
     :rules [[:!CTOspacebar "open -a 'iTerm.app'"]]}
-   {:des   "Open IntelliJ"
+   {:des   "[launch] IntelliJ"
     :rules [[:!CTOi "$HOME/.dotfiles/bin/sdot utils open_intellij"]]}
-   {:des   "Open Chrome"
+   {:des   "[launch] Chrome"
     :rules [[:!CTOc "open -a 'Google Chrome Beta.app'"]]}
-   {:des   "Open Slack"
+   {:des   "[launch] Slack"
     :rules [[:!CTOs "open -a 'Slack.app'"]]}
 
-   {:des   "List projects and open with intellij"
+   {:des   "[launch] List projects and open with intellij"
     :rules [[:!CSOi "$HOME/.dotfiles/bin/sdot utils open_project_in_intellij"]]}
-   {:des   "List open tabs and focus it with chrome"
+   {:des   "[launch] List open tabs and focus it with Chrome"
     :rules [[:!CSOc "$HOME/.dotfiles/bin/sdot chrome goto"]]}
-   {:des   "List all Codely Pro courses and open it on the default browser"
+   {:des   "[launch] List all Codely Pro courses and open it on the default browser"
     :rules [[:!CSOp "$HOME/.dotfiles/bin/sdot codely open_course"]]}
 
    ;; Util
-   {:des   "Generate uuid to the clipboard"
+   {:des   "[util] Generate uuid to the clipboard"
     :rules [[:!CTOu "$HOME/.dotfiles/bin/sdot utils uuid_code"]]}
+   {:des   "[util] Extend selection"
+    :rules [:!IntelliJ [:!Oup_arrow [:!Oleft_arrow :!OSright_arrow]]]}
 
    ;; Application specific
-   {:des   "Google Chrome"
-    :rules [:Chrome [:!Ce :!CSa]]}
-   {:des   "Slack"
-    :rules [:Slack [:!Cp :!Ck]]}
-   {:des   "Notion"
-    :rules [:Notion
-            [:!Ce :!Cp]
-            [:!C1 :!Cbackslash]]}
+   {:des "[chrome] Show recent tabs" :rules [:Chrome [:!Ce :!CSa]]}
+   {:des "[chrome] Inspect element" :rules [:Chrome [:!CSi :!CSc]]}
+   {:des "[chrome] Toggle console" :rules [:Chrome [:!CTOt :!COj]]}
+   {:des "[slack] Navigate channels" :rules [:Slack [:!Cp :!Ck]]}
+   {:des "[slack] Toggle sidebar" :rules [:Slack [:!C1 :!CSd]]}
+   {:des "[notion] Show recent pages" :rules [:Notion [:!Ce :!Cp]]}
+   {:des "[notion] Toggle sidebar" :rules [:Notion [:!C1 :!Cbackslash]]}
 
    ;; !  | means mandatory
    ;; #  | means optional
