@@ -1,50 +1,62 @@
 {:applications
- {:Chrome ["com.google.Chrome", "com.google.Chrome.beta"]}
- :main [;; Remaps
-         {:des   "[keyboard] ctr + cmd + ↑ as ↓"
-          :rules [[:!CTdown_arrow :!CTup_arrow]]}
-         {:des   "[mouse] Up key -> Restore last hidden"
-          :rules [[{:pkey :button5} :!Ctab]]}
-         {:des   "[mouse] Down key -> Hide"
-          :rules [[{:pkey :button4} [{:pkey :button1} :!Ch]]]}
+ {;; To obtain the app ID: grep -A1 "CFBundleIdentifier" /Applications/The.app/Contents/Info.plist
+   :Chrome ["com.google.Chrome", "com.google.Chrome.beta"]
+   :Slack  ["com.tinyspeck.slackmacgap"]
+   :Notion ["notion.id"]}
+ :main
+ [;; Remaps
+   {:des   "[keyboard] ctr + cmd + ↑ as ↓"
+    :rules [[:!CTdown_arrow :!CTup_arrow]]}
+   {:des   "[mouse] Up key -> Restore last hidden"
+    :rules [[{:pkey :button5} :!Ctab]]}
+   {:des   "[mouse] Down key -> Hide"
+    :rules [[{:pkey :button4} [{:pkey :button1} :!Ch]]]}
 
-         ;; Launchers
-         {:des   "Open iTerm"
-          :rules [[:!CTOspacebar "open -a 'iTerm.app'"]]}
-         {:des   "Open IntelliJ"
-          :rules [[:!CTOi "$HOME/.dotfiles/bin/sdot utils open_intellij"]]}
-         {:des   "Open Chrome"
-          :rules [[:!CTOc "open -a 'Google Chrome Beta.app'"]]}
-         {:des   "Open Slack"
-          :rules [[:!CTOs "open -a 'Slack.app'"]]}
+   ;; Launchers
+   {:des   "Open iTerm"
+    :rules [[:!CTOspacebar "open -a 'iTerm.app'"]]}
+   {:des   "Open IntelliJ"
+    :rules [[:!CTOi "$HOME/.dotfiles/bin/sdot utils open_intellij"]]}
+   {:des   "Open Chrome"
+    :rules [[:!CTOc "open -a 'Google Chrome Beta.app'"]]}
+   {:des   "Open Slack"
+    :rules [[:!CTOs "open -a 'Slack.app'"]]}
 
-         {:des   "List projects and open with intellij"
-          :rules [[:!CSOi "$HOME/.dotfiles/bin/sdot utils open_project_in_intellij"]]}
-         {:des   "List open tabs and focus it with chrome"
-          :rules [[:!CSOc "$HOME/.dotfiles/bin/sdot chrome goto"]]}
-         {:des   "List all Codely Pro courses and open it on the default browser"
-          :rules [[:!CSOp "$HOME/.dotfiles/bin/sdot codely open_course"]]}
+   {:des   "List projects and open with intellij"
+    :rules [[:!CSOi "$HOME/.dotfiles/bin/sdot utils open_project_in_intellij"]]}
+   {:des   "List open tabs and focus it with chrome"
+    :rules [[:!CSOc "$HOME/.dotfiles/bin/sdot chrome goto"]]}
+   {:des   "List all Codely Pro courses and open it on the default browser"
+    :rules [[:!CSOp "$HOME/.dotfiles/bin/sdot codely open_course"]]}
 
-         ;; Util
-         {:des   "Generate uuid to the clipboard"
-          :rules [[:!CTOu "$HOME/.dotfiles/bin/sdot utils uuid_code"]]}
-         ;; Application specific
-         {:des   "Google Chrome"
-          :rules [:Chrome [:!Ce :!CSa]]}
-         ;;
-         ]}
+   ;; Util
+   {:des   "Generate uuid to the clipboard"
+    :rules [[:!CTOu "$HOME/.dotfiles/bin/sdot utils uuid_code"]]}
 
-;; !  | means mandatory
-;; #  | means optional
+   ;; Application specific
+   {:des   "Google Chrome"
+    :rules [:Chrome [:!Ce :!CSa]]}
+   {:des   "Slack"
+    :rules [:Slack [:!Cp :!Ck]]}
+   {:des   "Notion"
+    :rules [:Notion
+            [:!Ce :!Cp]
+            [:!C1 :!Cbackslash]]}
 
-;; C  | left_command
-;; T  | left_control
-;; O  | left_option
-;; S  | left_shift
-;; F  | fn
-;; Q  | right_command
-;; W  | right_control
-;; E  | right_option
-;; R  | right_shift
-;; !! | mandatory command + control + optional + shift (hyper)
-;; ## | optional any
+   ;; !  | means mandatory
+   ;; #  | means optional
+
+   ;; C  | left_command
+   ;; T  | left_control
+   ;; O  | left_option
+   ;; S  | left_shift
+   ;; F  | fn
+   ;; Q  | right_command
+   ;; W  | right_control
+   ;; E  | right_option
+   ;; R  | right_shift
+   ;; !! | mandatory command + control + optional + shift (hyper)
+   ;; ## | optional any
+   ]}
+
+
