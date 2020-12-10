@@ -15,7 +15,7 @@ docs::parse "$@"
 function getTabs() {
   osascript <<EOF
     set _output to ""
-    tell application "Google Chrome Beta"
+    tell application "Google Chrome"
         set _window_index to 1
         repeat with w in windows
             set _tab_index to 1
@@ -40,7 +40,7 @@ function setActiveTab() {
   on run argv
       set _window_index to item 1 of argv
       set _tab_index to item 2 of argv
-      tell application "Google Chrome Beta"
+      tell application "Google Chrome"
           activate
           set index of window (_window_index as number) to (_window_index as number)
           set active tab index of window (_window_index as number) to (_tab_index as number)

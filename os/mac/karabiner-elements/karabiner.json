@@ -91,7 +91,7 @@
             }
           },
           "to" : [ {
-            "shell_command" : "open -a 'Google Chrome Beta.app'"
+            "shell_command" : "open -a 'Google Chrome.app'"
           } ],
           "type" : "basic"
         } ]
@@ -182,7 +182,7 @@
             "modifiers" : [ "left_option", "left_shift" ]
           } ],
           "conditions" : [ {
-            "bundle_identifiers" : [ "com.jetbrains.intellij" ],
+            "bundle_identifiers" : [ "notion.id" ],
             "type" : "frontmost_application_unless"
           } ],
           "type" : "basic"
@@ -313,6 +313,41 @@
           "to" : [ {
             "key_code" : "backslash",
             "modifiers" : [ "left_command" ]
+          } ],
+          "conditions" : [ {
+            "bundle_identifiers" : [ "notion.id" ],
+            "type" : "frontmost_application_if"
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "[notion] Extend selection",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "up_arrow",
+            "modifiers" : {
+              "mandatory" : [ "left_option" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "up_arrow",
+            "modifiers" : [ "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "bundle_identifiers" : [ "notion.id" ],
+            "type" : "frontmost_application_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "down_arrow",
+            "modifiers" : {
+              "mandatory" : [ "left_option" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "down_arrow",
+            "modifiers" : [ "left_shift" ]
           } ],
           "conditions" : [ {
             "bundle_identifiers" : [ "notion.id" ],

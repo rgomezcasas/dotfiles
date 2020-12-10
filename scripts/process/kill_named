@@ -8,7 +8,7 @@ source "$DOTLY_PATH/scripts/core/_main.sh"
 #?? 1.0.0
 ##?
 ##? Usage:
-##?   kill_named
+##?   kill_named <to_kill>
 docs::parse "$@"
 
 ps aux | grep $1 | grep -v grep | grep -v kill_named | awk '{print $2}' | xargs kill -9

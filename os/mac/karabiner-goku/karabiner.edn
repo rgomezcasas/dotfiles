@@ -19,7 +19,7 @@
    {:des   "[launch] IntelliJ"
     :rules [[:!CTOi "$HOME/.dotfiles/bin/sdot utils open_intellij"]]}
    {:des   "[launch] Chrome"
-    :rules [[:!CTOc "open -a 'Google Chrome Beta.app'"]]}
+    :rules [[:!CTOc "open -a 'Google Chrome.app'"]]}
    {:des   "[launch] Slack"
     :rules [[:!CTOs "open -a 'Slack.app'"]]}
 
@@ -34,7 +34,7 @@
    {:des   "[util] Generate uuid to the clipboard"
     :rules [[:!CTOu "$HOME/.dotfiles/bin/sdot utils uuid_code"]]}
    {:des   "[util] Extend selection"
-    :rules [:!IntelliJ [:!Oup_arrow [:!Oleft_arrow :!OSright_arrow]]]}
+    :rules [:!IntelliJ :!Notion [:!Oup_arrow [:!Oleft_arrow :!OSright_arrow]]]}
 
    ;; Application specific
    {:des "[chrome] Show recent tabs" :rules [:Chrome [:!Ce :!CSa]]}
@@ -44,6 +44,8 @@
    {:des "[slack] Toggle sidebar" :rules [:Slack [:!C1 :!CSd]]}
    {:des "[notion] Show recent pages" :rules [:Notion [:!Ce :!Cp]]}
    {:des "[notion] Toggle sidebar" :rules [:Notion [:!C1 :!Cbackslash]]}
+   {:des   "[notion] Extend selection"
+    :rules [:Notion [:!Oup_arrow :!Sup_arrow] [:!Odown_arrow :!Sdown_arrow]]}
 
    ;; !  | means mandatory
    ;; #  | means optional
@@ -60,5 +62,3 @@
    ;; !! | mandatory command + control + optional + shift (hyper)
    ;; ## | optional any
    ]}
-
-
