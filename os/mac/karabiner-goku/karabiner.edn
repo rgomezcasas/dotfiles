@@ -66,8 +66,11 @@ end tell'"}
    {:des "[chrome] Show recent tabs" :rules [:Chrome [:!Ce :!CSa]]}
    {:des "[chrome] Inspect element" :rules [:Chrome [:!CSi :!CSc]]}
    {:des "[chrome] Toggle console" :rules [:Chrome [:!CTOt :!COj]]}
-   {:des "[slack] Navigate channels" :rules [:Slack [:!Cp :!Ck]]}
-   {:des "[slack] Toggle sidebar" :rules [:Slack [:!C1 :!CSd]]}
+   {:des   "[slack] Navigate between channels"
+    :rules [:Slack [:!Cp :!Ck] [:!Ce :!Ck]]}
+   {:des "[slack] Toggle sidebars" :rules [:Slack [:!C1 :!CSd] [:!C2 :!Cperiod]]}
+   {:des   "[slack] Move between workspaces"
+    :rules [:Slack [:!CS1 :!C1] [:!CS2 :!C2] [:!CS3 :!C3]]}
    {:des   "[slack] Reactions"
     :rules [:Slack
             [:!COv [:paste_and_return "+:white_check_mark:"]]
