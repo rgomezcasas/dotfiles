@@ -1,18 +1,44 @@
-{:applications
+{:default   true
+ :alone     500
+ :delay     200
+ :held      500
+ :applications
  {;; To obtain the app ID: `grep -A1 "CFBundleIdentifier" /Applications/The.app/Contents/Info.plist`
    :Chrome   ["com.google.Chrome", "com.google.Chrome.beta"]
    :Slack    ["com.tinyspeck.slackmacgap"]
    :Notion   ["notion.id"]
    :IntelliJ ["com.jetbrains.intellij"]}
+ :templates {:paste            "osascript -e '
+set the clipboard to \"%s\"
+tell application \"System Events\"
+    keystroke \"v\" using command down
+end tell'"
+             :paste_and_return "osascript -e '
+set the clipboard to \"%s\"
+tell application \"System Events\"
+    keystroke \"v\" using command down
+    key code 36
+end tell'"}
+ :layers    {:tab-mode {:key :tab}}
  :main
  [;; Remaps
-   {:des   "[keyboard] ctr + cmd + ↑ as ↓"
-    :rules [[:!CTdown_arrow :!CTup_arrow]]}
    {:des   "[mouse] Up key -> Restore last hidden"
     :rules [[{:pkey :button5} :!Ctab]]}
    {:des   "[mouse] Down key -> Hide"
     :rules [[{:pkey :button4} [{:pkey :button1} :!Ch]]]}
-
+   {:des   "[keyboard] caps lock to hyper"
+    :rules [[:caps_lock :!CTOleft_shift]]}
+   {:des   "[keyboard] ctr + cmd + ↑ as ↓"
+    :rules [[:!CTdown_arrow :!CTup_arrow]]}
+   {:des   "[keyboard] Emojis + Symbols"
+    :rules [[:!Ov [:paste "✅"]]
+            [:!Os [:paste "👍"]]
+            [:!Od [:paste "👎"]]
+            [:!Op [:paste "➕"]]
+            [:!Og [:paste "😬"]]
+            [:!On [:paste "ñ"]]
+            [:!OSn [:paste "Ñ"]]
+            [:!Oslash [:paste "¿"]]]}
    ;; Launchers
    {:des   "[launch] iTerm"
     :rules [[:!CTOspacebar "open -a 'iTerm.app'"]]}
@@ -34,7 +60,7 @@
    {:des   "[util] Generate uuid to the clipboard"
     :rules [[:!CTOu "$HOME/.dotfiles/bin/sdot utils uuid_code"]]}
    {:des   "[util] Extend selection"
-    :rules [:!IntelliJ :!Notion [:!Oup_arrow [:!Oleft_arrow :!OSright_arrow]]]}
+    :rules [[:!Oup_arrow [:!Oleft_arrow :!OSright_arrow] [:!IntelliJ :!Notion]]]}
 
    ;; Application specific
    {:des "[chrome] Show recent tabs" :rules [:Chrome [:!Ce :!CSa]]}
@@ -42,6 +68,13 @@
    {:des "[chrome] Toggle console" :rules [:Chrome [:!CTOt :!COj]]}
    {:des "[slack] Navigate channels" :rules [:Slack [:!Cp :!Ck]]}
    {:des "[slack] Toggle sidebar" :rules [:Slack [:!C1 :!CSd]]}
+   {:des   "[slack] Reactions"
+    :rules [:Slack
+            [:!COv [:paste_and_return "+:white_check_mark:"]]
+            [:!COs [:paste_and_return "+:thumbsup:"]]
+            [:!COd [:paste_and_return "+:thumbsdown:"]]
+            [:!COp [:paste_and_return "+:heavy_plus_sign:"]]
+            [:!COg [:paste_and_return "+:grimacing:"]]]}
    {:des "[notion] Show recent pages" :rules [:Notion [:!Ce :!Cp]]}
    {:des "[notion] Toggle sidebar" :rules [:Notion [:!C1 :!Cbackslash]]}
    {:des   "[notion] Extend selection"

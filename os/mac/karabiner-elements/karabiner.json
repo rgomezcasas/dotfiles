@@ -13,21 +13,6 @@
         "basic.to_if_held_down_threshold_milliseconds" : 500
       },
       "rules" : [ {
-        "description" : "[keyboard] ctr + cmd + ↑ as ↓",
-        "manipulators" : [ {
-          "from" : {
-            "key_code" : "down_arrow",
-            "modifiers" : {
-              "mandatory" : [ "left_command", "left_control" ]
-            }
-          },
-          "to" : [ {
-            "key_code" : "up_arrow",
-            "modifiers" : [ "left_command", "left_control" ]
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
         "description" : "[mouse] Up key -> Restore last hidden",
         "manipulators" : [ {
           "from" : {
@@ -50,6 +35,124 @@
           }, {
             "key_code" : "h",
             "modifiers" : [ "left_command" ]
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "[keyboard] caps lock to hyper",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "caps_lock"
+          },
+          "to" : [ {
+            "key_code" : "left_shift",
+            "modifiers" : [ "left_command", "left_control", "left_option" ]
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "[keyboard] ctr + cmd + ↑ as ↓",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "down_arrow",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_control" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "up_arrow",
+            "modifiers" : [ "left_command", "left_control" ]
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "[keyboard] Emojis + Symbols",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "v",
+            "modifiers" : {
+              "mandatory" : [ "left_option" ]
+            }
+          },
+          "to" : [ {
+            "shell_command" : "osascript -e '\nset the clipboard to \"✅\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\nend tell'"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "s",
+            "modifiers" : {
+              "mandatory" : [ "left_option" ]
+            }
+          },
+          "to" : [ {
+            "shell_command" : "osascript -e '\nset the clipboard to \"👍\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\nend tell'"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "d",
+            "modifiers" : {
+              "mandatory" : [ "left_option" ]
+            }
+          },
+          "to" : [ {
+            "shell_command" : "osascript -e '\nset the clipboard to \"👎\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\nend tell'"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "p",
+            "modifiers" : {
+              "mandatory" : [ "left_option" ]
+            }
+          },
+          "to" : [ {
+            "shell_command" : "osascript -e '\nset the clipboard to \"➕\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\nend tell'"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "g",
+            "modifiers" : {
+              "mandatory" : [ "left_option" ]
+            }
+          },
+          "to" : [ {
+            "shell_command" : "osascript -e '\nset the clipboard to \"😬\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\nend tell'"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "n",
+            "modifiers" : {
+              "mandatory" : [ "left_option" ]
+            }
+          },
+          "to" : [ {
+            "shell_command" : "osascript -e '\nset the clipboard to \"ñ\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\nend tell'"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "n",
+            "modifiers" : {
+              "mandatory" : [ "left_option", "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "shell_command" : "osascript -e '\nset the clipboard to \"Ñ\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\nend tell'"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "slash",
+            "modifiers" : {
+              "mandatory" : [ "left_option" ]
+            }
+          },
+          "to" : [ {
+            "shell_command" : "osascript -e '\nset the clipboard to \"¿\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\nend tell'"
           } ],
           "type" : "basic"
         } ]
@@ -182,6 +285,9 @@
             "modifiers" : [ "left_option", "left_shift" ]
           } ],
           "conditions" : [ {
+            "bundle_identifiers" : [ "com.jetbrains.intellij" ],
+            "type" : "frontmost_application_unless"
+          }, {
             "bundle_identifiers" : [ "notion.id" ],
             "type" : "frontmost_application_unless"
           } ],
@@ -275,6 +381,84 @@
           "to" : [ {
             "key_code" : "d",
             "modifiers" : [ "left_command", "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "bundle_identifiers" : [ "com.tinyspeck.slackmacgap" ],
+            "type" : "frontmost_application_if"
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "[slack] Reactions",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "v",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_option" ]
+            }
+          },
+          "to" : [ {
+            "shell_command" : "osascript -e '\nset the clipboard to \"+:white_check_mark:\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\n    key code 36\nend tell'"
+          } ],
+          "conditions" : [ {
+            "bundle_identifiers" : [ "com.tinyspeck.slackmacgap" ],
+            "type" : "frontmost_application_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "s",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_option" ]
+            }
+          },
+          "to" : [ {
+            "shell_command" : "osascript -e '\nset the clipboard to \"+:thumbsup:\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\n    key code 36\nend tell'"
+          } ],
+          "conditions" : [ {
+            "bundle_identifiers" : [ "com.tinyspeck.slackmacgap" ],
+            "type" : "frontmost_application_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "d",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_option" ]
+            }
+          },
+          "to" : [ {
+            "shell_command" : "osascript -e '\nset the clipboard to \"+:thumbsdown:\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\n    key code 36\nend tell'"
+          } ],
+          "conditions" : [ {
+            "bundle_identifiers" : [ "com.tinyspeck.slackmacgap" ],
+            "type" : "frontmost_application_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "p",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_option" ]
+            }
+          },
+          "to" : [ {
+            "shell_command" : "osascript -e '\nset the clipboard to \"+:heavy_plus_sign:\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\n    key code 36\nend tell'"
+          } ],
+          "conditions" : [ {
+            "bundle_identifiers" : [ "com.tinyspeck.slackmacgap" ],
+            "type" : "frontmost_application_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "g",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_option" ]
+            }
+          },
+          "to" : [ {
+            "shell_command" : "osascript -e '\nset the clipboard to \"+:grimacing:\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\n    key code 36\nend tell'"
           } ],
           "conditions" : [ {
             "bundle_identifiers" : [ "com.tinyspeck.slackmacgap" ],
@@ -933,13 +1117,6 @@
       "ignore" : false,
       "manipulate_caps_lock_led" : false,
       "simple_modifications" : [ {
-        "from" : {
-          "key_code" : "caps_lock"
-        },
-        "to" : {
-          "key_code" : "fn"
-        }
-      }, {
         "from" : {
           "key_code" : "end"
         },
