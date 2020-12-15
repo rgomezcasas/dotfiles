@@ -61,6 +61,10 @@ end tell'"}
     :rules [[:!CTOu "$HOME/.dotfiles/bin/sdot utils uuid_code"]]}
    {:des   "[util] Extend selection"
     :rules [[:!Oup_arrow [:!Oleft_arrow :!OSright_arrow] [:!IntelliJ :!Notion]]]}
+   {:des   "[util] Delete line"
+    :rules [[:!Cdelete_or_backspace
+             [:!Cright_arrow :!Cdelete_or_backspace :delete_or_backspace]
+             [:!IntelliJ :!Notion]]]}
 
    ;; Application specific
    {:des "[chrome] Show recent tabs" :rules [:Chrome [:!Ce :!CSa]]}

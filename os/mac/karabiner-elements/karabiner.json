@@ -294,6 +294,33 @@
           "type" : "basic"
         } ]
       }, {
+        "description" : "[util] Delete line",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "delete_or_backspace",
+            "modifiers" : {
+              "mandatory" : [ "left_command" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "right_arrow",
+            "modifiers" : [ "left_command" ]
+          }, {
+            "key_code" : "delete_or_backspace",
+            "modifiers" : [ "left_command" ]
+          }, {
+            "key_code" : "delete_or_backspace"
+          } ],
+          "conditions" : [ {
+            "bundle_identifiers" : [ "com.jetbrains.intellij" ],
+            "type" : "frontmost_application_unless"
+          }, {
+            "bundle_identifiers" : [ "notion.id" ],
+            "type" : "frontmost_application_unless"
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
         "description" : "[chrome] Show recent tabs",
         "manipulators" : [ {
           "from" : {
