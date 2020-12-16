@@ -36,6 +36,7 @@ end tell'"}
             [:!Od [:paste "👎"]]
             [:!Op [:paste "➕"]]
             [:!Og [:paste "😬"]]
+            [:!Ol [:paste "😂"]]
             [:!On [:paste "ñ"]]
             [:!OSn [:paste "Ñ"]]
             [:!Oslash [:paste "¿"]]]}
@@ -81,7 +82,8 @@ end tell'"}
             [:!COs [:paste_and_return "+:thumbsup:"]]
             [:!COd [:paste_and_return "+:thumbsdown:"]]
             [:!COp [:paste_and_return "+:heavy_plus_sign:"]]
-            [:!COg [:paste_and_return "+:grimacing:"]]]}
+            [:!COg [:paste_and_return "+:grimacing:"]]
+            [:!COl [:paste_and_return "+:joy:"]]]}
    {:des "[notion] Show recent pages" :rules [:Notion [:!Ce :!Cp]]}
    {:des "[notion] Toggle sidebar" :rules [:Notion [:!C1 :!Cbackslash]]}
    {:des   "[notion] Extend selection"
