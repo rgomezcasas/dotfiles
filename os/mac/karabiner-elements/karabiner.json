@@ -166,6 +166,17 @@
             "shell_command" : "osascript -e '\nset the clipboard to \"¿\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\nend tell'"
           } ],
           "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "slash",
+            "modifiers" : {
+              "mandatory" : [ "right_option" ]
+            }
+          },
+          "to" : [ {
+            "shell_command" : "osascript -e '\nset the clipboard to \"¿\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\nend tell'"
+          } ],
+          "type" : "basic"
         } ]
       }, {
         "description" : "[launch] iTerm",
@@ -327,6 +338,12 @@
             "type" : "frontmost_application_unless"
           }, {
             "bundle_identifiers" : [ "notion.id" ],
+            "type" : "frontmost_application_unless"
+          }, {
+            "bundle_identifiers" : [ "com.apple.finder" ],
+            "type" : "frontmost_application_unless"
+          }, {
+            "bundle_identifiers" : [ "com.contextsformac.Contexts" ],
             "type" : "frontmost_application_unless"
           } ],
           "type" : "basic"

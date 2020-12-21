@@ -7,6 +7,8 @@
    :Chrome   ["com.google.Chrome", "com.google.Chrome.beta"]
    :Slack    ["com.tinyspeck.slackmacgap"]
    :Notion   ["notion.id"]
+   :Finder   ["com.apple.finder"]
+   :Contexts ["com.contextsformac.Contexts"]
    :IntelliJ ["com.jetbrains.intellij"]}
  :templates {:paste            "osascript -e '
 set the clipboard to \"%s\"
@@ -39,7 +41,8 @@ end tell'"}
             [:!Ol [:paste "😂"]]
             [:!On [:paste "ñ"]]
             [:!OSn [:paste "Ñ"]]
-            [:!Oslash [:paste "¿"]]]}
+            [:!Oslash [:paste "¿"]]
+            [:!Eslash [:paste "¿"]]]}
    ;; Launchers
    {:des   "[launch] iTerm"
     :rules [[:!CTOspacebar "open -a 'iTerm.app'"]]}
@@ -65,7 +68,7 @@ end tell'"}
    {:des   "[util] Delete line"
     :rules [[:!Cdelete_or_backspace
              [:!Cright_arrow :!Cdelete_or_backspace :delete_or_backspace]
-             [:!IntelliJ :!Notion]]]}
+             [:!IntelliJ :!Notion :!Finder :!Contexts]]]}
 
    ;; Application specific
    {:des "[chrome] Show recent tabs" :rules [:Chrome [:!Ce :!CSa]]}
