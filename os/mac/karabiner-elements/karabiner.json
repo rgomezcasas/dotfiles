@@ -692,6 +692,41 @@
           } ],
           "type" : "basic"
         } ]
+      }, {
+        "description" : "[keynote] Zoom in/out",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "equal_sign",
+            "modifiers" : {
+              "mandatory" : [ "left_command" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "period",
+            "modifiers" : [ "left_command", "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "bundle_identifiers" : [ "com.apple.iWork.Keynote" ],
+            "type" : "frontmost_application_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "hyphen",
+            "modifiers" : {
+              "mandatory" : [ "left_command" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "comma",
+            "modifiers" : [ "left_command", "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "bundle_identifiers" : [ "com.apple.iWork.Keynote" ],
+            "type" : "frontmost_application_if"
+          } ],
+          "type" : "basic"
+        } ]
       } ]
     },
     "devices" : [ {

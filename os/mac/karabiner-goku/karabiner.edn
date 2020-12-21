@@ -9,7 +9,8 @@
    :Notion   ["notion.id"]
    :Finder   ["com.apple.finder"]
    :Contexts ["com.contextsformac.Contexts"]
-   :IntelliJ ["com.jetbrains.intellij"]}
+   :IntelliJ ["com.jetbrains.intellij"]
+   :Keynote  ["com.apple.iWork.Keynote"]}
  :templates {:paste            "osascript -e '
 set the clipboard to \"%s\"
 tell application \"System Events\"
@@ -91,6 +92,8 @@ end tell'"}
    {:des "[notion] Toggle sidebar" :rules [:Notion [:!C1 :!Cbackslash]]}
    {:des   "[notion] Extend selection"
     :rules [:Notion [:!Oup_arrow :!Sup_arrow] [:!Odown_arrow :!Sdown_arrow]]}
+   {:des   "[keynote] Zoom in/out"
+    :rules [:Keynote [:!Cequal_sign :!CSperiod] [:!Chyphen :!CScomma]]}
 
    ;; !  | means mandatory
    ;; #  | means optional
