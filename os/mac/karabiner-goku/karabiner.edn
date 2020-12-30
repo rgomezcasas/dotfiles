@@ -46,7 +46,7 @@ end tell'"}
             [:!Eslash [:paste "¿"]]]}
    ;; Launchers
    {:des   "[launch] iTerm"
-    :rules [[:!CTOspacebar "open -a 'iTerm.app'"]]}
+    :rules [[:!CTOspacebar "open -a 'iTerm.app';open -a 'iTerm.app'"]]}
    {:des   "[launch] IntelliJ"
     :rules [[:!CTOi "$HOME/.dotfiles/bin/sdot utils open_intellij"]]}
    {:des   "[launch] Chrome"

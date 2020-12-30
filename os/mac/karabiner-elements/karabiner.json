@@ -188,7 +188,7 @@
             }
           },
           "to" : [ {
-            "shell_command" : "open -a 'iTerm.app'"
+            "shell_command" : "open -a 'iTerm.app';open -a 'iTerm.app'"
           } ],
           "type" : "basic"
         } ]
@@ -307,11 +307,11 @@
             "modifiers" : [ "left_option", "left_shift" ]
           } ],
           "conditions" : [ {
-            "bundle_identifiers" : [ "com.jetbrains.intellij" ],
-            "type" : "frontmost_application_unless"
+            "type" : "frontmost_application_unless",
+            "bundle_identifiers" : [ "com.jetbrains.intellij" ]
           }, {
-            "bundle_identifiers" : [ "notion.id" ],
-            "type" : "frontmost_application_unless"
+            "type" : "frontmost_application_unless",
+            "bundle_identifiers" : [ "notion.id" ]
           } ],
           "type" : "basic"
         } ]
@@ -334,17 +334,17 @@
             "key_code" : "delete_or_backspace"
           } ],
           "conditions" : [ {
-            "bundle_identifiers" : [ "com.jetbrains.intellij" ],
-            "type" : "frontmost_application_unless"
+            "type" : "frontmost_application_unless",
+            "bundle_identifiers" : [ "com.jetbrains.intellij" ]
           }, {
-            "bundle_identifiers" : [ "notion.id" ],
-            "type" : "frontmost_application_unless"
+            "type" : "frontmost_application_unless",
+            "bundle_identifiers" : [ "notion.id" ]
           }, {
-            "bundle_identifiers" : [ "com.apple.finder" ],
-            "type" : "frontmost_application_unless"
+            "type" : "frontmost_application_unless",
+            "bundle_identifiers" : [ "com.apple.finder" ]
           }, {
-            "bundle_identifiers" : [ "com.contextsformac.Contexts" ],
-            "type" : "frontmost_application_unless"
+            "type" : "frontmost_application_unless",
+            "bundle_identifiers" : [ "com.contextsformac.Contexts" ]
           } ],
           "type" : "basic"
         } ]
@@ -362,8 +362,8 @@
             "modifiers" : [ "left_command", "left_shift" ]
           } ],
           "conditions" : [ {
-            "bundle_identifiers" : [ "com.google.Chrome", "com.google.Chrome.beta" ],
-            "type" : "frontmost_application_if"
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "com.google.Chrome", "com.google.Chrome.beta" ]
           } ],
           "type" : "basic"
         } ]
@@ -381,8 +381,8 @@
             "modifiers" : [ "left_command", "left_shift" ]
           } ],
           "conditions" : [ {
-            "bundle_identifiers" : [ "com.google.Chrome", "com.google.Chrome.beta" ],
-            "type" : "frontmost_application_if"
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "com.google.Chrome", "com.google.Chrome.beta" ]
           } ],
           "type" : "basic"
         } ]
@@ -400,8 +400,8 @@
             "modifiers" : [ "left_command", "left_option" ]
           } ],
           "conditions" : [ {
-            "bundle_identifiers" : [ "com.google.Chrome", "com.google.Chrome.beta" ],
-            "type" : "frontmost_application_if"
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "com.google.Chrome", "com.google.Chrome.beta" ]
           } ],
           "type" : "basic"
         } ]
@@ -419,8 +419,8 @@
             "modifiers" : [ "left_command" ]
           } ],
           "conditions" : [ {
-            "bundle_identifiers" : [ "com.tinyspeck.slackmacgap" ],
-            "type" : "frontmost_application_if"
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "com.tinyspeck.slackmacgap" ]
           } ],
           "type" : "basic"
         }, {
@@ -435,8 +435,8 @@
             "modifiers" : [ "left_command" ]
           } ],
           "conditions" : [ {
-            "bundle_identifiers" : [ "com.tinyspeck.slackmacgap" ],
-            "type" : "frontmost_application_if"
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "com.tinyspeck.slackmacgap" ]
           } ],
           "type" : "basic"
         } ]
@@ -454,8 +454,8 @@
             "modifiers" : [ "left_command", "left_shift" ]
           } ],
           "conditions" : [ {
-            "bundle_identifiers" : [ "com.tinyspeck.slackmacgap" ],
-            "type" : "frontmost_application_if"
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "com.tinyspeck.slackmacgap" ]
           } ],
           "type" : "basic"
         }, {
@@ -470,8 +470,8 @@
             "modifiers" : [ "left_command" ]
           } ],
           "conditions" : [ {
-            "bundle_identifiers" : [ "com.tinyspeck.slackmacgap" ],
-            "type" : "frontmost_application_if"
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "com.tinyspeck.slackmacgap" ]
           } ],
           "type" : "basic"
         } ]
@@ -489,8 +489,8 @@
             "modifiers" : [ "left_command" ]
           } ],
           "conditions" : [ {
-            "bundle_identifiers" : [ "com.tinyspeck.slackmacgap" ],
-            "type" : "frontmost_application_if"
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "com.tinyspeck.slackmacgap" ]
           } ],
           "type" : "basic"
         }, {
@@ -505,8 +505,8 @@
             "modifiers" : [ "left_command" ]
           } ],
           "conditions" : [ {
-            "bundle_identifiers" : [ "com.tinyspeck.slackmacgap" ],
-            "type" : "frontmost_application_if"
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "com.tinyspeck.slackmacgap" ]
           } ],
           "type" : "basic"
         }, {
@@ -521,8 +521,8 @@
             "modifiers" : [ "left_command" ]
           } ],
           "conditions" : [ {
-            "bundle_identifiers" : [ "com.tinyspeck.slackmacgap" ],
-            "type" : "frontmost_application_if"
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "com.tinyspeck.slackmacgap" ]
           } ],
           "type" : "basic"
         } ]
@@ -539,8 +539,8 @@
             "shell_command" : "osascript -e '\nset the clipboard to \"+:white_check_mark:\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\n    key code 36\nend tell'"
           } ],
           "conditions" : [ {
-            "bundle_identifiers" : [ "com.tinyspeck.slackmacgap" ],
-            "type" : "frontmost_application_if"
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "com.tinyspeck.slackmacgap" ]
           } ],
           "type" : "basic"
         }, {
@@ -554,8 +554,8 @@
             "shell_command" : "osascript -e '\nset the clipboard to \"+:thumbsup:\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\n    key code 36\nend tell'"
           } ],
           "conditions" : [ {
-            "bundle_identifiers" : [ "com.tinyspeck.slackmacgap" ],
-            "type" : "frontmost_application_if"
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "com.tinyspeck.slackmacgap" ]
           } ],
           "type" : "basic"
         }, {
@@ -569,8 +569,8 @@
             "shell_command" : "osascript -e '\nset the clipboard to \"+:thumbsdown:\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\n    key code 36\nend tell'"
           } ],
           "conditions" : [ {
-            "bundle_identifiers" : [ "com.tinyspeck.slackmacgap" ],
-            "type" : "frontmost_application_if"
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "com.tinyspeck.slackmacgap" ]
           } ],
           "type" : "basic"
         }, {
@@ -584,8 +584,8 @@
             "shell_command" : "osascript -e '\nset the clipboard to \"+:heavy_plus_sign:\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\n    key code 36\nend tell'"
           } ],
           "conditions" : [ {
-            "bundle_identifiers" : [ "com.tinyspeck.slackmacgap" ],
-            "type" : "frontmost_application_if"
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "com.tinyspeck.slackmacgap" ]
           } ],
           "type" : "basic"
         }, {
@@ -599,8 +599,8 @@
             "shell_command" : "osascript -e '\nset the clipboard to \"+:grimacing:\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\n    key code 36\nend tell'"
           } ],
           "conditions" : [ {
-            "bundle_identifiers" : [ "com.tinyspeck.slackmacgap" ],
-            "type" : "frontmost_application_if"
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "com.tinyspeck.slackmacgap" ]
           } ],
           "type" : "basic"
         }, {
@@ -614,8 +614,8 @@
             "shell_command" : "osascript -e '\nset the clipboard to \"+:joy:\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\n    key code 36\nend tell'"
           } ],
           "conditions" : [ {
-            "bundle_identifiers" : [ "com.tinyspeck.slackmacgap" ],
-            "type" : "frontmost_application_if"
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "com.tinyspeck.slackmacgap" ]
           } ],
           "type" : "basic"
         } ]
@@ -633,8 +633,8 @@
             "modifiers" : [ "left_command" ]
           } ],
           "conditions" : [ {
-            "bundle_identifiers" : [ "notion.id" ],
-            "type" : "frontmost_application_if"
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "notion.id" ]
           } ],
           "type" : "basic"
         } ]
@@ -652,8 +652,8 @@
             "modifiers" : [ "left_command" ]
           } ],
           "conditions" : [ {
-            "bundle_identifiers" : [ "notion.id" ],
-            "type" : "frontmost_application_if"
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "notion.id" ]
           } ],
           "type" : "basic"
         } ]
@@ -671,8 +671,8 @@
             "modifiers" : [ "left_shift" ]
           } ],
           "conditions" : [ {
-            "bundle_identifiers" : [ "notion.id" ],
-            "type" : "frontmost_application_if"
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "notion.id" ]
           } ],
           "type" : "basic"
         }, {
@@ -687,8 +687,8 @@
             "modifiers" : [ "left_shift" ]
           } ],
           "conditions" : [ {
-            "bundle_identifiers" : [ "notion.id" ],
-            "type" : "frontmost_application_if"
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "notion.id" ]
           } ],
           "type" : "basic"
         } ]
@@ -706,8 +706,8 @@
             "modifiers" : [ "left_command", "left_shift" ]
           } ],
           "conditions" : [ {
-            "bundle_identifiers" : [ "com.apple.iWork.Keynote" ],
-            "type" : "frontmost_application_if"
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "com.apple.iWork.Keynote" ]
           } ],
           "type" : "basic"
         }, {
@@ -722,8 +722,8 @@
             "modifiers" : [ "left_command", "left_shift" ]
           } ],
           "conditions" : [ {
-            "bundle_identifiers" : [ "com.apple.iWork.Keynote" ],
-            "type" : "frontmost_application_if"
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "com.apple.iWork.Keynote" ]
           } ],
           "type" : "basic"
         } ]
@@ -1563,7 +1563,14 @@
       "delay_milliseconds_before_open_device" : 1000
     },
     "selected" : true,
-    "simple_modifications" : [ ],
+    "simple_modifications" : [ {
+      "from" : {
+        "key_code" : "caps_lock"
+      },
+      "to" : {
+        "key_code" : "fn"
+      }
+    } ],
     "virtual_hid_keyboard" : {
       "caps_lock_delay_milliseconds" : 0,
       "country_code" : 0,

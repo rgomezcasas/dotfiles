@@ -11,6 +11,7 @@
 - link:
     ~/.dotly: os/mac/.dotly
     ~/bin/bash: /usr/local/bin/bash
+    ~/bin/zsh: /bin/zsh
     ~/bin/date: /usr/local/bin/gdate
     ~/bin/make: /usr/local/opt/make/libexec/gnubin/make
     ~/bin/sed: /usr/local/opt/gnu-sed/libexec/gnubin/sed
@@ -22,6 +23,5 @@
     ~/Library/Application Support/Code/User/keybindings.json: editors/code/keybindings.json
     ~/Library/Application Support/Code/User/settings.json: editors/code/settings.json
     ~/Library/Application Support/Code/User/snippets: editors/code/snippets
-    ~/Library/Group Containers/group.com.docker/settings.json: os/mac/docker/settings.json
     ~/Library/Preferences/com.contextsformac.Contexts.plist: os/mac/contexts/com.contextsformac.Contexts.plist
     ~/Library/Preferences/com.knollsoft.Rectangle.plist: os/mac/rectangle/com.knollsoft.Rectangle.plist
