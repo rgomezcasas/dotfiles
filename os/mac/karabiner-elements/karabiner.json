@@ -7,10 +7,10 @@
   "profiles" : [ {
     "complex_modifications" : {
       "parameters" : {
-        "basic.simultaneous_threshold_milliseconds" : 50,
+        "basic.simultaneous_threshold_milliseconds" : 100,
         "basic.to_delayed_action_delay_milliseconds" : 500,
         "basic.to_if_alone_timeout_milliseconds" : 1000,
-        "basic.to_if_held_down_threshold_milliseconds" : 500
+        "basic.to_if_held_down_threshold_milliseconds" : 1000
       },
       "rules" : [ {
         "description" : "[mouse] Up key -> Restore last hidden",
@@ -39,18 +39,6 @@
           "type" : "basic"
         } ]
       }, {
-        "description" : "[keyboard] caps lock to hyper",
-        "manipulators" : [ {
-          "from" : {
-            "key_code" : "caps_lock"
-          },
-          "to" : [ {
-            "key_code" : "left_shift",
-            "modifiers" : [ "left_command", "left_control", "left_option" ]
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
         "description" : "[keyboard] ctr + cmd + ↑ as ↓",
         "manipulators" : [ {
           "from" : {
@@ -66,74 +54,8 @@
           "type" : "basic"
         } ]
       }, {
-        "description" : "[keyboard] Emojis + Symbols",
+        "description" : "[keyboard] Symbols // todo: move this to a keyboard layout using ukelele",
         "manipulators" : [ {
-          "from" : {
-            "key_code" : "v",
-            "modifiers" : {
-              "mandatory" : [ "left_option" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "osascript -e '\nset the clipboard to \"✅\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\nend tell'"
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "key_code" : "s",
-            "modifiers" : {
-              "mandatory" : [ "left_option" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "osascript -e '\nset the clipboard to \"👍\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\nend tell'"
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "key_code" : "d",
-            "modifiers" : {
-              "mandatory" : [ "left_option" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "osascript -e '\nset the clipboard to \"👎\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\nend tell'"
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "key_code" : "p",
-            "modifiers" : {
-              "mandatory" : [ "left_option" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "osascript -e '\nset the clipboard to \"➕\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\nend tell'"
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "key_code" : "g",
-            "modifiers" : {
-              "mandatory" : [ "left_option" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "osascript -e '\nset the clipboard to \"😬\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\nend tell'"
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "key_code" : "l",
-            "modifiers" : {
-              "mandatory" : [ "left_option" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "osascript -e '\nset the clipboard to \"😂\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\nend tell'"
-          } ],
-          "type" : "basic"
-        }, {
           "from" : {
             "key_code" : "n",
             "modifiers" : {
@@ -175,118 +97,6 @@
           },
           "to" : [ {
             "shell_command" : "osascript -e '\nset the clipboard to \"¿\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\nend tell'"
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[launch] iTerm",
-        "manipulators" : [ {
-          "from" : {
-            "key_code" : "spacebar",
-            "modifiers" : {
-              "mandatory" : [ "left_command", "left_control", "left_option" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "open -a 'iTerm.app';open -a 'iTerm.app'"
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[launch] IntelliJ",
-        "manipulators" : [ {
-          "from" : {
-            "key_code" : "i",
-            "modifiers" : {
-              "mandatory" : [ "left_command", "left_control", "left_option" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "$HOME/.dotfiles/bin/sdot utils open_intellij"
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[launch] Chrome",
-        "manipulators" : [ {
-          "from" : {
-            "key_code" : "c",
-            "modifiers" : {
-              "mandatory" : [ "left_command", "left_control", "left_option" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "open -a 'Google Chrome Beta.app' --args --profile-directory=Default"
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[launch] Slack",
-        "manipulators" : [ {
-          "from" : {
-            "key_code" : "s",
-            "modifiers" : {
-              "mandatory" : [ "left_command", "left_control", "left_option" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "open -a 'Slack.app'"
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[launch] List projects and open with intellij",
-        "manipulators" : [ {
-          "from" : {
-            "key_code" : "i",
-            "modifiers" : {
-              "mandatory" : [ "left_command", "left_option", "left_shift" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "$HOME/.dotfiles/bin/sdot utils open_project_in_intellij"
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[launch] List open tabs and focus it with Chrome",
-        "manipulators" : [ {
-          "from" : {
-            "key_code" : "c",
-            "modifiers" : {
-              "mandatory" : [ "left_command", "left_option", "left_shift" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "$HOME/.dotfiles/bin/sdot chrome goto"
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[launch] List all Codely Pro courses and open it on the default browser",
-        "manipulators" : [ {
-          "from" : {
-            "key_code" : "p",
-            "modifiers" : {
-              "mandatory" : [ "left_command", "left_option", "left_shift" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "$HOME/.dotfiles/bin/sdot codely open_course"
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[util] Generate uuid to the clipboard",
-        "manipulators" : [ {
-          "from" : {
-            "key_code" : "u",
-            "modifiers" : {
-              "mandatory" : [ "left_command", "left_control", "left_option" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "$HOME/.dotfiles/bin/sdot utils uuid_code"
           } ],
           "type" : "basic"
         } ]
@@ -345,6 +155,611 @@
           }, {
             "type" : "frontmost_application_unless",
             "bundle_identifiers" : [ "com.contextsformac.Contexts" ]
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "Emoji mode",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "d"
+          },
+          "to" : [ {
+            "shell_command" : "osascript -e '\nset the clipboard to \"👎\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\nend tell'"
+          } ],
+          "conditions" : [ {
+            "name" : "emoji-mode",
+            "value" : 1,
+            "type" : "variable_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "type" : "basic",
+          "parameters" : {
+            "basic.simultaneous_threshold_milliseconds" : 250
+          },
+          "to" : [ {
+            "set_variable" : {
+              "name" : "emoji-mode",
+              "value" : 1
+            }
+          }, {
+            "shell_command" : "osascript -e '\nset the clipboard to \"👎\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\nend tell'"
+          } ],
+          "from" : {
+            "simultaneous" : [ {
+              "key_code" : "e"
+            }, {
+              "key_code" : "d"
+            } ],
+            "simultaneous_options" : {
+              "detect_key_down_uninterruptedly" : true,
+              "key_down_order" : "strict",
+              "key_up_order" : "strict_inverse",
+              "key_up_when" : "any",
+              "to_after_key_up" : [ {
+                "set_variable" : {
+                  "name" : "emoji-mode",
+                  "value" : 0
+                }
+              } ]
+            }
+          }
+        }, {
+          "from" : {
+            "key_code" : "g"
+          },
+          "to" : [ {
+            "shell_command" : "osascript -e '\nset the clipboard to \"😬\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\nend tell'"
+          } ],
+          "conditions" : [ {
+            "name" : "emoji-mode",
+            "value" : 1,
+            "type" : "variable_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "type" : "basic",
+          "parameters" : {
+            "basic.simultaneous_threshold_milliseconds" : 250
+          },
+          "to" : [ {
+            "set_variable" : {
+              "name" : "emoji-mode",
+              "value" : 1
+            }
+          }, {
+            "shell_command" : "osascript -e '\nset the clipboard to \"😬\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\nend tell'"
+          } ],
+          "from" : {
+            "simultaneous" : [ {
+              "key_code" : "e"
+            }, {
+              "key_code" : "g"
+            } ],
+            "simultaneous_options" : {
+              "detect_key_down_uninterruptedly" : true,
+              "key_down_order" : "strict",
+              "key_up_order" : "strict_inverse",
+              "key_up_when" : "any",
+              "to_after_key_up" : [ {
+                "set_variable" : {
+                  "name" : "emoji-mode",
+                  "value" : 0
+                }
+              } ]
+            }
+          }
+        }, {
+          "from" : {
+            "key_code" : "l"
+          },
+          "to" : [ {
+            "shell_command" : "osascript -e '\nset the clipboard to \"😂\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\nend tell'"
+          } ],
+          "conditions" : [ {
+            "name" : "emoji-mode",
+            "value" : 1,
+            "type" : "variable_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "type" : "basic",
+          "parameters" : {
+            "basic.simultaneous_threshold_milliseconds" : 250
+          },
+          "to" : [ {
+            "set_variable" : {
+              "name" : "emoji-mode",
+              "value" : 1
+            }
+          }, {
+            "shell_command" : "osascript -e '\nset the clipboard to \"😂\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\nend tell'"
+          } ],
+          "from" : {
+            "simultaneous" : [ {
+              "key_code" : "e"
+            }, {
+              "key_code" : "l"
+            } ],
+            "simultaneous_options" : {
+              "detect_key_down_uninterruptedly" : true,
+              "key_down_order" : "strict",
+              "key_up_order" : "strict_inverse",
+              "key_up_when" : "any",
+              "to_after_key_up" : [ {
+                "set_variable" : {
+                  "name" : "emoji-mode",
+                  "value" : 0
+                }
+              } ]
+            }
+          }
+        }, {
+          "from" : {
+            "key_code" : "p"
+          },
+          "to" : [ {
+            "shell_command" : "osascript -e '\nset the clipboard to \"➕\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\nend tell'"
+          } ],
+          "conditions" : [ {
+            "name" : "emoji-mode",
+            "value" : 1,
+            "type" : "variable_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "type" : "basic",
+          "parameters" : {
+            "basic.simultaneous_threshold_milliseconds" : 250
+          },
+          "to" : [ {
+            "set_variable" : {
+              "name" : "emoji-mode",
+              "value" : 1
+            }
+          }, {
+            "shell_command" : "osascript -e '\nset the clipboard to \"➕\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\nend tell'"
+          } ],
+          "from" : {
+            "simultaneous" : [ {
+              "key_code" : "e"
+            }, {
+              "key_code" : "p"
+            } ],
+            "simultaneous_options" : {
+              "detect_key_down_uninterruptedly" : true,
+              "key_down_order" : "strict",
+              "key_up_order" : "strict_inverse",
+              "key_up_when" : "any",
+              "to_after_key_up" : [ {
+                "set_variable" : {
+                  "name" : "emoji-mode",
+                  "value" : 0
+                }
+              } ]
+            }
+          }
+        }, {
+          "from" : {
+            "key_code" : "s"
+          },
+          "to" : [ {
+            "shell_command" : "osascript -e '\nset the clipboard to \"👍\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\nend tell'"
+          } ],
+          "conditions" : [ {
+            "name" : "emoji-mode",
+            "value" : 1,
+            "type" : "variable_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "type" : "basic",
+          "parameters" : {
+            "basic.simultaneous_threshold_milliseconds" : 250
+          },
+          "to" : [ {
+            "set_variable" : {
+              "name" : "emoji-mode",
+              "value" : 1
+            }
+          }, {
+            "shell_command" : "osascript -e '\nset the clipboard to \"👍\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\nend tell'"
+          } ],
+          "from" : {
+            "simultaneous" : [ {
+              "key_code" : "e"
+            }, {
+              "key_code" : "s"
+            } ],
+            "simultaneous_options" : {
+              "detect_key_down_uninterruptedly" : true,
+              "key_down_order" : "strict",
+              "key_up_order" : "strict_inverse",
+              "key_up_when" : "any",
+              "to_after_key_up" : [ {
+                "set_variable" : {
+                  "name" : "emoji-mode",
+                  "value" : 0
+                }
+              } ]
+            }
+          }
+        }, {
+          "from" : {
+            "key_code" : "v"
+          },
+          "to" : [ {
+            "shell_command" : "osascript -e '\nset the clipboard to \"✅\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\nend tell'"
+          } ],
+          "conditions" : [ {
+            "name" : "emoji-mode",
+            "value" : 1,
+            "type" : "variable_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "type" : "basic",
+          "parameters" : {
+            "basic.simultaneous_threshold_milliseconds" : 250
+          },
+          "to" : [ {
+            "set_variable" : {
+              "name" : "emoji-mode",
+              "value" : 1
+            }
+          }, {
+            "shell_command" : "osascript -e '\nset the clipboard to \"✅\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\nend tell'"
+          } ],
+          "from" : {
+            "simultaneous" : [ {
+              "key_code" : "e"
+            }, {
+              "key_code" : "v"
+            } ],
+            "simultaneous_options" : {
+              "detect_key_down_uninterruptedly" : true,
+              "key_down_order" : "strict",
+              "key_up_order" : "strict_inverse",
+              "key_up_when" : "any",
+              "to_after_key_up" : [ {
+                "set_variable" : {
+                  "name" : "emoji-mode",
+                  "value" : 0
+                }
+              } ]
+            }
+          }
+        } ]
+      }, {
+        "description" : "Open apps mode",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "c"
+          },
+          "to" : [ {
+            "shell_command" : "open -a 'Google Chrome Beta.app' --args --profile-directory=Default"
+          } ],
+          "conditions" : [ {
+            "name" : "open-mode",
+            "value" : 1,
+            "type" : "variable_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "type" : "basic",
+          "parameters" : {
+            "basic.simultaneous_threshold_milliseconds" : 250
+          },
+          "to" : [ {
+            "set_variable" : {
+              "name" : "open-mode",
+              "value" : 1
+            }
+          }, {
+            "shell_command" : "open -a 'Google Chrome Beta.app' --args --profile-directory=Default"
+          } ],
+          "from" : {
+            "simultaneous" : [ {
+              "key_code" : "o"
+            }, {
+              "key_code" : "c"
+            } ],
+            "simultaneous_options" : {
+              "detect_key_down_uninterruptedly" : true,
+              "key_down_order" : "strict",
+              "key_up_order" : "strict_inverse",
+              "key_up_when" : "any",
+              "to_after_key_up" : [ {
+                "set_variable" : {
+                  "name" : "open-mode",
+                  "value" : 0
+                }
+              } ]
+            }
+          }
+        }, {
+          "from" : {
+            "key_code" : "i"
+          },
+          "to" : [ {
+            "shell_command" : "$HOME/.dotfiles/bin/sdot utils open_intellij"
+          } ],
+          "conditions" : [ {
+            "name" : "open-mode",
+            "value" : 1,
+            "type" : "variable_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "type" : "basic",
+          "parameters" : {
+            "basic.simultaneous_threshold_milliseconds" : 250
+          },
+          "to" : [ {
+            "set_variable" : {
+              "name" : "open-mode",
+              "value" : 1
+            }
+          }, {
+            "shell_command" : "$HOME/.dotfiles/bin/sdot utils open_intellij"
+          } ],
+          "from" : {
+            "simultaneous" : [ {
+              "key_code" : "o"
+            }, {
+              "key_code" : "i"
+            } ],
+            "simultaneous_options" : {
+              "detect_key_down_uninterruptedly" : true,
+              "key_down_order" : "strict",
+              "key_up_order" : "strict_inverse",
+              "key_up_when" : "any",
+              "to_after_key_up" : [ {
+                "set_variable" : {
+                  "name" : "open-mode",
+                  "value" : 0
+                }
+              } ]
+            }
+          }
+        }, {
+          "from" : {
+            "key_code" : "n"
+          },
+          "to" : [ {
+            "shell_command" : "open -a 'Notion.app'"
+          } ],
+          "conditions" : [ {
+            "name" : "open-mode",
+            "value" : 1,
+            "type" : "variable_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "type" : "basic",
+          "parameters" : {
+            "basic.simultaneous_threshold_milliseconds" : 250
+          },
+          "to" : [ {
+            "set_variable" : {
+              "name" : "open-mode",
+              "value" : 1
+            }
+          }, {
+            "shell_command" : "open -a 'Notion.app'"
+          } ],
+          "from" : {
+            "simultaneous" : [ {
+              "key_code" : "o"
+            }, {
+              "key_code" : "n"
+            } ],
+            "simultaneous_options" : {
+              "detect_key_down_uninterruptedly" : true,
+              "key_down_order" : "strict",
+              "key_up_order" : "strict_inverse",
+              "key_up_when" : "any",
+              "to_after_key_up" : [ {
+                "set_variable" : {
+                  "name" : "open-mode",
+                  "value" : 0
+                }
+              } ]
+            }
+          }
+        }, {
+          "from" : {
+            "key_code" : "s"
+          },
+          "to" : [ {
+            "shell_command" : "open -a 'Slack.app'"
+          } ],
+          "conditions" : [ {
+            "name" : "open-mode",
+            "value" : 1,
+            "type" : "variable_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "type" : "basic",
+          "parameters" : {
+            "basic.simultaneous_threshold_milliseconds" : 250
+          },
+          "to" : [ {
+            "set_variable" : {
+              "name" : "open-mode",
+              "value" : 1
+            }
+          }, {
+            "shell_command" : "open -a 'Slack.app'"
+          } ],
+          "from" : {
+            "simultaneous" : [ {
+              "key_code" : "o"
+            }, {
+              "key_code" : "s"
+            } ],
+            "simultaneous_options" : {
+              "detect_key_down_uninterruptedly" : true,
+              "key_down_order" : "strict",
+              "key_up_order" : "strict_inverse",
+              "key_up_when" : "any",
+              "to_after_key_up" : [ {
+                "set_variable" : {
+                  "name" : "open-mode",
+                  "value" : 0
+                }
+              } ]
+            }
+          }
+        }, {
+          "from" : {
+            "key_code" : "t"
+          },
+          "to" : [ {
+            "shell_command" : "open -a 'iTerm.app'"
+          } ],
+          "conditions" : [ {
+            "name" : "open-mode",
+            "value" : 1,
+            "type" : "variable_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "type" : "basic",
+          "parameters" : {
+            "basic.simultaneous_threshold_milliseconds" : 250
+          },
+          "to" : [ {
+            "set_variable" : {
+              "name" : "open-mode",
+              "value" : 1
+            }
+          }, {
+            "shell_command" : "open -a 'iTerm.app'"
+          } ],
+          "from" : {
+            "simultaneous" : [ {
+              "key_code" : "o"
+            }, {
+              "key_code" : "t"
+            } ],
+            "simultaneous_options" : {
+              "detect_key_down_uninterruptedly" : true,
+              "key_down_order" : "strict",
+              "key_up_order" : "strict_inverse",
+              "key_up_when" : "any",
+              "to_after_key_up" : [ {
+                "set_variable" : {
+                  "name" : "open-mode",
+                  "value" : 0
+                }
+              } ]
+            }
+          }
+        } ]
+      }, {
+        "description" : "Script mode",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "u"
+          },
+          "to" : [ {
+            "shell_command" : "$HOME/.dotfiles/bin/sdot utils uuid_code"
+          } ],
+          "conditions" : [ {
+            "name" : "script-mode",
+            "value" : 1,
+            "type" : "variable_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "type" : "basic",
+          "parameters" : {
+            "basic.simultaneous_threshold_milliseconds" : 250
+          },
+          "to" : [ {
+            "set_variable" : {
+              "name" : "script-mode",
+              "value" : 1
+            }
+          }, {
+            "shell_command" : "$HOME/.dotfiles/bin/sdot utils uuid_code"
+          } ],
+          "from" : {
+            "simultaneous" : [ {
+              "key_code" : "s"
+            }, {
+              "key_code" : "u"
+            } ],
+            "simultaneous_options" : {
+              "detect_key_down_uninterruptedly" : true,
+              "key_down_order" : "strict",
+              "key_up_order" : "strict_inverse",
+              "key_up_when" : "any",
+              "to_after_key_up" : [ {
+                "set_variable" : {
+                  "name" : "script-mode",
+                  "value" : 0
+                }
+              } ]
+            }
+          }
+        } ]
+      }, {
+        "description" : "[launch] iTerm",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "spacebar",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_control", "left_option" ]
+            }
+          },
+          "to" : [ {
+            "shell_command" : "open -a 'iTerm.app'"
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "[launch] List projects and open with intellij",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "i",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_option", "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "shell_command" : "$HOME/.dotfiles/bin/sdot utils open_project_in_intellij"
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "[launch] List open tabs and focus it with Chrome",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "c",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_option", "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "shell_command" : "$HOME/.dotfiles/bin/sdot chrome goto"
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "[launch] List all Codely Pro courses and open it on the default browser",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "p",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_option", "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "shell_command" : "$HOME/.dotfiles/bin/sdot codely open_course"
           } ],
           "type" : "basic"
         } ]

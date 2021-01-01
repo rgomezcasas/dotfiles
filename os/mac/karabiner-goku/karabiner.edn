@@ -1,7 +1,10 @@
-{:default   true
- :alone     500
- :delay     200
- :held      500
+{:profiles
+ {:Default
+  {:default true
+   :sim     100
+   :delay   500
+   :alone   1000
+   :held    1000}}
  :applications
  {;; To obtain the app ID: `grep -A1 "CFBundleIdentifier" /Applications/The.app/Contents/Info.plist`
    :Chrome   ["com.google.Chrome", "com.google.Chrome.beta"]
@@ -11,11 +14,11 @@
    :Contexts ["com.contextsformac.Contexts"]
    :IntelliJ ["com.jetbrains.intellij"]
    :Keynote  ["com.apple.iWork.Keynote"]}
- :froms     {:delete-line              {:modi :left_command :key :delete_or_backspace}
-             :duplicate-line           {:modi :left_command :key :d}
-             :show-recent              {:modi :left_command :key :e}
+ :froms     {:line-delete              {:modi :left_command :key :delete_or_backspace}
+             :line-duplicate           {:modi :left_command :key :d}
              :selection-extend         {:modi :left_option :key :up_arrow}
              :selection-shrink         {:modi :left_option :key :down_arrow}
+             :show-recent              {:modi :left_command :key :e}
              :sidebar-primary-toggle   {:modi :left_command :key :1}
              :sidebar-secondary-toggle {:modi :left_command :key :2}
              :zoom-in                  {:modi :left_command :key :equal_sign}
@@ -32,36 +35,58 @@ tell application \"System Events\"
     key code 36
 end tell'"}
  :layers    {:tab-mode {:key :tab}}
+ :simlayers {:emoji-mode  {:key :e}
+             :open-mode   {:key :o}
+             :script-mode {:key :s}}
  :main
- [;; Remaps
+ [;; ------------ Remaps ------------
    {:des   "[mouse] Up key -> Restore last hidden"
     :rules [[{:pkey :button5} :!Ctab]]}
    {:des   "[mouse] Down key -> Hide"
     :rules [[{:pkey :button4} [{:pkey :button1} :!Ch]]]}
-   {:des   "[keyboard] caps lock to hyper"
-    :rules [[:caps_lock :!CTOleft_shift]]}
    {:des   "[keyboard] ctr + cmd + ↑ as ↓"
     :rules [[:!CTdown_arrow :!CTup_arrow]]}
-   {:des   "[keyboard] Emojis + Symbols"
-    :rules [[:!Ov [:paste "✅"]]
-            [:!Os [:paste "👍"]]
-            [:!Od [:paste "👎"]]
-            [:!Op [:paste "➕"]]
-            [:!Og [:paste "😬"]]
-            [:!Ol [:paste "😂"]]
-            [:!On [:paste "ñ"]]
+
+   {:des   "[keyboard] Symbols // todo: move this to a keyboard layout using ukelele"
+    :rules [[:!On [:paste "ñ"]]
             [:!OSn [:paste "Ñ"]]
             [:!Oslash [:paste "¿"]]
             [:!Eslash [:paste "¿"]]]}
-   ;; Launchers
+
+   ;; ------------ Utils ------------
+   {:des   "[util] Extend selection"
+    :rules [[:selection-extend [:!Oleft_arrow :!OSright_arrow] [:!IntelliJ :!Notion]]]}
+   {:des   "[util] Delete line"
+    :rules [[:line-delete
+             [:!Cright_arrow :!Cdelete_or_backspace :delete_or_backspace]
+             [:!IntelliJ :!Notion :!Finder :!Contexts]]]}
+
+   ;; ------------ Modes ------------
+   {:des   "Emoji mode"
+    :rules [:emoji-mode
+            [:d [:paste "👎"]]
+            [:g [:paste "😬"]]
+            [:l [:paste "😂"]]
+            [:p [:paste "➕"]]
+            [:s [:paste "👍"]]
+            [:v [:paste "✅"]]]}
+
+   {:des   "Open apps mode"
+    :rules [:open-mode
+            [:c "open -a 'Google Chrome Beta.app' --args --profile-directory=Default"]
+            [:i "$HOME/.dotfiles/bin/sdot utils open_intellij"]
+            [:n "open -a 'Notion.app'"]
+            [:s "open -a 'Slack.app'"]
+            [:t "open -a 'iTerm.app'"]]}
+
+   {:des   "Script mode"
+    :rules [:script-mode
+            ;; Generate uuid
+            [:u "$HOME/.dotfiles/bin/sdot utils uuid_code"]]}
+
+   ;; ------------ Launchers ------------
    {:des   "[launch] iTerm"
-    :rules [[:!CTOspacebar "open -a 'iTerm.app';open -a 'iTerm.app'"]]}
-   {:des   "[launch] IntelliJ"
-    :rules [[:!CTOi "$HOME/.dotfiles/bin/sdot utils open_intellij"]]}
-   {:des   "[launch] Chrome"
-    :rules [[:!CTOc "open -a 'Google Chrome Beta.app' --args --profile-directory=Default"]]}
-   {:des   "[launch] Slack"
-    :rules [[:!CTOs "open -a 'Slack.app'"]]}
+    :rules [[:!CTOspacebar "open -a 'iTerm.app'"]]}
 
    {:des   "[launch] List projects and open with intellij"
     :rules [[:!CSOi "$HOME/.dotfiles/bin/sdot utils open_project_in_intellij"]]}
@@ -70,20 +95,11 @@ end tell'"}
    {:des   "[launch] List all Codely Pro courses and open it on the default browser"
     :rules [[:!CSOp "$HOME/.dotfiles/bin/sdot codely open_course"]]}
 
-   ;; Util
-   {:des   "[util] Generate uuid to the clipboard"
-    :rules [[:!CTOu "$HOME/.dotfiles/bin/sdot utils uuid_code"]]}
-   {:des   "[util] Extend selection"
-    :rules [[:selection-extend [:!Oleft_arrow :!OSright_arrow] [:!IntelliJ :!Notion]]]}
-   {:des   "[util] Delete line"
-    :rules [[:delete-line
-             [:!Cright_arrow :!Cdelete_or_backspace :delete_or_backspace]
-             [:!IntelliJ :!Notion :!Finder :!Contexts]]]}
-
-   ;; Application specific
+   ;; ------------ Application specific ------------
    {:des "[chrome] Show recent tabs" :rules [:Chrome [:show-recent :!CSa]]}
    {:des "[chrome] Inspect element" :rules [:Chrome [:!CSi :!CSc]]}
    {:des "[chrome] Toggle console" :rules [:Chrome [:!CTOt :!COj]]}
+
    {:des   "[slack] Navigate between channels"
     :rules [:Slack [:!Cp :!Ck] [:!Ce :!Ck]]}
    {:des   "[slack] Toggle sidebars"
@@ -98,11 +114,13 @@ end tell'"}
             [:!COp [:paste_and_return "+:heavy_plus_sign:"]]
             [:!COg [:paste_and_return "+:grimacing:"]]
             [:!COl [:paste_and_return "+:joy:"]]]}
+
    {:des "[notion] Show recent pages" :rules [:Notion [:show-recent :!Cp]]}
    {:des   "[notion] Toggle sidebar"
     :rules [:Notion [:sidebar-primary-toggle :!Cbackslash]]}
    {:des   "[notion] Extend selection"
     :rules [:Notion [:selection-extend :!Sup_arrow] [:selection-shrink :!Sdown_arrow]]}
+
    {:des   "[keynote] Zoom in/out"
     :rules [:Keynote [:zoom-in :!CSperiod] [:zoom-out :!CScomma]]}
 
