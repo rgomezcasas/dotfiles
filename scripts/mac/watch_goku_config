@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTLY_PATH/scripts/core/_main.sh"
+
+##? Watch Goku config for Karabiner and notify
+#?? 1.0.0
+##?
+##? Usage:
+##?   watch_goku_config
+docs::parse "$@"
+
+tail -n0 -f ~/Library/Logs/goku.log | xargs -I_ osascript -e 'display notification "'"_"'" with title "Goku config modified"'

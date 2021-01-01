@@ -101,6 +101,17 @@
           "type" : "basic"
         } ]
       }, {
+        "description" : "[util] Disable Caps Locks",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "caps_lock"
+          },
+          "to" : [ {
+            "shell_command" : ""
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
         "description" : "[util] Extend selection",
         "manipulators" : [ {
           "from" : {
@@ -480,6 +491,51 @@
           }
         }, {
           "from" : {
+            "key_code" : "e"
+          },
+          "to" : [ {
+            "shell_command" : "open -a 'Telegram.app'"
+          } ],
+          "conditions" : [ {
+            "name" : "open-mode",
+            "value" : 1,
+            "type" : "variable_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "type" : "basic",
+          "parameters" : {
+            "basic.simultaneous_threshold_milliseconds" : 250
+          },
+          "to" : [ {
+            "set_variable" : {
+              "name" : "open-mode",
+              "value" : 1
+            }
+          }, {
+            "shell_command" : "open -a 'Telegram.app'"
+          } ],
+          "from" : {
+            "simultaneous" : [ {
+              "key_code" : "o"
+            }, {
+              "key_code" : "e"
+            } ],
+            "simultaneous_options" : {
+              "detect_key_down_uninterruptedly" : true,
+              "key_down_order" : "strict",
+              "key_up_order" : "strict_inverse",
+              "key_up_when" : "any",
+              "to_after_key_up" : [ {
+                "set_variable" : {
+                  "name" : "open-mode",
+                  "value" : 0
+                }
+              } ]
+            }
+          }
+        }, {
+          "from" : {
             "key_code" : "i"
           },
           "to" : [ {
@@ -813,6 +869,27 @@
           "to" : [ {
             "key_code" : "j",
             "modifiers" : [ "left_command", "left_option" ]
+          } ],
+          "conditions" : [ {
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "com.google.Chrome", "com.google.Chrome.beta" ]
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "[chrome] Switch profile",
+        "manipulators" : [ {
+          "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_command" ]
+            },
+            "key_code" : "caps_lock"
+          },
+          "to" : [ {
+            "key_code" : "m",
+            "modifiers" : [ "left_command", "left_shift" ]
+          }, {
+            "key_code" : "return_or_enter"
           } ],
           "conditions" : [ {
             "type" : "frontmost_application_if",
@@ -1978,14 +2055,7 @@
       "delay_milliseconds_before_open_device" : 1000
     },
     "selected" : true,
-    "simple_modifications" : [ {
-      "from" : {
-        "key_code" : "caps_lock"
-      },
-      "to" : {
-        "key_code" : "fn"
-      }
-    } ],
+    "simple_modifications" : [ ],
     "virtual_hid_keyboard" : {
       "caps_lock_delay_milliseconds" : 0,
       "country_code" : 0,

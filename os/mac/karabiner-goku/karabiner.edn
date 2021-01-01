@@ -21,6 +21,7 @@
              :show-recent              {:modi :left_command :key :e}
              :sidebar-primary-toggle   {:modi :left_command :key :1}
              :sidebar-secondary-toggle {:modi :left_command :key :2}
+             :switch-account           {:modi :left_command :key :caps_lock}
              :zoom-in                  {:modi :left_command :key :equal_sign}
              :zoom-out                 {:modi :left_command :key :hyphen}}
  :templates {:paste            "osascript -e '
@@ -54,6 +55,7 @@ end tell'"}
             [:!Eslash [:paste "¿"]]]}
 
    ;; ------------ Utils ------------
+   {:des "[util] Disable Caps Locks" :rules [[:caps_lock ""]]}
    {:des   "[util] Extend selection"
     :rules [[:selection-extend [:!Oleft_arrow :!OSright_arrow] [:!IntelliJ :!Notion]]]}
    {:des   "[util] Delete line"
@@ -74,6 +76,7 @@ end tell'"}
    {:des   "Open apps mode"
     :rules [:open-mode
             [:c "open -a 'Google Chrome Beta.app' --args --profile-directory=Default"]
+            [:e "open -a 'Telegram.app'"]
             [:i "$HOME/.dotfiles/bin/sdot utils open_intellij"]
             [:n "open -a 'Notion.app'"]
             [:s "open -a 'Slack.app'"]
@@ -99,6 +102,8 @@ end tell'"}
    {:des "[chrome] Show recent tabs" :rules [:Chrome [:show-recent :!CSa]]}
    {:des "[chrome] Inspect element" :rules [:Chrome [:!CSi :!CSc]]}
    {:des "[chrome] Toggle console" :rules [:Chrome [:!CTOt :!COj]]}
+   {:des   "[chrome] Switch profile"
+    :rules [:Chrome [:switch-account [:!CSm :return_or_enter]]]}
 
    {:des   "[slack] Navigate between channels"
     :rules [:Slack [:!Cp :!Ck] [:!Ce :!Ck]]}
@@ -124,6 +129,7 @@ end tell'"}
    {:des   "[keynote] Zoom in/out"
     :rules [:Keynote [:zoom-in :!CSperiod] [:zoom-out :!CScomma]]}
 
+   ;; ------------ Cheatsheet ------------
    ;; !  | means mandatory
    ;; #  | means optional
 
