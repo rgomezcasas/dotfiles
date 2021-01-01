@@ -13,6 +13,29 @@
         "basic.to_if_held_down_threshold_milliseconds" : 1000
       },
       "rules" : [ {
+        "description" : "Auto generated layer conditions",
+        "manipulators" : [ {
+          "type" : "basic",
+          "to" : [ {
+            "set_variable" : {
+              "name" : "tab-mode",
+              "value" : 1
+            }
+          } ],
+          "from" : {
+            "key_code" : "tab"
+          },
+          "to_after_key_up" : [ {
+            "set_variable" : {
+              "name" : "tab-mode",
+              "value" : 0
+            }
+          } ],
+          "to_if_alone" : [ {
+            "key_code" : "tab"
+          } ]
+        } ]
+      }, {
         "description" : "[mouse] Up key -> Restore last hidden",
         "manipulators" : [ {
           "from" : {
@@ -63,7 +86,7 @@
             }
           },
           "to" : [ {
-            "shell_command" : "osascript -e '\nset the clipboard to \"ñ\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\nend tell'"
+            "shell_command" : "$HOME/.dotfiles/bin/sdot mac paste_text \"ñ\""
           } ],
           "type" : "basic"
         }, {
@@ -74,7 +97,7 @@
             }
           },
           "to" : [ {
-            "shell_command" : "osascript -e '\nset the clipboard to \"Ñ\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\nend tell'"
+            "shell_command" : "$HOME/.dotfiles/bin/sdot mac paste_text \"Ñ\""
           } ],
           "type" : "basic"
         }, {
@@ -85,7 +108,7 @@
             }
           },
           "to" : [ {
-            "shell_command" : "osascript -e '\nset the clipboard to \"¿\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\nend tell'"
+            "shell_command" : "$HOME/.dotfiles/bin/sdot mac paste_text \"¿\""
           } ],
           "type" : "basic"
         }, {
@@ -96,7 +119,7 @@
             }
           },
           "to" : [ {
-            "shell_command" : "osascript -e '\nset the clipboard to \"¿\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\nend tell'"
+            "shell_command" : "$HOME/.dotfiles/bin/sdot mac paste_text \"¿\""
           } ],
           "type" : "basic"
         } ]
@@ -176,7 +199,7 @@
             "key_code" : "d"
           },
           "to" : [ {
-            "shell_command" : "osascript -e '\nset the clipboard to \"👎\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\nend tell'"
+            "shell_command" : "$HOME/.dotfiles/bin/sdot mac paste_text \"👎\""
           } ],
           "conditions" : [ {
             "name" : "emoji-mode",
@@ -195,7 +218,7 @@
               "value" : 1
             }
           }, {
-            "shell_command" : "osascript -e '\nset the clipboard to \"👎\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\nend tell'"
+            "shell_command" : "$HOME/.dotfiles/bin/sdot mac paste_text \"👎\""
           } ],
           "from" : {
             "simultaneous" : [ {
@@ -221,7 +244,7 @@
             "key_code" : "g"
           },
           "to" : [ {
-            "shell_command" : "osascript -e '\nset the clipboard to \"😬\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\nend tell'"
+            "shell_command" : "$HOME/.dotfiles/bin/sdot mac paste_text \"😬\""
           } ],
           "conditions" : [ {
             "name" : "emoji-mode",
@@ -240,7 +263,7 @@
               "value" : 1
             }
           }, {
-            "shell_command" : "osascript -e '\nset the clipboard to \"😬\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\nend tell'"
+            "shell_command" : "$HOME/.dotfiles/bin/sdot mac paste_text \"😬\""
           } ],
           "from" : {
             "simultaneous" : [ {
@@ -266,7 +289,7 @@
             "key_code" : "l"
           },
           "to" : [ {
-            "shell_command" : "osascript -e '\nset the clipboard to \"😂\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\nend tell'"
+            "shell_command" : "$HOME/.dotfiles/bin/sdot mac paste_text \"😂\""
           } ],
           "conditions" : [ {
             "name" : "emoji-mode",
@@ -285,7 +308,7 @@
               "value" : 1
             }
           }, {
-            "shell_command" : "osascript -e '\nset the clipboard to \"😂\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\nend tell'"
+            "shell_command" : "$HOME/.dotfiles/bin/sdot mac paste_text \"😂\""
           } ],
           "from" : {
             "simultaneous" : [ {
@@ -311,7 +334,7 @@
             "key_code" : "p"
           },
           "to" : [ {
-            "shell_command" : "osascript -e '\nset the clipboard to \"➕\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\nend tell'"
+            "shell_command" : "$HOME/.dotfiles/bin/sdot mac paste_text \"➕\""
           } ],
           "conditions" : [ {
             "name" : "emoji-mode",
@@ -330,7 +353,7 @@
               "value" : 1
             }
           }, {
-            "shell_command" : "osascript -e '\nset the clipboard to \"➕\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\nend tell'"
+            "shell_command" : "$HOME/.dotfiles/bin/sdot mac paste_text \"➕\""
           } ],
           "from" : {
             "simultaneous" : [ {
@@ -356,7 +379,7 @@
             "key_code" : "s"
           },
           "to" : [ {
-            "shell_command" : "osascript -e '\nset the clipboard to \"👍\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\nend tell'"
+            "shell_command" : "$HOME/.dotfiles/bin/sdot mac paste_text \"👍\""
           } ],
           "conditions" : [ {
             "name" : "emoji-mode",
@@ -375,7 +398,7 @@
               "value" : 1
             }
           }, {
-            "shell_command" : "osascript -e '\nset the clipboard to \"👍\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\nend tell'"
+            "shell_command" : "$HOME/.dotfiles/bin/sdot mac paste_text \"👍\""
           } ],
           "from" : {
             "simultaneous" : [ {
@@ -401,7 +424,7 @@
             "key_code" : "v"
           },
           "to" : [ {
-            "shell_command" : "osascript -e '\nset the clipboard to \"✅\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\nend tell'"
+            "shell_command" : "$HOME/.dotfiles/bin/sdot mac paste_text \"✅\""
           } ],
           "conditions" : [ {
             "name" : "emoji-mode",
@@ -420,7 +443,7 @@
               "value" : 1
             }
           }, {
-            "shell_command" : "osascript -e '\nset the clipboard to \"✅\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\nend tell'"
+            "shell_command" : "$HOME/.dotfiles/bin/sdot mac paste_text \"✅\""
           } ],
           "from" : {
             "simultaneous" : [ {
@@ -449,7 +472,7 @@
             "key_code" : "c"
           },
           "to" : [ {
-            "shell_command" : "open -a 'Google Chrome Beta.app' --args --profile-directory=Default"
+            "shell_command" : "osascript -e 'tell application \"Google Chrome Beta\" to activate'"
           } ],
           "conditions" : [ {
             "name" : "open-mode",
@@ -468,7 +491,7 @@
               "value" : 1
             }
           }, {
-            "shell_command" : "open -a 'Google Chrome Beta.app' --args --profile-directory=Default"
+            "shell_command" : "osascript -e 'tell application \"Google Chrome Beta\" to activate'"
           } ],
           "from" : {
             "simultaneous" : [ {
@@ -494,7 +517,7 @@
             "key_code" : "e"
           },
           "to" : [ {
-            "shell_command" : "open -a 'Telegram.app'"
+            "shell_command" : "osascript -e 'tell application \"Telegram\" to activate'"
           } ],
           "conditions" : [ {
             "name" : "open-mode",
@@ -513,7 +536,7 @@
               "value" : 1
             }
           }, {
-            "shell_command" : "open -a 'Telegram.app'"
+            "shell_command" : "osascript -e 'tell application \"Telegram\" to activate'"
           } ],
           "from" : {
             "simultaneous" : [ {
@@ -539,7 +562,7 @@
             "key_code" : "i"
           },
           "to" : [ {
-            "shell_command" : "$HOME/.dotfiles/bin/sdot utils open_intellij"
+            "shell_command" : "osascript -e 'tell application \"Intellij Idea\" to activate'"
           } ],
           "conditions" : [ {
             "name" : "open-mode",
@@ -558,7 +581,7 @@
               "value" : 1
             }
           }, {
-            "shell_command" : "$HOME/.dotfiles/bin/sdot utils open_intellij"
+            "shell_command" : "osascript -e 'tell application \"Intellij Idea\" to activate'"
           } ],
           "from" : {
             "simultaneous" : [ {
@@ -584,7 +607,7 @@
             "key_code" : "n"
           },
           "to" : [ {
-            "shell_command" : "open -a 'Notion.app'"
+            "shell_command" : "osascript -e 'tell application \"Notion\" to activate'"
           } ],
           "conditions" : [ {
             "name" : "open-mode",
@@ -603,7 +626,7 @@
               "value" : 1
             }
           }, {
-            "shell_command" : "open -a 'Notion.app'"
+            "shell_command" : "osascript -e 'tell application \"Notion\" to activate'"
           } ],
           "from" : {
             "simultaneous" : [ {
@@ -629,7 +652,7 @@
             "key_code" : "s"
           },
           "to" : [ {
-            "shell_command" : "open -a 'Slack.app'"
+            "shell_command" : "osascript -e 'tell application \"Slack\" to activate'"
           } ],
           "conditions" : [ {
             "name" : "open-mode",
@@ -648,7 +671,7 @@
               "value" : 1
             }
           }, {
-            "shell_command" : "open -a 'Slack.app'"
+            "shell_command" : "osascript -e 'tell application \"Slack\" to activate'"
           } ],
           "from" : {
             "simultaneous" : [ {
@@ -674,7 +697,7 @@
             "key_code" : "t"
           },
           "to" : [ {
-            "shell_command" : "open -a 'iTerm.app'"
+            "shell_command" : "osascript -e 'tell application \"iTerm\" to activate'"
           } ],
           "conditions" : [ {
             "name" : "open-mode",
@@ -693,7 +716,7 @@
               "value" : 1
             }
           }, {
-            "shell_command" : "open -a 'iTerm.app'"
+            "shell_command" : "osascript -e 'tell application \"iTerm\" to activate'"
           } ],
           "from" : {
             "simultaneous" : [ {
@@ -714,6 +737,113 @@
               } ]
             }
           }
+        } ]
+      }, {
+        "description" : "Open tabs mode",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "a"
+          },
+          "to" : [ {
+            "shell_command" : "$HOME/.dotfiles/bin/sdot mac open_chrome_url \"amazon.es\""
+          } ],
+          "conditions" : [ {
+            "name" : "tab-mode",
+            "value" : 1,
+            "type" : "variable_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "c"
+          },
+          "to" : [ {
+            "shell_command" : "$HOME/.dotfiles/bin/sdot mac open_chrome_url \"codely.tv\""
+          } ],
+          "conditions" : [ {
+            "name" : "tab-mode",
+            "value" : 1,
+            "type" : "variable_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "f"
+          },
+          "to" : [ {
+            "shell_command" : "$HOME/.dotfiles/bin/sdot mac open_chrome_url \"feedly.com\""
+          } ],
+          "conditions" : [ {
+            "name" : "tab-mode",
+            "value" : 1,
+            "type" : "variable_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "g"
+          },
+          "to" : [ {
+            "shell_command" : "$HOME/.dotfiles/bin/sdot mac open_chrome_url \"mail.google.com\""
+          } ],
+          "conditions" : [ {
+            "name" : "tab-mode",
+            "value" : 1,
+            "type" : "variable_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "p"
+          },
+          "to" : [ {
+            "shell_command" : "$HOME/.dotfiles/bin/sdot mac open_chrome_url \"pro.codely.tv\""
+          } ],
+          "conditions" : [ {
+            "name" : "tab-mode",
+            "value" : 1,
+            "type" : "variable_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "t"
+          },
+          "to" : [ {
+            "shell_command" : "$HOME/.dotfiles/bin/sdot mac open_chrome_url \"twitter.com\""
+          } ],
+          "conditions" : [ {
+            "name" : "tab-mode",
+            "value" : 1,
+            "type" : "variable_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "y"
+          },
+          "to" : [ {
+            "shell_command" : "$HOME/.dotfiles/bin/sdot mac open_chrome_url \"youtube.com\""
+          } ],
+          "conditions" : [ {
+            "name" : "tab-mode",
+            "value" : 1,
+            "type" : "variable_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "w"
+          },
+          "to" : [ {
+            "shell_command" : "$HOME/.dotfiles/bin/sdot mac open_chrome_url \"twitch.tv\""
+          } ],
+          "conditions" : [ {
+            "name" : "tab-mode",
+            "value" : 1,
+            "type" : "variable_if"
+          } ],
+          "type" : "basic"
         } ]
       }, {
         "description" : "Script mode",
@@ -1028,7 +1158,7 @@
             }
           },
           "to" : [ {
-            "shell_command" : "osascript -e '\nset the clipboard to \"+:white_check_mark:\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\n    key code 36\nend tell'"
+            "shell_command" : "$HOME/.dotfiles/bin/sdot mac paste_text \"+:white_check_mark:\" --returning"
           } ],
           "conditions" : [ {
             "type" : "frontmost_application_if",
@@ -1043,7 +1173,7 @@
             }
           },
           "to" : [ {
-            "shell_command" : "osascript -e '\nset the clipboard to \"+:thumbsup:\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\n    key code 36\nend tell'"
+            "shell_command" : "$HOME/.dotfiles/bin/sdot mac paste_text \"+:thumbsup:\" --returning"
           } ],
           "conditions" : [ {
             "type" : "frontmost_application_if",
@@ -1058,7 +1188,7 @@
             }
           },
           "to" : [ {
-            "shell_command" : "osascript -e '\nset the clipboard to \"+:thumbsdown:\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\n    key code 36\nend tell'"
+            "shell_command" : "$HOME/.dotfiles/bin/sdot mac paste_text \"+:thumbsdown:\" --returning"
           } ],
           "conditions" : [ {
             "type" : "frontmost_application_if",
@@ -1073,7 +1203,7 @@
             }
           },
           "to" : [ {
-            "shell_command" : "osascript -e '\nset the clipboard to \"+:heavy_plus_sign:\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\n    key code 36\nend tell'"
+            "shell_command" : "$HOME/.dotfiles/bin/sdot mac paste_text \"+:heavy_plus_sign:\" --returning"
           } ],
           "conditions" : [ {
             "type" : "frontmost_application_if",
@@ -1088,7 +1218,7 @@
             }
           },
           "to" : [ {
-            "shell_command" : "osascript -e '\nset the clipboard to \"+:grimacing:\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\n    key code 36\nend tell'"
+            "shell_command" : "$HOME/.dotfiles/bin/sdot mac paste_text \"+:grimacing:\" --returning"
           } ],
           "conditions" : [ {
             "type" : "frontmost_application_if",
@@ -1103,7 +1233,7 @@
             }
           },
           "to" : [ {
-            "shell_command" : "osascript -e '\nset the clipboard to \"+:joy:\"\ntell application \"System Events\"\n    keystroke \"v\" using command down\n    key code 36\nend tell'"
+            "shell_command" : "$HOME/.dotfiles/bin/sdot mac paste_text \"+:joy:\" --returning"
           } ],
           "conditions" : [ {
             "type" : "frontmost_application_if",

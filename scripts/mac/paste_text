@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTLY_PATH/scripts/core/_main.sh"
+
+##? Paste a text
+#?? 1.0.0
+##?
+##? Usage:
+##?   paste_text <text>
+##?   paste_text <text> --returning
+##?
+##? Options:
+##?   -h --help       Show this screen.
+##?   -r --returning  Adds a final return press
+docs::parse "$@"
+
+if $returning; then
+  osascript -e "
+set the clipboard to \"$1\"
+tell application \"System Events\"
+    keystroke \"v\" using command down
+    key code 36
+end tell"
+else
+  osascript -e "
+set the clipboard to \"$1\"
+tell application \"System Events\"
+    keystroke \"v\" using command down
+end tell"
+fi

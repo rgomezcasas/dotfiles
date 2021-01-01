@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTLY_PATH/scripts/core/_main.sh"
+
+##? Select the tab if already opened; If not opens it.
+#?? 1.0.0
+##?
+##? Usage:
+##?   open_chrome_url <url>
+docs::parse "$@"
+
+osascript -e "
+set address to \"$1\"
+
+tell application \"Google Chrome Beta\"
+   activate
+        if not (exists window 1) then reopen
+        repeat with w in windows
+                set i to 1
+                repeat with t in tabs of w
+                if URL of t contains address then
+                        set active tab index of w to i
+                        set index of w to 1
+                        return
+                end if
+                set i to i + 1
+                end repeat
+        end repeat
+        open location \"https://\" & address
+end tell"
