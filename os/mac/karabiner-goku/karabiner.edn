@@ -11,6 +11,15 @@
    :Contexts ["com.contextsformac.Contexts"]
    :IntelliJ ["com.jetbrains.intellij"]
    :Keynote  ["com.apple.iWork.Keynote"]}
+ :froms     {:delete-line              {:modi :left_command :key :delete_or_backspace}
+             :duplicate-line           {:modi :left_command :key :d}
+             :show-recent              {:modi :left_command :key :e}
+             :selection-extend         {:modi :left_option :key :up_arrow}
+             :selection-shrink         {:modi :left_option :key :down_arrow}
+             :sidebar-primary-toggle   {:modi :left_command :key :1}
+             :sidebar-secondary-toggle {:modi :left_command :key :2}
+             :zoom-in                  {:modi :left_command :key :equal_sign}
+             :zoom-out                 {:modi :left_command :key :hyphen}}
  :templates {:paste            "osascript -e '
 set the clipboard to \"%s\"
 tell application \"System Events\"
@@ -50,7 +59,7 @@ end tell'"}
    {:des   "[launch] IntelliJ"
     :rules [[:!CTOi "$HOME/.dotfiles/bin/sdot utils open_intellij"]]}
    {:des   "[launch] Chrome"
-    :rules [[:!CTOc "open -a 'Google Chrome.app'"]]}
+    :rules [[:!CTOc "open -a 'Google Chrome Beta.app' --args --profile-directory=Default"]]}
    {:des   "[launch] Slack"
     :rules [[:!CTOs "open -a 'Slack.app'"]]}
 
@@ -65,21 +74,22 @@ end tell'"}
    {:des   "[util] Generate uuid to the clipboard"
     :rules [[:!CTOu "$HOME/.dotfiles/bin/sdot utils uuid_code"]]}
    {:des   "[util] Extend selection"
-    :rules [[:!Oup_arrow [:!Oleft_arrow :!OSright_arrow] [:!IntelliJ :!Notion]]]}
+    :rules [[:selection-extend [:!Oleft_arrow :!OSright_arrow] [:!IntelliJ :!Notion]]]}
    {:des   "[util] Delete line"
-    :rules [[:!Cdelete_or_backspace
+    :rules [[:delete-line
              [:!Cright_arrow :!Cdelete_or_backspace :delete_or_backspace]
              [:!IntelliJ :!Notion :!Finder :!Contexts]]]}
 
    ;; Application specific
-   {:des "[chrome] Show recent tabs" :rules [:Chrome [:!Ce :!CSa]]}
+   {:des "[chrome] Show recent tabs" :rules [:Chrome [:show-recent :!CSa]]}
    {:des "[chrome] Inspect element" :rules [:Chrome [:!CSi :!CSc]]}
    {:des "[chrome] Toggle console" :rules [:Chrome [:!CTOt :!COj]]}
    {:des   "[slack] Navigate between channels"
     :rules [:Slack [:!Cp :!Ck] [:!Ce :!Ck]]}
-   {:des "[slack] Toggle sidebars" :rules [:Slack [:!C1 :!CSd] [:!C2 :!Cperiod]]}
+   {:des   "[slack] Toggle sidebars"
+    :rules [:Slack [:sidebar-primary-toggle :!CSd] [:sidebar-secondary-toggle :!Cperiod]]}
    {:des   "[slack] Move between workspaces"
-    :rules [:Slack [:!CS1 :!C1] [:!CS2 :!C2] [:!CS3 :!C3]]}
+    :rules [:Slack [:!O1 :!C1] [:!O2 :!C2] [:!O3 :!C3]]}
    {:des   "[slack] Reactions"
     :rules [:Slack
             [:!COv [:paste_and_return "+:white_check_mark:"]]
@@ -88,12 +98,13 @@ end tell'"}
             [:!COp [:paste_and_return "+:heavy_plus_sign:"]]
             [:!COg [:paste_and_return "+:grimacing:"]]
             [:!COl [:paste_and_return "+:joy:"]]]}
-   {:des "[notion] Show recent pages" :rules [:Notion [:!Ce :!Cp]]}
-   {:des "[notion] Toggle sidebar" :rules [:Notion [:!C1 :!Cbackslash]]}
+   {:des "[notion] Show recent pages" :rules [:Notion [:show-recent :!Cp]]}
+   {:des   "[notion] Toggle sidebar"
+    :rules [:Notion [:sidebar-primary-toggle :!Cbackslash]]}
    {:des   "[notion] Extend selection"
-    :rules [:Notion [:!Oup_arrow :!Sup_arrow] [:!Odown_arrow :!Sdown_arrow]]}
+    :rules [:Notion [:selection-extend :!Sup_arrow] [:selection-shrink :!Sdown_arrow]]}
    {:des   "[keynote] Zoom in/out"
-    :rules [:Keynote [:!Cequal_sign :!CSperiod] [:!Chyphen :!CScomma]]}
+    :rules [:Keynote [:zoom-in :!CSperiod] [:zoom-out :!CScomma]]}
 
    ;; !  | means mandatory
    ;; #  | means optional

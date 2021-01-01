@@ -14,7 +14,7 @@ source "$DOTLY_PATH/scripts/core/_main.sh"
 docs::parse "$@"
 
 WALLPAPER_DIR="$HOME/Pictures/Wallpapers"
-WALLPAPER_FILENAME=$1
+WALLPAPER_FILENAME="$1"
 WALLPAPER_FILE_PATH="$WALLPAPER_DIR/$WALLPAPER_FILENAME"
 
 VALID_URL_REGEX='(https?|ftp|file)://[-A-Za-z0-9\+&@#/%?=~_|!:,.;]*[-A-Za-z0-9\+&@#/%=~_|]'
@@ -40,6 +40,6 @@ else
   fi
 fi
 
-echo $WALLPAPER_FILE_PATH
+echo "$WALLPAPER_FILE_PATH"
 
 osascript -e 'tell application "System Events" to tell every desktop to set picture to "'$WALLPAPER_FILE_PATH'"'
