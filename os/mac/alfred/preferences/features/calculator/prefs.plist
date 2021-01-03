@@ -6,5 +6,9 @@
 	<false/>
 	<key>inputType</key>
 	<integer>3</integer>
+	<key>outputShowThousandsDelimiter</key>
+	<false/>
+	<key>outputType</key>
+	<integer>1</integer>
 </dict>
 </plist>

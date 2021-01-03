@@ -1,19 +1,19 @@
 {:profiles
  {:Default
   {:default true
-   :sim     100
-   :delay   500
-   :alone   1000
-   :held    1000}}
+   :alone   20
+   :delay   200
+   :held    100
+   :sim     100}}
  :applications
  {;; To obtain the app ID: `grep -A1 "CFBundleIdentifier" /Applications/The.app/Contents/Info.plist`
    :Chrome   ["com.google.Chrome", "com.google.Chrome.beta"]
-   :Slack    ["com.tinyspeck.slackmacgap"]
-   :Notion   ["notion.id"]
-   :Finder   ["com.apple.finder"]
    :Contexts ["com.contextsformac.Contexts"]
+   :Finder   ["com.apple.finder"]
    :IntelliJ ["com.jetbrains.intellij"]
-   :Keynote  ["com.apple.iWork.Keynote"]}
+   :Keynote  ["com.apple.iWork.Keynote"]
+   :Notion   ["notion.id"]
+   :Slack    ["com.tinyspeck.slackmacgap"]}
  :froms     {:line-delete              {:modi :left_command :key :delete_or_backspace}
              :line-duplicate           {:modi :left_command :key :d}
              :selection-extend         {:modi :left_option :key :up_arrow}
@@ -24,10 +24,11 @@
              :switch-account           {:modi :left_command :key :caps_lock}
              :zoom-in                  {:modi :left_command :key :equal_sign}
              :zoom-out                 {:modi :left_command :key :hyphen}}
- :templates {:paste            "$HOME/.dotfiles/bin/sdot mac paste_text \"%s\""
+ :templates {:open-app         "osascript -e 'tell application \"%s\" to activate'"
+             :paste            "$HOME/.dotfiles/bin/sdot mac paste_text \"%s\""
              :paste-and-return "$HOME/.dotfiles/bin/sdot mac paste_text \"%s\" --returning"
              :open-in-chrome   "$HOME/.dotfiles/bin/sdot mac open_chrome_url \"%s\""
-             :launch-app       "osascript -e 'tell application \"%s\" to activate'"}
+             :wait_seconds     "osascript -e 'delay %s'"}
  :layers    {:tab-mode {:key :tab}}
  :simlayers {:emoji-mode  {:key :e}
              :open-mode   {:key :o}
@@ -41,7 +42,7 @@
    {:des   "[keyboard] ctr + cmd + ↑ as ↓"
     :rules [[:!CTdown_arrow :!CTup_arrow]]}
 
-   {:des   "[keyboard] Symbols // todo: move this to a keyboard layout using ukelele"
+   {:des   "[keyboard] Symbols // @todo: move this to a keyboard layout using ukelele"
     :rules [[:!On [:paste "ñ"]]
             [:!OSn [:paste "Ñ"]]
             [:!Oslash [:paste "¿"]]
@@ -68,12 +69,12 @@
 
    {:des   "Open apps mode"
     :rules [:open-mode
-            [:c [:launch-app "Google Chrome Beta"]]
-            [:e [:launch-app "Telegram"]]
-            [:i [:launch-app "Intellij Idea"]]
-            [:n [:launch-app "Notion"]]
-            [:s [:launch-app "Slack"]]
-            [:t [:launch-app "iTerm"]]]}
+            [:c [:open-app "Google Chrome Beta"]]
+            [:e [:open-app "Telegram"]]
+            [:i [:open-app "Intellij Idea"]]
+            [:n [:open-app "Notion"]]
+            [:s [:open-app "Slack"]]
+            [:t [:open-app "iTerm"]]]}
 
    {:des   "Open tabs mode"
     :rules [:tab-mode
@@ -83,6 +84,7 @@
             [:g [:open-in-chrome "mail.google.com"]]
             [:p [:open-in-chrome "pro.codely.tv"]]
             [:t [:open-in-chrome "twitter.com"]]
+            [:n [:open-in-chrome "news.ycombinator.com"]]
             [:y [:open-in-chrome "youtube.com"]]
             [:w [:open-in-chrome "twitch.tv"]]]}
    {:des   "Script mode"
@@ -130,21 +132,24 @@
     :rules [:Notion [:selection-extend :!Sup_arrow] [:selection-shrink :!Sdown_arrow]]}
 
    {:des   "[keynote] Zoom in/out"
-    :rules [:Keynote [:zoom-in :!CSperiod] [:zoom-out :!CScomma]]}
+    :rules [:Keynote [:zoom-in :!CSperiod] [:zoom-out :!CScomma]]}]
 
-   ;; ------------ Cheatsheet ------------
-   ;; !  | means mandatory
-   ;; #  | means optional
-
-   ;; C  | left_command
-   ;; T  | left_control
-   ;; O  | left_option
-   ;; S  | left_shift
-   ;; F  | fn
-   ;; Q  | right_command
-   ;; W  | right_control
-   ;; E  | right_option
-   ;; R  | right_shift
-   ;; !! | mandatory command + control + optional + shift (hyper)
-   ;; ## | optional any
-   ]}
+ ;; ------------ Cheatsheet ------------
+ ;; ! stand for mandatory
+ ;; # stand for optional
+ ;; !! stand for mandatory command + control + optional + shift (hyper)
+ ;; C T O S for left command control optional shift
+ ;; Q W E R for right command control optional shift
+ ;; F for fn
+ ;; need to prefix C T O S F Q W E R with ! or #
+ :cheatsheet
+ {:!Ca        "command a"
+  :!Ta        "control a"
+  :!Oa        "option a"
+  :!Sa        "shift a"
+  :#Sa        "shift a"
+  :!CTOa      "command control option a"
+  :!Cspacebar "command space"
+  :!Fa        "fn a"
+  :##a        "keycode a optional any"
+  :!!a        "mandatory hyper (control command option shift) a "}}
