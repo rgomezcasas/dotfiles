@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>hotkey</key>
+	<dict>
+		<key>key</key>
+		<integer>8</integer>
+		<key>mod</key>
+		<integer>1310720</integer>
+		<key>string</key>
+		<string>C</string>
+	</dict>
+	<key>snippetKeyword</key>
+	<string>!!</string>
+</dict>
+</plist>

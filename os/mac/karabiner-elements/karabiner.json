@@ -18,21 +18,21 @@
           "type" : "basic",
           "to" : [ {
             "set_variable" : {
-              "name" : "tab-mode",
+              "name" : "caps-mode",
               "value" : 1
             }
           } ],
           "from" : {
-            "key_code" : "tab"
+            "key_code" : "caps_lock"
           },
           "to_after_key_up" : [ {
             "set_variable" : {
-              "name" : "tab-mode",
+              "name" : "caps-mode",
               "value" : 0
             }
           } ],
           "to_if_alone" : [ {
-            "key_code" : "tab"
+            "key_code" : "caps_lock"
           } ]
         } ]
       }, {
@@ -748,7 +748,7 @@
             "shell_command" : "$HOME/.dotfiles/bin/sdot mac open_chrome_url \"amazon.es\""
           } ],
           "conditions" : [ {
-            "name" : "tab-mode",
+            "name" : "caps-mode",
             "value" : 1,
             "type" : "variable_if"
           } ],
@@ -761,7 +761,7 @@
             "shell_command" : "$HOME/.dotfiles/bin/sdot mac open_chrome_url \"codely.tv\""
           } ],
           "conditions" : [ {
-            "name" : "tab-mode",
+            "name" : "caps-mode",
             "value" : 1,
             "type" : "variable_if"
           } ],
@@ -774,7 +774,7 @@
             "shell_command" : "$HOME/.dotfiles/bin/sdot mac open_chrome_url \"feedly.com\""
           } ],
           "conditions" : [ {
-            "name" : "tab-mode",
+            "name" : "caps-mode",
             "value" : 1,
             "type" : "variable_if"
           } ],
@@ -787,7 +787,7 @@
             "shell_command" : "$HOME/.dotfiles/bin/sdot mac open_chrome_url \"mail.google.com\""
           } ],
           "conditions" : [ {
-            "name" : "tab-mode",
+            "name" : "caps-mode",
             "value" : 1,
             "type" : "variable_if"
           } ],
@@ -800,7 +800,7 @@
             "shell_command" : "$HOME/.dotfiles/bin/sdot mac open_chrome_url \"pro.codely.tv\""
           } ],
           "conditions" : [ {
-            "name" : "tab-mode",
+            "name" : "caps-mode",
             "value" : 1,
             "type" : "variable_if"
           } ],
@@ -813,7 +813,7 @@
             "shell_command" : "$HOME/.dotfiles/bin/sdot mac open_chrome_url \"twitter.com\""
           } ],
           "conditions" : [ {
-            "name" : "tab-mode",
+            "name" : "caps-mode",
             "value" : 1,
             "type" : "variable_if"
           } ],
@@ -826,7 +826,7 @@
             "shell_command" : "$HOME/.dotfiles/bin/sdot mac open_chrome_url \"news.ycombinator.com\""
           } ],
           "conditions" : [ {
-            "name" : "tab-mode",
+            "name" : "caps-mode",
             "value" : 1,
             "type" : "variable_if"
           } ],
@@ -839,7 +839,7 @@
             "shell_command" : "$HOME/.dotfiles/bin/sdot mac open_chrome_url \"youtube.com\""
           } ],
           "conditions" : [ {
-            "name" : "tab-mode",
+            "name" : "caps-mode",
             "value" : 1,
             "type" : "variable_if"
           } ],
@@ -852,7 +852,7 @@
             "shell_command" : "$HOME/.dotfiles/bin/sdot mac open_chrome_url \"twitch.tv\""
           } ],
           "conditions" : [ {
-            "name" : "tab-mode",
+            "name" : "caps-mode",
             "value" : 1,
             "type" : "variable_if"
           } ],

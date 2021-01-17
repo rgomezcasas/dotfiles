@@ -29,7 +29,8 @@
              :paste-and-return "$HOME/.dotfiles/bin/sdot mac paste_text \"%s\" --returning"
              :open-in-chrome   "$HOME/.dotfiles/bin/sdot mac open_chrome_url \"%s\""
              :wait_seconds     "osascript -e 'delay %s'"}
- :layers    {:tab-mode {:key :tab}}
+ :layers    {:tab-mode  {:key :tab}
+             :caps-mode {:key :caps_lock}}
  :simlayers {:emoji-mode  {:key :e}
              :open-mode   {:key :o}
              :script-mode {:key :s}}
@@ -77,7 +78,7 @@
             [:t [:open-app "iTerm"]]]}
 
    {:des   "Open tabs mode"
-    :rules [:tab-mode
+    :rules [:caps-mode
             [:a [:open-in-chrome "amazon.es"]]
             [:c [:open-in-chrome "codely.tv"]]
             [:f [:open-in-chrome "feedly.com"]]
