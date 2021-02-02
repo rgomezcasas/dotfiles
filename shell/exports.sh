@@ -23,11 +23,11 @@ export path=(
   "$GEM_HOME/bin"
   "$GOPATH/bin"
   "$HOME/.cargo/bin"
-  "/usr/local/opt/ruby/bin"
-  "/usr/local/opt/python@3.9/libexec/bin"
-  "/usr/local/bin"  # This contains all Brew binaries (zsh...)
-  "/usr/local/sbin" # This contains all Brew binaries
-  "/bin"            # macOS zsh is here
+  "/opt/homebrew/opt/ruby/bin"
+  "/opt/homebrew/opt/python@3.9/libexec/bin"
+  "/opt/homebrew/bin"
+  "/usr/local/bin"
+  "/bin"
   "/usr/bin"
   "/usr/sbin"
   "/sbin"

@@ -9,18 +9,18 @@
       - ~/.z
 
 - link:
+    ~/.bash_profile: shell/bash/.bash_profile
+    ~/.bashrc: shell/bash/.bashrc
+    ~/.composer/composer.json: langs/php/composer.json
+    ~/.config/clojure/profiles.clj: langs/clojure/profiles.clj
+    ~/.config/psysh/config.php: langs/php/psysh-config.php
+    ~/.gitattributes: git/.gitattributes
+    ~/.gitconfig: git/.gitconfig
+    ~/.gitignore_global: git/.gitignore_global
+    ~/.profile: shell/bash/.profile
+    ~/.sbt/1.0/plugins/plugins.sbt: langs/scala/plugins.sbt
+    ~/.vimrc: editors/vim/.vimrc
     ~/.zimrc: shell/zsh/.zimrc
     ~/.zlogin: shell/zsh/.zlogin
     ~/.zshenv: shell/zsh/.zshenv
     ~/.zshrc: shell/zsh/.zshrc
-    ~/.bashrc: shell/bash/.bashrc
-    ~/.bash_profile: shell/bash/.bash_profile
-    ~/.profile: shell/bash/.profile
-    ~/.gitconfig: git/.gitconfig
-    ~/.gitignore_global: git/.gitignore_global
-    ~/.gitattributes: git/.gitattributes
-    ~/.vimrc: editors/vim/.vimrc
-    ~/.config/psysh/config.php: langs/php/psysh-config.php
-    ~/.composer/composer.json: langs/php/composer.json
-    ~/.config/clojure/profiles.clj: langs/clojure/profiles.clj
-    ~/.sbt/1.0/plugins/plugins.sbt: langs/scala/plugins.sbt

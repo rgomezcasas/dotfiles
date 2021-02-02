@@ -9,19 +9,21 @@
       - ~/.hushlogin
 
 - link:
-    ~/.dotly: os/mac/.dotly
-    ~/bin/bash: /usr/local/bin/bash
-    ~/bin/zsh: /bin/zsh
-    ~/bin/date: /usr/local/bin/gdate
-    ~/bin/make: /usr/local/opt/make/libexec/gnubin/make
-    ~/bin/sed: /usr/local/opt/gnu-sed/libexec/gnubin/sed
-    ~/bin/touch: /usr/local/bin/gtouch
-    ~/bin/find: /usr/local/opt/findutils/bin/gfind
-    ~/.config/karabiner: os/mac/karabiner-elements
+    /usr/local/bin/git: /opt/homebrew/bin/git
+    /usr/local/bin/gpg: /opt/homebrew/bin/gpg
     ~/.config/karabiner.edn: os/mac/karabiner-goku/karabiner.edn
+    ~/.config/karabiner: os/mac/karabiner-elements
+    ~/.dotly: os/mac/.dotly
     ~/Library/Application Support/Alfred/Alfred.alfredpreferences: os/mac/alfred
     ~/Library/Application Support/Code/User/keybindings.json: editors/code/keybindings.json
     ~/Library/Application Support/Code/User/settings.json: editors/code/settings.json
     ~/Library/Application Support/Code/User/snippets: editors/code/snippets
     ~/Library/Preferences/com.contextsformac.Contexts.plist: os/mac/contexts/com.contextsformac.Contexts.plist
     ~/Library/Preferences/com.knollsoft.Rectangle.plist: os/mac/rectangle/com.knollsoft.Rectangle.plist
+    ~/bin/bash: /opt/homebrew/bin/bash
+    ~/bin/date: /opt/homebrew/bin/gdate
+    ~/bin/find: /opt/homebrew/bin/gfind
+    ~/bin/make: /opt/homebrew/bin/gmake
+    ~/bin/sed: /opt/homebrew/bin/gsed
+    ~/bin/touch: /opt/homebrew/bin/gtouch
+    ~/bin/zsh: /opt/homebrew/bin/zsh
