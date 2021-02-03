@@ -170,54 +170,6 @@
           "type" : "basic"
         } ]
       }, {
-        "description" : "Script mode",
-        "manipulators" : [ {
-          "from" : {
-            "key_code" : "u"
-          },
-          "to" : [ {
-            "shell_command" : "$HOME/.dotfiles/bin/sdot utils uuid_code"
-          } ],
-          "conditions" : [ {
-            "name" : "script-mode",
-            "value" : 1,
-            "type" : "variable_if"
-          } ],
-          "type" : "basic"
-        }, {
-          "type" : "basic",
-          "parameters" : {
-            "basic.simultaneous_threshold_milliseconds" : 250
-          },
-          "to" : [ {
-            "set_variable" : {
-              "name" : "script-mode",
-              "value" : 1
-            }
-          }, {
-            "shell_command" : "$HOME/.dotfiles/bin/sdot utils uuid_code"
-          } ],
-          "from" : {
-            "simultaneous" : [ {
-              "key_code" : "s"
-            }, {
-              "key_code" : "u"
-            } ],
-            "simultaneous_options" : {
-              "detect_key_down_uninterruptedly" : true,
-              "key_down_order" : "strict",
-              "key_up_order" : "strict_inverse",
-              "key_up_when" : "any",
-              "to_after_key_up" : [ {
-                "set_variable" : {
-                  "name" : "script-mode",
-                  "value" : 0
-                }
-              } ]
-            }
-          }
-        } ]
-      }, {
         "description" : "[launch] iTerm",
         "manipulators" : [ {
           "from" : {
@@ -242,6 +194,20 @@
           },
           "to" : [ {
             "shell_command" : "osascript -e 'tell application \"Intellij Idea\" to activate'"
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "[launch] Chrome",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "c",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_control", "left_option" ]
+            }
+          },
+          "to" : [ {
+            "shell_command" : "osascript -e 'tell application \"Google Chrome Beta\" to activate'"
           } ],
           "type" : "basic"
         } ]
@@ -284,6 +250,20 @@
           },
           "to" : [ {
             "shell_command" : "$HOME/.dotfiles/bin/sdot codely open_course"
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "[script] Generate uuid",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "u",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_control", "left_option" ]
+            }
+          },
+          "to" : [ {
+            "shell_command" : "$HOME/.dotfiles/bin/sdot utils uuid_code"
           } ],
           "type" : "basic"
         } ]

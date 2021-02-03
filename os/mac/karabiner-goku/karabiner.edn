@@ -59,45 +59,47 @@
              [:!IntelliJ :!Notion :!Finder :!Contexts]]]}
 
    ;; ------------ Modes ------------
-;;   {:des   "Emoji mode"
-;;    :rules [:emoji-mode
-;;            [:d [:paste "👎"]]
-;;            [:g [:paste "😬"]]
-;;            [:l [:paste "😂"]]
-;;            [:p [:paste "➕"]]
-;;            [:s [:paste "👍"]]
-;;            [:v [:paste "✅"]]]}
-;;
-;;   {:des   "Open apps mode"
-;;    :rules [:open-mode
-;;            [:c [:open-app "Google Chrome Beta"]]
-;;            [:e [:open-app "Telegram"]]
-;;            [:i [:open-app "Intellij Idea"]]
-;;            [:n [:open-app "Notion"]]
-;;            [:s [:open-app "Slack"]]
-;;            [:t [:open-app "iTerm"]]]}
-;;
-;;   {:des   "Open tabs mode"
-;;    :rules [:caps-mode
-;;            [:a [:open-in-chrome "amazon.es"]]
-;;            [:c [:open-in-chrome "codely.tv"]]
-;;            [:f [:open-in-chrome "feedly.com"]]
-;;            [:g [:open-in-chrome "mail.google.com"]]
-;;            [:p [:open-in-chrome "pro.codely.tv"]]
-;;            [:t [:open-in-chrome "twitter.com"]]
-;;            [:n [:open-in-chrome "news.ycombinator.com"]]
-;;            [:y [:open-in-chrome "youtube.com"]]
-;;            [:w [:open-in-chrome "twitch.tv"]]]}
-   {:des   "Script mode"
-    :rules [:script-mode
-            ;; Generate uuid
-            [:u "$HOME/.dotfiles/bin/sdot utils uuid_code"]]}
+   ;;   {:des   "Emoji mode"
+   ;;    :rules [:emoji-mode
+   ;;            [:d [:paste "👎"]]
+   ;;            [:g [:paste "😬"]]
+   ;;            [:l [:paste "😂"]]
+   ;;            [:p [:paste "➕"]]
+   ;;            [:s [:paste "👍"]]
+   ;;            [:v [:paste "✅"]]]}
+   ;;
+   ;;   {:des   "Open apps mode"
+   ;;    :rules [:open-mode
+   ;;            [:c [:open-app "Google Chrome Beta"]]
+   ;;            [:e [:open-app "Telegram"]]
+   ;;            [:i [:open-app "Intellij Idea"]]
+   ;;            [:n [:open-app "Notion"]]
+   ;;            [:s [:open-app "Slack"]]
+   ;;            [:t [:open-app "iTerm"]]]}
+   ;;
+   ;;   {:des   "Open tabs mode"
+   ;;    :rules [:caps-mode
+   ;;            [:a [:open-in-chrome "amazon.es"]]
+   ;;            [:c [:open-in-chrome "codely.tv"]]
+   ;;            [:f [:open-in-chrome "feedly.com"]]
+   ;;            [:g [:open-in-chrome "mail.google.com"]]
+   ;;            [:p [:open-in-chrome "pro.codely.tv"]]
+   ;;            [:t [:open-in-chrome "twitter.com"]]
+   ;;            [:n [:open-in-chrome "news.ycombinator.com"]]
+   ;;            [:y [:open-in-chrome "youtube.com"]]
+   ;;            [:w [:open-in-chrome "twitch.tv"]]]}
+   ;;   {:des   "Script mode"
+   ;;    :rules [:script-mode
+   ;;            ;; Generate uuid
+   ;;            [:u "$HOME/.dotfiles/bin/sdot utils uuid_code"]]}
 
    ;; ------------ Launchers ------------
    {:des   "[launch] iTerm"
     :rules [[:!CTOspacebar "open -a 'iTerm.app'"]]}
    {:des   "[launch] IntelliJ"
     :rules [[:!CTOi [:open-app "Intellij Idea"]]]}
+   {:des   "[launch] Chrome"
+    :rules [[:!CTOc [:open-app "Google Chrome Beta"]]]}
 
    {:des   "[launch] List projects and open with intellij"
     :rules [[:!CSOi "$HOME/.dotfiles/bin/sdot utils open_project_in_intellij"]]}
@@ -105,6 +107,9 @@
     :rules [[:!CSOc "$HOME/.dotfiles/bin/sdot chrome goto"]]}
    {:des   "[launch] List all Codely Pro courses and open it on the default browser"
     :rules [[:!CSOp "$HOME/.dotfiles/bin/sdot codely open_course"]]}
+
+   {:des   "[script] Generate uuid"
+    :rules [[:!CTOu "$HOME/.dotfiles/bin/sdot utils uuid_code"]]}
 
    ;; ------------ Application specific ------------
    {:des "[chrome] Show recent tabs" :rules [:Chrome [:show-recent :!CSa]]}
