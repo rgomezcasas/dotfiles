@@ -6,6 +6,8 @@
 	<true/>
 	<key>hidemenu</key>
 	<true/>
+	<key>hideshortcuts</key>
+	<true/>
 	<key>nativedarkmode</key>
 	<true/>
 	<key>showOnScreen</key>

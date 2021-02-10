@@ -32,6 +32,7 @@ alias dc='dot docker connect'
 alias vcode='/usr/local/bin/code'
 alias vt='vim $(mktemp $TMPDIR/$(uuidgen).txt)'
 alias htop='btm'
+alias php7='/opt/homebrew/opt/php@7.4/bin/php'
 
 alias i.='(idea $PWD &>/dev/null &)'
 alias c.='(code $PWD &>/dev/null &)'
