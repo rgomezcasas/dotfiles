@@ -22,6 +22,7 @@ autoload -Uz promptinit && promptinit
 prompt ${DOTLY_THEME:-codely}
 
 source "$DOTFILES_PATH/shell/zsh/key-bindings.zsh"
+source "$DOTLY_PATH/shell/zsh/bindings/dot.zsh"
 source "$DOTLY_PATH/shell/zsh/bindings/reverse_search.zsh"
 
 # zprof

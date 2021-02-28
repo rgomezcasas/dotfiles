@@ -28,3 +28,5 @@
     ~/bin/touch: /opt/homebrew/bin/gtouch
     ~/bin/zsh: /opt/homebrew/bin/zsh
     ~/bin/node: /usr/local/bin/node
+    ~/bin/php: /opt/homebrew/opt/php@7.4/bin/php
+    ~/bin/pecl: /opt/homebrew/opt/php@7.4/bin/pecl
