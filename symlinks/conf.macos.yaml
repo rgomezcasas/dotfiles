@@ -11,8 +11,7 @@
 - link:
     /usr/local/bin/git: /opt/homebrew/bin/git
     /usr/local/bin/gpg: /opt/homebrew/bin/gpg
-    ~/.config/karabiner.edn: os/mac/karabiner-goku/karabiner.edn
-    ~/.config/karabiner: os/mac/karabiner-elements
+    ~/.config/skhd: os/mac/skhd
     ~/.dotly: os/mac/.dotly
     ~/Library/Application Support/Alfred/Alfred.alfredpreferences: os/mac/alfred
     ~/Library/Application Support/Code/User/keybindings.json: editors/code/keybindings.json
