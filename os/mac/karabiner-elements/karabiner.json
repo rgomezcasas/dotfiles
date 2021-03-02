@@ -63,7 +63,7 @@
             }
           },
           "to" : [ {
-            "shell_command" : "$HOME/.dotfiles/bin/sdot mac paste_text \"ñ\""
+            "shell_command" : "$HOME/.dotfiles/bin/sdot mac type \"ñ\""
           } ],
           "type" : "basic"
         }, {
@@ -74,7 +74,7 @@
             }
           },
           "to" : [ {
-            "shell_command" : "$HOME/.dotfiles/bin/sdot mac paste_text \"Ñ\""
+            "shell_command" : "$HOME/.dotfiles/bin/sdot mac type \"Ñ\""
           } ],
           "type" : "basic"
         }, {
@@ -85,7 +85,7 @@
             }
           },
           "to" : [ {
-            "shell_command" : "$HOME/.dotfiles/bin/sdot mac paste_text \"¿\""
+            "shell_command" : "$HOME/.dotfiles/bin/sdot mac type \"¿\""
           } ],
           "type" : "basic"
         }, {
@@ -96,7 +96,7 @@
             }
           },
           "to" : [ {
-            "shell_command" : "$HOME/.dotfiles/bin/sdot mac paste_text \"¿\""
+            "shell_command" : "$HOME/.dotfiles/bin/sdot mac type \"¿\""
           } ],
           "type" : "basic"
         } ]

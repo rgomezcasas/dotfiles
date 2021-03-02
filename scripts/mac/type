@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTLY_PATH/scripts/core/_main.sh"
+
+##? Type a text
+#?? 1.0.0
+##?
+##? Usage:
+##?   type <text>
+##?
+##? Options:
+##?   -h --help       Show this screen.
+docs::parse "$@"
+
+osascript -e "tell application \"System Events\" to keystroke \"$text\""
