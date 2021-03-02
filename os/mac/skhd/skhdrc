@@ -63,8 +63,10 @@ cmd - 0x1B [
   "Keynote" : skhd -k "cmd + shift - 0x2B"
 ]
 
+
 # ------------ Remapping ------------
 alt - 0x2C : skhd -t "¿"
 alt - n : skhd -t "ñ"
 alt + shift - n : skhd -t "Ñ"
 ctrl + cmd - down:  skhd -k "ctrl + cmd - up"
+0x71: skhd -k "sound_down"
