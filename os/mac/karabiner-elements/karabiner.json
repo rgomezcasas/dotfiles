@@ -54,6 +54,21 @@
           "type" : "basic"
         } ]
       }, {
+        "description" : "[keyboard] shift + opt + cmd + ↑ as shift + opt + cmd + →",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "down_arrow",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_control" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "up_arrow",
+            "modifiers" : [ "left_command", "left_control" ]
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
         "description" : "[keyboard] Symbols // @todo: move this to a keyboard layout using ukelele",
         "manipulators" : [ {
           "from" : {
@@ -97,6 +112,31 @@
           },
           "to" : [ {
             "shell_command" : "$HOME/.dotfiles/bin/sdot mac type \"¿\""
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "[keyboard] I wanna learn typing",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "o",
+            "modifiers" : {
+              "mandatory" : [ "left_option" ]
+            }
+          },
+          "to" : [ {
+            "shell_command" : "$HOME/.dotfiles/bin/sdot mac type \"ó\""
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "a",
+            "modifiers" : {
+              "mandatory" : [ "left_option" ]
+            }
+          },
+          "to" : [ {
+            "shell_command" : "$HOME/.dotfiles/bin/sdot mac type \"á\""
           } ],
           "type" : "basic"
         } ]
@@ -179,7 +219,7 @@
             }
           },
           "to" : [ {
-            "shell_command" : "open -a 'iTerm.app'"
+            "shell_command" : "osascript -e 'tell application \"iTerm\" to activate'"
           } ],
           "type" : "basic"
         } ]
@@ -193,7 +233,7 @@
             }
           },
           "to" : [ {
-            "shell_command" : "osascript -e 'tell application \"Intellij Idea\" to activate'"
+            "shell_command" : "osascript -e 'tell application \"IntelliJ IDEA-EAP\" to activate'"
           } ],
           "type" : "basic"
         } ]
@@ -208,6 +248,20 @@
           },
           "to" : [ {
             "shell_command" : "osascript -e 'tell application \"Google Chrome Beta\" to activate'"
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "[launch] Slack",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "s",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_control", "left_option" ]
+            }
+          },
+          "to" : [ {
+            "shell_command" : "osascript -e 'tell application \"Slack\" to activate'"
           } ],
           "type" : "basic"
         } ]

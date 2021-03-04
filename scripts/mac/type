@@ -14,4 +14,5 @@ source "$DOTLY_PATH/scripts/core/_main.sh"
 ##?   -h --help       Show this screen.
 docs::parse "$@"
 
-osascript -e "tell application \"System Events\" to keystroke \"$text\""
+#osascript -e "tell application \"System Events\" to keystroke \"$text\""
+skhd -t "$text"

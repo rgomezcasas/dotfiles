@@ -43,12 +43,18 @@
     :rules [[{:pkey :button4} [{:pkey :button1} :!Ch]]]}
    {:des   "[keyboard] ctr + cmd + ↑ as ↓"
     :rules [[:!CTdown_arrow :!CTup_arrow]]}
+   {:des   "[keyboard] shift + opt + cmd + ↑ as shift + opt + cmd + →"
+    :rules [[:!CTdown_arrow :!CTup_arrow]]}
 
    {:des   "[keyboard] Symbols // @todo: move this to a keyboard layout using ukelele"
     :rules [[:!On [:type "ñ"]]
             [:!OSn [:type "Ñ"]]
             [:!Oslash [:type "¿"]]
             [:!Eslash [:type "¿"]]]}
+
+   {:des   "[keyboard] I wanna learn typing"
+    :rules [[:!Oo [:type "ó"]]
+            [:!Oa [:type "á"]]]}
 
    ;; ------------ Utils ------------
    {:des "[util] Disable Caps Locks" :rules [[:caps_lock ""]]}
@@ -96,11 +102,13 @@
 
    ;; ------------ Launchers ------------
    {:des   "[launch] iTerm"
-    :rules [[:!CTOspacebar "open -a 'iTerm.app'"]]}
+    :rules [[:!CTOspacebar [:open-app "iTerm"]]]}
    {:des   "[launch] IntelliJ"
-    :rules [[:!CTOi [:open-app "Intellij Idea"]]]}
+    :rules [[:!CTOi [:open-app "IntelliJ IDEA-EAP"]]]}
    {:des   "[launch] Chrome"
     :rules [[:!CTOc [:open-app "Google Chrome Beta"]]]}
+   {:des   "[launch] Slack"
+    :rules [[:!CTOs [:open-app "Slack"]]]}
 
    {:des   "[launch] List projects and open with intellij"
     :rules [[:!CSOi "$HOME/.dotfiles/bin/sdot utils open_project_in_intellij"]]}
