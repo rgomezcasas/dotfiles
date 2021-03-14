@@ -77,7 +77,7 @@
    ;;
    ;;   {:des   "Open apps mode"
    ;;    :rules [:open-mode
-   ;;            [:c [:open-app "Google Chrome Beta"]]
+   ;;            [:c [:open-app "Google Chrome"]]
    ;;            [:e [:open-app "Telegram"]]
    ;;            [:i [:open-app "Intellij Idea"]]
    ;;            [:n [:open-app "Notion"]]
@@ -106,7 +106,7 @@
    {:des   "[launch] IntelliJ"
     :rules [[:!CTOi [:open-app "IntelliJ IDEA-EAP"]]]}
    {:des   "[launch] Chrome"
-    :rules [[:!CTOc [:open-app "Google Chrome Beta"]]]}
+    :rules [[:!CTOc [:open-app "Google Chrome"]]]}
    {:des   "[launch] Slack"
     :rules [[:!CTOs [:open-app "Slack"]]]}
 

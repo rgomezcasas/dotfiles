@@ -247,7 +247,7 @@
             }
           },
           "to" : [ {
-            "shell_command" : "osascript -e 'tell application \"Google Chrome Beta\" to activate'"
+            "shell_command" : "osascript -e 'tell application \"Google Chrome\" to activate'"
           } ],
           "type" : "basic"
         } ]

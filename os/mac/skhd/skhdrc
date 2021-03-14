@@ -3,7 +3,7 @@
 # ------------ Launchers ------------
 lctrl + alt + cmd - space : open -a 'iTerm.app'
 lctrl + alt + cmd - i : open -a 'IntelliJ IDEA 2021.1 EAP.app'
-lctrl + alt + cmd - c : open -a 'Google Chrome Beta.app'
+lctrl + alt + cmd - c : open -a 'Google Chrome.app'
 lctrl + alt + cmd - s : open -a 'Slack.app'
 
 
@@ -15,14 +15,14 @@ lctrl + alt + cmd - u : $HOME/.dotfiles/bin/sdot utils uuid_code
 # ------------ Application specific ------------
 # Recent
 cmd - e [
-  "Google Chrome Beta" : skhd -k "cmd + shift - a"
+  "Google Chrome" : skhd -k "cmd + shift - a"
   "Slack" : skhd -k "cmd - p"
   "Notion" : skhd -k "cmd - p"
 ]
 
 # Launch terminal
 lctrl + alt + cmd - t [
-  "Google Chrome Beta" : skhd -k "cmd + alt - j"
+  "Google Chrome" : skhd -k "cmd + alt - j"
 ]
 
 # Toggle primary sidebar
@@ -50,7 +50,7 @@ alt - down [
 
 # Switch profile
 cmd - 0x35 [
-  "Google Chrome Beta" : skhd -k "cmd + shift - m"; skhd -k "return"
+  "Google Chrome" : skhd -k "cmd + shift - m"; skhd -k "return"
 ]
 
 # Zoom in

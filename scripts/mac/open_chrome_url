@@ -14,7 +14,7 @@ docs::parse "$@"
 osascript -e "
 set address to \"$1\"
 
-tell application \"Google Chrome Beta\"
+tell application \"Google Chrome\"
    activate
         if not (exists window 1) then reopen
         repeat with w in windows
