@@ -9,4 +9,4 @@ social-analyzer==0.8
 soupsieve==2.2
 termcolor==1.1.0
 tld==0.12.5
-urllib3==1.26.3
+urllib3==1.26.4
