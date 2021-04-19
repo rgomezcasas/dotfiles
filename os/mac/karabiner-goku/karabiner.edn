@@ -25,7 +25,7 @@
              :zoom-in                  {:modi :left_command :key :equal_sign}
              :zoom-out                 {:modi :left_command :key :hyphen}}
  :templates {:open-app         "osascript -e 'tell application \"%s\" to activate'"
-             :type             "$HOME/.dotfiles/bin/sdot mac type \"%s\""
+             :type             "/opt/homebrew/bin/skhd -t \"%s\""
              :paste            "$HOME/.dotfiles/bin/sdot mac paste_text \"%s\""
              :paste-and-return "$HOME/.dotfiles/bin/sdot mac paste_text \"%s\" --returning"
              :open-in-chrome   "$HOME/.dotfiles/bin/sdot mac open_chrome_url \"%s\""
@@ -45,6 +45,8 @@
     :rules [[:!CTdown_arrow :!CTup_arrow]]}
    {:des   "[keyboard] shift + opt + cmd + ↑ as shift + opt + cmd + →"
     :rules [[:!CTdown_arrow :!CTup_arrow]]}
+   {:des   "[keyboard] ctr + cmd + space as fn"
+    :rules [[:!CTspacebar :fn]]}
 
    {:des   "[keyboard] Symbols // @todo: move this to a keyboard layout using ukelele"
     :rules [[:!On [:type "ñ"]]
@@ -119,6 +121,8 @@
 
    {:des   "[script] Generate uuid"
     :rules [[:!CTOu "$HOME/.dotfiles/bin/sdot utils uuid_code"]]}
+   {:des   "[script] Size of windows test"
+    :rules [[:!CTOb "$HOME/.dotfiles/bin/sdot window move-active --right_half"]]}
 
    ;; ------------ Application specific ------------
    {:des "[chrome] Show recent tabs" :rules [:Chrome [:show-recent :!CSa]]}

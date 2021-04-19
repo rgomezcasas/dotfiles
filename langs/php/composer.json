@@ -1,8 +1,6 @@
 {
   "require": {
-    "squizlabs/php_codesniffer": "^4.0",
-    "psy/psysh": "^0.10",
-    "rector/rector": "dev-master"
+    "psy/psysh": "^0.10"
   },
   "minimum-stability": "dev"
 }

@@ -1,5 +1,6 @@
-import { Dotly }  from '../core/Dotly.ts'
+import { Dotly } from '../core/Dotly.ts'
+import { Args }  from '../core/Args.ts'
 
-await Dotly.script('name', 'documentation', ['arg'], (args: object) => {
+await Dotly.script('Documentation', async (args: Args) => {
   console.log(args)
 })
