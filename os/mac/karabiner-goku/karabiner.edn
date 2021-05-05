@@ -121,8 +121,6 @@
 
    {:des   "[script] Generate uuid"
     :rules [[:!CTOu "$HOME/.dotfiles/bin/sdot utils uuid_code"]]}
-   {:des   "[script] Size of windows test"
-    :rules [[:!CTOb "$HOME/.dotfiles/bin/sdot window move-active --right_half"]]}
 
    ;; ------------ Application specific ------------
    {:des "[chrome] Show recent tabs" :rules [:Chrome [:show-recent :!CSa]]}

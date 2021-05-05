@@ -336,20 +336,6 @@
           "type" : "basic"
         } ]
       }, {
-        "description" : "[script] Size of windows test",
-        "manipulators" : [ {
-          "from" : {
-            "key_code" : "b",
-            "modifiers" : {
-              "mandatory" : [ "left_command", "left_control", "left_option" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "$HOME/.dotfiles/bin/sdot window move-active --right_half"
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
         "description" : "[chrome] Show recent tabs",
         "manipulators" : [ {
           "from" : {
