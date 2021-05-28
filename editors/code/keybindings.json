@@ -5,6 +5,10 @@
   },
   {
     "key": "cmd+1",
+    "command": "-workbench.action.focusFirstEditorGroup"
+  },
+  {
+    "key": "cmd+1",
     "command": "workbench.action.toggleSidebarVisibility"
   },
   {
@@ -15,5 +19,15 @@
     "key": "cmd+d",
     "command": "editor.action.copyLinesDownAction",
     "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+alt+cmd+t",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
+  },
+  {
+    "key": "cmd+2",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
   }
 ]

@@ -21,6 +21,9 @@
     ~/Library/Application Support/Code/User/keybindings.json: editors/code/keybindings.json
     ~/Library/Application Support/Code/User/settings.json: editors/code/settings.json
     ~/Library/Application Support/Code/User/snippets: editors/code/snippets
+    ~/Library/Application Support/Code - Insiders/User/keybindings.json: editors/code/keybindings.json
+    ~/Library/Application Support/Code - Insiders/User/settings.json: editors/code/settings.json
+    ~/Library/Application Support/Code - Insiders/User/snippets: editors/code/snippets
     ~/Library/Preferences/com.contextsformac.Contexts.plist: os/mac/contexts/com.contextsformac.Contexts.plist
     ~/Library/Preferences/com.knollsoft.Rectangle.plist: os/mac/rectangle/com.knollsoft.Rectangle.plist
     ~/bin/bash: /opt/homebrew/bin/bash

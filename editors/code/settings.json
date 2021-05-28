@@ -1,6 +1,5 @@
 {
   "explorer.openEditors.visible": 0,
-  "terminal.external.osxExec": "iTerm.app",
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "search.useGlobalIgnoreFiles": true,
@@ -10,7 +9,8 @@
   },
   "editor.minimap.enabled": false,
   "editor.formatOnSave": true,
-  "editor.fontFamily": "Dank Mono, Hack, Menlo, Monaco, monospace",
+  "editor.fontFamily": "Dank Mono, Menlo, Monaco, 'Courier New', monospace",
+  "workbench.editor.untitled.hint": "hidden",
   "editor.fontSize": 16,
   "editor.lineHeight": 32,
   "editor.rulers": [
@@ -31,7 +31,7 @@
   "git.showPushSuccessNotification": true,
   "workbench.sideBar.location": "left",
   "workbench.editor.showTabs": false,
-  "workbench.colorTheme": "Gruvbox Dark Medium",
+  "workbench.colorTheme": "Alabaster",
   "workbench.fontAliasing": "auto",
   "editor.renderWhitespace": "all",
   "workbench.activityBar.visible": false,
@@ -41,7 +41,7 @@
       "fileMatch": [
         "ci.yml"
       ],
-      "url": "http://json.schemastore.org/github-workflow"
+      "url": "https://json.schemastore.org/github-workflow"
     }
   ],
   "[yaml]": {},
