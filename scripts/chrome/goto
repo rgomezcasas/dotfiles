@@ -55,8 +55,8 @@ function main() {
   local -r windows_num=$(echo "$selected" | rev | awk '{print $2}')
   local -r tab_num=$(echo "$selected" | rev | awk '{print $1}')
 
-#  echo "WIN $windows_num"
-#  echo "TAB $tab_num"
+  #  echo "WIN $windows_num"
+  #  echo "TAB $tab_num"
 
   setActiveTab "$windows_num" "$tab_num"
 }
