@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+"/Users/rafa.gomez/Library/Application Support/JetBrains/Toolbox/apps/IDEA-U/ch-0/212.3724.25/IntelliJ IDEA 2021.2 EAP.app.plugins/Shell Script/shellcheck" "$@"

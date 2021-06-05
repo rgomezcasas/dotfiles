@@ -47,6 +47,8 @@
     :rules [[:!CTdown_arrow :!CTup_arrow]]}
    {:des   "[keyboard] ctr + cmd + space as fn"
     :rules [[:!CTspacebar :fn]]}
+   {:des   "[keyboard] disable minimize with cmd+m"
+    :rules [[:!Cm :!CTSm]]}
 
    {:des   "[keyboard] Symbols // @todo: move this to a keyboard layout using ukelele"
     :rules [[:!On [:type "ñ"]]
