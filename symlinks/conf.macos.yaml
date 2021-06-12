@@ -12,6 +12,7 @@
     /usr/local/bin/git: /opt/homebrew/bin/git
     /usr/local/bin/gpg: /opt/homebrew/bin/gpg
     ~/.config/alacritty/alacritty.yml: os/mac/alacritty/alacritty.yml
+    ~/.config/kitty/kitty.conf: os/mac/kitty/kitty.conf
     ~/.config/karabiner.edn: os/mac/karabiner-goku/karabiner.edn
     ~/.config/karabiner: os/mac/karabiner-elements
     ~/.dotly: os/mac/.dotly
@@ -22,6 +23,7 @@
     ~/Library/Application Support/Code/User/settings.json: editors/code/settings.json
     ~/Library/Application Support/Code/User/snippets: editors/code/snippets
     ~/Library/Application Support/Code - Insiders/User/keybindings.json: editors/code/keybindings.json
+    ~/Library/Application Support/com.elgato.StreamDeck/ProfilesV2: os/mac/streamdeck/ProfilesV2
     ~/Library/Application Support/Code - Insiders/User/settings.json: editors/code/settings.json
     ~/Library/Application Support/Code - Insiders/User/snippets: editors/code/snippets
     ~/Library/Preferences/com.contextsformac.Contexts.plist: os/mac/contexts/com.contextsformac.Contexts.plist
