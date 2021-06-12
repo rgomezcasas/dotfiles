@@ -13,6 +13,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Install dependencies
+        run: git submodule update --init --recursive
+
       - name: Set needed environment variables
         run: |
           echo "DOTFILES_PATH=$PWD" >> $GITHUB_ENV
@@ -26,6 +29,9 @@ jobs:
     name: 💅 Lint
     steps:
       - uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: git submodule update --init --recursive
 
       - name: Set needed environment variables
         run: |
