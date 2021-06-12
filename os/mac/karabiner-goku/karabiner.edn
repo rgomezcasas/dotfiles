@@ -114,12 +114,8 @@
    {:des   "[launch] Slack"
     :rules [[:!CTOs [:open-app "Slack"]]]}
 
-   {:des   "[launch] List projects and open with intellij"
-    :rules [[:!CSOi "$HOME/.dotfiles/bin/sdot utils open_project_in_intellij"]]}
-   {:des   "[launch] List open tabs and focus it with Chrome"
-    :rules [[:!CSOc "$HOME/.dotfiles/bin/sdot chrome goto"]]}
-   {:des   "[launch] List all Codely Pro courses and open it on the default browser"
-    :rules [[:!CSOp "$HOME/.dotfiles/bin/sdot codely open_course"]]}
+   {:des   "[launch] dotly ui scripts"
+    :rules [[:!Tcaps_lock "$HOME/.dotfiles/bin/sdot ui show_scripts"]]}
 
    {:des   "[script] Generate uuid"
     :rules [[:!CTOu "$HOME/.dotfiles/bin/sdot utils uuid_code"]]}

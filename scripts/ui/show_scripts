@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+echo "asdasdasd" >> "$HOME/Desktop/tmp/aaa.log"
+
+set -euo pipefail
+
+source "$DOTLY_PATH/scripts/core/_main.sh"
+
+##? Show UI scripts
+#?? 1.0.0
+##?
+##? Usage:
+##?   show_scripts
+docs::parse "$@"
+
+scripts=(
+  "🚀 chrome goto"
+  "🧠 codely open_course"
+  "💻 utils open_project_in_intellij"
+)
+
+command=$(printf '%s\n' "${scripts[@]}" | choose)
+group=$(echo "$command" | awk '{print $2}')
+script=$(echo "$command" | awk '{print $3}')
+
+"$DOTLY_PATH/bin/dot" "$group" "$script"

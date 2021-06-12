@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-set -euo pipefail
-
 source "$HOME/.dotfiles/shell/bash/.bashrc"
 
 ##? dot, but without environment variables

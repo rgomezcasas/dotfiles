@@ -295,44 +295,16 @@
           "type" : "basic"
         } ]
       }, {
-        "description" : "[launch] List projects and open with intellij",
+        "description" : "[launch] dotly ui scripts",
         "manipulators" : [ {
           "from" : {
-            "key_code" : "i",
+            "key_code" : "caps_lock",
             "modifiers" : {
-              "mandatory" : [ "left_command", "left_option", "left_shift" ]
+              "mandatory" : [ "left_control" ]
             }
           },
           "to" : [ {
-            "shell_command" : "$HOME/.dotfiles/bin/sdot utils open_project_in_intellij"
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[launch] List open tabs and focus it with Chrome",
-        "manipulators" : [ {
-          "from" : {
-            "key_code" : "c",
-            "modifiers" : {
-              "mandatory" : [ "left_command", "left_option", "left_shift" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "$HOME/.dotfiles/bin/sdot chrome goto"
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[launch] List all Codely Pro courses and open it on the default browser",
-        "manipulators" : [ {
-          "from" : {
-            "key_code" : "p",
-            "modifiers" : {
-              "mandatory" : [ "left_command", "left_option", "left_shift" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "$HOME/.dotfiles/bin/sdot codely open_course"
+            "shell_command" : "$HOME/.dotfiles/bin/sdot ui show_scripts"
           } ],
           "type" : "basic"
         } ]
