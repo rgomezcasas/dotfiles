@@ -1,1 +1,1 @@
-/Users/rafa.gomez/.dotfiles/bin/sdot slack change_status --text 'No Internet' --emoji '📵'
+/Users/rafa.gomez/.dotfiles/bin/sdot slack change_status 'No Internet' '📵'
