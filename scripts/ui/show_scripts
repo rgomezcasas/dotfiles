@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-echo "asdasdasd" >> "$HOME/Desktop/tmp/aaa.log"
-
 set -euo pipefail
 
 source "$DOTLY_PATH/scripts/core/_main.sh"

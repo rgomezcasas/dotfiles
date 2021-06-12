@@ -4,11 +4,13 @@ set -euo pipefail
 
 source "$DOTLY_PATH/scripts/core/_main.sh"
 
-##? Count files recursives in the current direcory disgregated per subdirectory
+##? Count files recursive in the current directory disaggregated per subdirectory
 #?? 1.0.0
 ##?
 ##? Usage:
 ##?   count_files_recursive_per_directory
 docs::parse "$@"
 
-ls -d ./*/ | xargs -I _ sh -c "find \"_\" -type f | wc -l | xargs echo \"_\""
+dirs=$(ls -d ./*/)
+
+echo "$dirs" | xargs -I _ sh -c "find \"_\" -type f | wc -l | xargs echo \"_\""

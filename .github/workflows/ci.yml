@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  static-analysis:
+    runs-on: ubuntu-latest
+    name: 💿 Static analysis
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set needed environment variables
+        run: |
+          echo "DOTFILES_PATH=$PWD" >> $GITHUB_ENV
+          echo "DOTLY_PATH=$PWD/modules/dotly" >> $GITHUB_ENV
+
+      - name: 💿 Static analysis
+        run: bash "$DOTLY_PATH/scripts/self/static_analysis"
+
+  lint:
+    runs-on: ubuntu-latest
+    name: 💅 Lint
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set needed environment variables
+        run: |
+          echo "DOTFILES_PATH=$PWD" >> $GITHUB_ENV
+          echo "DOTLY_PATH=$PWD/modules/dotly" >> $GITHUB_ENV
+          echo "PATH=$PATH:$HOME/go/bin" >> $GITHUB_ENV
+
+      - name: 📥 Install shfmt
+        run: go get mvdan.cc/sh/v3/cmd/shfmt
+
+      - name: 💅 Lint bash files
+        run: bash "$DOTLY_PATH/scripts/self/lint"

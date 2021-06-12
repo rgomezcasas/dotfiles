@@ -16,7 +16,7 @@ source "$DOTLY_PATH/scripts/core/_main.sh"
 ##?   -t --thumb  Optimizes for thumbnail (for CodelyTV YouTube videos :)
 docs::parse "$@"
 
-original_filename=$(echo "$filename" | sed 's/\(.*\)\./\1.original./')
+# original_filename=$(echo "$filename" | sed 's/\(.*\)\./\1.original./')
 extra_options=""
 
 if $thumb; then

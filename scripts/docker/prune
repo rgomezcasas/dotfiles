@@ -11,5 +11,5 @@ source "$DOTLY_PATH/scripts/core/_main.sh"
 ##?   prune
 docs::parse "$@"
 
-docker stop $(docker ps -a -q)
+docker stop "$(docker ps -a -q)"
 yes | docker system prune -a
