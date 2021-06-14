@@ -9,7 +9,7 @@ source "$DOTFILES_PATH/scripts/codely/src/codely.sh"
 #?? 1.0.0
 ##?
 ##? Usage:
-##?   open_course
+##?   copy_course
 docs::parse "$@"
 
 courses=$(codely::list_courses)
