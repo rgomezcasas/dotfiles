@@ -3,6 +3,7 @@
 set -euo pipefail
 
 source "$DOTLY_PATH/scripts/core/_main.sh"
+source "$DOTFILES_PATH/scripts/codely/src/codely.sh"
 
 ##? Open a CodelyTV Pro Course
 #?? 1.0.0
@@ -20,11 +21,7 @@ docs::parse "$@"
 #  xargs open
 
 # choose version
-courses=$(
-  curl -s 'https://pro.codely.tv/api/private/library/resource/?page_size=50&page=1&ordering=featured&order=featured&type=course&filters%5Border%5D=featured&filters%5Btype%5D=course' |
-    jq -j '.results | .[] |.url,";", .name,"\n"' |
-    sed 's/"//g'
-)
+courses=$(codely::list_courses)
 
 selected_index=$(echo "$courses" | awk -F';' '{print $2}' | choose -i)
 

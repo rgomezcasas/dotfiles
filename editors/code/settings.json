@@ -45,5 +45,6 @@
     }
   ],
   "[yaml]": {},
-  "window.zoomLevel": 1
+  "window.zoomLevel": 1,
+  "security.workspace.trust.untrustedFiles": "open"
 }

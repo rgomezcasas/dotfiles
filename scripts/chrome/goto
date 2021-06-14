@@ -3,6 +3,7 @@
 set -euo pipefail
 
 source "$DOTLY_PATH/scripts/core/_main.sh"
+source "$DOTFILES_PATH/scripts/core/selector.sh"
 
 ##? Fuzzy search and activate Chrome tab from terminal
 ##? Based on: https://github.com/Rasukarusan/fzf-chrome-active-tab
@@ -51,7 +52,7 @@ EOF
 
 function main() {
   local -r pretty_formatted_tabs=$(getTabs)
-  local -r selected=$(echo "$pretty_formatted_tabs" | choose)
+  local -r selected=$(echo "$pretty_formatted_tabs" | selector::select)
   local -r windows_num=$(echo "$selected" | rev | awk '{print $2}')
   local -r tab_num=$(echo "$selected" | rev | awk '{print $1}')
 

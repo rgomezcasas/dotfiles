@@ -15,7 +15,6 @@ docs::parse "$@"
 
 project_root_directories=(
   "$HOME/Code/codely/"*
-  "$HOME/Code/lambdish/"*
   "$HOME/Code/rgomezcasas/"*
   "$DOTFILES_PATH"
 )

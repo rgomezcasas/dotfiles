@@ -3,6 +3,7 @@
 set -euo pipefail
 
 source "$DOTLY_PATH/scripts/core/_main.sh"
+source "$DOTFILES_PATH/scripts/core/selector.sh"
 
 ##? Show UI scripts
 #?? 1.0.0
@@ -13,11 +14,12 @@ docs::parse "$@"
 
 scripts=(
   "🚀 chrome goto"
+  "🥐 codely copy_course"
   "🧠 codely open_course"
   "💻 utils open_project_in_intellij"
 )
 
-command=$(printf '%s\n' "${scripts[@]}" | choose)
+command=$(printf '%s\n' "${scripts[@]}" | selector::select)
 group=$(echo "$command" | awk '{print $2}')
 script=$(echo "$command" | awk '{print $3}')
 
