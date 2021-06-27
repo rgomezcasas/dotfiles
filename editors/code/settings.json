@@ -34,7 +34,6 @@
   "workbench.colorTheme": "Alabaster",
   "workbench.fontAliasing": "auto",
   "editor.renderWhitespace": "all",
-  "workbench.activityBar.visible": false,
   "editor.suggestSelection": "first",
   "json.schemas": [
     {
@@ -46,5 +45,6 @@
   ],
   "[yaml]": {},
   "window.zoomLevel": 1,
-  "security.workspace.trust.untrustedFiles": "open"
+  "security.workspace.trust.untrustedFiles": "open",
+  "workbench.activityBar.visible": false
 }
