@@ -12,6 +12,7 @@ alias tmp="cd ~/Desktop/tmp"
 alias code='cd ~/Code'
 alias mines="cd ~/Code/mines"
 alias codely="cd ~/Code/codely"
+alias c="cd ~/Code/codely/codely"
 
 # Git
 alias gaa="git add -A"

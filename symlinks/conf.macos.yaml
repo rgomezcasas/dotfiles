@@ -9,25 +9,22 @@
       - ~/.hushlogin
 
 - link:
+    /opt/local/bin/dot: /opt/homebrew/bin/dot
     /usr/local/bin/git: /opt/homebrew/bin/git
     /usr/local/bin/gpg: /opt/homebrew/bin/gpg
-    ~/.config/alacritty/alacritty.yml: os/mac/alacritty/alacritty.yml
-    ~/.config/kitty/kitty.conf: os/mac/kitty/kitty.conf
     ~/.config/karabiner.edn: os/mac/karabiner-goku/karabiner.edn
     ~/.config/karabiner: os/mac/karabiner-elements
     ~/.dotly: os/mac/.dotly
     ~/.skhdrc: os/mac/skhd/.skhdrc
-    ~/.yabairc: os/mac/yabai/.yabairc
-    ~/Library/Application Support/Alfred/Alfred.alfredpreferences: os/mac/alfred
+    ~/Library/Application Support/Code - Insiders/User/keybindings.json: editors/code/keybindings.json
+    ~/Library/Application Support/Code - Insiders/User/settings.json: editors/code/settings.json
+    ~/Library/Application Support/Code - Insiders/User/snippets: editors/code/snippets
     ~/Library/Application Support/Code/User/keybindings.json: editors/code/keybindings.json
     ~/Library/Application Support/Code/User/settings.json: editors/code/settings.json
     ~/Library/Application Support/Code/User/snippets: editors/code/snippets
-    ~/Library/Application Support/Code - Insiders/User/keybindings.json: editors/code/keybindings.json
     ~/Library/Application Support/com.elgato.StreamDeck/ProfilesV2: os/mac/streamdeck/ProfilesV2
-    ~/Library/Application Support/Code - Insiders/User/settings.json: editors/code/settings.json
-    ~/Library/Application Support/Code - Insiders/User/snippets: editors/code/snippets
     ~/Library/Preferences/com.contextsformac.Contexts.plist: os/mac/contexts/com.contextsformac.Contexts.plist
-    ~/Library/Preferences/com.knollsoft.Rectangle.plist: os/mac/rectangle/com.knollsoft.Rectangle.plist
+    ~/Library/Saved Application State/com.raycast.macos.savedState: os/mac/raycast
     ~/bin/bash: /opt/homebrew/bin/bash
     ~/bin/date: /opt/homebrew/bin/gdate
     ~/bin/find: /opt/homebrew/bin/gfind

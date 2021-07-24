@@ -1,11 +1,19 @@
 # ------------------------------------------------------------------------------
 # Codely theme config
 # ------------------------------------------------------------------------------
-export CODELY_THEME_PROMPT_IN_NEW_LINE=false
 export CODELY_THEME_MODE="dark"
-export CODELY_THEME_PROMPT_IN_NEW_LINE=true
-export CODELY_THEME_PWD_MODE="home_relative" # full, short, home_relative
+export CODELY_THEME_PWD_MODE="short" # full, short, home_relative
 export CODELY_THEME_STATUS_ICON_KO="▸"
+export CODELY_THEME_PROMPT_IN_NEW_LINE=false
+
+if [[ $__CFBundleIdentifier == "com.jetbrains."* ]]; then
+  export CODELY_THEME_MINIMAL=true
+fi
+
+if [[ $__CFBundleIdentifier == "com.microsoft."* ]]; then
+  export CODELY_THEME_MINIMAL=true
+  export CODELY_THEME_MODE=light
+fi
 
 # ------------------------------------------------------------------------------
 # Languages

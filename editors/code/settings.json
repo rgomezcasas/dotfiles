@@ -31,7 +31,7 @@
   "git.showPushSuccessNotification": true,
   "workbench.sideBar.location": "left",
   "workbench.editor.showTabs": false,
-  "workbench.colorTheme": "Alabaster",
+  "workbench.colorTheme": "Codely Dark",
   "workbench.fontAliasing": "auto",
   "editor.renderWhitespace": "all",
   "editor.suggestSelection": "first",
@@ -46,5 +46,18 @@
   "[yaml]": {},
   "window.zoomLevel": 1,
   "security.workspace.trust.untrustedFiles": "open",
+  "editor.inlineSuggest.enabled": true,
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": false,
+    "plaintext": true,
+    "markdown": true
+  },
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
   "workbench.activityBar.visible": false
 }
