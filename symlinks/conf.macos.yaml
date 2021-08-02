@@ -24,7 +24,7 @@
     ~/Library/Application Support/Code/User/snippets: editors/code/snippets
     ~/Library/Application Support/com.elgato.StreamDeck/ProfilesV2: os/mac/streamdeck/ProfilesV2
     ~/Library/Preferences/com.contextsformac.Contexts.plist: os/mac/contexts/com.contextsformac.Contexts.plist
-    ~/Library/Saved Application State/com.raycast.macos.savedState: os/mac/raycast
+    ~/Library/Saved Application State/com.raycast.macos.savedState: os/mac/raycast/settings
     ~/bin/bash: /opt/homebrew/bin/bash
     ~/bin/date: /opt/homebrew/bin/gdate
     ~/bin/find: /opt/homebrew/bin/gfind

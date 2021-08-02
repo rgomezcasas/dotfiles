@@ -31,7 +31,7 @@
   "git.showPushSuccessNotification": true,
   "workbench.sideBar.location": "left",
   "workbench.editor.showTabs": false,
-  "workbench.colorTheme": "Codely Dark",
+  "workbench.colorTheme": "Atom One Light",
   "workbench.fontAliasing": "auto",
   "editor.renderWhitespace": "all",
   "editor.suggestSelection": "first",
@@ -58,6 +58,5 @@
     "**/.project": true,
     "**/.settings": true,
     "**/.factorypath": true
-  },
-  "workbench.activityBar.visible": false
+  }
 }

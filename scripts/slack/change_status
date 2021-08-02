@@ -8,20 +8,23 @@ source "$DOTLY_PATH/scripts/core/_main.sh"
 ##? To create the token you need to create an Slack App, set the permissions for your users and install-on-team
 ##?
 ##? Usage:
-##?    change_status <text> <emoji>
+##?    change_status <text> <emoji> <duration_in_seconds>
 docs::parse "$@"
 
+current_timestamp=$(date +%s)
+status_expiration=$((current_timestamp + duration_in_seconds))
+
 change_status() {
-  profile='{"status_text": "'"$1"'", "status_emoji": "'"$2"'"}'
+  profile='{"status_text": "'"$1"'", "status_emoji": "'"$2"'", "status_expiration": '$3'}'
 
   curl -X POST https://slack.com/api/users.profile.set \
     --silent \
     -H "Content-Type: application/json; charset=utf-8" \
-    -H "Authorization: Bearer $3" \
+    -H "Authorization: Bearer $4" \
     --data "{'profile':$profile}"
 }
 
-if change_status "$text" "$emoji" "$SLACK_TOKEN"; then
+if change_status "$text" "$emoji" "$status_expiration" "$SLACK_TOKEN"; then
   echo "✅ Slack status changed correctly"
 else
   echo "🚨 Slack status not changed due to an error"
