@@ -5,7 +5,8 @@
   "search.useGlobalIgnoreFiles": true,
   "files.autoSave": "onFocusChange",
   "files.associations": {
-    "Dockerfile-*": "dockerfile"
+    "Dockerfile-*": "dockerfile",
+    "*.tmpl": "html"
   },
   "editor.minimap.enabled": false,
   "editor.formatOnSave": true,
@@ -44,7 +45,7 @@
     }
   ],
   "[yaml]": {},
-  "window.zoomLevel": 1,
+  "window.zoomLevel": 2,
   "security.workspace.trust.untrustedFiles": "open",
   "editor.inlineSuggest.enabled": true,
   "github.copilot.enable": {

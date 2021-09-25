@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTLY_PATH/scripts/core/_main.sh"
+
+##? Backup the backup drive to another
+#?? 1.0.0
+##?
+##? Usage:
+##?   sync_redundancy_backup_disk
+docs::parse "$@"
+
+rsync -rauhP \
+  --exclude=".Spotlight-V100" \
+  --exclude=".Trashes" \
+  --exclude=".DocumentRevisions-V100" \
+  --exclude=".TemporaryItems" \
+  --exclude=".DS_Store" \
+  --exclude=".fseventsd" \
+  --delete \
+  /Volumes/Backup/ /Volumes/Redundancy

@@ -1,1596 +1,2420 @@
 {
-  "global" : {
-    "check_for_updates_on_startup" : true,
-    "show_in_menu_bar" : false,
-    "show_profile_name_in_menu_bar" : false
-  },
-  "profiles" : [ {
-    "complex_modifications" : {
-      "parameters" : {
-        "basic.simultaneous_threshold_milliseconds" : 100,
-        "basic.to_delayed_action_delay_milliseconds" : 200,
-        "basic.to_if_alone_timeout_milliseconds" : 20,
-        "basic.to_if_held_down_threshold_milliseconds" : 100
-      },
-      "rules" : [ {
-        "description" : "[mouse] Up key -> Restore last hidden",
-        "manipulators" : [ {
-          "from" : {
-            "pointing_button" : "button5"
-          },
-          "to" : [ {
-            "key_code" : "tab",
-            "modifiers" : [ "left_command" ]
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[mouse] Down key -> Hide",
-        "manipulators" : [ {
-          "from" : {
-            "pointing_button" : "button4"
-          },
-          "to" : [ {
-            "pointing_button" : "button1"
-          }, {
-            "key_code" : "h",
-            "modifiers" : [ "left_command" ]
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[keyboard] ctr + cmd + ↑ as ↓",
-        "manipulators" : [ {
-          "from" : {
-            "key_code" : "down_arrow",
-            "modifiers" : {
-              "mandatory" : [ "left_command", "left_control" ]
-            }
-          },
-          "to" : [ {
-            "key_code" : "up_arrow",
-            "modifiers" : [ "left_command", "left_control" ]
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[keyboard] shift + opt + cmd + ↑ as shift + opt + cmd + →",
-        "manipulators" : [ {
-          "from" : {
-            "key_code" : "down_arrow",
-            "modifiers" : {
-              "mandatory" : [ "left_command", "left_control" ]
-            }
-          },
-          "to" : [ {
-            "key_code" : "up_arrow",
-            "modifiers" : [ "left_command", "left_control" ]
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[keyboard] ctr + cmd + space as fn",
-        "manipulators" : [ {
-          "from" : {
-            "key_code" : "spacebar",
-            "modifiers" : {
-              "mandatory" : [ "left_command", "left_control" ]
-            }
-          },
-          "to" : [ {
-            "key_code" : "fn"
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[keyboard] disable minimize with cmd+m",
-        "manipulators" : [ {
-          "from" : {
-            "key_code" : "m",
-            "modifiers" : {
-              "mandatory" : [ "left_command" ]
-            }
-          },
-          "to" : [ {
-            "key_code" : "m",
-            "modifiers" : [ "left_command", "left_control", "left_shift" ]
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[keyboard] Symbols // @todo: move this to a keyboard layout using ukelele",
-        "manipulators" : [ {
-          "from" : {
-            "key_code" : "n",
-            "modifiers" : {
-              "mandatory" : [ "left_option" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "/opt/homebrew/bin/skhd -t \"ñ\""
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "key_code" : "n",
-            "modifiers" : {
-              "mandatory" : [ "left_option", "left_shift" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "/opt/homebrew/bin/skhd -t \"Ñ\""
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "key_code" : "slash",
-            "modifiers" : {
-              "mandatory" : [ "left_option" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "/opt/homebrew/bin/skhd -t \"¿\""
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "key_code" : "slash",
-            "modifiers" : {
-              "mandatory" : [ "right_option" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "/opt/homebrew/bin/skhd -t \"¿\""
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[keyboard] I wanna learn typing",
-        "manipulators" : [ {
-          "from" : {
-            "key_code" : "o",
-            "modifiers" : {
-              "mandatory" : [ "left_option" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "/opt/homebrew/bin/skhd -t \"ó\""
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "key_code" : "a",
-            "modifiers" : {
-              "mandatory" : [ "left_option" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "/opt/homebrew/bin/skhd -t \"á\""
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[util] Disable Caps Locks",
-        "manipulators" : [ {
-          "from" : {
-            "key_code" : "caps_lock"
-          },
-          "to" : [ {
-            "shell_command" : ""
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[util] Extend selection",
-        "manipulators" : [ {
-          "from" : {
-            "modifiers" : {
-              "mandatory" : [ "left_option" ]
-            },
-            "key_code" : "up_arrow"
-          },
-          "to" : [ {
-            "key_code" : "left_arrow",
-            "modifiers" : [ "left_option" ]
-          }, {
-            "key_code" : "right_arrow",
-            "modifiers" : [ "left_option", "left_shift" ]
-          } ],
-          "conditions" : [ {
-            "type" : "frontmost_application_unless",
-            "bundle_identifiers" : [ "com.jetbrains.intellij" ]
-          }, {
-            "type" : "frontmost_application_unless",
-            "bundle_identifiers" : [ "notion.id" ]
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[util] Delete line",
-        "manipulators" : [ {
-          "from" : {
-            "modifiers" : {
-              "mandatory" : [ "left_command" ]
-            },
-            "key_code" : "delete_or_backspace"
-          },
-          "to" : [ {
-            "key_code" : "right_arrow",
-            "modifiers" : [ "left_command" ]
-          }, {
-            "key_code" : "delete_or_backspace",
-            "modifiers" : [ "left_command" ]
-          }, {
-            "key_code" : "delete_or_backspace"
-          } ],
-          "conditions" : [ {
-            "type" : "frontmost_application_unless",
-            "bundle_identifiers" : [ "com.jetbrains.intellij" ]
-          }, {
-            "type" : "frontmost_application_unless",
-            "bundle_identifiers" : [ "notion.id" ]
-          }, {
-            "type" : "frontmost_application_unless",
-            "bundle_identifiers" : [ "com.apple.finder" ]
-          }, {
-            "type" : "frontmost_application_unless",
-            "bundle_identifiers" : [ "com.contextsformac.Contexts" ]
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[launch] iTerm",
-        "manipulators" : [ {
-          "from" : {
-            "key_code" : "spacebar",
-            "modifiers" : {
-              "mandatory" : [ "left_command", "left_control", "left_option" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "osascript -e 'tell application \"iTerm\" to activate'"
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[launch] IntelliJ",
-        "manipulators" : [ {
-          "from" : {
-            "key_code" : "i",
-            "modifiers" : {
-              "mandatory" : [ "left_command", "left_control", "left_option" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "osascript -e 'tell application \"IntelliJ IDEA-EAP\" to activate'"
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[launch] Chrome",
-        "manipulators" : [ {
-          "from" : {
-            "key_code" : "c",
-            "modifiers" : {
-              "mandatory" : [ "left_command", "left_control", "left_option" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "osascript -e 'tell application \"Google Chrome\" to activate'"
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[launch] Slack",
-        "manipulators" : [ {
-          "from" : {
-            "key_code" : "s",
-            "modifiers" : {
-              "mandatory" : [ "left_command", "left_control", "left_option" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "osascript -e 'tell application \"Slack\" to activate'"
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[launch] dotly ui scripts",
-        "manipulators" : [ {
-          "from" : {
-            "key_code" : "caps_lock",
-            "modifiers" : {
-              "mandatory" : [ "left_control" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "$HOME/.dotfiles/bin/sdot ui show_scripts"
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[script] Generate uuid",
-        "manipulators" : [ {
-          "from" : {
-            "key_code" : "u",
-            "modifiers" : {
-              "mandatory" : [ "left_command", "left_control", "left_option" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "$HOME/.dotfiles/bin/sdot utils uuid_code"
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[chrome] Show recent tabs",
-        "manipulators" : [ {
-          "from" : {
-            "modifiers" : {
-              "mandatory" : [ "left_command" ]
-            },
-            "key_code" : "e"
-          },
-          "to" : [ {
-            "key_code" : "a",
-            "modifiers" : [ "left_command", "left_shift" ]
-          } ],
-          "conditions" : [ {
-            "type" : "frontmost_application_if",
-            "bundle_identifiers" : [ "com.google.Chrome", "com.google.Chrome.beta" ]
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[chrome] Inspect element",
-        "manipulators" : [ {
-          "from" : {
-            "key_code" : "i",
-            "modifiers" : {
-              "mandatory" : [ "left_command", "left_shift" ]
-            }
-          },
-          "to" : [ {
-            "key_code" : "c",
-            "modifiers" : [ "left_command", "left_shift" ]
-          } ],
-          "conditions" : [ {
-            "type" : "frontmost_application_if",
-            "bundle_identifiers" : [ "com.google.Chrome", "com.google.Chrome.beta" ]
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[chrome] Toggle console",
-        "manipulators" : [ {
-          "from" : {
-            "key_code" : "t",
-            "modifiers" : {
-              "mandatory" : [ "left_command", "left_control", "left_option" ]
-            }
-          },
-          "to" : [ {
-            "key_code" : "j",
-            "modifiers" : [ "left_command", "left_option" ]
-          } ],
-          "conditions" : [ {
-            "type" : "frontmost_application_if",
-            "bundle_identifiers" : [ "com.google.Chrome", "com.google.Chrome.beta" ]
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[chrome] Switch profile",
-        "manipulators" : [ {
-          "from" : {
-            "modifiers" : {
-              "mandatory" : [ "left_command" ]
-            },
-            "key_code" : "caps_lock"
-          },
-          "to" : [ {
-            "key_code" : "m",
-            "modifiers" : [ "left_command", "left_shift" ]
-          }, {
-            "key_code" : "return_or_enter"
-          } ],
-          "conditions" : [ {
-            "type" : "frontmost_application_if",
-            "bundle_identifiers" : [ "com.google.Chrome", "com.google.Chrome.beta" ]
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[slack] Navigate between channels",
-        "manipulators" : [ {
-          "from" : {
-            "key_code" : "p",
-            "modifiers" : {
-              "mandatory" : [ "left_command" ]
-            }
-          },
-          "to" : [ {
-            "key_code" : "k",
-            "modifiers" : [ "left_command" ]
-          } ],
-          "conditions" : [ {
-            "type" : "frontmost_application_if",
-            "bundle_identifiers" : [ "com.tinyspeck.slackmacgap" ]
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "key_code" : "e",
-            "modifiers" : {
-              "mandatory" : [ "left_command" ]
-            }
-          },
-          "to" : [ {
-            "key_code" : "k",
-            "modifiers" : [ "left_command" ]
-          } ],
-          "conditions" : [ {
-            "type" : "frontmost_application_if",
-            "bundle_identifiers" : [ "com.tinyspeck.slackmacgap" ]
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[slack] Toggle sidebars",
-        "manipulators" : [ {
-          "from" : {
-            "modifiers" : {
-              "mandatory" : [ "left_command" ]
-            },
-            "key_code" : "1"
-          },
-          "to" : [ {
-            "key_code" : "d",
-            "modifiers" : [ "left_command", "left_shift" ]
-          } ],
-          "conditions" : [ {
-            "type" : "frontmost_application_if",
-            "bundle_identifiers" : [ "com.tinyspeck.slackmacgap" ]
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "modifiers" : {
-              "mandatory" : [ "left_command" ]
-            },
-            "key_code" : "2"
-          },
-          "to" : [ {
-            "key_code" : "period",
-            "modifiers" : [ "left_command" ]
-          } ],
-          "conditions" : [ {
-            "type" : "frontmost_application_if",
-            "bundle_identifiers" : [ "com.tinyspeck.slackmacgap" ]
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[slack] Move between workspaces",
-        "manipulators" : [ {
-          "from" : {
-            "key_code" : "1",
-            "modifiers" : {
-              "mandatory" : [ "left_option" ]
-            }
-          },
-          "to" : [ {
-            "key_code" : "1",
-            "modifiers" : [ "left_command" ]
-          } ],
-          "conditions" : [ {
-            "type" : "frontmost_application_if",
-            "bundle_identifiers" : [ "com.tinyspeck.slackmacgap" ]
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "key_code" : "2",
-            "modifiers" : {
-              "mandatory" : [ "left_option" ]
-            }
-          },
-          "to" : [ {
-            "key_code" : "2",
-            "modifiers" : [ "left_command" ]
-          } ],
-          "conditions" : [ {
-            "type" : "frontmost_application_if",
-            "bundle_identifiers" : [ "com.tinyspeck.slackmacgap" ]
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "key_code" : "3",
-            "modifiers" : {
-              "mandatory" : [ "left_option" ]
-            }
-          },
-          "to" : [ {
-            "key_code" : "3",
-            "modifiers" : [ "left_command" ]
-          } ],
-          "conditions" : [ {
-            "type" : "frontmost_application_if",
-            "bundle_identifiers" : [ "com.tinyspeck.slackmacgap" ]
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[slack] Reactions",
-        "manipulators" : [ {
-          "from" : {
-            "key_code" : "v",
-            "modifiers" : {
-              "mandatory" : [ "left_command", "left_option" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "$HOME/.dotfiles/bin/sdot mac paste_text \"+:white_check_mark:\" --returning"
-          } ],
-          "conditions" : [ {
-            "type" : "frontmost_application_if",
-            "bundle_identifiers" : [ "com.tinyspeck.slackmacgap" ]
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "key_code" : "s",
-            "modifiers" : {
-              "mandatory" : [ "left_command", "left_option" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "$HOME/.dotfiles/bin/sdot mac paste_text \"+:thumbsup:\" --returning"
-          } ],
-          "conditions" : [ {
-            "type" : "frontmost_application_if",
-            "bundle_identifiers" : [ "com.tinyspeck.slackmacgap" ]
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "key_code" : "d",
-            "modifiers" : {
-              "mandatory" : [ "left_command", "left_option" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "$HOME/.dotfiles/bin/sdot mac paste_text \"+:thumbsdown:\" --returning"
-          } ],
-          "conditions" : [ {
-            "type" : "frontmost_application_if",
-            "bundle_identifiers" : [ "com.tinyspeck.slackmacgap" ]
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "key_code" : "p",
-            "modifiers" : {
-              "mandatory" : [ "left_command", "left_option" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "$HOME/.dotfiles/bin/sdot mac paste_text \"+:heavy_plus_sign:\" --returning"
-          } ],
-          "conditions" : [ {
-            "type" : "frontmost_application_if",
-            "bundle_identifiers" : [ "com.tinyspeck.slackmacgap" ]
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "key_code" : "g",
-            "modifiers" : {
-              "mandatory" : [ "left_command", "left_option" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "$HOME/.dotfiles/bin/sdot mac paste_text \"+:grimacing:\" --returning"
-          } ],
-          "conditions" : [ {
-            "type" : "frontmost_application_if",
-            "bundle_identifiers" : [ "com.tinyspeck.slackmacgap" ]
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "key_code" : "l",
-            "modifiers" : {
-              "mandatory" : [ "left_command", "left_option" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "$HOME/.dotfiles/bin/sdot mac paste_text \"+:joy:\" --returning"
-          } ],
-          "conditions" : [ {
-            "type" : "frontmost_application_if",
-            "bundle_identifiers" : [ "com.tinyspeck.slackmacgap" ]
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[notion] Show recent pages",
-        "manipulators" : [ {
-          "from" : {
-            "modifiers" : {
-              "mandatory" : [ "left_command" ]
-            },
-            "key_code" : "e"
-          },
-          "to" : [ {
-            "key_code" : "p",
-            "modifiers" : [ "left_command" ]
-          } ],
-          "conditions" : [ {
-            "type" : "frontmost_application_if",
-            "bundle_identifiers" : [ "notion.id" ]
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[notion] Toggle sidebar",
-        "manipulators" : [ {
-          "from" : {
-            "modifiers" : {
-              "mandatory" : [ "left_command" ]
-            },
-            "key_code" : "1"
-          },
-          "to" : [ {
-            "key_code" : "backslash",
-            "modifiers" : [ "left_command" ]
-          } ],
-          "conditions" : [ {
-            "type" : "frontmost_application_if",
-            "bundle_identifiers" : [ "notion.id" ]
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[notion] Extend selection",
-        "manipulators" : [ {
-          "from" : {
-            "modifiers" : {
-              "mandatory" : [ "left_option" ]
-            },
-            "key_code" : "up_arrow"
-          },
-          "to" : [ {
-            "key_code" : "up_arrow",
-            "modifiers" : [ "left_shift" ]
-          } ],
-          "conditions" : [ {
-            "type" : "frontmost_application_if",
-            "bundle_identifiers" : [ "notion.id" ]
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "modifiers" : {
-              "mandatory" : [ "left_option" ]
-            },
-            "key_code" : "down_arrow"
-          },
-          "to" : [ {
-            "key_code" : "down_arrow",
-            "modifiers" : [ "left_shift" ]
-          } ],
-          "conditions" : [ {
-            "type" : "frontmost_application_if",
-            "bundle_identifiers" : [ "notion.id" ]
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[keynote] Zoom in/out",
-        "manipulators" : [ {
-          "from" : {
-            "modifiers" : {
-              "mandatory" : [ "left_command" ]
-            },
-            "key_code" : "equal_sign"
-          },
-          "to" : [ {
-            "key_code" : "period",
-            "modifiers" : [ "left_command", "left_shift" ]
-          } ],
-          "conditions" : [ {
-            "type" : "frontmost_application_if",
-            "bundle_identifiers" : [ "com.apple.iWork.Keynote" ]
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "modifiers" : {
-              "mandatory" : [ "left_command" ]
-            },
-            "key_code" : "hyphen"
-          },
-          "to" : [ {
-            "key_code" : "comma",
-            "modifiers" : [ "left_command", "left_shift" ]
-          } ],
-          "conditions" : [ {
-            "type" : "frontmost_application_if",
-            "bundle_identifiers" : [ "com.apple.iWork.Keynote" ]
-          } ],
-          "type" : "basic"
-        } ]
-      } ]
+    "global": {
+        "check_for_updates_on_startup": true,
+        "show_in_menu_bar": false,
+        "show_profile_name_in_menu_bar": false
     },
-    "devices" : [ {
-      "disable_built_in_keyboard_if_exists" : false,
-      "fn_function_keys" : [ {
-        "from" : {
-          "key_code" : "f1"
-        },
-        "to" : [ {
-          "key_code" : "f1"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "f2"
-        },
-        "to" : [ {
-          "key_code" : "f2"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "f3"
-        },
-        "to" : [ {
-          "key_code" : "f3"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "f4"
-        },
-        "to" : [ {
-          "key_code" : "f4"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "f5"
-        },
-        "to" : [ {
-          "key_code" : "f5"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "f6"
-        },
-        "to" : [ {
-          "key_code" : "f6"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "f7"
-        },
-        "to" : [ {
-          "key_code" : "f7"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "f8"
-        },
-        "to" : [ {
-          "key_code" : "f8"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "f9"
-        },
-        "to" : [ {
-          "consumer_key_code" : "rewind"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "f10"
-        },
-        "to" : [ {
-          "consumer_key_code" : "fastforward"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "f11"
-        },
-        "to" : [ {
-          "consumer_key_code" : "volume_decrement"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "f12"
-        },
-        "to" : [ {
-          "consumer_key_code" : "volume_increment"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "f13"
-        },
-        "to" : [ {
-          "key_code" : "eject"
-        } ]
-      } ],
-      "identifiers" : {
-        "is_keyboard" : true,
-        "is_pointing_device" : false,
-        "product_id" : 41165,
-        "vendor_id" : 1241
-      },
-      "ignore" : false,
-      "manipulate_caps_lock_led" : false,
-      "simple_modifications" : [ {
-        "from" : {
-          "key_code" : "application"
-        },
-        "to" : [ {
-          "key_code" : "right_option"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "grave_accent_and_tilde"
-        },
-        "to" : [ {
-          "key_code" : "non_us_backslash"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "left_command"
-        },
-        "to" : [ {
-          "key_code" : "left_option"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "left_option"
-        },
-        "to" : [ {
-          "key_code" : "left_command"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "non_us_backslash"
-        },
-        "to" : [ {
-          "key_code" : "grave_accent_and_tilde"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "right_option"
-        },
-        "to" : [ {
-          "key_code" : "right_command"
-        } ]
-      } ]
-    }, {
-      "disable_built_in_keyboard_if_exists" : false,
-      "fn_function_keys" : [ {
-        "from" : {
-          "key_code" : "f1"
-        },
-        "to" : [ {
-          "key_code" : "f1"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "f2"
-        },
-        "to" : [ {
-          "key_code" : "f2"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "f3"
-        },
-        "to" : [ {
-          "key_code" : "f3"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "f4"
-        },
-        "to" : [ {
-          "key_code" : "f4"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "f5"
-        },
-        "to" : [ {
-          "key_code" : "f5"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "f6"
-        },
-        "to" : [ {
-          "key_code" : "f6"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "f7"
-        },
-        "to" : [ {
-          "key_code" : "f7"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "f8"
-        },
-        "to" : [ {
-          "key_code" : "f8"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "f9"
-        },
-        "to" : [ {
-          "consumer_key_code" : "rewind"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "f10"
-        },
-        "to" : [ {
-          "consumer_key_code" : "fastforward"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "f11"
-        },
-        "to" : [ {
-          "consumer_key_code" : "volume_decrement"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "f12"
-        },
-        "to" : [ {
-          "consumer_key_code" : "volume_increment"
-        } ]
-      } ],
-      "identifiers" : {
-        "is_keyboard" : true,
-        "is_pointing_device" : false,
-        "product_id" : 4102,
-        "vendor_id" : 9610
-      },
-      "ignore" : false,
-      "manipulate_caps_lock_led" : false,
-      "simple_modifications" : [ {
-        "from" : {
-          "key_code" : "application"
-        },
-        "to" : [ {
-          "key_code" : "right_option"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "f13"
-        },
-        "to" : [ {
-          "consumer_key_code" : "play_or_pause"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "grave_accent_and_tilde"
-        },
-        "to" : [ {
-          "key_code" : "non_us_backslash"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "non_us_backslash"
-        },
-        "to" : [ {
-          "key_code" : "grave_accent_and_tilde"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "right_option"
-        },
-        "to" : [ {
-          "key_code" : "right_command"
-        } ]
-      } ]
-    }, {
-      "disable_built_in_keyboard_if_exists" : false,
-      "fn_function_keys" : [ ],
-      "identifiers" : {
-        "is_keyboard" : true,
-        "is_pointing_device" : false,
-        "product_id" : 627,
-        "vendor_id" : 1452
-      },
-      "ignore" : false,
-      "manipulate_caps_lock_led" : true,
-      "simple_modifications" : [ ]
-    }, {
-      "disable_built_in_keyboard_if_exists" : false,
-      "fn_function_keys" : [ ],
-      "identifiers" : {
-        "is_keyboard" : false,
-        "is_pointing_device" : true,
-        "product_id" : 4119,
-        "vendor_id" : 4809
-      },
-      "ignore" : false,
-      "manipulate_caps_lock_led" : false,
-      "simple_modifications" : [ ]
-    }, {
-      "disable_built_in_keyboard_if_exists" : false,
-      "fn_function_keys" : [ ],
-      "identifiers" : {
-        "is_keyboard" : true,
-        "is_pointing_device" : false,
-        "product_id" : 4119,
-        "vendor_id" : 4809
-      },
-      "ignore" : true,
-      "manipulate_caps_lock_led" : false,
-      "simple_modifications" : [ ]
-    }, {
-      "disable_built_in_keyboard_if_exists" : false,
-      "fn_function_keys" : [ ],
-      "identifiers" : {
-        "is_keyboard" : true,
-        "is_pointing_device" : false,
-        "product_id" : 16641,
-        "vendor_id" : 9585
-      },
-      "ignore" : false,
-      "manipulate_caps_lock_led" : false,
-      "simple_modifications" : [ ]
-    }, {
-      "disable_built_in_keyboard_if_exists" : false,
-      "fn_function_keys" : [ ],
-      "identifiers" : {
-        "is_keyboard" : false,
-        "is_pointing_device" : true,
-        "product_id" : 5,
-        "vendor_id" : 7511
-      },
-      "ignore" : false,
-      "manipulate_caps_lock_led" : false,
-      "simple_modifications" : [ ]
-    }, {
-      "disable_built_in_keyboard_if_exists" : false,
-      "fn_function_keys" : [ ],
-      "identifiers" : {
-        "is_keyboard" : true,
-        "is_pointing_device" : false,
-        "product_id" : 592,
-        "vendor_id" : 1452
-      },
-      "ignore" : false,
-      "manipulate_caps_lock_led" : true,
-      "simple_modifications" : [ {
-        "from" : {
-          "key_code" : "grave_accent_and_tilde"
-        },
-        "to" : [ {
-          "key_code" : "non_us_backslash"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "non_us_backslash"
-        },
-        "to" : [ {
-          "key_code" : "grave_accent_and_tilde"
-        } ]
-      } ]
-    }, {
-      "disable_built_in_keyboard_if_exists" : false,
-      "fn_function_keys" : [ {
-        "from" : {
-          "key_code" : "f6"
-        },
-        "to" : [ {
-          "consumer_key_code" : "play_or_pause"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "f7"
-        },
-        "to" : [ {
-          "key_code" : "f7"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "f8"
-        },
-        "to" : [ {
-          "key_code" : "f8"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "f9"
-        },
-        "to" : [ {
-          "consumer_key_code" : "rewind"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "f10"
-        },
-        "to" : [ {
-          "consumer_key_code" : "fastforward"
-        } ]
-      } ],
-      "identifiers" : {
-        "is_keyboard" : true,
-        "is_pointing_device" : false,
-        "product_id" : 17,
-        "vendor_id" : 1130
-      },
-      "ignore" : false,
-      "manipulate_caps_lock_led" : false,
-      "simple_modifications" : [ {
-        "from" : {
-          "key_code" : "application"
-        },
-        "to" : [ {
-          "key_code" : "fn"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "grave_accent_and_tilde"
-        },
-        "to" : [ {
-          "key_code" : "non_us_backslash"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "left_alt"
-        },
-        "to" : [ {
-          "key_code" : "left_gui"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "left_gui"
-        },
-        "to" : [ {
-          "key_code" : "left_alt"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "non_us_backslash"
-        },
-        "to" : [ {
-          "key_code" : "grave_accent_and_tilde"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "right_alt"
-        },
-        "to" : [ {
-          "key_code" : "right_command"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "right_gui"
-        },
-        "to" : [ {
-          "key_code" : "right_alt"
-        } ]
-      } ]
-    }, {
-      "disable_built_in_keyboard_if_exists" : false,
-      "fn_function_keys" : [ ],
-      "identifiers" : {
-        "is_keyboard" : true,
-        "is_pointing_device" : false,
-        "product_id" : 42,
-        "vendor_id" : 9610
-      },
-      "ignore" : false,
-      "manipulate_caps_lock_led" : false,
-      "simple_modifications" : [ {
-        "from" : {
-          "key_code" : "f5"
-        },
-        "to" : [ {
-          "consumer_key_code" : "play_or_pause"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "f9"
-        },
-        "to" : [ {
-          "consumer_key_code" : "scan_previous_track"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "f10"
-        },
-        "to" : [ {
-          "consumer_key_code" : "scan_next_track"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "f11"
-        },
-        "to" : [ {
-          "consumer_key_code" : "volume_decrement"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "f12"
-        },
-        "to" : [ {
-          "consumer_key_code" : "volume_increment"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "left_alt"
-        },
-        "to" : [ {
-          "key_code" : "left_command"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "left_gui"
-        },
-        "to" : [ {
-          "key_code" : "left_option"
-        } ]
-      } ]
-    }, {
-      "disable_built_in_keyboard_if_exists" : false,
-      "fn_function_keys" : [ ],
-      "identifiers" : {
-        "is_keyboard" : false,
-        "is_pointing_device" : true,
-        "product_id" : 92,
-        "vendor_id" : 5426
-      },
-      "ignore" : false,
-      "manipulate_caps_lock_led" : false,
-      "simple_modifications" : [ ]
-    }, {
-      "disable_built_in_keyboard_if_exists" : false,
-      "fn_function_keys" : [ ],
-      "identifiers" : {
-        "is_keyboard" : true,
-        "is_pointing_device" : false,
-        "product_id" : 630,
-        "vendor_id" : 1452
-      },
-      "ignore" : false,
-      "manipulate_caps_lock_led" : true,
-      "simple_modifications" : [ {
-        "from" : {
-          "key_code" : "caps_lock"
-        },
-        "to" : [ {
-          "key_code" : "left_shift"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "grave_accent_and_tilde"
-        },
-        "to" : [ {
-          "key_code" : "non_us_backslash"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "non_us_backslash"
-        },
-        "to" : [ {
-          "key_code" : "grave_accent_and_tilde"
-        } ]
-      } ]
-    }, {
-      "disable_built_in_keyboard_if_exists" : false,
-      "fn_function_keys" : [ ],
-      "identifiers" : {
-        "is_keyboard" : true,
-        "is_pointing_device" : false,
-        "product_id" : 30333,
-        "vendor_id" : 3141
-      },
-      "ignore" : false,
-      "manipulate_caps_lock_led" : false,
-      "simple_modifications" : [ {
-        "from" : {
-          "key_code" : "end"
-        },
-        "to" : [ {
-          "key_code" : "up_arrow"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "f10"
-        },
-        "to" : [ {
-          "key_code" : "rewind"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "f11"
-        },
-        "to" : [ {
-          "key_code" : "play_or_pause"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "f12"
-        },
-        "to" : [ {
-          "key_code" : "fastforward"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "home"
-        },
-        "to" : [ {
-          "key_code" : "delete_or_backspace"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "left_command"
-        },
-        "to" : [ {
-          "key_code" : "left_option"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "left_option"
-        },
-        "to" : [ {
-          "key_code" : "left_command"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "page_down"
-        },
-        "to" : [ {
-          "key_code" : "return_or_enter"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "page_up"
-        },
-        "to" : [ {
-          "key_code" : "backslash"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "pause"
-        },
-        "to" : [ {
-          "key_code" : "volume_increment"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "print_screen"
-        },
-        "to" : [ {
-          "key_code" : "volume_decrement"
-        } ]
-      } ]
-    }, {
-      "disable_built_in_keyboard_if_exists" : false,
-      "fn_function_keys" : [ ],
-      "identifiers" : {
-        "is_keyboard" : true,
-        "is_pointing_device" : false,
-        "product_id" : 92,
-        "vendor_id" : 5426
-      },
-      "ignore" : false,
-      "manipulate_caps_lock_led" : false,
-      "simple_modifications" : [ ]
-    }, {
-      "disable_built_in_keyboard_if_exists" : false,
-      "fn_function_keys" : [ ],
-      "identifiers" : {
-        "is_keyboard" : true,
-        "is_pointing_device" : false,
-        "product_id" : 598,
-        "vendor_id" : 1452
-      },
-      "ignore" : false,
-      "manipulate_caps_lock_led" : true,
-      "simple_modifications" : [ {
-        "from" : {
-          "key_code" : "grave_accent_and_tilde"
-        },
-        "to" : [ {
-          "key_code" : "non_us_backslash"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "non_us_backslash"
-        },
-        "to" : [ {
-          "key_code" : "grave_accent_and_tilde"
-        } ]
-      } ]
-    }, {
-      "disable_built_in_keyboard_if_exists" : false,
-      "fn_function_keys" : [ ],
-      "identifiers" : {
-        "is_keyboard" : true,
-        "is_pointing_device" : true,
-        "product_id" : 6974,
-        "vendor_id" : 6940
-      },
-      "ignore" : false,
-      "manipulate_caps_lock_led" : false,
-      "simple_modifications" : [ {
-        "from" : {
-          "key_code" : "6"
-        },
-        "to" : [ {
-          "key_code" : "left_shift"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "equal_sign"
-        },
-        "to" : [ {
-          "pointing_button" : "button4"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "hyphen"
-        },
-        "to" : [ {
-          "pointing_button" : "button5"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "f"
-        },
-        "to" : [ {
-          "pointing_button" : "button4"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "e"
-        },
-        "to" : [ {
-          "pointing_button" : "button5"
-        } ]
-      } ]
-    }, {
-      "disable_built_in_keyboard_if_exists" : false,
-      "fn_function_keys" : [ ],
-      "identifiers" : {
-        "is_keyboard" : true,
-        "is_pointing_device" : false,
-        "product_id" : 34304,
-        "vendor_id" : 1452
-      },
-      "ignore" : false,
-      "manipulate_caps_lock_led" : true,
-      "simple_modifications" : [ ]
-    }, {
-      "disable_built_in_keyboard_if_exists" : false,
-      "fn_function_keys" : [ ],
-      "identifiers" : {
-        "is_keyboard" : true,
-        "is_pointing_device" : false,
-        "product_id" : 833,
-        "vendor_id" : 1452
-      },
-      "ignore" : false,
-      "manipulate_caps_lock_led" : true,
-      "simple_modifications" : [ {
-        "from" : {
-          "key_code" : "lang5"
-        },
-        "to" : [ {
-          "apple_vendor_top_case_key_code" : "keyboard_fn"
-        } ]
-      } ]
-    } ],
-    "fn_function_keys" : [ {
-      "from" : {
-        "key_code" : "f1"
-      },
-      "to" : [ {
-        "consumer_key_code" : "display_brightness_decrement"
-      } ]
-    }, {
-      "from" : {
-        "key_code" : "f2"
-      },
-      "to" : [ {
-        "consumer_key_code" : "display_brightness_increment"
-      } ]
-    }, {
-      "from" : {
-        "key_code" : "f3"
-      },
-      "to" : [ {
-        "key_code" : "mission_control"
-      } ]
-    }, {
-      "from" : {
-        "key_code" : "f4"
-      },
-      "to" : [ {
-        "key_code" : "launchpad"
-      } ]
-    }, {
-      "from" : {
-        "key_code" : "f5"
-      },
-      "to" : [ {
-        "key_code" : "illumination_decrement"
-      } ]
-    }, {
-      "from" : {
-        "key_code" : "f6"
-      },
-      "to" : [ {
-        "key_code" : "illumination_increment"
-      } ]
-    }, {
-      "from" : {
-        "key_code" : "f7"
-      },
-      "to" : [ {
-        "consumer_key_code" : "rewind"
-      } ]
-    }, {
-      "from" : {
-        "key_code" : "f8"
-      },
-      "to" : [ {
-        "consumer_key_code" : "play_or_pause"
-      } ]
-    }, {
-      "from" : {
-        "key_code" : "f9"
-      },
-      "to" : [ {
-        "consumer_key_code" : "fastforward"
-      } ]
-    }, {
-      "from" : {
-        "key_code" : "f10"
-      },
-      "to" : [ {
-        "consumer_key_code" : "mute"
-      } ]
-    }, {
-      "from" : {
-        "key_code" : "f11"
-      },
-      "to" : [ {
-        "consumer_key_code" : "volume_decrement"
-      } ]
-    }, {
-      "from" : {
-        "key_code" : "f12"
-      },
-      "to" : [ {
-        "consumer_key_code" : "volume_increment"
-      } ]
-    } ],
-    "name" : "Default",
-    "parameters" : {
-      "delay_milliseconds_before_open_device" : 1000
-    },
-    "selected" : true,
-    "simple_modifications" : [ ],
-    "virtual_hid_keyboard" : {
-      "caps_lock_delay_milliseconds" : 0,
-      "country_code" : 0,
-      "indicate_sticky_modifier_keys_state" : true,
-      "keyboard_type" : "iso",
-      "mouse_key_xy_scale" : 100
-    }
-  } ]
+    "profiles": [
+        {
+            "complex_modifications": {
+                "parameters": {
+                    "basic.simultaneous_threshold_milliseconds": 100,
+                    "basic.to_delayed_action_delay_milliseconds": 200,
+                    "basic.to_if_alone_timeout_milliseconds": 20,
+                    "basic.to_if_held_down_threshold_milliseconds": 100,
+                    "mouse_motion_to_scroll.speed": 100
+                },
+                "rules": [
+                    {
+                        "description": "[mouse] Up key -> Restore last hidden",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "pointing_button": "button5"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "tab",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "[mouse] Down key -> Hide",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "pointing_button": "button4"
+                                },
+                                "to": [
+                                    {
+                                        "pointing_button": "button1"
+                                    },
+                                    {
+                                        "key_code": "h",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "[keyboard] ctr + cmd + ↑ as ↓",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "down_arrow",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command",
+                                            "left_control"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "up_arrow",
+                                        "modifiers": [
+                                            "left_command",
+                                            "left_control"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "[keyboard] shift + opt + cmd + ↑ as shift + opt + cmd + →",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "down_arrow",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command",
+                                            "left_control"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "up_arrow",
+                                        "modifiers": [
+                                            "left_command",
+                                            "left_control"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "[keyboard] ctr + cmd + space as fn",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "spacebar",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command",
+                                            "left_control"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "fn"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "[keyboard] disable minimize with cmd+m",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "m",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "m",
+                                        "modifiers": [
+                                            "left_command",
+                                            "left_control",
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "[keyboard] Symbols // @todo: move this to a keyboard layout using ukelele",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "n",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_option"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "/opt/homebrew/bin/skhd -t \"ñ\""
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "n",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_option",
+                                            "left_shift"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "/opt/homebrew/bin/skhd -t \"Ñ\""
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "slash",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_option"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "/opt/homebrew/bin/skhd -t \"¿\""
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "slash",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_option"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "/opt/homebrew/bin/skhd -t \"¿\""
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "[keyboard] I wanna learn typing",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "o",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_option"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "/opt/homebrew/bin/skhd -t \"ó\""
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "a",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_option"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "/opt/homebrew/bin/skhd -t \"á\""
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "[util] Disable Caps Locks",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "caps_lock"
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": ""
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "[util] Extend selection",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.jetbrains.intellij"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    },
+                                    {
+                                        "bundle_identifiers": [
+                                            "notion.id"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "up_arrow",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_option"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_arrow",
+                                        "modifiers": [
+                                            "left_option"
+                                        ]
+                                    },
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "left_option",
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "[util] Delete line",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.jetbrains.intellij"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    },
+                                    {
+                                        "bundle_identifiers": [
+                                            "notion.id"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    },
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.apple.finder"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    },
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.contextsformac.Contexts"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "delete_or_backspace",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    },
+                                    {
+                                        "key_code": "delete_or_backspace",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    },
+                                    {
+                                        "key_code": "delete_or_backspace"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "[launch] iTerm",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "spacebar",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command",
+                                            "left_control",
+                                            "left_option"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "osascript -e 'tell application \"iTerm\" to activate'"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "[launch] IntelliJ",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "i",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command",
+                                            "left_control",
+                                            "left_option"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "osascript -e 'tell application \"IntelliJ IDEA-EAP\" to activate'"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "[launch] Chrome",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "c",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command",
+                                            "left_control",
+                                            "left_option"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "osascript -e 'tell application \"Google Chrome\" to activate'"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "[launch] Slack",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "s",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command",
+                                            "left_control",
+                                            "left_option"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "osascript -e 'tell application \"Slack\" to activate'"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "[launch] dotly ui scripts",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "caps_lock",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "$HOME/.dotfiles/bin/sdot ui show_scripts"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "[script] Generate uuid",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "u",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command",
+                                            "left_control",
+                                            "left_option"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "$HOME/.dotfiles/bin/sdot utils uuid_code"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "[chrome] Show recent tabs",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.google.Chrome",
+                                            "com.google.Chrome.beta"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "e",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "a",
+                                        "modifiers": [
+                                            "left_command",
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "[chrome] Inspect element",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.google.Chrome",
+                                            "com.google.Chrome.beta"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "i",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command",
+                                            "left_shift"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "c",
+                                        "modifiers": [
+                                            "left_command",
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "[chrome] Toggle console",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.google.Chrome",
+                                            "com.google.Chrome.beta"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "t",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command",
+                                            "left_control",
+                                            "left_option"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "j",
+                                        "modifiers": [
+                                            "left_command",
+                                            "left_option"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "[chrome] Switch profile",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.google.Chrome",
+                                            "com.google.Chrome.beta"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "caps_lock",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "m",
+                                        "modifiers": [
+                                            "left_command",
+                                            "left_shift"
+                                        ]
+                                    },
+                                    {
+                                        "key_code": "return_or_enter"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "[slack] Navigate between channels",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.tinyspeck.slackmacgap"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "p",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "k",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.tinyspeck.slackmacgap"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "e",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "k",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "[slack] Toggle sidebars",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.tinyspeck.slackmacgap"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "1",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "d",
+                                        "modifiers": [
+                                            "left_command",
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.tinyspeck.slackmacgap"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "2",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "period",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "[slack] Move between workspaces",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.tinyspeck.slackmacgap"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "1",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_option"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "1",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.tinyspeck.slackmacgap"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "2",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_option"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "2",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.tinyspeck.slackmacgap"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "3",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_option"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "3",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "[slack] Reactions",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.tinyspeck.slackmacgap"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "v",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command",
+                                            "left_option"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "$HOME/.dotfiles/bin/sdot mac paste_text \"+:white_check_mark:\" --returning"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.tinyspeck.slackmacgap"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "s",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command",
+                                            "left_option"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "$HOME/.dotfiles/bin/sdot mac paste_text \"+:thumbsup:\" --returning"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.tinyspeck.slackmacgap"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "d",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command",
+                                            "left_option"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "$HOME/.dotfiles/bin/sdot mac paste_text \"+:thumbsdown:\" --returning"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.tinyspeck.slackmacgap"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "p",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command",
+                                            "left_option"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "$HOME/.dotfiles/bin/sdot mac paste_text \"+:heavy_plus_sign:\" --returning"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.tinyspeck.slackmacgap"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "g",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command",
+                                            "left_option"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "$HOME/.dotfiles/bin/sdot mac paste_text \"+:grimacing:\" --returning"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.tinyspeck.slackmacgap"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "l",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command",
+                                            "left_option"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "$HOME/.dotfiles/bin/sdot mac paste_text \"+:joy:\" --returning"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "[notion] Show recent pages",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "notion.id"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "e",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "p",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "[notion] Toggle sidebar",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "notion.id"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "1",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "backslash",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "[notion] Extend selection",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "notion.id"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "up_arrow",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_option"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "up_arrow",
+                                        "modifiers": [
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "notion.id"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "down_arrow",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_option"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "down_arrow",
+                                        "modifiers": [
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "[keynote] Zoom in/out",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.apple.iWork.Keynote"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "equal_sign",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "period",
+                                        "modifiers": [
+                                            "left_command",
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.apple.iWork.Keynote"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "hyphen",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "comma",
+                                        "modifiers": [
+                                            "left_command",
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "devices": [
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [
+                        {
+                            "from": {
+                                "key_code": "f1"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "f1"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "f2"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "f2"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "f3"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "f3"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "f4"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "f4"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "f5"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "f5"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "f6"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "f6"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "f7"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "f7"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "f8"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "f8"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "f9"
+                            },
+                            "to": [
+                                {
+                                    "consumer_key_code": "rewind"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "f10"
+                            },
+                            "to": [
+                                {
+                                    "consumer_key_code": "fastforward"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "f11"
+                            },
+                            "to": [
+                                {
+                                    "consumer_key_code": "volume_decrement"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "f12"
+                            },
+                            "to": [
+                                {
+                                    "consumer_key_code": "volume_increment"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "f13"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "eject"
+                                }
+                            ]
+                        }
+                    ],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 41165,
+                        "vendor_id": 1241
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": false,
+                    "simple_modifications": [
+                        {
+                            "from": {
+                                "key_code": "application"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "right_option"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "grave_accent_and_tilde"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "non_us_backslash"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "left_command"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "left_option"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "left_option"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "left_command"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "non_us_backslash"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "grave_accent_and_tilde"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "right_option"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "right_command"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [
+                        {
+                            "from": {
+                                "key_code": "f1"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "f1"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "f2"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "f2"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "f3"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "f3"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "f4"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "f4"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "f5"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "f5"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "f6"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "f6"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "f7"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "f7"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "f8"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "f8"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "f9"
+                            },
+                            "to": [
+                                {
+                                    "consumer_key_code": "rewind"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "f10"
+                            },
+                            "to": [
+                                {
+                                    "consumer_key_code": "fastforward"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "f11"
+                            },
+                            "to": [
+                                {
+                                    "consumer_key_code": "volume_decrement"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "f12"
+                            },
+                            "to": [
+                                {
+                                    "consumer_key_code": "volume_increment"
+                                }
+                            ]
+                        }
+                    ],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 4102,
+                        "vendor_id": 9610
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": false,
+                    "simple_modifications": [
+                        {
+                            "from": {
+                                "key_code": "application"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "right_option"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "f13"
+                            },
+                            "to": [
+                                {
+                                    "consumer_key_code": "play_or_pause"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "grave_accent_and_tilde"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "non_us_backslash"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "non_us_backslash"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "grave_accent_and_tilde"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "right_option"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "right_command"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 627,
+                        "vendor_id": 1452
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": []
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": false,
+                        "is_pointing_device": true,
+                        "product_id": 4119,
+                        "vendor_id": 4809
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": false,
+                    "simple_modifications": []
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 4119,
+                        "vendor_id": 4809
+                    },
+                    "ignore": true,
+                    "manipulate_caps_lock_led": false,
+                    "simple_modifications": []
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 16641,
+                        "vendor_id": 9585
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": false,
+                    "simple_modifications": []
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": false,
+                        "is_pointing_device": true,
+                        "product_id": 5,
+                        "vendor_id": 7511
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": false,
+                    "simple_modifications": []
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 592,
+                        "vendor_id": 1452
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [
+                        {
+                            "from": {
+                                "key_code": "grave_accent_and_tilde"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "non_us_backslash"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "non_us_backslash"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "grave_accent_and_tilde"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [
+                        {
+                            "from": {
+                                "key_code": "f6"
+                            },
+                            "to": [
+                                {
+                                    "consumer_key_code": "play_or_pause"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "f7"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "f7"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "f8"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "f8"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "f9"
+                            },
+                            "to": [
+                                {
+                                    "consumer_key_code": "rewind"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "f10"
+                            },
+                            "to": [
+                                {
+                                    "consumer_key_code": "fastforward"
+                                }
+                            ]
+                        }
+                    ],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 17,
+                        "vendor_id": 1130
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": false,
+                    "simple_modifications": [
+                        {
+                            "from": {
+                                "key_code": "application"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "fn"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "grave_accent_and_tilde"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "non_us_backslash"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "left_alt"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "left_gui"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "left_gui"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "left_alt"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "non_us_backslash"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "grave_accent_and_tilde"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "right_alt"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "right_command"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "right_gui"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "right_alt"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 42,
+                        "vendor_id": 9610
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": false,
+                    "simple_modifications": [
+                        {
+                            "from": {
+                                "key_code": "f5"
+                            },
+                            "to": [
+                                {
+                                    "consumer_key_code": "play_or_pause"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "f9"
+                            },
+                            "to": [
+                                {
+                                    "consumer_key_code": "scan_previous_track"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "f10"
+                            },
+                            "to": [
+                                {
+                                    "consumer_key_code": "scan_next_track"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "f11"
+                            },
+                            "to": [
+                                {
+                                    "consumer_key_code": "volume_decrement"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "f12"
+                            },
+                            "to": [
+                                {
+                                    "consumer_key_code": "volume_increment"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "left_alt"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "left_command"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "left_gui"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "left_option"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": false,
+                        "is_pointing_device": true,
+                        "product_id": 92,
+                        "vendor_id": 5426
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": false,
+                    "simple_modifications": []
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 630,
+                        "vendor_id": 1452
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [
+                        {
+                            "from": {
+                                "key_code": "caps_lock"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "left_shift"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "grave_accent_and_tilde"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "non_us_backslash"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "non_us_backslash"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "grave_accent_and_tilde"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 30333,
+                        "vendor_id": 3141
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": false,
+                    "simple_modifications": [
+                        {
+                            "from": {
+                                "key_code": "end"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "up_arrow"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "f10"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "rewind"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "f11"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "play_or_pause"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "f12"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "fastforward"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "home"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "delete_or_backspace"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "left_command"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "left_option"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "left_option"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "left_command"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "page_down"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "return_or_enter"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "page_up"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "backslash"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "pause"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "volume_increment"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "print_screen"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "volume_decrement"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 92,
+                        "vendor_id": 5426
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": false,
+                    "simple_modifications": []
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 598,
+                        "vendor_id": 1452
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [
+                        {
+                            "from": {
+                                "key_code": "grave_accent_and_tilde"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "non_us_backslash"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "non_us_backslash"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "grave_accent_and_tilde"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": true,
+                        "product_id": 6974,
+                        "vendor_id": 6940
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": false,
+                    "simple_modifications": [
+                        {
+                            "from": {
+                                "key_code": "6"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "left_shift"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "e"
+                            },
+                            "to": [
+                                {
+                                    "pointing_button": "button5"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "equal_sign"
+                            },
+                            "to": [
+                                {
+                                    "pointing_button": "button4"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "f"
+                            },
+                            "to": [
+                                {
+                                    "pointing_button": "button4"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "hyphen"
+                            },
+                            "to": [
+                                {
+                                    "pointing_button": "button5"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 34304,
+                        "vendor_id": 1452
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": []
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 833,
+                        "vendor_id": 1452
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [
+                        {
+                            "from": {
+                                "key_code": "lang5"
+                            },
+                            "to": [
+                                {
+                                    "apple_vendor_top_case_key_code": "keyboard_fn"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 16941,
+                        "vendor_id": 8352
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [
+                        {
+                            "from": {
+                                "key_code": "insert"
+                            },
+                            "to": [
+                                {
+                                    "consumer_key_code": "volume_increment"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "print_screen"
+                            },
+                            "to": [
+                                {
+                                    "consumer_key_code": "volume_decrement"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "fn_function_keys": [
+                {
+                    "from": {
+                        "key_code": "f1"
+                    },
+                    "to": [
+                        {
+                            "consumer_key_code": "display_brightness_decrement"
+                        }
+                    ]
+                },
+                {
+                    "from": {
+                        "key_code": "f2"
+                    },
+                    "to": [
+                        {
+                            "consumer_key_code": "display_brightness_increment"
+                        }
+                    ]
+                },
+                {
+                    "from": {
+                        "key_code": "f3"
+                    },
+                    "to": [
+                        {
+                            "key_code": "mission_control"
+                        }
+                    ]
+                },
+                {
+                    "from": {
+                        "key_code": "f4"
+                    },
+                    "to": [
+                        {
+                            "key_code": "launchpad"
+                        }
+                    ]
+                },
+                {
+                    "from": {
+                        "key_code": "f5"
+                    },
+                    "to": [
+                        {
+                            "key_code": "illumination_decrement"
+                        }
+                    ]
+                },
+                {
+                    "from": {
+                        "key_code": "f6"
+                    },
+                    "to": [
+                        {
+                            "key_code": "illumination_increment"
+                        }
+                    ]
+                },
+                {
+                    "from": {
+                        "key_code": "f7"
+                    },
+                    "to": [
+                        {
+                            "consumer_key_code": "rewind"
+                        }
+                    ]
+                },
+                {
+                    "from": {
+                        "key_code": "f8"
+                    },
+                    "to": [
+                        {
+                            "consumer_key_code": "play_or_pause"
+                        }
+                    ]
+                },
+                {
+                    "from": {
+                        "key_code": "f9"
+                    },
+                    "to": [
+                        {
+                            "consumer_key_code": "fastforward"
+                        }
+                    ]
+                },
+                {
+                    "from": {
+                        "key_code": "f10"
+                    },
+                    "to": [
+                        {
+                            "consumer_key_code": "mute"
+                        }
+                    ]
+                },
+                {
+                    "from": {
+                        "key_code": "f11"
+                    },
+                    "to": [
+                        {
+                            "consumer_key_code": "volume_decrement"
+                        }
+                    ]
+                },
+                {
+                    "from": {
+                        "key_code": "f12"
+                    },
+                    "to": [
+                        {
+                            "consumer_key_code": "volume_increment"
+                        }
+                    ]
+                }
+            ],
+            "name": "Default",
+            "parameters": {
+                "delay_milliseconds_before_open_device": 1000
+            },
+            "selected": true,
+            "simple_modifications": [],
+            "virtual_hid_keyboard": {
+                "caps_lock_delay_milliseconds": 0,
+                "country_code": 0,
+                "indicate_sticky_modifier_keys_state": true,
+                "keyboard_type": "iso",
+                "mouse_key_xy_scale": 100
+            }
+        }
+    ]
 }
