@@ -45,8 +45,6 @@
     :rules [[:!CTdown_arrow :!CTup_arrow]]}
    {:des   "[keyboard] shift + opt + cmd + ↑ as shift + opt + cmd + →"
     :rules [[:!CTdown_arrow :!CTup_arrow]]}
-   {:des   "[keyboard] ctr + cmd + space as fn"
-    :rules [[:!CTspacebar :fn]]}
    {:des   "[keyboard] disable minimize with cmd+m"
     :rules [[:!Cm :!CTSm]]}
 
@@ -61,7 +59,12 @@
             [:!Oa [:type "á"]]]}
 
    ;; ------------ Utils ------------
-   {:des "[util] Disable Caps Locks" :rules [[:caps_lock ""]]}
+   {:des "[util] Change brightness with the wheel"
+    :rules [[:!Svolume_increment :display_brightness_increment]
+            [:!Svolume_decrement :display_brightness_decrement]]}
+   {:des "[util] Zoom with the wheel"
+    :rules [[:!Cvolume_increment :!Cequal_sign]
+            [:!Cvolume_decrement :!Chyphen]]}
    {:des   "[util] Extend selection"
     :rules [[:selection-extend [:!Oleft_arrow :!OSright_arrow] [:!IntelliJ :!Notion]]]}
    {:des   "[util] Delete line"
