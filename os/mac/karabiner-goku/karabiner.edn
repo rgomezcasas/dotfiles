@@ -22,6 +22,7 @@
              :sidebar-primary-toggle   {:modi :left_command :key :1}
              :sidebar-secondary-toggle {:modi :left_command :key :2}
              :switch-account           {:modi :left_command :key :caps_lock}
+             :switch-account-esc       {:modi :left_command :key :escape}
              :zoom-in                  {:modi :left_command :key :equal_sign}
              :zoom-out                 {:modi :left_command :key :hyphen}}
  :templates {:open-app         "osascript -e 'tell application \"%s\" to activate'"
@@ -47,6 +48,8 @@
     :rules [[:!CTdown_arrow :!CTup_arrow]]}
    {:des   "[keyboard] disable minimize with cmd+m"
     :rules [[:!Cm :!CTSm]]}
+   {:des   "[keyboard] supr ctrl+backspace"
+    :rules [[:!Tdelete_or_backspace :delete_forward]]}
 
    {:des   "[keyboard] Symbols // @todo: move this to a keyboard layout using ukelele"
     :rules [[:!On [:type "ñ"]]
@@ -129,6 +132,8 @@
    {:des "[chrome] Toggle console" :rules [:Chrome [:!CTOt :!COj]]}
    {:des   "[chrome] Switch profile"
     :rules [:Chrome [:switch-account [:!CSm :return_or_enter]]]}
+   {:des   "[chrome] Switch profile with escape"
+    :rules [:Chrome [:switch-account-esc [:!CSm :return_or_enter]]]}
 
    {:des   "[slack] Navigate between channels"
     :rules [:Slack [:!Cp :!Ck] [:!Ce :!Ck]]}

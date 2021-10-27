@@ -84,6 +84,20 @@
           "type" : "basic"
         } ]
       }, {
+        "description" : "[keyboard] supr ctrl+backspace",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "delete_or_backspace",
+            "modifiers" : {
+              "mandatory" : [ "left_control" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "delete_forward"
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
         "description" : "[keyboard] Symbols // @todo: move this to a keyboard layout using ukelele",
         "manipulators" : [ {
           "from" : {
@@ -414,6 +428,27 @@
               "mandatory" : [ "left_command" ]
             },
             "key_code" : "caps_lock"
+          },
+          "to" : [ {
+            "key_code" : "m",
+            "modifiers" : [ "left_command", "left_shift" ]
+          }, {
+            "key_code" : "return_or_enter"
+          } ],
+          "conditions" : [ {
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "com.google.Chrome", "com.google.Chrome.beta" ]
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "[chrome] Switch profile with escape",
+        "manipulators" : [ {
+          "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_command" ]
+            },
+            "key_code" : "escape"
           },
           "to" : [ {
             "key_code" : "m",
