@@ -1587,7 +1587,7 @@
       "identifiers" : {
         "is_keyboard" : true,
         "is_pointing_device" : false,
-        "product_id" : 64020,
+        "product_id" : 64023,
         "vendor_id" : 9639
       },
       "ignore" : false,
@@ -1601,10 +1601,24 @@
         } ]
       }, {
         "from" : {
+          "key_code" : "caps_lock"
+        },
+        "to" : [ {
+          "key_code" : "escape"
+        } ]
+      }, {
+        "from" : {
           "key_code" : "delete_forward"
         },
         "to" : [ {
           "consumer_key_code" : "fast_forward"
+        } ]
+      }, {
+        "from" : {
+          "key_code" : "escape"
+        },
+        "to" : [ {
+          "key_code" : "grave_accent_and_tilde"
         } ]
       }, {
         "from" : {
@@ -1633,20 +1647,6 @@
         },
         "to" : [ {
           "consumer_key_code" : "play_or_pause"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "caps_lock"
-        },
-        "to" : [ {
-          "key_code" : "escape"
-        } ]
-      }, {
-        "from" : {
-          "key_code" : "escape"
-        },
-        "to" : [ {
-          "key_code" : "grave_accent_and_tilde"
         } ]
       } ]
     } ],
