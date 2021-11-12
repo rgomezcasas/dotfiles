@@ -75,41 +75,6 @@
              [:!Cright_arrow :!Cdelete_or_backspace :delete_or_backspace]
              [:!IntelliJ :!Notion :!Finder :!Contexts]]]}
 
-   ;; ------------ Modes ------------
-   ;;   {:des   "Emoji mode"
-   ;;    :rules [:emoji-mode
-   ;;            [:d [:paste "👎"]]
-   ;;            [:g [:paste "😬"]]
-   ;;            [:l [:paste "😂"]]
-   ;;            [:p [:paste "➕"]]
-   ;;            [:s [:paste "👍"]]
-   ;;            [:v [:paste "✅"]]]}
-   ;;
-   ;;   {:des   "Open apps mode"
-   ;;    :rules [:open-mode
-   ;;            [:c [:open-app "Google Chrome"]]
-   ;;            [:e [:open-app "Telegram"]]
-   ;;            [:i [:open-app "Intellij Idea"]]
-   ;;            [:n [:open-app "Notion"]]
-   ;;            [:s [:open-app "Slack"]]
-   ;;            [:t [:open-app "iTerm"]]]}
-   ;;
-   ;;   {:des   "Open tabs mode"
-   ;;    :rules [:caps-mode
-   ;;            [:a [:open-in-chrome "amazon.es"]]
-   ;;            [:c [:open-in-chrome "codely.tv"]]
-   ;;            [:f [:open-in-chrome "feedly.com"]]
-   ;;            [:g [:open-in-chrome "mail.google.com"]]
-   ;;            [:p [:open-in-chrome "pro.codely.tv"]]
-   ;;            [:t [:open-in-chrome "twitter.com"]]
-   ;;            [:n [:open-in-chrome "news.ycombinator.com"]]
-   ;;            [:y [:open-in-chrome "youtube.com"]]
-   ;;            [:w [:open-in-chrome "twitch.tv"]]]}
-   ;;   {:des   "Script mode"
-   ;;    :rules [:script-mode
-   ;;            ;; Generate uuid
-   ;;            [:u "$HOME/.dotfiles/bin/sdot utils uuid_code"]]}
-
    ;; ------------ Launchers ------------
    {:des   "[launch] iTerm"
     :rules [[:!CTOspacebar [:open-app "iTerm"]]]}
@@ -127,7 +92,7 @@
     :rules [[:!CTOu "$HOME/.dotfiles/bin/sdot utils uuid_code"]]}
 
    ;; ------------ Application specific ------------
-   {:des "[chrome] Show recent tabs" :rules [:Chrome [:show-recent :!CSa]]}
+   {:des "[chrome] Show recent tabs" :rules [:Chrome [:show-recent :!CTO1]]}
    {:des "[chrome] Inspect element" :rules [:Chrome [:!CSi :!CSc]]}
    {:des "[chrome] Toggle console" :rules [:Chrome [:!CTOt :!COj]]}
    {:des   "[chrome] Switch profile"

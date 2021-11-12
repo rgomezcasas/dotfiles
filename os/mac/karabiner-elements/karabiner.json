@@ -373,8 +373,8 @@
             "key_code" : "e"
           },
           "to" : [ {
-            "key_code" : "a",
-            "modifiers" : [ "left_command", "left_shift" ]
+            "key_code" : "1",
+            "modifiers" : [ "left_command", "left_control", "left_option" ]
           } ],
           "conditions" : [ {
             "type" : "frontmost_application_if",

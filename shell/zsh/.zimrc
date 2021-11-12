@@ -1,10 +1,7 @@
 # If you modify this execute `zimfw uninstall & zimfw install`
 zmodule zimfw/environment
 zmodule zimfw/git-info
-zmodule zimfw/history
 zmodule zimfw/input
-zmodule zsh-users/zsh-autosuggestions
-zmodule zsh-users/zsh-syntax-highlighting
 zmodule zimfw/completion
-
-zhighlighters=(main brackets)
+zmodule zsh-users/zsh-syntax-highlighting
+zmodule zsh-users/zsh-autosuggestions
