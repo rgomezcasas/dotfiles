@@ -8,4 +8,4 @@ source "$DOTLY_PATH/scripts/core/_main.sh"
 ##? Usage:
 ##?   download-mp4 <url>
 
-youtube-dl --format mp4 "$1"
+yt-dlp --format mp4 "$1"

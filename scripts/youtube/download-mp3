@@ -8,4 +8,4 @@ source "$DOTLY_PATH/scripts/core/_main.sh"
 ##? Usage:
 ##?   download-mp3 <url>
 
-youtube-dl -x --audio-format mp3 "$1"
+yt-dlp -x --audio-format mp3 "$1"

@@ -24,4 +24,4 @@ log::note "CSV will be created in $path"
 
 python2 "$DOTFILES_PATH/scripts/github/utils/repo_stargazers.py" -t "$GITHUB_TOKEN" -p "$path" -r "$repo"
 
-table::print "," "$(csvsort -r -c num_followers $path)"
+table::print "," "$(csvsort -r -c num_followers "$path")"

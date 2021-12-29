@@ -280,6 +280,25 @@
           "type" : "basic"
         } ]
       }, {
+        "description" : "[util] Clipboard history",
+        "manipulators" : [ {
+          "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_shift" ]
+            },
+            "key_code" : "v"
+          },
+          "to" : [ {
+            "key_code" : "p",
+            "modifiers" : [ "left_command", "left_control", "left_option" ]
+          } ],
+          "conditions" : [ {
+            "type" : "frontmost_application_unless",
+            "bundle_identifiers" : [ "com.jetbrains.intellij" ]
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
         "description" : "[launch] iTerm",
         "manipulators" : [ {
           "from" : {
