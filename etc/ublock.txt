@@ -1,2 +1,11 @@
+! Otros
 *://devoogle.com/*
 google.*##.g:has(a[href*="devoogle.com"])
+
+! YouTube Copycats
+*://genteflow.bid/*
+google.*##.g:has(a[href*="genteflow.bid"])
+*://sonarmp3.net/*
+google.*##.g:has(a[href*="sonarmp3.net"])
+*://nuevoexito.org/*
+google.*##.g:has(a[href*="nuevoexito.org"])
