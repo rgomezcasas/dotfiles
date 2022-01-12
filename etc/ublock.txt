@@ -12,6 +12,10 @@ google.*##.g:has(a[href*="nuevoexito.org"])
 *://gidiportal.com/*
 google.*##.g:has(a[href*="gidiportal.com"])
 
+! Twitter Copycats
+*://nitter.net/*
+google.*##.g:has(a[href*="nitter.net"])
+
 ! GitHub Copycats
 *://shamcode.ru/*
 google.*##.g:has(a[href*="shamcode.ru"])
