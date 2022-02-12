@@ -18,7 +18,7 @@ fi
 # ------------------------------------------------------------------------------
 # Languages
 # ------------------------------------------------------------------------------
-export JAVA_HOME='/Library/Java/JavaVirtualMachines/jbr17/Contents/Home'
+export JAVA_HOME='/Library/Java/JavaVirtualMachines/jbr-17_0_2-aarch64-b315.1/Contents/Home'
 export GEM_HOME="$HOME/.gem"
 export GOPATH="$HOME/.go"
 

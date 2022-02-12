@@ -16,3 +16,4 @@ shell/zsh/.zim
 
 # Private Stuff
 /**/**/private-*
+/scripts/private

@@ -16,6 +16,7 @@
     ~/.config/karabiner: os/mac/karabiner-elements
     ~/.dotly: os/mac/.dotly
     ~/.skhdrc: os/mac/skhd/.skhdrc
+    ~/Library/Mobile Documents/com~apple~CloudDocs/etc/private_scripts: scripts/private
     ~/Library/Application Support/Code - Insiders/User/keybindings.json: editors/code/keybindings.json
     ~/Library/Application Support/Code - Insiders/User/settings.json: editors/code/settings.json
     ~/Library/Application Support/Code - Insiders/User/snippets: editors/code/snippets
