@@ -12,11 +12,12 @@
     /opt/local/bin/dot: /opt/homebrew/bin/dot
     /usr/local/bin/git: /opt/homebrew/bin/git
     /usr/local/bin/gpg: /opt/homebrew/bin/gpg
+    scripts/private: ~/Library/Mobile Documents/com~apple~CloudDocs/etc/private_scripts
     ~/.config/karabiner.edn: os/mac/karabiner-goku/karabiner.edn
     ~/.config/karabiner: os/mac/karabiner-elements
     ~/.dotly: os/mac/.dotly
     ~/.skhdrc: os/mac/skhd/.skhdrc
-    ~/Library/Mobile Documents/com~apple~CloudDocs/etc/private_scripts: scripts/private
+    ~/.tmux.conf: os/mac/.tmux.conf
     ~/Library/Application Support/Code - Insiders/User/keybindings.json: editors/code/keybindings.json
     ~/Library/Application Support/Code - Insiders/User/settings.json: editors/code/settings.json
     ~/Library/Application Support/Code - Insiders/User/snippets: editors/code/snippets
@@ -31,8 +32,8 @@
     ~/bin/find: /opt/homebrew/bin/gfind
     ~/bin/make: /opt/homebrew/bin/gmake
     ~/bin/node: /usr/local/bin/node
-    ~/bin/pecl: /opt/homebrew/opt/php@7.4/bin/pecl
-    ~/bin/php: /opt/homebrew/opt/php@7.4/bin/php
+    ~/bin/pecl: /opt/homebrew/opt/php@8.1/bin/pecl
+    ~/bin/php: /opt/homebrew/opt/php@8.1/bin/php
     ~/bin/sed: /opt/homebrew/bin/gsed
     ~/bin/touch: /opt/homebrew/bin/gtouch
     ~/bin/zsh: /bin/zsh

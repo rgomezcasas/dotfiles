@@ -289,7 +289,7 @@
             "key_code" : "v"
           },
           "to" : [ {
-            "key_code" : "p",
+            "key_code" : "0",
             "modifiers" : [ "left_command", "left_control", "left_option" ]
           } ],
           "conditions" : [ {
