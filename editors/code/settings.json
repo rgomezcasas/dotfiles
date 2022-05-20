@@ -32,7 +32,7 @@
   "git.showPushSuccessNotification": true,
   "workbench.sideBar.location": "left",
   "workbench.editor.showTabs": false,
-  "workbench.colorTheme": "Red",
+  "workbench.colorTheme": "Atom One Light",
   "workbench.fontAliasing": "auto",
   "editor.renderWhitespace": "all",
   "editor.suggestSelection": "first",
@@ -45,7 +45,7 @@
     }
   ],
   "[yaml]": {},
-  "window.zoomLevel": 1,
+  "window.zoomLevel": 3,
   "security.workspace.trust.untrustedFiles": "open",
   "editor.inlineSuggest.enabled": true,
   "github.copilot.enable": {

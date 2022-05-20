@@ -9,10 +9,8 @@ alias la="exa -la --icons"
 # Jumps
 alias ~="cd ~"
 alias tmp="cd ~/Desktop/tmp"
-alias code='cd ~/Code'
-alias mines="cd ~/Code/mines"
+alias c='cd ~/Code'
 alias codely="cd ~/Code/codely"
-alias c="cd ~/Code/codely/codely"
 
 # Git
 alias gaa="git add -A"
@@ -31,10 +29,11 @@ alias up="dot package update_all"
 alias copy='pbcopy'
 alias dc='dot docker connect'
 alias vcode='/usr/local/bin/code'
-alias vt='vim $(mktemp $TMPDIR/$(uuidgen).txt)'
 alias htop='btm'
-alias php7='/opt/homebrew/opt/php@7.4/bin/php'
 
 alias i.='(idea $PWD &>/dev/null &)'
 alias c.='(code $PWD &>/dev/null &)'
 alias o.='open .'
+
+alias mp3="dot youtube download-mp3"
+alias mp4="dot youtube download-mp4"

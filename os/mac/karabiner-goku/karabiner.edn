@@ -56,7 +56,9 @@
     :rules [[:!On [:type "ñ"]]
             [:!OSn [:type "Ñ"]]
             [:!Oslash [:type "¿"]]
-            [:!Eslash [:type "¿"]]]}
+            [:!Eslash [:type "¿"]]
+            [:!E3 [:type "€"]]
+            [:!O3 [:type "€"]]]}
 
    {:des   "[keyboard] I wanna learn typing"
     :rules [[:!Oo [:type "ó"]]
