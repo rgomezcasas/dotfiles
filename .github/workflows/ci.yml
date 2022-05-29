@@ -43,4 +43,4 @@ jobs:
         run: go get mvdan.cc/sh/v3/cmd/shfmt
 
       - name: 💅 Lint bash files
-        run: bash "$DOTLY_PATH/scripts/self/lint"
+        run: bash "$DOTLY_PATH/scripts/self/lint --dotfiles"

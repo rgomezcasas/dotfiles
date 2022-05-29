@@ -13,4 +13,4 @@ docs::parse "$@"
 
 dirs=$(ls -d ./*/)
 
-echo "$dirs" | xargs -I _ sh -c "find \"_\" -type f | wc -l | xargs echo \"_\""
+echo "$dirs" | xargs -I _ sh -c 'find "_" -type f | wc -l | xargs echo "_"'

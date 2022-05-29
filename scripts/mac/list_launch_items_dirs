@@ -25,4 +25,4 @@ echo "/System/Library/LaunchAgents"
 echo
 echo "👌 TIPs"
 echo "To see all, execute: launchctl list"
-echo "To disable one, execute: launchctl unload \$AGENT"
+echo 'To disable one, execute: launchctl unload $AGENT'

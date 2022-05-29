@@ -78,7 +78,7 @@
              [:!Cright_arrow :!Cdelete_or_backspace :delete_or_backspace]
              [:!IntelliJ :!Notion :!Finder :!Contexts]]]}
    {:des   "[util] Clipboard history"
-    :rules [[:clipboard-history [:!CTO0] [:!IntelliJ]]]}
+    :rules [[:clipboard-history [:!CTO0]]]}
 
    ;; ------------ Launchers ------------
    {:des   "[launch] iTerm"

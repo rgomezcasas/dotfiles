@@ -314,10 +314,6 @@
             "key_code" : "0",
             "modifiers" : [ "left_command", "left_control", "left_option" ]
           } ],
-          "conditions" : [ {
-            "type" : "frontmost_application_unless",
-            "bundle_identifiers" : [ "com.jetbrains.intellij" ]
-          } ],
           "type" : "basic"
         } ]
       }, {
