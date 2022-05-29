@@ -22,7 +22,7 @@ jobs:
           echo "DOTLY_PATH=$PWD/modules/dotly" >> $GITHUB_ENV
 
       - name: 💿 Static analysis
-        run: bash "$DOTLY_PATH/scripts/self/static_analysis"
+        run: bash "$DOTLY_PATH/scripts/self/static_analysis --dotfiles"
 
   lint:
     runs-on: ubuntu-latest
