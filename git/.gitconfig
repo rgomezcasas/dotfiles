@@ -59,9 +59,6 @@
 [credential]
 	helper = osxkeychain
 
-[color]
-	ui = always
-
 [color "diff"]
 	meta = yellow bold
 	commit = green bold

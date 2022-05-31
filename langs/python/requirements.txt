@@ -15,12 +15,12 @@ lxml==4.8.0
 lz4==4.0.1
 outcome==1.1.0
 Pillow==9.1.1
-protobuf==3.20.1
+protobuf==4.21.1
 pycparser==2.21
 pyOpenSSL==22.0.0
 PySocks==1.7.1
 requests==2.27.1
-selenium==4.1.5
+selenium==4.2.0
 six==1.16.0
 sniffio==1.2.0
 social-analyzer==0.45

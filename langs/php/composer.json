@@ -1,6 +1,0 @@
-{
-  "require": {
-    "psy/psysh": "0.11.x-dev"
-  },
-  "minimum-stability": "dev"
-}
