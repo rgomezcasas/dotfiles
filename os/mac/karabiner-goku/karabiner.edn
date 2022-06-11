@@ -15,9 +15,11 @@
    :Notion   ["notion.id"]
    :Slack    ["com.tinyspeck.slackmacgap"]}
  :froms     {:line-delete              {:modi :left_command :key :delete_or_backspace}
-             :line-duplicate           {:modi :left_command :key :d}
-             :selection-extend         {:modi :left_option :key :up_arrow}
              :clipboard-history        {:modi [:left_command :left_shift] :key :v}
+             :line-duplicate           {:modi :left_command :key :d}
+             :move-next-screen         {:modi [:left_command :left_shift :left_option] :key :right_arrow}
+             :move-prev-screen         {:modi [:left_command :left_shift :left_option] :key :left_arrow}
+             :selection-extend         {:modi :left_option :key :up_arrow}
              :selection-shrink         {:modi :left_option :key :down_arrow}
              :show-recent              {:modi :left_command :key :e}
              :sidebar-primary-toggle   {:modi :left_command :key :1}
@@ -79,6 +81,10 @@
              [:!IntelliJ :!Notion :!Finder :!Contexts]]]}
    {:des   "[util] Clipboard history"
     :rules [[:clipboard-history [:!CTO0]]]}
+   {:des   "[util] Move app to next screen and center"
+    :rules [[:move-next-screen [:!CTOSright_arrow :!COc]]]}
+   {:des   "[util] Move app to prev screen and center"
+    :rules [[:move-prev-screen [:!CTOSleft_arrow :!COc]]]}
 
    ;; ------------ Launchers ------------
    {:des   "[launch] iTerm"
