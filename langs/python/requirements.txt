@@ -11,7 +11,7 @@ galeodes==0.7
 h11==0.13.0
 idna==3.3
 langdetect==1.0.9
-lxml==4.8.0
+lxml==4.9.1
 lz4==4.0.1
 outcome==1.1.0
 Pillow==9.1.1
