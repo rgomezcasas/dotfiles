@@ -12,7 +12,6 @@
     ~/.bash_profile: shell/bash/.bash_profile
     ~/.bashrc: shell/bash/.bashrc
     ~/.config/clojure/profiles.clj: langs/clojure/profiles.clj
-    ~/.config/psysh/config.php: langs/php/psysh-config.php
     ~/.gitattributes: git/.gitattributes
     ~/.gitconfig: git/.gitconfig
     ~/.gitignore_global: git/.gitignore_global
