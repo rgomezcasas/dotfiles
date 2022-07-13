@@ -8,6 +8,7 @@
 
 [push]
 	default = simple
+	autoSetupRemote = true
 
 [color]
 	diff = auto
