@@ -14,6 +14,10 @@ shell/zsh/**/**.zwc
 shell/zsh/**/**.zwc.old
 shell/zsh/.zim
 
+# OBS
+os/mac/obs/profiles/*/service.json
+os/mac/obs/profiles/*/service.json.bak
+
 # Private Stuff
 /**/**/private-*
 /scripts/private
