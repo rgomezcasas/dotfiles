@@ -9,7 +9,6 @@
       - ~/.hushlogin
 
 - link:
-    /opt/local/bin/dot: /opt/homebrew/bin/dot
     /usr/local/bin/git: /opt/homebrew/bin/git
     /usr/local/bin/gpg: /opt/homebrew/bin/gpg
     scripts/private: ~/Library/Mobile Documents/com~apple~CloudDocs/etc/private_scripts
@@ -27,12 +26,12 @@
     ~/Library/Application Support/com.elgato.StreamDeck/ProfilesV2: os/mac/streamdeck/ProfilesV2
     ~/Library/Application Support/obs-studio/basic: os/mac/obs
     ~/Library/Preferences/com.contextsformac.Contexts.plist: os/mac/contexts/com.contextsformac.Contexts.plist
-    ~/Library/Saved Application State/com.raycast.macos.savedState: os/mac/raycast/settings
     ~/bin/bash: /opt/homebrew/bin/bash
     ~/bin/date: /opt/homebrew/bin/gdate
     ~/bin/find: /opt/homebrew/bin/gfind
     ~/bin/make: /opt/homebrew/bin/gmake
-    ~/bin/node: /usr/local/bin/node
+    ~/bin/node: /opt/homebrew/opt/node@16/bin/node
+    ~/bin/npm: /opt/homebrew/opt/node@16/bin/npm
     ~/bin/pecl: /opt/homebrew/opt/php@8.1/bin/pecl
     ~/bin/php7: /opt/homebrew/opt/php@7.4/bin/php
     ~/bin/php: /opt/homebrew/opt/php@8.1/bin/php
