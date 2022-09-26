@@ -19,7 +19,7 @@ fi
 # ------------------------------------------------------------------------------
 # Languages
 # ------------------------------------------------------------------------------
-export JAVA_HOME='/Library/Java/JavaVirtualMachines/jbr-17_0_2-aarch64-b315.1/Contents/Home'
+export JAVA_HOME='/Library/Java/JavaVirtualMachines/jbrsdk_jcef-17.0.4.1-osx-aarch64-b597.1/Contents/Home'
 export GEM_HOME="$HOME/.gem"
 export GOPATH="$HOME/.go"
 
@@ -36,11 +36,17 @@ export FZF_DEFAULT_OPTS="--color=$fzf_colors --reverse"
 
 export HOMEBREW_AUTO_UPDATE_SECS=604800 # 1 week
 export HOMEBREW_NO_ANALYTICS=true
+export HOMEBREW_PREFIX="/opt/homebrew";
+export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
+export HOMEBREW_REPOSITORY="/opt/homebrew";
 
 export BAT_THEME='gruvbox-dark'
 
 GPG_TTY=$(tty)
 export GPG_TTY
+
+export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+export PUPPETEER_EXECUTABLE_PATH="/opt/homebrew/bin/chromium"
 
 # ------------------------------------------------------------------------------
 # Path - The higher it is, the more priority it has

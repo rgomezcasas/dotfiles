@@ -25,6 +25,8 @@
 	<true/>
 	<key>AlternateMouseScroll</key>
 	<true/>
+	<key>AlwaysOpenWindowAtStartup</key>
+	<true/>
 	<key>AnimateDimming</key>
 	<false/>
 	<key>AutoHideTmuxClientSession</key>
@@ -5018,7 +5020,7 @@
 		</dict>
 	</array>
 	<key>OnlyWhenMoreTabs</key>
-	<true/>
+	<false/>
 	<key>OpenArrangementAtStartup</key>
 	<false/>
 	<key>OpenBookmark</key>

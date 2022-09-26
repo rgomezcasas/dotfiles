@@ -20,5 +20,6 @@
     ~/.vimrc: editors/vim/.vimrc
     ~/.zimrc: shell/zsh/.zimrc
     ~/.zlogin: shell/zsh/.zlogin
+    ~/.zprofile: shell/zsh/.zprofile
     ~/.zshenv: shell/zsh/.zshenv
     ~/.zshrc: shell/zsh/.zshrc

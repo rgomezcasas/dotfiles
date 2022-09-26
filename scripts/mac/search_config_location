@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTLY_PATH/scripts/core/_main.sh"
+
+##? Search for a config location
+#?? 1.0.0
+##?
+##? Usage:
+##?   search_config_location <app_name>
+##?
+##? Options:
+##?   -h --help       Show this screen.
+docs::parse "$@"
+
+# Search in ".config"
+in_config=$(ls "$HOME/.config" | grep "$app_name")
