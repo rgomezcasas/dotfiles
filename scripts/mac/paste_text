@@ -17,14 +17,14 @@ source "$DOTLY_PATH/scripts/core/_main.sh"
 docs::parse "$@"
 
 if $returning; then
-  osascript -e "
+	osascript -e "
 set the clipboard to \"$1\"
 tell application \"System Events\"
     keystroke \"v\" using command down
     key code 36
 end tell"
 else
-  osascript -e "
+	osascript -e "
 set the clipboard to \"$1\"
 tell application \"System Events\"
     keystroke \"v\" using command down

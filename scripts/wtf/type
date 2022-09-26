@@ -16,7 +16,7 @@ text="$1"
 speed_in_ms="${2:-80}"
 
 for ((i = 0; i < ${#text}; i++)); do
-  echo "after $speed_in_ms" | tclsh
-  printf "${text:i:1}"
+	echo "after $speed_in_ms" | tclsh
+	printf "${text:i:1}"
 done
 echo

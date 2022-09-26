@@ -16,27 +16,27 @@ source "$DOTLY_PATH/scripts/core/_main.sh"
 docs::parse "$@"
 
 if [ -z "$GITHUB_TOKEN" ]; then
-  echo "You need to setup a GITHUB_TOKEN export"
+	echo "You need to setup a GITHUB_TOKEN export"
 
-  exit 2
+	exit 2
 fi
 
 for i in $(seq 1 100); do
-  found=$(
-    curl -s -H "Authorization: token $GITHUB_TOKEN" \
-      -H "Accept: application/vnd.github.v3.star+json" \
-      -XGET https://api.github.com/users/rgomezcasas/starred\?page="$i" |
-      jq '.[] | .starred_at, .repo.full_name' |
-      grep -B1 "$repo" |
-      head -n1 |
-      tr -d '"' | tr 'T' ' ' | tr -d 'Z'
-  )
+	found=$(
+		curl -s -H "Authorization: token $GITHUB_TOKEN" \
+			-H "Accept: application/vnd.github.v3.star+json" \
+			-XGET https://api.github.com/users/rgomezcasas/starred\?page="$i" |
+			jq '.[] | .starred_at, .repo.full_name' |
+			grep -B1 "$repo" |
+			head -n1 |
+			tr -d '"' | tr 'T' ' ' | tr -d 'Z'
+	)
 
-  if [ -n "$found" ]; then
-    echo "$found"
+	if [ -n "$found" ]; then
+		echo "$found"
 
-    exit 0
-  fi
+		exit 0
+	fi
 done
 
 exit 1

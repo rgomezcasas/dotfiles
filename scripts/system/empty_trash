@@ -12,7 +12,7 @@ source "$DOTLY_PATH/scripts/core/_main.sh"
 docs::parse "$@"
 
 free_space_in_home() {
-  df -h ~ | tail -n1 | awk '{print $4}'
+	df -h ~ | tail -n1 | awk '{print $4}'
 }
 
 free_space_before_empty=$(free_space_in_home)

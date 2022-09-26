@@ -12,11 +12,11 @@ source "$DOTLY_PATH/scripts/core/_main.sh"
 docs::parse "$@"
 
 rsync -rauhP \
-  --exclude=".Spotlight-V100" \
-  --exclude=".Trashes" \
-  --exclude=".DocumentRevisions-V100" \
-  --exclude=".TemporaryItems" \
-  --exclude=".DS_Store" \
-  --exclude=".fseventsd" \
-  --delete \
-  /Volumes/Backup/ /Volumes/Redundancy
+	--exclude=".Spotlight-V100" \
+	--exclude=".Trashes" \
+	--exclude=".DocumentRevisions-V100" \
+	--exclude=".TemporaryItems" \
+	--exclude=".DS_Store" \
+	--exclude=".fseventsd" \
+	--delete \
+	/Volumes/Backup/ /Volumes/Redundancy

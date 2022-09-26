@@ -26,6 +26,6 @@ courses=$(codely::list_courses)
 selected_index=$(echo "$courses" | awk -F';' '{print $2}' | choose -i)
 
 echo "$courses" |
-  sed -n "$((selected_index + 1))"p |
-  awk -F';' '{print $1}' |
-  xargs open
+	sed -n "$((selected_index + 1))"p |
+	awk -F';' '{print $1}' |
+	xargs open

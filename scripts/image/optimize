@@ -20,7 +20,7 @@ docs::parse "$@"
 extra_options=""
 
 if $thumb; then
-  extra_options="$extra_options --size=250"
+	extra_options="$extra_options --size=250"
 fi
 
 #cp "$filename" "$original_filename"

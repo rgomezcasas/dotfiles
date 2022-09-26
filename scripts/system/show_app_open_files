@@ -19,7 +19,7 @@ docs::parse "$@"
 selected=$(dot system list_opened_apps | fzf)
 
 if $watch; then
-  lsof -r 2 -c "$selected" | awk '{print $4 " " $9}'
+	lsof -r 2 -c "$selected" | awk '{print $4 " " $9}'
 else
-  lsof -c "$selected" | awk '{print $4 " " $9}'
+	lsof -c "$selected" | awk '{print $4 " " $9}'
 fi

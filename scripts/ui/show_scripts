@@ -13,10 +13,10 @@ source "$DOTFILES_PATH/scripts/core/selector.sh"
 docs::parse "$@"
 
 scripts=(
-  "🚀 chrome goto"
-  "🥐 codely copy_course"
-  "🧠 codely open_course"
-  "💻 utils open_project_in_intellij"
+	"🚀 chrome goto"
+	"🥐 codely copy_course"
+	"🧠 codely open_course"
+	"💻 utils open_project_in_intellij"
 )
 
 command=$(printf '%s\n' "${scripts[@]}" | selector::select)

@@ -11,8 +11,8 @@ source "$DOTLY_PATH/scripts/core/_main.sh"
 docs::parse "$@"
 
 ffmpeg \
-  -i "$video_path" \
-  -r 15 \
-  -vf scale=512:-1 \
-  "$video_path.gif"
+	-i "$video_path" \
+	-r 15 \
+	-vf scale=512:-1 \
+	"$video_path.gif"
 #  -ss 00:00:00 -to 00:00:01 \

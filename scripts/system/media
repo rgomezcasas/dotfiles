@@ -13,14 +13,14 @@ source "$DOTLY_PATH/scripts/core/_main.sh"
 
 case $1 in
 "next")
-  osascript -e 'tell application "Spotify" to next track'
+	osascript -e 'tell application "Spotify" to next track'
 
-  ;;
+	;;
 "previous")
-  osascript -e 'tell application "Spotify" to previous track'
+	osascript -e 'tell application "Spotify" to previous track'
 
-  ;;
+	;;
 "toggle_play")
-  osascript -e 'tell application "Spotify" to playpause'
-  ;;
+	osascript -e 'tell application "Spotify" to playpause'
+	;;
 esac

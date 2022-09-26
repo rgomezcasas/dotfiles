@@ -13,11 +13,11 @@ docs::parse "$@"
 
 case "$thing" in
 kbhd)
-  tail -f /usr/local/var/log/skhd/skhd.*
-  ;;
+	tail -f /usr/local/var/log/skhd/skhd.*
+	;;
 
 *)
-  echo "\`$thing\` not known"
-  exit 1
-  ;;
+	echo "\`$thing\` not known"
+	exit 1
+	;;
 esac
