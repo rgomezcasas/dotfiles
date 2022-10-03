@@ -17,6 +17,7 @@ shell/zsh/.zim
 # OBS
 os/mac/obs/profiles/*/service.json
 os/mac/obs/profiles/*/service.json.bak
+os/mac/obs/scenes/*.json.bak
 
 # Private Stuff
 /**/**/private-*
