@@ -1611,6 +1611,8 @@
 	<false/>
 	<key>MinimalTabStyleBackgroundColorDifference</key>
 	<real>0.019999999552965164</real>
+	<key>NeverBlockSystemShutdown</key>
+	<true/>
 	<key>NeverWarnAboutShortLivedSessions_10B05570-B840-47B9-8682-D933DFEA6004</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_10B05570-B840-47B9-8682-D933DFEA6004_selection</key>
@@ -2681,6 +2683,8 @@
 				<key>Red Component</key>
 				<real>0.56078433990478516</real>
 			</dict>
+			<key>Load Shell Integration Automatically</key>
+			<false/>
 			<key>Log Directory</key>
 			<string></string>
 			<key>Minimum Contrast</key>
@@ -5059,7 +5063,7 @@
 	<key>PromptOnQuit</key>
 	<false/>
 	<key>QuitWhenAllWindowsClosed</key>
-	<true/>
+	<false/>
 	<key>RemapModifiersWithoutEventTap</key>
 	<true/>
 	<key>RightCommand</key>
@@ -5113,6 +5117,8 @@
 	<key>TmuxDashboardLimit</key>
 	<integer>10</integer>
 	<key>TmuxUsesDedicatedProfile</key>
+	<true/>
+	<key>TmuxWarnBeforePausing</key>
 	<true/>
 	<key>TripleClickSelectsFullWrappedLines</key>
 	<true/>
