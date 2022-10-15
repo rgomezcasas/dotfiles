@@ -4,12 +4,11 @@ set -euo pipefail
 
 source "$DOTLY_PATH/scripts/core/_main.sh"
 
-##? Prune all docker stuff
+##? Stop all docker containers
 #?? 1.0.0
 ##?
 ##? Usage:
-##?   prune
+##?   stop_all
 docs::parse "$@"
 
-dot docker stop_all
-yes | docker system prune -a
+docker ps -a -q | xargs -I_ docker stop "_"

@@ -2633,6 +2633,7 @@
 				<string>ssh</string>
 				<string>slogin</string>
 				<string>telnet</string>
+				<string>zsh</string>
 			</array>
 			<key>Keyboard Map</key>
 			<dict>
@@ -5066,6 +5067,8 @@
 	<false/>
 	<key>RemapModifiersWithoutEventTap</key>
 	<true/>
+	<key>RestoreWindowsToSameSpaces</key>
+	<false/>
 	<key>RightCommand</key>
 	<integer>8</integer>
 	<key>RightOption</key>
