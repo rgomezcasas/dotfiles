@@ -14,7 +14,7 @@ langdetect==1.0.9
 lxml==4.9.1
 lz4==4.0.1
 outcome==1.1.0
-Pillow==9.1.1
+Pillow==9.3.0
 protobuf==4.21.6
 pycparser==2.21
 pyOpenSSL==22.0.0
