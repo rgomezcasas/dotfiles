@@ -22,7 +22,7 @@ fi
 export JAVA_HOME='/Library/Java/JavaVirtualMachines/jbrsdk_jcef-17.0.4.1-osx-aarch64-b597.1/Contents/Home'
 export GEM_HOME="$HOME/.gem"
 export GOPATH="$HOME/.go"
-
+export PYTORCH_ENABLE_MPS_FALLBACK=1
 # ------------------------------------------------------------------------------
 # Apps
 # ------------------------------------------------------------------------------
@@ -60,6 +60,7 @@ export path=(
   "$GOPATH/bin"
   "$HOME/.cargo/bin"
   "/opt/homebrew/opt/ruby/bin"
+  "/opt/homebrew/opt/node@14/bin"
   "/opt/homebrew/opt/python@3.9/libexec/bin"
   "/opt/homebrew/bin"
   "/usr/local/bin"

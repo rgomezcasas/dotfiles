@@ -45,7 +45,7 @@
     }
   ],
   "[yaml]": {},
-  "window.zoomLevel": 3,
+  "window.zoomLevel": 1,
   "security.workspace.trust.untrustedFiles": "open",
   "editor.inlineSuggest.enabled": true,
   "github.copilot.enable": {
@@ -62,6 +62,5 @@
   },
   "editor.cursorSmoothCaretAnimation": true,
   "editor.smoothScrolling": true,
-  "workbench.list.smoothScrolling": true,
-  "workbench.activityBar.visible": false
+  "workbench.list.smoothScrolling": true
 }
