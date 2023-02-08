@@ -5,7 +5,7 @@ certifi==2022.5.18.1
 cffi==1.15.0
 chardet==4.0.0
 charset-normalizer==2.0.12
-cryptography==37.0.2
+cryptography==39.0.1
 csvsort==1.6.1
 galeodes==0.7
 h11==0.13.0
