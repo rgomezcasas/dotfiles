@@ -5,7 +5,21 @@
   },
   {
     "key": "cmd+1",
-    "command": "workbench.action.toggleSidebarVisibility"
+    "command": "workbench.action.focusSideBar"
+  },
+  {
+    "key": "cmd+1",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "sideBarFocus"
+  },
+  {
+    "key": "enter",
+    "command": "list.select",
+    "when": "sideBarFocus"
+  },
+  {
+    "key": "cmd+shift+a",
+    "command": "workbench.action.showCommands"
   },
   {
     "key": "cmd+shift+1",
@@ -19,6 +33,10 @@
     "key": "cmd+d",
     "command": "editor.action.copyLinesDownAction",
     "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+alt+cmd+m",
+    "command": "notifications.clearAll"
   },
   {
     "key": "ctrl+alt+cmd+t",

@@ -2,6 +2,7 @@
   "explorer.openEditors.visible": 0,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
+  "explorer.compactFolders": false,
   "search.useGlobalIgnoreFiles": true,
   "files.autoSave": "onFocusChange",
   "files.associations": {
@@ -12,7 +13,7 @@
   "editor.formatOnSave": true,
   "editor.fontFamily": "Dank Mono, Menlo, Monaco, 'Courier New', monospace",
   "workbench.editor.untitled.hint": "hidden",
-  "editor.fontSize": 20,
+  "editor.fontSize": 18,
   "editor.lineHeight": 32,
   "editor.rulers": [
     120
@@ -45,7 +46,7 @@
     }
   ],
   "[yaml]": {},
-  "window.zoomLevel": 0,
+  "window.zoomLevel": 0.3,
   "security.workspace.trust.untrustedFiles": "open",
   "editor.inlineSuggest.enabled": true,
   "github.copilot.enable": {
@@ -63,6 +64,6 @@
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.smoothScrolling": true,
   "workbench.list.smoothScrolling": true,
-  "workbench.activityBar.visible": false,
-  "workbench.tree.indent": 15
+  "workbench.tree.indent": 20,
+  "workbench.activityBar.visible": false
 }
