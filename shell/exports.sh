@@ -63,6 +63,7 @@ export path=(
   "/opt/homebrew/opt/node@14/bin"
   "/opt/homebrew/opt/python@3.9/libexec/bin"
   "/opt/homebrew/bin"
+  "/opt/homebrew/sbin"
   "/usr/local/bin"
   "/bin"
   "/usr/bin"

@@ -12,7 +12,7 @@
   "editor.formatOnSave": true,
   "editor.fontFamily": "Dank Mono, Menlo, Monaco, 'Courier New', monospace",
   "workbench.editor.untitled.hint": "hidden",
-  "editor.fontSize": 16,
+  "editor.fontSize": 20,
   "editor.lineHeight": 32,
   "editor.rulers": [
     120
@@ -32,7 +32,7 @@
   "git.showPushSuccessNotification": true,
   "workbench.sideBar.location": "left",
   "workbench.editor.showTabs": false,
-  "workbench.colorTheme": "Atom One Light",
+  "workbench.colorTheme": "Gruvbox Dark Soft",
   "workbench.fontAliasing": "auto",
   "editor.renderWhitespace": "all",
   "editor.suggestSelection": "first",
@@ -45,7 +45,7 @@
     }
   ],
   "[yaml]": {},
-  "window.zoomLevel": 1,
+  "window.zoomLevel": 0,
   "security.workspace.trust.untrustedFiles": "open",
   "editor.inlineSuggest.enabled": true,
   "github.copilot.enable": {
@@ -60,7 +60,9 @@
     "**/.settings": true,
     "**/.factorypath": true
   },
-  "editor.cursorSmoothCaretAnimation": true,
+  "editor.cursorSmoothCaretAnimation": "on",
   "editor.smoothScrolling": true,
-  "workbench.list.smoothScrolling": true
+  "workbench.list.smoothScrolling": true,
+  "workbench.activityBar.visible": false,
+  "workbench.tree.indent": 15
 }

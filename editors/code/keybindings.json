@@ -5,11 +5,11 @@
   },
   {
     "key": "cmd+1",
-    "command": "-workbench.action.focusFirstEditorGroup"
+    "command": "workbench.action.toggleSidebarVisibility"
   },
   {
-    "key": "cmd+1",
-    "command": "workbench.action.toggleSidebarVisibility"
+    "key": "cmd+shift+1",
+    "command": "workbench.action.toggleActivityBarVisibility"
   },
   {
     "key": "cmd+e",
@@ -22,12 +22,20 @@
   },
   {
     "key": "ctrl+alt+cmd+t",
-    "command": "workbench.action.terminal.toggleTerminal",
-    "when": "terminal.active"
+    "command": "workbench.action.terminal.toggleTerminal"
   },
   {
     "key": "cmd+2",
-    "command": "workbench.action.terminal.toggleTerminal",
-    "when": "terminal.active"
+    "command": "workbench.action.terminal.toggleTerminal"
+  },
+  {
+    "key": "cmd+shift+s",
+    "command": "workbench.files.action.showActiveFileInExplorer",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "escape",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "!editorTextFocus"
   }
 ]
