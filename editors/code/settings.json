@@ -9,6 +9,10 @@
     "Dockerfile-*": "dockerfile",
     "*.tmpl": "html"
   },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true
+  },
   "editor.minimap.enabled": false,
   "editor.formatOnSave": true,
   "editor.fontFamily": "Dank Mono, Menlo, Monaco, 'Courier New', monospace",
@@ -45,9 +49,25 @@
       "url": "https://json.schemastore.org/github-workflow"
     }
   ],
+  "[javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
   "[yaml]": {},
   "window.zoomLevel": 0.3,
   "security.workspace.trust.untrustedFiles": "open",
+  "eslint.format.enable": true,
   "editor.inlineSuggest.enabled": true,
   "github.copilot.enable": {
     "*": true,

@@ -18,6 +18,18 @@
     "when": "sideBarFocus"
   },
   {
+    "key": "alt+enter",
+    "command": "editor.action.quickFix"
+  },
+  {
+    "key": "alt+up",
+    "command": "editor.action.smartSelect.expand"
+  },
+  {
+    "key": "alt+down",
+    "command": "editor.action.smartSelect.shrink"
+  },
+  {
     "key": "cmd+shift+a",
     "command": "workbench.action.showCommands"
   },
