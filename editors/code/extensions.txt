@@ -1,0 +1,7 @@
+dbaeumer.vscode-eslint
+jdinhlife.gruvbox
+ms-azuretools.vscode-docker
+ms-vscode-remote.remote-containers
+ms-vsliveshare.vsliveshare
+stylelint.vscode-stylelint
+usernamehw.errorlens
