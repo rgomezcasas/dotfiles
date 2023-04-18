@@ -7,14 +7,15 @@
    :sim     100}}
  :applications
  {;; To obtain the app ID: `grep -A1 "CFBundleIdentifier" /Applications/The.app/Contents/Info.plist`
-   :Chrome   ["com.google.Chrome", "com.google.Chrome.beta"]
-   :Contexts ["com.contextsformac.Contexts"]
-   :Finder   ["com.apple.finder"]
-   :IntelliJ ["com.jetbrains.intellij"]
-   :VSCode   ["com.microsoft.VSCode"]
-   :Keynote  ["com.apple.iWork.Keynote"]
-   :Notion   ["notion.id"]
-   :Slack    ["com.tinyspeck.slackmacgap"]}
+   :Chrome    ["com.google.Chrome", "com.google.Chrome.beta"]
+   :Contexts  ["com.contextsformac.Contexts"]
+   :Finder    ["com.apple.finder"]
+   :IntelliJ  ["com.jetbrains.intellij"]
+   :VSCode    ["com.microsoft.VSCode"]
+   :Keynote   ["com.apple.iWork.Keynote"]
+   :Notion    ["notion.id"]
+   :GuitarPro ["com.arobas-music.guitarpro7"]
+   :Slack     ["com.tinyspeck.slackmacgap"]}
  :froms     {:line-delete              {:modi :left_command :key :delete_or_backspace}
              :clipboard-history        {:modi [:left_command :left_shift] :key :v}
              :line-duplicate           {:modi :left_command :key :d}
@@ -75,7 +76,7 @@
     :rules [[:!Cvolume_increment :!Cequal_sign]
             [:!Cvolume_decrement :!Chyphen]]}
    {:des   "[util] Extend selection"
-    :rules [[:selection-extend [:!Oleft_arrow :!OSright_arrow] [:!IntelliJ :!Notion :!VSCode]]]}
+    :rules [[:selection-extend [:!Oleft_arrow :!OSright_arrow] [:!IntelliJ :!Notion :!VSCode :!GuitarPro]]]}
    {:des   "[util] Delete line"
     :rules [[:line-delete
              [:!Cright_arrow :!Cdelete_or_backspace :delete_or_backspace]

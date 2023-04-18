@@ -1,89 +1,89 @@
 {
-  "explorer.openEditors.visible": 0,
-  "explorer.confirmDelete": false,
-  "explorer.confirmDragAndDrop": false,
-  "explorer.compactFolders": false,
-  "search.useGlobalIgnoreFiles": true,
-  "files.autoSave": "onFocusChange",
-  "files.associations": {
-    "Dockerfile-*": "dockerfile",
-    "*.tmpl": "html"
-  },
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true,
-    "source.fixAll.stylelint": true
-  },
-  "editor.minimap.enabled": false,
-  "editor.formatOnSave": true,
-  "editor.fontFamily": "Dank Mono, Menlo, Monaco, 'Courier New', monospace",
-  "workbench.editor.untitled.hint": "hidden",
-  "editor.fontSize": 18,
-  "editor.lineHeight": 32,
-  "editor.rulers": [
-    120
-  ],
-  "editor.wordWrap": "on",
-  "editor.wrappingIndent": "indent",
-  "workbench.editor.highlightModifiedTabs": true,
-  "workbench.list.horizontalScrolling": true,
-  "terminal.integrated.fontFamily": "Dank Mono, Hack, Menlo, Monaco, monospace",
-  "terminal.integrated.fontSize": 16,
-  "terminal.integrated.lineHeight": 1.4,
-  "php.executablePath": "/usr/local/bin/php",
-  "git.autofetch": true,
-  "git.alwaysSignOff": true,
-  "git.fetchOnPull": true,
-  "git.rebaseWhenSync": true,
-  "git.showPushSuccessNotification": true,
-  "workbench.sideBar.location": "left",
-  "workbench.editor.showTabs": false,
-  "workbench.colorTheme": "Gruvbox Dark Soft",
-  "workbench.fontAliasing": "auto",
-  "editor.renderWhitespace": "all",
-  "editor.suggestSelection": "first",
-  "json.schemas": [
-    {
-      "fileMatch": [
-        "ci.yml"
-      ],
-      "url": "https://json.schemastore.org/github-workflow"
-    }
-  ],
-  "[javascript]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  },
-  "[javascriptreact]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  },
-  "[yaml]": {},
-  "window.zoomLevel": 0.3,
-  "security.workspace.trust.untrustedFiles": "open",
-  "eslint.format.enable": true,
-  "editor.inlineSuggest.enabled": true,
-  "github.copilot.enable": {
-    "*": true,
-    "yaml": false,
-    "plaintext": true,
-    "markdown": true
-  },
-  "files.exclude": {
-    "**/.classpath": true,
-    "**/.project": true,
-    "**/.settings": true,
-    "**/.factorypath": true
-  },
-  "editor.cursorSmoothCaretAnimation": "on",
-  "editor.smoothScrolling": true,
-  "workbench.list.smoothScrolling": true,
-  "workbench.tree.indent": 20,
-  "workbench.activityBar.visible": false
+    "explorer.openEditors.visible": 0,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.compactFolders": false,
+    "search.useGlobalIgnoreFiles": true,
+    "files.autoSave": "onFocusChange",
+    "files.associations": {
+        "Dockerfile-*": "dockerfile",
+        "*.tmpl": "html"
+    },
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true,
+        "source.fixAll.stylelint": true
+    },
+    "editor.minimap.enabled": false,
+    "editor.formatOnSave": true,
+    "editor.fontFamily": "Dank Mono, Menlo, Monaco, 'Courier New', monospace",
+    "workbench.editor.untitled.hint": "hidden",
+    "editor.fontSize": 18,
+    "editor.lineHeight": 32,
+    "editor.rulers": [
+        120
+    ],
+    "editor.wordWrap": "off",
+    "editor.wrappingIndent": "indent",
+    "workbench.editor.highlightModifiedTabs": true,
+    "workbench.list.horizontalScrolling": true,
+    "terminal.integrated.fontFamily": "Dank Mono, Hack, Menlo, Monaco, monospace",
+    "terminal.integrated.fontSize": 16,
+    "terminal.integrated.lineHeight": 1.4,
+    "php.executablePath": "/usr/local/bin/php",
+    "git.autofetch": true,
+    "git.alwaysSignOff": true,
+    "git.fetchOnPull": true,
+    "git.rebaseWhenSync": true,
+    "git.showPushSuccessNotification": true,
+    "workbench.sideBar.location": "left",
+    "workbench.editor.showTabs": false,
+    "workbench.colorTheme": "Default Light+",
+    "workbench.fontAliasing": "auto",
+    "editor.renderWhitespace": "all",
+    "editor.suggestSelection": "first",
+    "json.schemas": [
+        {
+            "fileMatch": [
+                "ci.yml"
+            ],
+            "url": "https://json.schemastore.org/github-workflow"
+        }
+    ],
+    "[javascript]": {
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
+    "[yaml]": {},
+    "window.zoomLevel": 0.3,
+    "security.workspace.trust.untrustedFiles": "open",
+    "eslint.format.enable": true,
+    "editor.inlineSuggest.enabled": true,
+    "github.copilot.enable": {
+        "*": true,
+        "yaml": false,
+        "plaintext": true,
+        "markdown": true
+    },
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.smoothScrolling": true,
+    "workbench.list.smoothScrolling": true,
+    "workbench.tree.indent": 20,
+    "typescript.updateImportsOnFileMove.enabled": "always"
 }

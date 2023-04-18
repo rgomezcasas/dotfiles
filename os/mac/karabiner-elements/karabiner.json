@@ -269,6 +269,9 @@
           }, {
             "type" : "frontmost_application_unless",
             "bundle_identifiers" : [ "com.microsoft.VSCode" ]
+          }, {
+            "type" : "frontmost_application_unless",
+            "bundle_identifiers" : [ "com.arobas-music.guitarpro7" ]
           } ],
           "type" : "basic"
         } ]

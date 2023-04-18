@@ -1,3 +1,4 @@
+Codely.codely-theme
 dbaeumer.vscode-eslint
 jdinhlife.gruvbox
 ms-azuretools.vscode-docker
