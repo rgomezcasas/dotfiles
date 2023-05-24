@@ -26,6 +26,7 @@
              :show-recent              {:modi :left_command :key :e}
              :sidebar-primary-toggle   {:modi :left_command :key :1}
              :sidebar-secondary-toggle {:modi :left_command :key :2}
+             :create-folder            {:modi [:left_control :left_option :left_command] :key :p}
              :switch-account           {:modi :left_command :key :caps_lock}
              :switch-account-esc       {:modi :left_command :key :escape}
              :zoom-in                  {:modi :left_command :key :equal_sign}
@@ -105,6 +106,8 @@
     :rules [[:!CTOu "$HOME/.dotfiles/bin/sdot utils uuid_code"]]}
 
    ;; ------------ Application specific ------------
+   {:des "[Finder] Create folder" :rules [:Finder [:create-folder :!CSn]]}
+
    {:des "[chrome] Show recent tabs" :rules [:Chrome [:show-recent :!CTO1]]}
    {:des "[chrome] Inspect element" :rules [:Chrome [:!CSi :!CSc]]}
    {:des "[chrome] Toggle console" :rules [:Chrome [:!CTOt :!COj]]}

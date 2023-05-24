@@ -1,89 +1,70 @@
 {
-    "explorer.openEditors.visible": 0,
-    "explorer.confirmDelete": false,
-    "explorer.confirmDragAndDrop": false,
-    "explorer.compactFolders": false,
-    "search.useGlobalIgnoreFiles": true,
-    "files.autoSave": "onFocusChange",
-    "files.associations": {
-        "Dockerfile-*": "dockerfile",
-        "*.tmpl": "html"
-    },
-    "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true,
-        "source.fixAll.stylelint": true
-    },
-    "editor.minimap.enabled": false,
-    "editor.formatOnSave": true,
-    "editor.fontFamily": "Dank Mono, Menlo, Monaco, 'Courier New', monospace",
-    "workbench.editor.untitled.hint": "hidden",
-    "editor.fontSize": 18,
-    "editor.lineHeight": 32,
-    "editor.rulers": [
-        120
+  "github.copilot.inlineSuggest.enable": true,
+  "editor.fontSize": 20,
+  "editor.suggestSelection": "first",
+  "editor.minimap.enabled": false,
+  "editor.dragAndDrop": false,
+  "editor.fontFamily": "DankMono Nerd font Mono",
+  "terminal.integrated.fontFamily": "DankMono Nerd font Mono",
+  "terminal.integrated.fontSize": 20,
+  "editor.lineHeight": 2.1,
+  "editor.rulers": [
+    100
+  ],
+  "editor.tabSize": 2,
+  "editor.wordWrap": "off",
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.excludeGitIgnore": false,
+  "files.autoSave": "onFocusChange",
+  "files.eol": "\n",
+  "search.useGlobalIgnoreFiles": true,
+  "search.useIgnoreFiles": true,
+  "workbench.editor.showTabs": false,
+  "explorer.openEditors.visible": 0,
+  // Behaviour
+  "window.openFoldersInNewWindow": "on",
+  // Apparence
+  "workbench.colorTheme": "Codely Dark",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.smoothScrolling": true,
+  "explorer.compactFolders": false,
+  "editor.renderWhitespace": "selection",
+  "editor.bracketPairColorization.enabled": true,
+  "editor.lightbulb.enabled": false,
+  "workbench.list.horizontalScrolling": true,
+  "workbench.sideBar.location": "left",
+  "workbench.tree.indent": 20,
+  "workbench.list.smoothScrolling": true,
+  "workbench.productIconTheme": "fluent-icons",
+  "workbench.iconTheme": "symbols",
+  "breadcrumbs.symbolPath": "off",
+  "workbench.startupEditor": "none",
+  // Actions
+  "editor.formatOnPaste": false,
+  "editor.formatOnSave": true,
+  "[typescript]": {
+    "editor.formatOnSave": false,
+    "editor.codeActionsOnSave": [
+      "source.addMissingImports",
+      "source.fixAll.eslint"
     ],
-    "editor.wordWrap": "off",
-    "editor.wrappingIndent": "indent",
-    "workbench.editor.highlightModifiedTabs": true,
-    "workbench.list.horizontalScrolling": true,
-    "terminal.integrated.fontFamily": "Dank Mono, Hack, Menlo, Monaco, monospace",
-    "terminal.integrated.fontSize": 16,
-    "terminal.integrated.lineHeight": 1.4,
-    "php.executablePath": "/usr/local/bin/php",
-    "git.autofetch": true,
-    "git.alwaysSignOff": true,
-    "git.fetchOnPull": true,
-    "git.rebaseWhenSync": true,
-    "git.showPushSuccessNotification": true,
-    "workbench.sideBar.location": "left",
-    "workbench.editor.showTabs": false,
-    "workbench.colorTheme": "Default Light+",
-    "workbench.fontAliasing": "auto",
-    "editor.renderWhitespace": "all",
-    "editor.suggestSelection": "first",
-    "json.schemas": [
-        {
-            "fileMatch": [
-                "ci.yml"
-            ],
-            "url": "https://json.schemastore.org/github-workflow"
-        }
-    ],
-    "[javascript]": {
-        "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-    },
-    "[javascriptreact]": {
-        "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-    },
-    "[typescript]": {
-        "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-    },
-    "[typescriptreact]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
-    },
-    "[json]": {
-        "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-    },
-    "[yaml]": {},
-    "window.zoomLevel": 0.3,
-    "security.workspace.trust.untrustedFiles": "open",
-    "eslint.format.enable": true,
-    "editor.inlineSuggest.enabled": true,
-    "github.copilot.enable": {
-        "*": true,
-        "yaml": false,
-        "plaintext": true,
-        "markdown": true
-    },
-    "files.exclude": {
-        "**/.classpath": true,
-        "**/.project": true,
-        "**/.settings": true,
-        "**/.factorypath": true
-    },
-    "editor.cursorSmoothCaretAnimation": "on",
-    "editor.smoothScrolling": true,
-    "workbench.list.smoothScrolling": true,
-    "workbench.tree.indent": 20,
-    "typescript.updateImportsOnFileMove.enabled": "always"
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  // Git
+  "git.autofetch": true,
+  "gitlens.hovers.currentLine.over": "line",
+  "gitlens.codeLens.enabled": false,
+  "conventionalCommits.showNewVersionNotes": false,
+  // Extensions
+  "focus.opacity": "0.7",
+  "focus.highlightRange": "block",
+  "jest.autoRun": "off",
+  "githubPullRequests.pushBranch": "always",
+  "php.codeLens.enabled": false,
+  "redhat.telemetry.enabled": false,
+  "boot-java.rewrite.reconcile": true,
+  "editor.inlineSuggest.enabled": true,
+  "aws.telemetry": false,
+  "workbench.activityBar.visible": false,
 }

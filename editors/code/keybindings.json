@@ -1,7 +1,7 @@
 [
   {
-    "key": "ctrl+g",
-    "command": "editor.action.addSelectionToNextFindMatch"
+    "key": "cmd+shift+1",
+    "command": "workbench.action.toggleActivityBarVisibility"
   },
   {
     "key": "cmd+1",
@@ -18,54 +18,111 @@
     "when": "sideBarFocus"
   },
   {
-    "key": "alt+enter",
-    "command": "editor.action.quickFix"
+    "key": "escape",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "!editorTextFocus"
   },
   {
-    "key": "alt+up",
-    "command": "editor.action.smartSelect.expand"
+    "key": "cmd+n",
+    "command": "explorer.newFile",
+    "when": "explorerViewletFocus"
   },
   {
-    "key": "alt+down",
-    "command": "editor.action.smartSelect.shrink"
+    "key": "ctrl+alt+cmd+p",
+    "command": "explorer.newFolder",
+    "when": "explorerViewletFocus"
   },
   {
-    "key": "cmd+shift+a",
-    "command": "workbench.action.showCommands"
-  },
-  {
-    "key": "cmd+shift+1",
-    "command": "workbench.action.toggleActivityBarVisibility"
-  },
-  {
-    "key": "cmd+e",
-    "command": "workbench.action.quickOpen"
-  },
-  {
-    "key": "cmd+d",
-    "command": "editor.action.copyLinesDownAction",
-    "when": "editorTextFocus && !editorReadonly"
-  },
-  {
-    "key": "ctrl+alt+cmd+m",
-    "command": "notifications.clearAll"
+    "key": "ctrl+alt+cmd+,",
+    "command": "workbench.action.toggleStatusbarVisibility"
   },
   {
     "key": "ctrl+alt+cmd+t",
     "command": "workbench.action.terminal.toggleTerminal"
   },
   {
-    "key": "cmd+2",
-    "command": "workbench.action.terminal.toggleTerminal"
+    "key": "ctrl+alt+cmd+m",
+    "command": "notifications.clearAll"
   },
   {
-    "key": "cmd+shift+s",
-    "command": "workbench.files.action.showActiveFileInExplorer",
+    "key": "ctrl+d",
+    "command": "editor.action.copyLinesDownAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "cmd+e",
+    "command": "workbench.action.showAllEditorsByMostRecentlyUsed"
+  },
+  {
+    "key": "cmd+[",
+    "command": "workbench.action.navigateBack",
+    "when": "canNavigateBack"
+  },
+  {
+    "key": "cmd+]",
+    "command": "workbench.action.navigateForward",
+    "when": "canNavigateForward"
+  },
+  {
+    "key": "cmd+b",
+    "command": "-workbench.action.toggleSidebarVisibility"
+  },
+  {
+    "key": "cmd+b",
+    "command": "editor.action.revealDefinition",
+    "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+  },
+  {
+    "key": "shift+cmd+t",
+    "command": "extension.jumpToTest",
     "when": "editorTextFocus"
   },
   {
-    "key": "escape",
-    "command": "workbench.action.focusActiveEditorGroup",
-    "when": "!editorTextFocus"
+    "key": "shift+alt+down",
+    "command": "editor.action.moveLinesDownAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "shift+alt+up",
+    "command": "editor.action.moveLinesUpAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "alt+up",
+    "command": "editor.action.smartSelect.expand",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+down",
+    "command": "editor.action.smartSelect.shrink",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+t",
+    "command": "editor.action.refactor",
+    "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+e",
+    "command": "editor.action.codeAction",
+    "args": {
+      "kind": "refactor.extract.function",
+    }
+  },
+  {
+    "key": "shift+cmd+b",
+    "command": "git.checkout"
+  },
+  {
+    "key": "ctrl+r",
+    "command": "-workbench.action.openRecent"
+  },
+  {
+    "key": "cmd+k",
+    "command": "extension.conventionalCommits"
+  },
+  {
+    "key": "ctrl+alt+cmd+o",
+    "command": "workbench.action.openRecent"
   }
 ]

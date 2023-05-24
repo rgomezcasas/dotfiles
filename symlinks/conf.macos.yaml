@@ -30,8 +30,8 @@
     ~/bin/date: /opt/homebrew/bin/gdate
     ~/bin/find: /opt/homebrew/bin/gfind
     ~/bin/make: /opt/homebrew/bin/gmake
-    ~/bin/node: /opt/homebrew/opt/node@16/bin/node
-    ~/bin/npm: /opt/homebrew/opt/node@16/bin/npm
+    ~/bin/node: /opt/homebrew/opt/node@18/bin/node
+    ~/bin/npm: /opt/homebrew/opt/node@18/bin/npm
     ~/bin/pecl: /opt/homebrew/opt/php@8.1/bin/pecl
     ~/bin/php7: /opt/homebrew/opt/php@7.4/bin/php
     ~/bin/php: /opt/homebrew/opt/php@8.1/bin/php

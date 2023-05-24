@@ -5,13 +5,14 @@
 .idea-compl
 *.sc
 
+.vscode
 # Mac
 .DS_Store
 
 # Clojure
 .lein-repl-history
 .lein-failures
-completer.hist
+completer.histw
 .nrepl-port
 
 # Scala

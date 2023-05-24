@@ -1,0 +1,15 @@
+{
+	"Value Object Mother": {
+		"scope": "typescript",
+		"prefix": "_moth",
+		"body": [
+			"export class $TM_FILENAME_BASE {",
+			"\tstatic create(${TM_FILENAME_BASE/(.*)(Mother)/${1:/camelcase}/g}: string): ${TM_FILENAME_BASE/(.*)(Mother)/$1/g} {",
+			"\t\treturn new ${TM_FILENAME_BASE/(.*)(Mother)/$1/g}(${TM_FILENAME_BASE/(.*)(Mother)/${1:/camelcase}/g});$0",
+			"\t}",
+			"}",
+		],
+		"description": "Create an object mother based on the file name",
+		"isFileTemplate": true
+	}
+}
