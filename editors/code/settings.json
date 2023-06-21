@@ -25,7 +25,7 @@
   // Behaviour
   "window.openFoldersInNewWindow": "on",
   // Apparence
-  "workbench.colorTheme": "Codely Dark",
+  "workbench.colorTheme": "Visual Studio Light",
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.smoothScrolling": true,
   "explorer.compactFolders": false,
@@ -40,6 +40,7 @@
   "workbench.iconTheme": "symbols",
   "breadcrumbs.symbolPath": "off",
   "workbench.startupEditor": "none",
+  "editor.hover.enabled": false,
   // Actions
   "editor.formatOnPaste": false,
   "editor.formatOnSave": true,
@@ -67,4 +68,6 @@
   "editor.inlineSuggest.enabled": true,
   "aws.telemetry": false,
   "workbench.activityBar.visible": false,
+  "symbols.hidesExplorerArrows": false,
+  "window.zoomLevel": 2
 }
