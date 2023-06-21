@@ -31,7 +31,7 @@
              :switch-account-esc       {:modi :left_command :key :escape}
              :zoom-in                  {:modi :left_command :key :equal_sign}
              :zoom-out                 {:modi :left_command :key :hyphen}}
- :templates {:open-app         "osascript -e 'tell application \"%s\" to activate'"
+ :templates {:open-app         "open -a \"%s\""
              :type             "/opt/homebrew/bin/skhd -t \"%s\""
              :paste            "$HOME/.dotfiles/bin/sdot mac paste_text \"%s\""
              :paste-and-return "$HOME/.dotfiles/bin/sdot mac paste_text \"%s\" --returning"

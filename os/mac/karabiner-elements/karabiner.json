@@ -369,7 +369,7 @@
             }
           },
           "to" : [ {
-            "shell_command" : "osascript -e 'tell application \"iTerm\" to activate'"
+            "shell_command" : "open -a \"iTerm\""
           } ],
           "type" : "basic"
         } ]
@@ -383,7 +383,7 @@
             }
           },
           "to" : [ {
-            "shell_command" : "osascript -e 'tell application \"IntelliJ IDEA-EAP\" to activate'"
+            "shell_command" : "open -a \"IntelliJ IDEA-EAP\""
           } ],
           "type" : "basic"
         } ]
@@ -397,7 +397,7 @@
             }
           },
           "to" : [ {
-            "shell_command" : "osascript -e 'tell application \"Google Chrome\" to activate'"
+            "shell_command" : "open -a \"Google Chrome\""
           } ],
           "type" : "basic"
         } ]
@@ -411,7 +411,7 @@
             }
           },
           "to" : [ {
-            "shell_command" : "osascript -e 'tell application \"Slack\" to activate'"
+            "shell_command" : "open -a \"Slack\""
           } ],
           "type" : "basic"
         } ]
