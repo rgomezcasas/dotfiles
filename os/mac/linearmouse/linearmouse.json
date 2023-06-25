@@ -3,8 +3,8 @@
   "schemes" : [
     {
       "pointer" : {
-        "acceleration" : 0.7412,
-        "speed" : 0.1039,
+        "acceleration" : 0.6875,
+        "speed" : 0.069,
         "disableAcceleration" : false
       },
       "if" : {
