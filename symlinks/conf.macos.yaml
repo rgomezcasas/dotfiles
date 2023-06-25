@@ -24,7 +24,7 @@
     ~/Library/Application Support/Code/User/settings.json: editors/code/settings.json
     ~/Library/Application Support/Code/User/snippets: editors/code/snippets
     ~/Library/Application Support/com.elgato.StreamDeck/ProfilesV2: os/mac/streamdeck/ProfilesV2
-    ~/Library/Application Support/obs-studio/basic: os/mac/obs
+    ~/Library/Application Support/obs-studio/basic: private/mac/obs
     ~/Library/Preferences/com.contextsformac.Contexts.plist: os/mac/contexts/com.contextsformac.Contexts.plist
     ~/bin/bash: /opt/homebrew/bin/bash
     ~/bin/date: /opt/homebrew/bin/gdate
