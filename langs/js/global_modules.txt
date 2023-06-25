@@ -1,2 +1,3 @@
 generator-eslint
+typescript
 yo
