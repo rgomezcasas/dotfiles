@@ -8,6 +8,7 @@
  :applications
  {;; To obtain the app ID: `grep -A1 "CFBundleIdentifier" /Applications/The.app/Contents/Info.plist`
    :Chrome    ["com.google.Chrome", "com.google.Chrome.beta"]
+   :Safari    ["com.apple.Safari"]
    :Contexts  ["com.contextsformac.Contexts"]
    :Finder    ["com.apple.finder"]
    :IntelliJ  ["com.jetbrains.intellij"]
@@ -118,6 +119,9 @@
     :rules [:Chrome [:switch-account [:!CSm :return_or_enter]]]}
    {:des   "[chrome] Switch profile with escape"
     :rules [:Chrome [:switch-account-esc [:!CSm :return_or_enter]]]}
+
+  {:des   "[safari] Toggle sidebar"
+    :rules [:Safari [:sidebar-primary-toggle :!CSl]]}
 
    {:des   "[slack] Navigate between channels"
     :rules [:Slack [:!Cp :!Ck] [:!Ce :!Ck]]}

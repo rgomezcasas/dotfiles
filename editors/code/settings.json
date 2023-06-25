@@ -68,6 +68,5 @@
   "editor.inlineSuggest.enabled": true,
   "aws.telemetry": false,
   "workbench.activityBar.visible": false,
-  "symbols.hidesExplorerArrows": false,
-  "window.zoomLevel": 2
+  "symbols.hidesExplorerArrows": false
 }

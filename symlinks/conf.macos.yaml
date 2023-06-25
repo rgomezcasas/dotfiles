@@ -14,6 +14,7 @@
     scripts/private: ~/Library/Mobile Documents/com~apple~CloudDocs/etc/private_scripts
     ~/.config/karabiner.edn: os/mac/karabiner-goku/karabiner.edn
     ~/.config/karabiner: os/mac/karabiner-elements
+    ~/.config/linearmouse: os/mac/linearmouse
     ~/.dotly: os/mac/.dotly
     ~/.skhdrc: os/mac/skhd/.skhdrc
     ~/.tmux.conf: os/mac/.tmux.conf
@@ -33,8 +34,8 @@
     ~/bin/node: /opt/homebrew/opt/node@18/bin/node
     ~/bin/npm: /opt/homebrew/opt/node@18/bin/npm
     ~/bin/pecl: /opt/homebrew/opt/php@8.1/bin/pecl
-    ~/bin/php: /opt/homebrew/opt/php@8.1/bin/php
     ~/bin/php7: /opt/homebrew/opt/php@7.4/bin/php
+    ~/bin/php: /opt/homebrew/opt/php@8.1/bin/php
     ~/bin/sed: /opt/homebrew/bin/gsed
     ~/bin/touch: /opt/homebrew/bin/gtouch
     ~/bin/zsh: /bin/zsh
