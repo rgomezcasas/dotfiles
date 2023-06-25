@@ -2,3 +2,6 @@
 	path = modules/dotly
 	url = https://github.com/codelytv/dotly.git
 	
+[submodule "modules/private"]
+	path = modules/private
+	url = git@github.com:rgomezcasas/dotfiles-private.git
