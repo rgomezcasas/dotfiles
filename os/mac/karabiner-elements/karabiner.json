@@ -444,6 +444,20 @@
           "type" : "basic"
         } ]
       }, {
+        "description" : "[script] Show desktop folder",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "d",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_control", "left_option" ]
+            }
+          },
+          "to" : [ {
+            "shell_command" : "open \"$HOME/Desktop\""
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
         "description" : "[Finder] Create folder",
         "manipulators" : [ {
           "from" : {

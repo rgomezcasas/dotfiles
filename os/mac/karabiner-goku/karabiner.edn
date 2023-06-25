@@ -105,6 +105,9 @@
    {:des   "[script] Generate uuid"
     :rules [[:!CTOu "$HOME/.dotfiles/bin/sdot utils uuid_code"]]}
 
+	 {:des   "[script] Show desktop folder"
+		:rules [[:!CTOd "open \"$HOME/Desktop\""]]}
+
    ;; ------------ Application specific ------------
    {:des "[Finder] Create folder" :rules [:Finder [:create-folder :!CSn]]}
 
