@@ -1,152 +1,163 @@
 {:profiles
  {:Default
-  {:default true
-   :alone   20
-   :delay   200
-   :held    100
-   :sim     100}}
+	{:default true
+	 :alone   20
+	 :delay   200
+	 :held    100
+	 :sim     100}}
  :applications
  {;; To obtain the app ID: `grep -A1 "CFBundleIdentifier" /Applications/The.app/Contents/Info.plist`
-   :Chrome    ["com.google.Chrome", "com.google.Chrome.beta"]
-   :Safari    ["com.apple.Safari"]
-   :Contexts  ["com.contextsformac.Contexts"]
-   :Finder    ["com.apple.finder"]
-   :IntelliJ  ["com.jetbrains.intellij"]
-   :VSCode    ["com.microsoft.VSCode"]
-   :Keynote   ["com.apple.iWork.Keynote"]
-   :Notion    ["notion.id"]
-   :GuitarPro ["com.arobas-music.guitarpro7"]
-   :Slack     ["com.tinyspeck.slackmacgap"]}
+	 :Chrome    ["com.google.Chrome", "com.google.Chrome.beta"]
+	 :Contexts  ["com.contextsformac.Contexts"]
+	 :Finder    ["com.apple.finder"]
+	 :GuitarPro ["com.arobas-music.guitarpro7"]
+	 :IntelliJ  ["com.jetbrains.intellij"]
+	 :Keynote   ["com.apple.iWork.Keynote"]
+	 :Notion    ["notion.id"]
+	 :Safari    ["com.apple.Safari"]
+	 :Slack     ["com.tinyspeck.slackmacgap"]
+	 :VSCode    ["com.microsoft.VSCode"]}
  :froms     {:line-delete              {:modi :left_command :key :delete_or_backspace}
-             :clipboard-history        {:modi [:left_command :left_shift] :key :v}
-             :line-duplicate           {:modi :left_command :key :d}
-             :move-next-screen         {:modi [:left_command :left_shift :left_option] :key :right_arrow}
-             :move-prev-screen         {:modi [:left_command :left_shift :left_option] :key :left_arrow}
-             :selection-extend         {:modi :left_option :key :up_arrow}
-             :selection-shrink         {:modi :left_option :key :down_arrow}
-             :show-recent              {:modi :left_command :key :e}
-             :sidebar-primary-toggle   {:modi :left_command :key :1}
-             :sidebar-secondary-toggle {:modi :left_command :key :2}
-             :create-folder            {:modi [:left_control :left_option :left_command] :key :p}
-             :switch-account           {:modi :left_command :key :caps_lock}
-             :switch-account-esc       {:modi :left_command :key :escape}
-             :zoom-in                  {:modi :left_command :key :equal_sign}
-             :zoom-out                 {:modi :left_command :key :hyphen}}
+						 :clipboard-history        {:modi [:left_command :left_shift] :key :v}
+						 :line-duplicate           {:modi :left_command :key :d}
+						 :move-next-screen         {:modi [:left_command :left_shift :left_option] :key :right_arrow}
+						 :move-prev-screen         {:modi [:left_command :left_shift :left_option] :key :left_arrow}
+						 :selection-extend         {:modi :left_option :key :up_arrow}
+						 :selection-shrink         {:modi :left_option :key :down_arrow}
+						 :show-recent              {:modi :left_command :key :e}
+						 :sidebar-primary-toggle   {:modi :left_command :key :1}
+						 :sidebar-secondary-toggle {:modi :left_command :key :2}
+						 :create-folder            {:modi [:left_control :left_option :left_command] :key :p}
+						 :switch-account           {:modi :left_command :key :caps_lock}
+						 :switch-account-esc       {:modi :left_command :key :escape}
+						 :zoom-in                  {:modi :left_command :key :equal_sign}
+						 :zoom-out                 {:modi :left_command :key :hyphen}}
  :templates {:open-app         "open -a \"%s\""
-             :type             "/opt/homebrew/bin/skhd -t \"%s\""
-             :paste            "$HOME/.dotfiles/bin/sdot mac paste_text \"%s\""
-             :paste-and-return "$HOME/.dotfiles/bin/sdot mac paste_text \"%s\" --returning"
-             :open-in-chrome   "$HOME/.dotfiles/bin/sdot mac open_chrome_url \"%s\""
-             :wait_seconds     "osascript -e 'delay %s'"}
+						 :type             "/opt/homebrew/bin/skhd -t \"%s\""
+						 :paste            "$HOME/.dotfiles/bin/sdot mac paste_text \"%s\""
+						 :paste-and-return "$HOME/.dotfiles/bin/sdot mac paste_text \"%s\" --returning"
+						 :open-in-chrome   "$HOME/.dotfiles/bin/sdot mac open_chrome_url \"%s\""
+						 :wait_seconds     "osascript -e 'delay %s'"}
  :layers    {:tab-mode  {:key :tab}
-             :caps-mode {:key :caps_lock}}
+						 :caps-mode {:key :caps_lock}}
  :simlayers {:emoji-mode  {:key :e}
-             :open-mode   {:key :o}
-             :script-mode {:key :s}}
+						 :open-mode   {:key :o}
+						 :script-mode {:key :s}}
  :main
  [;; ------------ Remaps ------------
-   {:des   "[mouse] Up key -> Restore last hidden"
-    :rules [[{:pkey :button5} :!Ctab]]}
-   {:des   "[mouse] Down key -> Hide"
-    :rules [[{:pkey :button4} [{:pkey :button1} :!Ch]]]}
-   {:des   "[keyboard] ctr + cmd + ↑ as ↓"
-    :rules [[:!CTdown_arrow :!CTup_arrow]]}
-   {:des   "[keyboard] shift + opt + cmd + ↑ as shift + opt + cmd + →"
-    :rules [[:!CTdown_arrow :!CTup_arrow]]}
-   {:des   "[keyboard] disable minimize with cmd+m"
-    :rules [[:!Cm :!CTSm]]}
-   {:des   "[keyboard] supr ctrl+backspace"
-    :rules [[:!Tdelete_or_backspace :delete_forward]]}
+	 {:des   "[mouse] Up key -> Restore last hidden"
+		:rules [[{:pkey :button5} :!Ctab]]}
+	 {:des   "[mouse] Down key -> Hide"
+		:rules [[{:pkey :button4} [{:pkey :button1} :!Ch]]]}
+	 {:des   "[keyboard] ctr + cmd + ↑ as ↓"
+		:rules [[:!CTdown_arrow :!CTup_arrow]]}
+	 {:des   "[keyboard] shift + opt + cmd + ↑ as shift + opt + cmd + →"
+		:rules [[:!CTdown_arrow :!CTup_arrow]]}
+	 {:des   "[keyboard] disable minimize with cmd+m"
+		:rules [[:!Cm :!CTSm]]}
+	 {:des   "[keyboard] supr ctrl+backspace"
+		:rules [[:!Tdelete_or_backspace :delete_forward]]}
 
-   {:des   "[keyboard] Symbols // @todo: move this to a keyboard layout using ukelele"
-    :rules [[:!On [:type "ñ"]]
-            [:!OSn [:type "Ñ"]]
-            [:!Oslash [:type "¿"]]
-            [:!Eslash [:type "¿"]]
-            [:!E3 [:type "€"]]
-            [:!O3 [:type "€"]]]}
+	 {:des   "[keyboard] Symbols // @todo: move this to a keyboard layout using ukelele"
+		:rules [[:!On [:type "ñ"]]
+						[:!OSn [:type "Ñ"]]
+						[:!Oslash [:type "¿"]]
+						[:!Eslash [:type "¿"]]
+						[:!E3 [:type "€"]]
+						[:!O3 [:type "€"]]]}
 
-   {:des   "[keyboard] I wanna learn typing"
-    :rules [[:!Oo [:type "ó"]]
-            [:!Oa [:type "á"]]]}
+	 {:des   "[keyboard] I wanna learn typing"
+		:rules [[:!Oo [:type "ó"]]
+						[:!Oa [:type "á"]]]}
 
-   ;; ------------ Utils ------------
-   {:des   "[util] Change brightness with the wheel"
-    :rules [[:!Svolume_increment :display_brightness_increment]
-            [:!Svolume_decrement :display_brightness_decrement]]}
-   {:des   "[util] Zoom with the wheel"
-    :rules [[:!Cvolume_increment :!Cequal_sign]
-            [:!Cvolume_decrement :!Chyphen]]}
-   {:des   "[util] Extend selection"
-    :rules [[:selection-extend [:!Oleft_arrow :!OSright_arrow] [:!IntelliJ :!Notion :!VSCode :!GuitarPro]]]}
-   {:des   "[util] Delete line"
-    :rules [[:line-delete
-             [:!Cright_arrow :!Cdelete_or_backspace :delete_or_backspace]
-             [:!IntelliJ :!Notion :!Finder :!Contexts]]]}
-   {:des   "[util] Clipboard history"
-    :rules [[:clipboard-history [:!CTO0]]]}
-   {:des   "[util] Move app to next screen and center"
-    :rules [[:move-next-screen [:!CTOSright_arrow :!COc]]]}
-   {:des   "[util] Move app to prev screen and center"
-    :rules [[:move-prev-screen [:!CTOSleft_arrow :!COc]]]}
+	 ;; ------------ Utils ------------
+	 {:des   "[util] Change brightness with the wheel"
+		:rules [[:!Svolume_increment :display_brightness_increment]
+						[:!Svolume_decrement :display_brightness_decrement]]}
+	 {:des   "[util] Zoom with the wheel"
+		:rules [[:!Cvolume_increment :!Cequal_sign]
+						[:!Cvolume_decrement :!Chyphen]]}
+	 {:des   "[util] Extend selection"
+		:rules [[:selection-extend
+						 [:!Oleft_arrow :!OSright_arrow]
+						 [:!IntelliJ :!Notion :!VSCode :!GuitarPro]]]}
+	 {:des   "[util] Delete line"
+		:rules [[:line-delete
+						 [:!Cright_arrow :!Cdelete_or_backspace :delete_or_backspace]
+						 [:!IntelliJ :!Notion :!Finder :!Contexts]]]}
+	 {:des   "[util] Clipboard history"
+		:rules [[:clipboard-history [:!CTO0]]]}
+	 {:des   "[util] Move app to next screen and center"
+		:rules [[:move-next-screen [:!CTOSright_arrow :!COc]]]}
+	 {:des   "[util] Move app to prev screen and center"
+		:rules [[:move-prev-screen [:!CTOSleft_arrow :!COc]]]}
 
-   ;; ------------ Launchers ------------
-   {:des   "[launch] iTerm"
-    :rules [[:!CTOspacebar [:open-app "iTerm"]]]}
-   {:des   "[launch] IntelliJ"
-    :rules [[:!CTOi [:open-app "IntelliJ IDEA-EAP"]]]}
-   {:des   "[launch] Chrome"
-    :rules [[:!CTOc [:open-app "Google Chrome"]]]}
-   {:des   "[launch] Slack"
-    :rules [[:!CTOs [:open-app "Slack"]]]}
+	 ;; ------------ Launchers ------------
+	 {:des   "[launch] iTerm"
+		:rules [[:!CTOspacebar [:open-app "iTerm"]]]}
+	 {:des   "[launch] IntelliJ"
+		:rules [[:!CTOi [:open-app "IntelliJ IDEA-EAP"]]]}
+	 {:des   "[launch] Chrome"
+		:rules [[:!CTOc [:open-app "Google Chrome"]]]}
+	 {:des   "[launch] Slack"
+		:rules [[:!CTOs [:open-app "Slack"]]]}
 
-   {:des   "[launch] dotly ui scripts"
-    :rules [[:!Tcaps_lock "$HOME/.dotfiles/bin/sdot ui show_scripts"]]}
+	 {:des   "[launch] dotly ui scripts"
+		:rules [[:!Tcaps_lock "$HOME/.dotfiles/bin/sdot ui show_scripts"]]}
 
-   {:des   "[script] Generate uuid"
-    :rules [[:!CTOu "$HOME/.dotfiles/bin/sdot utils uuid_code"]]}
+	 {:des   "[script] Generate uuid"
+		:rules [[:!CTOu "$HOME/.dotfiles/bin/sdot utils uuid_code"]]}
 
 	 {:des   "[script] Show desktop folder"
 		:rules [[:!CTOd "open \"$HOME/Desktop\""]]}
 
-   ;; ------------ Application specific ------------
-   {:des "[Finder] Create folder" :rules [:Finder [:create-folder :!CSn]]}
+	 ;; ------------ Application specific ------------
+	 {:des   "[chrome] Show recent tabs"
+		:rules [:Chrome [:show-recent :!CTO1]]}
+	 {:des "[chrome] Inspect element" :rules [:Chrome [:!CSi :!CSc]]}
+	 {:des "[chrome] Toggle console" :rules [:Chrome [:!CTOt :!COj]]}
+	 {:des   "[chrome] Switch profile"
+		:rules [:Chrome [:switch-account [:!CSm :return_or_enter]]]}
+	 {:des   "[chrome] Switch profile with escape"
+		:rules [:Chrome [:switch-account-esc [:!CSm :return_or_enter]]]}
 
-   {:des "[chrome] Show recent tabs" :rules [:Chrome [:show-recent :!CTO1]]}
-   {:des "[chrome] Inspect element" :rules [:Chrome [:!CSi :!CSc]]}
-   {:des "[chrome] Toggle console" :rules [:Chrome [:!CTOt :!COj]]}
-   {:des   "[chrome] Switch profile"
-    :rules [:Chrome [:switch-account [:!CSm :return_or_enter]]]}
-   {:des   "[chrome] Switch profile with escape"
-    :rules [:Chrome [:switch-account-esc [:!CSm :return_or_enter]]]}
+	 {:des   "[finder] Create folder"
+		:rules [:Finder [:create-folder :!CSn]]}
 
-  {:des   "[safari] Toggle sidebar"
-    :rules [:Safari [:sidebar-primary-toggle :!CSl]]}
+	 {:des   "[guitar pro] Zoom in/out"
+		:rules [:GuitarPro [:zoom-in :!CSperiod] [:zoom-out :!CScomma]]}
 
-   {:des   "[slack] Navigate between channels"
-    :rules [:Slack [:!Cp :!Ck] [:!Ce :!Ck]]}
-   {:des   "[slack] Toggle sidebars"
-    :rules [:Slack [:sidebar-primary-toggle :!CSd] [:sidebar-secondary-toggle :!Cperiod]]}
-   {:des   "[slack] Move between workspaces"
-    :rules [:Slack [:!O1 :!C1] [:!O2 :!C2] [:!O3 :!C3]]}
-   {:des   "[slack] Reactions"
-    :rules [:Slack
-            [:!COv [:paste-and-return "+:white_check_mark:"]]
-            [:!COs [:paste-and-return "+:thumbsup:"]]
-            [:!COd [:paste-and-return "+:thumbsdown:"]]
-            [:!COp [:paste-and-return "+:heavy_plus_sign:"]]
-            [:!COg [:paste-and-return "+:grimacing:"]]
-            [:!COl [:paste-and-return "+:joy:"]]]}
+	 {:des   "[keynote] Zoom in/out"
+		:rules [:Keynote [:zoom-in :!CSperiod] [:zoom-out :!CScomma]]}
 
-   {:des "[notion] Show recent pages" :rules [:Notion [:show-recent :!Cp]]}
-   {:des   "[notion] Toggle sidebar"
-    :rules [:Notion [:sidebar-primary-toggle :!Cbackslash]]}
-   {:des   "[notion] Extend selection"
-    :rules [:Notion [:selection-extend :!Sup_arrow] [:selection-shrink :!Sdown_arrow]]}
+	 {:des   "[notion] Show recent pages"
+		:rules [:Notion [:show-recent :!Cp]]}
+	 {:des   "[notion] Toggle sidebar"
+		:rules [:Notion [:sidebar-primary-toggle :!Cbackslash]]}
+	 {:des   "[notion] Extend selection"
+		:rules [:Notion
+						[:selection-extend :!Sup_arrow]
+						[:selection-shrink :!Sdown_arrow]]}
 
-   {:des   "[keynote] Zoom in/out"
-    :rules [:Keynote [:zoom-in :!CSperiod] [:zoom-out :!CScomma]]}]
+	 {:des   "[safari] Toggle sidebar"
+		:rules [:Safari [:sidebar-primary-toggle :!CSl]]}
 
+	 {:des   "[slack] Navigate between channels"
+		:rules [:Slack [:!Cp :!Ck] [:!Ce :!Ck]]}
+	 {:des   "[slack] Toggle sidebars"
+		:rules [:Slack
+						[:sidebar-primary-toggle :!CSd]
+						[:sidebar-secondary-toggle :!Cperiod]]}
+	 {:des   "[slack] Move between workspaces"
+		:rules [:Slack [:!O1 :!C1] [:!O2 :!C2] [:!O3 :!C3]]}
+	 {:des   "[slack] Reactions"
+		:rules [:Slack
+						[:!COv [:paste-and-return "+:white_check_mark:"]]
+						[:!COs [:paste-and-return "+:thumbsup:"]]
+						[:!COd [:paste-and-return "+:thumbsdown:"]]
+						[:!COp [:paste-and-return "+:heavy_plus_sign:"]]
+						[:!COg [:paste-and-return "+:grimacing:"]]
+						[:!COl [:paste-and-return "+:joy:"]]]}]
  ;; ------------ Cheatsheet ------------
  ;; ! stand for mandatory
  ;; # stand for optional
@@ -157,12 +168,12 @@
  ;; need to prefix C T O S F Q W E R with ! or #
  :cheatsheet
  {:!Ca        "command a"
-  :!Ta        "control a"
-  :!Oa        "option a"
-  :!Sa        "shift a"
-  :#Sa        "shift a"
-  :!CTOa      "command control option a"
-  :!Cspacebar "command space"
-  :!Fa        "fn a"
-  :##a        "keycode a optional any"
-  :!!a        "mandatory hyper (control command option shift) a "}}
+	:!Ta        "control a"
+	:!Oa        "option a"
+	:!Sa        "shift a"
+	:#Sa        "shift a"
+	:!CTOa      "command control option a"
+	:!Cspacebar "command space"
+	:!Fa        "fn a"
+	:##a        "keycode a optional any"
+	:!!a        "mandatory hyper (control command option shift) a "}}

@@ -3,8 +3,8 @@
   "schemes" : [
     {
       "pointer" : {
-        "acceleration" : 0.6875,
-        "speed" : 0.069,
+        "acceleration" : 0.2194,
+        "speed" : 0.0689655172413792768,
         "disableAcceleration" : false
       },
       "if" : {
@@ -17,14 +17,17 @@
         }
       },
       "scrolling" : {
+        "speed" : {
+          "vertical" : 7.04
+        },
         "acceleration" : {
           "vertical" : 1
         },
+        "reverse" : {
+          "vertical" : false
+        },
         "distance" : {
           "vertical" : "auto"
-        },
-        "speed" : {
-          "vertical" : 0
         }
       }
     }

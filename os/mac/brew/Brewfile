@@ -248,7 +248,7 @@ cask "iterm2-nightly"
 cask "jetbrains-toolbox"
 cask "karabiner-elements"
 cask "keycastr"
-cask "logi-options-plus"
+cask "linearmouse"
 cask "notion"
 cask "qlmarkdown"
 cask "rar"
@@ -267,6 +267,7 @@ mas "Bitwarden", id: 1352778147
 mas "Final Cut Pro", id: 424389933
 mas "GarageBand", id: 682658836
 mas "Gifski", id: 1351639930
+mas "Keepa - Price Tracker", id: 1533805339
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
 mas "Taiko no Tatsujin Pop Tap Beat", id: 1463360242
@@ -284,6 +285,7 @@ vscode "mechatroner.rainbow-csv"
 vscode "miguelsolorio.fluent-icons"
 vscode "miguelsolorio.symbols"
 vscode "ms-azuretools.vscode-docker"
+vscode "ms-vscode.makefile-tools"
 vscode "ms-vsliveshare.vsliveshare"
 vscode "Orta.vscode-jest"
 vscode "QuanLi.focus"

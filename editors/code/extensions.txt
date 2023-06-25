@@ -11,6 +11,7 @@ mechatroner.rainbow-csv
 miguelsolorio.fluent-icons
 miguelsolorio.symbols
 ms-azuretools.vscode-docker
+ms-vscode.makefile-tools
 ms-vsliveshare.vsliveshare
 Orta.vscode-jest
 QuanLi.focus
