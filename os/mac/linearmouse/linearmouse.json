@@ -30,6 +30,28 @@
           "vertical" : "auto"
         }
       }
+    },
+    {
+      "pointer" : {
+        "speed" : 0.11
+      },
+      "if" : {
+        "device" : {
+          "productName" : "Karabiner DriverKit VirtualHIDPointing 1.6.0",
+          "serialNumber" : "pqrs.org:Karabiner-DriverKit-VirtualHIDPointing",
+          "productID" : "0x27da",
+          "category" : "mouse",
+          "vendorID" : "0x16c0"
+        }
+      },
+      "scrolling" : {
+        "acceleration" : {
+          "vertical" : 2.19
+        },
+        "speed" : {
+          "vertical" : 0
+        }
+      }
     }
   ]
 }
