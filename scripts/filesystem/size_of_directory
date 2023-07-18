@@ -11,4 +11,4 @@ source "$DOTLY_PATH/scripts/core/_main.sh"
 ##?   size_of_directory
 docs::parse "$@"
 
-ncdu --color dark -rr -x
+ncdu --color dark -rr -x --exclude CloudStorage --exclude "Google Drive"
