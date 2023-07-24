@@ -111,6 +111,9 @@
 	 {:des   "[script] Show desktop folder"
 		:rules [[:!CTOd "open \"$HOME/Desktop\""]]}
 
+	 {:des   "[script] Open common folders"
+		:rules [[:!CTgrave_accent_and_tilde "$HOME/.dotfiles/bin/sdot utils open_common_folder"]]}
+
 	 ;; ------------ Application specific ------------
 	 {:des   "[chrome] Show recent tabs"
 		:rules [:Chrome [:show-recent :!CTO1]]}

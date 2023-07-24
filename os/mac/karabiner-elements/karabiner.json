@@ -458,6 +458,20 @@
           "type" : "basic"
         } ]
       }, {
+        "description" : "[script] Open common folders",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "grave_accent_and_tilde",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_control" ]
+            }
+          },
+          "to" : [ {
+            "shell_command" : "$HOME/.dotfiles/bin/sdot utils open_common_folder"
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
         "description" : "[chrome] Show recent tabs",
         "manipulators" : [ {
           "from" : {

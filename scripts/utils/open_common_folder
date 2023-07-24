@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTLY_PATH/scripts/core/_main.sh"
+
+##? Open one common folder
+#?? 1.0.0
+##?
+##? Usage:
+##?   open_common_folder
+docs::parse "$@"
+
+declare -A folders
+
+folders=(
+	["⬇️ Downloads"]="$HOME/Downloads"
+	["🌅 Thumbnails"]="$GOOGLE_DRIVE_PATH/Shared drives/👑 Contents/🔖 Pro/Design/Thumbnails Cursos"
+)
+
+folder=$(printf "%s\n" "${!folders[@]}" | choose)
+
+if [[ -n ${folders[$folder]} ]]; then
+    # Remove the emoji and space only when needed
+    folder_action=${folder#*" "}
+    open "${folders[$folder]}"
+else
+    echo "No folder selected"
+fi
