@@ -467,7 +467,7 @@
             }
           },
           "to" : [ {
-            "shell_command" : "$HOME/.dotfiles/bin/sdot utils open_common_folder"
+            "shell_command" : "$HOME/.dotfiles/bin/sdot utils open_common"
           } ],
           "type" : "basic"
         } ]

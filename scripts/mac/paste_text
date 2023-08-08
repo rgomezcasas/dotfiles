@@ -10,23 +10,32 @@ source "$DOTLY_PATH/scripts/core/_main.sh"
 ##? Usage:
 ##?   paste_text <text>
 ##?   paste_text <text> --returning
+##?   paste_text --nocopy
 ##?
 ##? Options:
 ##?   -h --help       Show this screen.
 ##?   -r --returning  Adds a final return press
+##?   -n --nocopy     No need to copy
 docs::parse "$@"
 
-if $returning; then
+if $nocopy; then
 	osascript -e "
-set the clipboard to \"$1\"
-tell application \"System Events\"
-    keystroke \"v\" using command down
-    key code 36
-end tell"
+    tell application \"System Events\"
+        keystroke \"v\" using command down
+    end tell"
 else
-	osascript -e "
-set the clipboard to \"$1\"
-tell application \"System Events\"
-    keystroke \"v\" using command down
-end tell"
+  if $returning; then
+  	osascript -e "
+  set the clipboard to \"$1\"
+  tell application \"System Events\"
+      keystroke \"v\" using command down
+      key code 36
+  end tell"
+  else
+  	osascript -e "
+  set the clipboard to \"$1\"
+  tell application \"System Events\"
+      keystroke \"v\" using command down
+  end tell"
+  fi
 fi

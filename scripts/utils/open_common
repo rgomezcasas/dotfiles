@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTLY_PATH/scripts/core/_main.sh"
+
+##? Open one common element
+#?? 1.0.0
+##?
+##? Usage:
+##?   open_common
+docs::parse "$@"
+
+declare -A folders
+
+folders=(
+	["🔗 Codely"]="https://codely.com"
+	["🔗 Pro"]="https://pro.codely.com"
+	["📁 Downloads"]="$HOME/Downloads"
+	["📁 Desktop"]="$HOME/Desktop"
+	["📁 tmp"]="$HOME/Desktop/tmp"
+	["📁 screenshots"]="$HOME/Desktop/tmp/screenshots"
+	["📁 screencasts"]="$HOME/Desktop/tmp/screencasts"
+	["📁 Thumbnails"]="$GOOGLE_DRIVE_PATH/Shared drives/👑 Contents/🔖 Pro/Design/Thumbnails Cursos"
+)
+
+folder=$(printf "%s\n" "${!folders[@]}" | choose)
+
+if [[ -n ${folders[$folder]} ]]; then
+    open "${folders[$folder]}"
+else
+    echo "No folder selected"
+fi

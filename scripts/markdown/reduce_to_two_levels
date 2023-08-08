@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTLY_PATH/scripts/core/_main.sh"
+
+##? Reduce a markdown text to two levels from the clipboard
+#?? 1.0.0
+##?
+##? Usage:
+##?   reduce_to_two_levels
+docs::parse "$@"
+
+#!/bin/bash
+
+extract_lists() {
+  local text="$1"
+  echo "$text" | awk 'NF && !/^ {6,}[-\[]/' | sed -e 's/\(✅\|🎥\)//g' -e 's/\[YouTube\] //g'
+}
+
+extract_lists "$(pbpaste)"
