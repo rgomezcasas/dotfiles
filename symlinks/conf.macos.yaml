@@ -25,7 +25,7 @@
     ~/Library/Application Support/Code/User/settings.json: editors/code/settings.json
     ~/Library/Application Support/Code/User/snippets: editors/code/snippets
     ~/Library/Application Support/com.elgato.StreamDeck/ProfilesV2: modules/private/mac/streamdeck/ProfilesV2
-    ~/Library/Application Support/obs-studio/basic: modules/private/mac/obs
+    ~/Library/Application Support/obs-studio/basic: modules/private/mac/obs/basic
     ~/Library/Application Support/obs-studio/global.ini: modules/private/mac/obs/global.ini
     ~/Library/Preferences/com.contextsformac.Contexts.plist: os/mac/contexts/com.contextsformac.Contexts.plist
     ~/bin/bash: /opt/homebrew/bin/bash
