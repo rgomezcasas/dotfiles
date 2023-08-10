@@ -92,7 +92,7 @@
 [tag]
 	gpgsign = true
 [gpg]
-	program = /usr/local/bin/gpg
+	program = /Users/rafa.gomez/bin/gpg
 [pull]
 	rebase = true
 [filter "lfs"]

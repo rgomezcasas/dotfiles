@@ -40,9 +40,6 @@ defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 # Disable the “Are you sure you want to open this application?” dialog
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 
-# Restart automatically if the computer freezes
-sudo systemsetup -setrestartfreeze on
-
 # Disable automatic capitalization
 defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
 
@@ -51,9 +48,6 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
 # Disable macOS text expansion
 defaults write -g WebAutomaticTextReplacementEnabled -bool false
-
-# Use Apple persistence
-defaults write -g ApplePersistence -bool yes
 
 # Sped up dialogue boxes https://robservatory.com/speed-up-your-mac-via-hidden-prefs/
 defaults write NSGlobalDomain NSWindowResizeTime 0.001
@@ -69,9 +63,6 @@ sudo pmset -a hibernatemode 0
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
-
-# Disable acceleration for external mouses
-defaults write .GlobalPreferences com.apple.mouse.scaling 0
 
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool true
 
@@ -91,7 +82,7 @@ defaults write NSGlobalDomain AppleMetricUnits -bool true
 sudo defaults write /Library/Preferences/com.apple.loginwindow showInputMenu -bool true
 
 # Set the timezone; see `sudo systemsetup -listtimezones` for other values
-sudo systemsetup -settimezone "Europe/Brussels" >/dev/null
+sudo systemsetup -settimezone "Europe/Madrid" >/dev/null
 
 ###############################################################################
 # Screen                                                                      #
@@ -100,22 +91,6 @@ sudo systemsetup -settimezone "Europe/Brussels" >/dev/null
 # Require password immediately after sleep or screen saver begins
 defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
-
-# Save screenshots to the desktop
-defaults write com.apple.screencapture location -string "${HOME}/Desktop"
-
-# Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
-defaults write com.apple.screencapture type -string "png"
-
-# Enable subpixel font rendering on non-Apple LCDs
-# Reference: https://github.com/kevinSuttle/macOS-Defaults/issues/17#issuecomment-266633501
-defaults write NSGlobalDomain AppleFontSmoothing -int 1
-
-# Font rendering stuff
-defaults write -g CGFontRenderingFontSmoothingDisabled -bool YES
-
-# Reduce transparency
-defaults write com.apple.universalaccess reduceTransparency 1
 
 # Autohide the menu bar
 defaults write NSGlobalDomain _HIHideMenuBar -bool true
@@ -159,16 +134,8 @@ defaults write com.apple.frameworks.diskimages skip-verify -bool true
 defaults write com.apple.frameworks.diskimages skip-verify-locked -bool true
 defaults write com.apple.frameworks.diskimages skip-verify-remote -bool true
 
-# Automatically open a new Finder window when a volume is mounted
-defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool true
-defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
-defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
-
 # Disable the warning before emptying the Trash
 defaults write com.apple.finder WarnOnEmptyTrash -bool false
-
-# Enable AirDrop over Ethernet and on unsupported Macs running Lion
-defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
 
 # Enable spring loading for directories
 defaults write NSGlobalDomain com.apple.springing.enabled -bool true
@@ -212,6 +179,7 @@ defaults write com.apple.dock dashboard-in-overlay -bool true
 # Don’t automatically rearrange Spaces based on most recent use
 defaults write com.apple.dock mru-spaces -bool false
 
+# Delay before showing the Dock
 defaults write com.apple.Dock autohide-delay -float 0.3
 
 # Automatically hide and show the Dock

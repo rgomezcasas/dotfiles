@@ -9,8 +9,6 @@
       - ~/.hushlogin
 
 - link:
-    /usr/local/bin/git: /opt/homebrew/bin/git
-    /usr/local/bin/gpg: /opt/homebrew/bin/gpg
     scripts/private: ~/Library/Mobile Documents/com~apple~CloudDocs/etc/private_scripts
     ~/.config/karabiner.edn: os/mac/karabiner-goku/karabiner.edn
     ~/.config/karabiner: os/mac/karabiner-elements
@@ -31,11 +29,12 @@
     ~/bin/bash: /opt/homebrew/bin/bash
     ~/bin/date: /opt/homebrew/bin/gdate
     ~/bin/find: /opt/homebrew/bin/gfind
+    ~/bin/git: /opt/homebrew/bin/git
+    ~/bin/gpg: /opt/homebrew/bin/gpg
     ~/bin/make: /opt/homebrew/bin/gmake
     ~/bin/node: /opt/homebrew/opt/node@18/bin/node
     ~/bin/npm: /opt/homebrew/opt/node@18/bin/npm
     ~/bin/pecl: /opt/homebrew/opt/php@8.1/bin/pecl
-    ~/bin/php7: /opt/homebrew/opt/php@7.4/bin/php
     ~/bin/php: /opt/homebrew/opt/php@8.1/bin/php
     ~/bin/sed: /opt/homebrew/bin/gsed
     ~/bin/touch: /opt/homebrew/bin/gtouch

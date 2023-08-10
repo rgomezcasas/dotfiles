@@ -28,6 +28,7 @@ export JAVA_HOME='/Library/Java/JavaVirtualMachines/jbrsdk_jcef-17.0.4.1-osx-aar
 export GEM_HOME="$HOME/.gem"
 export GOPATH="$HOME/.go"
 export PYTORCH_ENABLE_MPS_FALLBACK=1
+
 # ------------------------------------------------------------------------------
 # Apps
 # ------------------------------------------------------------------------------
@@ -49,6 +50,8 @@ export BAT_THEME='gruvbox-dark'
 
 GPG_TTY=$(tty)
 export GPG_TTY
+
+export LANG="en_US.UTF-8"
 
 export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 export PUPPETEER_EXECUTABLE_PATH="/opt/homebrew/bin/chromium"
