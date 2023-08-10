@@ -15,7 +15,7 @@ docs::parse "$@"
 
 extract_lists() {
   local text="$1"
-  echo "$text" | awk 'NF && !/^ {6,}[-\[]/' | sed -e 's/\(✅\|🎥\)//g' -e 's/\[YouTube\] //g'
+  echo "$text" | awk 'NF && !/^ {6,}[-\[]/' | sed -e 's/\(✅\|☑️\|🎥\)//g' -e 's/\[YouTube\] //g'
 }
 
 extract_lists "$(pbpaste)"
