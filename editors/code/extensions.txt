@@ -6,7 +6,6 @@ eamodio.gitlens
 GitHub.copilot
 GitHub.vscode-pull-request-github
 GrapeCity.gc-excelviewer
-hansu.git-graph-2
 mechatroner.rainbow-csv
 miguelsolorio.fluent-icons
 miguelsolorio.symbols

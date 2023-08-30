@@ -1,9 +1,4 @@
 # ------------------------------------------------------------------------------
-# Private exports
-# ------------------------------------------------------------------------------
-. "$DOTFILES_PATH/modules/private/shell/exports.sh"
-
-# ------------------------------------------------------------------------------
 # Codely theme config
 # ------------------------------------------------------------------------------
 export CODELY_THEME_MODE="dark"
@@ -24,7 +19,7 @@ fi
 # ------------------------------------------------------------------------------
 # Languages
 # ------------------------------------------------------------------------------
-export JAVA_HOME='/Library/Java/JavaVirtualMachines/jbrsdk_jcef-17.0.4.1-osx-aarch64-b597.1/Contents/Home'
+export JAVA_HOME='/Library/Java/JavaVirtualMachines/jbr_jcef-17.0.8-osx-aarch64-b1000.8/Contents/Home'
 export GEM_HOME="$HOME/.gem"
 export GOPATH="$HOME/.go"
 export PYTORCH_ENABLE_MPS_FALLBACK=1

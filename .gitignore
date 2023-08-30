@@ -14,5 +14,4 @@ shell/zsh/**/**.zwc.old
 shell/zsh/.zim
 
 # Private Stuff
-/**/**/private-*
-/scripts/private
+/scripts/codely

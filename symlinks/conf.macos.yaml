@@ -9,7 +9,7 @@
       - ~/.hushlogin
 
 - link:
-    scripts/private: ~/Library/Mobile Documents/com~apple~CloudDocs/etc/private_scripts
+    scripts/codely: modules/private/scripts/codely
     ~/.config/karabiner.edn: os/mac/karabiner-goku/karabiner.edn
     ~/.config/karabiner: os/mac/karabiner-elements
     ~/.config/linearmouse: os/mac/linearmouse
