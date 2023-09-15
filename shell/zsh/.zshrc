@@ -2,8 +2,16 @@
 # zmodload zsh/zprof
 
 # ZSH Ops
+## History
 setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_REDUCE_BLANKS
+setopt INC_APPEND_HISTORY_TIME
+setopt EXTENDED_HISTORY
 setopt HIST_FCNTL_LOCK
+setopt HIST_NO_STORE
+
+## Autocd
 setopt +o nomatch
 # setopt autopushd
 

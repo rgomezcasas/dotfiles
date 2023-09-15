@@ -22,6 +22,7 @@ folders=(
 	["📁 screenshots"]="$HOME/Desktop/tmp/screenshots"
 	["📁 screencasts"]="$HOME/Desktop/tmp/screencasts"
 	["📁 Thumbnails"]="$GOOGLE_DRIVE_PATH/Shared drives/👑 Contents/🔖 Pro/Design/Thumbnails Cursos"
+	["📁 Twitch"]="$GOOGLE_DRIVE_PATH/Shared drives/👑 Contents/🔴 Recordings/👾 Twitch"
 )
 
 folder=$(printf "%s\n" "${!folders[@]}" | choose)

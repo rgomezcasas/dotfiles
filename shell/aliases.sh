@@ -3,20 +3,20 @@ alias sudo='sudo '
 
 alias ..="cd .."
 alias ...="cd ../.."
-alias ll="exa -l --icons"
-alias la="exa -la --icons"
+alias ll="eza -l --icons"
+alias la="eza -la --icons"
 
 # Jumps
 alias ~="cd ~"
 alias tmp="cd ~/Desktop/tmp"
-alias c='cd ~/Code'
-alias codely="cd ~/Code/codely"
+alias cdc='cd ~/Code'
+alias cly="cd ~/Code/codely"
 
 # Git
 alias gaa="git add -A"
 alias gc="dot git commit"
 alias gca="git add --all && git commit --amend --no-edit"
-alias gco="git checkout"
+alias gsw="git switch"
 alias gd="dot git pretty-diff"
 alias gs="git status -sb"
 alias gf="git fetch --all -p"
