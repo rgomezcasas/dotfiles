@@ -124,5 +124,9 @@
   {
     "key": "ctrl+alt+cmd+o",
     "command": "workbench.action.openRecent"
+  },
+  {
+    "key": "cmd+2",
+    "command": "tabsTreeView.focus"
   }
 ]

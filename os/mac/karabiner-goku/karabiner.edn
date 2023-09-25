@@ -96,7 +96,7 @@
 	 {:des   "[launch] iTerm"
 		:rules [[:!CTOspacebar [:open-app "iTerm"]]]}
 	 {:des   "[launch] IntelliJ"
-		:rules [[:!CTOi [:open-app "IntelliJ IDEA-EAP"]]]}
+		:rules [[:!CTOi [:open-app "IntelliJ IDEA Ultimate"]]]}
 	 {:des   "[launch] Chrome"
 		:rules [[:!CTOc [:open-app "Google Chrome"]]]}
 	 {:des   "[launch] Slack"

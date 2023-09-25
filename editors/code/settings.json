@@ -21,11 +21,11 @@
   "search.useGlobalIgnoreFiles": true,
   "search.useIgnoreFiles": true,
   "workbench.editor.showTabs": false,
-  "explorer.openEditors.visible": 0,
+  "explorer.openEditors.visible": 1,
   // Behaviour
   "window.openFoldersInNewWindow": "on",
   // Apparence
-  "workbench.colorTheme": "Visual Studio Light",
+  "workbench.colorTheme": "Codely Dark",
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.smoothScrolling": true,
   "explorer.compactFolders": false,
@@ -67,6 +67,6 @@
   "boot-java.rewrite.reconcile": true,
   "editor.inlineSuggest.enabled": true,
   "aws.telemetry": false,
-  "workbench.activityBar.visible": false,
-  "symbols.hidesExplorerArrows": false
+  "symbols.hidesExplorerArrows": false,
+  "window.zoomLevel": 1
 }

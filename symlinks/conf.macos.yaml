@@ -34,8 +34,8 @@
     ~/bin/make: /opt/homebrew/bin/gmake
     ~/bin/node: /opt/homebrew/opt/node@18/bin/node
     ~/bin/npm: /opt/homebrew/opt/node@18/bin/npm
-    ~/bin/pecl: /opt/homebrew/opt/php@8.1/bin/pecl
-    ~/bin/php: /opt/homebrew/opt/php@8.1/bin/php
+    ~/bin/pecl: /opt/homebrew/opt/php@8.2/bin/pecl
+    ~/bin/php: /opt/homebrew/opt/php@8.2/bin/php
     ~/bin/sed: /opt/homebrew/bin/gsed
     ~/bin/touch: /opt/homebrew/bin/gtouch
     ~/bin/zsh: /bin/zsh
