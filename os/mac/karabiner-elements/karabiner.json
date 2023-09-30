@@ -417,6 +417,20 @@
           "type" : "basic"
         } ]
       }, {
+        "description" : "[launch] ChatGPT",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "a",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_control", "left_option" ]
+            }
+          },
+          "to" : [ {
+            "shell_command" : "open -a \"ChatGPT\""
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
         "description" : "[launch] dotly ui scripts",
         "manipulators" : [ {
           "from" : {

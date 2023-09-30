@@ -7,6 +7,7 @@
 	 :sim     100}}
  :applications
  {;; To obtain the app ID: `grep -A1 "CFBundleIdentifier" /Applications/The.app/Contents/Info.plist`
+	 :ChatGPT   ["com.apple.Safari.WebApp.82A772AA-B484-4B6A-958B-EFC0502C8EAD"]
 	 :Chrome    ["com.google.Chrome", "com.google.Chrome.beta"]
 	 :Contexts  ["com.contextsformac.Contexts"]
 	 :Finder    ["com.apple.finder"]
@@ -101,6 +102,8 @@
 		:rules [[:!CTOc [:open-app "Google Chrome"]]]}
 	 {:des   "[launch] Slack"
 		:rules [[:!CTOs [:open-app "Slack"]]]}
+	 {:des   "[launch] ChatGPT"
+		:rules [[:!CTOa [:open-app "ChatGPT"]]]}
 
 	 {:des   "[launch] dotly ui scripts"
 		:rules [[:!Tcaps_lock "$HOME/.dotfiles/bin/sdot ui show_scripts"]]}

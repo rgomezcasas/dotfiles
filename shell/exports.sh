@@ -62,6 +62,7 @@ export path=(
   "$GEM_HOME/bin"
   "$GOPATH/bin"
   "$HOME/.cargo/bin"
+  "$HOME/.orbstack/bin"
   "/opt/homebrew/opt/ruby/bin"
   "/opt/homebrew/opt/node@14/bin"
   "/opt/homebrew/opt/python@3.9/libexec/bin"

@@ -67,6 +67,5 @@
   "boot-java.rewrite.reconcile": true,
   "editor.inlineSuggest.enabled": true,
   "aws.telemetry": false,
-  "symbols.hidesExplorerArrows": false,
-  "window.zoomLevel": 1
+  "symbols.hidesExplorerArrows": false
 }
