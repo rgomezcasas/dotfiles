@@ -118,6 +118,44 @@
   {:des   "[script] Open common folders"
    :rules [[:!CTgrave_accent_and_tilde "$HOME/.dotfiles/bin/sdot utils open_common"]]}
 
+  ;; ------------ Yabai ------------
+  {:des   "[yabai] Focus windows"
+   :rules [[:!Oj "/opt/homebrew/bin/yabai -m window --focus south"]
+           [:!Ok "/opt/homebrew/bin/yabai -m window --focus north"]
+           [:!Oh "/opt/homebrew/bin/yabai -m window --focus west"]
+           [:!Ol "/opt/homebrew/bin/yabai -m window --focus east"]]}
+
+  {:des   "[yabai] Focus displays"
+   :rules [[:!Os "/opt/homebrew/bin/yabai -m display --focus west"]
+           [:!Og "/opt/homebrew/bin/yabai -m display --focus east"]]}
+
+  {:des   "[yabai] Modify layout"
+   :rules [[:!SOr "/opt/homebrew/bin/yabai -m space --rotate 270"]
+           [:!SOy "/opt/homebrew/bin/yabai -m space --mirror y-axis"]
+           [:!SOx "/opt/homebrew/bin/yabai -m space --mirror x-axis"]
+           [:!SOt "/opt/homebrew/bin/yabai -m window --toggle float --grid 4:4:1:1:2:2"]]}
+
+  {:des   "[yabai] Modify window size"
+   :rules [[:!SOf "/opt/homebrew/bin/yabai -m window --toggle zoom-fullscreen"]
+           [:!SOe "/opt/homebrew/bin/yabai -m space --balance"]
+           [:!SOd "/opt/homebrew/bin/yabai -m space --toggle show-desktop"]]}
+
+  {:des   "[yabai] Swap window"
+   :rules [[:!SOj "/opt/homebrew/bin/yabai -m window --swap south"]
+           [:!SOk "/opt/homebrew/bin/yabai -m window --swap north"]
+           [:!SOh "/opt/homebrew/bin/yabai -m window --swap west"]
+           [:!SOl "/opt/homebrew/bin/yabai -m window --swap east"]]}
+
+  {:des   "[yabai] Move window and split"
+   :rules [[:!TOj "/opt/homebrew/bin/yabai -m window --warp south"]
+           [:!TOk "/opt/homebrew/bin/yabai -m window --warp north"]
+           [:!TOh "/opt/homebrew/bin/yabai -m window --warp west"]
+           [:!TOl "/opt/homebrew/bin/yabai -m window --warp east"]]}
+
+  {:des   "[yabai] Move window to another display"
+   :rules [[:!SOs "/opt/homebrew/bin/yabai -m window --display west; /opt/homebrew/bin/yabai -m display --focus west;"]
+           [:!SOg "/opt/homebrew/bin/yabai -m window --display east; /opt/homebrew/bin/yabai -m display --focus east;"]]}
+
 ;; ------------ Application specific ------------
   {:des   "[chrome] Show recent tabs"
    :rules [:Chrome [:show-recent :!CTO1]]}
