@@ -96,9 +96,9 @@
 
 	 ;; ------------ Launchers ------------
   {:des   "[launch] iTerm"
-   :rules [[:!CTOspacebar [:open-app "iTerm"]]]}
+   :rules [[:!Tspacebar [:open-app "iTerm"]]]}
   {:des   "[launch] IntelliJ"
-   :rules [[:!CTOi [:open-app "IntelliJ IDEA Ultimate"]]]}
+   :rules [[:!Ti [:open-app "IntelliJ IDEA Ultimate"]]]}
   {:des   "[launch] Chrome"
    :rules [[:!CTOc [:open-app "Google Chrome"]]]}
   {:des   "[launch] Slack"
@@ -120,9 +120,9 @@
 
   ;; ------------ Yabai ------------
   {:des   "[yabai] Focus windows"
-   :rules [[:!Oj "/opt/homebrew/bin/yabai -m window --focus south"]
+   :rules [[:!Oh "/opt/homebrew/bin/yabai -m window --focus west"]
+           [:!Oj "/opt/homebrew/bin/yabai -m window --focus south"]
            [:!Ok "/opt/homebrew/bin/yabai -m window --focus north"]
-           [:!Oh "/opt/homebrew/bin/yabai -m window --focus west"]
            [:!Ol "/opt/homebrew/bin/yabai -m window --focus east"]]}
 
   {:des   "[yabai] Focus displays"
@@ -141,16 +141,22 @@
            [:!SOd "/opt/homebrew/bin/yabai -m space --toggle show-desktop"]]}
 
   {:des   "[yabai] Swap window"
-   :rules [[:!SOj "/opt/homebrew/bin/yabai -m window --swap south"]
+   :rules [[:!SOh "/opt/homebrew/bin/yabai -m window --swap west"]
+           [:!SOj "/opt/homebrew/bin/yabai -m window --swap south"]
            [:!SOk "/opt/homebrew/bin/yabai -m window --swap north"]
-           [:!SOh "/opt/homebrew/bin/yabai -m window --swap west"]
            [:!SOl "/opt/homebrew/bin/yabai -m window --swap east"]]}
 
   {:des   "[yabai] Move window and split"
-   :rules [[:!TOj "/opt/homebrew/bin/yabai -m window --warp south"]
+   :rules [[:!TOh "/opt/homebrew/bin/yabai -m window --warp west"]
+           [:!TOj "/opt/homebrew/bin/yabai -m window --warp south"]
            [:!TOk "/opt/homebrew/bin/yabai -m window --warp north"]
-           [:!TOh "/opt/homebrew/bin/yabai -m window --warp west"]
            [:!TOl "/opt/homebrew/bin/yabai -m window --warp east"]]}
+
+  {:des   "[yabai] Resize window"
+   :rules [[:!CTOh "/opt/homebrew/bin/yabai -m window west --resize right:-20:0 2> /dev/null || /opt/homebrew/bin/yabai -m window --resize right:-20:0"]
+           [:!CTOj "/opt/homebrew/bin/yabai -m window north --resize bottom:0:20 2> /dev/null || /opt/homebrew/bin/yabai -m window --resize bottom:0:20"]
+           [:!CTOk "/opt/homebrew/bin/yabai -m window south --resize top:0:-20 2> /dev/null || /opt/homebrew/bin/yabai -m window --resize top:0:-20"]
+           [:!CTOl "/opt/homebrew/bin/yabai -m window east --resize left:20:0 2> /dev/null || /opt/homebrew/bin/yabai -m window --resize left:20:0"]]}
 
   {:des   "[yabai] Move window to another display"
    :rules [[:!SOs "/opt/homebrew/bin/yabai -m window --display west; /opt/homebrew/bin/yabai -m display --focus west;"]
