@@ -4,8 +4,11 @@ Codely.codely-theme
 dbaeumer.vscode-eslint
 eamodio.gitlens
 GitHub.copilot
+GitHub.copilot-chat
 GitHub.vscode-pull-request-github
 GrapeCity.gc-excelviewer
+GuodongSun.vscode-git-cruise
+jiapeiyao.tab-group
 mechatroner.rainbow-csv
 miguelsolorio.fluent-icons
 miguelsolorio.symbols

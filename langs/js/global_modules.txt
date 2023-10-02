@@ -1,3 +1,4 @@
+faker-cli
 generator-eslint
 typescript
 yo

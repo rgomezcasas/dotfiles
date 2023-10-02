@@ -100,6 +100,21 @@
           "type" : "basic"
         } ]
       }, {
+        "description" : "[mouse] Show desktop",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "d",
+            "modifiers" : {
+              "mandatory" : [ "left_option" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "mission_control",
+            "modifiers" : [ "left_command" ]
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
         "description" : "[keyboard] Symbols // @todo: move this to a keyboard layout using ukelele",
         "manipulators" : [ {
           "from" : {
@@ -366,7 +381,7 @@
           "from" : {
             "key_code" : "spacebar",
             "modifiers" : {
-              "mandatory" : [ "left_control" ]
+              "mandatory" : [ "left_command", "left_control", "left_option" ]
             }
           },
           "to" : [ {
@@ -487,327 +502,6 @@
           "type" : "basic"
         } ]
       }, {
-        "description" : "[yabai] Focus windows",
-        "manipulators" : [ {
-          "from" : {
-            "key_code" : "h",
-            "modifiers" : {
-              "mandatory" : [ "left_option" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "/opt/homebrew/bin/yabai -m window --focus west"
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "key_code" : "j",
-            "modifiers" : {
-              "mandatory" : [ "left_option" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "/opt/homebrew/bin/yabai -m window --focus south"
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "key_code" : "k",
-            "modifiers" : {
-              "mandatory" : [ "left_option" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "/opt/homebrew/bin/yabai -m window --focus north"
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "key_code" : "l",
-            "modifiers" : {
-              "mandatory" : [ "left_option" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "/opt/homebrew/bin/yabai -m window --focus east"
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[yabai] Focus displays",
-        "manipulators" : [ {
-          "from" : {
-            "key_code" : "s",
-            "modifiers" : {
-              "mandatory" : [ "left_option" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "/opt/homebrew/bin/yabai -m display --focus west"
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "key_code" : "g",
-            "modifiers" : {
-              "mandatory" : [ "left_option" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "/opt/homebrew/bin/yabai -m display --focus east"
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[yabai] Modify layout",
-        "manipulators" : [ {
-          "from" : {
-            "key_code" : "r",
-            "modifiers" : {
-              "mandatory" : [ "left_option", "left_shift" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "/opt/homebrew/bin/yabai -m space --rotate 270"
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "key_code" : "y",
-            "modifiers" : {
-              "mandatory" : [ "left_option", "left_shift" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "/opt/homebrew/bin/yabai -m space --mirror y-axis"
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "key_code" : "x",
-            "modifiers" : {
-              "mandatory" : [ "left_option", "left_shift" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "/opt/homebrew/bin/yabai -m space --mirror x-axis"
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "key_code" : "t",
-            "modifiers" : {
-              "mandatory" : [ "left_option", "left_shift" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "/opt/homebrew/bin/yabai -m window --toggle float --grid 4:4:1:1:2:2"
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[yabai] Modify window size",
-        "manipulators" : [ {
-          "from" : {
-            "key_code" : "f",
-            "modifiers" : {
-              "mandatory" : [ "left_option", "left_shift" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "/opt/homebrew/bin/yabai -m window --toggle zoom-fullscreen"
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "key_code" : "e",
-            "modifiers" : {
-              "mandatory" : [ "left_option", "left_shift" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "/opt/homebrew/bin/yabai -m space --balance"
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "key_code" : "d",
-            "modifiers" : {
-              "mandatory" : [ "left_option", "left_shift" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "/opt/homebrew/bin/yabai -m space --toggle show-desktop"
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[yabai] Swap window",
-        "manipulators" : [ {
-          "from" : {
-            "key_code" : "h",
-            "modifiers" : {
-              "mandatory" : [ "left_option", "left_shift" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "/opt/homebrew/bin/yabai -m window --swap west"
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "key_code" : "j",
-            "modifiers" : {
-              "mandatory" : [ "left_option", "left_shift" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "/opt/homebrew/bin/yabai -m window --swap south"
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "key_code" : "k",
-            "modifiers" : {
-              "mandatory" : [ "left_option", "left_shift" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "/opt/homebrew/bin/yabai -m window --swap north"
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "key_code" : "l",
-            "modifiers" : {
-              "mandatory" : [ "left_option", "left_shift" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "/opt/homebrew/bin/yabai -m window --swap east"
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[yabai] Move window and split",
-        "manipulators" : [ {
-          "from" : {
-            "key_code" : "h",
-            "modifiers" : {
-              "mandatory" : [ "left_control", "left_option" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "/opt/homebrew/bin/yabai -m window --warp west"
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "key_code" : "j",
-            "modifiers" : {
-              "mandatory" : [ "left_control", "left_option" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "/opt/homebrew/bin/yabai -m window --warp south"
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "key_code" : "k",
-            "modifiers" : {
-              "mandatory" : [ "left_control", "left_option" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "/opt/homebrew/bin/yabai -m window --warp north"
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "key_code" : "l",
-            "modifiers" : {
-              "mandatory" : [ "left_control", "left_option" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "/opt/homebrew/bin/yabai -m window --warp east"
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[yabai] Resize window",
-        "manipulators" : [ {
-          "from" : {
-            "key_code" : "h",
-            "modifiers" : {
-              "mandatory" : [ "left_command", "left_control", "left_option" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "/opt/homebrew/bin/yabai -m window west --resize right:-20:0 2> /dev/null || /opt/homebrew/bin/yabai -m window --resize right:-20:0"
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "key_code" : "j",
-            "modifiers" : {
-              "mandatory" : [ "left_command", "left_control", "left_option" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "/opt/homebrew/bin/yabai -m window north --resize bottom:0:20 2> /dev/null || /opt/homebrew/bin/yabai -m window --resize bottom:0:20"
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "key_code" : "k",
-            "modifiers" : {
-              "mandatory" : [ "left_command", "left_control", "left_option" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "/opt/homebrew/bin/yabai -m window south --resize top:0:-20 2> /dev/null || /opt/homebrew/bin/yabai -m window --resize top:0:-20"
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "key_code" : "l",
-            "modifiers" : {
-              "mandatory" : [ "left_command", "left_control", "left_option" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "/opt/homebrew/bin/yabai -m window east --resize left:20:0 2> /dev/null || /opt/homebrew/bin/yabai -m window --resize left:20:0"
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[yabai] Move window to another display",
-        "manipulators" : [ {
-          "from" : {
-            "key_code" : "s",
-            "modifiers" : {
-              "mandatory" : [ "left_option", "left_shift" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "/opt/homebrew/bin/yabai -m window --display west; /opt/homebrew/bin/yabai -m display --focus west;"
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "key_code" : "g",
-            "modifiers" : {
-              "mandatory" : [ "left_option", "left_shift" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "/opt/homebrew/bin/yabai -m window --display east; /opt/homebrew/bin/yabai -m display --focus east;"
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
         "description" : "[chrome] Show recent tabs",
         "manipulators" : [ {
           "from" : {
@@ -817,8 +511,8 @@
             "key_code" : "e"
           },
           "to" : [ {
-            "key_code" : "1",
-            "modifiers" : [ "left_command", "left_control", "left_option" ]
+            "key_code" : "a",
+            "modifiers" : [ "left_command", "left_shift" ]
           } ],
           "conditions" : [ {
             "type" : "frontmost_application_if",
