@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTLY_PATH/scripts/core/_main.sh"
+
+##? Open a CodelyTV repository
+#?? 1.0.0
+##?
+##? Usage:
+##?    open_codely_repo
+docs::parse "$@"
+
+repo_to_open=$(gh repo list codelytv --no-archived --source --limit 200 | awk '{print $1}' | sed 's|CodelyTV/||g' | choose)
+
+open "https://github.com/CodelyTV/$repo_to_open"

@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+source "$DOTLY_PATH/scripts/core/_main.sh"
+
+##? Setup all for recording or streaming
+#?? 1.0.0
+##?
+##? Usage:
+##?   record_mode
+##?
+docs::parse "$@"
+
+mv "$HOME/.zsh_history" "$HOME/.zsh_history.pre-record"

@@ -11,6 +11,7 @@ alias ~="cd ~"
 alias tmp="cd ~/Desktop/tmp"
 alias cdc='cd ~/Code'
 alias cly="cd ~/Code/codely"
+alias ccc="cd ~/Code/codely/domain_events-course"
 
 # Git
 alias gaa="git add -A"

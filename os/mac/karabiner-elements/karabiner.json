@@ -105,7 +105,7 @@
           "from" : {
             "key_code" : "d",
             "modifiers" : {
-              "mandatory" : [ "left_option" ]
+              "mandatory" : [ "left_option", "left_shift" ]
             }
           },
           "to" : [ {
@@ -395,7 +395,7 @@
           "from" : {
             "key_code" : "i",
             "modifiers" : {
-              "mandatory" : [ "left_control" ]
+              "mandatory" : [ "left_command", "left_control", "left_option" ]
             }
           },
           "to" : [ {
@@ -442,6 +442,34 @@
           },
           "to" : [ {
             "shell_command" : "open -a \"ChatGPT\""
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "[launch] Google Meet",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "g",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_control", "left_option" ]
+            }
+          },
+          "to" : [ {
+            "shell_command" : "open -a \"Google Meet\""
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "[launch] Notion",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "n",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_control", "left_option" ]
+            }
+          },
+          "to" : [ {
+            "shell_command" : "open -a \"Notion\""
           } ],
           "type" : "basic"
         } ]
@@ -498,6 +526,58 @@
           },
           "to" : [ {
             "shell_command" : "$HOME/.dotfiles/bin/sdot utils open_common"
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "[script] Open CodelyTV Repo",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "r",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_control", "left_option" ]
+            }
+          },
+          "to" : [ {
+            "shell_command" : "$HOME/.dotfiles/bin/sdot github open_codely_repo"
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "[chatgpt] Toggle sidebar",
+        "manipulators" : [ {
+          "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_command" ]
+            },
+            "key_code" : "1"
+          },
+          "to" : [ {
+            "key_code" : "s",
+            "modifiers" : [ "left_command", "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "com.apple.Safari.WebApp.82A772AA-B484-4B6A-958B-EFC0502C8EAD" ]
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "[chatgpt] New chat",
+        "manipulators" : [ {
+          "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_command" ]
+            },
+            "key_code" : "n"
+          },
+          "to" : [ {
+            "key_code" : "o",
+            "modifiers" : [ "left_command", "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "com.apple.Safari.WebApp.82A772AA-B484-4B6A-958B-EFC0502C8EAD" ]
           } ],
           "type" : "basic"
         } ]
