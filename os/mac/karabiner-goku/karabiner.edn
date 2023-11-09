@@ -131,6 +131,14 @@
   {:des   "[script] Open CodelyTV Repo"
    :rules [[:!CTOr "$HOME/.dotfiles/bin/sdot github open_codely_repo"]]}
 
+;; ------------ Shortcuts to use from other applications ------------
+  {:des   "Apple Music utilities"
+   :rules [
+     [:!TOC9 "$HOME/.dotfiles/bin/sdot apple music increase-volume"]
+     [:!TOC8 "$HOME/.dotfiles/bin/sdot apple music decrease-volume"]
+     [:!TOC7 "$HOME/.dotfiles/bin/sdot apple music toggle-play"]
+   ]}
+
 ;; ------------ Application specific ------------
   {:des   "[chatgpt] Toggle sidebar"
    :rules [:ChatGPT [:sidebar-primary-toggle :!CSs]]}
@@ -145,6 +153,11 @@
    :rules [:Chrome [:switch-account [:!CSm :return_or_enter]]]}
   {:des   "[chrome] Switch profile with escape"
    :rules [:Chrome [:switch-account-esc [:!CSm :return_or_enter]]]}
+
+  {:des   "[safari] Switch profile"
+   :rules [:Safari [:switch-account "$HOME/.dotfiles/bin/sdot safari switch_profile"]]}
+  {:des   "[safari] Switch profile"
+   :rules [:Safari [:switch-account-esc "$HOME/.dotfiles/bin/sdot safari switch_profile"]]}
 
   {:des   "[finder] Create folder"
    :rules [:Finder [:create-folder :!CSn]]}

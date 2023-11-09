@@ -14,15 +14,13 @@ docs::parse "$@"
 declare -A folders
 
 folders=(
-	["🔗 Codely"]="https://codely.com"
-	["🔗 Pro"]="https://pro.codely.com"
-	["📁 Downloads"]="$HOME/Downloads"
-	["📁 Desktop"]="$HOME/Desktop"
-	["📁 tmp"]="$HOME/Desktop/tmp"
-	["📁 screenshots"]="$HOME/Desktop/tmp/screenshots"
-	["📁 screencasts"]="$HOME/Desktop/tmp/screencasts"
-	["📁 Thumbnails"]="$GOOGLE_DRIVE_PATH/Shared drives/👑 Contents/🔖 Pro/Design/Thumbnails Cursos"
-	["📁 Twitch"]="$GOOGLE_DRIVE_PATH/Shared drives/👑 Contents/🔴 Recordings/👾 Twitch"
+	["⬇️ Downloads"]="$HOME/Downloads"
+	["🖥️ Desktop"]="$HOME/Desktop"
+	["☁️ tmp"]="$HOME/Desktop/tmp"
+	["📷 Screenshots"]="$HOME/Desktop/tmp/screenshots"
+	["🎥 Screencasts"]="$HOME/Desktop/tmp/screencasts"
+	["🤏 Thumbnails"]="$GOOGLE_DRIVE_PATH/Shared drives/👑 Contents/🔖 Pro/Design/Thumbnails Cursos"
+	["🔴 Recordings"]="$GOOGLE_DRIVE_PATH/Shared drives/👑 Contents/🔴 Recordings"
 )
 
 folder=$(printf "%s\n" "${!folders[@]}" | choose)

@@ -19,7 +19,7 @@ fi
 # ------------------------------------------------------------------------------
 # Languages
 # ------------------------------------------------------------------------------
-export JAVA_HOME='/Library/Java/JavaVirtualMachines/jbr_jcef-17.0.8-osx-aarch64-b1000.8/Contents/Home'
+export JAVA_HOME='/Users/rafa.gomez/Library/Java/JavaVirtualMachines/azul-21.0.1/Contents/Home'
 export GEM_HOME="$HOME/.gem"
 export GOPATH="$HOME/.go"
 export PYTORCH_ENABLE_MPS_FALLBACK=1
@@ -65,7 +65,7 @@ export path=(
   "$HOME/.orbstack/bin"
   "/opt/homebrew/opt/ruby/bin"
   "/opt/homebrew/opt/node@14/bin"
-  "/opt/homebrew/opt/python@3.9/libexec/bin"
+  "/opt/homebrew/opt/python@3.12/libexec/bin"
   "/opt/homebrew/bin"
   "/opt/homebrew/sbin"
   "/usr/local/bin"

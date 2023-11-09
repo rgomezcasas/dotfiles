@@ -544,6 +544,42 @@
           "type" : "basic"
         } ]
       }, {
+        "description" : "Apple Music utilities",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "9",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_control", "left_option" ]
+            }
+          },
+          "to" : [ {
+            "shell_command" : "$HOME/.dotfiles/bin/sdot apple music increase-volume"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "8",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_control", "left_option" ]
+            }
+          },
+          "to" : [ {
+            "shell_command" : "$HOME/.dotfiles/bin/sdot apple music decrease-volume"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "7",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_control", "left_option" ]
+            }
+          },
+          "to" : [ {
+            "shell_command" : "$HOME/.dotfiles/bin/sdot apple music toggle-play"
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
         "description" : "[chatgpt] Toggle sidebar",
         "manipulators" : [ {
           "from" : {
@@ -677,6 +713,39 @@
           "conditions" : [ {
             "type" : "frontmost_application_if",
             "bundle_identifiers" : [ "com.google.Chrome", "com.google.Chrome.beta" ]
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "[safari] Switch profile",
+        "manipulators" : [ {
+          "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_command" ]
+            },
+            "key_code" : "caps_lock"
+          },
+          "to" : [ {
+            "shell_command" : "$HOME/.dotfiles/bin/sdot safari switch_profile"
+          } ],
+          "conditions" : [ {
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "com.apple.Safari" ]
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_command" ]
+            },
+            "key_code" : "escape"
+          },
+          "to" : [ {
+            "shell_command" : "$HOME/.dotfiles/bin/sdot safari switch_profile"
+          } ],
+          "conditions" : [ {
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "com.apple.Safari" ]
           } ],
           "type" : "basic"
         } ]
@@ -1666,6 +1735,13 @@
       "manipulate_caps_lock_led" : false,
       "simple_modifications" : [ {
         "from" : {
+          "key_code" : "caps_lock"
+        },
+        "to" : [ {
+          "key_code" : "escape"
+        } ]
+      }, {
+        "from" : {
           "key_code" : "end"
         },
         "to" : [ {
@@ -1995,7 +2071,7 @@
         "product_id" : 45108,
         "vendor_id" : 1133
       },
-      "ignore" : false,
+      "ignore" : true,
       "manipulate_caps_lock_led" : false,
       "simple_modifications" : [ ],
       "treat_as_built_in_keyboard" : false

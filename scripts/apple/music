@@ -1,0 +1,79 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTLY_PATH/scripts/core/_main.sh"
+source "$DOTFILES_PATH/scripts/core/selector.sh"
+
+##? Apple Music utilities
+#?? 1.0.0
+##?
+##? Usage:
+##?	music <action>
+##?
+##? Example:
+##?	 music increase-volume
+##?	 music decrease-volume
+##?	 music toggle-play
+docs::parse "$@"
+
+function increase() {
+	osascript <<EOF
+	tell application "Music"
+		set vol to sound volume
+		set vol to vol + 1
+
+		if vol is greater than 100 then
+			set vol to 100
+		end if
+
+		set the sound volume to vol
+	end tell
+EOF
+}
+
+function decrease() {
+	osascript <<EOF
+	tell application "Music"
+		set vol to sound volume
+		set vol to vol - 1
+
+		if vol is less than 0 then
+			set vol to 0
+		end if
+
+		set the sound volume to vol
+	end tell
+EOF
+
+echo "done"
+}
+
+function toggle_play() {
+	osascript <<EOF
+	tell application "Music"
+	if player state is playing then
+			pause
+		else if player state is paused then
+			play
+		end if
+	end tell
+EOF
+
+echo "done"
+}
+
+case $1 in
+"increase-volume")
+	increase
+
+	;;
+"decrease-volume")
+	decrease
+
+	;;
+"toggle-play")
+	toggle_play
+
+	;;
+esac
