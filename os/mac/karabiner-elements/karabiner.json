@@ -353,7 +353,7 @@
             "modifiers" : [ "left_command", "left_control", "left_option", "left_shift" ]
           }, {
             "key_code" : "c",
-            "modifiers" : [ "left_command", "left_option" ]
+            "modifiers" : [ "left_option", "left_shift" ]
           } ],
           "type" : "basic"
         } ]
@@ -371,7 +371,7 @@
             "modifiers" : [ "left_command", "left_control", "left_option", "left_shift" ]
           }, {
             "key_code" : "c",
-            "modifiers" : [ "left_command", "left_option" ]
+            "modifiers" : [ "left_option", "left_shift" ]
           } ],
           "type" : "basic"
         } ]
@@ -400,6 +400,20 @@
           },
           "to" : [ {
             "shell_command" : "open -a \"IntelliJ IDEA Ultimate\""
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "[launch] Finder",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "f",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_control", "left_option" ]
+            }
+          },
+          "to" : [ {
+            "shell_command" : "open -a \"Finder\""
           } ],
           "type" : "basic"
         } ]
@@ -594,7 +608,7 @@
           } ],
           "conditions" : [ {
             "type" : "frontmost_application_if",
-            "bundle_identifiers" : [ "com.apple.Safari.WebApp.82A772AA-B484-4B6A-958B-EFC0502C8EAD" ]
+            "bundle_identifiers" : [ "com.apple.Safari.WebApp.3EB0FCA6-A252-42ED-A98F-961977EF3A80" ]
           } ],
           "type" : "basic"
         } ]
@@ -613,7 +627,7 @@
           } ],
           "conditions" : [ {
             "type" : "frontmost_application_if",
-            "bundle_identifiers" : [ "com.apple.Safari.WebApp.82A772AA-B484-4B6A-958B-EFC0502C8EAD" ]
+            "bundle_identifiers" : [ "com.apple.Safari.WebApp.3EB0FCA6-A252-42ED-A98F-961977EF3A80" ]
           } ],
           "type" : "basic"
         } ]
@@ -2154,6 +2168,19 @@
           "key_code" : "escape"
         } ]
       } ],
+      "treat_as_built_in_keyboard" : false
+    }, {
+      "disable_built_in_keyboard_if_exists" : false,
+      "fn_function_keys" : [ ],
+      "identifiers" : {
+        "is_keyboard" : true,
+        "is_pointing_device" : true,
+        "product_id" : 1664,
+        "vendor_id" : 13364
+      },
+      "ignore" : false,
+      "manipulate_caps_lock_led" : false,
+      "simple_modifications" : [ ],
       "treat_as_built_in_keyboard" : false
     } ],
     "fn_function_keys" : [ {

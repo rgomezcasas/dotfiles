@@ -20,7 +20,7 @@
   "files.eol": "\n",
   "search.useGlobalIgnoreFiles": true,
   "search.useIgnoreFiles": true,
-  "workbench.editor.showTabs": false,
+  "workbench.editor.showTabs": "single",
   "explorer.openEditors.visible": 1,
   // Behaviour
   "window.openFoldersInNewWindow": "on",
@@ -67,5 +67,6 @@
   "boot-java.rewrite.reconcile": true,
   "editor.inlineSuggest.enabled": true,
   "aws.telemetry": false,
-  "symbols.hidesExplorerArrows": false
+  "symbols.hidesExplorerArrows": false,
+  "window.zoomLevel": -2
 }

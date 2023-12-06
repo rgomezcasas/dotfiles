@@ -7,7 +7,7 @@
    :sim     100}}
  :applications
  {;; To obtain the app ID: `grep -A1 "CFBundleIdentifier" /Applications/The.app/Contents/Info.plist`
-  :ChatGPT    ["com.apple.Safari.WebApp.82A772AA-B484-4B6A-958B-EFC0502C8EAD"]
+  :ChatGPT    ["com.apple.Safari.WebApp.3EB0FCA6-A252-42ED-A98F-961977EF3A80"]
   :Chrome     ["com.google.Chrome", "com.google.Chrome.beta"]
   :Contexts   ["com.contextsformac.Contexts"]
   :Finder     ["com.apple.finder"]
@@ -96,15 +96,17 @@
   {:des   "[util] Clipboard history"
    :rules [[:clipboard-history [:!CTO0]]]}
   {:des   "[util] Move app to next screen and center"
-   :rules [[:move-next-screen [:!CTOSright_arrow :!COc]]]}
+   :rules [[:move-next-screen [:!CTOSright_arrow :!SOc]]]}
   {:des   "[util] Move app to prev screen and center"
-   :rules [[:move-prev-screen [:!CTOSleft_arrow :!COc]]]}
+   :rules [[:move-prev-screen [:!CTOSleft_arrow :!SOc]]]}
 
 	 ;; ------------ Launchers ------------
   {:des   "[launch] iTerm"
    :rules [[:!CTOspacebar [:open-app "iTerm"]]]}
   {:des   "[launch] IntelliJ"
    :rules [[:!CTOi [:open-app "IntelliJ IDEA Ultimate"]]]}
+  {:des   "[launch] Finder"
+   :rules [[:!CTOf [:open-app "Finder"]]]}
   {:des   "[launch] Chrome"
    :rules [[:!CTOc [:open-app "Google Chrome"]]]}
   {:des   "[launch] Slack"
