@@ -209,6 +209,111 @@
           "type" : "basic"
         } ]
       }, {
+        "description" : "Escape mode: quick navigation",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "j"
+          },
+          "to" : [ {
+            "mouse_key" : {
+              "vertical_wheel" : 64,
+              "speed_multiplier" : 1.5
+            }
+          } ],
+          "conditions" : [ {
+            "name" : "escape-mode",
+            "value" : 1,
+            "type" : "variable_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "type" : "basic",
+          "parameters" : {
+            "basic.simultaneous_threshold_milliseconds" : 250
+          },
+          "to" : [ {
+            "set_variable" : {
+              "name" : "escape-mode",
+              "value" : 1
+            }
+          }, {
+            "mouse_key" : {
+              "vertical_wheel" : 64,
+              "speed_multiplier" : 1.5
+            }
+          } ],
+          "from" : {
+            "simultaneous" : [ {
+              "key_code" : "escape"
+            }, {
+              "key_code" : "j"
+            } ],
+            "simultaneous_options" : {
+              "detect_key_down_uninterruptedly" : true,
+              "key_down_order" : "strict",
+              "key_up_order" : "strict_inverse",
+              "key_up_when" : "any",
+              "to_after_key_up" : [ {
+                "set_variable" : {
+                  "name" : "escape-mode",
+                  "value" : 0
+                }
+              } ]
+            }
+          }
+        }, {
+          "from" : {
+            "key_code" : "k"
+          },
+          "to" : [ {
+            "mouse_key" : {
+              "vertical_wheel" : -64,
+              "speed_multiplier" : 1.5
+            }
+          } ],
+          "conditions" : [ {
+            "name" : "escape-mode",
+            "value" : 1,
+            "type" : "variable_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "type" : "basic",
+          "parameters" : {
+            "basic.simultaneous_threshold_milliseconds" : 250
+          },
+          "to" : [ {
+            "set_variable" : {
+              "name" : "escape-mode",
+              "value" : 1
+            }
+          }, {
+            "mouse_key" : {
+              "vertical_wheel" : -64,
+              "speed_multiplier" : 1.5
+            }
+          } ],
+          "from" : {
+            "simultaneous" : [ {
+              "key_code" : "escape"
+            }, {
+              "key_code" : "k"
+            } ],
+            "simultaneous_options" : {
+              "detect_key_down_uninterruptedly" : true,
+              "key_down_order" : "strict",
+              "key_up_order" : "strict_inverse",
+              "key_up_when" : "any",
+              "to_after_key_up" : [ {
+                "set_variable" : {
+                  "name" : "escape-mode",
+                  "value" : 0
+                }
+              } ]
+            }
+          }
+        } ]
+      }, {
         "description" : "[util] Change brightness with the wheel",
         "manipulators" : [ {
           "from" : {
@@ -2179,6 +2284,19 @@
         "vendor_id" : 13364
       },
       "ignore" : false,
+      "manipulate_caps_lock_led" : false,
+      "simple_modifications" : [ ],
+      "treat_as_built_in_keyboard" : false
+    }, {
+      "disable_built_in_keyboard_if_exists" : false,
+      "fn_function_keys" : [ ],
+      "identifiers" : {
+        "is_keyboard" : false,
+        "is_pointing_device" : true,
+        "product_id" : 613,
+        "vendor_id" : 1452
+      },
+      "ignore" : true,
       "manipulate_caps_lock_led" : false,
       "simple_modifications" : [ ],
       "treat_as_built_in_keyboard" : false

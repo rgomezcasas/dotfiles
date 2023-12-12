@@ -41,15 +41,9 @@
              :paste-and-return "$HOME/.dotfiles/bin/sdot mac paste_text \"%s\" --returning"
              :open-in-chrome   "$HOME/.dotfiles/bin/sdot mac open_chrome_url \"%s\""
              :wait_seconds     "osascript -e 'delay %s'"}
- :layers    {:tab-mode  {:key :tab}
-             :caps-mode {:key :caps_lock}}
- :simlayers {:emoji-mode  {:key :e}
-             :open-mode   {:key :o}
-             :script-mode {:key :s}}
+ :simlayers {:escape-mode  {:key :escape}}
  :main
- [;; ------------ Remaps ------------
-
-  ;; ------------ Windows management
+ [;; ------------ Windows management
   {:des   "[mouse] Up key -> Restore last hidden"
    :rules [[{:pkey :button5} :!Ctab]]}
   {:des   "[mouse] Down key -> Hide"
@@ -78,7 +72,13 @@
    :rules [[:!Oo [:type "ó"]]
            [:!Oa [:type "á"]]]}
 
-	 ;; ------------ Utils ------------
+;; ------------ Layers -----------
+  {:des "Escape mode: quick navigation"
+   :rules [:escape-mode
+           [:j {:mkey {:vwheel 64 :speed 1.5}}]
+           [:k {:mkey {:vwheel -64 :speed 1.5}}]]}
+
+;; ------------ Utils ------------
   {:des   "[util] Change brightness with the wheel"
    :rules [[:!Svolume_increment :display_brightness_increment]
            [:!Svolume_decrement :display_brightness_decrement]]}
@@ -100,7 +100,7 @@
   {:des   "[util] Move app to prev screen and center"
    :rules [[:move-prev-screen [:!CTOSleft_arrow :!SOc]]]}
 
-	 ;; ------------ Launchers ------------
+;; ------------ Launchers ------------
   {:des   "[launch] iTerm"
    :rules [[:!CTOspacebar [:open-app "iTerm"]]]}
   {:des   "[launch] IntelliJ"
@@ -135,11 +135,9 @@
 
 ;; ------------ Shortcuts to use from other applications ------------
   {:des   "Apple Music utilities"
-   :rules [
-     [:!TOC9 "$HOME/.dotfiles/bin/sdot apple music increase-volume"]
-     [:!TOC8 "$HOME/.dotfiles/bin/sdot apple music decrease-volume"]
-     [:!TOC7 "$HOME/.dotfiles/bin/sdot apple music toggle-play"]
-   ]}
+   :rules [[:!TOC9 "$HOME/.dotfiles/bin/sdot apple music increase-volume"]
+           [:!TOC8 "$HOME/.dotfiles/bin/sdot apple music decrease-volume"]
+           [:!TOC7 "$HOME/.dotfiles/bin/sdot apple music toggle-play"]]}
 
 ;; ------------ Application specific ------------
   {:des   "[chatgpt] Toggle sidebar"
