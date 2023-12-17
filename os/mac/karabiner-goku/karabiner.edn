@@ -7,7 +7,7 @@
    :sim     100}}
  :applications
  {;; To obtain the app ID: `grep -A1 "CFBundleIdentifier" /Applications/The.app/Contents/Info.plist`
-  :ChatGPT    ["com.apple.Safari.WebApp.3EB0FCA6-A252-42ED-A98F-961977EF3A80"]
+  :ChatGPT    ["com.apple.Safari.WebApp.B70627BE-FEA5-471D-A04D-794EBA78BA41"]
   :Chrome     ["com.google.Chrome", "com.google.Chrome.beta"]
   :Contexts   ["com.contextsformac.Contexts"]
   :Finder     ["com.apple.finder"]
@@ -161,6 +161,8 @@
 
   {:des   "[finder] Create folder"
    :rules [:Finder [:create-folder :!CSn]]}
+  {:des   "[finder] Toggle sidebar"
+   :rules [:Finder [:sidebar-primary-toggle :!CTs]]}
 
   {:des   "[guitar pro] Zoom in/out"
    :rules [:GuitarPro [:zoom-in :!CSperiod] [:zoom-out :!CScomma]]}
