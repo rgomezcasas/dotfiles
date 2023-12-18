@@ -386,9 +386,6 @@
             "bundle_identifiers" : [ "com.jetbrains.intellij" ]
           }, {
             "type" : "frontmost_application_unless",
-            "bundle_identifiers" : [ "notion.id" ]
-          }, {
-            "type" : "frontmost_application_unless",
             "bundle_identifiers" : [ "com.microsoft.VSCode" ]
           }, {
             "type" : "frontmost_application_unless",
@@ -1046,6 +1043,44 @@
           "conditions" : [ {
             "type" : "frontmost_application_if",
             "bundle_identifiers" : [ "notion.id" ]
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "[PersonalNotion] Show recent pages",
+        "manipulators" : [ {
+          "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_command" ]
+            },
+            "key_code" : "e"
+          },
+          "to" : [ {
+            "key_code" : "p",
+            "modifiers" : [ "left_command" ]
+          } ],
+          "conditions" : [ {
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "com.apple.Safari.WebApp.5201A944-EF60-472C-80BB-F173D751027E" ]
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "[PersonalNotion] Toggle sidebar",
+        "manipulators" : [ {
+          "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_command" ]
+            },
+            "key_code" : "1"
+          },
+          "to" : [ {
+            "key_code" : "backslash",
+            "modifiers" : [ "left_command" ]
+          } ],
+          "conditions" : [ {
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "com.apple.Safari.WebApp.5201A944-EF60-472C-80BB-F173D751027E" ]
           } ],
           "type" : "basic"
         } ]

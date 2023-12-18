@@ -7,18 +7,19 @@
    :sim     100}}
  :applications
  {;; To obtain the app ID: `grep -A1 "CFBundleIdentifier" /Applications/The.app/Contents/Info.plist`
-  :ChatGPT    ["com.apple.Safari.WebApp.B70627BE-FEA5-471D-A04D-794EBA78BA41"]
-  :Chrome     ["com.google.Chrome", "com.google.Chrome.beta"]
-  :Contexts   ["com.contextsformac.Contexts"]
-  :Finder     ["com.apple.finder"]
-  :GoogleMeet ["com.google.Chrome.app.kjgfgldnnfoeklkmfkjfagphfepbbdan"]
-  :GuitarPro  ["com.arobas-music.guitarpro7"]
-  :IntelliJ   ["com.jetbrains.intellij"]
-  :Keynote    ["com.apple.iWork.Keynote"]
-  :Notion     ["notion.id"]
-  :Safari     ["com.apple.Safari"]
-  :Slack      ["com.tinyspeck.slackmacgap"]
-  :VSCode     ["com.microsoft.VSCode"]}
+  :ChatGPT        ["com.apple.Safari.WebApp.B70627BE-FEA5-471D-A04D-794EBA78BA41"]
+  :Chrome         ["com.google.Chrome", "com.google.Chrome.beta"]
+  :Contexts       ["com.contextsformac.Contexts"]
+  :Finder         ["com.apple.finder"]
+  :GoogleMeet     ["com.google.Chrome.app.kjgfgldnnfoeklkmfkjfagphfepbbdan"]
+  :GuitarPro      ["com.arobas-music.guitarpro7"]
+  :IntelliJ       ["com.jetbrains.intellij"]
+  :Keynote        ["com.apple.iWork.Keynote"]
+  :Notion         ["notion.id"]
+  :PersonalNotion ["com.apple.Safari.WebApp.5201A944-EF60-472C-80BB-F173D751027E"]
+  :Safari         ["com.apple.Safari"]
+  :Slack          ["com.tinyspeck.slackmacgap"]
+  :VSCode         ["com.microsoft.VSCode"]}
  :froms     {:clipboard-history        {:modi [:left_command :left_shift] :key :v}
              :create-folder            {:modi [:left_control :left_option :left_command] :key :p}
              :create-new               {:modi [:left_command] :key :n}
@@ -88,7 +89,7 @@
   {:des   "[util] Extend selection"
    :rules [[:selection-extend
             [:!Oleft_arrow :!OSright_arrow]
-            [:!IntelliJ :!Notion :!VSCode :!GuitarPro]]]}
+            [:!IntelliJ :!VSCode :!GuitarPro]]]}
   {:des   "[util] Delete line"
    :rules [[:line-delete
             [:!Cright_arrow :!Cdelete_or_backspace :delete_or_backspace]
@@ -178,6 +179,10 @@
    :rules [:Notion
            [:selection-extend :!Sup_arrow]
            [:selection-shrink :!Sdown_arrow]]}
+  {:des   "[PersonalNotion] Show recent pages"
+   :rules [:PersonalNotion [:show-recent :!Cp]]}
+  {:des   "[PersonalNotion] Toggle sidebar"
+   :rules [:PersonalNotion [:sidebar-primary-toggle :!Cbackslash]]}
 
   {:des   "[safari] Toggle sidebar"
    :rules [:Safari [:sidebar-primary-toggle :!CSl]]}
