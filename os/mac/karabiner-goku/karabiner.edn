@@ -1,7 +1,7 @@
 {:profiles
  {:Default
   {:default true
-   :alone   20
+   :alone   200
    :delay   200
    :held    100
    :sim     100}}
@@ -42,7 +42,6 @@
              :paste-and-return "$HOME/.dotfiles/bin/sdot mac paste_text \"%s\" --returning"
              :open-in-chrome   "$HOME/.dotfiles/bin/sdot mac open_chrome_url \"%s\""
              :wait_seconds     "osascript -e 'delay %s'"}
- :simlayers {:escape-mode  {:key :escape}}
  :main
  [;; ------------ Windows management
   {:des   "[mouse] Up key -> Restore last hidden"
@@ -73,11 +72,11 @@
    :rules [[:!Oo [:type "ó"]]
            [:!Oa [:type "á"]]]}
 
-;; ------------ Layers -----------
-  {:des "Escape mode: quick navigation"
-   :rules [:escape-mode
-           [:j {:mkey {:vwheel 64 :speed 1.5}}]
-           [:k {:mkey {:vwheel -64 :speed 1.5}}]]}
+;; ------------ Remaps ------------
+  {:des   "escape to esc when pressed alone, to hyper as modifier"
+   :rules [[:escape :!TOCleft_shift nil {:alone :escape}]]}
+  {:des   "caps_lock to esc when pressed alone, to hyper as modifier"
+   :rules [[:caps_lock :!TOCleft_shift nil {:alone :escape}]]}
 
 ;; ------------ Utils ------------
   {:des   "[util] Change brightness with the wheel"
@@ -102,34 +101,14 @@
    :rules [[:move-prev-screen [:!CTOSleft_arrow :!SOc]]]}
 
 ;; ------------ Launchers ------------
-  {:des   "[launch] iTerm"
-   :rules [[:!CTOspacebar [:open-app "iTerm"]]]}
-  {:des   "[launch] IntelliJ"
-   :rules [[:!CTOi [:open-app "IntelliJ IDEA Ultimate"]]]}
-  {:des   "[launch] Finder"
-   :rules [[:!CTOf [:open-app "Finder"]]]}
-  {:des   "[launch] Chrome"
-   :rules [[:!CTOc [:open-app "Google Chrome"]]]}
-  {:des   "[launch] Slack"
-   :rules [[:!CTOs [:open-app "Slack"]]]}
-  {:des   "[launch] ChatGPT"
-   :rules [[:!CTOa [:open-app "ChatGPT"]]]}
-  {:des   "[launch] Google Meet"
-   :rules [[:!CTOg [:open-app "Google Meet"]]]}
-  {:des   "[launch] Notion"
-   :rules [[:!CTOn [:open-app "Notion"]]]}
-
   {:des   "[launch] dotly ui scripts"
    :rules [[:!Tcaps_lock "$HOME/.dotfiles/bin/sdot ui show_scripts"]]}
 
   {:des   "[script] Generate uuid"
    :rules [[:!CTOu "$HOME/.dotfiles/bin/sdot utils uuid_code"]]}
 
-  {:des   "[script] Show desktop folder"
-   :rules [[:!CTOd "open \"$HOME/Desktop\""]]}
-
   {:des   "[script] Open common folders"
-   :rules [[:!CTgrave_accent_and_tilde "$HOME/.dotfiles/bin/sdot utils open_common"]]}
+   :rules [[:!CTgrave_accent_and_tilde "$HOME/.dotfiles/bin/sdot utils open_common"]]},
 
   {:des   "[script] Open CodelyTV Repo"
    :rules [[:!CTOr "$HOME/.dotfiles/bin/sdot github open_codely_repo"]]}

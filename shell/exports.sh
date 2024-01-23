@@ -19,7 +19,7 @@ fi
 # ------------------------------------------------------------------------------
 # Languages
 # ------------------------------------------------------------------------------
-export JAVA_HOME='/Users/rafa.gomez/Library/Java/JavaVirtualMachines/azul-21.0.1/Contents/Home'
+export JAVA_HOME='/Users/rafa.gomez/Library/Java/JavaVirtualMachines/corretto-18.0.2/Contents/Home'
 export GEM_HOME="$HOME/.gem"
 export GOPATH="$HOME/.go"
 export PYTORCH_ENABLE_MPS_FALLBACK=1

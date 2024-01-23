@@ -11,7 +11,7 @@
       "parameters" : {
         "basic.simultaneous_threshold_milliseconds" : 100,
         "basic.to_delayed_action_delay_milliseconds" : 200,
-        "basic.to_if_alone_timeout_milliseconds" : 20,
+        "basic.to_if_alone_timeout_milliseconds" : 200,
         "basic.to_if_held_down_threshold_milliseconds" : 100
       },
       "rules" : [ {
@@ -209,109 +209,34 @@
           "type" : "basic"
         } ]
       }, {
-        "description" : "Escape mode: quick navigation",
+        "description" : "escape to esc when pressed alone, to hyper as modifier",
         "manipulators" : [ {
+          "to_if_alone" : [ {
+            "key_code" : "escape"
+          } ],
           "from" : {
-            "key_code" : "j"
+            "key_code" : "escape"
           },
           "to" : [ {
-            "mouse_key" : {
-              "vertical_wheel" : 64,
-              "speed_multiplier" : 1.5
-            }
-          } ],
-          "conditions" : [ {
-            "name" : "escape-mode",
-            "value" : 1,
-            "type" : "variable_if"
+            "key_code" : "left_shift",
+            "modifiers" : [ "left_command", "left_control", "left_option" ]
           } ],
           "type" : "basic"
-        }, {
-          "type" : "basic",
-          "parameters" : {
-            "basic.simultaneous_threshold_milliseconds" : 250
-          },
-          "to" : [ {
-            "set_variable" : {
-              "name" : "escape-mode",
-              "value" : 1
-            }
-          }, {
-            "mouse_key" : {
-              "vertical_wheel" : 64,
-              "speed_multiplier" : 1.5
-            }
+        } ]
+      }, {
+        "description" : "caps_lock to esc when pressed alone, to hyper as modifier",
+        "manipulators" : [ {
+          "to_if_alone" : [ {
+            "key_code" : "escape"
           } ],
           "from" : {
-            "simultaneous" : [ {
-              "key_code" : "escape"
-            }, {
-              "key_code" : "j"
-            } ],
-            "simultaneous_options" : {
-              "detect_key_down_uninterruptedly" : true,
-              "key_down_order" : "strict",
-              "key_up_order" : "strict_inverse",
-              "key_up_when" : "any",
-              "to_after_key_up" : [ {
-                "set_variable" : {
-                  "name" : "escape-mode",
-                  "value" : 0
-                }
-              } ]
-            }
-          }
-        }, {
-          "from" : {
-            "key_code" : "k"
+            "key_code" : "caps_lock"
           },
           "to" : [ {
-            "mouse_key" : {
-              "vertical_wheel" : -64,
-              "speed_multiplier" : 1.5
-            }
-          } ],
-          "conditions" : [ {
-            "name" : "escape-mode",
-            "value" : 1,
-            "type" : "variable_if"
+            "key_code" : "left_shift",
+            "modifiers" : [ "left_command", "left_control", "left_option" ]
           } ],
           "type" : "basic"
-        }, {
-          "type" : "basic",
-          "parameters" : {
-            "basic.simultaneous_threshold_milliseconds" : 250
-          },
-          "to" : [ {
-            "set_variable" : {
-              "name" : "escape-mode",
-              "value" : 1
-            }
-          }, {
-            "mouse_key" : {
-              "vertical_wheel" : -64,
-              "speed_multiplier" : 1.5
-            }
-          } ],
-          "from" : {
-            "simultaneous" : [ {
-              "key_code" : "escape"
-            }, {
-              "key_code" : "k"
-            } ],
-            "simultaneous_options" : {
-              "detect_key_down_uninterruptedly" : true,
-              "key_down_order" : "strict",
-              "key_up_order" : "strict_inverse",
-              "key_up_when" : "any",
-              "to_after_key_up" : [ {
-                "set_variable" : {
-                  "name" : "escape-mode",
-                  "value" : 0
-                }
-              } ]
-            }
-          }
         } ]
       }, {
         "description" : "[util] Change brightness with the wheel",
@@ -478,118 +403,6 @@
           "type" : "basic"
         } ]
       }, {
-        "description" : "[launch] iTerm",
-        "manipulators" : [ {
-          "from" : {
-            "key_code" : "spacebar",
-            "modifiers" : {
-              "mandatory" : [ "left_command", "left_control", "left_option" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "open -a \"iTerm\""
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[launch] IntelliJ",
-        "manipulators" : [ {
-          "from" : {
-            "key_code" : "i",
-            "modifiers" : {
-              "mandatory" : [ "left_command", "left_control", "left_option" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "open -a \"IntelliJ IDEA Ultimate\""
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[launch] Finder",
-        "manipulators" : [ {
-          "from" : {
-            "key_code" : "f",
-            "modifiers" : {
-              "mandatory" : [ "left_command", "left_control", "left_option" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "open -a \"Finder\""
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[launch] Chrome",
-        "manipulators" : [ {
-          "from" : {
-            "key_code" : "c",
-            "modifiers" : {
-              "mandatory" : [ "left_command", "left_control", "left_option" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "open -a \"Google Chrome\""
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[launch] Slack",
-        "manipulators" : [ {
-          "from" : {
-            "key_code" : "s",
-            "modifiers" : {
-              "mandatory" : [ "left_command", "left_control", "left_option" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "open -a \"Slack\""
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[launch] ChatGPT",
-        "manipulators" : [ {
-          "from" : {
-            "key_code" : "a",
-            "modifiers" : {
-              "mandatory" : [ "left_command", "left_control", "left_option" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "open -a \"ChatGPT\""
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[launch] Google Meet",
-        "manipulators" : [ {
-          "from" : {
-            "key_code" : "g",
-            "modifiers" : {
-              "mandatory" : [ "left_command", "left_control", "left_option" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "open -a \"Google Meet\""
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[launch] Notion",
-        "manipulators" : [ {
-          "from" : {
-            "key_code" : "n",
-            "modifiers" : {
-              "mandatory" : [ "left_command", "left_control", "left_option" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "open -a \"Notion\""
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
         "description" : "[launch] dotly ui scripts",
         "manipulators" : [ {
           "from" : {
@@ -614,20 +427,6 @@
           },
           "to" : [ {
             "shell_command" : "$HOME/.dotfiles/bin/sdot utils uuid_code"
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[script] Show desktop folder",
-        "manipulators" : [ {
-          "from" : {
-            "key_code" : "d",
-            "modifiers" : {
-              "mandatory" : [ "left_command", "left_control", "left_option" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "open \"$HOME/Desktop\""
           } ],
           "type" : "basic"
         } ]
