@@ -31,7 +31,7 @@
   "explorer.compactFolders": false,
   "editor.renderWhitespace": "selection",
   "editor.bracketPairColorization.enabled": true,
-  "editor.lightbulb.enabled": false,
+  "editor.lightbulb.enabled": "off",
   "workbench.list.horizontalScrolling": true,
   "workbench.sideBar.location": "left",
   "workbench.tree.indent": 20,
@@ -68,5 +68,6 @@
   "editor.inlineSuggest.enabled": true,
   "aws.telemetry": false,
   "symbols.hidesExplorerArrows": false,
-  "window.zoomLevel": -2
+  "window.zoomLevel": -2,
+  "security.workspace.trust.untrustedFiles": "open"
 }

@@ -7,7 +7,7 @@
    :sim     100}}
  :applications
  {;; To obtain the app ID: `grep -A1 "CFBundleIdentifier" /Applications/The.app/Contents/Info.plist`
-  :ChatGPT        ["com.apple.Safari.WebApp.B70627BE-FEA5-471D-A04D-794EBA78BA41"]
+  :ChatGPT        ["com.google.Chrome.app.jckaldkomadaenmmgladeopgmfbahfjm"]
   :Chrome         ["com.google.Chrome", "com.google.Chrome.beta"]
   :Contexts       ["com.contextsformac.Contexts"]
   :Finder         ["com.apple.finder"]
@@ -23,6 +23,7 @@
  :froms     {:clipboard-history        {:modi [:left_command :left_shift] :key :v}
              :create-folder            {:modi [:left_control :left_option :left_command] :key :p}
              :create-new               {:modi [:left_command] :key :n}
+             :create-new-window        {:modi [:left_command :left_shift] :key :n}
              :line-delete              {:modi :left_command :key :delete_or_backspace}
              :line-duplicate           {:modi :left_command :key :d}
              :move-next-screen         {:modi [:left_command :left_shift :left_option] :key :right_arrow}
@@ -124,6 +125,8 @@
    :rules [:ChatGPT [:sidebar-primary-toggle :!CSs]]}
   {:des   "[chatgpt] New chat"
    :rules [:ChatGPT [:create-new :!CSo]]}
+  {:des   "[chatgpt] New window"
+   :rules [:ChatGPT [:create-new-window :!Cn]]}
 
   {:des   "[chrome] Show recent tabs"
    :rules [:Chrome [:show-recent :!CSa]]}

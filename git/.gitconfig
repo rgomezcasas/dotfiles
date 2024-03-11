@@ -87,18 +87,24 @@
 [apply]
 	# Detect whitespace errors when applying a patch
 	whitespace = fix
+
 [commit]
 	gpgsign = true
+
 [tag]
 	gpgsign = true
+
 [gpg]
 	program = /Users/rafa.gomez/bin/gpg
+
 [pull]
 	rebase = true
+
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+
 [init]
 	defaultBranch = main
