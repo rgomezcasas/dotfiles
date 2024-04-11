@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTLY_PATH/scripts/core/_main.sh"
+source "$DOTFILES_PATH/scripts/core/selector.sh"
+
+##? Switch Bitwarden account
+#?? 1.0.0
+##?
+##? Usage:
+##?   switch_account
+docs::parse "$@"
+
+function main() {
+	osascript <<EOF
+tell application "System Events"
+    set frontApp to name of first application process whose frontmost is true
+    set frontWindow to first window of application process frontApp
+    set windowPosition to position of frontWindow
+    set windowSize to size of frontWindow
+    -- Calcula la posición de la parte superior derecha
+    set x to (item 1 of windowPosition) + (item 1 of windowSize) - 30 -- 30 píxeles hacia adentro
+    set y to (item 2 of windowPosition) + 30 -- 30 píxeles hacia abajo
+    set yOtherAccount to (item 2 of windowPosition) + 80 -- 80 píxeles hacia abajo
+
+    set coordinates to (x as string) & "," & (y as string)
+    set otherAccountCoordinates to (x as string) & "," & (yOtherAccount as string)
+
+    do shell script "/opt/homebrew/bin/cliclick c:" & coordinates
+
+    do shell script "/opt/homebrew/bin/cliclick c:" & otherAccountCoordinates
+end tell
+EOF
+
+}
+
+main

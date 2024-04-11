@@ -6,7 +6,9 @@
    :held    100
    :sim     100}}
  :applications
- {;; To obtain the app ID: `grep -A1 "CFBundleIdentifier" /Applications/The.app/Contents/Info.plist`
+ {;; To obtain the app ID: `TThe.app/Contents/Info.plist`
+  :Arc            ["company.thebrowser.Browser"]
+  :Bitwarden      ["com.bitwarden.desktop"]
   :ChatGPT        ["com.google.Chrome.app.jckaldkomadaenmmgladeopgmfbahfjm"]
   :Chrome         ["com.google.Chrome", "com.google.Chrome.beta"]
   :Contexts       ["com.contextsformac.Contexts"]
@@ -41,7 +43,6 @@
              :type             "/opt/homebrew/bin/skhd -t \"%s\""
              :paste            "$HOME/.dotfiles/bin/sdot mac paste_text \"%s\""
              :paste-and-return "$HOME/.dotfiles/bin/sdot mac paste_text \"%s\" --returning"
-             :open-in-chrome   "$HOME/.dotfiles/bin/sdot mac open_chrome_url \"%s\""
              :wait_seconds     "osascript -e 'delay %s'"}
  :main
  [;; ------------ Windows management
@@ -121,6 +122,15 @@
            [:!TOC7 "$HOME/.dotfiles/bin/sdot apple music toggle-play"]]}
 
 ;; ------------ Application specific ------------
+  {:des   "[arc] Toggle sidebar"
+   :rules [:Arc [:sidebar-primary-toggle :!Cs]]}
+  {:des   "[arc] Switch profile"
+   :rules [:Arc [:switch-account :!COright_arrow]]}
+  {:des   "[arc] Switch profile"
+   :rules [:Arc [:switch-account-esc :!COright_arrow]]}
+  {:des   "[arc] CMD P also to show url menu"
+   :rules [:Arc [:!Cp :!Cl]]}
+
   {:des   "[chatgpt] Toggle sidebar"
    :rules [:ChatGPT [:sidebar-primary-toggle :!CSs]]}
   {:des   "[chatgpt] New chat"
@@ -141,6 +151,11 @@
    :rules [:Safari [:switch-account "$HOME/.dotfiles/bin/sdot safari switch_profile"]]}
   {:des   "[safari] Switch profile"
    :rules [:Safari [:switch-account-esc "$HOME/.dotfiles/bin/sdot safari switch_profile"]]}
+
+  {:des   "[bitwarden] Switch account"
+   :rules [:Bitwarden [:switch-account "$HOME/.dotfiles/bin/sdot bitwarden switch_account"]]}
+  {:des   "[bitwarden] Switch account"
+   :rules [:Bitwarden [:switch-account-esc "$HOME/.dotfiles/bin/sdot bitwarden switch_account"]]}
 
   {:des   "[finder] Create folder"
    :rules [:Finder [:create-folder :!CSn]]}

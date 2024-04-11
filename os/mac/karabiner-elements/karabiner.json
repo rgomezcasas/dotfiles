@@ -495,6 +495,79 @@
           "type" : "basic"
         } ]
       }, {
+        "description" : "[arc] Toggle sidebar",
+        "manipulators" : [ {
+          "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_command" ]
+            },
+            "key_code" : "1"
+          },
+          "to" : [ {
+            "key_code" : "s",
+            "modifiers" : [ "left_command" ]
+          } ],
+          "conditions" : [ {
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "company.thebrowser.Browser" ]
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "[arc] Switch profile",
+        "manipulators" : [ {
+          "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_command" ]
+            },
+            "key_code" : "caps_lock"
+          },
+          "to" : [ {
+            "key_code" : "right_arrow",
+            "modifiers" : [ "left_command", "left_option" ]
+          } ],
+          "conditions" : [ {
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "company.thebrowser.Browser" ]
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_command" ]
+            },
+            "key_code" : "escape"
+          },
+          "to" : [ {
+            "key_code" : "right_arrow",
+            "modifiers" : [ "left_command", "left_option" ]
+          } ],
+          "conditions" : [ {
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "company.thebrowser.Browser" ]
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "[arc] CMD P also to show url menu",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "p",
+            "modifiers" : {
+              "mandatory" : [ "left_command" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "l",
+            "modifiers" : [ "left_command" ]
+          } ],
+          "conditions" : [ {
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "company.thebrowser.Browser" ]
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
         "description" : "[chatgpt] Toggle sidebar",
         "manipulators" : [ {
           "from" : {
@@ -680,6 +753,39 @@
           "conditions" : [ {
             "type" : "frontmost_application_if",
             "bundle_identifiers" : [ "com.apple.Safari" ]
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "[bitwarden] Switch account",
+        "manipulators" : [ {
+          "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_command" ]
+            },
+            "key_code" : "caps_lock"
+          },
+          "to" : [ {
+            "shell_command" : "$HOME/.dotfiles/bin/sdot bitwarden switch_account"
+          } ],
+          "conditions" : [ {
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "com.bitwarden.desktop" ]
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_command" ]
+            },
+            "key_code" : "escape"
+          },
+          "to" : [ {
+            "shell_command" : "$HOME/.dotfiles/bin/sdot bitwarden switch_account"
+          } ],
+          "conditions" : [ {
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "com.bitwarden.desktop" ]
           } ],
           "type" : "basic"
         } ]

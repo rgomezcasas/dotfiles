@@ -12,6 +12,7 @@
     scripts/codely: modules/private/scripts/codely
     ~/.config/alacritty/alacritty.toml: os/mac/alacritty/alacritty.toml
     ~/.config/karabiner.edn: os/mac/karabiner-goku/karabiner.edn
+    ~/.config/kitty: os/mac/kitty
     ~/.config/karabiner: os/mac/karabiner-elements
     ~/.config/linearmouse: os/mac/linearmouse
     ~/.config/sketchybar: os/mac/sketchybar
