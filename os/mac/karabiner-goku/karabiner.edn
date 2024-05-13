@@ -26,6 +26,7 @@
              :create-folder            {:modi [:left_control :left_option :left_command] :key :p}
              :create-new               {:modi [:left_command] :key :n}
              :create-new-window        {:modi [:left_command :left_shift] :key :n}
+             :copy-current-url         {:modi [:left_command :left_shift] :key :c}
              :line-delete              {:modi :left_command :key :delete_or_backspace}
              :line-duplicate           {:modi :left_command :key :d}
              :move-next-screen         {:modi [:left_command :left_shift :left_option] :key :right_arrow}
@@ -130,6 +131,8 @@
    :rules [:Arc [:switch-account-esc :!COright_arrow]]}
   {:des   "[arc] CMD P also to show url menu"
    :rules [:Arc [:!Cp :!Cl]]}
+  {:des   "[arc] CMD e show open tabs thanks to Arc Raycast extension"
+   :rules [:Arc [:!Ce :!TOCSl]]}
 
   {:des   "[chatgpt] Toggle sidebar"
    :rules [:ChatGPT [:sidebar-primary-toggle :!CSs]]}
@@ -172,10 +175,13 @@
    :rules [:Notion [:show-recent :!Cp]]}
   {:des   "[notion] Toggle sidebar"
    :rules [:Notion [:sidebar-primary-toggle :!Cbackslash]]}
+  {:des   "[notion] Copy current url"
+   :rules [:Notion [:copy-current-url :!Cl]]}
   {:des   "[notion] Extend selection"
    :rules [:Notion
            [:selection-extend :!Sup_arrow]
            [:selection-shrink :!Sdown_arrow]]}
+
   {:des   "[PersonalNotion] Show recent pages"
    :rules [:PersonalNotion [:show-recent :!Cp]]}
   {:des   "[PersonalNotion] Toggle sidebar"
@@ -184,6 +190,8 @@
   {:des   "[safari] Toggle sidebar"
    :rules [:Safari [:sidebar-primary-toggle :!CSl]]}
 
+  {:des   "[slack] Move in history"
+   :rules [:Slack [:!Ttab :!Copen_bracket] [:!TStab :!Cclose_bracket]]}
   {:des   "[slack] Navigate between channels"
    :rules [:Slack [:!Cp :!Ck] [:!Ce :!Ck]]}
   {:des   "[slack] Toggle sidebars"

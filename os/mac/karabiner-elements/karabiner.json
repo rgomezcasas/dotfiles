@@ -568,6 +568,25 @@
           "type" : "basic"
         } ]
       }, {
+        "description" : "[arc] CMD e show open tabs thanks to Arc Raycast extension",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "e",
+            "modifiers" : {
+              "mandatory" : [ "left_command" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "l",
+            "modifiers" : [ "left_command", "left_control", "left_option", "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "company.thebrowser.Browser" ]
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
         "description" : "[chatgpt] Toggle sidebar",
         "manipulators" : [ {
           "from" : {
@@ -936,6 +955,25 @@
           "type" : "basic"
         } ]
       }, {
+        "description" : "[notion] Copy current url",
+        "manipulators" : [ {
+          "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_shift" ]
+            },
+            "key_code" : "c"
+          },
+          "to" : [ {
+            "key_code" : "l",
+            "modifiers" : [ "left_command" ]
+          } ],
+          "conditions" : [ {
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "notion.id" ]
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
         "description" : "[notion] Extend selection",
         "manipulators" : [ {
           "from" : {
@@ -1024,6 +1062,41 @@
           "conditions" : [ {
             "type" : "frontmost_application_if",
             "bundle_identifiers" : [ "com.apple.Safari" ]
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "[slack] Move in history",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "tab",
+            "modifiers" : {
+              "mandatory" : [ "left_control" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "open_bracket",
+            "modifiers" : [ "left_command" ]
+          } ],
+          "conditions" : [ {
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "com.tinyspeck.slackmacgap" ]
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "tab",
+            "modifiers" : {
+              "mandatory" : [ "left_control", "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "close_bracket",
+            "modifiers" : [ "left_command" ]
+          } ],
+          "conditions" : [ {
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "com.tinyspeck.slackmacgap" ]
           } ],
           "type" : "basic"
         } ]

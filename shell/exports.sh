@@ -2,10 +2,10 @@
 # Codely theme config
 # ------------------------------------------------------------------------------
 export CODELY_THEME_MODE="dark"
-export CODELY_THEME_PWD_MODE="short" # full, short, home_relative
-export CODELY_THEME_STATUS_ICON_OK=""  #  ﭧ ﯓ ﬦ          
-export CODELY_THEME_STATUS_ICON_KO="☢" # ﮊ
-export CODELY_THEME_PROMPT_IN_NEW_LINE=false
+export CODELY_THEME_PWD_MODE="short"    # full, short, home_relative
+export CODELY_THEME_STATUS_ICON_OK="ﬦ"  #  ﭧ ﯓ ﬦ          
+export CODELY_THEME_STATUS_ICON_KO="☢"  # ﮊ
+export CODELY_THEME_PROMPT_IN_NEW_LINE=true
 
 if [[ $__CFBundleIdentifier == "com.jetbrains."* ]]; then
   export CODELY_THEME_MINIMAL=true
@@ -19,7 +19,7 @@ fi
 # ------------------------------------------------------------------------------
 # Languages
 # ------------------------------------------------------------------------------
-export JAVA_HOME='/Users/rafa.gomez/Library/Java/JavaVirtualMachines/corretto-18.0.2/Contents/Home'
+export JAVA_HOME='/Users/rafa.gomez/Library/Java/JavaVirtualMachines/openjdk-21.0.2/Contents/Home'
 export GEM_HOME="$HOME/.gem"
 export GOPATH="$HOME/.go"
 export PYTORCH_ENABLE_MPS_FALLBACK=1
