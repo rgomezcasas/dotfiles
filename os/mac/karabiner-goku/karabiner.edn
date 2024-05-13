@@ -6,7 +6,7 @@
    :held    100
    :sim     100}}
  :applications
- {;; To obtain the app ID: `TThe.app/Contents/Info.plist`
+ {;; To obtain the app ID: `grep -A1 "CFBundleIdentifier" /Applications/The.app/Contents/Info.plist`
   :Arc            ["company.thebrowser.Browser"]
   :Bitwarden      ["com.bitwarden.desktop"]
   :ChatGPT        ["com.google.Chrome.app.jckaldkomadaenmmgladeopgmfbahfjm"]
@@ -19,6 +19,7 @@
   :Keynote        ["com.apple.iWork.Keynote"]
   :Notion         ["notion.id"]
   :PersonalNotion ["com.apple.Safari.WebApp.5201A944-EF60-472C-80BB-F173D751027E"]
+  :Raycast        ["com.raycast.macos"]
   :Safari         ["com.apple.Safari"]
   :Slack          ["com.tinyspeck.slackmacgap"]
   :VSCode         ["com.microsoft.VSCode"]}
@@ -181,6 +182,9 @@
    :rules [:Notion
            [:selection-extend :!Sup_arrow]
            [:selection-shrink :!Sdown_arrow]]}
+
+  {:des   "[Raycast ai] Toggle sidebar"
+   :rules [:Raycast [:sidebar-primary-toggle :!CSs]]}
 
   {:des   "[PersonalNotion] Show recent pages"
    :rules [:PersonalNotion [:show-recent :!Cp]]}

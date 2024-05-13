@@ -1009,6 +1009,25 @@
           "type" : "basic"
         } ]
       }, {
+        "description" : "[Raycast] Toggle sidebar",
+        "manipulators" : [ {
+          "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_command" ]
+            },
+            "key_code" : "1"
+          },
+          "to" : [ {
+            "key_code" : "s",
+            "modifiers" : [ "left_command", "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "com.raycast.macos" ]
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
         "description" : "[PersonalNotion] Show recent pages",
         "manipulators" : [ {
           "from" : {
