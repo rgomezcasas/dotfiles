@@ -308,7 +308,7 @@
           } ],
           "conditions" : [ {
             "type" : "frontmost_application_unless",
-            "bundle_identifiers" : [ "com.jetbrains.intellij" ]
+            "bundle_identifiers" : [ "com.jetbrains.intellij", "com.jetbrains.intellij-EAP" ]
           }, {
             "type" : "frontmost_application_unless",
             "bundle_identifiers" : [ "com.microsoft.VSCode" ]
@@ -338,7 +338,7 @@
           } ],
           "conditions" : [ {
             "type" : "frontmost_application_unless",
-            "bundle_identifiers" : [ "com.jetbrains.intellij" ]
+            "bundle_identifiers" : [ "com.jetbrains.intellij", "com.jetbrains.intellij-EAP" ]
           }, {
             "type" : "frontmost_application_unless",
             "bundle_identifiers" : [ "notion.id" ]
@@ -495,6 +495,20 @@
           "type" : "basic"
         } ]
       }, {
+        "description" : "[arc] Open",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "a",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_control", "left_option", "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "shell_command" : "osascript -e 'tell application \"Arc\" to activate'"
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
         "description" : "[arc] Toggle sidebar",
         "manipulators" : [ {
           "from" : {
@@ -587,6 +601,41 @@
           "type" : "basic"
         } ]
       }, {
+        "description" : "[arc] opt+tab switch tabs in order",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "tab",
+            "modifiers" : {
+              "mandatory" : [ "left_option" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "down_arrow",
+            "modifiers" : [ "left_command", "left_option" ]
+          } ],
+          "conditions" : [ {
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "company.thebrowser.Browser" ]
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "tab",
+            "modifiers" : {
+              "mandatory" : [ "left_option", "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "up_arrow",
+            "modifiers" : [ "left_command", "left_option" ]
+          } ],
+          "conditions" : [ {
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "company.thebrowser.Browser" ]
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
         "description" : "[chatgpt] Toggle sidebar",
         "manipulators" : [ {
           "from" : {
@@ -597,49 +646,11 @@
           },
           "to" : [ {
             "key_code" : "s",
-            "modifiers" : [ "left_command", "left_shift" ]
-          } ],
-          "conditions" : [ {
-            "type" : "frontmost_application_if",
-            "bundle_identifiers" : [ "com.google.Chrome.app.jckaldkomadaenmmgladeopgmfbahfjm" ]
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[chatgpt] New chat",
-        "manipulators" : [ {
-          "from" : {
-            "modifiers" : {
-              "mandatory" : [ "left_command" ]
-            },
-            "key_code" : "n"
-          },
-          "to" : [ {
-            "key_code" : "o",
-            "modifiers" : [ "left_command", "left_shift" ]
-          } ],
-          "conditions" : [ {
-            "type" : "frontmost_application_if",
-            "bundle_identifiers" : [ "com.google.Chrome.app.jckaldkomadaenmmgladeopgmfbahfjm" ]
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[chatgpt] New window",
-        "manipulators" : [ {
-          "from" : {
-            "modifiers" : {
-              "mandatory" : [ "left_command", "left_shift" ]
-            },
-            "key_code" : "n"
-          },
-          "to" : [ {
-            "key_code" : "n",
             "modifiers" : [ "left_command" ]
           } ],
           "conditions" : [ {
             "type" : "frontmost_application_if",
-            "bundle_identifiers" : [ "com.google.Chrome.app.jckaldkomadaenmmgladeopgmfbahfjm" ]
+            "bundle_identifiers" : [ "com.openai.chat" ]
           } ],
           "type" : "basic"
         } ]
@@ -1009,7 +1020,7 @@
           "type" : "basic"
         } ]
       }, {
-        "description" : "[Raycast] Toggle sidebar",
+        "description" : "[Raycast ai] Toggle sidebar",
         "manipulators" : [ {
           "from" : {
             "modifiers" : {
@@ -1020,6 +1031,44 @@
           "to" : [ {
             "key_code" : "s",
             "modifiers" : [ "left_command", "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "com.raycast.macos" ]
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "[Raycast ai] Quit AI witch cmd+q",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "q",
+            "modifiers" : {
+              "mandatory" : [ "left_command" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "w",
+            "modifiers" : [ "left_command" ]
+          } ],
+          "conditions" : [ {
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "com.raycast.macos" ]
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "[Raycast ai] cmd+t as cmd+n",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "t",
+            "modifiers" : {
+              "mandatory" : [ "left_command" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "n",
+            "modifiers" : [ "left_command" ]
           } ],
           "conditions" : [ {
             "type" : "frontmost_application_if",

@@ -9,13 +9,13 @@
  {;; To obtain the app ID: `grep -A1 "CFBundleIdentifier" /Applications/The.app/Contents/Info.plist`
   :Arc            ["company.thebrowser.Browser"]
   :Bitwarden      ["com.bitwarden.desktop"]
-  :ChatGPT        ["com.google.Chrome.app.jckaldkomadaenmmgladeopgmfbahfjm"]
+  :ChatGPT        ["com.openai.chat"]
   :Chrome         ["com.google.Chrome", "com.google.Chrome.beta"]
   :Contexts       ["com.contextsformac.Contexts"]
   :Finder         ["com.apple.finder"]
   :GoogleMeet     ["com.google.Chrome.app.kjgfgldnnfoeklkmfkjfagphfepbbdan"]
   :GuitarPro      ["com.arobas-music.guitarpro7"]
-  :IntelliJ       ["com.jetbrains.intellij"]
+  :IntelliJ       ["com.jetbrains.intellij", "com.jetbrains.intellij-EAP"]
   :Keynote        ["com.apple.iWork.Keynote"]
   :Notion         ["notion.id"]
   :PersonalNotion ["com.apple.Safari.WebApp.5201A944-EF60-472C-80BB-F173D751027E"]
@@ -41,7 +41,7 @@
              :switch-account-esc       {:modi :left_command :key :escape}
              :zoom-in                  {:modi :left_command :key :equal_sign}
              :zoom-out                 {:modi :left_command :key :hyphen}}
- :templates {:open-app         "open -a \"%s\""
+ :templates {:open-app         "osascript -e 'tell application \"%s\" to activate'"
              :type             "/opt/homebrew/bin/skhd -t \"%s\""
              :paste            "$HOME/.dotfiles/bin/sdot mac paste_text \"%s\""
              :paste-and-return "$HOME/.dotfiles/bin/sdot mac paste_text \"%s\" --returning"
@@ -124,6 +124,8 @@
            [:!TOC7 "$HOME/.dotfiles/bin/sdot apple music toggle-play"]]}
 
 ;; ------------ Application specific ------------
+  {:des   "[arc] Open"
+		 :rules [[:!!a [:open-app "Arc"]]]}
   {:des   "[arc] Toggle sidebar"
    :rules [:Arc [:sidebar-primary-toggle :!Cs]]}
   {:des   "[arc] Switch profile"
@@ -134,13 +136,11 @@
    :rules [:Arc [:!Cp :!Cl]]}
   {:des   "[arc] CMD e show open tabs thanks to Arc Raycast extension"
    :rules [:Arc [:!Ce :!TOCSl]]}
+  {:des   "[arc] opt+tab switch tabs in order"
+   :rules [:Arc [:!Otab :!COdown_arrow] [:!OStab :!COup_arrow]]}
 
   {:des   "[chatgpt] Toggle sidebar"
-   :rules [:ChatGPT [:sidebar-primary-toggle :!CSs]]}
-  {:des   "[chatgpt] New chat"
-   :rules [:ChatGPT [:create-new :!CSo]]}
-  {:des   "[chatgpt] New window"
-   :rules [:ChatGPT [:create-new-window :!Cn]]}
+   :rules [:ChatGPT [:sidebar-primary-toggle :!Cs]]}
 
   {:des   "[chrome] Show recent tabs"
    :rules [:Chrome [:show-recent :!CSa]]}
@@ -185,6 +185,10 @@
 
   {:des   "[Raycast ai] Toggle sidebar"
    :rules [:Raycast [:sidebar-primary-toggle :!CSs]]}
+  {:des   "[Raycast ai] Quit AI witch cmd+q"
+   :rules [:Raycast [:!Cq :!Cw]]}
+  {:des   "[Raycast ai] cmd+t as cmd+n"
+   :rules [:Raycast [:!Ct :!Cn]]}
 
   {:des   "[PersonalNotion] Show recent pages"
    :rules [:PersonalNotion [:show-recent :!Cp]]}

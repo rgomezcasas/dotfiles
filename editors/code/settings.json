@@ -20,12 +20,10 @@
   "files.eol": "\n",
   "search.useGlobalIgnoreFiles": true,
   "search.useIgnoreFiles": true,
-  "workbench.editor.showTabs": "single",
+  "workbench.editor.showTabs": "none",
   "explorer.openEditors.visible": 1,
   // Behaviour
   "window.openFoldersInNewWindow": "on",
-  // Apparence
-  "workbench.colorTheme": "Codely Dark",
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.smoothScrolling": true,
   "explorer.compactFolders": false,
@@ -69,5 +67,8 @@
   "aws.telemetry": false,
   "symbols.hidesExplorerArrows": false,
   "window.zoomLevel": -2,
-  "security.workspace.trust.untrustedFiles": "open"
+  "security.workspace.trust.untrustedFiles": "open",
+  "workbench.colorTheme": "Codely Dark",
+  "workbench.activityBar.location": "hidden",
+  "editor.stickyScroll.enabled": false
 }

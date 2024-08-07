@@ -63,6 +63,7 @@ export path=(
   "$GOPATH/bin"
   "$HOME/.cargo/bin"
   "$HOME/.orbstack/bin"
+  "$HOME/Library/pnpm"
   "/opt/homebrew/opt/ruby/bin"
   "/opt/homebrew/opt/node@14/bin"
   "/opt/homebrew/opt/python@3.12/libexec/bin"
