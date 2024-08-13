@@ -582,25 +582,6 @@
           "type" : "basic"
         } ]
       }, {
-        "description" : "[arc] CMD e show open tabs thanks to Arc Raycast extension",
-        "manipulators" : [ {
-          "from" : {
-            "key_code" : "e",
-            "modifiers" : {
-              "mandatory" : [ "left_command" ]
-            }
-          },
-          "to" : [ {
-            "key_code" : "l",
-            "modifiers" : [ "left_command", "left_control", "left_option", "left_shift" ]
-          } ],
-          "conditions" : [ {
-            "type" : "frontmost_application_if",
-            "bundle_identifiers" : [ "company.thebrowser.Browser" ]
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
         "description" : "[arc] opt+tab switch tabs in order",
         "manipulators" : [ {
           "from" : {
@@ -1012,6 +993,25 @@
           "to" : [ {
             "key_code" : "down_arrow",
             "modifiers" : [ "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "notion.id" ]
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "[notion] Open current page",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "o",
+            "modifiers" : {
+              "mandatory" : [ "left_command" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "return_or_enter",
+            "modifiers" : [ "left_command" ]
           } ],
           "conditions" : [ {
             "type" : "frontmost_application_if",

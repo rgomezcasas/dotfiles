@@ -134,10 +134,14 @@
    :rules [:Arc [:switch-account-esc :!COright_arrow]]}
   {:des   "[arc] CMD P also to show url menu"
    :rules [:Arc [:!Cp :!Cl]]}
-  {:des   "[arc] CMD e show open tabs thanks to Arc Raycast extension"
-   :rules [:Arc [:!Ce :!TOCSl]]}
+;;  {:des   "[arc] CMD e show open tabs thanks to Arc Raycast extension"
+;;   :rules [:Arc [:!Ce :!TOCSl]]}
   {:des   "[arc] opt+tab switch tabs in order"
    :rules [:Arc [:!Otab :!COdown_arrow] [:!OStab :!COup_arrow]]}
+;;  {:des   "[arc] CMD+D to split vertically"
+;;   :rules [:Arc [:!Cd :!TSequal_sign]]}
+;;  {:des   "[arc] Move between split view"
+;;   :rules [:Arc [:!COleft_arrow :!TSopen_bracket] [:!COright_arrow :!TSclose_bracket]]}
 
   {:des   "[chatgpt] Toggle sidebar"
    :rules [:ChatGPT [:sidebar-primary-toggle :!Cs]]}
@@ -182,6 +186,8 @@
    :rules [:Notion
            [:selection-extend :!Sup_arrow]
            [:selection-shrink :!Sdown_arrow]]}
+  {:des   "[notion] Open current page"
+   :rules [:Notion [:!Co :!Creturn_or_enter]]}
 
   {:des   "[Raycast ai] Toggle sidebar"
    :rules [:Raycast [:sidebar-primary-toggle :!CSs]]}
