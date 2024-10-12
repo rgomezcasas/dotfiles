@@ -7,6 +7,7 @@
    :sim     100}}
  :applications
  {;; To obtain the app ID: `grep -A1 "CFBundleIdentifier" /Applications/The.app/Contents/Info.plist`
+  ;; Or search the app in Raycast and click "copy bundle identifier"
   :Arc            ["company.thebrowser.Browser"]
   :Bitwarden      ["com.bitwarden.desktop"]
   :ChatGPT        ["com.openai.chat"]
@@ -20,6 +21,7 @@
   :Notion         ["notion.id"]
   :PersonalNotion ["com.apple.Safari.WebApp.5201A944-EF60-472C-80BB-F173D751027E"]
   :Raycast        ["com.raycast.macos"]
+  :Reminders      ["com.apple.reminders"]
   :Safari         ["com.apple.Safari"]
   :Slack          ["com.tinyspeck.slackmacgap"]
   :VSCode         ["com.microsoft.VSCode"]}
@@ -124,8 +126,6 @@
            [:!TOC7 "$HOME/.dotfiles/bin/sdot apple music toggle-play"]]}
 
 ;; ------------ Application specific ------------
-  {:des   "[arc] Open"
-		 :rules [[:!!a [:open-app "Arc"]]]}
   {:des   "[arc] Toggle sidebar"
    :rules [:Arc [:sidebar-primary-toggle :!Cs]]}
   {:des   "[arc] Switch profile"
@@ -195,6 +195,9 @@
    :rules [:Raycast [:!Cq :!Cw]]}
   {:des   "[Raycast ai] cmd+t as cmd+n"
    :rules [:Raycast [:!Ct :!Cn]]}
+
+		{:des   "[Reminders] Toggle sidebar"
+			:rules [:Reminders [:sidebar-primary-toggle :!COs]]}
 
   {:des   "[PersonalNotion] Show recent pages"
    :rules [:PersonalNotion [:show-recent :!Cp]]}

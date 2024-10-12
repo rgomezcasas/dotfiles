@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTLY_PATH/scripts/core/_main.sh"
+
+##? Clear recent projects in IntelliJ
+#?? 1.0.0
+##?
+##? Usage:
+##?   clear_recent_projects
+docs::parse "$@"
+
+preferences_dir="$HOME/Library/Application Support/JetBrains"
+intellij_versions=$(ls "$preferences_dir" | grep 'IntelliJIdea')
+
+for intellij_version in $intellij_versions; do
+	intellij_system_dir="$preferences_dir/$intellij_version"
+	rm -rf "$intellij_system_dir/options/recentFiles.xml"
+	echo "Done for $intellij_version!"
+done

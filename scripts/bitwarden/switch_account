@@ -30,6 +30,13 @@ tell application "System Events"
     do shell script "/opt/homebrew/bin/cliclick c:" & coordinates
 
     do shell script "/opt/homebrew/bin/cliclick c:" & otherAccountCoordinates
+
+    set centerX to (item 1 of windowPosition) + ((item 1 of windowSize) div 2)
+    set centerY to (item 2 of windowPosition) + ((item 2 of windowSize) div 2) + 20
+
+    set centerCoordinates to (centerX as string) & "," & (centerY as string)
+
+    do shell script "/opt/homebrew/bin/cliclick c:" & centerCoordinates
 end tell
 EOF
 
