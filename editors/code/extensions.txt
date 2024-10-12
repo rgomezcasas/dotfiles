@@ -1,4 +1,5 @@
 codely.codely-theme
+dbaeumer.vscode-eslint
 ms-python.debugpy
 ms-python.python
 ms-python.vscode-pylance
