@@ -1,3 +1,5 @@
+alias rebuild="darwin-rebuild switch --flake ~/.dotfiles/os/mac/nix#pro"
+
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
 

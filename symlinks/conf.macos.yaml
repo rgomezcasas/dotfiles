@@ -6,7 +6,7 @@
       force: true
 
 - create:
-      - ~/.hushlogin
+    - ~/.hushlogin
 
 - link:
     scripts/codely: modules/private/scripts/codely
@@ -20,6 +20,7 @@
     ~/.dotly: os/mac/.dotly
     ~/.skhdrc: os/mac/skhd/.skhdrc
     ~/.tmux.conf: os/mac/.tmux.conf
+    ~/.gnupg/gpg-agent.conf: modules/private/gnupg/gpg-agent.conf
     ~/Library/Application Support/Code - Insiders/User/keybindings.json: editors/code/keybindings.json
     ~/Library/Application Support/Code - Insiders/User/settings.json: editors/code/settings.json
     ~/Library/Application Support/Code - Insiders/User/snippets: editors/code/snippets
@@ -32,8 +33,7 @@
     ~/bin/bash: /opt/homebrew/bin/bash
     ~/bin/date: /opt/homebrew/bin/gdate
     ~/bin/find: /opt/homebrew/bin/gfind
-    ~/bin/git: /opt/homebrew/bin/git
-    ~/bin/gpg: /opt/homebrew/bin/gpg
+    ~/bin/gpg: /run/current-system/sw/bin/gpg
     ~/bin/make: /opt/homebrew/bin/gmake
     ~/bin/node: /opt/homebrew/opt/node@20/bin/node
     ~/bin/npm: /opt/homebrew/opt/node@20/bin/npm
@@ -41,4 +41,4 @@
     ~/bin/touch: /opt/homebrew/bin/gtouch
     ~/bin/zsh: /bin/zsh
 - shell:
-      - [cp -f $DOTFILES_PATH/modules/private/ssh/id_rsa $DOTFILES_PATH/modules/private/ssh/id_rsa.pub $HOME/.ssh/]
+    - [cp -f $DOTFILES_PATH/modules/private/ssh/id_rsa $DOTFILES_PATH/modules/private/ssh/id_rsa.pub $HOME/.ssh/]
