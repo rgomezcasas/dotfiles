@@ -31,14 +31,9 @@
     ~/Library/Application Support/obs-studio/basic: modules/private/mac/obs/basic
     ~/Library/Application Support/obs-studio/global.ini: modules/private/mac/obs/global.ini
     ~/bin/bash: /opt/homebrew/bin/bash
-    ~/bin/date: /opt/homebrew/bin/gdate
-    ~/bin/find: /opt/homebrew/bin/gfind
     ~/bin/gpg: /run/current-system/sw/bin/gpg
-    ~/bin/make: /opt/homebrew/bin/gmake
     ~/bin/node: /opt/homebrew/opt/node@20/bin/node
     ~/bin/npm: /opt/homebrew/opt/node@20/bin/npm
-    ~/bin/sed: /opt/homebrew/bin/gsed
-    ~/bin/touch: /opt/homebrew/bin/gtouch
     ~/bin/zsh: /bin/zsh
 - shell:
     - [cp -f $DOTFILES_PATH/modules/private/ssh/id_rsa $DOTFILES_PATH/modules/private/ssh/id_rsa.pub $HOME/.ssh/]
