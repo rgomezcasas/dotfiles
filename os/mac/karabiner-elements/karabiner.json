@@ -1116,6 +1116,25 @@
           "type" : "basic"
         } ]
       }, {
+        "description" : "[PersonalNotion] Open new window",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "n",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "n",
+            "modifiers" : [ "left_command" ]
+          } ],
+          "conditions" : [ {
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "com.apple.Safari.WebApp.5201A944-EF60-472C-80BB-F173D751027E" ]
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
         "description" : "[safari] Toggle sidebar",
         "manipulators" : [ {
           "from" : {

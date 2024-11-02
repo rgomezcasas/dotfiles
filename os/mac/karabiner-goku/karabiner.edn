@@ -203,6 +203,8 @@
    :rules [:PersonalNotion [:show-recent :!Cp]]}
   {:des   "[PersonalNotion] Toggle sidebar"
    :rules [:PersonalNotion [:sidebar-primary-toggle :!Cbackslash]]}
+  {:des   "[PersonalNotion] Open new window"
+   :rules [:PersonalNotion [:!CSn :!Cn]]}
 
   {:des   "[safari] Toggle sidebar"
    :rules [:Safari [:sidebar-primary-toggle :!CSl]]}

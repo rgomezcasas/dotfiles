@@ -1,0 +1,15 @@
+# Font
+font-family = "DankMono Nerd Font Mono"
+font-size = 18
+
+# Padding
+window-padding-x = 10
+window-padding-y = 5
+
+# Opacity
+background-opacity	= 0.9
+background-blur-radius	= 10
+
+# Window
+# window-decoration = false
+macos-titlebar-style = "hidden"
