@@ -20,7 +20,7 @@ with pkgs; [
 	htop
 	hyperfine
 	jdk21
-	nodejs_20
+	nodejs_22
 	ollama
 	php81
 	php83Packages.composer
@@ -41,7 +41,6 @@ with pkgs; [
 	zsh
 
 	# gui
-	choose-gui
 	gum
 	kitty
 	mas

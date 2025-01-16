@@ -1,15 +1,50 @@
 # Font
-font-family = "DankMono Nerd Font Mono"
-font-size = 18
+font-family = DankMono Nerd Font Mono
+font-size = 20
+font-thicken = false
+font-style-bold = false
+font-style-bold-italic = false
+adjust-cell-height = 5
+font-feature = -calt
+font-feature = -liga
+font-feature = -dlig
 
-# Padding
+# UI
 window-padding-x = 10
 window-padding-y = 5
+window-padding-balance = true
+mouse-hide-while-typing = true
+window-width = 100
+window-height = 30
 
-# Opacity
+# Theme
+background = #1d1d1d
+foreground = #e8dbb6
+cursor-color = #e8dbb6
+palette = 0=#272727
+palette = 1=#e67e6d
+palette = 2=#b8ba46
+palette = 3=#f0bf4f
+palette = 4=#8aa398
+palette = 5=#c78899
+palette = 6=#98be81
+palette = 7=#e8dbb6
+palette = 8=#8f8375
+palette = 9=#e49386
 background-opacity	= 0.9
 background-blur-radius	= 10
+unfocused-split-opacity = 0.5
+unfocused-split-fill = #2d2d2d
+macos-icon = custom-style
+macos-icon-frame = aluminum
+macos-icon-ghost-color = #3cff64
+macos-icon-screen-color = #3cff64
 
 # Window
 # window-decoration = false
-macos-titlebar-style = "hidden"
+macos-titlebar-style = hidden
+
+# Features
+link-url = true
+auto-update = download
+auto-update-channel = tip

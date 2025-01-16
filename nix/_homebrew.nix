@@ -3,15 +3,18 @@
 {
 	enable = true;
 	taps = [];
-	brews = ["cliclick"];
+	brews = [
+		"cliclick"
+		"choose-gui"
+	];
 	casks = [
 		"adobe-creative-cloud"
 		"arc"
 		"betterdisplay"
 		"capcut"
 		"cloudflare-warp"
-		"cursor"
 		"contexts"
+		"cursor"
 		"displaylink"
 		"elgato-camera-hub"
 		"elgato-control-center"
@@ -21,6 +24,7 @@
 		"google-drive"
 		"grandperspective"
 		"handbrake"
+		"iina"
 		"iterm2"
 		"jetbrains-toolbox"
 		"karabiner-elements"
@@ -34,7 +38,6 @@
 		"stremio"
 		"telegram"
 		"visual-studio-code"
-		"iina"
 		"zed"
 	];
 	masApps = {

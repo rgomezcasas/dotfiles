@@ -1,4 +1,3 @@
-alias rebuild="darwin-rebuild switch --flake ~/.dotfiles/nix#pro --impure"
 
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
@@ -26,7 +25,10 @@ alias gpsf="git push --force"
 alias gpl="git pull --rebase --autostash"
 alias gl="dot git pretty-log"
 
-alias up="dot package update_all"
+# Nix
+alias rebuild="darwin-rebuild switch --flake ~/.dotfiles/nix#pro --impure"
+alias up="nix flake update ~/.dotfiles/nix && darwin-rebuild switch --flake ~/.dotfiles/nix#pro --impure"
+
 alias copy='pbcopy'
 alias dc='dot docker connect'
 alias vcode='/usr/local/bin/code'

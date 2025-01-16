@@ -100,8 +100,4 @@
 	trackpad.TrackpadRightClick = true;
 	trackpad.TrackpadThreeFingerDrag = false;
 	trackpad.TrackpadThreeFingerTapGesture = 0;
-	universalaccess.closeViewScrollWheelToggle = true;
-	universalaccess.closeViewZoomFollowsFocus = true;
-	universalaccess.reduceMotion = false;
-	universalaccess.reduceTransparency = false;
 }

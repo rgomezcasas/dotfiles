@@ -24,7 +24,8 @@
   :Reminders      ["com.apple.reminders"]
   :Safari         ["com.apple.Safari"]
   :Slack          ["com.tinyspeck.slackmacgap"]
-  :VSCode         ["com.microsoft.VSCode"]}
+  :VSCode         ["com.microsoft.VSCode"]
+  :ZenBrowser     ["org.mozilla.com.zen.browser"]}
  :froms     {:clipboard-history        {:modi [:left_command :left_shift] :key :v}
              :create-folder            {:modi [:left_control :left_option :left_command] :key :p}
              :create-new               {:modi [:left_command] :key :n}
@@ -134,14 +135,21 @@
    :rules [:Arc [:switch-account-esc :!COright_arrow]]}
   {:des   "[arc] CMD P also to show url menu"
    :rules [:Arc [:!Cp :!Cl]]}
-;;  {:des   "[arc] CMD e show open tabs thanks to Arc Raycast extension"
-;;   :rules [:Arc [:!Ce :!TOCSl]]}
   {:des   "[arc] opt+tab switch tabs in order"
    :rules [:Arc [:!Otab :!COdown_arrow] [:!OStab :!COup_arrow]]}
-;;  {:des   "[arc] CMD+D to split vertically"
-;;   :rules [:Arc [:!Cd :!TSequal_sign]]}
-;;  {:des   "[arc] Move between split view"
-;;   :rules [:Arc [:!COleft_arrow :!TSopen_bracket] [:!COright_arrow :!TSclose_bracket]]}
+
+  {:des   "[zen] Toggle sidebar"
+   :rules [:ZenBrowser [:sidebar-primary-toggle :!COs]]}
+  ;{:des   "[zen] Switch profile"
+   ;:rules [:ZenBrowser [:switch-account :!COright_arrow]]}
+  ;{:des   "[zen] Switch profile"
+   ;:rules [:ZenBrowser [:switch-account-esc :!COright_arrow]]}
+  {:des   "[zen] CMD P also to show url menu"
+   :rules [:ZenBrowser [:!Cp :!Cl]]}
+  {:des   "[zen] CMD Shift D shows url menu permanently"
+    :rules [:ZenBrowser [:!CSd :!COt]]}
+  {:des   "[zen] opt+tab switch tabs in order"
+   :rules [:ZenBrowser [:!Otab :!COdown_arrow] [:!OStab :!COup_arrow]]}
 
   {:des   "[chatgpt] Toggle sidebar"
    :rules [:ChatGPT [:sidebar-primary-toggle :!Cs]]}

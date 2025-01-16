@@ -16,6 +16,7 @@ declare -A folders
 folders=(
 	["⬇️ Downloads"]="$HOME/Downloads"
 	["🖥️ Desktop"]="$HOME/Desktop"
+	["👨‍💻 Code"]="$HOME/Code/codely"
 	["☁️ tmp"]="$HOME/Desktop/tmp"
 	["📷 Screenshots"]="$HOME/Desktop/tmp/screenshots"
 	["🎥 Screencasts"]="$HOME/Desktop/tmp/screencasts"
