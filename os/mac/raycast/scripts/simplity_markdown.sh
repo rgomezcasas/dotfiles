@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -l
 
 # @raycast.schemaVersion 1
 # @raycast.title Simplify Markdown

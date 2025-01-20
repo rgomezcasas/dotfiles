@@ -11,11 +11,13 @@ source "$DOTLY_PATH/scripts/core/_main.sh"
 ##?   reduce_to_two_levels
 docs::parse "$@"
 
-#!/bin/bash
-
 extract_lists() {
   local text="$1"
-  echo "$text" | awk 'NF && !/^ {6,}[-\[]/' | sed -e 's/\(✅\|☑️\|🎥\)//g' -e 's/\[YouTube\] //g'
+  echo "$text" | \
+    awk 'NF && !/^ {6,}[-\[]/' | \
+    sed -E $'s/[✅☑️🎥🖼️]//g' | \
+    sed 's/YouTube //g' | \
+    sed 's/\xC2\xA0/ /g'
 }
 
 extract_lists "$(pbpaste)"
