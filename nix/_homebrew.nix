@@ -36,6 +36,7 @@
 		"shureplus-motiv"
 		"slack"
 		"stremio"
+		"superwhisper"
 		"telegram"
 		"visual-studio-code"
 		"zed"

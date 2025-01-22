@@ -5,7 +5,7 @@
   "profiles" : [ {
     "complex_modifications" : {
       "parameters" : {
-        "basic.simultaneous_threshold_milliseconds" : 100,
+        "basic.simultaneous_threshold_milliseconds" : 8100,
         "basic.to_delayed_action_delay_milliseconds" : 200,
         "basic.to_if_alone_timeout_milliseconds" : 200,
         "basic.to_if_held_down_threshold_milliseconds" : 100
@@ -201,6 +201,18 @@
           },
           "to" : [ {
             "shell_command" : "/run/current-system/sw/bin/skhd -t \"á\""
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "[keyboard] right cmd as opt space",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "right_command"
+          },
+          "to" : [ {
+            "key_code" : "spacebar",
+            "modifiers" : [ "left_option" ]
           } ],
           "type" : "basic"
         } ]

@@ -1,11 +1,21 @@
 #!/bin/bash -l
 
 # @raycast.schemaVersion 1
-# @raycast.title Simplify Markdown
+# @raycast.title Paste 2 levels Markdown
 # @raycast.packageName Utils
 # @raycast.mode silent
 # @raycast.icon 🤏
-# @raycast.description Simplify Markdown
+# @raycast.description Paste 2 levels Markdown
 
-"$HOME/.dotfiles/bin/sdot" markdown reduce_to_two_levels | pbcopy
+extract_lists() {
+  local text="$1"
+  echo "$text" | \
+    grep -v "     " | \
+    sed -E $'s/[✅☑️🎥🖼️]//g' | \
+    sed 's/YouTube //g' | \
+    sed 's/\xC2\xA0/ /g'
+}
+
+extract_lists "$(pbpaste)" | pbcopy
+
 "$HOME/.dotfiles/bin/sdot" mac paste_text -n

@@ -4,7 +4,7 @@
    :alone   200
    :delay   200
    :held    100
-   :sim     100}}
+   :sim     8100}}
  :applications
  {;; To obtain the app ID: `grep -A1 "CFBundleIdentifier" /Applications/The.app/Contents/Info.plist`
   ;; Or search the app in Raycast and click "copy bundle identifier"
@@ -79,6 +79,9 @@
    :rules [[:!Oo [:type "ó"]]
            [:!Oa [:type "á"]]]}
 
+  {:des   "[keyboard] right cmd as opt space"
+   :rules [[:right_command :!Ospacebar]]}
+
 ;; ------------ Remaps ------------
   {:des   "escape to esc when pressed alone, to hyper as modifier"
    :rules [[:escape :!TOCleft_shift nil {:alone :escape}]]}
@@ -147,7 +150,7 @@
   {:des   "[zen] CMD P also to show url menu"
    :rules [:ZenBrowser [:!Cp :!Cl]]}
   {:des   "[zen] CMD Shift D shows url menu permanently"
-    :rules [:ZenBrowser [:!CSd :!COt]]}
+   :rules [:ZenBrowser [:!CSd :!COt]]}
   {:des   "[zen] opt+tab switch tabs in order"
    :rules [:ZenBrowser [:!Otab :!COdown_arrow] [:!OStab :!COup_arrow]]}
 
@@ -204,8 +207,8 @@
   {:des   "[Raycast ai] cmd+t as cmd+n"
    :rules [:Raycast [:!Ct :!Cn]]}
 
-		{:des   "[Reminders] Toggle sidebar"
-			:rules [:Reminders [:sidebar-primary-toggle :!COs]]}
+  {:des   "[Reminders] Toggle sidebar"
+   :rules [:Reminders [:sidebar-primary-toggle :!COs]]}
 
   {:des   "[PersonalNotion] Show recent pages"
    :rules [:PersonalNotion [:show-recent :!Cp]]}

@@ -3,6 +3,7 @@
 
 with pkgs; [
 	bat
+	clojure-lsp
 	cmatrix
 	coreutils
 	delta

@@ -7,6 +7,7 @@ in
 	".bash_profile".source = symlink "${dotfilesPath}/shell/bash/.bash_profile";
 	".bashrc".source = symlink "${dotfilesPath}/shell/bash/.bashrc";
 	".config/alacritty/alacritty.toml".source = symlink "${dotfilesPath}/os/mac/alacritty/alacritty.toml";
+	".config/clojure-lsp".source = symlink "${dotfilesPath}/langs/clojure/clojure-lsp";
 	".config/clojure/profiles.clj".source = symlink "${dotfilesPath}/langs/clojure/profiles.clj";
 	".config/ghostty".source = symlink "${dotfilesPath}/os/mac/ghostty";
 	".config/karabiner".source = symlink "${dotfilesPath}/os/mac/karabiner-elements";
