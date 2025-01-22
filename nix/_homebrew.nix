@@ -6,6 +6,7 @@
 	brews = [
 		"cliclick"
 		"choose-gui"
+		"switchaudio-osx"
 	];
 	casks = [
 		"adobe-creative-cloud"
