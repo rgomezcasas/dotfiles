@@ -146,10 +146,15 @@
   {:des   "[zen] Toggle sidebar"
    :rules [:ZenBrowser [:sidebar-primary-toggle :!COc]]}
   {:des   "[zen] Change workspace"
-   :rules [:ZenBrowser [:switch-account :!TOright_arrow] [:switch-account-esc :!TOright_arrow] [:next-workspace :!TOright_arrow] [:prev-workspace :!COq]]}
+   :rules [:ZenBrowser [:switch-account     :!TOright_arrow]
+                       [:switch-account-esc :!TOright_arrow]
+                       [:next-workspace     :!TOright_arrow]
+                       [:prev-workspace     :!COq]]}
 
   {:des   "[zen] Change to compact"
    :rules [:ZenBrowser [:sidebar-secondary-toggle :!Ob]]}
+  {:des   "[zen] Cmd + tab also shows the url bar"
+   :rules [:ZenBrowser [:!Ct [:!Ct :!Cl]]]}
 
   {:des   "[chatgpt] Toggle sidebar"
    :rules [:ChatGPT [:sidebar-primary-toggle :!Cs]]}

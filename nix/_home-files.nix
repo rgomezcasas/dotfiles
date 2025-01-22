@@ -31,11 +31,12 @@ in
 	".zprofile".source = symlink "${dotfilesPath}/shell/zsh/.zprofile";
 	".zshenv".source = symlink "${dotfilesPath}/shell/zsh/.zshenv";
 	".zshrc".source = symlink "${dotfilesPath}/shell/zsh/.zshrc";
-	"Library/LaunchAgents/com.user.disable.airpods.microphone.plist".source = symlink "${dotfilesPath}/os/mac/LaunchAgents/com.user.disable.airpods.microphone.plist";
 	"Library/Application Support/Code/User/keybindings.json".source = symlink "${dotfilesPath}/editors/code/keybindings.json";
 	"Library/Application Support/Code/User/settings.json".source = symlink "${dotfilesPath}/editors/code/settings.json";
 	"Library/Application Support/Code/User/snippets".source = symlink "${dotfilesPath}/editors/code/snippets";
 	"Library/Application Support/com.elgato.StreamDeck/ProfilesV2".source = symlink "${dotfilesPath}/modules/private/mac/streamdeck/ProfilesV2";
 	"Library/Application Support/obs-studio/basic".source = symlink "${dotfilesPath}/modules/private/mac/obs/basic";
 	"Library/Application Support/obs-studio/global.ini".source = symlink "${dotfilesPath}/modules/private/mac/obs/global.ini";
+	"Library/Application Support/zen/Profiles/8fh0vfxw.Default (alpha)/chrome/userChrome.css".source = symlink "${dotfilesPath}/os/mac/zen/userChrome.css";
+	"Library/LaunchAgents/com.user.disable.airpods.microphone.plist".source = symlink "${dotfilesPath}/os/mac/LaunchAgents/com.user.disable.airpods.microphone.plist";
 }
