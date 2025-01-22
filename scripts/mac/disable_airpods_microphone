@@ -10,7 +10,7 @@ source "$DOTLY_PATH/scripts/core/_main.sh"
 docs::parse "$@"
 
 allowed_mics=(
-  "Shure MV7"
+	"Shure MV7"
 )
 
 all_mics=$(SwitchAudioSource -a -t input)
@@ -18,14 +18,14 @@ all_mics=$(SwitchAudioSource -a -t input)
 current_mic_is_airpods=$(SwitchAudioSource -c -t input | grep -i "AirPods")
 
 if [ -n "$current_mic_is_airpods" ]; then
-  for mic in "${allowed_mics[@]}"; do
+	for mic in "${allowed_mics[@]}"; do
 	if echo "$all_mics" | grep -i "$mic" > /dev/null; then
-	  echo "Whitelisted mic connected $mic, changing to it"
-	  SwitchAudioSource -t input -s "$mic" > /dev/null
+		osascript -e "display notification \"Enabling $mic\" with title \"AirPods mic disabled\""
+		SwitchAudioSource -t input -s "$mic" > /dev/null
 
-	  exit 0
+		exit 0
 	fi
-  done
+	done
 
-  echo "No allowed mic found, keeping AirPods mic enabled"
+	echo "No allowed mic found, keeping AirPods mic enabled"
 fi

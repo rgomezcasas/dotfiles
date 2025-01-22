@@ -41,6 +41,7 @@
 		"telegram"
 		"visual-studio-code"
 		"zed"
+		"zen-browser"
 	];
 	masApps = {
 		"Bitwarden" = 1352778147;

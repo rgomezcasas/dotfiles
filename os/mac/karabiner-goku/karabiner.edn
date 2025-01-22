@@ -25,7 +25,7 @@
   :Safari         ["com.apple.Safari"]
   :Slack          ["com.tinyspeck.slackmacgap"]
   :VSCode         ["com.microsoft.VSCode"]
-  :ZenBrowser     ["org.mozilla.com.zen.browser"]}
+  :ZenBrowser     ["app.zen-browser.zen"]}
  :froms     {:clipboard-history        {:modi [:left_command :left_shift] :key :v}
              :create-folder            {:modi [:left_control :left_option :left_command] :key :p}
              :create-new               {:modi [:left_command] :key :n}
@@ -40,6 +40,8 @@
              :show-recent              {:modi :left_command :key :e}
              :sidebar-primary-toggle   {:modi :left_command :key :1}
              :sidebar-secondary-toggle {:modi :left_command :key :2}
+             :next-workspace           {:modi [:left_command :left_option] :key :right_arrow}
+             :prev-workspace           {:modi [:left_command :left_option] :key :left_arrow}
              :switch-account           {:modi :left_command :key :caps_lock}
              :switch-account-esc       {:modi :left_command :key :escape}
              :zoom-in                  {:modi :left_command :key :equal_sign}
@@ -142,17 +144,12 @@
    :rules [:Arc [:!Otab :!COdown_arrow] [:!OStab :!COup_arrow]]}
 
   {:des   "[zen] Toggle sidebar"
-   :rules [:ZenBrowser [:sidebar-primary-toggle :!COs]]}
-  ;{:des   "[zen] Switch profile"
-   ;:rules [:ZenBrowser [:switch-account :!COright_arrow]]}
-  ;{:des   "[zen] Switch profile"
-   ;:rules [:ZenBrowser [:switch-account-esc :!COright_arrow]]}
-  {:des   "[zen] CMD P also to show url menu"
-   :rules [:ZenBrowser [:!Cp :!Cl]]}
-  {:des   "[zen] CMD Shift D shows url menu permanently"
-   :rules [:ZenBrowser [:!CSd :!COt]]}
-  {:des   "[zen] opt+tab switch tabs in order"
-   :rules [:ZenBrowser [:!Otab :!COdown_arrow] [:!OStab :!COup_arrow]]}
+   :rules [:ZenBrowser [:sidebar-primary-toggle :!COc]]}
+  {:des   "[zen] Change workspace"
+   :rules [:ZenBrowser [:switch-account :!TOright_arrow] [:switch-account-esc :!TOright_arrow] [:next-workspace :!TOright_arrow] [:prev-workspace :!COq]]}
+
+  {:des   "[zen] Change to compact"
+   :rules [:ZenBrowser [:sidebar-secondary-toggle :!Ob]]}
 
   {:des   "[chatgpt] Toggle sidebar"
    :rules [:ChatGPT [:sidebar-primary-toggle :!Cs]]}
