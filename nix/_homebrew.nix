@@ -31,6 +31,7 @@
 		"karabiner-elements"
 		"notion"
 		"obs"
+		"orion"
 		"orbstack"
 		"raycast"
 		"shottr"

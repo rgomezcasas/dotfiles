@@ -21,6 +21,7 @@ with pkgs; [
 	hyperfine
 	jdk21
 	nodejs_22
+	nvd
 	ollama
 	php81
 	php83Packages.composer

@@ -611,6 +611,25 @@
           "type" : "basic"
         } ]
       }, {
+        "description" : "[arc] supr+t opens terminal",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "t",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_control", "left_option", "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "j",
+            "modifiers" : [ "left_command", "left_option" ]
+          } ],
+          "conditions" : [ {
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "company.thebrowser.Browser" ]
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
         "description" : "[zen] Toggle sidebar",
         "manipulators" : [ {
           "from" : {
@@ -714,7 +733,10 @@
             "bundle_identifiers" : [ "app.zen-browser.zen" ]
           } ],
           "type" : "basic"
-        }, {
+        } ]
+      }, {
+        "description" : "[zen] Cmd + tab also shows the url bar",
+        "manipulators" : [ {
           "from" : {
             "key_code" : "t",
             "modifiers" : {
@@ -731,6 +753,60 @@
           "conditions" : [ {
             "type" : "frontmost_application_if",
             "bundle_identifiers" : [ "app.zen-browser.zen" ]
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "[orion] Toggle sidebar",
+        "manipulators" : [ {
+          "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_command" ]
+            },
+            "key_code" : "1"
+          },
+          "to" : [ {
+            "key_code" : "s",
+            "modifiers" : [ "left_command", "left_control" ]
+          } ],
+          "conditions" : [ {
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "com.kagi.kagimacOS" ]
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "[orion] Switch profiles",
+        "manipulators" : [ {
+          "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_option" ]
+            },
+            "key_code" : "right_arrow"
+          },
+          "to" : [ {
+            "key_code" : "c",
+            "modifiers" : [ "left_command", "left_control", "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "com.kagi.kagimacOS" ]
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_option" ]
+            },
+            "key_code" : "left_arrow"
+          },
+          "to" : [ {
+            "key_code" : "p",
+            "modifiers" : [ "left_command", "left_control", "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "com.kagi.kagimacOS" ]
           } ],
           "type" : "basic"
         } ]

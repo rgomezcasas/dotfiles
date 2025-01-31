@@ -19,6 +19,7 @@
   :IntelliJ       ["com.jetbrains.intellij", "com.jetbrains.intellij-EAP"]
   :Keynote        ["com.apple.iWork.Keynote"]
   :Notion         ["notion.id"]
+  :Orion          ["com.kagi.kagimacOS"]
   :PersonalNotion ["com.apple.Safari.WebApp.5201A944-EF60-472C-80BB-F173D751027E"]
   :Raycast        ["com.raycast.macos"]
   :Reminders      ["com.apple.reminders"]
@@ -142,6 +143,8 @@
    :rules [:Arc [:!Cp :!Cl]]}
   {:des   "[arc] opt+tab switch tabs in order"
    :rules [:Arc [:!Otab :!COdown_arrow] [:!OStab :!COup_arrow]]}
+  {:des   "[arc] supr+t opens terminal"
+   :rules [:Arc [:!TOCSt :!COj]]}
 
   {:des   "[zen] Toggle sidebar"
    :rules [:ZenBrowser [:sidebar-primary-toggle :!COc]]}
@@ -155,6 +158,12 @@
    :rules [:ZenBrowser [:sidebar-secondary-toggle :!Ob]]}
   {:des   "[zen] Cmd + tab also shows the url bar"
    :rules [:ZenBrowser [:!Ct [:!Ct :!Cl]]]}
+
+  {:des   "[orion] Toggle sidebar"
+   :rules [:Orion [:sidebar-primary-toggle :!TCs]]}
+
+  {:des   "[orion] Switch profiles"
+   :rules [:Orion [:next-workspace :!STCc] [:prev-workspace :!STCp]]}
 
   {:des   "[chatgpt] Toggle sidebar"
    :rules [:ChatGPT [:sidebar-primary-toggle :!Cs]]}

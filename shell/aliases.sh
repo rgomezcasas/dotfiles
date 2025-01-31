@@ -27,7 +27,6 @@ alias gl="dot git pretty-log"
 
 # Nix
 alias rebuild="darwin-rebuild switch --flake /Users/rafa.gomez/.dotfiles/nix#pro --impure"
-alias up="nix flake update --flake /Users/rafa.gomez/.dotfiles/nix && darwin-rebuild switch --flake /Users/rafa.gomez/.dotfiles/nix#pro --impure"
 
 alias copy='pbcopy'
 alias dc='dot docker connect'
