@@ -55,6 +55,6 @@
     "symbols.hidesExplorerArrows": false,
     "window.zoomLevel": 0,
     "security.workspace.trust.untrustedFiles": "open",
-    "workbench.colorTheme": "Anysphere",
+    "workbench.colorTheme": "Default Dark Modern",
     "editor.stickyScroll.enabled": false
 }

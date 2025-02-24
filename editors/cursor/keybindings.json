@@ -1,17 +1,16 @@
 [
+	{
+		"key": "cmd+1",
+		"command": "-workbench.action.focusFirstEditorGroup"
+	},
+	{
+		"key": "cmd+1",
+		"command": "workbench.action.toggleSidebarVisibility"
+	},
   {
-    "key": "cmd+shift+1",
-    "command": "workbench.action.toggleActivityBarVisibility"
-  },
-  {
-    "key": "cmd+1",
-    "command": "workbench.action.focusSideBar"
-  },
-  {
-    "key": "cmd+1",
-    "command": "workbench.action.toggleSidebarVisibility",
-    "when": "sideBarFocus"
-  },
+		"key": "cmd+3",
+		"command": "workbench.action.toggleAuxiliaryBar"
+	},
   {
     "key": "enter",
     "command": "list.select",
@@ -65,10 +64,6 @@
   },
   {
     "key": "cmd+b",
-    "command": "-workbench.action.toggleSidebarVisibility"
-  },
-  {
-    "key": "cmd+b",
     "command": "editor.action.revealDefinition",
     "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
   },
@@ -106,7 +101,7 @@
     "key": "ctrl+e",
     "command": "editor.action.codeAction",
     "args": {
-      "kind": "refactor.extract.function",
+      "kind": "refactor.extract.function"
     }
   },
   {
@@ -116,10 +111,6 @@
   {
     "key": "ctrl+r",
     "command": "-workbench.action.openRecent"
-  },
-  {
-    "key": "cmd+k",
-    "command": "extension.conventionalCommits"
   },
   {
     "key": "ctrl+alt+cmd+o",
@@ -137,5 +128,10 @@
     "key": "cmd+o",
     "command": "-workbench.action.files.openFile",
     "when": "false"
+  },
+  {
+    "key": "cmd+g",
+    "command": "aipopup.action.modal.generate",
+    "when": "editorFocus && !composerBarIsVisible"
   }
 ]
