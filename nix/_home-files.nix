@@ -31,9 +31,9 @@ in
 	".zprofile".source = symlink "${dotfilesPath}/shell/zsh/.zprofile";
 	".zshenv".source = symlink "${dotfilesPath}/shell/zsh/.zshenv";
 	".zshrc".source = symlink "${dotfilesPath}/shell/zsh/.zshrc";
-	"Library/Application Support/Code/User/keybindings.json".source = symlink "${dotfilesPath}/editors/code/keybindings.json";
-	"Library/Application Support/Code/User/settings.json".source = symlink "${dotfilesPath}/editors/code/settings.json";
-	"Library/Application Support/Code/User/snippets".source = symlink "${dotfilesPath}/editors/code/snippets";
+	"Library/Application Support/Cursor/User/keybindings.json".source = symlink "${dotfilesPath}/editors/cursor/keybindings.json";
+	"Library/Application Support/Cursor/User/settings.json".source = symlink "${dotfilesPath}/editors/cursor/settings.json";
+	"Library/Application Support/Cursor/User/snippets".source = symlink "${dotfilesPath}/editors/cursor/snippets";
 	"Library/Application Support/com.elgato.StreamDeck/ProfilesV2".source = symlink "${dotfilesPath}/modules/private/mac/streamdeck/ProfilesV2";
 	"Library/Application Support/obs-studio/basic".source = symlink "${dotfilesPath}/modules/private/mac/obs/basic";
 	"Library/Application Support/obs-studio/global.ini".source = symlink "${dotfilesPath}/modules/private/mac/obs/global.ini";

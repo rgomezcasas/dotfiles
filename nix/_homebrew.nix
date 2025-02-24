@@ -6,6 +6,7 @@
 	brews = [
 		"cliclick"
 		"choose-gui"
+		"llama.cpp"
 		"switchaudio-osx"
 	];
 	casks = [

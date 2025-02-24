@@ -150,9 +150,9 @@
    :rules [:ZenBrowser [:sidebar-primary-toggle :!COc]]}
   {:des   "[zen] Change workspace"
    :rules [:ZenBrowser [:switch-account     :!TOright_arrow]
-                       [:switch-account-esc :!TOright_arrow]
-                       [:next-workspace     :!TOright_arrow]
-                       [:prev-workspace     :!COq]]}
+           [:switch-account-esc :!TOright_arrow]
+           [:next-workspace     :!TOright_arrow]
+           [:prev-workspace     :!COq]]}
 
   {:des   "[zen] Change to compact"
    :rules [:ZenBrowser [:sidebar-secondary-toggle :!Ob]]}

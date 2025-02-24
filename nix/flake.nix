@@ -25,18 +25,12 @@
 			environment.systemPackages = import ./_packages.nix { inherit pkgs; };
 			homebrew = import ./_homebrew.nix;
 
-			home-manager.backupFileExtension = "backup";
-			nix.configureBuildUsers = true;
-			nix.useDaemon = true;
+			home-manager.backupFileExtension = "bkp";
 
 			# https://daiderd.com/nix-darwin/manual/index.html#:~:text=system/version.nix%3E-,system.defaults,-.%22.GlobalPreferences%22.%22com.apple
 			system.defaults = import ./_macos-defaults.nix;
 			system.keyboard.enableKeyMapping = true;
 			system.keyboard.remapCapsLockToEscape = true;
-
-			# Auto upgrade nix package and the daemon service.
-			services.nix-daemon.enable = true;
-			# nix.package = pkgs.nix;
 
 			# Necessary for using flakes on this system.
 			nix.settings.experimental-features = "nix-command flakes";

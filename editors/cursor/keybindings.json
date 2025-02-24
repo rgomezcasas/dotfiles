@@ -137,10 +137,5 @@
     "key": "cmd+o",
     "command": "-workbench.action.files.openFile",
     "when": "false"
-  },
-  {
-    "key": "cmd+i",
-    "command": "workbench.action.gotoSymbol",
-    "when": "!accessibilityHelpIsShown && !accessibleViewIsShown"
   }
 ]
