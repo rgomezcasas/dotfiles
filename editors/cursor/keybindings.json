@@ -133,5 +133,26 @@
     "key": "cmd+g",
     "command": "aipopup.action.modal.generate",
     "when": "editorFocus && !composerBarIsVisible"
+  },
+  {
+    "key": "alt+b",
+    "command": "-simply-blame.simplyBlame"
+  },
+  {
+    "key": "shift+cmd+1",
+    "command": "simply-blame.simplyBlame"
+  },
+  {
+    "key": "shift+cmd+a",
+    "command": "workbench.action.showCommands"
+  },
+  {
+    "key": "ctrl+m",
+    "command": "editor.action.jumpToBracket",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "cmd+b",
+    "command": "-workbench.action.toggleSidebarVisibility"
   }
 ]

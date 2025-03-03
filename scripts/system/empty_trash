@@ -17,9 +17,8 @@ free_space_in_home() {
 
 free_space_before_empty=$(free_space_in_home)
 
-ls /Volumes | grep -v GoogleDrive | xargs -I_ sudo rm -rfv /Volumes/_/.Trashes
-sudo rm -rfv ~/.Trash/*
-echo '🗑   All trashes empty'
+rm -rf ~/Library/Caches/* 2>/dev/null || true
+echo '📦 All caches cleared'
 
 sudo rm -rfv /private/var/log/asl/*.asl
 sudo rm -rfv /var/log/asl/*.asl
@@ -33,23 +32,25 @@ echo '🎬  Final Cut rendered media cleared'
 
 brew cleanup
 brew cleanup --prune-prefix
-rm -rf ~/Library/Caches/Homebrew
 echo '🍺  Brew cache cleared'
 
-rm -rf ~/Library/Caches/com.tinyspeck.slackmacgap
-rm -rf ~/Library/Caches/com.tinyspeck.slackmacgap.ShipIt
 rm -rf ~/Library/Application Support/Slack/Cache
 rm -rf "$HOME/Library/Application Support/Slack/Service Worker/CacheStorage"
 echo '💬  Slack cache cleared'
 
-rm -rf ~/Library/Caches/com.spotify.client/Data
-echo '🎶  Spotify cache cleared'
+rm -rf .npm/_cacache/
+rm -rf .npm/_npx/
+echo '💪  NPM cache cleared'
 
-rm -rf ~/Library/Caches/JetBrains
-echo '🅸   JetBrains cache cleared'
+find "$HOME/Code" -type d -path "*/.next/cache" -exec rm -rf {} \; -prune
+echo '💪  Next.js cache cleared'
 
-rm -rf ~/Library/Caches/Yarn/
-echo '💪  Yarn cache cleared'
+rm -rf "$HOME/Library/Application Support/com.turborepo.turborepo/logs"
+find "$HOME/Code" -type d -path "*/.turbo/cache" -exec rm -rf {} \; -prune
+echo '💨 Turborepo logs & cache cleared'
+
+find "$HOME/Code" -type d -path "*/node_modules" -exec rm -rf {} \; -prune
+echo '💪  node_modules cleared'
 
 rm -rf ~/.gradle/wrapper/dists/
 rm -rf ~/.gradle/caches/
@@ -58,10 +59,15 @@ echo '🐘  Gradle cache cleared'
 rm -rf ~/.composer/cache/
 echo '👨‍🎤  Composer cache cleared'
 
-rm -rf ~/Library/Caches/Google/Chrome || true
 rm -rf "$HOME/Library/Application Support/Google/Chrome/"*"/Service Worker/CacheStorage" || true
 rm -rf "$HOME/Library/Application Support/Google/Chrome/"*"/Application Cache/Cache" || true
 echo '🟡  Chrome cache cleared'
+
+rm -rf Library/Application\ Support/stremio-server/stremio-cache/
+echo '📺  Stremio cache cleared'
+
+osascript -e 'tell app "Finder" to empty' 2>/dev/null || true
+echo '🗑   All trashes empty'
 
 free_space_after_empty=$(free_space_in_home)
 

@@ -25,7 +25,7 @@
 			environment.systemPackages = import ./_packages.nix { inherit pkgs; };
 			homebrew = import ./_homebrew.nix;
 
-			home-manager.backupFileExtension = "bkp";
+			home-manager.backupFileExtension = "bkp_" + builtins.toString builtins.currentTime;
 
 			# https://daiderd.com/nix-darwin/manual/index.html#:~:text=system/version.nix%3E-,system.defaults,-.%22.GlobalPreferences%22.%22com.apple
 			system.defaults = import ./_macos-defaults.nix;

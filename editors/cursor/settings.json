@@ -1,13 +1,15 @@
 {
     "github.copilot.inlineSuggest.enable": true,
-    "editor.fontSize": 22,
+    "editor.fontSize": 20,
     "editor.suggestSelection": "first",
     "editor.minimap.enabled": false,
     "editor.dragAndDrop": false,
     "editor.fontFamily": "DankMono Nerd font Mono",
     "terminal.integrated.fontFamily": "DankMono Nerd font Mono",
     "terminal.integrated.fontSize": 20,
-    "editor.lineHeight": 3,
+    "editor.lineHeight": 2.7,
+    "editor.cursorStyle": "line",
+    "editor.cursorBlinking": "smooth",
     "editor.rulers": [
         100
     ],
@@ -33,11 +35,9 @@
     "workbench.sideBar.location": "left",
     "workbench.tree.indent": 20,
     "workbench.list.smoothScrolling": true,
-    "workbench.productIconTheme": "fluent-icons",
-    "workbench.iconTheme": "symbols",
     "breadcrumbs.symbolPath": "off",
     "workbench.startupEditor": "none",
-    "editor.hover.enabled": true,
+    "editor.hover.enabled": false,
     "typescript.updateImportsOnFileMove.enabled": "always",
     "git.autofetch": true,
     "gitlens.hovers.currentLine.over": "line",
@@ -53,8 +53,18 @@
     "editor.inlineSuggest.enabled": true,
     "aws.telemetry": false,
     "symbols.hidesExplorerArrows": false,
-    "window.zoomLevel": 0,
+    "window.zoomLevel": 1,
     "security.workspace.trust.untrustedFiles": "open",
-    "workbench.colorTheme": "Default Dark Modern",
-    "editor.stickyScroll.enabled": false
+    "editor.stickyScroll.enabled": false,
+    "editor.accessibilitySupport": "off",
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit"
+    },
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact"
+    ],
+    "workbench.iconTheme": "vscode-jetbrains-icon-theme-2023-auto"
 }
