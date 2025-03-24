@@ -6,7 +6,7 @@
 # @raycast.mode silent
 
 # Optional parameters:
-# @raycast.icon⌨️
+# @raycast.icon ⌨️
 
 # Documentation:
 # @raycast.author rgomezcasas
@@ -32,5 +32,7 @@ textutil -convert rtf -output /tmp/clipboard_fixed.rtf /tmp/clipboard.rtf
 
 # Copiar el RTF modificado al portapapeles usando pbcopy
 cat /tmp/clipboard_fixed.rtf | pbcopy
+
+osascript -e 'tell application "System Events" to keystroke "v" using command down'
 
 echo "Tamaño de fuente cambiado a 28px y fondo transparente (preservando formato y cursivas)"
