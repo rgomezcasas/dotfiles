@@ -23,7 +23,7 @@ with pkgs; [
 	nodejs_22
 	nvd
 	ollama
-	php81
+	php83
 	php83Packages.composer
 	python39
 	rustc

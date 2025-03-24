@@ -4,7 +4,7 @@
     "editor.suggestSelection": "first",
     "editor.minimap.enabled": false,
     "editor.dragAndDrop": false,
-    "editor.fontFamily": "DankMono Nerd font Mono",
+    "editor.fontFamily": "DankMono Nerd Font",
     "terminal.integrated.fontFamily": "DankMono Nerd font Mono",
     "terminal.integrated.fontSize": 20,
     "editor.lineHeight": 2.7,
@@ -66,5 +66,6 @@
         "typescript",
         "typescriptreact"
     ],
-    "workbench.iconTheme": "vscode-jetbrains-icon-theme-2023-auto"
+    "workbench.iconTheme": "vscode-jetbrains-icon-theme-2023-auto",
+    "update.releaseTrack": "prerelease"
 }

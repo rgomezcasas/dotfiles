@@ -34,7 +34,7 @@ alias vcode='/usr/local/bin/code'
 alias htop='btm'
 
 alias i.='(idea $PWD &>/dev/null &)'
-alias c.='(code $PWD &>/dev/null &)'
+alias c.='(cursor $PWD &>/dev/null &)'
 alias o.='open .'
 
 alias mp3="dot youtube download-mp3"

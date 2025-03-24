@@ -34,12 +34,13 @@ brew cleanup
 brew cleanup --prune-prefix
 echo '🍺  Brew cache cleared'
 
-rm -rf ~/Library/Application Support/Slack/Cache
+rm -rf "$HOME/Library/Application Support/Slack/Cache"
 rm -rf "$HOME/Library/Application Support/Slack/Service Worker/CacheStorage"
 echo '💬  Slack cache cleared'
 
-rm -rf .npm/_cacache/
-rm -rf .npm/_npx/
+rm -rf "$HOME.npm/_cacache/"
+rm -rf "$HOME.npm/_npx/"
+rm -rf "$HOME.yarn/berry/cache"
 echo '💪  NPM cache cleared'
 
 find "$HOME/Code" -type d -path "*/.next/cache" -exec rm -rf {} \; -prune
