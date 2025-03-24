@@ -24,7 +24,8 @@ osascript -e 'set rtfData to the clipboard as «class RTF »' \
     -e 'close access fileRef'
 
 # Modificar el tamaño de fuente en el archivo RTF (56 medios puntos ≈ 28px)
-sed -i '' 's/\\fs[0-9][0-9]*/\\fs56/g' /tmp/clipboard.rtf
+# y eliminar todos los posibles marcadores de fondo
+perl -i -pe 's/\\fs\d+/\\fs56/g; s/\\highlight\d+\s*//g; s/\\cb\d+\s*//g; s/\\shading\d+\s*//g; s/\\chshdng\d+\s*//g; s/\\chcbpat\d+\s*//g;' /tmp/clipboard.rtf
 
 # Usar textutil para convertir el RTF a RTF (esto puede parecer redundante pero ayuda a normalizar el formato)
 textutil -convert rtf -output /tmp/clipboard_fixed.rtf /tmp/clipboard.rtf
@@ -32,4 +33,4 @@ textutil -convert rtf -output /tmp/clipboard_fixed.rtf /tmp/clipboard.rtf
 # Copiar el RTF modificado al portapapeles usando pbcopy
 cat /tmp/clipboard_fixed.rtf | pbcopy
 
-echo "Tamaño de fuente cambiado a 28px (preservando formato y cursivas)"
+echo "Tamaño de fuente cambiado a 28px y fondo transparente (preservando formato y cursivas)"
