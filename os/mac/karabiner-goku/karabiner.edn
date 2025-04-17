@@ -166,7 +166,7 @@
    :rules [:Orion [:next-workspace :!STCc] [:prev-workspace :!STCp]]}
 
   {:des   "[chatgpt] Toggle sidebar"
-   :rules [:ChatGPT [:sidebar-primary-toggle :!Cs]]}
+   :rules [:ChatGPT [:sidebar-primary-toggle :!CTs]]}
 
   {:des   "[chrome] Show recent tabs"
    :rules [:Chrome [:show-recent :!CSa]]}

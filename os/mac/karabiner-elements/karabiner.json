@@ -821,7 +821,7 @@
           },
           "to" : [ {
             "key_code" : "s",
-            "modifiers" : [ "left_command" ]
+            "modifiers" : [ "left_command", "left_control" ]
           } ],
           "conditions" : [ {
             "type" : "frontmost_application_if",
