@@ -4,16 +4,14 @@
 	enable = true;
 	taps = [];
 	brews = [
-		"cliclick"
 		"choose-gui"
-		"llama.cpp"
+		"cliclick"
 		"switchaudio-osx"
 	];
 	casks = [
 		"adobe-creative-cloud"
 		"arc"
 		"betterdisplay"
-		"capcut"
 		"cloudflare-warp"
 		"contexts"
 		"cursor"
@@ -26,22 +24,21 @@
 		"google-drive"
 		"grandperspective"
 		"handbrake"
-		"iina"
-		"iterm2"
 		"jetbrains-toolbox"
 		"karabiner-elements"
+		"microsoft-edge"
 		"notion"
 		"obs"
-		"orion"
 		"orbstack"
+		"orion"
 		"raycast"
 		"shottr"
-		"shureplus-motiv"
 		"slack"
 		"stremio"
 		"superwhisper"
 		"telegram"
 		"visual-studio-code"
+		"vlc"
 		"zed"
 		"zen-browser"
 	];

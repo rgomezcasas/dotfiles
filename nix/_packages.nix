@@ -23,9 +23,6 @@ with pkgs; [
 	nodejs_22
 	nvd
 	ollama
-	php83
-	php83Packages.composer
-	python39
 	rustc
 	shellcheck
 	shfmt
@@ -43,7 +40,6 @@ with pkgs; [
 
 	# gui
 	gum
-	kitty
 	mas
 	pinentry_mac
 	skhd
