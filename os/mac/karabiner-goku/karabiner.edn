@@ -26,6 +26,7 @@
   :Safari         ["com.apple.Safari"]
   :Slack          ["com.tinyspeck.slackmacgap"]
   :VSCode         ["com.microsoft.VSCode"]
+  :Vlc            ["org.videolan.vlc"]
   :ZenBrowser     ["app.zen-browser.zen"]}
  :froms     {:clipboard-history        {:modi [:left_command :left_shift] :key :v}
              :create-folder            {:modi [:left_control :left_option :left_command] :key :p}
@@ -194,6 +195,9 @@
 
   {:des   "[guitar pro] Zoom in/out"
    :rules [:GuitarPro [:zoom-in :!CSperiod] [:zoom-out :!CScomma]]}
+
+  {:des   "[vlc] Fullscreen"
+   :rules [:Vlc [:f :!CTf]]}
 
   {:des   "[keynote] Zoom in/out"
    :rules [:Keynote [:zoom-in :!CSperiod] [:zoom-out :!CScomma]]}

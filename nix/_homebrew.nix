@@ -19,6 +19,7 @@
 		"elgato-camera-hub"
 		"elgato-control-center"
 		"elgato-stream-deck"
+		"elgato-wave-link"
 		"figma"
 		"google-chrome@canary"
 		"google-drive"
@@ -26,6 +27,7 @@
 		"handbrake"
 		"jetbrains-toolbox"
 		"karabiner-elements"
+		"meld-studio"
 		"microsoft-edge"
 		"notion"
 		"obs"
@@ -43,7 +45,7 @@
 		"zen-browser"
 	];
 	masApps = {
-		"Bitwarden" = 1352778147;
+#		"Bitwarden" = 1352778147;
 		"Final Cut Pro"= 424389933;
 		"GarageBand"= 682658836;
 		"Gifski"= 1351639930;

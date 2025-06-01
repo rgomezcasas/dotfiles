@@ -71,7 +71,6 @@ export path=(
   "$HOME/Library/pnpm"
   "/opt/homebrew/opt/ruby/bin"
   "/opt/homebrew/opt/node@14/bin"
-  "/opt/homebrew/opt/python@3.12/libexec/bin"
   "/opt/homebrew/bin"
   "/opt/homebrew/sbin"
   "/usr/local/bin"

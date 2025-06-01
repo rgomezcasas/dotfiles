@@ -3,6 +3,7 @@
 
 with pkgs; [
 	bat
+	cargo
 	cmatrix
 	coreutils
 	delta
@@ -23,6 +24,9 @@ with pkgs; [
 	nodejs_22
 	nvd
 	ollama
+	pipx
+	python3
+	python3Packages.pip
 	rustc
 	shellcheck
 	shfmt

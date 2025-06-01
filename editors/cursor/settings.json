@@ -66,6 +66,7 @@
         "typescript",
         "typescriptreact"
     ],
-    "workbench.iconTheme": "vscode-jetbrains-icon-theme-2023-auto",
-    "update.releaseTrack": "prerelease"
+    "workbench.iconTheme": "Monokai Pro Light (Filter Sun) Icons",
+    "update.releaseTrack": "prerelease",
+    "workbench.colorTheme": "Codely Dark"
 }
