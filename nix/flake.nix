@@ -31,6 +31,7 @@
 			system.defaults = import ./_macos-defaults.nix;
 			system.keyboard.enableKeyMapping = true;
 			system.keyboard.remapCapsLockToEscape = true;
+			system.primaryUser = "rafa.gomez";
 
 			# Necessary for using flakes on this system.
 			nix.settings.experimental-features = "nix-command flakes";

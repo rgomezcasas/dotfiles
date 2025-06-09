@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTLY_PATH/scripts/core/_main.sh"
+
+##? Ensure menu bar is visible only when there is one screen.
+#?? 1.1.0
+##?
+##? Usage:
+##?   sync_menu_bar_visibility
+docs::parse "$@"
+
+function should_toggle_menu_bar_visibility() {
+  local -r total_screens=$(get_total_screens)
+  local -r is_menu_bar_hidden=$(is_menu_bar_hidden)
+  local -r should_be_hidden=$((total_screens > 1))
+
+  [[ "$is_menu_bar_hidden" -ne "$should_be_hidden" ]]
+}
+
+function get_total_screens() {
+  system_profiler SPDisplaysDataType | grep -c "Resolution"
+}
+
+function is_menu_bar_hidden() {
+  defaults read NSGlobalDomain _HIHideMenuBar
+}
+
+function toggle_menu_bar() {
+  open -g "raycast://extensions/iamyeizi/toggle-menu-bar/toggle"
+}
+
+if should_toggle_menu_bar_visibility; then
+  toggle_menu_bar
+fi

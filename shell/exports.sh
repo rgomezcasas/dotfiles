@@ -73,6 +73,7 @@ export path=(
   "/opt/homebrew/opt/node@14/bin"
   "/opt/homebrew/bin"
   "/opt/homebrew/sbin"
+  "/Users/rafa.gomez/.local/bin"
   "/usr/local/bin"
   "/bin"
   "/usr/bin"
