@@ -16,7 +16,6 @@ alias c="cd ~/Code/codely"
 alias gaa="git add -A"
 alias gc="dot git commit"
 alias gca="git add --all && git commit --amend --no-edit"
-alias gsw="git switch"
 alias gd="dot git pretty-diff"
 alias gs="git status -sb"
 alias gf="git fetch --all -p"
@@ -30,12 +29,7 @@ alias rebuild="darwin-rebuild switch --flake /Users/rafa.gomez/.dotfiles/nix#pro
 
 alias copy='pbcopy'
 alias dc='dot docker connect'
-alias vcode='/usr/local/bin/code'
-alias htop='btm'
 
 alias i.='(idea $PWD &>/dev/null &)'
 alias c.='(cursor $PWD &>/dev/null &)'
 alias o.='open .'
-
-alias mp3="dot youtube download-mp3"
-alias mp4="dot youtube download-mp4"
