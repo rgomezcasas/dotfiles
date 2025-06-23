@@ -48,3 +48,6 @@ macos-titlebar-style = hidden
 link-url = true
 auto-update = download
 auto-update-channel = tip
+
+# Keybinding
+keybind = shift+enter=text:\n

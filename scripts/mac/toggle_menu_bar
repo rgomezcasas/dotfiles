@@ -11,14 +11,6 @@ source "$DOTLY_PATH/scripts/core/_main.sh"
 ##?   sync_menu_bar_visibility
 docs::parse "$@"
 
-function should_toggle_menu_bar_visibility() {
-  local -r total_screens=$(get_total_screens)
-  local -r is_menu_bar_hidden=$(is_menu_bar_hidden)
-  local -r should_be_hidden=$((total_screens > 1))
-
-  [[ "$is_menu_bar_hidden" -ne "$should_be_hidden" ]]
-}
-
 function get_total_screens() {
   system_profiler SPDisplaysDataType | grep -c "Resolution"
 }
@@ -31,6 +23,24 @@ function toggle_menu_bar() {
   open -g "raycast://extensions/iamyeizi/toggle-menu-bar/toggle"
 }
 
-if should_toggle_menu_bar_visibility; then
+monitors_file="$HOME/.dotly__total_monitors"
+total_screens=$(get_total_screens)
+
+if ! [[ -f "$monitors_file" ]]; then
+  echo "0" > "$monitors_file"
+fi
+
+previous_total_screens=$(cat "$monitors_file")
+
+if [[ "$total_screens" -eq "$previous_total_screens" ]]; then
+  exit 0
+fi
+
+echo "$total_screens" > "$monitors_file"
+
+is_menu_bar_hidden=$(is_menu_bar_hidden)
+should_be_hidden=$((total_screens > 1))
+
+if [[ "$is_menu_bar_hidden" -ne "$should_be_hidden" ]]; then
   toggle_menu_bar
 fi

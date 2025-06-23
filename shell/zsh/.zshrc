@@ -40,4 +40,7 @@ prompt ${DOTLY_THEME:-codely}
 
 source "$DOTLY_PATH/shell/zsh/bindings/reverse_search.zsh"
 
+# Shift + Enter = newline
+bindkey -s '^[[27;2;13~' '^[^M'
+
 # zprof

@@ -25,7 +25,7 @@ alias gpl="git pull --rebase --autostash"
 alias gl="dot git pretty-log"
 
 # Nix
-alias rebuild="darwin-rebuild switch --flake /Users/rafa.gomez/.dotfiles/nix#pro --impure"
+alias rebuild="sudo darwin-rebuild switch --flake /Users/rafa.gomez/.dotfiles/nix#pro --impure"
 
 alias copy='pbcopy'
 alias dc='dot docker connect'

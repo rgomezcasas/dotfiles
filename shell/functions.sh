@@ -9,5 +9,5 @@ function j() {
 function up() {
 	nix flake update --flake /Users/rafa.gomez/.dotfiles/nix
 	nvd diff $(ls -dt /nix/var/nix/profiles/system-*-link | head -n2)
-	darwin-rebuild switch --flake /Users/rafa.gomez/.dotfiles/nix#pro --impure
+	sudo darwin-rebuild switch --flake /Users/rafa.gomez/.dotfiles/nix#pro --impure
 }

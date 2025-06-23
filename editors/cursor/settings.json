@@ -67,6 +67,5 @@
         "typescriptreact"
     ],
     "workbench.iconTheme": "Monokai Pro Light (Filter Sun) Icons",
-    "update.releaseTrack": "prerelease",
-    "workbench.colorTheme": "Codely Dark"
+    "update.releaseTrack": "prerelease"
 }

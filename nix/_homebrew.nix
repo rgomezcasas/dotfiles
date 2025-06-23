@@ -21,6 +21,7 @@
 		"elgato-stream-deck"
 		"elgato-wave-link"
 		"figma"
+		"ghostty@tip"
 		"google-chrome@canary"
 		"google-drive"
 		"grandperspective"

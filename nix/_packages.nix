@@ -4,6 +4,7 @@
 with pkgs; [
 	bat
 	cargo
+	claude-code
 	cmatrix
 	coreutils
 	delta
