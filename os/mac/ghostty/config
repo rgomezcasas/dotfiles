@@ -42,12 +42,15 @@ macos-icon-screen-color = #3cff64
 
 # Window
 # window-decoration = false
-macos-titlebar-style = hidden
+macos-titlebar-style = tabs
 
 # Features
 link-url = true
 auto-update = download
 auto-update-channel = tip
+
+# Tabs
+window-new-tab-position = end
 
 # Keybinding
 keybind = shift+enter=text:\n
