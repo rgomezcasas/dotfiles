@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTLY_PATH/scripts/core/_main.sh"
+
+##? Clear all Docker containers and volumes
+##?
+##? Usage:
+##?   clear
+##?   clear -h | --help
+
+docs::parse "$@"
+
+echo "🐳 Stopping all running containers..."
+docker stop $(docker ps -aq) 2>/dev/null || echo "No containers to stop"
+
+echo "🗑️  Removing all containers..."
+docker rm $(docker ps -aq) 2>/dev/null || echo "No containers to remove"
+
+echo "💾 Removing all volumes..."
+docker volume rm $(docker volume ls -q) 2>/dev/null || echo "No volumes to remove"
+
+echo "✅ Docker cleanup complete!"

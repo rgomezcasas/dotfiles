@@ -29,6 +29,7 @@ alias rebuild="sudo darwin-rebuild switch --flake /Users/rafa.gomez/.dotfiles/ni
 
 alias copy='pbcopy'
 alias dc='dot docker connect'
+alias docker-clear='dot docker clear'
 
 alias i.='(idea $PWD &>/dev/null &)'
 alias c.='(cursor $PWD &>/dev/null &)'
