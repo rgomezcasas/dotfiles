@@ -12,6 +12,7 @@
 		"adobe-creative-cloud"
 		"arc"
 		"betterdisplay"
+		"claude"
 		"cloudflare-warp"
 		"contexts"
 		"cursor"

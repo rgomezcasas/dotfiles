@@ -69,6 +69,7 @@ export path=(
   "$HOME/.cargo/bin"
   "$HOME/.orbstack/bin"
   "$HOME/Library/pnpm"
+  "$HOME/.claude/local"
   "/opt/homebrew/opt/ruby/bin"
   "/opt/homebrew/opt/node@14/bin"
   "/opt/homebrew/bin"

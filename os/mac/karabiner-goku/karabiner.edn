@@ -12,6 +12,7 @@
   :Bitwarden      ["com.bitwarden.desktop"]
   :ChatGPT        ["com.openai.chat"]
   :Chrome         ["com.google.Chrome", "com.google.Chrome.beta"]
+  :Claude         ["com.anthropic.claudefordesktop"]
   :Contexts       ["com.contextsformac.Contexts"]
   :Finder         ["com.apple.finder"]
   :GoogleMeet     ["com.google.Chrome.app.kjgfgldnnfoeklkmfkjfagphfepbbdan"]

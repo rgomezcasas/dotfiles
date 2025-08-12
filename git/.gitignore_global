@@ -22,3 +22,6 @@ libsigar-universal64-macosx.dylib
 
 # Custom
 *.no-commit.*
+*.local.*
+__pycache__
+tsconfig.tsbuildinfo

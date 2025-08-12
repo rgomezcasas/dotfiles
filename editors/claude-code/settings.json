@@ -1,0 +1,7 @@
+{
+	"statusLine": {
+		"type": "command",
+		"command": "npx -y ccusage statusline",
+		"padding": 0
+	}
+}

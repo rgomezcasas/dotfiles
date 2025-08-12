@@ -33,3 +33,5 @@ alias dc='dot docker connect'
 alias i.='(idea $PWD &>/dev/null &)'
 alias c.='(cursor $PWD &>/dev/null &)'
 alias o.='open .'
+
+alias cc="claude"
