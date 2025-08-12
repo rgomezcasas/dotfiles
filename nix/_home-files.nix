@@ -6,6 +6,7 @@ in
 {
 	".bash_profile".source = symlink "${dotfilesPath}/shell/bash/.bash_profile";
 	".bashrc".source = symlink "${dotfilesPath}/shell/bash/.bashrc";
+	".claude.json".source = symlink "${dotfilesPath}/modules/private/claude/.claude.json";
 	".claude/settings.json".source = symlink "${dotfilesPath}/editors/claude-code/settings.json";
 	".config/alacritty/alacritty.toml".source = symlink "${dotfilesPath}/os/mac/alacritty/alacritty.toml";
 	".config/clojure-lsp".source = symlink "${dotfilesPath}/langs/clojure/clojure-lsp";
