@@ -29,10 +29,11 @@ alias rebuild="sudo darwin-rebuild switch --flake /Users/rafa.gomez/.dotfiles/ni
 
 alias copy='pbcopy'
 alias dc='dot docker connect'
-alias docker-clear='dot docker clear'
+alias dcl='dot docker clear'
 
 alias i.='(idea $PWD &>/dev/null &)'
 alias c.='(cursor $PWD &>/dev/null &)'
 alias o.='open .'
 
-alias cc="claude"
+alias cc="claude --append-system-prompt 'responde siempre en castellano'"
+alias ccyolo="claude --dangerously-skip-permissions"

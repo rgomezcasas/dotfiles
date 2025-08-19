@@ -4,6 +4,7 @@
 	enable = true;
 	taps = [];
 	brews = [
+		"bitwarden-cli"
 		"choose-gui"
 		"cliclick"
 		"switchaudio-osx"
@@ -12,6 +13,7 @@
 		"adobe-creative-cloud"
 		"arc"
 		"betterdisplay"
+		"bitwarden"
 		"claude"
 		"cloudflare-warp"
 		"contexts"
@@ -44,7 +46,6 @@
 		"visual-studio-code"
 		"vlc"
 		"zed"
-		"zen-browser"
 	];
 	masApps = {
 #		"Bitwarden" = 1352778147;

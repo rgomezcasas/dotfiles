@@ -8,6 +8,7 @@ with pkgs; [
 	coreutils
 	delta
 	eza
+	fd
 	ffmpeg
 	findutils
 	fzf
@@ -27,6 +28,7 @@ with pkgs; [
 	pipx
 	python3
 	python3Packages.pip
+	ripgrep
 	rustc
 	shellcheck
 	shfmt
