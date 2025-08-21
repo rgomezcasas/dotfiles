@@ -9,8 +9,8 @@ os/mac/alfred/remote
 # Common
 # ----------------------------------
 # Compiled zsh
-shell/zsh/**/**.zwc
-shell/zsh/**/**.zwc.old
+shell/**/**/**.zwc
+shell/**/**/**.zwc.old
 shell/zsh/.zim
 
 # Private Stuff
