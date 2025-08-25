@@ -41,3 +41,6 @@ alias ccyolo="claude --dangerously-skip-permissions"
 # Zsh performance
 alias zsh-rebuild-cache='rm -f ~/.zcompdump* && zcompile ~/.dotfiles/shell/zsh/.zshrc && exec zsh'
 alias zsh-recompile='zcompile ~/.dotfiles/shell/zsh/.zshrc ~/.dotfiles/shell/{init,aliases,exports,functions}.sh'
+
+# Tmp
+alias cc-to-agents=''

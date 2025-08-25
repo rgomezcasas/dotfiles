@@ -34,6 +34,7 @@ in
 	".zprofile".source = symlink "${dotfilesPath}/shell/zsh/.zprofile";
 	".zshenv".source = symlink "${dotfilesPath}/shell/zsh/.zshenv";
 	".zshrc".source = symlink "${dotfilesPath}/shell/zsh/.zshrc";
+	"Library/Application Support/Claude/claude_desktop_config.json".source = symlink "${dotfilesPath}/os/mac/claude-desktop/claude_desktop_config.json";
 	"Library/Application Support/Cursor/User/keybindings.json".source = symlink "${dotfilesPath}/editors/cursor/keybindings.json";
 	"Library/Application Support/Cursor/User/settings.json".source = symlink "${dotfilesPath}/editors/cursor/settings.json";
 	"Library/Application Support/Cursor/User/snippets".source = symlink "${dotfilesPath}/editors/cursor/snippets";

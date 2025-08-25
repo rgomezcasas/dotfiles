@@ -1,11 +1,8 @@
-# IntelliJ IDEA
+# IDEs
 .idea
-*.iml
-*.iws
-.idea-compl
-*.sc
-
 .vscode
+CLAUDE.md
+
 # Mac
 .DS_Store
 
