@@ -35,12 +35,14 @@ alias i.='(idea $PWD &>/dev/null &)'
 alias c.='(cursor $PWD &>/dev/null &)'
 alias o.='open .'
 
-alias cc="claude --append-system-prompt 'responde siempre en castellano'"
-alias ccyolo="claude --dangerously-skip-permissions"
+alias cc="env -u BW_SESSION claude --append-system-prompt 'responde siempre en castellano'"
+alias ccyolo="env -u BW_SESSION claude --dangerously-skip-permissions"
 
 # Zsh performance
 alias zsh-rebuild-cache='rm -f ~/.zcompdump* && zcompile ~/.dotfiles/shell/zsh/.zshrc && exec zsh'
 alias zsh-recompile='zcompile ~/.dotfiles/shell/zsh/.zshrc ~/.dotfiles/shell/{init,aliases,exports,functions}.sh'
 
-# Tmp
-alias cc-to-agents=''
+# Export credentials
+alias with_openai="dot system with_credential OPENAI_API_KEY OPENAI_API_KEY"
+alias with_github="dot system with_credential GITHUB_TOKEN GITHUB_TOKEN"
+alias with_test="dot system with_credential TEST_API_KEY TEST_API_KEY"

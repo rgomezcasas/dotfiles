@@ -1,7 +1,11 @@
 # IDEs
 .idea
 .vscode
+
+# LLMs
 CLAUDE.md
+/.mcp.json
+.claude
 
 # Mac
 .DS_Store
