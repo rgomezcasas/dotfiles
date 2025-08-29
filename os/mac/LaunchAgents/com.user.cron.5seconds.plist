@@ -3,16 +3,20 @@
 <plist version="1.0">
 	<dict>
 		<key>Label</key>
-		<string>com.user.toggle.menubar</string>
+		<string>com.user.cron.5seconds</string>
 		<key>ProgramArguments</key>
 		<array>
 			<string>/Users/rafa.gomez/.dotfiles/bin/sdot</string>
-			<string>mac</string>
-			<string>toggle_menu_bar</string>
+			<string>system</string>
+			<string>cron</string>
 		</array>
 		<key>StartInterval</key>
 		<integer>5</integer>
 		<key>RunAtLoad</key>
 		<true/>
+		<key>StandardErrorPath</key>
+		<string>/dev/null</string>
+		<key>StandardOutPath</key>
+		<string>/dev/null</string>
 	</dict>
 </plist>

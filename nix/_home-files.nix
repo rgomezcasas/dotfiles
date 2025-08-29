@@ -42,6 +42,5 @@ in
 	"Library/Application Support/obs-studio/basic".source = symlink "${dotfilesPath}/modules/private/mac/obs/basic";
 	"Library/Application Support/obs-studio/global.ini".source = symlink "${dotfilesPath}/modules/private/mac/obs/global.ini";
 	"Library/Application Support/zen/Profiles/8fh0vfxw.Default (alpha)/chrome/userChrome.css".source = symlink "${dotfilesPath}/os/mac/zen/userChrome.css";
-	"Library/LaunchAgents/com.user.disable.airpods.microphone.plist".source = symlink "${dotfilesPath}/os/mac/LaunchAgents/com.user.disable.airpods.microphone.plist";
-	"Library/LaunchAgents/com.user.toggle.menubar.plist".source = symlink "${dotfilesPath}/os/mac/LaunchAgents/com.user.toggle.menubar.plist";
+	"Library/LaunchAgents/com.user.cron.5seconds.plist".source = symlink "${dotfilesPath}/os/mac/LaunchAgents/com.user.cron.5seconds.plist";
 }
