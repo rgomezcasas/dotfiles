@@ -81,6 +81,10 @@ main() {
         if networksetup -listallhardwareports | grep -A 1 "Wi-Fi" | grep -q "$default_interface"; then
             log::error "🚨 WiFi is being used as default route while Ethernet is connected"
             log::note "💡 Consider disabling WiFi to use the faster Ethernet connection"
+
+            # Show macOS notification
+            osascript -e 'display notification "WiFi is being used instead of the faster Ethernet connection" with title "Network Warning" sound name "Glass"'
+
             return 1
         else
             log::success "✅ Ethernet is being used as default route (correct)"
