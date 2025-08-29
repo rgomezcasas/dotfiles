@@ -45,4 +45,4 @@ alias zsh-recompile='zcompile ~/.dotfiles/shell/zsh/.zshrc ~/.dotfiles/shell/{in
 # Export credentials
 alias with_openai="dot system with_credential OPENAI_API_KEY OPENAI_API_KEY"
 alias with_github="dot system with_credential GITHUB_TOKEN GITHUB_TOKEN"
-alias with_test="dot system with_credential TEST_API_KEY TEST_API_KEY"
+alias with_test="dot system with_credential TEST_API_KEY SUPER_PRIVATE_TOKEN"

@@ -33,7 +33,6 @@ with pkgs; [
 	shellcheck
 	shfmt
 	sl
-	tldr
 	tmux
 	tree
 	unrar

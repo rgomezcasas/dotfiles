@@ -7,6 +7,8 @@
 		"bitwarden-cli"
 		"choose-gui"
 		"cliclick"
+		"codex"
+		"gemini-cli"
 		"switchaudio-osx"
 	];
 	casks = [
@@ -29,6 +31,7 @@
 		"google-drive"
 		"grandperspective"
 		"handbrake"
+		"imaging-edge"
 		"jetbrains-toolbox"
 		"karabiner-elements"
 		"meld-studio"

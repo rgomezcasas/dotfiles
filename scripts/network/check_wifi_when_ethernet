@@ -1,0 +1,100 @@
+#!/usr/bin/env bash
+
+##? Checks if WiFi is being used when ethernet is connected
+##?
+##? Usage:
+##?   check_wifi_when_ethernet
+
+set -euo pipefail
+
+source "$DOTLY_PATH/scripts/core/log.sh"
+
+main() {
+    local ethernet_connected=false
+    local wifi_connected=false
+    local default_interface=""
+
+    # Get default route interface
+    default_interface=$(route get default 2>/dev/null | grep interface | awk '{print $2}' || echo "")
+
+    # Check ethernet status - look for active ethernet interfaces
+    # First check known ethernet adapters
+    while read -r line; do
+        if echo "$line" | grep -q "Device:"; then
+            device=$(echo "$line" | awk '{print $2}')
+            if ifconfig "$device" 2>/dev/null | grep -q "status: active"; then
+                ethernet_connected=true
+                break
+            fi
+        fi
+    done < <(networksetup -listallhardwareports | grep -A 1 "Ethernet")
+
+    # If not found, check if default interface is ethernet-like and active
+    if [[ "$ethernet_connected" == false && -n "$default_interface" ]]; then
+        if ifconfig "$default_interface" 2>/dev/null | grep -q "status: active"; then
+            # Check if it has a wired connection (media type contains Base-T or similar)
+            if ifconfig "$default_interface" 2>/dev/null | grep -q -E "(Base-T|Ethernet|1000baseT|100baseTX)"; then
+                ethernet_connected=true
+            fi
+        fi
+    fi
+
+    # Check WiFi status
+    if networksetup -getairportpower en0 2>/dev/null | grep -q "On" && \
+       ifconfig en0 2>/dev/null | grep -q "status: active"; then
+        wifi_connected=true
+    fi
+
+    # Display results
+    log::header "Network Connection Status"
+
+    if [[ "$ethernet_connected" == true ]]; then
+        log::success "✅ Ethernet: Connected"
+    else
+        log::note "❌ Ethernet: Not connected"
+    fi
+
+    if [[ "$wifi_connected" == true ]]; then
+        log::success "📶 WiFi: Connected"
+    else
+        log::note "📶 WiFi: Not connected"
+    fi
+
+    if [[ -n "$default_interface" ]]; then
+        log::note "🌐 Default route interface: $default_interface"
+
+        # Determine interface type
+        if networksetup -listallhardwareports | grep -A 1 "Wi-Fi" | grep -q "$default_interface"; then
+            log::note "   Type: WiFi"
+        elif networksetup -listallhardwareports | grep -A 1 "Ethernet" | grep -q "$default_interface"; then
+            log::note "   Type: Ethernet"
+        else
+            log::note "   Type: Other/Unknown"
+        fi
+    fi
+
+    # Main check: WiFi active when ethernet is connected
+    if [[ "$ethernet_connected" == true && "$wifi_connected" == true ]]; then
+        log::warning "⚠️  WARNING: Both Ethernet and WiFi are active!"
+
+        # Check which one has the default route
+        if networksetup -listallhardwareports | grep -A 1 "Wi-Fi" | grep -q "$default_interface"; then
+            log::error "🚨 WiFi is being used as default route while Ethernet is connected"
+            log::note "💡 Consider disabling WiFi to use the faster Ethernet connection"
+            return 1
+        else
+            log::success "✅ Ethernet is being used as default route (correct)"
+        fi
+    elif [[ "$ethernet_connected" == true ]]; then
+        log::success "✅ Only Ethernet is active (optimal)"
+    elif [[ "$wifi_connected" == true ]]; then
+        log::note "📶 Only WiFi is active (no Ethernet available)"
+    else
+        log::error "❌ No network connections active"
+        return 1
+    fi
+
+    return 0
+}
+
+main "$@"

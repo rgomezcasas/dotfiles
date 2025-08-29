@@ -4,5 +4,6 @@
     "command": "npx -y ccusage statusline",
     "padding": 0
   },
-  "model": "opusplan"
+  "model": "opusplan",
+  "includeCoAuthoredBy": true
 }
