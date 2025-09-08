@@ -36,7 +36,7 @@ alias c.='(cursor $PWD &>/dev/null &)'
 alias o.='open .'
 
 alias cc="env -u BW_SESSION claude --append-system-prompt 'responde siempre en castellano'"
-alias ccyolo="env -u BW_SESSION claude --dangerously-skip-permissions"
+alias ccyolo="env -u BW_SESSION claude --dangerously-skip-permissions --append-system-prompt 'responde siempre en castellano'"
 
 # Zsh performance
 alias zsh-rebuild-cache='rm -f ~/.zcompdump* && zcompile ~/.dotfiles/shell/zsh/.zshrc && exec zsh'

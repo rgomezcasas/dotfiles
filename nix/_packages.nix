@@ -36,6 +36,7 @@ with pkgs; [
 	tmux
 	tree
 	unrar
+	uv
 	watch
 	wget
 	yarn

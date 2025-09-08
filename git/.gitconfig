@@ -17,8 +17,8 @@
 	ui = true
 
 [core]
-	excludesfile = ~/.gitignore_global
-	attributesfile = ~/.gitattributes
+	excludesfile = /Users/rafa.gomez/.gitignore_global
+	attributesfile = /Users/rafa.gomez/.gitattributes
 	editor = vim
 	autocrlf = input
 	trustctime = false
