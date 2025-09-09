@@ -37,7 +37,7 @@
 	NSGlobalDomain._HIHideMenuBar = true;
 	NSGlobalDomain."com.apple.keyboard.fnState" = false;
 	NSGlobalDomain."com.apple.mouse.tapBehavior" = 1;
-	NSGlobalDomain."com.apple.mouse.linear" = false;
+#	NSGlobalDomain."com.apple.mouse.linear" = false;
 	NSGlobalDomain."com.apple.swipescrolldirection" = true;
 
 	SoftwareUpdate.AutomaticallyInstallMacOSUpdates = true;

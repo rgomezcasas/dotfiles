@@ -2,6 +2,7 @@
 { pkgs, ... }:
 
 with pkgs; [
+	ast-grep
 	bat
 	cargo
 	cmatrix
