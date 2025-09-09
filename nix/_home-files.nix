@@ -7,8 +7,9 @@ in
 	".bash_profile".source = symlink "${dotfilesPath}/shell/bash/.bash_profile";
 	".bashrc".source = symlink "${dotfilesPath}/shell/bash/.bashrc";
 	".claude.json".source = symlink "${dotfilesPath}/modules/private/claude/.claude.json";
+	".claude/CLAUDE.md".source = symlink "${dotfilesPath}/editors/GLOBAL_AGENTS.md";
 	".claude/settings.json".source = symlink "${dotfilesPath}/editors/claude-code/settings.json";
-	".claude/CLAUDE.md".source = symlink "${dotfilesPath}/editors/claude-code/CLAUDE.md";
+	".codex/AGENTS.md".source = symlink "${dotfilesPath}/editors/GLOBAL_AGENTS.md";
 	".config/alacritty/alacritty.toml".source = symlink "${dotfilesPath}/os/mac/alacritty/alacritty.toml";
 	".config/clojure-lsp".source = symlink "${dotfilesPath}/langs/clojure/clojure-lsp";
 	".config/clojure/profiles.clj".source = symlink "${dotfilesPath}/langs/clojure/profiles.clj";
