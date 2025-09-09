@@ -14,9 +14,20 @@
 		<integer>5</integer>
 		<key>RunAtLoad</key>
 		<true/>
+		<key>KeepAlive</key>
+		<true/>
 		<key>StandardErrorPath</key>
-		<string>/dev/null</string>
+		<string>/Users/rafa.gomez/Library/Logs/cron.5seconds.error.log</string>
 		<key>StandardOutPath</key>
-		<string>/dev/null</string>
+		<string>/Users/rafa.gomez/Library/Logs/cron.5seconds.out.log</string>
+		<key>EnvironmentVariables</key>
+		<dict>
+			<key>PATH</key>
+			<string>/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/rafa.gomez/.dotfiles/bin</string>
+			<key>DOTFILES_PATH</key>
+			<string>/Users/rafa.gomez/.dotfiles</string>
+			<key>DOTLY_PATH</key>
+			<string>/Users/rafa.gomez/.dotfiles</string>
+		</dict>
 	</dict>
 </plist>
