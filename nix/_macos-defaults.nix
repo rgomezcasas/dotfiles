@@ -1,4 +1,5 @@
 {
+	smb.NetBIOSName = "RafaComputerPro";
 	".GlobalPreferences"."com.apple.mouse.scaling" = 0.875;
 	ActivityMonitor.IconType = 6; # Show CPU history
 	ActivityMonitor.OpenMainWindow = true;

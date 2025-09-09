@@ -14,12 +14,18 @@
 
 	outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, home-manager }:
 	let
+		hostname = "RafaComputerPro";
+		username = "rafa.gomez";
 		configuration = { pkgs, ... }: {
 			nixpkgs.config.allowUnfree = true;
 
-			users.users."rafa.gomez" = {
-				name = "rafa.gomez";
-				home = "/Users/rafa.gomez";
+			networking.hostName = hostname;
+			networking.computerName = hostname;
+
+			users.users."${username}" = {
+				name = username;
+				home = "/Users/${username}";
+				description = username;
 			};
 
 			environment.systemPackages = import ./_packages.nix { inherit pkgs; };
@@ -31,7 +37,7 @@
 			system.defaults = import ./_macos-defaults.nix;
 			system.keyboard.enableKeyMapping = true;
 			system.keyboard.remapCapsLockToEscape = true;
-			system.primaryUser = "rafa.gomez";
+			system.primaryUser = username;
 
 			# Necessary for using flakes on this system.
 			nix.settings.experimental-features = "nix-command flakes";
@@ -64,7 +70,7 @@
 					nix-homebrew = {
 						enable = true;
 						enableRosetta = true;
-						user = "rafa.gomez";
+						user = username;
 
 						autoMigrate = true;
 					};
@@ -72,7 +78,8 @@
 				home-manager.darwinModules.home-manager {
 					home-manager.useGlobalPkgs = true;
 					home-manager.useUserPackages = true;
-					home-manager.users."rafa.gomez" = import ./home.nix;
+					home-manager.extraSpecialArgs = { inherit username; };
+					home-manager.users."${username}" = import ./home.nix;
 				}
 			];
 		};
