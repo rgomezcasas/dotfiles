@@ -54,6 +54,8 @@ export PUPPETEER_EXECUTABLE_PATH="/opt/homebrew/bin/chromium"
 # ------------------------------------------------------------------------------
 # Path - The higher it is, the more priority it has
 # ------------------------------------------------------------------------------
+typeset -U path
+
 export path=(
   "$HOME/bin"
   "$DOTLY_PATH/bin"

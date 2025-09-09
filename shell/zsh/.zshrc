@@ -20,6 +20,11 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 # Start zim
 source "$ZIM_HOME/init.zsh"
 
+# Compile ZIM init if needed
+if [[ ! -f "$ZIM_HOME/init.zsh.zwc" || "$ZIM_HOME/init.zsh" -nt "$ZIM_HOME/init.zsh.zwc" ]]; then
+  zcompile "$ZIM_HOME/init.zsh"
+fi
+
 # Lazy load fzf-tab on first TAB press (more efficient)
 _lazy_load_fzf_tab() {
   source "$ZIM_HOME/modules/fzf-tab/fzf-tab.zsh" 2>/dev/null
@@ -44,7 +49,8 @@ bindkey '^I' _lazy_load_fzf_tab
 
 # Async mode for autocompletion
 ZSH_AUTOSUGGEST_USE_ASYNC=true
-ZSH_HIGHLIGHT_MAXLENGTH=300
+ZSH_AUTOSUGGEST_MANUAL_REBIND=1
+ZSH_HIGHLIGHT_MAXLENGTH=100
 
 source "$DOTFILES_PATH/shell/init.sh"
 
