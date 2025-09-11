@@ -38,8 +38,6 @@ export FZF_DEFAULT_OPTS="--color=$fzf_colors --reverse"
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_PREFIX="/opt/homebrew";
-export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
-export HOMEBREW_REPOSITORY="/opt/homebrew";
 
 export BAT_THEME='gruvbox-dark'
 
@@ -48,13 +46,11 @@ export GPG_TTY
 
 export LANG="en_US.UTF-8"
 
-export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
-export PUPPETEER_EXECUTABLE_PATH="/opt/homebrew/bin/chromium"
 
 # ------------------------------------------------------------------------------
 # Path - The higher it is, the more priority it has
 # ------------------------------------------------------------------------------
-typeset -U path
+# typeset -U path
 
 export path=(
   "$HOME/bin"
@@ -73,7 +69,6 @@ export path=(
   "$HOME/Library/pnpm"
   "$HOME/.claude/local"
   "/opt/homebrew/opt/ruby/bin"
-  "/opt/homebrew/opt/node@14/bin"
   "/opt/homebrew/bin"
   "/opt/homebrew/sbin"
   "/Users/rafa.gomez/.local/bin"
