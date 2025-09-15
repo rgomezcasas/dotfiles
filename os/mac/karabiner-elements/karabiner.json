@@ -811,6 +811,25 @@
           "type" : "basic"
         } ]
       }, {
+        "description" : "[claude] Toggle sidebar",
+        "manipulators" : [ {
+          "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_command" ]
+            },
+            "key_code" : "1"
+          },
+          "to" : [ {
+            "key_code" : "slash",
+            "modifiers" : [ "left_command" ]
+          } ],
+          "conditions" : [ {
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "com.anthropic.claudefordesktop" ]
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
         "description" : "[chatgpt] Toggle sidebar",
         "manipulators" : [ {
           "from" : {
