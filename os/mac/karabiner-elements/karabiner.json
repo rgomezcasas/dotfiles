@@ -37,36 +37,6 @@
           "type" : "basic"
         } ]
       }, {
-        "description" : "[keyboard] ctr + cmd + ↑ as ↓",
-        "manipulators" : [ {
-          "from" : {
-            "key_code" : "down_arrow",
-            "modifiers" : {
-              "mandatory" : [ "left_command", "left_control" ]
-            }
-          },
-          "to" : [ {
-            "key_code" : "up_arrow",
-            "modifiers" : [ "left_command", "left_control" ]
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[keyboard] shift + opt + cmd + ↑ as shift + opt + cmd + →",
-        "manipulators" : [ {
-          "from" : {
-            "key_code" : "down_arrow",
-            "modifiers" : {
-              "mandatory" : [ "left_command", "left_control" ]
-            }
-          },
-          "to" : [ {
-            "key_code" : "up_arrow",
-            "modifiers" : [ "left_command", "left_control" ]
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
         "description" : "[keyboard] disable minimize with cmd+m",
         "manipulators" : [ {
           "from" : {

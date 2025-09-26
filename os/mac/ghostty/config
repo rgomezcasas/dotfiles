@@ -10,12 +10,14 @@ font-feature = -liga
 font-feature = -dlig
 
 # UI
+bell-features = border
+mouse-hide-while-typing = true
+window-height = 30
+window-padding-balance = true
 window-padding-x = 10
 window-padding-y = 5
-window-padding-balance = true
-mouse-hide-while-typing = true
 window-width = 100
-window-height = 30
+desktop-notifications = true
 
 # Theme
 background = #1d1d1d

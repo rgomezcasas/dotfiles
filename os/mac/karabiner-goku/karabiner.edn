@@ -61,10 +61,6 @@
   {:des   "[mouse] Down key -> Hide"
    :rules [[{:pkey :button4} [{:pkey :button1} :!Ch]]]}
 
-  {:des   "[keyboard] ctr + cmd + ↑ as ↓"
-   :rules [[:!CTdown_arrow :!CTup_arrow]]}
-  {:des   "[keyboard] shift + opt + cmd + ↑ as shift + opt + cmd + →"
-   :rules [[:!CTdown_arrow :!CTup_arrow]]}
   {:des   "[keyboard] disable minimize with cmd+m"
    :rules [[:!Cm :!CTSm]]}
   {:des   "[keyboard] supr ctrl+backspace"

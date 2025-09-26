@@ -158,9 +158,5 @@
   {
     "key": "cmd+i",
     "command": "composerMode.agent"
-  },
-  {
-    "key": "cmd+e",
-    "command": "composerMode.background"
   }
 ]

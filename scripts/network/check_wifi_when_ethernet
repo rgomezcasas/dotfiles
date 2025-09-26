@@ -83,7 +83,7 @@ main() {
             log::note "💡 Consider disabling WiFi to use the faster Ethernet connection"
 
             # Show macOS notification
-            osascript -e 'display notification "WiFi is being used instead of the faster Ethernet connection" with title "Network Warning" sound name "Glass"'
+            # osascript -e 'display notification "WiFi is being used instead of the faster Ethernet connection" with title "Network Warning" sound name "Glass"'
 
             return 1
         else
