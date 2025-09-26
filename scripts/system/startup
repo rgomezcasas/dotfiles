@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+##? Startup script that runs once at system boot
+##?
+##? Usage:
+##?   startup
+
+set -euo pipefail
+
+source "$DOTLY_PATH/scripts/core/log.sh"
+
+main() {
+    launchctl setenv CHROME_HEADLESS 1 > /dev/null 2>&1 || true
+}
+
+main "$@"
