@@ -103,3 +103,5 @@
 
 [init]
 	defaultBranch = main
+[safe]
+	directory = /Users/rafa.gomez/.dotfiles
