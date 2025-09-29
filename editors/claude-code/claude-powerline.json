@@ -50,44 +50,44 @@
 	"colors": {
 		"custom": {
 			"directory": {
-				"bg": "#2a2a2a",
-				"fg": "#e0e0e0"
+				"bg": "#1a2233",
+				"fg": "#3cff64"
 			},
 			"git": {
-				"bg": "#3a3a3a",
-				"fg": "#d0d0d0"
+				"bg": "#243044",
+				"fg": "#8fb3ff"
 			},
 			"model": {
-				"bg": "#4a4a4a",
-				"fg": "#c0c0c0"
+				"bg": "#1e2839",
+				"fg": "#3cff64"
 			},
 			"session": {
-				"bg": "#5a5a5a",
-				"fg": "#b0b0b0"
+				"bg": "#263546",
+				"fg": "#b8c5db"
 			},
 			"block": {
-				"bg": "#404040",
-				"fg": "#cccccc"
+				"bg": "#2a3a4d",
+				"fg": "#3cff64"
 			},
 			"today": {
-				"bg": "#303030",
-				"fg": "#dddddd"
+				"bg": "#192030",
+				"fg": "#8fb3ff"
 			},
 			"tmux": {
-				"bg": "#8a8a8a",
-				"fg": "#2a2a2a"
-			},
-			"context": {
-				"bg": "#6a6a6a",
+				"bg": "#364a66",
 				"fg": "#ffffff"
 			},
+			"context": {
+				"bg": "#243140",
+				"fg": "#3cff64"
+			},
 			"metrics": {
-				"bg": "#565656",
-				"fg": "#e5e5e5"
+				"bg": "#222e3f",
+				"fg": "#c5d1e6"
 			},
 			"version": {
-				"bg": "#7a7a7a",
-				"fg": "#f0f0f0"
+				"bg": "#2f4058",
+				"fg": "#3cff64"
 			}
 		}
 	}
