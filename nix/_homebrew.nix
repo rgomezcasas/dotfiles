@@ -51,10 +51,8 @@
 		"zed"
 	];
 	masApps = {
-#		"Bitwarden" = 1352778147;
 		"Final Cut Pro"= 424389933;
 		"GarageBand"= 682658836;
-		"Gifski"= 1351639930;
 		"Keynote"= 409183694;
 		"Wipr"= 1320666476;
 	};

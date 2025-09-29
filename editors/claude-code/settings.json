@@ -1,9 +1,12 @@
 {
-  "includeCoAuthoredBy": true,
-  "model": "opusplan",
-  "statusLine": {
-    "type": "command",
-    "command": "npx -y ccusage statusline",
-    "padding": 0
-  }
+	"includeCoAuthoredBy": true,
+	"model": "opusplan",
+	"permissions": {
+		"defaultMode": "acceptEdits"
+	},
+	"statusLine": {
+		"type": "command",
+		"command": "npx -y ccusage@latest statusline",
+		"padding": 0
+	}
 }
