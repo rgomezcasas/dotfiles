@@ -10,25 +10,38 @@
 						"enabled": true,
 						"showBasename": true
 					},
+					"model": {
+						"enabled": true
+					},
 					"git": {
-						"enabled": true,
-						"showSha": false,
-						"showWorkingTree": false,
-						"showOperation": false,
-						"showTag": false,
-						"showTimeSinceCommit": false,
-						"showStashCount": false,
-						"showUpstream": false,
-						"showRepoName": false
+						"enabled": false
 					},
 					"metrics": {
 						"enabled": true,
-						"showResponseTime": true,
+						"showResponseTime": false,
 						"showLastResponseTime": false,
-						"showDuration": true,
+						"showDuration": false,
 						"showMessageCount": true,
-						"showLinesAdded": true,
-						"showLinesRemoved": true
+						"showLinesAdded": false,
+						"showLinesRemoved": false
+					},
+					"context": {
+						"enabled": true,
+						"showPercentageOnly": false
+					},
+					"session": {
+						"enabled": true,
+						"type": "cost",
+						"costSource": "calculated"
+					},
+					"block": {
+						"enabled": true,
+						"type": "cost",
+						"burnType": "cost"
+					},
+					"today": {
+						"enabled": false,
+						"type": "cost"
 					}
 				}
 			}
