@@ -6,7 +6,7 @@
 	},
 	"statusLine": {
 		"type": "command",
-		"command": "npx -y ccusage@latest statusline",
+		"command": "npx -y @owloops/claude-powerline@latest",
 		"padding": 0
 	}
 }
