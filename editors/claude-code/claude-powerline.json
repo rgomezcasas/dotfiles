@@ -1,5 +1,5 @@
 {
-	"theme": "tokyo-nigh",
+	"theme": "tokyo-night",
 	"display": {
 		"style": "powerline",
 		"colorCompatibility": "auto",
@@ -9,6 +9,26 @@
 					"directory": {
 						"enabled": true,
 						"showBasename": true
+					},
+					"git": {
+						"enabled": true,
+						"showSha": false,
+						"showWorkingTree": false,
+						"showOperation": false,
+						"showTag": false,
+						"showTimeSinceCommit": false,
+						"showStashCount": false,
+						"showUpstream": false,
+						"showRepoName": false
+					},
+					"metrics": {
+						"enabled": true,
+						"showResponseTime": true,
+						"showLastResponseTime": false,
+						"showDuration": true,
+						"showMessageCount": true,
+						"showLinesAdded": true,
+						"showLinesRemoved": true
 					}
 				}
 			}
