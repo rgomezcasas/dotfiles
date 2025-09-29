@@ -1,12 +1,12 @@
 {
-	"includeCoAuthoredBy": true,
-	"model": "opusplan",
-	"permissions": {
-		"defaultMode": "acceptEdits"
-	},
-	"statusLine": {
-		"type": "command",
-		"command": "npx -y @owloops/claude-powerline@latest",
-		"padding": 0
-	}
+  "includeCoAuthoredBy": true,
+  "permissions": {
+    "defaultMode": "acceptEdits"
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "npx -y @owloops/claude-powerline@latest",
+    "padding": 0
+  },
+  "alwaysThinkingEnabled": true
 }
