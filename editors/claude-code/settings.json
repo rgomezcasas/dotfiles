@@ -1,12 +1,12 @@
 {
-  "includeCoAuthoredBy": true,
+  "includeCoAuthoredBy": false,
   "permissions": {
-    "defaultMode": "acceptEdits"
+    "defaultMode": "default"
   },
   "statusLine": {
     "type": "command",
     "command": "npx -y @owloops/claude-powerline@latest",
     "padding": 0
   },
-  "alwaysThinkingEnabled": true
+  "alwaysThinkingEnabled": false
 }
