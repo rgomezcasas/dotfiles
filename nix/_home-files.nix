@@ -27,6 +27,7 @@ in
 	".gitconfig".source = symlink "${dotfilesPath}/git/.gitconfig";
 	".gitignore_global".source = symlink "${dotfilesPath}/git/.gitignore_global";
 	".gnupg/gpg-agent.conf".source = symlink "${dotfilesPath}/modules/private/gnupg/gpg-agent.conf";
+	".npmrc".source = symlink "${dotfilesPath}/modules/private/js/.npmrc";
 	".profile".source = symlink "${dotfilesPath}/shell/bash/.profile";
 	".sbt/1.0/plugins/plugins.sbt".source = symlink "${dotfilesPath}/langs/scala/plugins.sbt";
 	".skhdrc".source = symlink "${dotfilesPath}/os/mac/skhd/.skhdrc";

@@ -71,6 +71,7 @@ export path=(
   "/opt/homebrew/opt/ruby/bin"
   "/opt/homebrew/bin"
   "/opt/homebrew/sbin"
+  "/Users/rafa.gomez/.cache/npm/global/bin"
   "/Users/rafa.gomez/.local/bin"
   "/usr/local/bin"
   "/bin"
