@@ -3,9 +3,10 @@
   "permissions": {
     "defaultMode": "default"
   },
+  "model": "sonnet",
   "statusLine": {
     "type": "command",
-    "command": "npx -y @owloops/claude-powerline@latest",
+    "command": "npx ccusage@latest statusline",
     "padding": 0
   },
   "alwaysThinkingEnabled": false
