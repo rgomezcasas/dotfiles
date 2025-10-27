@@ -19,6 +19,7 @@
   :GuitarPro      ["com.arobas-music.guitarpro7"]
   :IntelliJ       ["com.jetbrains.intellij", "com.jetbrains.intellij-EAP"]
   :Keynote        ["com.apple.iWork.Keynote"]
+  :Notes          ["com.apple.Notes"]
   :Notion         ["notion.id"]
   :Orion          ["com.kagi.kagimacOS"]
   :PersonalNotion ["com.apple.Safari.WebApp.5201A944-EF60-472C-80BB-F173D751027E"]
@@ -168,6 +169,9 @@
 
   {:des   "[chatgpt] Toggle sidebar"
    :rules [:ChatGPT [:sidebar-primary-toggle :!CTs]]}
+
+  {:des   "[notes] Toggle sidebar"
+   :rules [:Notes [:sidebar-primary-toggle :!CTs]]}
 
   {:des   "[chrome] Show recent tabs"
    :rules [:Chrome [:show-recent :!CSa]]}

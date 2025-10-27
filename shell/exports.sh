@@ -46,7 +46,7 @@ export GPG_TTY
 
 export LANG="en_US.UTF-8"
 
-
+export EDITOR="zed --wait"
 # ------------------------------------------------------------------------------
 # Path - The higher it is, the more priority it has
 # ------------------------------------------------------------------------------

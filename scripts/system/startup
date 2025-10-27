@@ -10,7 +10,8 @@ set -euo pipefail
 source "$DOTLY_PATH/scripts/core/log.sh"
 
 main() {
-    launchctl setenv CHROME_HEADLESS 1 > /dev/null 2>&1 || true
+    # launchctl setenv CHROME_HEADLESS 1 > /dev/null 2>&1 || true
+    :
 }
 
 main "$@"

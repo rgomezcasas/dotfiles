@@ -60,6 +60,9 @@ echo '🐘  Gradle cache cleared'
 rm -rf ~/.composer/cache/
 echo '👨‍🎤  Composer cache cleared'
 
+nix-collect-garbage -d
+echo '❄️  Nix store cleaned'
+
 rm -rf "$HOME/Library/Application Support/Google/Chrome/"*"/Service Worker/CacheStorage" || true
 rm -rf "$HOME/Library/Application Support/Google/Chrome/"*"/Application Cache/Cache" || true
 echo '🟡  Chrome cache cleared'
