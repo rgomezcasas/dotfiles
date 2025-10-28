@@ -42,6 +42,11 @@
 			# Necessary for using flakes on this system.
 			nix.settings.experimental-features = "nix-command flakes";
 			nix.settings.download-buffer-size = 100000000;
+			nix.optimise.automatic = true;
+
+			# Garbage collection settings to prevent excessive disk usage
+			nix.gc.automatic = true;
+			nix.gc.options = "--delete-older-than 7d";
 
 			# Create /etc/zshrc that loads the nix-darwin environment.
 			programs.zsh.enable = true;

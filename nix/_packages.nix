@@ -27,7 +27,6 @@ with pkgs; [
 	nvd
 	ollama
 	pipx
-	python3
 	python310
 	python3Packages.pip
 	ripgrep

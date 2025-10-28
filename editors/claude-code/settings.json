@@ -8,6 +8,5 @@
     "command": "npx ccusage@latest statusline",
     "padding": 0
   },
-  "alwaysThinkingEnabled": false,
-  "model": "haiku"
+  "alwaysThinkingEnabled": false
 }

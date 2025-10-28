@@ -14,6 +14,7 @@
   :Chrome         ["com.google.Chrome", "com.google.Chrome.beta"]
   :Claude         ["com.anthropic.claudefordesktop"]
   :Contexts       ["com.contextsformac.Contexts"]
+  :Dia            ["company.thebrowser.dia"]
   :Finder         ["com.apple.finder"]
   :GoogleMeet     ["com.google.Chrome.app.kjgfgldnnfoeklkmfkjfagphfepbbdan"]
   :GuitarPro      ["com.arobas-music.guitarpro7"]
