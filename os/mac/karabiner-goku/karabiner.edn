@@ -16,6 +16,7 @@
   :Contexts       ["com.contextsformac.Contexts"]
   :Dia            ["company.thebrowser.dia"]
   :Finder         ["com.apple.finder"]
+  :Gather         ["com.gather.Gather"]
   :GoogleMeet     ["com.google.Chrome.app.kjgfgldnnfoeklkmfkjfagphfepbbdan"]
   :GuitarPro      ["com.arobas-music.guitarpro7"]
   :IntelliJ       ["com.jetbrains.intellij", "com.jetbrains.intellij-EAP"]
@@ -146,6 +147,9 @@
   {:des   "[arc] supr+t opens terminal"
    :rules [:Arc [:!TOCSt :!COj]]}
 
+  {:des   "[dia] Toggle sidebar"
+   :rules [:Dia [:sidebar-primary-toggle :!Cs]]}
+
   {:des   "[zen] Toggle sidebar"
    :rules [:ZenBrowser [:sidebar-primary-toggle :!COc]]}
   {:des   "[zen] Change workspace"
@@ -239,6 +243,9 @@
 
   {:des   "[safari] Toggle sidebar"
    :rules [:Safari [:sidebar-primary-toggle :!CSl]]}
+
+  {:des   "[gather] Mute/unmute with cmd+d"
+   :rules [:Gather [:!Cd :!CSa]]}
 
   {:des   "[slack] Move in history"
    :rules [:Slack [:!Ttab :!Copen_bracket] [:!TStab :!Cclose_bracket]]}

@@ -18,11 +18,13 @@ window-padding-x = 10
 window-padding-y = 5
 window-width = 100
 desktop-notifications = true
+custom-shader = /Users/rafa.gomez/.dotfiles/modules/ghostty-cursor-shaders/cursor_warp.glsl
 
 # Theme
 background = #1d1d1d
 foreground = #e8dbb6
 cursor-color = #e8dbb6
+cursor-style = block
 palette = 0=#272727
 palette = 1=#e67e6d
 palette = 2=#b8ba46
@@ -51,7 +53,6 @@ link-url = true
 auto-update = download
 auto-update-channel = tip
 macos-option-as-alt = false
-
 
 # Tabs
 window-new-tab-position = end

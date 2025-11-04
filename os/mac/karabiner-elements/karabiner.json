@@ -600,6 +600,25 @@
           "type" : "basic"
         } ]
       }, {
+        "description" : "[dia] Toggle sidebar",
+        "manipulators" : [ {
+          "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_command" ]
+            },
+            "key_code" : "1"
+          },
+          "to" : [ {
+            "key_code" : "s",
+            "modifiers" : [ "left_command" ]
+          } ],
+          "conditions" : [ {
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "company.thebrowser.dia" ]
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
         "description" : "[zen] Toggle sidebar",
         "manipulators" : [ {
           "from" : {
@@ -1386,6 +1405,25 @@
           "conditions" : [ {
             "type" : "frontmost_application_if",
             "bundle_identifiers" : [ "com.apple.Safari" ]
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "[gather] Mute/unmute with cmd+d",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "d",
+            "modifiers" : {
+              "mandatory" : [ "left_command" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "a",
+            "modifiers" : [ "left_command", "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "com.gather.Gather" ]
           } ],
           "type" : "basic"
         } ]

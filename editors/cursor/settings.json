@@ -22,7 +22,6 @@
     "files.eol": "\n",
     "search.useGlobalIgnoreFiles": true,
     "search.useIgnoreFiles": true,
-    "workbench.editor.showTabs": "none",
     "explorer.openEditors.visible": 1,
     "window.openFoldersInNewWindow": "on",
     "editor.cursorSmoothCaretAnimation": "on",
@@ -68,5 +67,7 @@
     ],
     "workbench.iconTheme": "Monokai Pro Light (Filter Sun) Icons",
     "update.releaseTrack": "prerelease",
-    "workbench.commandPalette.experimental.enableNaturalLanguageSearch": false
+    "workbench.commandPalette.experimental.enableNaturalLanguageSearch": false,
+    "workbench.editor.showTabs": "none",
+    "workbench.colorTheme": "Cursor Light"
 }

@@ -3,6 +3,7 @@
   "permissions": {
     "defaultMode": "default"
   },
+  "model": "haiku",
   "statusLine": {
     "type": "command",
     "command": "npx ccusage@latest statusline",
