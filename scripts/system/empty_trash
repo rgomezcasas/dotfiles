@@ -38,9 +38,9 @@ rm -rf "$HOME/Library/Application Support/Slack/Cache"
 rm -rf "$HOME/Library/Application Support/Slack/Service Worker/CacheStorage"
 echo '💬  Slack cache cleared'
 
-rm -rf "$HOME.npm/_cacache/"
-rm -rf "$HOME.npm/_npx/"
-rm -rf "$HOME.yarn/berry/cache"
+rm -rf "$HOME/.npm/_cacache/"
+rm -rf "$HOME/.npm/_npx/"
+rm -rf "$HOME/.yarn/berry/cache"
 echo '💪  NPM cache cleared'
 
 find "$HOME/Code" -type d -path "*/.next/cache" -exec rm -rf {} \; -prune
