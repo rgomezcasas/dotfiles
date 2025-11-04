@@ -1,6 +1,10 @@
 # Uncomment for debug with `zprof`
 # zmodload zsh/zprof
 
+if [[ -n "$INTELLIJ_ENVIRONMENT_READER" ]]; then
+  return 0
+fi
+
 # ZSH Ops
 ## History
 setopt HIST_IGNORE_ALL_DUPS
