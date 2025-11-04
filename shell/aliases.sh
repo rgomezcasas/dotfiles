@@ -31,7 +31,7 @@ alias copy='pbcopy'
 alias dc='dot docker connect'
 alias dcl='dot docker clear'
 
-alias i.='(idea1 $PWD &>/dev/null &)'
+alias i.='(idea $PWD &>/dev/null &)'
 alias c.='(cursor $PWD &>/dev/null &)'
 alias o.='open .'
 

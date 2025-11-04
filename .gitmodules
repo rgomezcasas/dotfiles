@@ -1,10 +1,11 @@
 [submodule "modules/dotly"]
 	path = modules/dotly
 	url = https://github.com/codelytv/dotly.git
-	
+
 [submodule "modules/private"]
 	path = modules/private
 	url = git@github.com:rgomezcasas/dotfiles-private.git
+
 [submodule "modules/ghostty-cursor-shaders"]
 	path = modules/ghostty-cursor-shaders
 	url = git@github.com:sahaj-b/ghostty-cursor-shaders.git

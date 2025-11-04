@@ -15,5 +15,3 @@ shell/zsh/.zim
 
 # Private Stuff
 /scripts/codely
-# TEMP: Unignore .idea for script
-!.idea
