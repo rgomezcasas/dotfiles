@@ -41,6 +41,29 @@ echo '💬  Slack cache cleared'
 rm -rf "$HOME/Library/Application Support/Cursor/CachedData/"
 echo '💬  Cursor cache cleared'
 
+rm -rf "$HOME/Library/Application Support/Notion/Cache" 2>/dev/null || true
+rm -rf "$HOME/Library/Application Support/Notion/Code Cache" 2>/dev/null || true
+rm -rf "$HOME/Library/Application Support/Notion/GPUCache" 2>/dev/null || true
+rm -rf "$HOME/Library/Application Support/Notion/DawnCache" 2>/dev/null || true
+rm -rf "$HOME/Library/Application Support/Notion/DawnGraphiteCache" 2>/dev/null || true
+rm -rf "$HOME/Library/Application Support/Notion/DawnWebGPUCache" 2>/dev/null || true
+rm -rf "$HOME/Library/Application Support/Notion/Partitions/notion/Cache" 2>/dev/null || true
+rm -rf "$HOME/Library/Application Support/Notion/Partitions/notion/Code Cache" 2>/dev/null || true
+rm -rf "$HOME/Library/Application Support/Notion/Partitions/notion/Service Worker/CacheStorage" 2>/dev/null || true
+rm -rf "$HOME/Library/Application Support/Notion/Partitions/notion/Service Worker/ScriptCache" 2>/dev/null || true
+rm -rf "$HOME/Library/Application Support/Notion/Partitions/notion/GPUCache" 2>/dev/null || true
+rm -rf "$HOME/Library/Application Support/Notion/Partitions/notion/DawnCache" 2>/dev/null || true
+rm -rf "$HOME/Library/Application Support/Notion/Partitions/notion/DawnGraphiteCache" 2>/dev/null || true
+rm -rf "$HOME/Library/Application Support/Notion/Partitions/notion/DawnWebGPUCache" 2>/dev/null || true
+rm -rf "$HOME/Library/Application Support/Notion/Partitions/notion/WebStorage" 2>/dev/null || true
+rm -rf "$HOME/Library/Application Support/Notion/Partitions/meeting-notification/Cache" 2>/dev/null || true
+rm -rf "$HOME/Library/Application Support/Notion/Partitions/meeting-notification/Code Cache" 2>/dev/null || true
+rm -rf "$HOME/Library/Application Support/Notion/Partitions/meeting-notification/Service Worker/CacheStorage" 2>/dev/null || true
+rm -rf "$HOME/Library/Application Support/Notion/Partitions/meeting-notification/GPUCache" 2>/dev/null || true
+rm -rf "$HOME/Library/Application Support/Notion/Partitions/meeting-notification/WebStorage" 2>/dev/null || true
+rm -rf "$HOME/Library/HTTPStorages/notion.id" 2>/dev/null || true
+echo '📝  Notion cache cleared'
+
 rm -rf "$HOME/.npm/_cacache/"
 rm -rf "$HOME/.npm/_npx/"
 rm -rf "$HOME/.yarn/berry/cache"
@@ -82,6 +105,16 @@ echo '❄️  Nix store cleaned'
 rm -rf "$HOME/Library/Application Support/Google/Chrome/"*"/Service Worker/CacheStorage" || true
 rm -rf "$HOME/Library/Application Support/Google/Chrome/"*"/Application Cache/Cache" || true
 echo '🟡  Chrome cache cleared'
+
+rm -rf "$HOME/Library/Application Support/Google/Chrome Canary/"*"/Application Cache" 2>/dev/null || true
+rm -rf "$HOME/Library/Application Support/Google/Chrome Canary/"*"/Code Cache" 2>/dev/null || true
+rm -rf "$HOME/Library/Application Support/Google/Chrome Canary/"*"/GPUCache" 2>/dev/null || true
+rm -rf "$HOME/Library/Application Support/Google/Chrome Canary/"*"/Service Worker" 2>/dev/null || true
+rm -rf "$HOME/Library/Application Support/Google/Chrome Canary/"*"/Cache" 2>/dev/null || true
+rm -rf "$HOME/Library/Application Support/Google/Chrome Canary/"*"/Temp" 2>/dev/null || true
+rm -rf "$HOME/Library/Application Support/Google/Chrome Canary/OptGuideOnDeviceModel" 2>/dev/null || true
+rm -rf "$HOME/Library/Caches/Google/Chrome Canary" 2>/dev/null || true
+echo '🟡  Chrome Canary cache cleared'
 
 rm -rf "$HOME/Library/Application Support/Arc/User Data/"*"/Service Worker/CacheStorage" 2>/dev/null || true
 rm -rf "$HOME/Library/Application Support/Arc/User Data/"*"/GPUCache" 2>/dev/null || true
