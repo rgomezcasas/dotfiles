@@ -60,6 +60,19 @@ echo '🐘  Gradle cache cleared'
 rm -rf ~/.composer/cache/
 echo '👨‍🎤  Composer cache cleared'
 
+rm -rf ~/Library/Caches/com.docker.docker/ 2>/dev/null || true
+rm -rf ~/Library/Containers/com.docker.docker/ 2>/dev/null || true
+rm -rf ~/Library/Group\ Containers/group.com.docker/ 2>/dev/null || true
+rm -rf ~/.docker/models/ 2>/dev/null || true
+rm -rf ~/.docker/model/ 2>/dev/null || true
+echo '🐳  Docker data, cache & models cleared'
+
+rm -rf ~/Library/Group\ Containers/HUAQ24HBR6.dev.orbstack/data/ 2>/dev/null || true
+echo '🌀  OrbStack data cleared'
+
+rm -rf ~/.ollama/models/ 2>/dev/null || true
+echo '🤖  Ollama models removed'
+
 nix-collect-garbage -d
 echo '❄️  Nix store cleaned'
 
@@ -67,7 +80,7 @@ rm -rf "$HOME/Library/Application Support/Google/Chrome/"*"/Service Worker/Cache
 rm -rf "$HOME/Library/Application Support/Google/Chrome/"*"/Application Cache/Cache" || true
 echo '🟡  Chrome cache cleared'
 
-rm -rf Library/Application\ Support/stremio-server/stremio-cache/
+rm -rf /Users/rafa.gomez/Library/Application\ Support/stremio-server/stremio-cache/
 echo '📺  Stremio cache cleared'
 
 osascript -e 'tell app "Finder" to empty' 2>/dev/null || true
