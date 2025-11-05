@@ -111,6 +111,18 @@ rm -rf ~/.gem/cache/ 2>/dev/null || true
 rm -rf ~/.gem/doc/ 2>/dev/null || true
 echo '💎  Gem cache cleared'
 
+rm -rf ~/.junie/idea-logs/caches 2>/dev/null || true
+rm -rf ~/.junie/idea-logs/index 2>/dev/null || true
+rm -rf ~/.ivy2/cache 2>/dev/null || true
+rm -rf ~/Library/Caches/Homebrew 2>/dev/null || true
+rm -rf ~/.bun/install/cache 2>/dev/null || true
+rm -rf ~/.local/share/gh 2>/dev/null || true
+rm -rf ~/.local/pipx/logs 2>/dev/null || true
+rm -f ~/.zsh_history.bak 2>/dev/null || true
+rm -f ~/.claude.json.corrupted.* 2>/dev/null || true
+rm -f ~/.claude.json.backup 2>/dev/null || true
+echo '🧹  Additional caches cleared'
+
 rm -rf ~/Library/Caches/com.docker.docker/ 2>/dev/null || true
 rm -rf ~/Library/Containers/com.docker.docker/ 2>/dev/null || true
 rm -rf ~/Library/Group\ Containers/group.com.docker/ 2>/dev/null || true
