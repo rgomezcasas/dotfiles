@@ -67,6 +67,10 @@ echo '📝  Notion cache cleared'
 rm -rf "$HOME/.npm/_cacache/"
 rm -rf "$HOME/.npm/_npx/"
 rm -rf "$HOME/.yarn/berry/cache"
+rm -rf ~/.yarn/berry/index/ 2>/dev/null || true
+rm -rf ~/.yarn/berry/metadata/ 2>/dev/null || true
+rm -f ~/.yarn/berry/telemetry.json 2>/dev/null || true
+pnpm store prune 2>/dev/null || true
 echo '💪  NPM cache cleared'
 
 find "$HOME/Code" -type d -path "*/.next/cache" -exec rm -rf {} \; -prune
@@ -79,12 +83,33 @@ echo '💨 Turborepo logs & cache cleared'
 find "$HOME/Code" -type d -path "*/node_modules" -exec rm -rf {} \; -prune
 echo '💪  node_modules cleared'
 
-rm -rf ~/.gradle/wrapper/dists/
-rm -rf ~/.gradle/caches/
+rm -rf ~/.gradle/.tmp/ 2>/dev/null || true
+rm -rf ~/.gradle/daemon/ 2>/dev/null || true
+rm -rf ~/.gradle/build-scan-data/ 2>/dev/null || true
+rm -rf ~/.gradle/native/ 2>/dev/null || true
+rm -rf ~/.gradle/wrapper/dists/ 2>/dev/null || true
+rm -rf ~/.gradle/caches/ 2>/dev/null || true
 echo '🐘  Gradle cache cleared'
 
 rm -rf ~/.composer/cache/
 echo '👨‍🎤  Composer cache cleared'
+
+rm -rf ~/.cargo/registry/cache/ 2>/dev/null || true
+rm -rf ~/.cargo/registry/index/ 2>/dev/null || true
+rm -f ~/.cargo/.global-cache 2>/dev/null || true
+echo '🦀  Cargo cache cleared'
+
+rm -rf ~/.cache/uv/ 2>/dev/null || true
+rm -rf ~/.cache/nix/ 2>/dev/null || true
+rm -rf ~/.cache/huggingface/ 2>/dev/null || true
+rm -rf ~/.cache/gstreamer-1.0/ 2>/dev/null || true
+rm -rf ~/.cache/fastfetch/ 2>/dev/null || true
+rm -rf ~/.cache/npm/ 2>/dev/null || true
+echo '📦  Additional caches cleared'
+
+rm -rf ~/.gem/cache/ 2>/dev/null || true
+rm -rf ~/.gem/doc/ 2>/dev/null || true
+echo '💎  Gem cache cleared'
 
 rm -rf ~/Library/Caches/com.docker.docker/ 2>/dev/null || true
 rm -rf ~/Library/Containers/com.docker.docker/ 2>/dev/null || true
@@ -116,25 +141,36 @@ rm -rf "$HOME/Library/Application Support/Google/Chrome Canary/OptGuideOnDeviceM
 rm -rf "$HOME/Library/Caches/Google/Chrome Canary" 2>/dev/null || true
 echo '🟡  Chrome Canary cache cleared'
 
-rm -rf "$HOME/Library/Application Support/Arc/User Data/"*"/Service Worker/CacheStorage" 2>/dev/null || true
-rm -rf "$HOME/Library/Application Support/Arc/User Data/"*"/GPUCache" 2>/dev/null || true
-rm -rf "$HOME/Library/Application Support/Arc/User Data/"*"/DawnCache" 2>/dev/null || true
-rm -rf "$HOME/Library/Application Support/Arc/User Data/"*"/DawnGraphiteCache" 2>/dev/null || true
-rm -rf "$HOME/Library/Application Support/Arc/User Data/"*"/DawnWebGPUCache" 2>/dev/null || true
-rm -rf "$HOME/Library/Application Support/Arc/User Data/"*"/AutofillAiModelCache" 2>/dev/null || true
-rm -rf "$HOME/Library/Application Support/Arc/User Data/GrShaderCache" 2>/dev/null || true
-rm -rf "$HOME/Library/Application Support/Arc/User Data/GraphiteDawnCache" 2>/dev/null || true
-rm -rf "$HOME/Library/Application Support/Arc/User Data/component_crx_cache" 2>/dev/null || true
-rm -rf "$HOME/Library/Application Support/Arc/User Data/extensions_crx_cache" 2>/dev/null || true
-rm -rf "$HOME/Library/Application Support/Arc/ArchiveItemsFaviconCache" 2>/dev/null || true
-rm -rf "$HOME/Library/Application Support/Arc/ArchiveSnapshotCache" 2>/dev/null || true
-rm -rf "$HOME/Library/Application Support/Arc/BoostsImageCache" 2>/dev/null || true
-rm -rf "$HOME/Library/Application Support/Arc/SidebarItemsFaviconCache" 2>/dev/null || true
-rm -rf "$HOME/Library/Caches/Arc/User Data" 2>/dev/null || true
-echo '🌈  Arc cache cleared'
+#rm -rf "$HOME/Library/Application Support/Arc/User Data/"*"/Service Worker/CacheStorage" 2>/dev/null || true
+#rm -rf "$HOME/Library/Application Support/Arc/User Data/"*"/GPUCache" 2>/dev/null || true
+#rm -rf "$HOME/Library/Application Support/Arc/User Data/"*"/DawnCache" 2>/dev/null || true
+#rm -rf "$HOME/Library/Application Support/Arc/User Data/"*"/DawnGraphiteCache" 2>/dev/null || true
+#rm -rf "$HOME/Library/Application Support/Arc/User Data/"*"/DawnWebGPUCache" 2>/dev/null || true
+#rm -rf "$HOME/Library/Application Support/Arc/User Data/"*"/AutofillAiModelCache" 2>/dev/null || true
+#rm -rf "$HOME/Library/Application Support/Arc/User Data/GrShaderCache" 2>/dev/null || true
+#rm -rf "$HOME/Library/Application Support/Arc/User Data/GraphiteDawnCache" 2>/dev/null || true
+#rm -rf "$HOME/Library/Application Support/Arc/User Data/component_crx_cache" 2>/dev/null || true
+#rm -rf "$HOME/Library/Application Support/Arc/User Data/extensions_crx_cache" 2>/dev/null || true
+#rm -rf "$HOME/Library/Application Support/Arc/ArchiveItemsFaviconCache" 2>/dev/null || true
+#rm -rf "$HOME/Library/Application Support/Arc/ArchiveSnapshotCache" 2>/dev/null || true
+#rm -rf "$HOME/Library/Application Support/Arc/BoostsImageCache" 2>/dev/null || true
+#rm -rf "$HOME/Library/Application Support/Arc/SidebarItemsFaviconCache" 2>/dev/null || true
+#rm -rf "$HOME/Library/Caches/Arc/User Data" 2>/dev/null || true
+#echo '🌈  Arc cache cleared'
 
 rm -rf /Users/rafa.gomez/Library/Application\ Support/stremio-server/stremio-cache/
 echo '📺  Stremio cache cleared'
+
+rm -rf "$HOME/Library/Group Containers/6N38VWS5BX.ru.keepcoder.Telegram/stable/account-"*"/postbox/media" 2>/dev/null || true
+rm -rf "$HOME/Library/Group Containers/6N38VWS5BX.ru.keepcoder.Telegram/appstore/account-"*"/postbox/media" 2>/dev/null || true
+rm -rf "$HOME/Library/Caches/ru.keepcoder.Telegram" 2>/dev/null || true
+echo '✈️  Telegram cache cleared'
+
+find "$HOME/Library/Application Support" -type d -name "Crashpad" -exec rm -rf {} + 2>/dev/null || true
+echo '💥  Crashpad crash dumps cleared'
+
+rm -rf ~/Library/Logs/* 2>/dev/null || true
+echo '📋  Application logs cleared'
 
 osascript -e 'tell app "Finder" to empty' 2>/dev/null || true
 echo '🗑   All trashes empty'
