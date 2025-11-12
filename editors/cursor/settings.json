@@ -1,12 +1,10 @@
 {
     "github.copilot.inlineSuggest.enable": true,
-    "editor.fontSize": 20,
     "editor.suggestSelection": "first",
     "editor.minimap.enabled": false,
     "editor.dragAndDrop": false,
     "editor.fontFamily": "DankMono Nerd Font",
     "terminal.integrated.fontFamily": "DankMono Nerd font Mono",
-    "terminal.integrated.fontSize": 20,
     "editor.lineHeight": 2.7,
     "editor.cursorStyle": "line",
     "editor.cursorBlinking": "smooth",
@@ -69,5 +67,7 @@
     "update.releaseTrack": "prerelease",
     "workbench.commandPalette.experimental.enableNaturalLanguageSearch": false,
     "workbench.editor.showTabs": "none",
-    "workbench.colorTheme": "Cursor Light"
+    "workbench.colorTheme": "Cursor Light",
+    "editor.fontSize": 16,
+    "terminal.integrated.fontSize": 16
 }

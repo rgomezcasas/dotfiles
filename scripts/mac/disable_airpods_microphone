@@ -20,8 +20,8 @@ current_mic_is_airpods=$(SwitchAudioSource -c -t input | grep -i "AirPods")
 if [ -n "$current_mic_is_airpods" ]; then
 	for mic in "${allowed_mics[@]}"; do
 	if echo "$all_mics" | grep -i "$mic" > /dev/null; then
-		terminal-notifier -message "Enabling $mic" -title "AirPods mic disabled" -group "im.rafa.mic"
 		SwitchAudioSource -t input -s "$mic" > /dev/null
+		terminal-notifier -message "Enabling $mic" -title "AirPods mic disabled" -group "im.rafa.mic"
 		sleep 3
 		terminal-notifier -remove "im.rafa.mic"
 		exit 0
