@@ -8,6 +8,7 @@
 		"choose-gui"
 		"cliclick"
 		"codex"
+		"coreutils"
 		"gemini-cli"
 		"sst/tap/opencode"
 		"switchaudio-osx"
@@ -55,7 +56,6 @@
 		"Final Cut Pro"= 424389933;
 		"GarageBand"= 682658836;
 		"Keynote"= 409183694;
-		"Wipr"= 1320666476;
 	};
 	onActivation.cleanup = "zap";
 	onActivation.autoUpdate = true;

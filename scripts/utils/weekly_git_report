@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+AUTHOR="Rafa Gómez"
+CODE_DIR="/Users/rafa.gomez/Code/codely"
+SINCE=$(gdate -d 'last monday' +%Y-%m-%d)
+UNTIL="$(gdate +%Y-%m-%d) 23:59:59"
+
+case "$1" in
+  "commits")
+    for dir in $(fd -t d -d 1 . "$CODE_DIR"); do
+      echo "=== $(basename "$dir") ==="
+      git -C "$dir" log --author="$AUTHOR" --since="$SINCE" --until="$UNTIL" --oneline 2>/dev/null || echo "No commits"
+    done
+    ;;
+
+  "files")
+    for dir in $(fd -t d -d 1 . "$CODE_DIR"); do
+      commits=$(git -C "$dir" log --author="$AUTHOR" --since="$SINCE" --until="$UNTIL" --oneline 2>/dev/null | wc -l)
+      if [ "$commits" -gt 0 ]; then
+        echo "=== $(basename "$dir") ==="
+        git -C "$dir" log --author="$AUTHOR" --since="$SINCE" --until="$UNTIL" --name-only --pretty=format: 2>/dev/null | sort | uniq -c | sort -rn | head -10
+      fi
+    done
+    ;;
+
+  "messages")
+    for dir in $(fd -t d -d 1 . "$CODE_DIR"); do
+      commits=$(git -C "$dir" log --author="$AUTHOR" --since="$SINCE" --until="$UNTIL" --oneline 2>/dev/null | wc -l)
+      if [ "$commits" -gt 0 ]; then
+        echo "=== $(basename "$dir") ==="
+        git -C "$dir" log --author="$AUTHOR" --since="$SINCE" --until="$UNTIL" --pretty=format:"%s" 2>/dev/null
+      fi
+    done
+    ;;
+
+  *)
+    echo "Usage: $0 {commits|files|messages}"
+    exit 1
+    ;;
+esac
