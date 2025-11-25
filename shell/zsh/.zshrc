@@ -19,6 +19,12 @@ setopt HIST_NO_STORE
 setopt +o nomatch
 # setopt autopushd
 
+## Navigation
+WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
+
+## Performance feedback
+REPORTTIME=5
+
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 
 # Start zim

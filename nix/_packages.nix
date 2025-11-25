@@ -25,7 +25,6 @@ with pkgs; [
 	jdk21
 	nodejs_22
 	nvd
-	ollama
 	pipx
 	python310
 	python3Packages.pip

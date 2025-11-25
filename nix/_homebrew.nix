@@ -10,6 +10,7 @@
 		"codex"
 		"coreutils"
 		"gemini-cli"
+		"ollama"
 		"sst/tap/opencode"
 		"switchaudio-osx"
 	];
