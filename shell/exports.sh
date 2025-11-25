@@ -41,8 +41,7 @@ export HOMEBREW_PREFIX="/opt/homebrew";
 
 export BAT_THEME='gruvbox-dark'
 
-GPG_TTY=$(tty)
-export GPG_TTY
+# GPG_TTY set lazily on first gpg use (see functions.sh)
 
 export LANG="en_US.UTF-8"
 

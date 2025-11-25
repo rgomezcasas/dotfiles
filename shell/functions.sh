@@ -6,6 +6,11 @@ function j() {
   _z "$1"
 }
 
+gpg() {
+  export GPG_TTY=${GPG_TTY:-$(tty)}
+  command gpg "$@"
+}
+
 function up() {
 	nix flake update --flake /Users/rafa.gomez/.dotfiles/nix
 	nvd diff $(ls -dt /nix/var/nix/profiles/system-*-link | head -n2)

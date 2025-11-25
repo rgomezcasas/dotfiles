@@ -1,8 +1,9 @@
 # If you modify this execute `zimfw uninstall & zimfw install`
+zmodule romkatv/zsh-defer
 zmodule zimfw/completion
 # zmodule Aloxaf/fzf-tab  # Lazy loaded for performance
 zmodule zimfw/environment
 zmodule zimfw/git-info
 zmodule zimfw/input
-zmodule zsh-users/zsh-syntax-highlighting
+# zmodule zsh-users/zsh-syntax-highlighting  # Deferred in .zshrc for faster startup
 zmodule zsh-users/zsh-autosuggestions
