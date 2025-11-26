@@ -43,6 +43,7 @@
 		"notion"
 		"obs"
 		"orbstack"
+		"orion"
 		"raycast"
 		"shottr"
 		"slack"
