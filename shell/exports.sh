@@ -49,9 +49,9 @@ export EDITOR="idea -e --wait"
 # ------------------------------------------------------------------------------
 # Path - The higher it is, the more priority it has
 # ------------------------------------------------------------------------------
-# typeset -U path
+typeset -U path
 
-export path=(
+_path_candidates=(
   "$HOME/bin"
   "$DOTLY_PATH/bin"
   "$DOTFILES_PATH/bin"
@@ -70,11 +70,17 @@ export path=(
   "/opt/homebrew/opt/ruby/bin"
   "/opt/homebrew/bin"
   "/opt/homebrew/sbin"
-  "/Users/rafa.gomez/.cache/npm/global/bin"
-  "/Users/rafa.gomez/.local/bin"
+  "$HOME/.cache/npm/global/bin"
+  "$HOME/.local/bin"
   "/usr/local/bin"
   "/bin"
   "/usr/bin"
   "/usr/sbin"
   "/sbin"
 )
+
+path=()
+for p in "${_path_candidates[@]}"; do
+  [[ -d "$p" ]] && path+=("$p")
+done
+unset _path_candidates p

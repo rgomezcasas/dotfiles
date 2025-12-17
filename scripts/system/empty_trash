@@ -153,23 +153,6 @@ rm -rf "$HOME/Library/Application Support/Google/Chrome Canary/OptGuideOnDeviceM
 rm -rf "$HOME/Library/Caches/Google/Chrome Canary" 2>/dev/null || true
 echo '🟡  Chrome Canary cache cleared'
 
-#rm -rf "$HOME/Library/Application Support/Arc/User Data/"*"/Service Worker/CacheStorage" 2>/dev/null || true
-#rm -rf "$HOME/Library/Application Support/Arc/User Data/"*"/GPUCache" 2>/dev/null || true
-#rm -rf "$HOME/Library/Application Support/Arc/User Data/"*"/DawnCache" 2>/dev/null || true
-#rm -rf "$HOME/Library/Application Support/Arc/User Data/"*"/DawnGraphiteCache" 2>/dev/null || true
-#rm -rf "$HOME/Library/Application Support/Arc/User Data/"*"/DawnWebGPUCache" 2>/dev/null || true
-#rm -rf "$HOME/Library/Application Support/Arc/User Data/"*"/AutofillAiModelCache" 2>/dev/null || true
-#rm -rf "$HOME/Library/Application Support/Arc/User Data/GrShaderCache" 2>/dev/null || true
-#rm -rf "$HOME/Library/Application Support/Arc/User Data/GraphiteDawnCache" 2>/dev/null || true
-#rm -rf "$HOME/Library/Application Support/Arc/User Data/component_crx_cache" 2>/dev/null || true
-#rm -rf "$HOME/Library/Application Support/Arc/User Data/extensions_crx_cache" 2>/dev/null || true
-#rm -rf "$HOME/Library/Application Support/Arc/ArchiveItemsFaviconCache" 2>/dev/null || true
-#rm -rf "$HOME/Library/Application Support/Arc/ArchiveSnapshotCache" 2>/dev/null || true
-#rm -rf "$HOME/Library/Application Support/Arc/BoostsImageCache" 2>/dev/null || true
-#rm -rf "$HOME/Library/Application Support/Arc/SidebarItemsFaviconCache" 2>/dev/null || true
-#rm -rf "$HOME/Library/Caches/Arc/User Data" 2>/dev/null || true
-#echo '🌈  Arc cache cleared'
-
 rm -rf /Users/rafa.gomez/Library/Application\ Support/stremio-server/stremio-cache/
 echo '📺  Stremio cache cleared'
 

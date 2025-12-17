@@ -19,13 +19,15 @@ function up() {
 }
 
 t() {
-  env -u BW_SESSION claude \
+  claude \
+    --model "haiku" \
     --append-system-prompt "Responde sólo con el comando. No lo metas dentro de backticks ni nada de markdown." \
     -p "Dame un comando de terminal para $*"
 }
 
 tldr() {
-  env -u BW_SESSION claude \
+  claude \
+    --model "haiku" \
     --append-system-prompt 'Responde siempre en castellano.
 El output se mostrará directamente en una terminal, así que:
 - Responde con texto sin formatear.
@@ -35,5 +37,5 @@ El output se mostrará directamente en una terminal, así que:
 }
 
 f() {
-  env -u BW_SESSION claude --continue -p "$*"
+  claude --continue -p "$*"
 }

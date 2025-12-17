@@ -175,6 +175,12 @@
   {:des   "[chatgpt] Toggle sidebar"
    :rules [:ChatGPT [:sidebar-primary-toggle :!CTs]]}
 
+  {:des   "[vscode] Toggle sidebar"
+   :rules [:VSCode [:sidebar-primary-toggle :!Cb]]}
+
+  {:des   "[vscode] Toggle secondary sidebar"
+   :rules [:VSCode [:sidebar-secondary-toggle :!TCi]]}
+
   {:des   "[notes] Toggle sidebar"
    :rules [:Notes [:sidebar-primary-toggle :!CTs]]}
 

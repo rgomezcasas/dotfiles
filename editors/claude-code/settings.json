@@ -3,10 +3,11 @@
   "permissions": {
     "defaultMode": "default"
   },
+  "model": "opus",
   "statusLine": {
     "type": "command",
     "command": "npx ccusage@latest statusline",
     "padding": 0
   },
-  "alwaysThinkingEnabled": false
+  "alwaysThinkingEnabled": true
 }

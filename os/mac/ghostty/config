@@ -2,8 +2,8 @@
 font-family = DankMono Nerd Font
 font-size = 20
 font-thicken = false
-font-style-bold = false
-font-style-bold-italic = false
+font-style-bold = Bold
+font-style-bold-italic = Bold Italic
 adjust-cell-height = 5
 font-feature = -calt
 font-feature = -liga
