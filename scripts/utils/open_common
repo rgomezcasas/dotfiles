@@ -22,12 +22,24 @@ folders=(
 	["🎥 Screencasts"]="$HOME/Desktop/tmp/screencasts"
 	["🤏 Thumbnails"]="$GOOGLE_DRIVE_PATH/Shared drives/👑 Contents/🔖 Pro/Design/Thumbnails Cursos"
 	["🔴 Recordings"]="$GOOGLE_DRIVE_PATH/Shared drives/👑 Contents/🔴 Recordings"
+	["📽️ Slides"]="BROWSE:$HOME/Library/Mobile Documents/com~apple~CloudDocs/🍍 Codely/🔖 Cursos"
 )
 
 folder=$(printf "%s\n" "${!folders[@]}" | choose)
 
-if [[ -n ${folders[$folder]} ]]; then
-    open "${folders[$folder]}"
+if [[ -z $folder ]]; then
+	echo "No folder selected"
+	exit 0
+fi
+
+path="${folders[$folder]}"
+
+if [[ $path == BROWSE:* ]]; then
+	browse_path="${path#BROWSE:}"
+	selected=$(ls -t "$browse_path" | choose)
+	if [[ -n $selected ]]; then
+		open "$browse_path/$selected"
+	fi
 else
-    echo "No folder selected"
+	open "$path"
 fi
