@@ -41,6 +41,8 @@ export HOMEBREW_PREFIX="/opt/homebrew";
 
 export BAT_THEME='gruvbox-dark'
 
+export EZA_COLORS="di=34:ln=36:ex=32:fi=0:uu=33:gu=33:sn=0:sb=0:da=36:hd=4:bu=4;33"
+
 # GPG_TTY set lazily on first gpg use (see functions.sh)
 
 export LANG="en_US.UTF-8"

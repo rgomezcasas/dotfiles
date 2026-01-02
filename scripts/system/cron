@@ -10,7 +10,6 @@ set -euo pipefail
 source "$DOTLY_PATH/scripts/core/log.sh"
 
 main() {
-    "$DOTFILES_PATH/bin/sdot" mac disable_airpods_microphone > /dev/null 2>&1 || true
     "$DOTFILES_PATH/bin/sdot" mac toggle_menu_bar > /dev/null 2>&1 || true
     "$DOTFILES_PATH/bin/sdot" network check_wifi_when_ethernet > /dev/null 2>&1 || true
 }

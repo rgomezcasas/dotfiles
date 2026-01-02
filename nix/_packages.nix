@@ -23,7 +23,7 @@ with pkgs; [
 	htop
 	hyperfine
 	jdk21
-	nodejs_22
+	nodejs_24
 	nvd
 	pipx
 	python310
