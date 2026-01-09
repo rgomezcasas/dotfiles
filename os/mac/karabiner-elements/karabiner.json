@@ -11,7 +11,7 @@
         "basic.to_if_held_down_threshold_milliseconds" : 100
       },
       "rules" : [ {
-        "description" : "[mouse] Up key -> Restore last hidden",
+        "description" : "[Mouse] Navigation",
         "manipulators" : [ {
           "from" : {
             "pointing_button" : "button5"
@@ -21,10 +21,7 @@
             "modifiers" : [ "left_command" ]
           } ],
           "type" : "basic"
-        } ]
-      }, {
-        "description" : "[mouse] Down key -> Hide",
-        "manipulators" : [ {
+        }, {
           "from" : {
             "pointing_button" : "button4"
           },
@@ -35,54 +32,7 @@
             "modifiers" : [ "left_command" ]
           } ],
           "type" : "basic"
-        } ]
-      }, {
-        "description" : "[keyboard] disable minimize with cmd+m",
-        "manipulators" : [ {
-          "from" : {
-            "key_code" : "m",
-            "modifiers" : {
-              "mandatory" : [ "left_command" ]
-            }
-          },
-          "to" : [ {
-            "key_code" : "m",
-            "modifiers" : [ "left_command", "left_control", "left_shift" ]
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[keyboard] supr ctrl+backspace",
-        "manipulators" : [ {
-          "from" : {
-            "key_code" : "delete_or_backspace",
-            "modifiers" : {
-              "mandatory" : [ "left_control" ]
-            }
-          },
-          "to" : [ {
-            "key_code" : "delete_forward"
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[keyboard] ctrl+cmd+up -> ctrl+cmd+down",
-        "manipulators" : [ {
-          "from" : {
-            "key_code" : "up_arrow",
-            "modifiers" : {
-              "mandatory" : [ "left_command", "left_control" ]
-            }
-          },
-          "to" : [ {
-            "key_code" : "down_arrow",
-            "modifiers" : [ "left_command", "left_control" ]
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[mouse] Show desktop",
-        "manipulators" : [ {
+        }, {
           "from" : {
             "key_code" : "d",
             "modifiers" : {
@@ -96,7 +46,54 @@
           "type" : "basic"
         } ]
       }, {
-        "description" : "[keyboard] Symbols // @todo: move this to a keyboard layout using ukelele",
+        "description" : "[Keyboard] Global shortcuts",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "m",
+            "modifiers" : {
+              "mandatory" : [ "left_command" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "m",
+            "modifiers" : [ "left_command", "left_control", "left_shift" ]
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "delete_or_backspace",
+            "modifiers" : {
+              "mandatory" : [ "left_control" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "delete_forward"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "up_arrow",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_control" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "down_arrow",
+            "modifiers" : [ "left_command", "left_control" ]
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "right_command"
+          },
+          "to" : [ {
+            "key_code" : "spacebar",
+            "modifiers" : [ "left_option" ]
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "[Keyboard] Symbols",
         "manipulators" : [ {
           "from" : {
             "key_code" : "n",
@@ -163,10 +160,7 @@
             "shell_command" : "/run/current-system/sw/bin/skhd -t \"€\""
           } ],
           "type" : "basic"
-        } ]
-      }, {
-        "description" : "[keyboard] I wanna learn typing",
-        "manipulators" : [ {
+        }, {
           "from" : {
             "key_code" : "o",
             "modifiers" : {
@@ -190,19 +184,7 @@
           "type" : "basic"
         } ]
       }, {
-        "description" : "[keyboard] right cmd as opt space",
-        "manipulators" : [ {
-          "from" : {
-            "key_code" : "right_command"
-          },
-          "to" : [ {
-            "key_code" : "spacebar",
-            "modifiers" : [ "left_option" ]
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "escape to esc when pressed alone, to hyper as modifier",
+        "description" : "[Keyboard] Hyper key remaps",
         "manipulators" : [ {
           "to_if_alone" : [ {
             "key_code" : "escape"
@@ -215,10 +197,7 @@
             "modifiers" : [ "left_command", "left_control", "left_option" ]
           } ],
           "type" : "basic"
-        } ]
-      }, {
-        "description" : "caps_lock to esc when pressed alone, to hyper as modifier",
-        "manipulators" : [ {
+        }, {
           "to_if_alone" : [ {
             "key_code" : "escape"
           } ],
@@ -232,7 +211,7 @@
           "type" : "basic"
         } ]
       }, {
-        "description" : "[util] Change brightness with the wheel",
+        "description" : "[Util] Brightness and zoom with wheel",
         "manipulators" : [ {
           "from" : {
             "key_code" : "volume_increment",
@@ -255,10 +234,7 @@
             "consumer_key_code" : "display_brightness_decrement"
           } ],
           "type" : "basic"
-        } ]
-      }, {
-        "description" : "[util] Zoom with the wheel",
-        "manipulators" : [ {
+        }, {
           "from" : {
             "key_code" : "volume_increment",
             "modifiers" : {
@@ -284,7 +260,7 @@
           "type" : "basic"
         } ]
       }, {
-        "description" : "[util] Extend selection",
+        "description" : "[Util] Selection and line editing",
         "manipulators" : [ {
           "from" : {
             "modifiers" : {
@@ -310,10 +286,7 @@
             "bundle_identifiers" : [ "com.arobas-music.guitarpro7" ]
           } ],
           "type" : "basic"
-        } ]
-      }, {
-        "description" : "[util] Delete line",
-        "manipulators" : [ {
+        }, {
           "from" : {
             "modifiers" : {
               "mandatory" : [ "left_command" ]
@@ -345,7 +318,7 @@
           "type" : "basic"
         } ]
       }, {
-        "description" : "[util] Clipboard history",
+        "description" : "[Util] Window management",
         "manipulators" : [ {
           "from" : {
             "modifiers" : {
@@ -358,10 +331,7 @@
             "modifiers" : [ "left_command", "left_control", "left_option" ]
           } ],
           "type" : "basic"
-        } ]
-      }, {
-        "description" : "[util] Move app to next screen and center",
-        "manipulators" : [ {
+        }, {
           "from" : {
             "modifiers" : {
               "mandatory" : [ "left_command", "left_shift", "left_option" ]
@@ -376,10 +346,7 @@
             "modifiers" : [ "left_option", "left_shift" ]
           } ],
           "type" : "basic"
-        } ]
-      }, {
-        "description" : "[util] Move app to prev screen and center",
-        "manipulators" : [ {
+        }, {
           "from" : {
             "modifiers" : {
               "mandatory" : [ "left_command", "left_shift", "left_option" ]
@@ -396,7 +363,7 @@
           "type" : "basic"
         } ]
       }, {
-        "description" : "[launch] dotly ui scripts",
+        "description" : "[Launch] Scripts",
         "manipulators" : [ {
           "from" : {
             "key_code" : "caps_lock",
@@ -408,10 +375,7 @@
             "shell_command" : "$HOME/.dotfiles/bin/sdot ui show_scripts"
           } ],
           "type" : "basic"
-        } ]
-      }, {
-        "description" : "[script] Generate uuid",
-        "manipulators" : [ {
+        }, {
           "from" : {
             "key_code" : "u",
             "modifiers" : {
@@ -422,10 +386,7 @@
             "shell_command" : "$HOME/.dotfiles/bin/sdot utils uuid_code"
           } ],
           "type" : "basic"
-        } ]
-      }, {
-        "description" : "[script] Open common folders",
-        "manipulators" : [ {
+        }, {
           "from" : {
             "key_code" : "grave_accent_and_tilde",
             "modifiers" : {
@@ -436,10 +397,7 @@
             "shell_command" : "$HOME/.dotfiles/bin/sdot utils open_common"
           } ],
           "type" : "basic"
-        } ]
-      }, {
-        "description" : "[script] Open CodelyTV Repo",
-        "manipulators" : [ {
+        }, {
           "from" : {
             "key_code" : "r",
             "modifiers" : {
@@ -452,7 +410,7 @@
           "type" : "basic"
         } ]
       }, {
-        "description" : "Apple Music utilities",
+        "description" : "[Music] Apple Music controls",
         "manipulators" : [ {
           "from" : {
             "key_code" : "9",
@@ -488,7 +446,7 @@
           "type" : "basic"
         } ]
       }, {
-        "description" : "[arc] Toggle sidebar",
+        "description" : "[Arc] Shortcuts",
         "manipulators" : [ {
           "from" : {
             "modifiers" : {
@@ -505,10 +463,7 @@
             "bundle_identifiers" : [ "company.thebrowser.Browser" ]
           } ],
           "type" : "basic"
-        } ]
-      }, {
-        "description" : "[arc] Switch profile",
-        "manipulators" : [ {
+        }, {
           "from" : {
             "modifiers" : {
               "mandatory" : [ "left_command" ]
@@ -540,10 +495,7 @@
             "bundle_identifiers" : [ "company.thebrowser.Browser" ]
           } ],
           "type" : "basic"
-        } ]
-      }, {
-        "description" : "[arc] CMD P also to show url menu",
-        "manipulators" : [ {
+        }, {
           "from" : {
             "key_code" : "p",
             "modifiers" : {
@@ -559,10 +511,7 @@
             "bundle_identifiers" : [ "company.thebrowser.Browser" ]
           } ],
           "type" : "basic"
-        } ]
-      }, {
-        "description" : "[arc] opt+tab switch tabs in order",
-        "manipulators" : [ {
+        }, {
           "from" : {
             "key_code" : "tab",
             "modifiers" : {
@@ -594,10 +543,7 @@
             "bundle_identifiers" : [ "company.thebrowser.Browser" ]
           } ],
           "type" : "basic"
-        } ]
-      }, {
-        "description" : "[arc] supr+t opens terminal",
-        "manipulators" : [ {
+        }, {
           "from" : {
             "key_code" : "t",
             "modifiers" : {
@@ -615,7 +561,7 @@
           "type" : "basic"
         } ]
       }, {
-        "description" : "[dia] Toggle sidebar",
+        "description" : "[Dia] Shortcuts",
         "manipulators" : [ {
           "from" : {
             "modifiers" : {
@@ -634,7 +580,7 @@
           "type" : "basic"
         } ]
       }, {
-        "description" : "[zen] Toggle sidebar",
+        "description" : "[Zen] Shortcuts",
         "manipulators" : [ {
           "from" : {
             "modifiers" : {
@@ -651,10 +597,23 @@
             "bundle_identifiers" : [ "app.zen-browser.zen" ]
           } ],
           "type" : "basic"
-        } ]
-      }, {
-        "description" : "[zen] Change workspace",
-        "manipulators" : [ {
+        }, {
+          "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_command" ]
+            },
+            "key_code" : "2"
+          },
+          "to" : [ {
+            "key_code" : "b",
+            "modifiers" : [ "left_option" ]
+          } ],
+          "conditions" : [ {
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "app.zen-browser.zen" ]
+          } ],
+          "type" : "basic"
+        }, {
           "from" : {
             "modifiers" : {
               "mandatory" : [ "left_command" ]
@@ -718,29 +677,7 @@
             "bundle_identifiers" : [ "app.zen-browser.zen" ]
           } ],
           "type" : "basic"
-        } ]
-      }, {
-        "description" : "[zen] Change to compact",
-        "manipulators" : [ {
-          "from" : {
-            "modifiers" : {
-              "mandatory" : [ "left_command" ]
-            },
-            "key_code" : "2"
-          },
-          "to" : [ {
-            "key_code" : "b",
-            "modifiers" : [ "left_option" ]
-          } ],
-          "conditions" : [ {
-            "type" : "frontmost_application_if",
-            "bundle_identifiers" : [ "app.zen-browser.zen" ]
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[zen] Cmd + tab also shows the url bar",
-        "manipulators" : [ {
+        }, {
           "from" : {
             "key_code" : "t",
             "modifiers" : {
@@ -761,7 +698,7 @@
           "type" : "basic"
         } ]
       }, {
-        "description" : "[orion] Toggle sidebar",
+        "description" : "[Orion] Shortcuts",
         "manipulators" : [ {
           "from" : {
             "modifiers" : {
@@ -778,10 +715,7 @@
             "bundle_identifiers" : [ "com.kagi.kagimacOS" ]
           } ],
           "type" : "basic"
-        } ]
-      }, {
-        "description" : "[orion] Switch profiles",
-        "manipulators" : [ {
+        }, {
           "from" : {
             "modifiers" : {
               "mandatory" : [ "left_command", "left_option" ]
@@ -815,7 +749,7 @@
           "type" : "basic"
         } ]
       }, {
-        "description" : "[claude] Toggle sidebar",
+        "description" : "[Claude] Shortcuts",
         "manipulators" : [ {
           "from" : {
             "modifiers" : {
@@ -834,7 +768,7 @@
           "type" : "basic"
         } ]
       }, {
-        "description" : "[chatgpt] Toggle sidebar",
+        "description" : "[ChatGPT] Shortcuts",
         "manipulators" : [ {
           "from" : {
             "modifiers" : {
@@ -853,7 +787,7 @@
           "type" : "basic"
         } ]
       }, {
-        "description" : "[vscode] Toggle sidebar",
+        "description" : "[VSCode] Shortcuts",
         "manipulators" : [ {
           "from" : {
             "modifiers" : {
@@ -870,10 +804,7 @@
             "bundle_identifiers" : [ "com.microsoft.VSCode" ]
           } ],
           "type" : "basic"
-        } ]
-      }, {
-        "description" : "[vscode] Toggle secondary sidebar",
-        "manipulators" : [ {
+        }, {
           "from" : {
             "modifiers" : {
               "mandatory" : [ "left_command" ]
@@ -891,7 +822,7 @@
           "type" : "basic"
         } ]
       }, {
-        "description" : "[notes] Toggle sidebar",
+        "description" : "[Notes] Shortcuts",
         "manipulators" : [ {
           "from" : {
             "modifiers" : {
@@ -910,7 +841,7 @@
           "type" : "basic"
         } ]
       }, {
-        "description" : "[chrome] Show recent tabs",
+        "description" : "[Chrome] Shortcuts",
         "manipulators" : [ {
           "from" : {
             "modifiers" : {
@@ -927,10 +858,7 @@
             "bundle_identifiers" : [ "com.google.Chrome", "com.google.Chrome.beta" ]
           } ],
           "type" : "basic"
-        } ]
-      }, {
-        "description" : "[chrome] Inspect element",
-        "manipulators" : [ {
+        }, {
           "from" : {
             "key_code" : "i",
             "modifiers" : {
@@ -946,10 +874,7 @@
             "bundle_identifiers" : [ "com.google.Chrome", "com.google.Chrome.beta" ]
           } ],
           "type" : "basic"
-        } ]
-      }, {
-        "description" : "[chrome] Toggle console",
-        "manipulators" : [ {
+        }, {
           "from" : {
             "key_code" : "t",
             "modifiers" : {
@@ -965,10 +890,7 @@
             "bundle_identifiers" : [ "com.google.Chrome", "com.google.Chrome.beta" ]
           } ],
           "type" : "basic"
-        } ]
-      }, {
-        "description" : "[chrome] Switch profile",
-        "manipulators" : [ {
+        }, {
           "from" : {
             "modifiers" : {
               "mandatory" : [ "left_command" ]
@@ -986,10 +908,7 @@
             "bundle_identifiers" : [ "com.google.Chrome", "com.google.Chrome.beta" ]
           } ],
           "type" : "basic"
-        } ]
-      }, {
-        "description" : "[chrome] Switch profile with escape",
-        "manipulators" : [ {
+        }, {
           "from" : {
             "modifiers" : {
               "mandatory" : [ "left_command" ]
@@ -1009,8 +928,24 @@
           "type" : "basic"
         } ]
       }, {
-        "description" : "[safari] Switch profile",
+        "description" : "[Safari] Shortcuts",
         "manipulators" : [ {
+          "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_command" ]
+            },
+            "key_code" : "1"
+          },
+          "to" : [ {
+            "key_code" : "l",
+            "modifiers" : [ "left_command", "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "com.apple.Safari" ]
+          } ],
+          "type" : "basic"
+        }, {
           "from" : {
             "modifiers" : {
               "mandatory" : [ "left_command" ]
@@ -1042,7 +977,7 @@
           "type" : "basic"
         } ]
       }, {
-        "description" : "[bitwarden] Switch account",
+        "description" : "[Bitwarden] Shortcuts",
         "manipulators" : [ {
           "from" : {
             "modifiers" : {
@@ -1075,7 +1010,7 @@
           "type" : "basic"
         } ]
       }, {
-        "description" : "[finder] Create folder",
+        "description" : "[Finder] Shortcuts",
         "manipulators" : [ {
           "from" : {
             "modifiers" : {
@@ -1092,10 +1027,7 @@
             "bundle_identifiers" : [ "com.apple.finder" ]
           } ],
           "type" : "basic"
-        } ]
-      }, {
-        "description" : "[finder] Toggle sidebar",
-        "manipulators" : [ {
+        }, {
           "from" : {
             "modifiers" : {
               "mandatory" : [ "left_command" ]
@@ -1113,7 +1045,7 @@
           "type" : "basic"
         } ]
       }, {
-        "description" : "[guitar pro] Zoom in/out",
+        "description" : "[GuitarPro] Shortcuts",
         "manipulators" : [ {
           "from" : {
             "modifiers" : {
@@ -1148,7 +1080,7 @@
           "type" : "basic"
         } ]
       }, {
-        "description" : "[vlc] Fullscreen",
+        "description" : "[VLC] Shortcuts",
         "manipulators" : [ {
           "from" : {
             "key_code" : "f"
@@ -1164,7 +1096,7 @@
           "type" : "basic"
         } ]
       }, {
-        "description" : "[keynote] Zoom in/out",
+        "description" : "[Keynote] Shortcuts",
         "manipulators" : [ {
           "from" : {
             "modifiers" : {
@@ -1199,7 +1131,7 @@
           "type" : "basic"
         } ]
       }, {
-        "description" : "[notion] Show recent pages",
+        "description" : "[Notion] Shortcuts",
         "manipulators" : [ {
           "from" : {
             "modifiers" : {
@@ -1216,10 +1148,7 @@
             "bundle_identifiers" : [ "notion.id" ]
           } ],
           "type" : "basic"
-        } ]
-      }, {
-        "description" : "[notion] Toggle sidebar",
-        "manipulators" : [ {
+        }, {
           "from" : {
             "modifiers" : {
               "mandatory" : [ "left_command" ]
@@ -1235,10 +1164,7 @@
             "bundle_identifiers" : [ "notion.id" ]
           } ],
           "type" : "basic"
-        } ]
-      }, {
-        "description" : "[notion] Copy current url",
-        "manipulators" : [ {
+        }, {
           "from" : {
             "modifiers" : {
               "mandatory" : [ "left_command", "left_shift" ]
@@ -1254,10 +1180,7 @@
             "bundle_identifiers" : [ "notion.id" ]
           } ],
           "type" : "basic"
-        } ]
-      }, {
-        "description" : "[notion] Extend selection",
-        "manipulators" : [ {
+        }, {
           "from" : {
             "modifiers" : {
               "mandatory" : [ "left_option" ]
@@ -1289,10 +1212,7 @@
             "bundle_identifiers" : [ "notion.id" ]
           } ],
           "type" : "basic"
-        } ]
-      }, {
-        "description" : "[notion] Open current page",
-        "manipulators" : [ {
+        }, {
           "from" : {
             "key_code" : "o",
             "modifiers" : {
@@ -1310,7 +1230,7 @@
           "type" : "basic"
         } ]
       }, {
-        "description" : "[Raycast ai] Toggle sidebar",
+        "description" : "[Raycast] Shortcuts",
         "manipulators" : [ {
           "from" : {
             "modifiers" : {
@@ -1327,10 +1247,7 @@
             "bundle_identifiers" : [ "com.raycast.macos" ]
           } ],
           "type" : "basic"
-        } ]
-      }, {
-        "description" : "[Raycast ai] Quit AI witch cmd+q",
-        "manipulators" : [ {
+        }, {
           "from" : {
             "key_code" : "q",
             "modifiers" : {
@@ -1346,10 +1263,7 @@
             "bundle_identifiers" : [ "com.raycast.macos" ]
           } ],
           "type" : "basic"
-        } ]
-      }, {
-        "description" : "[Raycast ai] cmd+t as cmd+n",
-        "manipulators" : [ {
+        }, {
           "from" : {
             "key_code" : "t",
             "modifiers" : {
@@ -1367,7 +1281,7 @@
           "type" : "basic"
         } ]
       }, {
-        "description" : "[Reminders] Toggle sidebar",
+        "description" : "[Reminders] Shortcuts",
         "manipulators" : [ {
           "from" : {
             "modifiers" : {
@@ -1386,7 +1300,7 @@
           "type" : "basic"
         } ]
       }, {
-        "description" : "[PersonalNotion] Show recent pages",
+        "description" : "[PersonalNotion] Shortcuts",
         "manipulators" : [ {
           "from" : {
             "modifiers" : {
@@ -1403,10 +1317,7 @@
             "bundle_identifiers" : [ "com.apple.Safari.WebApp.5201A944-EF60-472C-80BB-F173D751027E" ]
           } ],
           "type" : "basic"
-        } ]
-      }, {
-        "description" : "[PersonalNotion] Toggle sidebar",
-        "manipulators" : [ {
+        }, {
           "from" : {
             "modifiers" : {
               "mandatory" : [ "left_command" ]
@@ -1422,10 +1333,7 @@
             "bundle_identifiers" : [ "com.apple.Safari.WebApp.5201A944-EF60-472C-80BB-F173D751027E" ]
           } ],
           "type" : "basic"
-        } ]
-      }, {
-        "description" : "[PersonalNotion] Open new window",
-        "manipulators" : [ {
+        }, {
           "from" : {
             "key_code" : "n",
             "modifiers" : {
@@ -1443,26 +1351,7 @@
           "type" : "basic"
         } ]
       }, {
-        "description" : "[safari] Toggle sidebar",
-        "manipulators" : [ {
-          "from" : {
-            "modifiers" : {
-              "mandatory" : [ "left_command" ]
-            },
-            "key_code" : "1"
-          },
-          "to" : [ {
-            "key_code" : "l",
-            "modifiers" : [ "left_command", "left_shift" ]
-          } ],
-          "conditions" : [ {
-            "type" : "frontmost_application_if",
-            "bundle_identifiers" : [ "com.apple.Safari" ]
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "[gather] Mute/unmute with cmd+d",
+        "description" : "[Gather] Shortcuts",
         "manipulators" : [ {
           "from" : {
             "key_code" : "d",
@@ -1481,7 +1370,7 @@
           "type" : "basic"
         } ]
       }, {
-        "description" : "[slack] Move in history",
+        "description" : "[Slack] Shortcuts",
         "manipulators" : [ {
           "from" : {
             "key_code" : "tab",
@@ -1514,10 +1403,7 @@
             "bundle_identifiers" : [ "com.tinyspeck.slackmacgap" ]
           } ],
           "type" : "basic"
-        } ]
-      }, {
-        "description" : "[slack] Navigate between channels",
-        "manipulators" : [ {
+        }, {
           "from" : {
             "key_code" : "p",
             "modifiers" : {
@@ -1549,10 +1435,7 @@
             "bundle_identifiers" : [ "com.tinyspeck.slackmacgap" ]
           } ],
           "type" : "basic"
-        } ]
-      }, {
-        "description" : "[slack] Toggle sidebars",
-        "manipulators" : [ {
+        }, {
           "from" : {
             "modifiers" : {
               "mandatory" : [ "left_command" ]
@@ -1584,10 +1467,7 @@
             "bundle_identifiers" : [ "com.tinyspeck.slackmacgap" ]
           } ],
           "type" : "basic"
-        } ]
-      }, {
-        "description" : "[slack] Move between workspaces",
-        "manipulators" : [ {
+        }, {
           "from" : {
             "key_code" : "1",
             "modifiers" : {
@@ -1635,10 +1515,7 @@
             "bundle_identifiers" : [ "com.tinyspeck.slackmacgap" ]
           } ],
           "type" : "basic"
-        } ]
-      }, {
-        "description" : "[slack] Reactions",
-        "manipulators" : [ {
+        }, {
           "from" : {
             "key_code" : "v",
             "modifiers" : {
