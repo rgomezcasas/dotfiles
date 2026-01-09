@@ -68,6 +68,8 @@
    :rules [[:!Cm :!CTSm]]}
   {:des   "[keyboard] supr ctrl+backspace"
    :rules [[:!Tdelete_or_backspace :delete_forward]]}
+  {:des   "[keyboard] ctrl+cmd+up -> ctrl+cmd+down"
+   :rules [[:!TCup_arrow :!TCdown_arrow]]}
   {:des   "[mouse] Show desktop"
    :rules [[:!SOd :!Cmission_control]]}
 

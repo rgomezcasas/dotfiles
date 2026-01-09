@@ -40,6 +40,7 @@
 		"jetbrains-toolbox"
 		"karabiner-elements"
 		"meld-studio"
+		"mqtt-explorer"
 		"notion"
 		"obs"
 		"orbstack"

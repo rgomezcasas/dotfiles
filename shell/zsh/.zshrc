@@ -46,6 +46,7 @@ source "$ZIM_HOME/init.zsh"
 
 # Defer syntax highlighting for faster startup
 zsh-defer source "$ZIM_HOME/modules/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+zsh-defer -c "ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=red'"
 
 # Compile ZIM init if needed
 if [[ ! -f "$ZIM_HOME/init.zsh.zwc" || "$ZIM_HOME/init.zsh" -nt "$ZIM_HOME/init.zsh.zwc" ]]; then
