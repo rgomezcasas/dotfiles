@@ -2,6 +2,9 @@
   "globalShortcut": "",
   "preferences": {
     "menuBarEnabled": false,
-    "quickEntryShortcut": "off"
+    "quickEntryShortcut": "off",
+    "localAgentModeTrustedFolders": [
+      "/Users/rafa.gomez/Desktop/tmp/test"
+    ]
   }
 }

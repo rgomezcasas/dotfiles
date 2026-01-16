@@ -142,7 +142,7 @@
 
   {:des   "[Claude] Shortcuts"
    :rules [:Claude
-           [:sidebar-primary-toggle :!Cslash]]} ; Toggle sidebar
+           [:sidebar-primary-toggle :!Cperiod]]} ; Toggle sidebar
 
   {:des   "[ChatGPT] Shortcuts"
    :rules [:ChatGPT

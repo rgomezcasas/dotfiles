@@ -69,6 +69,7 @@ _path_candidates=(
   "$HOME/.orbstack/bin"
   "$HOME/Library/pnpm"
   "$HOME/.claude/local"
+  "$HOME/.lmstudio/bin"
   "/opt/homebrew/opt/ruby/bin"
   "/opt/homebrew/bin"
   "/opt/homebrew/sbin"

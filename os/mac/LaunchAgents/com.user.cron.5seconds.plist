@@ -11,7 +11,7 @@
 			<string>cron</string>
 		</array>
 		<key>StartInterval</key>
-		<integer>5</integer>
+		<integer>15</integer>
 		<key>RunAtLoad</key>
 		<true/>
 		<key>KeepAlive</key>

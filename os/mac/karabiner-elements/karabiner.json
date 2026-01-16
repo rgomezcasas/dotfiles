@@ -758,7 +758,7 @@
             "key_code" : "1"
           },
           "to" : [ {
-            "key_code" : "slash",
+            "key_code" : "period",
             "modifiers" : [ "left_command" ]
           } ],
           "conditions" : [ {

@@ -34,9 +34,9 @@ brew cleanup
 brew cleanup --prune-prefix
 echo '🍺  Brew cache cleared'
 
-rm -rf "$HOME/Library/Application Support/Slack/Cache"
-rm -rf "$HOME/Library/Application Support/Slack/Service Worker/CacheStorage"
-echo '💬  Slack cache cleared'
+#rm -rf "$HOME/Library/Application Support/Slack/Cache"
+#rm -rf "$HOME/Library/Application Support/Slack/Service Worker/CacheStorage"
+#echo '💬  Slack cache cleared'
 
 rm -rf "$HOME/Library/Application Support/Cursor/CachedData/"
 echo '💬  Cursor cache cleared'
