@@ -21,7 +21,7 @@ desktop-notifications = true
 custom-shader = /Users/rafa.gomez/.dotfiles/modules/ghostty-cursor-shaders/cursor_warp.glsl
 
 # Theme
-background = #1d1d1d
+background = #000000
 foreground = #e8dbb6
 cursor-color = #e8dbb6
 cursor-style = block
@@ -35,9 +35,9 @@ palette = 6=#98be81
 palette = 7=#e8dbb6
 palette = 8=#8f8375
 palette = 9=#e49386
-background-opacity	= 0.9
-background-blur-radius	= 10
-unfocused-split-opacity = 0.5
+background-opacity	= 0.8
+background-blur-radius	= 20
+unfocused-split-opacity = 0.7
 unfocused-split-fill = #2d2d2d
 macos-icon = custom-style
 macos-icon-frame = aluminum

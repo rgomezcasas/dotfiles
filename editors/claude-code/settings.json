@@ -34,8 +34,6 @@
       "Bash(dot network:*)",
       "Bash(networksetup:*)",
       "Read(/Users/rafa.gomez/Library/LaunchAgents/**)",
-      "Read(/Users/rafa.gomez/Library/LaunchAgents/**)",
-      "Read(/Users/rafa.gomez/Library/LaunchAgents/**)",
       "Bash(launchctl unload:*)",
       "Bash(launchctl load:*)",
       "Bash(launchctl:*)",
@@ -262,10 +260,25 @@
       "Bash(git -C /Users/rafa.gomez/.dotfiles diff scripts/utils/open_common)",
       "Bash(git -C /Users/rafa.gomez/.dotfiles log --oneline -5)",
       "WebFetch(domain:prod-cdn.pathwright.com)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(whois:*)",
+      "Bash(ps:*)",
+      "Bash(docker system:*)",
+      "Bash(sysctl:*)",
+      "Bash(memory_pressure:*)",
+      "Bash(sort:*)",
+      "Bash(sqlite3:*)",
+      "Bash(defaults read:*)",
+      "Bash(plutil:*)",
+      "Bash(for pid in 8275 93029 69776 91538 86860)",
+      "Bash(do echo \"=== PID $pid ===\" lsof -p $pid)",
+      "Bash(log show:*)",
+      "Bash(osascript:*)",
+      "WebFetch(domain:tinyurl.com)",
+      "Bash(detox --help:*)"
     ],
     "deny": [],
-    "defaultMode": "plan"
+    "defaultMode": "default"
   },
   "statusLine": {
     "type": "command",
