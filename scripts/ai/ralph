@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTLY_PATH/scripts/core/_main.sh"
+
+##? Ralph Wiggum Technique - Iterative Claude agent execution
+##? Runs Claude in a loop until task completion or max iterations reached
+#?? 1.0.0
+##?
+##? Usage:
+##?   ralph <prompt> [--iterations=<n>]
+##?
+##? Options:
+##?   --iterations=<n>  Max iterations before stopping [default: 5]
+docs::parse "$@"
+
+FINISH_FILE=".ralph_finished"
+iteration=0
+
+rm -f "$FINISH_FILE"
+
+full_prompt="$prompt
+
+IMPORTANTE: Cuando hayas completado la tarea al 100%, crea el fichero .ralph_finished con el comando: touch .ralph_finished"
+
+while [ "$iteration" -lt "$iterations" ]; do
+  iteration=$((iteration + 1))
+  echo "=== Iteración $iteration de $iterations ==="
+
+  claude --permission-mode acceptEdits "$full_prompt"
+
+  if [ -f "$FINISH_FILE" ]; then
+    echo ""
+    echo "=== ✅ Ralph completado en iteración $iteration ==="
+    rm -f "$FINISH_FILE"
+    exit 0
+  fi
+
+  echo ""
+done
+
+echo "=== ⚠️ Ralph alcanzó el máximo de $iterations iteraciones sin completar ==="
+exit 1
