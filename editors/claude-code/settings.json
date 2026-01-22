@@ -285,5 +285,8 @@
     "command": "npx ccusage@latest statusline",
     "padding": 0
   },
-  "alwaysThinkingEnabled": true
+  "alwaysThinkingEnabled": true,
+  "enabledPlugins": {
+    "swift-lsp@claude-plugins-official": true
+  }
 }
