@@ -49,7 +49,7 @@ else
   export BAT_THEME='gruvbox-light'
 fi
 
-export EZA_COLORS="di=34:ln=36:ex=32:fi=0:uu=33:gu=33:sn=0:sb=0:da=36:hd=4:bu=4;33:ur=33:uw=31:ux=32:ue=32:gr=33:gw=31:gx=32:tr=33:tw=31:tx=32"
+export EZA_COLORS="di=34:ln=36:ex=32:fi=0:uu=33:gu=33:sn=0:sb=0:da=36:hd=4:bu=4;33:ur=33:uw=31:ux=32:ue=32:gr=33:gw=31:gx=32:tr=33:tw=31:tx=32:xx=90"
 
 # GPG_TTY set lazily on first gpg use (see functions.sh)
 
