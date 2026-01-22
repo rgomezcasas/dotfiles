@@ -1,7 +1,11 @@
 # ------------------------------------------------------------------------------
 # Codely theme config
 # ------------------------------------------------------------------------------
-export CODELY_THEME_MODE="dark"
+if [[ $(defaults read -g AppleInterfaceStyle 2>/dev/null) == "Dark" ]]; then
+  export CODELY_THEME_MODE="dark"
+else
+  export CODELY_THEME_MODE="light"
+fi
 export CODELY_THEME_PWD_MODE="short"    # full, short, home_relative
 export CODELY_THEME_STATUS_ICON_OK=""  #  󱁑        󰽰 󰯙
 export CODELY_THEME_STATUS_ICON_KO="☢"  # ﮊ
@@ -39,7 +43,11 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_PREFIX="/opt/homebrew";
 
-export BAT_THEME='gruvbox-dark'
+if [ "$CODELY_THEME_MODE" = "dark" ]; then
+  export BAT_THEME='gruvbox-dark'
+else
+  export BAT_THEME='gruvbox-light'
+fi
 
 export EZA_COLORS="di=34:ln=36:ex=32:fi=0:uu=33:gu=33:sn=0:sb=0:da=36:hd=4:bu=4;33"
 
