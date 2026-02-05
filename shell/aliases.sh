@@ -35,8 +35,19 @@ alias i.='(idea $PWD &>/dev/null &)'
 alias c.='(cursor $PWD &>/dev/null &)'
 alias o.='open .'
 
-alias cc="env -u BW_SESSION claude --append-system-prompt 'responde siempre en castellano'"
-alias ccyolo="env -u BW_SESSION claude --dangerously-skip-permissions --append-system-prompt 'responde siempre en castellano'"
+cc() {
+  local theme="light"
+  [[ "$(defaults read -g AppleInterfaceStyle 2>/dev/null)" == "Dark" ]] && theme="dark"
+  jq --arg t "$theme" '.theme = $t' ~/.claude.json >| ~/.claude.json.tmp && mv ~/.claude.json.tmp ~/.claude.json
+  env -u BW_SESSION claude --append-system-prompt 'responde siempre en castellano'
+}
+
+ccyolo() {
+  local theme="light"
+  [[ "$(defaults read -g AppleInterfaceStyle 2>/dev/null)" == "Dark" ]] && theme="dark"
+  jq --arg t "$theme" '.theme = $t' ~/.claude.json >| ~/.claude.json.tmp && mv ~/.claude.json.tmp ~/.claude.json
+  env -u BW_SESSION claude --dangerously-skip-permissions --append-system-prompt 'responde siempre en castellano'
+}
 alias ccupdate="brew update && brew upgrade claude-code"
 
 # Zsh performance
