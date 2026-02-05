@@ -60,7 +60,7 @@
 	masApps = {
 		"Final Cut Pro"= 424389933;
 		"GarageBand"= 682658836;
-		"Keynote"= 409183694;
+		"Keynote"= 361285480;
 	};
 	onActivation.cleanup = "zap";
 	onActivation.autoUpdate = true;

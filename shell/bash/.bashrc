@@ -36,3 +36,8 @@ done
 for bash_file in "$DOTLY_PATH"/shell/bash/completions/*; do
   source "$bash_file"
 done
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/rafa.gomez/.lmstudio/bin"
+# End of LM Studio CLI section
+

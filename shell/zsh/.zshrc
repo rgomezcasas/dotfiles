@@ -101,3 +101,8 @@ source "$DOTLY_PATH/shell/zsh/bindings/reverse_search.zsh"
 bindkey -s '^[[27;2;13~' '^[^M'
 
 # zprof
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/rafa.gomez/.lmstudio/bin"
+# End of LM Studio CLI section
+
