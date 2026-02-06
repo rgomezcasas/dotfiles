@@ -44,7 +44,6 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 # Start zim
 source "$ZIM_HOME/init.zsh"
 
-# Defer syntax highlighting for faster startup
 zsh-defer source "$ZIM_HOME/modules/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 zsh-defer -c "ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=red'"
 
@@ -89,7 +88,7 @@ zsh-defer -c '
   done
 '
 
-fpath=("$DOTLY_PATH/shell/zsh/completions" $fpath)
+fpath=("$DOTLY_PATH/shell/zsh/completions" "$HOMEBREW_PREFIX/share/zsh/site-functions" $fpath)
 setopt PROMPT_CR PROMPT_PERCENT PROMPT_SP PROMPT_SUBST
 source "$DOTLY_PATH/shell/zsh/themes/prompt_${DOTLY_THEME:-codely}_setup"
 

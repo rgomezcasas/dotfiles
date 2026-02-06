@@ -43,7 +43,8 @@ export FZF_DEFAULT_OPTS="--color=$fzf_colors --reverse"
 
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_ANALYTICS=1
-export HOMEBREW_PREFIX="/opt/homebrew";
+export HOMEBREW_PREFIX="/opt/homebrew"
+export HOMEBREW_CELLAR="$HOMEBREW_PREFIX/Cellar"
 
 if [ "$CODELY_THEME_MODE" = "dark" ]; then
   export BAT_THEME='gruvbox-dark'
