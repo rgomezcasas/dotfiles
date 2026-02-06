@@ -1,10 +1,12 @@
 # ------------------------------------------------------------------------------
 # Codely theme config
 # ------------------------------------------------------------------------------
-if [[ $(defaults read -g AppleInterfaceStyle 2>/dev/null) == "Dark" ]]; then
-  export CODELY_THEME_MODE="dark"
-else
-  export CODELY_THEME_MODE="light"
+if [[ -z "$CODELY_THEME_MODE" ]]; then
+  if [[ $(defaults read -g AppleInterfaceStyle 2>/dev/null) == "Dark" ]]; then
+    export CODELY_THEME_MODE="dark"
+  else
+    export CODELY_THEME_MODE="light"
+  fi
 fi
 export CODELY_THEME_PWD_MODE="short"    # full, short, home_relative
 export CODELY_THEME_STATUS_ICON_OK=""  #  󱁑        󰽰 󰯙

@@ -48,10 +48,7 @@ source "$ZIM_HOME/init.zsh"
 zsh-defer source "$ZIM_HOME/modules/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 zsh-defer -c "ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=red'"
 
-# Compile ZIM init if needed
-if [[ ! -f "$ZIM_HOME/init.zsh.zwc" || "$ZIM_HOME/init.zsh" -nt "$ZIM_HOME/init.zsh.zwc" ]]; then
-  zcompile "$ZIM_HOME/init.zsh"
-fi
+zsh-defer -c '[[ ! -f "$ZIM_HOME/init.zsh.zwc" || "$ZIM_HOME/init.zsh" -nt "$ZIM_HOME/init.zsh.zwc" ]] && zcompile "$ZIM_HOME/init.zsh"'
 
 # Lazy load fzf-tab on first TAB press (more efficient)
 _lazy_load_fzf_tab() {
@@ -80,29 +77,25 @@ ZSH_AUTOSUGGEST_USE_ASYNC=true
 ZSH_AUTOSUGGEST_MANUAL_REBIND=1
 ZSH_HIGHLIGHT_MAXLENGTH=100
 
-source "$DOTFILES_PATH/shell/init.sh"
+source "$DOTFILES_PATH/modules/private/shell/exports.sh"
+source "$DOTFILES_PATH/shell/exports.sh"
+zsh-defer source "$DOTFILES_PATH/shell/aliases.sh"
+zsh-defer source "$DOTFILES_PATH/shell/functions.sh"
 
-# Compile shell helper files if needed
-() {
+zsh-defer -c '
   local f
   for f in "$DOTFILES_PATH/shell"/{aliases,exports,functions}.sh; do
     [[ -f $f && $f -nt $f.zwc ]] && zcompile $f 2>/dev/null
   done
-}
+'
 
-fpath=("$DOTLY_PATH/shell/zsh/themes" "$DOTLY_PATH/shell/zsh/completions" $fpath)
+fpath=("$DOTLY_PATH/shell/zsh/completions" $fpath)
+setopt PROMPT_CR PROMPT_PERCENT PROMPT_SP PROMPT_SUBST
+source "$DOTLY_PATH/shell/zsh/themes/prompt_${DOTLY_THEME:-codely}_setup"
 
-autoload -Uz promptinit && promptinit
-prompt ${DOTLY_THEME:-codely}
-
-source "$DOTLY_PATH/shell/zsh/bindings/reverse_search.zsh"
+zsh-defer source "$DOTLY_PATH/shell/zsh/bindings/reverse_search.zsh"
 
 # Shift + Enter = newline
 bindkey -s '^[[27;2;13~' '^[^M'
 
 # zprof
-
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:/Users/rafa.gomez/.lmstudio/bin"
-# End of LM Studio CLI section
-
