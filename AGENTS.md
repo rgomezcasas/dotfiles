@@ -6,4 +6,4 @@ After any change, run `goku` to validate the configuration compiles correctly.
 
 ## Git
 
-Cuando hagas commit hazlo de todos los ficheros menos de los submódulos.
+When committing, include all files except submodules.
