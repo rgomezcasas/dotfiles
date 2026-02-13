@@ -41,7 +41,7 @@ bar_width=10
 filled=$(( context_pct * bar_width / 100 ))
 pct_str="${context_pct}%"
 pct_len=${#pct_str}
-pct_start=$(( (bar_width - pct_len) / 2 ))
+pct_start=$(( (bar_width - pct_len + 1) / 2 ))
 bar=""
 for ((i=0; i<bar_width; i++)); do
   if (( i >= pct_start && i < pct_start + pct_len )); then
@@ -113,7 +113,7 @@ if [[ -n "$git_branch" ]]; then
   line+=" ${GRAY}@${RESET} ${WHITE}${git_branch}${RESET}"
 fi
 
-line+="${SEP}${bar} ${WHITE}${context_used_str}/${context_size_str}${RESET}"
+line+="${SEP}${bar} ${WHITE}${context_used_str}${RESET}"
 line+="${SEP}${GREEN}${session_cost_str}${RESET}${MSEP}${WHITE}${daily_cost_str} today${RESET}${MSEP}${WHITE}${cost_per_hour_str}${RESET}"
 line+="${SEP}${GREEN}\uf017  ${WHITE}${duration_str}${RESET}"
 
