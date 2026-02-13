@@ -122,6 +122,6 @@ line+="${SEP}${GREEN}${session_cost_str}${RESET}${MSEP}${WHITE}${daily_cost_str}
 if [[ -n "$cost_per_hour_str" ]]; then
   line+="${MSEP}${WHITE}${cost_per_hour_str}${RESET}"
 fi
-line+="${SEP}${GREEN}\uf017  ${WHITE}${duration_str}${RESET}"
+line+="${SEP}${GRAY}\uf017  ${WHITE}${duration_str}${RESET}"
 
 printf "%b" "$line"
