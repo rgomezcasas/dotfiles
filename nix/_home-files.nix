@@ -7,12 +7,13 @@ in
 	".bash_profile".source = symlink "${dotfilesPath}/shell/bash/.bash_profile";
 	".bashrc".source = symlink "${dotfilesPath}/shell/bash/.bashrc";
 	".claude.json".source = symlink "${dotfilesPath}/modules/private/claude/.claude.json";
-	".claude/CLAUDE.md".source = symlink "${dotfilesPath}/editors/GLOBAL_AGENTS.md";
+	".claude/CLAUDE.md".source = symlink "${dotfilesPath}/ai/GLOBAL_AGENTS.md";
 	".claude/claude-powerline.json".source = symlink "${dotfilesPath}/editors/claude-code/claude-powerline.json";
-	".claude/commands".source = symlink "${dotfilesPath}/editors/claude-code/commands";
+	".claude/commands".source = symlink "${dotfilesPath}/ai/global_commands";
 	".claude/settings.json".source = symlink "${dotfilesPath}/editors/claude-code/settings.json";
+	".claude/skills".source = symlink "${dotfilesPath}/ai/global_skills";
 	".claude/statusline-command.sh".source = symlink "${dotfilesPath}/editors/claude-code/statusline-command.sh";
-	".codex/AGENTS.md".source = symlink "${dotfilesPath}/editors/GLOBAL_AGENTS.md";
+	".codex/AGENTS.md".source = symlink "${dotfilesPath}/ai/GLOBAL_AGENTS.md";
 	".config/alacritty/alacritty.toml".source = symlink "${dotfilesPath}/os/mac/alacritty/alacritty.toml";
 	".config/clojure-lsp".source = symlink "${dotfilesPath}/langs/clojure/clojure-lsp";
 	".config/clojure/profiles.clj".source = symlink "${dotfilesPath}/langs/clojure/profiles.clj";
