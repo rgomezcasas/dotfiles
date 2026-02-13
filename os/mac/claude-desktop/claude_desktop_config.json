@@ -5,6 +5,8 @@
     "quickEntryShortcut": "off",
     "localAgentModeTrustedFolders": [
       "/Users/rafa.gomez/Desktop/tmp/test"
-    ]
+    ],
+    "sidebarMode": "chat",
+    "coworkScheduledTasksEnabled": false
   }
 }

@@ -282,12 +282,13 @@
   },
   "statusLine": {
     "type": "command",
-    "command": "npx ccusage@latest statusline",
+    "command": "bash /Users/rafa.gomez/.claude/statusline-command.sh",
     "padding": 0
   },
   "enabledPlugins": {
     "swift-lsp@claude-plugins-official": true
   },
   "syntaxHighlightingDisabled": false,
-  "alwaysThinkingEnabled": true
+  "alwaysThinkingEnabled": true,
+  "skipDangerousModePermissionPrompt": true
 }

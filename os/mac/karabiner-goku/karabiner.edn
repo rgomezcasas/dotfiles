@@ -7,6 +7,7 @@
    :sim     8100}}
  :applications
  {:Arc            ["company.thebrowser.Browser"]
+  :Atlas          ["com.openai.atlas"]
   :Bitwarden      ["com.bitwarden.desktop"]
   :ChatGPT        ["com.openai.chat"]
   :Chrome         ["com.google.Chrome", "com.google.Chrome.beta"]
@@ -147,6 +148,10 @@
   {:des   "[ChatGPT] Shortcuts"
    :rules [:ChatGPT
            [:sidebar-primary-toggle :!CTs]]} ; Toggle sidebar
+
+  {:des   "[Atlas] Shortcuts"
+   :rules [:Atlas
+           [:sidebar-primary-toggle :!COt]]} ; Toggle sidebar
 
   {:des   "[VSCode] Shortcuts"
    :rules [:VSCode

@@ -7,7 +7,6 @@
 		"bitwarden-cli"
 		"choose-gui"
 		"cliclick"
-		"codex"
 		"coreutils"
 		"gemini-cli"
 		"ollama"
@@ -23,6 +22,7 @@
 		"claude"
 		"claude-code"
 		"cloudflare-warp"
+		"codex"
 		"contexts"
 		"cursor"
 		"displaylink"
@@ -53,8 +53,10 @@
 		"stremio"
 		"superwhisper"
 		"telegram"
+		"unifi-identity-endpoint"
 		"visual-studio-code"
 		"vlc"
+		"wifiman"
 		"zed"
 	];
 	masApps = {
