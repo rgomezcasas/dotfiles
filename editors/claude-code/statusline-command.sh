@@ -93,11 +93,11 @@ else
 fi
 daily_cost_str=$(printf '$%.2f' "$daily_cost")
 
-if (( duration_ms > 60000 )); then
+if (( duration_ms > 30000 )); then
   cost_per_hour=$(echo "scale=2; $session_cost * 3600000 / $duration_ms" | bc 2>/dev/null || echo "0")
   cost_per_hour_str=$(printf '$%.2f/h' "$cost_per_hour")
 else
-  cost_per_hour_str="-"
+  cost_per_hour_str=""
 fi
 
 GREEN='\033[32m'
@@ -107,14 +107,21 @@ RESET='\033[0m'
 SEP=" ${GRAY}⎮${RESET} "
 MSEP=" ${GRAY}∘${RESET} "
 
+branding="${WHITE}<${GREEN}${RESET}${WHITE}>${RESET}"
 line="${GREEN}${model_name}${RESET}"
 
 if [[ -n "$git_branch" ]]; then
   line+=" ${GRAY}@${RESET} ${WHITE}${git_branch}${RESET}"
 fi
 
-line+="${SEP}${bar} ${WHITE}${context_used_str}${RESET}"
-line+="${SEP}${GREEN}${session_cost_str}${RESET}${MSEP}${WHITE}${daily_cost_str} today${RESET}${MSEP}${WHITE}${cost_per_hour_str}${RESET}"
+line+="${SEP}${bar}"
+if (( context_used > 0 )); then
+  line+=" ${WHITE}${context_used_str}${RESET}"
+fi
+line+="${SEP}${GREEN}${session_cost_str}${RESET}${MSEP}${WHITE}${daily_cost_str} today${RESET}"
+if [[ -n "$cost_per_hour_str" ]]; then
+  line+="${MSEP}${WHITE}${cost_per_hour_str}${RESET}"
+fi
 line+="${SEP}${GREEN}\uf017  ${WHITE}${duration_str}${RESET}"
 
 printf "%b" "$line"
