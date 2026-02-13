@@ -2,12 +2,13 @@
 
 input=$(cat)
 
-model=$(echo "$input" | jq -r '.model // "unknown"')
+model=$(echo "$input" | jq -r 'if .model | type == "object" then .model.id else .model end // "unknown"')
 cwd=$(echo "$input" | jq -r '.workspace.current_dir // "."')
-context_used=$(echo "$input" | jq -r '.context_window.used // 0')
-context_total=$(echo "$input" | jq -r '.context_window.total // 1')
-session_cost=$(echo "$input" | jq -r '.total_cost_usd // 0')
-duration_ms=$(echo "$input" | jq -r '.duration_ms // 0')
+context_pct=$(echo "$input" | jq -r '.context_window.used_percentage // 0')
+context_size=$(echo "$input" | jq -r '.context_window.context_window_size // 200000')
+context_used=$(( context_pct * context_size / 100 ))
+session_cost=$(echo "$input" | jq -r '.cost.total_cost_usd // 0')
+duration_ms=$(echo "$input" | jq -r '.cost.total_duration_ms // 0')
 
 case "$model" in
   *opus*4-6*|*opus*4.6*) model_name="Opus 4.6" ;;
@@ -25,11 +26,16 @@ if git -C "$cwd" rev-parse --is-inside-work-tree &>/dev/null; then
   git_branch=$(git -C "$cwd" rev-parse --abbrev-ref HEAD 2>/dev/null)
 fi
 
-if (( context_total > 0 )); then
-  context_pct=$(( context_used * 100 / context_total ))
-else
-  context_pct=0
-fi
+format_tokens() {
+  local n=$1
+  if (( n >= 1000 )); then
+    printf '%dk' $(( n / 1000 ))
+  else
+    printf '%d' "$n"
+  fi
+}
+context_used_str=$(format_tokens "$context_used")
+context_size_str=$(format_tokens "$context_size")
 
 bar_width=10
 filled=$(( context_pct * bar_width / 100 ))
@@ -85,7 +91,7 @@ if [[ -n "$git_branch" ]]; then
   line+=" ${GRAY}@${RESET} ${WHITE}${git_branch}${RESET}"
 fi
 
-line+="  ${GRAY}|${RESET}  ${GREEN}${bar}${RESET} ${WHITE}${context_pct}% (${context_used})${RESET}"
+line+="  ${GRAY}|${RESET}  ${GREEN}${bar}${RESET} ${WHITE}${context_pct}% (${context_used_str}/${context_size_str})${RESET}"
 line+="  ${GRAY}|${RESET}  ${GREEN}${session_cost_str}${RESET} ${GRAY}·${RESET} ${WHITE}${daily_cost_str} today${RESET} ${GRAY}·${RESET} ${WHITE}${cost_per_hour_str}${RESET}"
 line+="  ${GRAY}|${RESET}  🕐 ${WHITE}${duration_str}${RESET}"
 
