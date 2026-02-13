@@ -39,10 +39,27 @@ context_size_str=$(format_tokens "$context_size")
 
 bar_width=10
 filled=$(( context_pct * bar_width / 100 ))
-empty=$(( bar_width - filled ))
+pct_str="${context_pct}%"
+pct_len=${#pct_str}
+pct_start=$(( (bar_width - pct_len) / 2 ))
 bar=""
-for ((i=0; i<filled; i++)); do bar+="█"; done
-for ((i=0; i<empty; i++)); do bar+="░"; done
+for ((i=0; i<bar_width; i++)); do
+  if (( i >= pct_start && i < pct_start + pct_len )); then
+    char="${pct_str:$(( i - pct_start )):1}"
+    if (( i < filled )); then
+      bar+="\033[30;42m${char}"
+    else
+      bar+="\033[37;48;2;75;80;40m${char}"
+    fi
+  else
+    if (( i < filled )); then
+      bar+="\033[32m█"
+    else
+      bar+="\033[38;2;75;80;40m█"
+    fi
+  fi
+done
+bar+="\033[0m"
 
 total_secs=$(( duration_ms / 1000 ))
 hours=$(( total_secs / 3600 ))
@@ -96,7 +113,7 @@ if [[ -n "$git_branch" ]]; then
   line+=" ${GRAY}@${RESET} ${WHITE}${git_branch}${RESET}"
 fi
 
-line+="${SEP}${GREEN}${bar}${RESET} ${WHITE}${context_pct}% (${context_used_str}/${context_size_str})${RESET}"
+line+="${SEP}${bar} ${WHITE}${context_used_str}/${context_size_str}${RESET}"
 line+="${SEP}${GREEN}${session_cost_str}${RESET}${MSEP}${WHITE}${daily_cost_str} today${RESET}${MSEP}${WHITE}${cost_per_hour_str}${RESET}"
 line+="${SEP}${GREEN}\uf017  ${WHITE}${duration_str}${RESET}"
 
