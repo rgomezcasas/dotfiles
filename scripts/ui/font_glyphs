@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTLY_PATH/scripts/core/_main.sh"
+
+##? Print available glyphs for the current terminal font
+#?? 1.0.0
+##?
+##? Usage:
+##?   font_glyphs
+docs::parse "$@"
+
+print_range() {
+  local label=$1 start=$2 end=$3
+  printf '\n\033[32m── %s ──\033[0m\n' "$label"
+  for ((i=start; i<=end; i++)); do
+    printf ' \033[90m%04X\033[0m %b' "$i" "$(printf '\\U%08X' "$i")"
+    (( (i - start + 1) % 8 == 0 )) && echo
+  done
+  echo
+}
+
+print_range "General Punctuation" 0x2000 0x206F
+print_range "Superscripts & Subscripts" 0x2070 0x209F
+print_range "Currency Symbols" 0x20A0 0x20CF
+print_range "Letterlike Symbols" 0x2100 0x214F
+print_range "Number Forms" 0x2150 0x218F
+print_range "Arrows" 0x2190 0x21FF
+print_range "Mathematical Operators" 0x2200 0x22FF
+print_range "Misc Technical" 0x2300 0x23FF
+print_range "Enclosed Alphanumerics" 0x2460 0x24FF
+print_range "Box Drawing" 0x2500 0x257F
+print_range "Block Elements" 0x2580 0x259F
+print_range "Geometric Shapes" 0x25A0 0x25FF
+print_range "Misc Symbols" 0x2600 0x26FF
+print_range "Dingbats" 0x2700 0x27BF
+print_range "Braille Patterns" 0x2800 0x28FF
+print_range "Misc Symbols & Arrows" 0x2B00 0x2BFF
+print_range "Powerline" 0xE0A0 0xE0D4
+print_range "Powerline Extra" 0xE0B0 0xE0C8
+print_range "Weather Icons" 0xE300 0xE3E3
+print_range "Devicons / Nerd Font" 0xE700 0xE7C5
+print_range "Font Awesome" 0xF000 0xF2E0
+print_range "Octicons" 0xF400 0xF533
+print_range "Legacy Computing (Sextants)" 0x1FB00 0x1FBFF
