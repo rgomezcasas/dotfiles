@@ -93,6 +93,6 @@ fi
 
 line+="  ${GRAY}|${RESET}  ${GREEN}${bar}${RESET} ${WHITE}${context_pct}% (${context_used_str}/${context_size_str})${RESET}"
 line+="  ${GRAY}|${RESET}  ${GREEN}${session_cost_str}${RESET} ${GRAY}·${RESET} ${WHITE}${daily_cost_str} today${RESET} ${GRAY}·${RESET} ${WHITE}${cost_per_hour_str}${RESET}"
-line+="  ${GRAY}|${RESET}  🕐 ${WHITE}${duration_str}${RESET}"
+line+="  ${GRAY}|${RESET}  ${GREEN}\uf252 ${WHITE}${duration_str}${RESET}"
 
 printf "%b" "$line"
