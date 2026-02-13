@@ -33,6 +33,7 @@
   :ZenBrowser     ["app.zen-browser.zen"]}
  :froms
  {:clipboard-history        {:modi [:left_command :left_shift] :key :v}
+  :change-current-page      {:modi :left_command :key :l}
   :copy-current-url         {:modi [:left_command :left_shift] :key :c}
   :create-folder            {:modi [:left_control :left_option :left_command] :key :p}
   :line-delete              {:modi :left_command :key :delete_or_backspace}
@@ -207,6 +208,7 @@
            [:copy-current-url :!Cl]               ; Copy current url
            [:selection-extend :!Sup_arrow]        ; Extend selection
            [:selection-shrink :!Sdown_arrow]      ; Shrink selection
+           [:change-current-page :!Cp]            ; Cmd+L -> Cmd+P (search)
            [:!Co :!Creturn_or_enter]]}            ; Open current page
 
   {:des   "[Raycast] Shortcuts"

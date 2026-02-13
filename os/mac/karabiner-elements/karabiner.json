@@ -1233,6 +1233,22 @@
           "type" : "basic"
         }, {
           "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_command" ]
+            },
+            "key_code" : "l"
+          },
+          "to" : [ {
+            "key_code" : "p",
+            "modifiers" : [ "left_command" ]
+          } ],
+          "conditions" : [ {
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "notion.id" ]
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
             "key_code" : "o",
             "modifiers" : {
               "mandatory" : [ "left_command" ]
