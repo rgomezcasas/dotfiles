@@ -45,9 +45,12 @@ for ((i=0; i<filled; i++)); do bar+="█"; done
 for ((i=0; i<empty; i++)); do bar+="░"; done
 
 total_secs=$(( duration_ms / 1000 ))
-minutes=$(( total_secs / 60 ))
+hours=$(( total_secs / 3600 ))
+minutes=$(( (total_secs % 3600) / 60 ))
 seconds=$(( total_secs % 60 ))
-if (( minutes > 0 )); then
+if (( hours > 0 )); then
+  duration_str="${hours}h ${minutes}m"
+elif (( minutes > 0 )); then
   duration_str="${minutes}m ${seconds}s"
 else
   duration_str="${seconds}s"
@@ -84,6 +87,8 @@ GREEN='\033[32m'
 WHITE='\033[37m'
 GRAY='\033[90m'
 RESET='\033[0m'
+SEP=" ${GRAY}⎮${RESET} "
+MSEP=" ${GRAY}∘${RESET} "
 
 line="${GREEN}${model_name}${RESET}"
 
@@ -91,8 +96,8 @@ if [[ -n "$git_branch" ]]; then
   line+=" ${GRAY}@${RESET} ${WHITE}${git_branch}${RESET}"
 fi
 
-line+="  ${GRAY}|${RESET}  ${GREEN}${bar}${RESET} ${WHITE}${context_pct}% (${context_used_str}/${context_size_str})${RESET}"
-line+="  ${GRAY}|${RESET}  ${GREEN}${session_cost_str}${RESET} ${GRAY}·${RESET} ${WHITE}${daily_cost_str} today${RESET} ${GRAY}·${RESET} ${WHITE}${cost_per_hour_str}${RESET}"
-line+="  ${GRAY}|${RESET}  ${GREEN}\uf252 ${WHITE}${duration_str}${RESET}"
+line+="${SEP}${GREEN}${bar}${RESET} ${WHITE}${context_pct}% (${context_used_str}/${context_size_str})${RESET}"
+line+="${SEP}${GREEN}${session_cost_str}${RESET}${MSEP}${WHITE}${daily_cost_str} today${RESET}${MSEP}${WHITE}${cost_per_hour_str}${RESET}"
+line+="${SEP}${GREEN}\uf017  ${WHITE}${duration_str}${RESET}"
 
 printf "%b" "$line"
