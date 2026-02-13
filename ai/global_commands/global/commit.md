@@ -3,6 +3,7 @@ name: commit
 description: Create a git commit following Conventional Commits specification
 allowed-tools: Bash(git add:*), Bash(git status:*), Bash(git commit:*), Bash(git diff:*)
 disable-model-invocation: true
+model: haiku
 ---
 
 ## Context
