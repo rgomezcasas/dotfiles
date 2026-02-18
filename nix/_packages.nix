@@ -33,7 +33,6 @@ with pkgs; [
 	shellcheck
 	shfmt
 	sl
-	tmux
 	terminal-notifier
 	tree
 	unrar

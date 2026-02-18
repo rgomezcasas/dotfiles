@@ -3,7 +3,6 @@
 -XX:ReservedCodeCacheSize=240m
 -XX:+UseCompressedOops
 -Dfile.encoding=UTF-8
--XX:+UseConcMarkSweepGC
 -XX:SoftRefLRUPolicyMSPerMB=50
 -ea
 -Dsun.io.useCanonCaches=false
@@ -12,8 +11,6 @@
 -XX:+HeapDumpOnOutOfMemoryError
 -XX:-OmitStackTraceInFastThrow
 -XX:MaxJavaStackTraceDepth=10000
--Xverify:none
-
 -XX:ErrorFile=$USER_HOME/java_error_in_idea_%p.log
 -XX:HeapDumpPath=$USER_HOME/java_error_in_idea.hprof
 -Dide.no.platform.update=true

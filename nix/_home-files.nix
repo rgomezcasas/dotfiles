@@ -32,7 +32,6 @@ in
 	".npmrc".source = symlink "${dotfilesPath}/modules/private/js/.npmrc";
 	".profile".source = symlink "${dotfilesPath}/shell/bash/.profile";
 	".skhdrc".source = symlink "${dotfilesPath}/os/mac/skhd/.skhdrc";
-	".tmux.conf".source = symlink "${dotfilesPath}/os/mac/.tmux.conf";
 	".vimrc".source = symlink "${dotfilesPath}/editors/vim/.vimrc";
 	".zimrc".source = symlink "${dotfilesPath}/shell/zsh/.zimrc";
 	".zlogin".source = symlink "${dotfilesPath}/shell/zsh/.zlogin";
