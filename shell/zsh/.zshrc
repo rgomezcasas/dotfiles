@@ -41,6 +41,8 @@ REPORTTIME=5
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 
+fpath=("$DOTLY_PATH/shell/zsh/completions" "$HOMEBREW_PREFIX/share/zsh/site-functions" $fpath)
+
 # Start zim
 source "$ZIM_HOME/init.zsh"
 
@@ -88,7 +90,6 @@ zsh-defer -c '
   done
 '
 
-fpath=("$DOTLY_PATH/shell/zsh/completions" "$HOMEBREW_PREFIX/share/zsh/site-functions" $fpath)
 setopt PROMPT_CR PROMPT_PERCENT PROMPT_SP PROMPT_SUBST
 source "$DOTLY_PATH/shell/zsh/themes/prompt_${DOTLY_THEME:-codely}_setup"
 

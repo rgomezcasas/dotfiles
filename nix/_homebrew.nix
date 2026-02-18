@@ -63,6 +63,7 @@
 		"Final Cut Pro"= 424389933;
 		"GarageBand"= 682658836;
 		"Keynote"= 361285480;
+		"Numbers"= 361304891;
 	};
 	onActivation.cleanup = "zap";
 	onActivation.autoUpdate = true;

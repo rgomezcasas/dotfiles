@@ -93,12 +93,6 @@ else
 fi
 daily_cost_str=$(printf '$%.2f' "$daily_cost")
 
-if (( duration_ms > 30000 )); then
-  cost_per_hour=$(echo "scale=2; $session_cost * 3600000 / $duration_ms" | bc 2>/dev/null || echo "0")
-  cost_per_hour_str=$(printf '$%.2f/h' "$cost_per_hour")
-else
-  cost_per_hour_str=""
-fi
 
 GREEN='\033[32m'
 WHITE='\033[37m'
@@ -119,9 +113,6 @@ if (( context_used > 0 )); then
   line+=" ${WHITE}${context_used_str}${RESET}"
 fi
 line+="${SEP}${GREEN}${session_cost_str}${RESET}${MSEP}${WHITE}${daily_cost_str} today${RESET}"
-if [[ -n "$cost_per_hour_str" ]]; then
-  line+="${MSEP}${WHITE}${cost_per_hour_str}${RESET}"
-fi
 line+="${SEP}${GRAY}\uf017  ${WHITE}${duration_str}${RESET}"
 
 printf "%b" "$line"
