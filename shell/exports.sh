@@ -25,7 +25,7 @@ fi
 # ------------------------------------------------------------------------------
 # Languages
 # ------------------------------------------------------------------------------
-export JAVA_HOME='/Users/rafa.gomez/Library/Java/JavaVirtualMachines/openjdk-21.0.2/Contents/Home'
+export JAVA_HOME="$(/usr/libexec/java_home 2>/dev/null)"
 export GEM_HOME="$HOME/.gem"
 export GOPATH="$HOME/.go"
 export PYTORCH_ENABLE_MPS_FALLBACK=1
@@ -72,7 +72,7 @@ _path_candidates=(
   "$DOTLY_PATH/bin"
   "$DOTFILES_PATH/bin"
   "$HOME/.nix-profile/bin"
-  "/etc/profiles/per-user/rafa.gomez/bin"
+  "/etc/profiles/per-user/$USER/bin"
   "/run/current-system/sw/bin"
   "/nix/var/nix/profiles/default/bin"
   "/Applications/Ghostty.app/Contents/MacOS"
@@ -83,10 +83,9 @@ _path_candidates=(
   "$HOME/.orbstack/bin"
   "$HOME/Library/pnpm"
   "$HOME/.claude/local"
-  "$HOME/.lmstudio/bin"
-  "/opt/homebrew/opt/ruby/bin"
-  "/opt/homebrew/bin"
-  "/opt/homebrew/sbin"
+  "$HOMEBREW_PREFIX/opt/ruby/bin"
+  "$HOMEBREW_PREFIX/bin"
+  "$HOMEBREW_PREFIX/sbin"
   "$HOME/.cache/npm/global/bin"
   "$HOME/.local/bin"
   "/usr/local/bin"

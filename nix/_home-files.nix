@@ -1,6 +1,6 @@
-{ config, ... }:
+{ config, username, ... }:
 let
-	dotfilesPath = "/Users/rafa.gomez/.dotfiles";
+	dotfilesPath = "/Users/${username}/.dotfiles";
 	symlink = config.lib.file.mkOutOfStoreSymlink;
 in
 {
@@ -31,7 +31,6 @@ in
 	".gnupg/gpg-agent.conf".source = symlink "${dotfilesPath}/modules/private/gnupg/gpg-agent.conf";
 	".npmrc".source = symlink "${dotfilesPath}/modules/private/js/.npmrc";
 	".profile".source = symlink "${dotfilesPath}/shell/bash/.profile";
-	".sbt/1.0/plugins/plugins.sbt".source = symlink "${dotfilesPath}/langs/scala/plugins.sbt";
 	".skhdrc".source = symlink "${dotfilesPath}/os/mac/skhd/.skhdrc";
 	".tmux.conf".source = symlink "${dotfilesPath}/os/mac/.tmux.conf";
 	".vimrc".source = symlink "${dotfilesPath}/editors/vim/.vimrc";

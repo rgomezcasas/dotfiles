@@ -7,7 +7,7 @@
 
 	home.packages = [];
 
-	home.file = import ./_home-files.nix { inherit config; };
+	home.file = import ./_home-files.nix { inherit config username; };
 
 	home.sessionVariables = {};
 

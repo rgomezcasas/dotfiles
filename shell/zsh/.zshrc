@@ -58,7 +58,7 @@ _lazy_load_fzf_tab() {
 
   # Configure fzf-tab after loading
   if [[ -z $TMUX ]]; then
-    zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath' 2>/dev/null || true
+    zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath' 2>/dev/null || true
   else
     zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
   fi

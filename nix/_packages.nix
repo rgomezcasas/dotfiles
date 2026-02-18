@@ -29,7 +29,6 @@ with pkgs; [
 	python313
 	python3Packages.pip
 	ripgrep
-	rustc
 	shellcheck
 	shfmt
 	sl

@@ -26,7 +26,7 @@ alias gpl="git pull --rebase --autostash"
 alias gl="dot git pretty-log"
 
 # Nix
-alias rebuild="sudo darwin-rebuild switch --flake /Users/rafa.gomez/.dotfiles/nix#pro --impure"
+alias rebuild="sudo darwin-rebuild switch --flake $DOTFILES_PATH/nix#pro --impure"
 
 alias copy='pbcopy'
 alias dc='dot docker connect'
@@ -36,17 +36,19 @@ alias i.='(idea $PWD &>/dev/null &)'
 alias c.='(cursor $PWD &>/dev/null &)'
 alias o.='open .'
 
-cc() {
+_cc_set_theme() {
   local theme="light"
   [[ "$(defaults read -g AppleInterfaceStyle 2>/dev/null)" == "Dark" ]] && theme="dark"
   jq --arg t "$theme" '.theme = $t' ~/.claude.json >| ~/.claude.json.tmp && mv ~/.claude.json.tmp ~/.claude.json
+}
+
+cc() {
+  _cc_set_theme
   env -u BW_SESSION claude --append-system-prompt 'responde siempre en castellano'
 }
 
 ccyolo() {
-  local theme="light"
-  [[ "$(defaults read -g AppleInterfaceStyle 2>/dev/null)" == "Dark" ]] && theme="dark"
-  jq --arg t "$theme" '.theme = $t' ~/.claude.json >| ~/.claude.json.tmp && mv ~/.claude.json.tmp ~/.claude.json
+  _cc_set_theme
   env -u BW_SESSION claude --dangerously-skip-permissions --append-system-prompt 'responde siempre en castellano'
 }
 alias ccupdate="brew update && brew upgrade claude-code"

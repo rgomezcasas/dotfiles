@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     name: 💿 Static analysis
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Install dependencies
         run: git submodule update --init --recursive
@@ -28,7 +28,7 @@ jobs:
     runs-on: ubuntu-latest
     name: 💅 Lint
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Install dependencies
         run: git submodule update --init --recursive
@@ -40,7 +40,7 @@ jobs:
           echo "PATH=$PATH:$HOME/go/bin" >> $GITHUB_ENV
 
       - name: 📥 Install shfmt
-        run: go get mvdan.cc/sh/v3/cmd/shfmt
+        run: go install mvdan.cc/sh/v3/cmd/shfmt@latest
 
       - name: 💅 Lint bash files
         run: bash "$DOTLY_PATH/scripts/self/lint"

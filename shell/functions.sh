@@ -1,9 +1,8 @@
 function j() {
-  fname=$(declare -f -F _z)
-
-  [ -n "$fname" ] || source "$DOTLY_PATH/modules/z/z.sh"
-
-  _z "$1"
+  if ! typeset -f _zlua > /dev/null 2>&1; then
+    eval "$(z.lua --init zsh enhanced once)"
+  fi
+  _zlua "$1"
 }
 
 gpg() {
@@ -12,9 +11,9 @@ gpg() {
 }
 
 function up() {
-	nix flake update --flake /Users/rafa.gomez/.dotfiles/nix
+	nix flake update --flake "$DOTFILES_PATH/nix"
 	nvd diff $(ls -dt /nix/var/nix/profiles/system-*-link | head -n2)
-	sudo darwin-rebuild switch --flake /Users/rafa.gomez/.dotfiles/nix#pro --impure
+	sudo darwin-rebuild switch --flake "$DOTFILES_PATH/nix#pro" --impure
 	zimfw upgrade
 }
 

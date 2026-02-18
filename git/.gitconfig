@@ -17,8 +17,8 @@
 	ui = true
 
 [core]
-	excludesfile = /Users/rafa.gomez/.gitignore_global
-	attributesfile = /Users/rafa.gomez/.gitattributes
+	excludesfile = ~/.gitignore_global
+	attributesfile = ~/.gitattributes
 	editor = vim
 	autocrlf = input
 	trustctime = false
@@ -40,7 +40,6 @@
 
 [diff]
 	tool = vimdiff
-	compactionHeuristic = true
 	indentHeuristic = true
 
 [difftool]
@@ -63,12 +62,6 @@
 	new = green bold
 	whitespace = red reverse
 
-[color "diff-highlight"]
-	oldNormal = red bold
-	oldHighlight = "red bold 52"
-	newNormal = "green bold"
-	newHighlight = "green bold 22"
-
 [color "branch"]
 	current = yellow reverse
 	local = yellow
@@ -90,7 +83,7 @@
 	gpgsign = true
 
 [gpg]
-	program = /Users/rafa.gomez/bin/gpg
+	program = gpg
 
 [pull]
 	rebase = true

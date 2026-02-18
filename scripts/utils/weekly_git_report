@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 AUTHOR="Rafa Gómez"
-CODE_DIR="/Users/rafa.gomez/Code/codely"
+CODE_DIR="$HOME/Code/codely"
 SINCE=$(gdate -d 'last monday' +%Y-%m-%d)
 UNTIL="$(gdate +%Y-%m-%d) 23:59:59"
 

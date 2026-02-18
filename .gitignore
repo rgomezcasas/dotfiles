@@ -11,6 +11,7 @@ os/mac/alfred/remote
 # Compiled zsh
 shell/**/**/**.zwc
 shell/**/**/**.zwc.old
+*.zsh.old
 shell/zsh/.zim
 
 # Private Stuff
