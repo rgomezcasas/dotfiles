@@ -23,8 +23,17 @@ completer.histw
 # Scala
 libsigar-universal64-macosx.dylib
 
+# Backups
+*.bak
+*.backup
+*.old
+*.orig
+
+# Python
+__pycache__
+*.pyc
+
 # Custom
 *.no-commit.*
 *.local.*
-__pycache__
 tsconfig.tsbuildinfo
