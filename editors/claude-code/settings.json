@@ -137,11 +137,20 @@
     "swift-lsp@claude-plugins-official": false,
     "frontend-design@claude-plugins-official": false
   },
-  "syntaxHighlightingDisabled": false,
-  "alwaysThinkingEnabled": true,
-  "skipDangerousModePermissionPrompt": true,
   "spinnerVerbs": {
     "mode": "replace",
-    "verbs": ["Codelyting", "Codelyteando", "Javiersitoeandooo", "Rubényveteando", "Rafiteandooo", "🐢💨 Turbotugueando", "{▸} CodelyTVing", "Niño, niño, niño"]
-  }
+    "verbs": [
+      "Codelyting",
+      "Codelyteando",
+      "Javiersitoeandooo",
+      "Rubényveteando",
+      "Rafiteandooo",
+      "🐢💨 Turbotugueando",
+      "{▸} CodelyTVing",
+      "Niño, niño, niño"
+    ]
+  },
+  "syntaxHighlightingDisabled": false,
+  "alwaysThinkingEnabled": true,
+  "skipDangerousModePermissionPrompt": true
 }
