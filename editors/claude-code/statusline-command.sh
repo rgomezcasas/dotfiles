@@ -91,6 +91,9 @@ if (( cache_stale )); then
 else
   daily_cost=$(cat "$cache_file")
 fi
+if (( $(echo "$session_cost > $daily_cost" | bc -l) )); then
+  daily_cost=$session_cost
+fi
 daily_cost_str=$(printf '$%.2f' "$daily_cost")
 
 

@@ -26,7 +26,7 @@ with pkgs; [
 	nodejs_24
 	nvd
 	pipx
-	python310
+	python313
 	python3Packages.pip
 	ripgrep
 	rustc
