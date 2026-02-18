@@ -139,5 +139,9 @@
   },
   "syntaxHighlightingDisabled": false,
   "alwaysThinkingEnabled": true,
-  "skipDangerousModePermissionPrompt": true
+  "skipDangerousModePermissionPrompt": true,
+  "spinnerVerbs": {
+    "mode": "append",
+    "verbs": ["Codelyting", "Javiersitoing", "Rafitaing", "🐢💨 Turbotugueando"]
+  }
 }
