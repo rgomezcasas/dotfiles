@@ -23,6 +23,7 @@ with pkgs; [
 	htop
 	hyperfine
 	jdk21
+	lazygit
 	nodejs_24
 	nvd
 	pipx
