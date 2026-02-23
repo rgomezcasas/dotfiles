@@ -42,20 +42,38 @@ filled=$(( context_pct * bar_width / 100 ))
 pct_str="${context_pct}%"
 pct_len=${#pct_str}
 pct_start=$(( (bar_width - pct_len + 1) / 2 ))
+
+if (( context_pct > 69 )); then
+  bar_fg="\033[31m"
+  bar_filled_bg="\033[30;41m"
+  bar_empty="\033[38;2;80;40;40m"
+  bar_empty_bg="\033[37;48;2;80;40;40m"
+elif (( context_pct > 50 )); then
+  bar_fg="\033[33m"
+  bar_filled_bg="\033[30;43m"
+  bar_empty="\033[38;2;80;80;40m"
+  bar_empty_bg="\033[37;48;2;80;80;40m"
+else
+  bar_fg="\033[32m"
+  bar_filled_bg="\033[30;42m"
+  bar_empty="\033[38;2;75;80;40m"
+  bar_empty_bg="\033[37;48;2;75;80;40m"
+fi
+
 bar=""
 for ((i=0; i<bar_width; i++)); do
   if (( i >= pct_start && i < pct_start + pct_len )); then
     char="${pct_str:$(( i - pct_start )):1}"
     if (( i < filled )); then
-      bar+="\033[30;42m${char}"
+      bar+="${bar_filled_bg}${char}"
     else
-      bar+="\033[37;48;2;75;80;40m${char}"
+      bar+="${bar_empty_bg}${char}"
     fi
   else
     if (( i < filled )); then
-      bar+="\033[32m█"
+      bar+="${bar_fg}█"
     else
-      bar+="\033[38;2;75;80;40m█"
+      bar+="${bar_empty}█"
     fi
   fi
 done
