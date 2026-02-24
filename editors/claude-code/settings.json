@@ -16,6 +16,24 @@
     "swift-lsp@claude-plugins-official": false,
     "frontend-design@claude-plugins-official": false
   },
+  "sandbox": {
+    "enabled": false,
+    "autoAllowBashIfSandboxed": true,
+    "network": {
+      "allowedDomains": [
+        "github.com",
+        "*.npmjs.org",
+        "registry.yarnpkg.com"
+      ],
+      "allowUnixSockets": [
+        "/var/run/docker.sock"
+      ],
+      "allowLocalBinding": true
+    },
+    "excludedCommands": [
+      "docker"
+    ]
+  },
   "spinnerVerbs": {
     "mode": "replace",
     "verbs": [
@@ -31,17 +49,5 @@
   },
   "syntaxHighlightingDisabled": false,
   "alwaysThinkingEnabled": true,
-  "skipDangerousModePermissionPrompt": true,
-	"sandbox": {
-		"enabled": false,
-		"autoAllowBashIfSandboxed": true,
-		"excludedCommands": ["docker"],
-		"network": {
-			"allowedDomains": ["github.com", "*.npmjs.org", "registry.yarnpkg.com"],
-			"allowUnixSockets": [
-				"/var/run/docker.sock"
-			],
-			"allowLocalBinding": true
-		}
-	}
+  "skipDangerousModePermissionPrompt": true
 }

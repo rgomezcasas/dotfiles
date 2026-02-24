@@ -40,7 +40,6 @@ with pkgs; [
 	watch
 	wget
 	yarn
-	yt-dlp
 	z-lua
 	zsh
 

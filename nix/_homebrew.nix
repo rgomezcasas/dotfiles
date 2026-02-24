@@ -11,6 +11,7 @@
 		"ollama"
 		"sst/tap/opencode"
 		"switchaudio-osx"
+		"yt-dlp"
 	];
 	casks = [
 		"adobe-creative-cloud"
