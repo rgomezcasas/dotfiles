@@ -35,6 +35,7 @@ alias c.='(cursor $PWD &>/dev/null &)'
 alias o.='open .'
 
 alias ccupdate="brew update && brew upgrade claude-code"
+alias ccyolo="IS_SANDBOX=1 cc"
 
 # Export credentials
 alias with_openai="dot system with_credential OPENAI_API_KEY OPENAI_API_KEY"

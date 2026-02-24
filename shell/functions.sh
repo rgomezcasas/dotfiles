@@ -39,18 +39,11 @@ f() {
   claude --continue -p "$*"
 }
 
-_cc_set_theme() {
+cc() {
   local theme="light"
   [[ "$(defaults read -g AppleInterfaceStyle 2>/dev/null)" == "Dark" ]] && theme="dark"
   jq --arg t "$theme" '.theme = $t' ~/.claude.json >| ~/.claude.json.tmp && mv ~/.claude.json.tmp ~/.claude.json
-}
 
-cc() {
-  _cc_set_theme
   env -u BW_SESSION claude --append-system-prompt 'responde siempre en castellano' "$@"
 }
 
-ccyolo() {
-  _cc_set_theme
-  env -u BW_SESSION claude --dangerously-skip-permissions --append-system-prompt 'responde siempre en castellano'
-}
