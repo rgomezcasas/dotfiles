@@ -34,6 +34,7 @@ alias i.='(idea $PWD &>/dev/null &)'
 alias c.='(cursor $PWD &>/dev/null &)'
 alias o.='open .'
 
+# Claude code
 alias ccupdate="brew update && brew upgrade claude-code"
 alias ccyolo="IS_SANDBOX=1 cc"
 
