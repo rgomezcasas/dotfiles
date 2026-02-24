@@ -40,9 +40,8 @@ f() {
 }
 
 cc() {
-  local theme="light"
-  [[ "$(defaults read -g AppleInterfaceStyle 2>/dev/null)" == "Dark" ]] && theme="dark"
-  jq --arg t "$theme" '.theme = $t' ~/.claude.json >| ~/.claude.json.tmp && mv ~/.claude.json.tmp ~/.claude.json
+  _detect_macos_theme
+  jq --arg t "$CODELY_THEME_MODE" '.theme = $t' ~/.claude.json >| ~/.claude.json.tmp && mv ~/.claude.json.tmp ~/.claude.json
 
   env -u BW_SESSION claude --append-system-prompt 'responde siempre en castellano' "$@"
 }

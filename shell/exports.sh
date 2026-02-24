@@ -1,13 +1,15 @@
 # ------------------------------------------------------------------------------
 # Codely theme config
 # ------------------------------------------------------------------------------
-if [[ -z "$CODELY_THEME_MODE" ]]; then
+_detect_macos_theme() {
   if [[ $(defaults read -g AppleInterfaceStyle 2>/dev/null) == "Dark" ]]; then
     export CODELY_THEME_MODE="dark"
   else
     export CODELY_THEME_MODE="light"
   fi
-fi
+}
+
+[[ -z "$CODELY_THEME_MODE" ]] && _detect_macos_theme
 export CODELY_THEME_PWD_MODE="short"    # full, short, home_relative
 export CODELY_THEME_STATUS_ICON_OK=""  #  󱁑        󰽰 󰯙
 export CODELY_THEME_STATUS_ICON_KO="☢"  # ﮊ
