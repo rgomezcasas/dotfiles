@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+entries_to_remove=${1:-5}
+zsh_history="${HISTFILE:-$HOME/.zhistory}"
+
+if [[ ! -f "$zsh_history" ]]; then
+  echo "History file not found ($zsh_history)"
+  exit 1
+fi
+
+total_lines=$(wc -l < "$zsh_history")
+lines_to_keep=$((total_lines - entries_to_remove))
+(( lines_to_keep < 0 )) && lines_to_keep=0
+
+tmp=$(mktemp)
+head -n "$lines_to_keep" "$zsh_history" > "$tmp"
+mv "$tmp" "$zsh_history"
+
+echo "Removed last $entries_to_remove entries from $zsh_history"
+echo "Close this tab and open a new one to see the changes"

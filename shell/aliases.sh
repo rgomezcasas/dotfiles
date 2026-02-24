@@ -45,7 +45,7 @@ _cc_set_theme() {
 
 cc() {
   _cc_set_theme
-  env -u BW_SESSION claude --append-system-prompt 'responde siempre en castellano'
+  env -u BW_SESSION claude --append-system-prompt 'responde siempre en castellano' "$@"
 }
 
 ccyolo() {
