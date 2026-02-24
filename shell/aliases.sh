@@ -1,4 +1,3 @@
-
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
 
@@ -10,7 +9,6 @@ alias la="eza -la --icons"
 # Jumps
 alias ~="cd ~"
 alias tmp="cd ~/Desktop/tmp"
-alias c="cd ~/Code/codely"
 
 # Git
 alias gaa="git add -A"
@@ -31,32 +29,12 @@ alias rebuild="sudo darwin-rebuild switch --flake $DOTFILES_PATH/nix#pro --impur
 
 alias copy='pbcopy'
 alias dc='dot docker connect'
-alias dcl='dot docker clear'
 
 alias i.='(idea $PWD &>/dev/null &)'
 alias c.='(cursor $PWD &>/dev/null &)'
 alias o.='open .'
 
-_cc_set_theme() {
-  local theme="light"
-  [[ "$(defaults read -g AppleInterfaceStyle 2>/dev/null)" == "Dark" ]] && theme="dark"
-  jq --arg t "$theme" '.theme = $t' ~/.claude.json >| ~/.claude.json.tmp && mv ~/.claude.json.tmp ~/.claude.json
-}
-
-cc() {
-  _cc_set_theme
-  env -u BW_SESSION claude --append-system-prompt 'responde siempre en castellano' "$@"
-}
-
-ccyolo() {
-  _cc_set_theme
-  env -u BW_SESSION claude --dangerously-skip-permissions --append-system-prompt 'responde siempre en castellano'
-}
 alias ccupdate="brew update && brew upgrade claude-code"
-
-# Zsh performance
-alias zsh-rebuild-cache='rm -f ~/.zcompdump* && zcompile ~/.dotfiles/shell/zsh/.zshrc && exec zsh'
-alias zsh-recompile='zcompile ~/.dotfiles/shell/zsh/.zshrc ~/.dotfiles/shell/{init,aliases,exports,functions}.sh'
 
 # Export credentials
 alias with_openai="dot system with_credential OPENAI_API_KEY OPENAI_API_KEY"
