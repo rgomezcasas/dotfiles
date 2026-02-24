@@ -4,8 +4,10 @@
 _detect_macos_theme() {
   if [[ $(defaults read -g AppleInterfaceStyle 2>/dev/null) == "Dark" ]]; then
     export CODELY_THEME_MODE="dark"
+    export BAT_THEME="gruvbox-dark"
   else
     export CODELY_THEME_MODE="light"
+    export BAT_THEME="gruvbox-light"
   fi
 }
 
@@ -51,10 +53,12 @@ export HOMEBREW_NO_ENV_HINTS=1
 export HOMEBREW_PREFIX="/opt/homebrew"
 export HOMEBREW_CELLAR="$HOMEBREW_PREFIX/Cellar"
 
-if [ "$CODELY_THEME_MODE" = "dark" ]; then
-  export BAT_THEME='gruvbox-dark'
-else
-  export BAT_THEME='gruvbox-light'
+if [[ -z "$BAT_THEME" ]]; then
+  if [ "$CODELY_THEME_MODE" = "dark" ]; then
+    export BAT_THEME='gruvbox-dark'
+  else
+    export BAT_THEME='gruvbox-light'
+  fi
 fi
 
 export EZA_COLORS="di=34:ln=36:ex=32:fi=0:uu=33:gu=33:sn=0:sb=0:da=36:hd=4:bu=4;33:ur=33:uw=31:ux=32:ue=32:gr=33:gw=31:gx=32:tr=33:tw=31:tx=32:xx=90"

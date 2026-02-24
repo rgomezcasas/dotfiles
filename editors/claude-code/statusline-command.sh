@@ -2,6 +2,8 @@
 
 input=$(cat)
 
+theme=$(jq -r '.theme // "dark"' ~/.claude.json 2>/dev/null || echo "dark")
+
 model=$(echo "$input" | jq -r 'if .model | type == "object" then .model.id else .model end // "unknown"')
 cwd=$(echo "$input" | jq -r '.workspace.current_dir // "."')
 context_pct=$(echo "$input" | jq -r '.context_window.used_percentage // 0')
@@ -43,21 +45,40 @@ pct_str="${context_pct}%"
 pct_len=${#pct_str}
 pct_start=$(( (bar_width - pct_len + 1) / 2 ))
 
-if (( context_pct > 69 )); then
-  bar_fg="\033[31m"
-  bar_filled_bg="\033[30;41m"
-  bar_empty="\033[38;2;80;40;40m"
-  bar_empty_bg="\033[37;48;2;80;40;40m"
-elif (( context_pct > 50 )); then
-  bar_fg="\033[33m"
-  bar_filled_bg="\033[30;43m"
-  bar_empty="\033[38;2;80;80;40m"
-  bar_empty_bg="\033[37;48;2;80;80;40m"
+if [[ "$theme" == "light" ]]; then
+  if (( context_pct > 69 )); then
+    bar_fg="\033[38;2;239;68;68m"
+    bar_filled_bg="\033[38;2;255;255;255;48;2;239;68;68m"
+    bar_empty="\033[38;2;252;165;165m"
+    bar_empty_bg="\033[38;2;100;116;139;48;2;252;165;165m"
+  elif (( context_pct > 50 )); then
+    bar_fg="\033[38;2;234;179;8m"
+    bar_filled_bg="\033[38;2;255;255;255;48;2;234;179;8m"
+    bar_empty="\033[38;2;253;224;71m"
+    bar_empty_bg="\033[38;2;100;116;139;48;2;253;224;71m"
+  else
+    bar_fg="\033[38;2;22;163;74m"
+    bar_filled_bg="\033[38;2;255;255;255;48;2;22;163;74m"
+    bar_empty="\033[38;2;134;239;172m"
+    bar_empty_bg="\033[38;2;55;65;81;48;2;134;239;172m"
+  fi
 else
-  bar_fg="\033[32m"
-  bar_filled_bg="\033[30;42m"
-  bar_empty="\033[38;2;75;80;40m"
-  bar_empty_bg="\033[37;48;2;75;80;40m"
+  if (( context_pct > 69 )); then
+    bar_fg="\033[31m"
+    bar_filled_bg="\033[30;41m"
+    bar_empty="\033[38;2;80;40;40m"
+    bar_empty_bg="\033[37;48;2;80;40;40m"
+  elif (( context_pct > 50 )); then
+    bar_fg="\033[33m"
+    bar_filled_bg="\033[30;43m"
+    bar_empty="\033[38;2;80;80;40m"
+    bar_empty_bg="\033[37;48;2;80;80;40m"
+  else
+    bar_fg="\033[32m"
+    bar_filled_bg="\033[30;42m"
+    bar_empty="\033[38;2;75;80;40m"
+    bar_empty_bg="\033[37;48;2;75;80;40m"
+  fi
 fi
 
 bar=""
@@ -115,25 +136,34 @@ fi
 daily_cost_str=$(printf '$%.2f' "$daily_cost")
 
 
-GREEN='\033[32m'
-WHITE='\033[37m'
-GRAY='\033[90m'
 RESET='\033[0m'
+
+if [[ "$theme" == "light" ]]; then
+  GREEN='\033[38;2;22;163;74m'
+  GRAY='\033[38;2;156;163;175m'
+  ACCENT='\033[38;2;37;99;235m'
+  TEXT='\033[38;2;55;65;81m'
+else
+  GREEN='\033[32m'
+  GRAY='\033[90m'
+  ACCENT='\033[32m'
+  TEXT='\033[37m'
+fi
 SEP=" ${GRAY}⎮${RESET} "
 MSEP=" ${GRAY}∘${RESET} "
 
-branding="${WHITE}<${GREEN}${RESET}${WHITE}>${RESET}"
+_branding_unused="${TEXT}<${GREEN}${RESET}${TEXT}>${RESET}"
 line="${GREEN}${model_name}${RESET}"
 
 if [[ -n "$git_branch" ]]; then
-  line+=" ${GRAY}@${RESET} ${WHITE}${git_branch}${RESET}"
+  line+=" ${GRAY}@${RESET} ${TEXT}${git_branch}${RESET}"
 fi
 
 line+="${SEP}${bar}"
 if (( context_used > 0 )); then
-  line+=" ${WHITE}${context_used_str}${RESET}"
+  line+=" ${TEXT}${context_used_str}${RESET}"
 fi
-line+="${SEP}${GREEN}${session_cost_str}${RESET}${MSEP}${WHITE}${daily_cost_str} today${RESET}"
-line+="${SEP}${GRAY}\uf017  ${WHITE}${duration_str}${RESET}"
+line+="${SEP}${ACCENT}${session_cost_str}${RESET}${MSEP}${TEXT}${daily_cost_str} today${RESET}"
+line+="${SEP}${GRAY}\uf017  ${TEXT}${duration_str}${RESET}"
 
 printf "%b" "$line"
