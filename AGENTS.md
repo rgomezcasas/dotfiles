@@ -17,4 +17,5 @@ After adding the package, tell the user to run `rebuild` to apply changes.
 
 ## Git
 
-When committing, include all files except submodules.
+- When committing, include all files except submodules.
+- If you think it makes sense to split something into separate commits, go ahead and do it.
