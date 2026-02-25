@@ -1011,7 +1011,7 @@
           } ],
           "conditions" : [ {
             "type" : "frontmost_application_if",
-            "bundle_identifiers" : [ "com.apple.iWork.Keynote" ]
+            "bundle_identifiers" : [ "com.apple.Keynote" ]
           } ],
           "type" : "basic"
         }, {
@@ -1027,7 +1027,7 @@
           } ],
           "conditions" : [ {
             "type" : "frontmost_application_if",
-            "bundle_identifiers" : [ "com.apple.iWork.Keynote" ]
+            "bundle_identifiers" : [ "com.apple.Keynote" ]
           } ],
           "type" : "basic"
         } ]

@@ -19,7 +19,7 @@
   :GoogleMeet     ["com.google.Chrome.app.kjgfgldnnfoeklkmfkjfagphfepbbdan"]
   :GuitarPro      ["com.arobas-music.guitarpro7"]
   :IntelliJ       ["com.jetbrains.intellij", "com.jetbrains.intellij-EAP"]
-  :Keynote        ["com.apple.iWork.Keynote"]
+  :Keynote        ["com.apple.Keynote"]
   :Notes          ["com.apple.Notes"]
   :Notion         ["notion.id"]
   :Orion          ["com.kagi.kagimacOS"]
