@@ -17,8 +17,8 @@ model: haiku
 2. Place the file inside the `docs/` folder. If subfolders exist, choose the most relevant one. Create a new subfolder only if no existing one fits
 3. Use a descriptive kebab-case filename that clearly communicates the content (e.g., `nix-flake-structure.md`, `karabiner-custom-shortcuts.md`)
 4. Structure the document with a clear title (`#`), an introductory paragraph, and organized sections (`##`, `###`)
-5. Prefer practical examples and concrete commands over abstract explanations
-6. Keep it concise: document the "what" and "how", skip obvious details
+5. Keep documentation minimal. The purpose is to guide agents/humans on **where** to make changes and **what files** are involved, not to explain general concepts. Only document repo-specific details (file paths, conventions, structure). Assume the reader already knows how the tools work
+6. Avoid generic explanations, tutorials, or "how X works" sections. Focus on: which file to edit, what format to follow, and any repo-specific conventions
 
 ## Task
 
