@@ -43,8 +43,16 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 
 fpath=("$DOTLY_PATH/shell/zsh/completions" "$HOMEBREW_PREFIX/share/zsh/site-functions" $fpath)
 
-# Start zim
-source "$ZIM_HOME/init.zsh"
+# Start zim (inline instead of init.zsh to defer heavy modules for faster startup)
+# After `zimfw build`, update this block if modules change in .zimrc
+if [[ -e ${ZIM_CONFIG_FILE:-${ZDOTDIR:-${HOME}}/.zimrc} ]] zimfw() { source "$ZIM_HOME/zimfw.zsh" "${@}" }
+fpath=("$ZIM_HOME/modules/git-info/functions" $fpath)
+autoload -Uz -- coalesce git-action git-info
+source "$ZIM_HOME/modules/zsh-defer/zsh-defer.plugin.zsh"
+zsh-defer source "$ZIM_HOME/modules/completion/init.zsh"
+source "$ZIM_HOME/modules/environment/init.zsh"
+source "$ZIM_HOME/modules/input/init.zsh"
+source "$ZIM_HOME/modules/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
 zsh-defer source "$ZIM_HOME/modules/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 zsh-defer -c "ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=red'"
