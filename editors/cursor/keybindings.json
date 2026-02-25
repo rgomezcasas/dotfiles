@@ -10,7 +10,8 @@
 	},
 	{
 		"key": "cmd+1",
-		"command": "workbench.action.toggleSidebarVisibility",
+		"command": "runCommands",
+		"args": { "commands": ["workbench.action.toggleSidebarVisibility", "workbench.action.focusActiveEditorGroup"] },
 		"when": "explorerViewletFocus"
 	},
   {
@@ -133,7 +134,8 @@
   },
   {
     "key": "cmd+2",
-    "command": "workbench.action.toggleSidebarVisibility",
+    "command": "runCommands",
+    "args": { "commands": ["workbench.action.toggleSidebarVisibility", "workbench.action.focusActiveEditorGroup"] },
     "when": "focusedView == 'workbench.scm'"
   },
   {
