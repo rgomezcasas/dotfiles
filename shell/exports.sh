@@ -21,7 +21,7 @@ if [[ $__CFBundleIdentifier == "com.jetbrains."* ]]; then
   export CODELY_THEME_MINIMAL=true
 fi
 
-if [[ $__CFBundleIdentifier == "com.microsoft."* ]]; then
+if [[ $__CFBundleIdentifier == "com.microsoft."* || $__CFBundleIdentifier == "com.todesktop.230313mzl4w4u92" ]]; then
   export CODELY_THEME_MINIMAL=true
   export CODELY_THEME_MODE=light
   export BAT_THEME="gruvbox-light"
