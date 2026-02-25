@@ -28,8 +28,10 @@
 				description = username;
 			};
 
-			environment.systemPackages = import ./_packages.nix { inherit pkgs; };
-			homebrew = import ./_homebrew.nix;
+			environment.systemPackages =
+				(import ./_package-nix.nix { inherit pkgs; }) ++
+				(import ./_package-node.nix { inherit pkgs; });
+			homebrew = import ./_package-brew.nix;
 
 			home-manager.backupFileExtension = "bkp_" + builtins.toString builtins.currentTime;
 
