@@ -4,7 +4,7 @@
     "editor.minimap.enabled": false,
     "editor.dragAndDrop": false,
     "editor.fontFamily": "DankMono Nerd Font",
-    "terminal.integrated.fontFamily": "DankMono Nerd font Mono",
+    "terminal.integrated.fontFamily": "DankMono Nerd Font",
     "editor.lineHeight": 2.7,
     "editor.cursorStyle": "line",
     "editor.cursorBlinking": "smooth",

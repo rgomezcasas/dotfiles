@@ -17,15 +17,21 @@ export CODELY_THEME_STATUS_ICON_OK=""  #  󱁑       
 export CODELY_THEME_STATUS_ICON_KO="☢"  #
 export CODELY_THEME_PROMPT_IN_NEW_LINE=true
 
-if [[ $__CFBundleIdentifier == "com.jetbrains."* ]]; then
+_bundle_jetbrains="com.jetbrains."
+_bundle_vscode="com.microsoft."
+_bundle_cursor="com.todesktop.230313mzl4w4u92"
+
+if [[ $__CFBundleIdentifier == "$_bundle_jetbrains"* ]]; then
   export CODELY_THEME_MINIMAL=true
 fi
 
-if [[ $__CFBundleIdentifier == "com.microsoft."* || $__CFBundleIdentifier == "com.todesktop.230313mzl4w4u92" ]]; then
+if [[ $__CFBundleIdentifier == "$_bundle_vscode"* || $__CFBundleIdentifier == "$_bundle_cursor" ]]; then
   export CODELY_THEME_MINIMAL=true
   export CODELY_THEME_MODE=light
   export BAT_THEME="gruvbox-light"
 fi
+
+unset _bundle_jetbrains _bundle_vscode _bundle_cursor
 
 # ------------------------------------------------------------------------------
 # Languages
