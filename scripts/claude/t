@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+set -euo pipefail
+source "$DOTFILES_PATH/scripts/claude/_setup"
+
+if [[ $# -eq 0 ]]; then
+  echo "Usage: dot claude t <description>"
+  echo "Translate natural language to a terminal command"
+  exit 1
+fi
+
+run_claude \
+  --model "haiku" \
+  --append-system-prompt "Responde sólo con el comando. No lo metas dentro de backticks ni nada de markdown." \
+  -p "Dame un comando de terminal para $*"

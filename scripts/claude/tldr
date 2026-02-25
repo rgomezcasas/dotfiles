@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+set -euo pipefail
+source "$DOTFILES_PATH/scripts/claude/_setup"
+
+if [[ $# -eq 0 ]]; then
+  echo "Usage: dot claude tldr <command>"
+  echo "Show usage examples for a command"
+  exit 1
+fi
+
+run_claude \
+  --model "haiku" \
+  --append-system-prompt 'El output se mostrará directamente en una terminal, así que:
+- Responde con texto sin formatear.
+- MUY IMPORTANTE: No uses formato markdown NI backticks.
+- Usa ejemplos y títulos claros.' \
+  -p "Dame 3 ejemplos de uso para el comando $*."

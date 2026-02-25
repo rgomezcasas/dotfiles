@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+run_claude() {
+  if [[ $(defaults read -g AppleInterfaceStyle 2>/dev/null) == "Dark" ]]; then
+    local theme="dark"
+  else
+    local theme="light"
+  fi
+
+  jq --arg t "$theme" '.theme = $t' ~/.claude.json >| ~/.claude.json.tmp && mv ~/.claude.json.tmp ~/.claude.json
+
+  env -u BW_SESSION claude --append-system-prompt 'responde siempre en castellano' "$@"
+}
