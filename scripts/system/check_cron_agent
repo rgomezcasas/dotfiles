@@ -9,7 +9,7 @@ set -euo pipefail
 
 source "$DOTLY_PATH/scripts/core/log.sh"
 
-AGENT_LABEL="com.user.cron.5seconds"
+AGENT_LABEL="com.user.cron.every_15s"
 PLIST_PATH="$HOME/Library/LaunchAgents/${AGENT_LABEL}.plist"
 
 main() {

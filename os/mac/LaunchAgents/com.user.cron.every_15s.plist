@@ -3,7 +3,7 @@
 <plist version="1.0">
 	<dict>
 		<key>Label</key>
-		<string>com.user.cron.5seconds</string>
+		<string>com.user.cron.every_15s</string>
 		<key>ProgramArguments</key>
 		<array>
 			<string>/Users/rafa.gomez/.dotfiles/bin/sdot</string>
@@ -17,9 +17,9 @@
 		<key>KeepAlive</key>
 		<true/>
 		<key>StandardErrorPath</key>
-		<string>/Users/rafa.gomez/Library/Logs/cron.5seconds.error.log</string>
+		<string>/Users/rafa.gomez/Library/Logs/cron.every_15s.error.log</string>
 		<key>StandardOutPath</key>
-		<string>/Users/rafa.gomez/Library/Logs/cron.5seconds.out.log</string>
+		<string>/Users/rafa.gomez/Library/Logs/cron.every_15s.out.log</string>
 		<key>EnvironmentVariables</key>
 		<dict>
 			<key>PATH</key>

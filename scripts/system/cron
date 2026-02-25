@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-##? Consolidated cron script that runs every 5 seconds
+##? Consolidated cron script that runs every 15 seconds
 ##?
 ##? Usage:
 ##?   cron

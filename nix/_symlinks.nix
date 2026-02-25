@@ -38,6 +38,5 @@ in
 	"Library/Application Support/com.elgato.StreamDeck/ProfilesV2".source = symlink "${dotfilesPath}/modules/private/mac/streamdeck/ProfilesV2";
 	"Library/Application Support/obs-studio/basic".source = symlink "${dotfilesPath}/modules/private/mac/obs/basic";
 	"Library/Application Support/obs-studio/global.ini".source = symlink "${dotfilesPath}/modules/private/mac/obs/global.ini";
-	"Library/LaunchAgents/com.user.cron.5seconds.plist".source = symlink "${dotfilesPath}/os/mac/LaunchAgents/com.user.cron.5seconds.plist";
-	"Library/LaunchAgents/com.user.startup.plist".source = symlink "${dotfilesPath}/os/mac/LaunchAgents/com.user.startup.plist";
+	"Library/LaunchAgents/com.user.cron.every_15s.plist".source = symlink "${dotfilesPath}/os/mac/LaunchAgents/com.user.cron.every_15s.plist";
 }
