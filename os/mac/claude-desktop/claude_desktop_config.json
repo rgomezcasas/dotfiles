@@ -6,7 +6,8 @@
     "localAgentModeTrustedFolders": [
       "/Users/rafa.gomez/Desktop/tmp/test"
     ],
+    "coworkScheduledTasksEnabled": false,
     "sidebarMode": "chat",
-    "coworkScheduledTasksEnabled": false
+    "coworkWebSearchEnabled": true
   }
 }
