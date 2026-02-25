@@ -1,13 +1,17 @@
 #!/usr/bin/env bash
+
 set -euo pipefail
 
-if [[ $# -eq 0 ]]; then
-  echo "Usage: dot claude t <description>"
-  echo "Translate natural language to a terminal command"
-  exit 1
-fi
+source "$DOTLY_PATH/scripts/core/_main.sh"
+
+##? Translate natural language to a terminal command
+#?? 1.0.0
+##?
+##? Usage:
+##?   t <description>...
+docs::parse "$@"
 
 exec "$(dirname "$0")/cc" \
   --model "haiku" \
   --append-system-prompt "Responde sólo con el comando. No lo metas dentro de backticks ni nada de markdown." \
-  -p "Dame un comando de terminal para $*"
+  -p "Dame un comando de terminal para ${description[*]}"

@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 set -euo pipefail
 
 if [[ $(defaults read -g AppleInterfaceStyle 2>/dev/null) == "Dark" ]]; then

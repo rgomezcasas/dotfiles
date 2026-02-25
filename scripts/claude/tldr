@@ -1,11 +1,15 @@
 #!/usr/bin/env bash
+
 set -euo pipefail
 
-if [[ $# -eq 0 ]]; then
-  echo "Usage: dot claude tldr <command>"
-  echo "Show usage examples for a command"
-  exit 1
-fi
+source "$DOTLY_PATH/scripts/core/_main.sh"
+
+##? Show usage examples for a command
+#?? 1.0.0
+##?
+##? Usage:
+##?   tldr <command>...
+docs::parse "$@"
 
 exec "$(dirname "$0")/cc" \
   --model "haiku" \
@@ -13,4 +17,4 @@ exec "$(dirname "$0")/cc" \
 - Responde con texto sin formatear.
 - MUY IMPORTANTE: No uses formato markdown NI backticks.
 - Usa ejemplos y títulos claros.' \
-  -p "Dame 3 ejemplos de uso para el comando $*."
+  -p "Dame 3 ejemplos de uso para el comando ${command[*]}."
