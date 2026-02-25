@@ -6,12 +6,12 @@
 	{
 		"key": "cmd+1",
 		"command": "workbench.view.explorer",
-		"when": "!sideBarVisible || !explorerViewletVisible"
+		"when": "!explorerViewletFocus"
 	},
 	{
 		"key": "cmd+1",
 		"command": "workbench.action.toggleSidebarVisibility",
-		"when": "sideBarVisible && explorerViewletVisible"
+		"when": "explorerViewletFocus"
 	},
   {
 		"key": "cmd+3",
@@ -129,12 +129,12 @@
   {
     "key": "cmd+2",
     "command": "workbench.view.scm",
-    "when": "!sideBarVisible || explorerViewletVisible"
+    "when": "focusedView != 'workbench.scm'"
   },
   {
     "key": "cmd+2",
     "command": "workbench.action.toggleSidebarVisibility",
-    "when": "sideBarVisible && !explorerViewletVisible"
+    "when": "focusedView == 'workbench.scm'"
   },
   {
     "key": "cmd+o",
