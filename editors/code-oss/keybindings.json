@@ -4,6 +4,14 @@
 		"command": "-workbench.action.focusFirstEditorGroup"
 	},
 	{
+		"key": "cmd+2",
+		"command": "-workbench.action.focusSecondEditorGroup"
+	},
+	{
+		"key": "cmd+2",
+		"command": "-workbench.action.chat.open"
+	},
+	{
 		"key": "cmd+1",
 		"command": "workbench.view.explorer",
 		"when": "!explorerViewletFocus"

@@ -144,10 +144,6 @@
    :rules [:Atlas
            [:sidebar-primary-toggle :!COt]]} ; Toggle sidebar
 
-  {:des   "[VSCode] Shortcuts"
-   :rules [:VSCode
-           [:sidebar-primary-toggle :!Cb]      ; Toggle sidebar
-           [:sidebar-secondary-toggle :!TCi]]} ; Toggle secondary sidebar
 
   {:des   "[Notes] Shortcuts"
    :rules [:Notes
