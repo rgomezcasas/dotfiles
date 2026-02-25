@@ -14,7 +14,8 @@
   },
   "enabledPlugins": {
     "swift-lsp@claude-plugins-official": false,
-    "frontend-design@claude-plugins-official": false
+    "frontend-design@claude-plugins-official": false,
+    "typescript-lsp@claude-plugins-official": true
   },
   "sandbox": {
     "enabled": false,
