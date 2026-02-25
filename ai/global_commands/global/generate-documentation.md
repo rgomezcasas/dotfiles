@@ -27,4 +27,5 @@ Based on the current conversation:
 1. Identify the key topic or knowledge worth documenting
 2. Explore the existing `docs/` structure to find the best location
 3. Write the documentation file following the guidelines above
-4. Confirm the file path and a brief summary of what was documented
+4. Check `AGENTS.md` — if the new doc belongs to an existing referenced folder, no update needed. If it creates a new `docs/` subfolder, add a reference line in the Documentation section of `AGENTS.md`
+5. Confirm the file path and a brief summary of what was documented
