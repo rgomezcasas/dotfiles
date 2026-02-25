@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTLY_PATH/scripts/core/_main.sh"
+
+##? Update system packages and shell plugins
+#?? 1.0.0
+##?
+##? Usage:
+##?   update
+docs::parse "$@"
+
+nix flake update --flake "$DOTFILES_PATH/nix"
+nvd diff $(ls -dt /nix/var/nix/profiles/system-*-link | head -n2)
+sudo darwin-rebuild switch --flake "$DOTFILES_PATH/nix#pro" --impure
+zimfw upgrade

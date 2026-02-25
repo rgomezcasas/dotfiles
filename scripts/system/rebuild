@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTLY_PATH/scripts/core/_main.sh"
+
+##? Rebuild the system with the current Nix flake
+#?? 1.0.0
+##?
+##? Usage:
+##?   rebuild
+docs::parse "$@"
+
+sudo darwin-rebuild switch --flake "$DOTFILES_PATH/nix#pro" --impure

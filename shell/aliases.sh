@@ -25,7 +25,8 @@ alias gpl="git pull --rebase --autostash"
 alias gl="dot git pretty-log"
 
 # Nix
-alias rebuild="sudo darwin-rebuild switch --flake $DOTFILES_PATH/nix#pro --impure"
+alias rebuild="dot system rebuild"
+alias up="dot system update"
 
 alias copy='pbcopy'
 alias dc='dot docker connect'
@@ -38,6 +39,7 @@ alias o.='open .'
 alias cc="dot claude cc"
 alias ccyolo="cc --dangerously-skip-permissions --settings '{\"sandbox\":{\"enabled\":true}}'"
 alias ccupdate="claude update"
+
 alias t="dot claude t"
 alias tldr="dot claude tldr"
 alias f="dot claude f"
