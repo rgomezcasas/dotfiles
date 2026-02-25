@@ -6,8 +6,8 @@
 CLAUDE.md
 /.mcp.json
 .claude
-!.claude/commands
 .playwright-mcp
+.cursor
 
 # Mac
 .DS_Store
