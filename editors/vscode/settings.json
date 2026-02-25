@@ -72,5 +72,7 @@
     "workbench.iconTheme": "vscode-jetbrains-icon-theme-2023-light",
     "workbench.editor.editorActionsLocation": "titleBar",
     "breadcrumbs.enabled": false,
-    "workbench.activityBar.location": "hidden"
+    "workbench.activityBar.location": "hidden",
+    "workbench.navigationControl.enabled": false,
+    "window.commandCenter": false
 }
