@@ -82,7 +82,7 @@ _path_candidates=(
   "$HOME/.cargo/bin"
   "$HOME/.orbstack/bin"
   "$HOME/Library/pnpm"
-  "$HOME/.claude/local"
+  "$HOME/.local/bin"
   "$HOMEBREW_PREFIX/bin"
   "$HOMEBREW_PREFIX/sbin"
   "/usr/local/bin"
