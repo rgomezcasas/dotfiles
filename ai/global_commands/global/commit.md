@@ -1,7 +1,7 @@
 ---
 name: commit
 description: Create a git commit following Conventional Commits specification
-allowed-tools: Bash(git add:*), Bash(git status:*), Bash(git commit:*), Bash(git diff:*)
+allowed-tools: Bash(git add:*), Bash(git status:*), Bash(git commit:*), Bash(git diff:*), Bash(git log:*)
 disable-model-invocation: true
 model: haiku
 ---
@@ -30,19 +30,19 @@ We use [Conventional Commits](https://www.conventionalcommits.org/) specificatio
 
 ### Types
 
-| Type | Description |
-|------|-------------|
-| `feat` | A new feature |
-| `fix` | A bug fix |
-| `docs` | Documentation only changes |
-| `style` | Changes that do not affect the meaning of the code (white-space, formatting, etc) |
-| `refactor` | A code change that neither fixes a bug nor adds a feature |
-| `perf` | A code change that improves performance |
-| `test` | Adding missing tests or correcting existing tests |
-| `build` | Changes that affect the build system or external dependencies |
-| `ci` | Changes to CI configuration files and scripts |
-| `chore` | Other changes that don't modify src or test files |
-| `revert` | Reverts a previous commit |
+| Type       | Description                                                                       |
+|------------|-----------------------------------------------------------------------------------|
+| `feat`     | A new feature                                                                     |
+| `fix`      | A bug fix                                                                         |
+| `docs`     | Documentation only changes                                                        |
+| `style`    | Changes that do not affect the meaning of the code (white-space, formatting, etc) |
+| `refactor` | A code change that neither fixes a bug nor adds a feature                         |
+| `perf`     | A code change that improves performance                                           |
+| `test`     | Adding missing tests or correcting existing tests                                 |
+| `build`    | Changes that affect the build system or external dependencies                     |
+| `ci`       | Changes to CI configuration files and scripts                                     |
+| `chore`    | Other changes that don't modify src or test files                                 |
+| `revert`   | Reverts a previous commit                                                         |
 
 ### Rules
 
@@ -70,5 +70,3 @@ Based on the changes shown above:
 2. Analyze the changes to determine the appropriate commit type and scope
 3. Create a commit message following the Conventional Commits specification
 4. Execute the commit
-
-Do NOT co-author yourself in the commit.
