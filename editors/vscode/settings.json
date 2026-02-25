@@ -71,5 +71,6 @@
     "terminal.integrated.fontSize": 16,
     "workbench.iconTheme": "vscode-jetbrains-icon-theme-2023-light",
     "workbench.editor.editorActionsLocation": "titleBar",
-    "breadcrumbs.enabled": false
+    "breadcrumbs.enabled": false,
+    "workbench.activityBar.location": "hidden"
 }

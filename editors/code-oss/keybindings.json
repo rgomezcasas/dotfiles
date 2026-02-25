@@ -4,6 +4,10 @@
 		"command": "-workbench.action.focusFirstEditorGroup"
 	},
 	{
+		"key": "alt+1",
+		"command": "workbench.action.toggleActivityBarVisibility"
+	},
+	{
 		"key": "cmd+2",
 		"command": "-workbench.action.focusSecondEditorGroup"
 	},
