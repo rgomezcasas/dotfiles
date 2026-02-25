@@ -1,32 +1,15 @@
 # Adding Mac App Store Apps
 
-Mac App Store apps are managed in `nix/_package-brew.nix` under the `masApps` attribute.
+File: `nix/_package-brew.nix` → `masApps` attribute
 
-## Adding an App
-
-Add the app name and its App Store ID inside `masApps`:
+Add the app name and its App Store ID:
 
 ```nix
 masApps = {
     "Final Cut Pro" = 424389933;
-    "My App" = 123456789;
 };
 ```
 
-## Finding the App Store ID
+Find the ID from the app URL (`https://apps.apple.com/app/idXXXXXXXXX`) or with `mas search <name>`.
 
-The ID is in the app's App Store URL: `https://apps.apple.com/app/idXXXXXXXXX`.
-
-Or use `mas` from the terminal:
-
-```sh
-mas search <app-name>
-```
-
-## Apply Changes
-
-After editing the file, run:
-
-```sh
-rebuild
-```
+Run `rebuild` after changes.
