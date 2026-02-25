@@ -23,7 +23,7 @@
 	autocrlf = input
 	trustctime = false
 	precomposeunicode = false
-	pager = delta --dark
+	pager = delta
 	ignorecase = false
 
 [delta]
