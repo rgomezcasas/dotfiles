@@ -1,8 +1,30 @@
 ---
 name: generate-documentation
-description: Generate documentation based on the conversation
-disable-model-invocation: true
+description: Generate documentation based on the current conversation
+allowed-tools: Bash(ls:*), Bash(tree:*), Bash(fd:*), Read, Write, Edit, Glob, Grep
 model: haiku
 ---
 
-Generate a new md file inside the /docs folder. If there are subfolders add the documentation in the most relevant one. Add an explicit name to the file so other people or agents can do the same task better.
+## Context
+
+- Project root: !`git rev-parse --show-toplevel`
+- Existing docs structure: !`tree -d --noreport docs/ 2>/dev/null || echo "No docs/ directory found"`
+- Existing doc files: !`fd -e md . docs/ 2>/dev/null || echo "No documentation files found"`
+
+## Guidelines
+
+1. Write documentation in English
+2. Place the file inside the `docs/` folder. If subfolders exist, choose the most relevant one. Create a new subfolder only if no existing one fits
+3. Use a descriptive kebab-case filename that clearly communicates the content (e.g., `nix-flake-structure.md`, `karabiner-custom-shortcuts.md`)
+4. Structure the document with a clear title (`#`), an introductory paragraph, and organized sections (`##`, `###`)
+5. Prefer practical examples and concrete commands over abstract explanations
+6. Keep it concise: document the "what" and "how", skip obvious details
+
+## Task
+
+Based on the current conversation:
+
+1. Identify the key topic or knowledge worth documenting
+2. Explore the existing `docs/` structure to find the best location
+3. Write the documentation file following the guidelines above
+4. Confirm the file path and a brief summary of what was documented
