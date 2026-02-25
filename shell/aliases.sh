@@ -36,7 +36,6 @@ alias o.='open .'
 
 # Claude code
 alias ccupdate="claude update"
-alias ccyolo="IS_SANDBOX=1 cc"
 
 # Export credentials
 alias with_openai="dot system with_credential OPENAI_API_KEY OPENAI_API_KEY"

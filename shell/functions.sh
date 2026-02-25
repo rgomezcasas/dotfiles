@@ -24,6 +24,9 @@ cc() {
   env -u BW_SESSION claude --append-system-prompt 'responde siempre en castellano' "$@"
 }
 
+ccyolo() {
+  cc --dangerously-skip-permissions --settings '{"sandbox":{"enabled":true,"autoAllowBashIfSandboxed":true}}' "$@"
+}
 
 t() {
   cc \
