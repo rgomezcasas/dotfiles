@@ -10,5 +10,5 @@
 
 [submodule "modules/ghostty-cursor-shaders"]
 	path = modules/ghostty-cursor-shaders
-	url = git@github.com:sahaj-b/ghostty-cursor-shaders.git
+	url = https://github.com/sahaj-b/ghostty-cursor-shaders.git
 	ignore = dirty
