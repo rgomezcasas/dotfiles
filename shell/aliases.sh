@@ -36,6 +36,9 @@ alias o.='open .'
 
 # Claude code
 alias ccupdate="claude update"
+alias t="dot claude t"
+alias tldr="dot claude tldr"
+alias f="dot claude f"
 
 # Export credentials
 alias with_openai="dot system with_credential OPENAI_API_KEY OPENAI_API_KEY"
