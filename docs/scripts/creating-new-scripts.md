@@ -24,3 +24,10 @@ docs::parse "$@"
 ```
 
 The `##?` docblock is parsed by `docs::parse` and shown automatically with `-h` or `--help`.
+
+## CI Validation
+
+CI automatically validates that every script in `scripts/` (excluding `core/` and `ci/`):
+
+- Contains at least one `##?` docblock line
+- Has executable permissions (`chmod +x`)

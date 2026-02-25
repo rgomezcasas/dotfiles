@@ -2,6 +2,12 @@
 
 set -euo pipefail
 
+##? Remove the last N entries from zsh history
+#?? 1.0.0
+##?
+##? Usage:
+##?   clear_last_history_entries [<count>]
+
 entries_to_remove=${1:-5}
 zsh_history="${HISTFILE:-$HOME/.zhistory}"
 

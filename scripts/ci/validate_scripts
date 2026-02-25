@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+##? Validate that all scripts have a docblock and executable permissions
+#?? 1.0.0
+##?
+##? Usage:
+##?   validate_scripts
+
+SCRIPTS_DIR="${DOTFILES_PATH:-$(cd "$(dirname "$0")/../.." && pwd)}/scripts"
+errors=0
+
+while IFS= read -r script; do
+	if ! head -1 "$script" | grep -q '#!/usr/bin/env bash'; then
+		continue
+	fi
+
+	if ! grep -q '^##?' "$script"; then
+		echo "FAIL [docblock] $script"
+		errors=$((errors + 1))
+	fi
+
+	if [[ ! -x "$script" ]]; then
+		echo "FAIL [permissions] $script"
+		errors=$((errors + 1))
+	fi
+done < <(find "$SCRIPTS_DIR" -type f ! -path '*/core/*' ! -path '*/ci/*')
+
+if [[ $errors -gt 0 ]]; then
+	echo ""
+	echo "$errors error(s) found"
+	exit 1
+fi
+
+echo "All scripts valid"

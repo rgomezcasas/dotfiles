@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 
+##? Show a weekly git activity report across all codely repos
+#?? 1.0.0
+##?
+##? Usage:
+##?   weekly_git_report commits
+##?   weekly_git_report files
+##?   weekly_git_report messages
+
 AUTHOR="Rafa Gómez"
 CODE_DIR="$HOME/Code/codely"
 SINCE=$(gdate -d 'last monday' +%Y-%m-%d)

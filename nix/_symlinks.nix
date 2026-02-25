@@ -1,42 +1,52 @@
 { config, username, ... }:
 let
-	dotfilesPath = "/Users/${username}/.dotfiles";
-	symlink = config.lib.file.mkOutOfStoreSymlink;
+  dotfilesPath = "/Users/${username}/.dotfiles";
+  symlink = config.lib.file.mkOutOfStoreSymlink;
 in
 {
-	".bash_profile".source = symlink "${dotfilesPath}/shell/bash/.bash_profile";
-	".bashrc".source = symlink "${dotfilesPath}/shell/bash/.bashrc";
-	".claude.json".source = symlink "${dotfilesPath}/modules/private/claude/.claude.json";
-	".claude/CLAUDE.md".source = symlink "${dotfilesPath}/ai/GLOBAL_AGENTS.md";
-	".claude/commands".source = symlink "${dotfilesPath}/ai/global_commands";
-	".claude/settings.json".source = symlink "${dotfilesPath}/editors/claude-code/settings.json";
-	".claude/skills".source = symlink "${dotfilesPath}/ai/global_skills";
-	".claude/statusline-command.sh".source = symlink "${dotfilesPath}/editors/claude-code/statusline-command.sh";
-	".codex/AGENTS.md".source = symlink "${dotfilesPath}/ai/GLOBAL_AGENTS.md";
-	".config/ghostty".source = symlink "${dotfilesPath}/os/mac/ghostty";
-	".config/karabiner".source = symlink "${dotfilesPath}/os/mac/karabiner-elements";
-	".config/karabiner.edn".source = symlink "${dotfilesPath}/os/mac/karabiner-goku/karabiner.edn";
-	".dotly".source = symlink "${dotfilesPath}/os/mac/.dotly";
-	".gitattributes".source = symlink "${dotfilesPath}/git/.gitattributes";
-	".gitconfig".source = symlink "${dotfilesPath}/git/.gitconfig";
-	".gitignore_global".source = symlink "${dotfilesPath}/git/.gitignore_global";
-	".gnupg/gpg-agent.conf".source = symlink "${dotfilesPath}/modules/private/gnupg/gpg-agent.conf";
-	".npmrc".source = symlink "${dotfilesPath}/modules/private/js/.npmrc";
-	".profile".source = symlink "${dotfilesPath}/shell/bash/.profile";
-	".skhdrc".source = symlink "${dotfilesPath}/os/mac/skhd/.skhdrc";
-	".vimrc".source = symlink "${dotfilesPath}/editors/vim/.vimrc";
-	".zimrc".source = symlink "${dotfilesPath}/shell/zsh/.zimrc";
-	".zlogin".source = symlink "${dotfilesPath}/shell/zsh/.zlogin";
-	".zprofile".source = symlink "${dotfilesPath}/shell/zsh/.zprofile";
-	".zshenv".source = symlink "${dotfilesPath}/shell/zsh/.zshenv";
-	".zshrc".source = symlink "${dotfilesPath}/shell/zsh/.zshrc";
-	"Library/Application Support/Claude/claude_desktop_config.json".source = symlink "${dotfilesPath}/os/mac/claude-desktop/claude_desktop_config.json";
-	"Library/Application Support/Code/User/keybindings.json".source = symlink "${dotfilesPath}/editors/code-oss/keybindings.json";
-	"Library/Application Support/Code/User/settings.json".source = symlink "${dotfilesPath}/editors/vscode/settings.json";
-	"Library/Application Support/Cursor/User/keybindings.json".source = symlink "${dotfilesPath}/editors/code-oss/keybindings.json";
-	"Library/Application Support/Cursor/User/settings.json".source = symlink "${dotfilesPath}/editors/cursor/settings.json";
-	"Library/Application Support/com.elgato.StreamDeck/ProfilesV2".source = symlink "${dotfilesPath}/modules/private/mac/streamdeck/ProfilesV2";
-	"Library/Application Support/obs-studio/basic".source = symlink "${dotfilesPath}/modules/private/mac/obs/basic";
-	"Library/Application Support/obs-studio/global.ini".source = symlink "${dotfilesPath}/modules/private/mac/obs/global.ini";
-	"Library/LaunchAgents/com.user.cron.every_15s.plist".source = symlink "${dotfilesPath}/os/mac/LaunchAgents/com.user.cron.every_15s.plist";
+  ".bash_profile".source = symlink "${dotfilesPath}/shell/bash/.bash_profile";
+  ".bashrc".source = symlink "${dotfilesPath}/shell/bash/.bashrc";
+  ".claude.json".source = symlink "${dotfilesPath}/modules/private/claude/.claude.json";
+  ".claude/CLAUDE.md".source = symlink "${dotfilesPath}/ai/GLOBAL_AGENTS.md";
+  ".claude/commands".source = symlink "${dotfilesPath}/ai/global_commands";
+  ".claude/settings.json".source = symlink "${dotfilesPath}/editors/claude-code/settings.json";
+  ".claude/skills".source = symlink "${dotfilesPath}/ai/global_skills";
+  ".claude/statusline-command.sh".source =
+    symlink "${dotfilesPath}/editors/claude-code/statusline-command.sh";
+  ".codex/AGENTS.md".source = symlink "${dotfilesPath}/ai/GLOBAL_AGENTS.md";
+  ".config/ghostty".source = symlink "${dotfilesPath}/os/mac/ghostty";
+  ".config/karabiner".source = symlink "${dotfilesPath}/os/mac/karabiner-elements";
+  ".config/karabiner.edn".source = symlink "${dotfilesPath}/os/mac/karabiner-goku/karabiner.edn";
+  ".dotly".source = symlink "${dotfilesPath}/os/mac/.dotly";
+  ".gitattributes".source = symlink "${dotfilesPath}/git/.gitattributes";
+  ".gitconfig".source = symlink "${dotfilesPath}/git/.gitconfig";
+  ".gitignore_global".source = symlink "${dotfilesPath}/git/.gitignore_global";
+  ".gnupg/gpg-agent.conf".source = symlink "${dotfilesPath}/modules/private/gnupg/gpg-agent.conf";
+  ".npmrc".source = symlink "${dotfilesPath}/modules/private/js/.npmrc";
+  ".profile".source = symlink "${dotfilesPath}/shell/bash/.profile";
+  ".skhdrc".source = symlink "${dotfilesPath}/os/mac/skhd/.skhdrc";
+  ".vimrc".source = symlink "${dotfilesPath}/editors/vim/.vimrc";
+  ".zimrc".source = symlink "${dotfilesPath}/shell/zsh/.zimrc";
+  ".zlogin".source = symlink "${dotfilesPath}/shell/zsh/.zlogin";
+  ".zprofile".source = symlink "${dotfilesPath}/shell/zsh/.zprofile";
+  ".zshenv".source = symlink "${dotfilesPath}/shell/zsh/.zshenv";
+  ".zshrc".source = symlink "${dotfilesPath}/shell/zsh/.zshrc";
+  "Library/Application Support/Claude/claude_desktop_config.json".source =
+    symlink "${dotfilesPath}/os/mac/claude-desktop/claude_desktop_config.json";
+  "Library/Application Support/Code/User/keybindings.json".source =
+    symlink "${dotfilesPath}/editors/code-oss/keybindings.json";
+  "Library/Application Support/Code/User/settings.json".source =
+    symlink "${dotfilesPath}/editors/vscode/settings.json";
+  "Library/Application Support/Cursor/User/keybindings.json".source =
+    symlink "${dotfilesPath}/editors/code-oss/keybindings.json";
+  "Library/Application Support/Cursor/User/settings.json".source =
+    symlink "${dotfilesPath}/editors/cursor/settings.json";
+  "Library/Application Support/com.elgato.StreamDeck/ProfilesV2".source =
+    symlink "${dotfilesPath}/modules/private/mac/streamdeck/ProfilesV2";
+  "Library/Application Support/obs-studio/basic".source =
+    symlink "${dotfilesPath}/modules/private/mac/obs/basic";
+  "Library/Application Support/obs-studio/global.ini".source =
+    symlink "${dotfilesPath}/modules/private/mac/obs/global.ini";
+  "Library/LaunchAgents/com.user.cron.every_15s.plist".source =
+    symlink "${dotfilesPath}/os/mac/LaunchAgents/com.user.cron.every_15s.plist";
 }

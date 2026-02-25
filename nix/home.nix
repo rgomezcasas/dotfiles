@@ -1,19 +1,24 @@
-{ config, pkgs, username, ... }:
+{
+  config,
+  pkgs,
+  username,
+  ...
+}:
 
 {
-	home.username = username;
-	home.homeDirectory = "/Users/${username}";
-	home.stateVersion = "24.05";
+  home.username = username;
+  home.homeDirectory = "/Users/${username}";
+  home.stateVersion = "24.05";
 
-	home.packages = [];
+  home.packages = [ ];
 
-	home.file = import ./_symlinks.nix { inherit config username; };
+  home.file = import ./_symlinks.nix { inherit config username; };
 
-	home.sessionVariables = {};
+  home.sessionVariables = { };
 
-	home.sessionPath = [
-		"/run/current-system/sw/bin"
-		"$HOME/.nix-profile/bin"
-	];
-	programs.home-manager.enable = true;
+  home.sessionPath = [
+    "/run/current-system/sw/bin"
+    "$HOME/.nix-profile/bin"
+  ];
+  programs.home-manager.enable = true;
 }

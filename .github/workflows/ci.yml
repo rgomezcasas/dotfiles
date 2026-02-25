@@ -44,3 +44,25 @@ jobs:
 
       - name: 💅 Lint bash files
         run: bash "$DOTLY_PATH/scripts/self/lint"
+
+      - uses: cachix/install-nix-action@v31
+
+      - name: 💅 Lint nix files
+        run: nix-shell -p nixfmt --run "nixfmt --check nix/*.nix"
+
+  validate-scripts:
+    runs-on: ubuntu-latest
+    name: 📝 Validate scripts
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: git submodule update --init --recursive
+
+      - name: Set needed environment variables
+        run: |
+          echo "DOTFILES_PATH=$PWD" >> $GITHUB_ENV
+          echo "DOTLY_PATH=$PWD/modules/dotly" >> $GITHUB_ENV
+
+      - name: 📝 Validate scripts
+        run: bash scripts/ci/validate_scripts
