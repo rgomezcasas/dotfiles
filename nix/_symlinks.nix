@@ -14,14 +14,9 @@ in
 	".claude/skills".source = symlink "${dotfilesPath}/ai/global_skills";
 	".claude/statusline-command.sh".source = symlink "${dotfilesPath}/editors/claude-code/statusline-command.sh";
 	".codex/AGENTS.md".source = symlink "${dotfilesPath}/ai/GLOBAL_AGENTS.md";
-	".config/alacritty/alacritty.toml".source = symlink "${dotfilesPath}/os/mac/alacritty/alacritty.toml";
 	".config/ghostty".source = symlink "${dotfilesPath}/os/mac/ghostty";
 	".config/karabiner".source = symlink "${dotfilesPath}/os/mac/karabiner-elements";
 	".config/karabiner.edn".source = symlink "${dotfilesPath}/os/mac/karabiner-goku/karabiner.edn";
-	".config/kitty".source = symlink "${dotfilesPath}/os/mac/kitty";
-	".config/linearmouse".source = symlink "${dotfilesPath}/os/mac/linearmouse";
-	".config/sketchybar".source = symlink "${dotfilesPath}/os/mac/sketchybar";
-	".config/yabai".source = symlink "${dotfilesPath}/os/mac/yabai";
 	".dotly".source = symlink "${dotfilesPath}/os/mac/.dotly";
 	".gitattributes".source = symlink "${dotfilesPath}/git/.gitattributes";
 	".gitconfig".source = symlink "${dotfilesPath}/git/.gitconfig";
@@ -43,7 +38,6 @@ in
 	"Library/Application Support/com.elgato.StreamDeck/ProfilesV2".source = symlink "${dotfilesPath}/modules/private/mac/streamdeck/ProfilesV2";
 	"Library/Application Support/obs-studio/basic".source = symlink "${dotfilesPath}/modules/private/mac/obs/basic";
 	"Library/Application Support/obs-studio/global.ini".source = symlink "${dotfilesPath}/modules/private/mac/obs/global.ini";
-	"Library/Application Support/zen/Profiles/8fh0vfxw.Default (alpha)/chrome/userChrome.css".source = symlink "${dotfilesPath}/os/mac/zen/userChrome.css";
 	"Library/LaunchAgents/com.user.cron.5seconds.plist".source = symlink "${dotfilesPath}/os/mac/LaunchAgents/com.user.cron.5seconds.plist";
 	"Library/LaunchAgents/com.user.startup.plist".source = symlink "${dotfilesPath}/os/mac/LaunchAgents/com.user.startup.plist";
 }

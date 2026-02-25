@@ -30,7 +30,7 @@
   :Slack          ["com.tinyspeck.slackmacgap"]
   :VSCode         ["com.microsoft.VSCode"]
   :Vlc            ["org.videolan.vlc"]
-  :ZenBrowser     ["app.zen-browser.zen"]}
+}
  :froms
  {:clipboard-history        {:modi [:left_command :left_shift] :key :v}
   :change-current-page      {:modi :left_command :key :l}
@@ -125,16 +125,6 @@
   {:des   "[Dia] Shortcuts"
    :rules [:Dia
            [:sidebar-primary-toggle :!Cs]]} ; Toggle sidebar
-
-  {:des   "[Zen] Shortcuts"
-   :rules [:ZenBrowser
-           [:sidebar-primary-toggle :!COc]       ; Toggle sidebar
-           [:sidebar-secondary-toggle :!Ob]      ; Change to compact
-           [:switch-account :!TOright_arrow]     ; Change workspace
-           [:switch-account-esc :!TOright_arrow] ; Change workspace (esc)
-           [:next-workspace :!TOright_arrow]     ; Next workspace
-           [:prev-workspace :!COq]               ; Previous workspace
-           [:!Ct [:!Ct :!Cl]]]}                  ; cmd+t also shows url bar
 
   {:des   "[Orion] Shortcuts"
    :rules [:Orion
