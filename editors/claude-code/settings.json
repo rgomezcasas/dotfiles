@@ -1,8 +1,8 @@
 {
-	"attribution": {
-		"commit": "",
-		"pr": ""
-	},
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
   "permissions": {
     "allow": [
       "WebSearch"
