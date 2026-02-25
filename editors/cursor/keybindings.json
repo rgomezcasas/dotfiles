@@ -20,8 +20,13 @@
 	},
   {
     "key": "enter",
+    "command": "-renameFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "enter",
     "command": "list.select",
-    "when": "sideBarFocus"
+    "when": "listFocus && !inputFocus"
   },
   {
     "key": "escape",
