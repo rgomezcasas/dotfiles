@@ -7,6 +7,7 @@
 		"bitwarden-cli"
 		"choose-gui"
 		"cliclick"
+		"denisidoro/tools/docpars"
 		"gemini-cli"
 		"ollama"
 		"sst/tap/opencode"
