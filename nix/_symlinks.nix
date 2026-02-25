@@ -15,8 +15,6 @@ in
 	".claude/statusline-command.sh".source = symlink "${dotfilesPath}/editors/claude-code/statusline-command.sh";
 	".codex/AGENTS.md".source = symlink "${dotfilesPath}/ai/GLOBAL_AGENTS.md";
 	".config/alacritty/alacritty.toml".source = symlink "${dotfilesPath}/os/mac/alacritty/alacritty.toml";
-	".config/clojure-lsp".source = symlink "${dotfilesPath}/langs/clojure/clojure-lsp";
-	".config/clojure/profiles.clj".source = symlink "${dotfilesPath}/langs/clojure/profiles.clj";
 	".config/ghostty".source = symlink "${dotfilesPath}/os/mac/ghostty";
 	".config/karabiner".source = symlink "${dotfilesPath}/os/mac/karabiner-elements";
 	".config/karabiner.edn".source = symlink "${dotfilesPath}/os/mac/karabiner-goku/karabiner.edn";
