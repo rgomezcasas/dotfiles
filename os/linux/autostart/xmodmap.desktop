@@ -1,4 +1,0 @@
-[Desktop Entry]
-Name=pgupdn
-Exec=xmodmap /home/rafa/.Xmodmap
-Type=Application
