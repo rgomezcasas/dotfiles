@@ -7,7 +7,9 @@
     "allow": [
       "WebSearch"
     ],
-    "deny": [],
+    "deny": [
+      "Bash(git push:*)"
+    ],
     "defaultMode": "default"
   },
   "statusLine": {
@@ -35,7 +37,8 @@
       "allowLocalBinding": true
     },
     "excludedCommands": [
-      "docker"
+      "docker",
+      "git"
     ]
   },
   "spinnerVerbs": {

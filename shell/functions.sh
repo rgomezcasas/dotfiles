@@ -25,7 +25,7 @@ cc() {
 }
 
 ccyolo() {
-  cc --dangerously-skip-permissions --settings '{"sandbox":{"enabled":true,"autoAllowBashIfSandboxed":true}}' "$@"
+  cc --dangerously-skip-permissions --settings '{"sandbox":{"enabled":true}}' "$@"
 }
 
 t() {
