@@ -11,4 +11,4 @@ source "$DOTLY_PATH/scripts/core/_main.sh"
 ##?   f <prompt>...
 docs::parse "$@"
 
-exec "$(dirname "$0")/cc" --continue -p "${prompt[*]}"
+dot claude cc --continue -p "${prompt[*]}"

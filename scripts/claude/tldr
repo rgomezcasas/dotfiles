@@ -11,7 +11,7 @@ source "$DOTLY_PATH/scripts/core/_main.sh"
 ##?   tldr <command>...
 docs::parse "$@"
 
-exec "$(dirname "$0")/cc" \
+dot claude cc \
   --model "haiku" \
   --append-system-prompt 'El output se mostrará directamente en una terminal, así que:
 - Responde con texto sin formatear.

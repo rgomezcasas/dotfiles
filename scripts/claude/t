@@ -11,7 +11,7 @@ source "$DOTLY_PATH/scripts/core/_main.sh"
 ##?   t <description>...
 docs::parse "$@"
 
-exec "$(dirname "$0")/cc" \
+dot claude cc \
   --model "haiku" \
   --append-system-prompt "Responde sólo con el comando. No lo metas dentro de backticks ni nada de markdown." \
   -p "Dame un comando de terminal para ${description[*]}"
