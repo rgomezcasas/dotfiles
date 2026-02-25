@@ -69,5 +69,7 @@
     "workbench.colorTheme": "Cursor Light",
     "editor.fontSize": 16,
     "terminal.integrated.fontSize": 16,
-    "workbench.iconTheme": "vscode-jetbrains-icon-theme-2023-light"
+    "workbench.iconTheme": "vscode-jetbrains-icon-theme-2023-light",
+    "workbench.editor.editorActionsLocation": "titleBar",
+    "breadcrumbs.enabled": false
 }
