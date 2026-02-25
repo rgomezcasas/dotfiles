@@ -40,6 +40,10 @@
     "command": "workbench.action.terminal.toggleTerminal"
   },
   {
+    "key": "ctrl+alt+shift+cmd+t",
+    "command": "workbench.action.terminal.toggleTerminal"
+  },
+  {
     "key": "ctrl+alt+cmd+m",
     "command": "notifications.clearAll"
   },
