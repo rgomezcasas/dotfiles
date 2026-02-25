@@ -14,7 +14,7 @@ _detect_macos_theme() {
 [[ -z "$CODELY_THEME_MODE" ]] && _detect_macos_theme
 export CODELY_THEME_PWD_MODE="short"    # full, short, home_relative
 export CODELY_THEME_STATUS_ICON_OK=""  #  󱁑        󰽰 󰯙
-export CODELY_THEME_STATUS_ICON_KO="☢"  # ﮊ
+export CODELY_THEME_STATUS_ICON_KO="☢"  #
 export CODELY_THEME_PROMPT_IN_NEW_LINE=true
 
 if [[ $__CFBundleIdentifier == "com.jetbrains."* ]]; then
@@ -30,9 +30,6 @@ fi
 # Languages
 # ------------------------------------------------------------------------------
 export JAVA_HOME="$(/usr/libexec/java_home 2>/dev/null)"
-export GEM_HOME="$HOME/.gem"
-export GOPATH="$HOME/.go"
-export PYTORCH_ENABLE_MPS_FALLBACK=1
 
 # ------------------------------------------------------------------------------
 # Apps
@@ -63,11 +60,10 @@ fi
 
 export EZA_COLORS="di=34:ln=36:ex=32:fi=0:uu=33:gu=33:sn=0:sb=0:da=36:hd=4:bu=4;33:ur=33:uw=31:ux=32:ue=32:gr=33:gw=31:gx=32:tr=33:tw=31:tx=32:xx=90"
 
-# GPG_TTY set lazily on first gpg use (see functions.sh)
-
 export LANG="en_US.UTF-8"
 
 export EDITOR="idea -e --wait"
+
 # ------------------------------------------------------------------------------
 # Path - The higher it is, the more priority it has
 # ------------------------------------------------------------------------------
@@ -83,17 +79,12 @@ _path_candidates=(
   "/nix/var/nix/profiles/default/bin"
   "/Applications/Ghostty.app/Contents/MacOS"
   "$JAVA_HOME/bin"
-  "$GEM_HOME/bin"
-  "$GOPATH/bin"
   "$HOME/.cargo/bin"
   "$HOME/.orbstack/bin"
   "$HOME/Library/pnpm"
   "$HOME/.claude/local"
-  "$HOMEBREW_PREFIX/opt/ruby/bin"
   "$HOMEBREW_PREFIX/bin"
   "$HOMEBREW_PREFIX/sbin"
-  "$HOME/.cache/npm/global/bin"
-  "$HOME/.local/bin"
   "/usr/local/bin"
   "/bin"
   "/usr/bin"
