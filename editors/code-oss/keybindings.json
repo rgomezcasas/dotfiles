@@ -197,5 +197,9 @@
   {
     "key": "cmd+0",
     "command": "workbench.action.zoomReset"
+  },
+  {
+    "key": "shift+cmd+s",
+    "command": "workbench.files.action.showActiveFileInExplorer"
   }
 ]
