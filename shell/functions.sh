@@ -17,13 +17,3 @@ function up() {
 	zimfw upgrade
 }
 
-cc() {
-  _detect_macos_theme
-  jq --arg t "$CODELY_THEME_MODE" '.theme = $t' ~/.claude.json >| ~/.claude.json.tmp && mv ~/.claude.json.tmp ~/.claude.json
-
-  env -u BW_SESSION claude --append-system-prompt 'responde siempre en castellano' "$@"
-}
-
-ccyolo() {
-  cc --dangerously-skip-permissions --settings '{"sandbox":{"enabled":true}}' "$@"
-}

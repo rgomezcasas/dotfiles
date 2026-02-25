@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if [[ $(defaults read -g AppleInterfaceStyle 2>/dev/null) == "Dark" ]]; then
+  theme="dark"
+else
+  theme="light"
+fi
+
+jq --arg t "$theme" '.theme = $t' ~/.claude.json >| ~/.claude.json.tmp && mv ~/.claude.json.tmp ~/.claude.json
+
+exec env -u BW_SESSION claude --append-system-prompt 'responde siempre en castellano' "$@"

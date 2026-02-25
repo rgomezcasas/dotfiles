@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 set -euo pipefail
-source "$DOTFILES_PATH/scripts/claude/_setup"
 
 if [[ $# -eq 0 ]]; then
   echo "Usage: dot claude tldr <command>"
@@ -8,7 +7,7 @@ if [[ $# -eq 0 ]]; then
   exit 1
 fi
 
-run_claude \
+exec "$(dirname "$0")/cc" \
   --model "haiku" \
   --append-system-prompt 'El output se mostrará directamente en una terminal, así que:
 - Responde con texto sin formatear.

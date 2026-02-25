@@ -35,6 +35,8 @@ alias c.='(cursor $PWD &>/dev/null &)'
 alias o.='open .'
 
 # Claude code
+alias cc="dot claude cc"
+alias ccyolo="cc --dangerously-skip-permissions --settings '{\"sandbox\":{\"enabled\":true}}'"
 alias ccupdate="claude update"
 alias t="dot claude t"
 alias tldr="dot claude tldr"

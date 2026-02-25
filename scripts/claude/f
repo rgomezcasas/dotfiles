@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 set -euo pipefail
-source "$DOTFILES_PATH/scripts/claude/_setup"
 
 if [[ $# -eq 0 ]]; then
   echo "Usage: dot claude f <prompt>"
@@ -8,4 +7,4 @@ if [[ $# -eq 0 ]]; then
   exit 1
 fi
 
-run_claude --continue -p "$*"
+exec "$(dirname "$0")/cc" --continue -p "$*"
