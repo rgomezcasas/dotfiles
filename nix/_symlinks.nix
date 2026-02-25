@@ -8,7 +8,6 @@ in
 	".bashrc".source = symlink "${dotfilesPath}/shell/bash/.bashrc";
 	".claude.json".source = symlink "${dotfilesPath}/modules/private/claude/.claude.json";
 	".claude/CLAUDE.md".source = symlink "${dotfilesPath}/ai/GLOBAL_AGENTS.md";
-	".claude/claude-powerline.json".source = symlink "${dotfilesPath}/editors/claude-code/claude-powerline.json";
 	".claude/commands".source = symlink "${dotfilesPath}/ai/global_commands";
 	".claude/settings.json".source = symlink "${dotfilesPath}/editors/claude-code/settings.json";
 	".claude/skills".source = symlink "${dotfilesPath}/ai/global_skills";
