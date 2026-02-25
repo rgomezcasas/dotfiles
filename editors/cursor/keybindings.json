@@ -5,7 +5,13 @@
 	},
 	{
 		"key": "cmd+1",
-		"command": "workbench.action.toggleSidebarVisibility"
+		"command": "workbench.view.explorer",
+		"when": "!sideBarVisible || !explorerViewletVisible"
+	},
+	{
+		"key": "cmd+1",
+		"command": "workbench.action.toggleSidebarVisibility",
+		"when": "sideBarVisible && explorerViewletVisible"
 	},
   {
 		"key": "cmd+3",
@@ -122,7 +128,13 @@
   },
   {
     "key": "cmd+2",
-    "command": "tabsTreeView.focus"
+    "command": "workbench.view.scm",
+    "when": "!sideBarVisible || explorerViewletVisible"
+  },
+  {
+    "key": "cmd+2",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "sideBarVisible && !explorerViewletVisible"
   },
   {
     "key": "cmd+o",
