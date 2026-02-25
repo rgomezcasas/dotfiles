@@ -30,7 +30,7 @@
     "editor.lightbulb.enabled": "off",
     "workbench.list.horizontalScrolling": true,
     "workbench.sideBar.location": "left",
-    "workbench.tree.indent": 20,
+    "workbench.tree.indent": 15,
     "workbench.list.smoothScrolling": true,
     "breadcrumbs.symbolPath": "off",
     "workbench.startupEditor": "none",
