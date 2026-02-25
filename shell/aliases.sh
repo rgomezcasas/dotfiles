@@ -35,7 +35,7 @@ alias c.='(cursor $PWD &>/dev/null &)'
 alias o.='open .'
 
 # Claude code
-alias ccupdate="brew update && brew upgrade claude-code"
+alias ccupdate="claude update"
 alias ccyolo="IS_SANDBOX=1 cc"
 
 # Export credentials

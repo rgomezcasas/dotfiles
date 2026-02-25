@@ -21,7 +21,6 @@
 		"bettermouse"
 		"bitwarden"
 		"claude"
-		"claude-code"
 		"cloudflare-warp"
 		"codex"
 		"contexts"

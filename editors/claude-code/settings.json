@@ -50,5 +50,10 @@
   },
   "syntaxHighlightingDisabled": false,
   "alwaysThinkingEnabled": true,
+  "companyAnnouncements": [
+    "Viva Codely, ¡carajo!",
+    "¿Por qué si una variable es inmutable la seguimos llamando variable?"
+  ],
+  "autoUpdatesChannel": "latest",
   "skipDangerousModePermissionPrompt": true
 }

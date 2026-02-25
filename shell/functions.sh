@@ -17,28 +17,6 @@ function up() {
 	zimfw upgrade
 }
 
-t() {
-  claude \
-    --model "haiku" \
-    --append-system-prompt "Responde sólo con el comando. No lo metas dentro de backticks ni nada de markdown." \
-    -p "Dame un comando de terminal para $*"
-}
-
-tldr() {
-  claude \
-    --model "haiku" \
-    --append-system-prompt 'Responde siempre en castellano.
-El output se mostrará directamente en una terminal, así que:
-- Responde con texto sin formatear.
-- MUY IMPORTANTE: No uses formato markdown NI backticks.
-- Usa ejemplos y títulos claros.' \
-    -p "Dame 3 ejemplos de uso para el comando $*."
-}
-
-f() {
-  claude --continue -p "$*"
-}
-
 cc() {
   _detect_macos_theme
   jq --arg t "$CODELY_THEME_MODE" '.theme = $t' ~/.claude.json >| ~/.claude.json.tmp && mv ~/.claude.json.tmp ~/.claude.json
@@ -46,3 +24,24 @@ cc() {
   env -u BW_SESSION claude --append-system-prompt 'responde siempre en castellano' "$@"
 }
 
+
+t() {
+  cc \
+    --model "haiku" \
+    --append-system-prompt "Responde sólo con el comando. No lo metas dentro de backticks ni nada de markdown." \
+    -p "Dame un comando de terminal para $*"
+}
+
+tldr() {
+  cc \
+    --model "haiku" \
+    --append-system-prompt 'El output se mostrará directamente en una terminal, así que:
+- Responde con texto sin formatear.
+- MUY IMPORTANTE: No uses formato markdown NI backticks.
+- Usa ejemplos y títulos claros.' \
+    -p "Dame 3 ejemplos de uso para el comando $*."
+}
+
+f() {
+  cc --continue -p "$*"
+}
