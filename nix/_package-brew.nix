@@ -40,6 +40,7 @@
     "imaging-edge"
     "jetbrains-toolbox"
     "karabiner-elements"
+    "manaflow-ai/cmux/cmux"
     "meld-studio"
     "mqtt-explorer"
     "notion"
