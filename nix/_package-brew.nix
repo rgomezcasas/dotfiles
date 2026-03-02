@@ -2,13 +2,14 @@
 
 {
   enable = true;
-  taps = [ "manaflow-ai/cmux" ];
+  taps = [  "manaflow-ai/cmux" ];
   brews = [
     "bitwarden-cli"
     "choose-gui"
     "cliclick"
     "denisidoro/tools/docpars"
     "gemini-cli"
+    "jetbrains/junie/junie"
     "ollama"
     "sst/tap/opencode"
     "switchaudio-osx"

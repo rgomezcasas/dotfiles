@@ -1,8 +1,4 @@
 {
-  "attribution": {
-    "commit": "",
-    "pr": ""
-  },
   "permissions": {
     "allow": [
       "WebSearch"
@@ -99,5 +95,6 @@
   ],
   "autoUpdatesChannel": "latest",
   "skipDangerousModePermissionPrompt": true,
-  "autoMemoryEnabled": false
+  "autoMemoryEnabled": false,
+  "spinnerTipsEnabled": false
 }

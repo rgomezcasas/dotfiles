@@ -74,5 +74,6 @@
     "breadcrumbs.enabled": false,
     "workbench.activityBar.location": "hidden",
     "workbench.navigationControl.enabled": false,
-    "window.commandCenter": false
+    "window.commandCenter": false,
+    "git.openRepositoryInParentFolders": "always"
 }
