@@ -98,5 +98,6 @@
     "💂‍♂️ Cuando hay un error de sintaxis tienes que volver caminando a casa"
   ],
   "autoUpdatesChannel": "latest",
-  "skipDangerousModePermissionPrompt": true
+  "skipDangerousModePermissionPrompt": true,
+  "autoMemoryEnabled": false
 }
