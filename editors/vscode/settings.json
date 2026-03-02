@@ -42,9 +42,9 @@
       "letter-spacing": "1px !important"
     },
     ".part.sidebar .content": {
-      "width": "calc(100% - 20px) !important",
-      "padding-left": "10px !important",
-      "margin-left": "6px !important"
+      "width": "100% !important",
+      "padding-left": "0 !important",
+      "margin-left": "0 !important"
     },
     ".part.sidebar .welcome-view-content": {
       "max-width": "100% !important",
@@ -641,5 +641,6 @@
   "workbench.editor.editorActionsLocation": "titleBar",
   "breadcrumbs.enabled": false,
   "workbench.navigationControl.enabled": false,
-  "window.commandCenter": false
+  "window.commandCenter": false,
+  "workbench.activityBar.location": "hidden"
 }
