@@ -12,6 +12,7 @@
   :ChatGPT        ["com.openai.chat"]
   :Chrome         ["com.google.Chrome", "com.google.Chrome.beta"]
   :Claude         ["com.anthropic.claudefordesktop"]
+ :Cmux           ["com.cmuxterm.app"]
   :Contexts       ["com.contextsformac.Contexts"]
   :Dia            ["company.thebrowser.dia"]
   :Finder         ["com.apple.finder"]
