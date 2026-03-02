@@ -2,7 +2,7 @@
 
 {
   enable = true;
-  taps = [ ];
+  taps = [ "manaflow-ai/cmux" ];
   brews = [
     "bitwarden-cli"
     "choose-gui"

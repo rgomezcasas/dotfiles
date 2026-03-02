@@ -45,8 +45,6 @@ in
     symlink "${dotfilesPath}/modules/private/mac/streamdeck/ProfilesV2";
   "Library/Application Support/obs-studio/basic".source =
     symlink "${dotfilesPath}/modules/private/mac/obs/basic";
-  "Library/Application Support/obs-studio/global.ini".source =
-    symlink "${dotfilesPath}/modules/private/mac/obs/global.ini";
   "Library/LaunchAgents/com.user.cron.every_15s.plist".source =
     symlink "${dotfilesPath}/os/mac/LaunchAgents/com.user.cron.every_15s.plist";
 }
