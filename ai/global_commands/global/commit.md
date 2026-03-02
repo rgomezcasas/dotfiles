@@ -1,7 +1,7 @@
 ---
 name: commit
 description: Create a git commit following Conventional Commits specification
-allowed-tools: Bash(git add:*), Bash(git status:*), Bash(git commit:*), Bash(git diff:*), Bash(git log:*)
+allowed-tools: Bash(git add:*), Bash(git status:*), Bash(git commit:*), Bash(git diff:*), Bash(git log:*), Bash(git rev-parse:*)
 disable-model-invocation: true
 model: haiku
 ---
@@ -13,6 +13,7 @@ model: haiku
 - Unstaged changes: !`git diff`
 - Current branch: !`git branch --show-current`
 - Recent commits: !`git log --oneline -10`
+- Repository root path: !`git rev-parse --show-toplevel`
 
 ## Conventional Commits
 
@@ -70,3 +71,26 @@ Based on the changes shown above:
 2. Analyze the changes to determine the appropriate commit type and scope
 3. Create a commit message following the Conventional Commits specification
 4. Execute the commit
+
+## Course Repository Scope Convention
+
+This section ONLY applies when the last segment of the repository root path (shown above) ends in `-course`.
+
+When in a course repository, the commit scope MUST always reflect the course module and lesson numbers derived from the folder path.
+
+### Scope Format
+
+The folder structure follows the pattern `<module>-<topic>/<lesson>-<name>`. Extract the module and lesson numbers to build the scope as `<module>-<lesson>`.
+
+### Examples
+
+| Changed folder         | Scope    | Full commit example                       |
+|------------------------|----------|-------------------------------------------|
+| `01-agents/2-init`     | `01-2`   | `feat(01-2): add agent initialization`    |
+| `02-tools/3-search`    | `02-3`   | `fix(02-3): resolve search query parsing` |
+| `03-prompts/1-basics`  | `03-1`   | `refactor(03-1): simplify prompt builder` |
+
+### Rules
+
+1. The scope MUST always include the module and lesson numbers — never omit them
+2. If changes span multiple folders, use the most relevant one or split into separate commits

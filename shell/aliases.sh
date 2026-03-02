@@ -37,6 +37,7 @@ alias o.='open .'
 
 # Claude code
 alias cc="dot claude cc"
+alias commit="cc /global:commit"
 alias ccyolo="cc --dangerously-skip-permissions --settings '{\"sandbox\":{\"enabled\":true}}'"
 alias ccupdate="claude update"
 
