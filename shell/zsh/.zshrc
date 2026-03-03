@@ -61,6 +61,7 @@ zsh-defer -c '[[ ! -f "$ZIM_HOME/init.zsh.zwc" || "$ZIM_HOME/init.zsh" -nt "$ZIM
 
 # Lazy load fzf-tab on first TAB press (more efficient)
 _lazy_load_fzf_tab() {
+  unset POSTDISPLAY
   source "$ZIM_HOME/modules/fzf-tab/fzf-tab.zsh" 2>/dev/null
   [[ ${+functions[enable-fzf-tab]} ]] && enable-fzf-tab
 
@@ -71,9 +72,9 @@ _lazy_load_fzf_tab() {
     zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
   fi
 
-  # Restore original TAB binding after loading
+  # Restore original TAB binding and rebind autosuggestions
   bindkey '^I' expand-or-complete
-  # Execute the completion
+  _zsh_autosuggest_bind_widgets 2>/dev/null
   zle expand-or-complete
 }
 
@@ -84,6 +85,7 @@ bindkey '^I' _lazy_load_fzf_tab
 # Async mode for autocompletion
 ZSH_AUTOSUGGEST_USE_ASYNC=true
 ZSH_AUTOSUGGEST_MANUAL_REBIND=1
+ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(expand-or-complete expand-or-complete-prefix)
 ZSH_HIGHLIGHT_MAXLENGTH=100
 
 source "$DOTFILES_PATH/modules/private/shell/exports.sh"
