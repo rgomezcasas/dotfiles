@@ -43,4 +43,4 @@ window-new-tab-position = end
 
 # Keybinding
 keybind = shift+enter=text:\n
-keybind = command+k=text:\x0c
+keybind = command+k=clear_screen

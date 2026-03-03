@@ -31,7 +31,7 @@ alias up="dot system update"
 alias copy='pbcopy'
 alias dc='dot docker connect'
 
-alias i.='(idea1 $PWD &>/dev/null &)'
+alias i.='(idea $PWD &>/dev/null &)'
 alias v.='(code $PWD &>/dev/null &)'
 alias c.='(cursor $PWD &>/dev/null &)'
 alias o.='open .'

@@ -37,6 +37,7 @@
       "git"
     ]
   },
+  "spinnerTipsEnabled": false,
   "spinnerVerbs": {
     "mode": "replace",
     "verbs": [
@@ -94,7 +95,6 @@
     "💂‍♂️ Cuando hay un error de sintaxis tienes que volver caminando a casa"
   ],
   "autoUpdatesChannel": "latest",
-  "skipDangerousModePermissionPrompt": true,
   "autoMemoryEnabled": false,
-  "spinnerTipsEnabled": false
+  "skipDangerousModePermissionPrompt": true
 }

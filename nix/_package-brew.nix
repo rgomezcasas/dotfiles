@@ -10,6 +10,7 @@
     "denisidoro/tools/docpars"
     "gemini-cli"
     "jetbrains/junie/junie"
+    "mitmproxy"
     "ollama"
     "sst/tap/opencode"
     "switchaudio-osx"

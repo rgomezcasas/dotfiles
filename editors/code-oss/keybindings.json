@@ -201,5 +201,14 @@
   {
     "key": "shift+cmd+s",
     "command": "workbench.files.action.showActiveFileInExplorer"
+  },
+  {
+    "key": "cmd+4",
+    "command": "workbench.action.toggleUnifiedSidebarFromKeyboard",
+    "when": "cursor.agentIdeUnification.enabled && !isAuxiliaryWindowFocusedContext"
+  },
+  {
+    "key": "alt+cmd+e",
+    "command": "workbench.action.maximizeAuxiliaryBar"
   }
 ]
