@@ -1,6 +1,6 @@
 # Adding Node Packages
 
-File: `nix/_package-node.nix`
+File: `nix/packages/node.nix`
 
 Add the package name in alphabetical order. Packages come from `pkgs.nodePackages`.
 

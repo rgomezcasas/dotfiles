@@ -38,8 +38,8 @@
           };
 
           environment.systemPackages =
-            (import ./_package-nix.nix { inherit pkgs; }) ++ (import ./_package-node.nix { inherit pkgs; });
-          homebrew = import ./_package-brew.nix;
+            (import ./packages/nix.nix { inherit pkgs; }) ++ (import ./packages/node.nix { inherit pkgs; });
+          homebrew = import ./packages/brew.nix;
 
           home-manager.backupFileExtension = "bkp_" + builtins.toString builtins.currentTime;
 
@@ -80,7 +80,7 @@
       darwinConfigurations."pro" = nix-darwin.lib.darwinSystem {
         modules = [
           configuration
-          ./_package-mas.nix
+          ./packages/app-store.nix
           nix-homebrew.darwinModules.nix-homebrew
           {
             nix-homebrew = {
