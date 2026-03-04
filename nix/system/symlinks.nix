@@ -18,9 +18,9 @@ in
   ".config/karabiner".source = symlink "${dotfilesPath}/os/mac/karabiner-elements";
   ".config/karabiner.edn".source = symlink "${dotfilesPath}/os/mac/karabiner-goku/karabiner.edn";
   ".dotly".source = symlink "${dotfilesPath}/os/mac/.dotly";
-  ".gitattributes".source = symlink "${dotfilesPath}/git/.gitattributes";
-  ".gitconfig".source = symlink "${dotfilesPath}/git/.gitconfig";
-  ".gitignore_global".source = symlink "${dotfilesPath}/git/.gitignore_global";
+  ".gitattributes".source = symlink "${dotfilesPath}/config/git/.gitattributes";
+  ".gitconfig".source = symlink "${dotfilesPath}/config/git/.gitconfig";
+  ".gitignore_global".source = symlink "${dotfilesPath}/config/git/.gitignore_global";
   ".gnupg/gpg-agent.conf".source = symlink "${dotfilesPath}/modules/private/gnupg/gpg-agent.conf";
   ".npmrc".source = symlink "${dotfilesPath}/modules/private/js/.npmrc";
   ".profile".source = symlink "${dotfilesPath}/shell/bash/.profile";
