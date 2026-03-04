@@ -372,7 +372,7 @@
             }
           },
           "to" : [ {
-            "shell_command" : "$HOME/.dotfiles/bin/sdot ui show_scripts"
+            "shell_command" : "$HOME/.dotfiles/scripts/system/sdot ui show_scripts"
           } ],
           "type" : "basic"
         }, {
@@ -383,7 +383,7 @@
             }
           },
           "to" : [ {
-            "shell_command" : "$HOME/.dotfiles/bin/sdot utils uuid_code"
+            "shell_command" : "$HOME/.dotfiles/scripts/system/sdot utils uuid_code"
           } ],
           "type" : "basic"
         }, {
@@ -394,7 +394,7 @@
             }
           },
           "to" : [ {
-            "shell_command" : "$HOME/.dotfiles/bin/sdot utils open_common"
+            "shell_command" : "$HOME/.dotfiles/scripts/system/sdot utils open_common"
           } ],
           "type" : "basic"
         }, {
@@ -405,7 +405,7 @@
             }
           },
           "to" : [ {
-            "shell_command" : "$HOME/.dotfiles/bin/sdot github open_codely_repo"
+            "shell_command" : "$HOME/.dotfiles/scripts/system/sdot github open_codely_repo"
           } ],
           "type" : "basic"
         } ]
@@ -419,7 +419,7 @@
             }
           },
           "to" : [ {
-            "shell_command" : "$HOME/.dotfiles/bin/sdot apple music increase-volume"
+            "shell_command" : "$HOME/.dotfiles/scripts/system/sdot apple music increase-volume"
           } ],
           "type" : "basic"
         }, {
@@ -430,7 +430,7 @@
             }
           },
           "to" : [ {
-            "shell_command" : "$HOME/.dotfiles/bin/sdot apple music decrease-volume"
+            "shell_command" : "$HOME/.dotfiles/scripts/system/sdot apple music decrease-volume"
           } ],
           "type" : "basic"
         }, {
@@ -441,7 +441,7 @@
             }
           },
           "to" : [ {
-            "shell_command" : "$HOME/.dotfiles/bin/sdot apple music toggle-play"
+            "shell_command" : "$HOME/.dotfiles/scripts/system/sdot apple music toggle-play"
           } ],
           "type" : "basic"
         } ]
@@ -819,7 +819,7 @@
             "key_code" : "caps_lock"
           },
           "to" : [ {
-            "shell_command" : "$HOME/.dotfiles/bin/sdot safari switch_profile"
+            "shell_command" : "$HOME/.dotfiles/scripts/system/sdot safari switch_profile"
           } ],
           "conditions" : [ {
             "type" : "frontmost_application_if",
@@ -834,7 +834,7 @@
             "key_code" : "escape"
           },
           "to" : [ {
-            "shell_command" : "$HOME/.dotfiles/bin/sdot safari switch_profile"
+            "shell_command" : "$HOME/.dotfiles/scripts/system/sdot safari switch_profile"
           } ],
           "conditions" : [ {
             "type" : "frontmost_application_if",
@@ -852,7 +852,7 @@
             "key_code" : "caps_lock"
           },
           "to" : [ {
-            "shell_command" : "$HOME/.dotfiles/bin/sdot bitwarden switch_account"
+            "shell_command" : "$HOME/.dotfiles/scripts/system/sdot bitwarden switch_account"
           } ],
           "conditions" : [ {
             "type" : "frontmost_application_if",
@@ -867,7 +867,7 @@
             "key_code" : "escape"
           },
           "to" : [ {
-            "shell_command" : "$HOME/.dotfiles/bin/sdot bitwarden switch_account"
+            "shell_command" : "$HOME/.dotfiles/scripts/system/sdot bitwarden switch_account"
           } ],
           "conditions" : [ {
             "type" : "frontmost_application_if",
@@ -1405,7 +1405,7 @@
             }
           },
           "to" : [ {
-            "shell_command" : "$HOME/.dotfiles/bin/sdot mac paste_text \"+:white_check_mark:\" --returning"
+            "shell_command" : "$HOME/.dotfiles/scripts/system/sdot mac paste_text \"+:white_check_mark:\" --returning"
           } ],
           "conditions" : [ {
             "type" : "frontmost_application_if",
@@ -1420,7 +1420,7 @@
             }
           },
           "to" : [ {
-            "shell_command" : "$HOME/.dotfiles/bin/sdot mac paste_text \"+:thumbsup:\" --returning"
+            "shell_command" : "$HOME/.dotfiles/scripts/system/sdot mac paste_text \"+:thumbsup:\" --returning"
           } ],
           "conditions" : [ {
             "type" : "frontmost_application_if",
@@ -1435,7 +1435,7 @@
             }
           },
           "to" : [ {
-            "shell_command" : "$HOME/.dotfiles/bin/sdot mac paste_text \"+:thumbsdown:\" --returning"
+            "shell_command" : "$HOME/.dotfiles/scripts/system/sdot mac paste_text \"+:thumbsdown:\" --returning"
           } ],
           "conditions" : [ {
             "type" : "frontmost_application_if",
@@ -1450,7 +1450,7 @@
             }
           },
           "to" : [ {
-            "shell_command" : "$HOME/.dotfiles/bin/sdot mac paste_text \"+:heavy_plus_sign:\" --returning"
+            "shell_command" : "$HOME/.dotfiles/scripts/system/sdot mac paste_text \"+:heavy_plus_sign:\" --returning"
           } ],
           "conditions" : [ {
             "type" : "frontmost_application_if",
@@ -1465,7 +1465,7 @@
             }
           },
           "to" : [ {
-            "shell_command" : "$HOME/.dotfiles/bin/sdot mac paste_text \"+:grimacing:\" --returning"
+            "shell_command" : "$HOME/.dotfiles/scripts/system/sdot mac paste_text \"+:grimacing:\" --returning"
           } ],
           "conditions" : [ {
             "type" : "frontmost_application_if",
@@ -1480,7 +1480,7 @@
             }
           },
           "to" : [ {
-            "shell_command" : "$HOME/.dotfiles/bin/sdot mac paste_text \"+:joy:\" --returning"
+            "shell_command" : "$HOME/.dotfiles/scripts/system/sdot mac paste_text \"+:joy:\" --returning"
           } ],
           "conditions" : [ {
             "type" : "frontmost_application_if",

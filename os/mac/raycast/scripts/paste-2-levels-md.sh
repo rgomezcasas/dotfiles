@@ -18,4 +18,4 @@ extract_lists() {
 
 extract_lists "$(pbpaste)" | pbcopy
 
-"$HOME/.dotfiles/bin/sdot" mac paste_text -n
+"$HOME/.dotfiles/scripts/system/sdot" mac paste_text -n

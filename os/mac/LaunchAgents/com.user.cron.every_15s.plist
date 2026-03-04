@@ -6,7 +6,7 @@
 		<string>com.user.cron.every_15s</string>
 		<key>ProgramArguments</key>
 		<array>
-			<string>/Users/rafa.gomez/.dotfiles/bin/sdot</string>
+			<string>/Users/rafa.gomez/.dotfiles/scripts/system/sdot</string>
 			<string>system</string>
 			<string>cron</string>
 		</array>
@@ -23,7 +23,7 @@
 		<key>EnvironmentVariables</key>
 		<dict>
 			<key>PATH</key>
-			<string>/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/rafa.gomez/.dotfiles/bin</string>
+			<string>/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
 			<key>DOTFILES_PATH</key>
 			<string>/Users/rafa.gomez/.dotfiles</string>
 			<key>DOTLY_PATH</key>

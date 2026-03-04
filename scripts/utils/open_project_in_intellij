@@ -10,6 +10,6 @@ source "$DOTLY_PATH/scripts/core/_main.sh"
 ##? Usage:
 ##?   debug <thing>
 
-project=$("$HOME/.dotfiles/bin/sdot" utils list_projects --choose)
+project=$("$HOME/.dotfiles/scripts/system/sdot" utils list_projects --choose)
 
 "$HOME/bin/idea" "$project"

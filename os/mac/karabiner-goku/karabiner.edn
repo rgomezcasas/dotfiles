@@ -54,8 +54,8 @@
  :templates
  {:open-app         "osascript -e 'tell application \"%s\" to activate'"
   :type             "/run/current-system/sw/bin/skhd -t \"%s\""
-  :paste            "$HOME/.dotfiles/bin/sdot mac paste_text \"%s\""
-  :paste-and-return "$HOME/.dotfiles/bin/sdot mac paste_text \"%s\" --returning"
+  :paste            "$HOME/.dotfiles/scripts/system/sdot mac paste_text \"%s\""
+  :paste-and-return "$HOME/.dotfiles/scripts/system/sdot mac paste_text \"%s\" --returning"
   :wait_seconds     "osascript -e 'delay %s'"}
  :main
  [{:des   "[Mouse] Navigation"
@@ -103,15 +103,15 @@
            [:move-prev-screen [:!CTOSleft_arrow :!SOc]]]}       ; Move app to prev screen and center
 
   {:des   "[Launch] Scripts"
-   :rules [[:!Tcaps_lock "$HOME/.dotfiles/bin/sdot ui show_scripts"]                  ; Dotly UI scripts
-           [:!CTOu "$HOME/.dotfiles/bin/sdot utils uuid_code"]                        ; Generate UUID
-           [:!CTgrave_accent_and_tilde "$HOME/.dotfiles/bin/sdot utils open_common"]  ; Open common folders
-           [:!CTOr "$HOME/.dotfiles/bin/sdot github open_codely_repo"]]}              ; Open CodelyTV repo
+   :rules [[:!Tcaps_lock "$HOME/.dotfiles/scripts/system/sdot ui show_scripts"]                  ; Dotly UI scripts
+           [:!CTOu "$HOME/.dotfiles/scripts/system/sdot utils uuid_code"]                        ; Generate UUID
+           [:!CTgrave_accent_and_tilde "$HOME/.dotfiles/scripts/system/sdot utils open_common"]  ; Open common folders
+           [:!CTOr "$HOME/.dotfiles/scripts/system/sdot github open_codely_repo"]]}              ; Open CodelyTV repo
 
   {:des   "[Music] Apple Music controls"
-   :rules [[:!TOC9 "$HOME/.dotfiles/bin/sdot apple music increase-volume"] ; Increase volume
-           [:!TOC8 "$HOME/.dotfiles/bin/sdot apple music decrease-volume"] ; Decrease volume
-           [:!TOC7 "$HOME/.dotfiles/bin/sdot apple music toggle-play"]]}   ; Toggle play/pause
+   :rules [[:!TOC9 "$HOME/.dotfiles/scripts/system/sdot apple music increase-volume"] ; Increase volume
+           [:!TOC8 "$HOME/.dotfiles/scripts/system/sdot apple music decrease-volume"] ; Decrease volume
+           [:!TOC7 "$HOME/.dotfiles/scripts/system/sdot apple music toggle-play"]]}   ; Toggle play/pause
 
   {:des   "[Arc] Shortcuts"
    :rules [:Arc
@@ -161,13 +161,13 @@
   {:des   "[Safari] Shortcuts"
    :rules [:Safari
            [:sidebar-primary-toggle :!CSl]                                          ; Toggle sidebar
-           [:switch-account "$HOME/.dotfiles/bin/sdot safari switch_profile"]       ; Switch profile
-           [:switch-account-esc "$HOME/.dotfiles/bin/sdot safari switch_profile"]]} ; Switch profile (esc)
+           [:switch-account "$HOME/.dotfiles/scripts/system/sdot safari switch_profile"]       ; Switch profile
+           [:switch-account-esc "$HOME/.dotfiles/scripts/system/sdot safari switch_profile"]]} ; Switch profile (esc)
 
   {:des   "[Bitwarden] Shortcuts"
    :rules [:Bitwarden
-           [:switch-account "$HOME/.dotfiles/bin/sdot bitwarden switch_account"]       ; Switch account
-           [:switch-account-esc "$HOME/.dotfiles/bin/sdot bitwarden switch_account"]]} ; Switch account (esc)
+           [:switch-account "$HOME/.dotfiles/scripts/system/sdot bitwarden switch_account"]       ; Switch account
+           [:switch-account-esc "$HOME/.dotfiles/scripts/system/sdot bitwarden switch_account"]]} ; Switch account (esc)
 
   {:des   "[Finder] Shortcuts"
    :rules [:Finder
