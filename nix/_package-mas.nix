@@ -9,7 +9,7 @@ let
     "Final Cut Pro" = 424389933;
     "GarageBand" = 682658836;
     "Keynote Creator Studio" = 361285480;
-    "Numbers" = 361304891;
+    "Numbers Creator Studio" = 361304891;
   };
 
   consoleUser = config.system.primaryUser;
