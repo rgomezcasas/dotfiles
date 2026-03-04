@@ -11,4 +11,4 @@ source "$DOTLY_PATH/scripts/core/_main.sh"
 ##?   rebuild
 docs::parse "$@"
 
-sudo darwin-rebuild switch --flake "$DOTFILES_PATH/nix#pro" --impure
+sudo darwin-rebuild switch --flake "$DOTFILES_PATH/config/nix#pro" --impure

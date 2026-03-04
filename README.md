@@ -45,7 +45,7 @@ curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix 
 git clone --recurse-submodules git@github.com:rgomezcasas/dotfiles.git ~/.dotfiles
 
 # 3. Build and apply the system configuration
-cd ~/.dotfiles/nix
+cd ~/.dotfiles/config/nix
 sudo darwin-rebuild switch --flake .#pro --impure
 ```
 
@@ -84,23 +84,17 @@ Edit `config/macos/karabiner-goku/karabiner.edn` and run `goku`. **Never** edit 
 │   ├── git/             # .gitconfig, .gitattributes, .gitignore_global
 │   ├── macos/           # Karabiner, Ghostty, skhd, Raycast, LaunchAgents
 │   ├── editors/          # VSCode, Cursor, IntelliJ, Vim, Claude Code configs
+│   ├── nix/             # Nix flake, home-manager, packages, system config
+│   │   ├── flake.nix    #   Main flake: nix-darwin + home-manager + nix-homebrew
+│   │   ├── home.nix     #   Home-manager entry point
+│   │   ├── packages/    #   Package declarations (nix, brew, node, app-store)
+│   │   └── system/      #   System config (symlinks, macOS defaults)
 │   └── shell/           # Zsh/Bash configs, aliases, exports, functions
 ├── docs/                # Guides (packages, scripts, keyboard, editors)
 ├── modules/
 │   ├── dotly/           # Shell script framework (submodule)
 │   ├── private/         # Credentials, GPG, private configs (submodule)
 │   └── ghostty-cursor-shaders/
-├── nix/
-│   ├── flake.nix        # Main flake: nix-darwin + home-manager + nix-homebrew
-│   ├── home.nix         # Home-manager entry point
-│   ├── packages/        # Package declarations
-│   │   ├── nix.nix      #   Nix packages (50+ CLI tools)
-│   │   ├── brew.nix     #   Homebrew brews and casks
-│   │   ├── node.nix     #   Global Node.js packages
-│   │   └── app-store.nix #   Mac App Store apps
-│   └── system/          # System configuration
-│       ├── symlinks.nix #   All dotfile symlinks (~/.zshrc, ~/.gitconfig, etc.)
-│       └── macos-defaults.nix # macOS system preferences
 ├── scripts/             # 80+ scripts organized by category
 │   ├── system/          #   rebuild, update, volume, cron...
 │   ├── github/          #   git/GitHub utilities

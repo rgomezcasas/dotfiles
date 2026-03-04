@@ -1,6 +1,6 @@
 # Adding Mac App Store Apps
 
-File: `nix/packages/app-store.nix` → `masApps` attribute
+File: `config/nix/packages/app-store.nix` → `masApps` attribute
 
 Add the app name (as it appears in `/Applications`) and its App Store ID:
 

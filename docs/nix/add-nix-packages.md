@@ -1,6 +1,6 @@
 # Adding Nix Packages
 
-File: `nix/packages/nix.nix`
+File: `config/nix/packages/nix.nix`
 
 Add the package name in alphabetical order to the list. This is the preferred method over Homebrew for CLI tools.
 
