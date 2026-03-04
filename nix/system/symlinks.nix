@@ -9,10 +9,10 @@ in
   ".claude.json".source = symlink "${dotfilesPath}/modules/private/claude/.claude.json";
   ".claude/CLAUDE.md".source = symlink "${dotfilesPath}/config/agents/GLOBAL_AGENTS.md";
   ".claude/commands".source = symlink "${dotfilesPath}/config/agents/global_commands";
-  ".claude/settings.json".source = symlink "${dotfilesPath}/editors/claude-code/settings.json";
+  ".claude/settings.json".source = symlink "${dotfilesPath}/config/editors/claude-code/settings.json";
   ".claude/skills".source = symlink "${dotfilesPath}/config/agents/global_skills";
   ".claude/statusline-command.sh".source =
-    symlink "${dotfilesPath}/editors/claude-code/statusline-command.sh";
+    symlink "${dotfilesPath}/config/editors/claude-code/statusline-command.sh";
   ".codex/AGENTS.md".source = symlink "${dotfilesPath}/config/agents/GLOBAL_AGENTS.md";
   ".config/ghostty".source = symlink "${dotfilesPath}/config/macos/ghostty";
   ".config/karabiner".source = symlink "${dotfilesPath}/config/macos/karabiner-elements";
@@ -25,7 +25,7 @@ in
   ".npmrc".source = symlink "${dotfilesPath}/modules/private/js/.npmrc";
   ".profile".source = symlink "${dotfilesPath}/config/shell/bash/.profile";
   ".skhdrc".source = symlink "${dotfilesPath}/config/macos/skhd/.skhdrc";
-  ".vimrc".source = symlink "${dotfilesPath}/editors/vim/.vimrc";
+  ".vimrc".source = symlink "${dotfilesPath}/config/editors/vim/.vimrc";
   ".zimrc".source = symlink "${dotfilesPath}/config/shell/zsh/.zimrc";
   ".zlogin".source = symlink "${dotfilesPath}/config/shell/zsh/.zlogin";
   ".zprofile".source = symlink "${dotfilesPath}/config/shell/zsh/.zprofile";
@@ -34,17 +34,17 @@ in
   "Library/Application Support/Claude/claude_desktop_config.json".source =
     symlink "${dotfilesPath}/config/macos/claude-desktop/claude_desktop_config.json";
   "Library/Application Support/Code - Insiders/User/keybindings.json".source =
-    symlink "${dotfilesPath}/editors/code-oss/keybindings.json";
+    symlink "${dotfilesPath}/config/editors/code-oss/keybindings.json";
   "Library/Application Support/Code - Insiders/User/settings.json".source =
-    symlink "${dotfilesPath}/editors/vscode/settings.json";
+    symlink "${dotfilesPath}/config/editors/vscode/settings.json";
   "Library/Application Support/Code/User/keybindings.json".source =
-    symlink "${dotfilesPath}/editors/code-oss/keybindings.json";
+    symlink "${dotfilesPath}/config/editors/code-oss/keybindings.json";
   "Library/Application Support/Code/User/settings.json".source =
-    symlink "${dotfilesPath}/editors/vscode/settings.json";
+    symlink "${dotfilesPath}/config/editors/vscode/settings.json";
   "Library/Application Support/Cursor/User/keybindings.json".source =
-    symlink "${dotfilesPath}/editors/code-oss/keybindings.json";
+    symlink "${dotfilesPath}/config/editors/code-oss/keybindings.json";
   "Library/Application Support/Cursor/User/settings.json".source =
-    symlink "${dotfilesPath}/editors/cursor/settings.json";
+    symlink "${dotfilesPath}/config/editors/cursor/settings.json";
   "Library/Application Support/com.elgato.StreamDeck/ProfilesV2".source =
     symlink "${dotfilesPath}/modules/private/mac/streamdeck/ProfilesV2";
   "Library/Application Support/obs-studio/basic".source =

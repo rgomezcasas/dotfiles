@@ -1,6 +1,6 @@
 # Custom Keyboard Shortcuts in VSCode and Cursor
 
-Both editors share the same keybindings file: `editors/code-oss/keybindings.json`.
+Both editors share the same keybindings file: `config/editors/code-oss/keybindings.json`.
 
 Add entries in alphabetical order by key. Entry format:
 
