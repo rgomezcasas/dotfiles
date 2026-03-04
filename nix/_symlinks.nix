@@ -33,6 +33,10 @@ in
   ".zshrc".source = symlink "${dotfilesPath}/shell/zsh/.zshrc";
   "Library/Application Support/Claude/claude_desktop_config.json".source =
     symlink "${dotfilesPath}/os/mac/claude-desktop/claude_desktop_config.json";
+  "Library/Application Support/Code - Insiders/User/keybindings.json".source =
+    symlink "${dotfilesPath}/editors/code-oss/keybindings.json";
+  "Library/Application Support/Code - Insiders/User/settings.json".source =
+    symlink "${dotfilesPath}/editors/vscode/settings.json";
   "Library/Application Support/Code/User/keybindings.json".source =
     symlink "${dotfilesPath}/editors/code-oss/keybindings.json";
   "Library/Application Support/Code/User/settings.json".source =

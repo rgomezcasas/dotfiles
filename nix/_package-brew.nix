@@ -57,16 +57,11 @@
     "telegram"
     "unifi-identity-endpoint"
     "visual-studio-code"
+    "visual-studio-code@insiders"
     "vlc"
     "wifiman"
     "zed"
   ];
-  masApps = {
-    "Final Cut Pro" = 424389933;
-    "GarageBand" = 682658836;
-    "Keynote" = 361285480;
-    "Numbers" = 361304891;
-  };
   onActivation.cleanup = "zap";
   onActivation.autoUpdate = true;
   onActivation.upgrade = true;
