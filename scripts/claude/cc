@@ -17,4 +17,6 @@ fi
 tmp=$(mktemp)
 jq --arg t "$theme" '.theme = $t' ~/.claude.json > "$tmp" && cat "$tmp" >| ~/.claude.json && rm "$tmp"
 
-exec env -u BW_SESSION claude --append-system-prompt 'responde siempre en castellano' "$@"
+exec env -u BW_SESSION \
+  ENABLE_CLAUDEAI_MCP_SERVERS=false \
+  claude --append-system-prompt 'responde siempre en castellano' "$@"
