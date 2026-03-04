@@ -90,13 +90,14 @@ Edit `os/mac/karabiner-goku/karabiner.edn` and run `goku`. **Never** edit `karab
 ├── nix/
 │   ├── flake.nix        # Main flake: nix-darwin + home-manager + nix-homebrew
 │   ├── home.nix         # Home-manager entry point
-│   ├── _symlinks.nix    # All dotfile symlinks (~/.zshrc, ~/.gitconfig, etc.)
 │   ├── packages/        # Package declarations
 │   │   ├── nix.nix      #   Nix packages (50+ CLI tools)
 │   │   ├── brew.nix     #   Homebrew brews and casks
 │   │   ├── node.nix     #   Global Node.js packages
 │   │   └── app-store.nix #   Mac App Store apps
-│   └── _macos-defaults.nix # macOS system preferences
+│   └── system/          # System configuration
+│       ├── symlinks.nix #   All dotfile symlinks (~/.zshrc, ~/.gitconfig, etc.)
+│       └── macos-defaults.nix # macOS system preferences
 ├── os/mac/              # Karabiner, Ghostty, skhd, Raycast, LaunchAgents
 ├── scripts/             # 80+ scripts organized by category
 │   ├── system/          #   rebuild, update, volume, cron...

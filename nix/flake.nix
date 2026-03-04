@@ -44,7 +44,7 @@
           home-manager.backupFileExtension = "bkp_" + builtins.toString builtins.currentTime;
 
           # https://daiderd.com/nix-darwin/manual/index.html#:~:text=system/version.nix%3E-,system.defaults,-.%22.GlobalPreferences%22.%22com.apple
-          system.defaults = import ./_macos-defaults.nix;
+          system.defaults = import ./system/macos-defaults.nix;
           system.keyboard.enableKeyMapping = true;
           system.keyboard.remapCapsLockToEscape = true;
           system.primaryUser = username;

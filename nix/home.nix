@@ -12,7 +12,7 @@
 
   home.packages = [ ];
 
-  home.file = import ./_symlinks.nix { inherit config username; };
+  home.file = import ./system/symlinks.nix { inherit config username; };
 
   home.sessionVariables = { };
 
