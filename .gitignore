@@ -1,20 +1,12 @@
 # MacOS
 # ----------------------------------
 # Karabiner
-/os/mac/karabiner-elements/automatic_backups
-
-# Alfred
-os/mac/alfred/remote
+/config/macos/karabiner-elements/automatic_backups
 
 # Common
 # ----------------------------------
 # Compiled zsh
-shell/**/**/**.zwc
-shell/**/**/**.zwc.old
+config/shell/**/**/**.zwc
+config/shell/**/**/**.zwc.old
 *.zsh.old
-shell/zsh/.zim
-
-# Private Stuff
-/scripts/codely
-
-!.claude/commands
+config/shell/zsh/.zim
