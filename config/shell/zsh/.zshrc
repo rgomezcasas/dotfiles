@@ -89,9 +89,9 @@ ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(expand-or-complete expand-or-complete-prefix)
 ZSH_HIGHLIGHT_MAXLENGTH=100
 
 source "$DOTFILES_PATH/modules/private/shell/exports.sh"
-source "$DOTFILES_PATH/shell/exports.sh"
-zsh-defer source "$DOTFILES_PATH/shell/aliases.sh"
-zsh-defer source "$DOTFILES_PATH/shell/functions.sh"
+source "$DOTFILES_PATH/config/shell/exports.sh"
+zsh-defer source "$DOTFILES_PATH/config/shell/aliases.sh"
+zsh-defer source "$DOTFILES_PATH/config/shell/functions.sh"
 
 zsh-defer -c '
   local f

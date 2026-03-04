@@ -4,8 +4,8 @@ let
   symlink = config.lib.file.mkOutOfStoreSymlink;
 in
 {
-  ".bash_profile".source = symlink "${dotfilesPath}/shell/bash/.bash_profile";
-  ".bashrc".source = symlink "${dotfilesPath}/shell/bash/.bashrc";
+  ".bash_profile".source = symlink "${dotfilesPath}/config/shell/bash/.bash_profile";
+  ".bashrc".source = symlink "${dotfilesPath}/config/shell/bash/.bashrc";
   ".claude.json".source = symlink "${dotfilesPath}/modules/private/claude/.claude.json";
   ".claude/CLAUDE.md".source = symlink "${dotfilesPath}/config/agents/GLOBAL_AGENTS.md";
   ".claude/commands".source = symlink "${dotfilesPath}/config/agents/global_commands";
@@ -23,14 +23,14 @@ in
   ".gitignore_global".source = symlink "${dotfilesPath}/config/git/.gitignore_global";
   ".gnupg/gpg-agent.conf".source = symlink "${dotfilesPath}/modules/private/gnupg/gpg-agent.conf";
   ".npmrc".source = symlink "${dotfilesPath}/modules/private/js/.npmrc";
-  ".profile".source = symlink "${dotfilesPath}/shell/bash/.profile";
+  ".profile".source = symlink "${dotfilesPath}/config/shell/bash/.profile";
   ".skhdrc".source = symlink "${dotfilesPath}/config/macos/skhd/.skhdrc";
   ".vimrc".source = symlink "${dotfilesPath}/editors/vim/.vimrc";
-  ".zimrc".source = symlink "${dotfilesPath}/shell/zsh/.zimrc";
-  ".zlogin".source = symlink "${dotfilesPath}/shell/zsh/.zlogin";
-  ".zprofile".source = symlink "${dotfilesPath}/shell/zsh/.zprofile";
-  ".zshenv".source = symlink "${dotfilesPath}/shell/zsh/.zshenv";
-  ".zshrc".source = symlink "${dotfilesPath}/shell/zsh/.zshrc";
+  ".zimrc".source = symlink "${dotfilesPath}/config/shell/zsh/.zimrc";
+  ".zlogin".source = symlink "${dotfilesPath}/config/shell/zsh/.zlogin";
+  ".zprofile".source = symlink "${dotfilesPath}/config/shell/zsh/.zprofile";
+  ".zshenv".source = symlink "${dotfilesPath}/config/shell/zsh/.zshenv";
+  ".zshrc".source = symlink "${dotfilesPath}/config/shell/zsh/.zshrc";
   "Library/Application Support/Claude/claude_desktop_config.json".source =
     symlink "${dotfilesPath}/config/macos/claude-desktop/claude_desktop_config.json";
   "Library/Application Support/Code - Insiders/User/keybindings.json".source =

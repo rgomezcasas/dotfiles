@@ -82,7 +82,8 @@ Edit `config/macos/karabiner-goku/karabiner.edn` and run `goku`. **Never** edit 
 ├── config/
 │   ├── agents/          # Claude/AI agent instructions and commands
 │   ├── git/             # .gitconfig, .gitattributes, .gitignore_global
-│   └── macos/           # Karabiner, Ghostty, skhd, Raycast, LaunchAgents
+│   ├── macos/           # Karabiner, Ghostty, skhd, Raycast, LaunchAgents
+│   └── shell/           # Zsh/Bash configs, aliases, exports, functions
 ├── docs/                # Guides (packages, scripts, keyboard, editors)
 ├── editors/             # VSCode, Cursor, IntelliJ, Vim, Claude Code configs
 ├── modules/
@@ -105,7 +106,6 @@ Edit `config/macos/karabiner-goku/karabiner.edn` and run `goku`. **Never** edit 
 │   ├── github/          #   git/GitHub utilities
 │   ├── claude/          #   Claude CLI wrappers
 │   └── ...              #   ai, docker, image, network, utils, video...
-└── shell/               # Zsh/Bash configs, aliases, exports, functions
 ```
 
 
