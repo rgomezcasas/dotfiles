@@ -1,5 +1,3 @@
-# https://daiderd.com/nix-darwin/manual/index.html#:~:text=darwin/modules/fonts%3E-,homebrew.enable,-Whether%20to%20enable
-
 {
   enable = true;
   taps = [  "manaflow-ai/cmux" ];
@@ -10,7 +8,6 @@
     "denisidoro/tools/docpars"
     "gemini-cli"
     "jetbrains/junie/junie"
-    "mitmproxy"
     "ollama"
     "sst/tap/opencode"
     "switchaudio-osx"
@@ -44,6 +41,7 @@
     "karabiner-elements"
     "manaflow-ai/cmux/cmux"
     "meld-studio"
+    "mitmproxy"
     "mqtt-explorer"
     "notion"
     "obs"
