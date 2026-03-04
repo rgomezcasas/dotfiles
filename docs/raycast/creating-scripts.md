@@ -1,6 +1,6 @@
 # Creating Raycast Scripts
 
-Scripts live in `os/mac/raycast/scripts/` with a `.sh` extension. Use kebab-case filenames.
+Scripts live in `config/macos/raycast/scripts/` with a `.sh` extension. Use kebab-case filenames.
 
 ## Template
 

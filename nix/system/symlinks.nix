@@ -14,17 +14,17 @@ in
   ".claude/statusline-command.sh".source =
     symlink "${dotfilesPath}/editors/claude-code/statusline-command.sh";
   ".codex/AGENTS.md".source = symlink "${dotfilesPath}/config/agents/GLOBAL_AGENTS.md";
-  ".config/ghostty".source = symlink "${dotfilesPath}/os/mac/ghostty";
-  ".config/karabiner".source = symlink "${dotfilesPath}/os/mac/karabiner-elements";
-  ".config/karabiner.edn".source = symlink "${dotfilesPath}/os/mac/karabiner-goku/karabiner.edn";
-  ".dotly".source = symlink "${dotfilesPath}/os/mac/.dotly";
+  ".config/ghostty".source = symlink "${dotfilesPath}/config/macos/ghostty";
+  ".config/karabiner".source = symlink "${dotfilesPath}/config/macos/karabiner-elements";
+  ".config/karabiner.edn".source = symlink "${dotfilesPath}/config/macos/karabiner-goku/karabiner.edn";
+  ".dotly".source = symlink "${dotfilesPath}/config/macos/.dotly";
   ".gitattributes".source = symlink "${dotfilesPath}/config/git/.gitattributes";
   ".gitconfig".source = symlink "${dotfilesPath}/config/git/.gitconfig";
   ".gitignore_global".source = symlink "${dotfilesPath}/config/git/.gitignore_global";
   ".gnupg/gpg-agent.conf".source = symlink "${dotfilesPath}/modules/private/gnupg/gpg-agent.conf";
   ".npmrc".source = symlink "${dotfilesPath}/modules/private/js/.npmrc";
   ".profile".source = symlink "${dotfilesPath}/shell/bash/.profile";
-  ".skhdrc".source = symlink "${dotfilesPath}/os/mac/skhd/.skhdrc";
+  ".skhdrc".source = symlink "${dotfilesPath}/config/macos/skhd/.skhdrc";
   ".vimrc".source = symlink "${dotfilesPath}/editors/vim/.vimrc";
   ".zimrc".source = symlink "${dotfilesPath}/shell/zsh/.zimrc";
   ".zlogin".source = symlink "${dotfilesPath}/shell/zsh/.zlogin";
@@ -32,7 +32,7 @@ in
   ".zshenv".source = symlink "${dotfilesPath}/shell/zsh/.zshenv";
   ".zshrc".source = symlink "${dotfilesPath}/shell/zsh/.zshrc";
   "Library/Application Support/Claude/claude_desktop_config.json".source =
-    symlink "${dotfilesPath}/os/mac/claude-desktop/claude_desktop_config.json";
+    symlink "${dotfilesPath}/config/macos/claude-desktop/claude_desktop_config.json";
   "Library/Application Support/Code - Insiders/User/keybindings.json".source =
     symlink "${dotfilesPath}/editors/code-oss/keybindings.json";
   "Library/Application Support/Code - Insiders/User/settings.json".source =
@@ -50,5 +50,5 @@ in
   "Library/Application Support/obs-studio/basic".source =
     symlink "${dotfilesPath}/modules/private/mac/obs/basic";
   "Library/LaunchAgents/com.user.cron.every_15s.plist".source =
-    symlink "${dotfilesPath}/os/mac/LaunchAgents/com.user.cron.every_15s.plist";
+    symlink "${dotfilesPath}/config/macos/LaunchAgents/com.user.cron.every_15s.plist";
 }

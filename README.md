@@ -72,7 +72,7 @@ See the [nix docs](docs/nix/) for step-by-step guides:
 
 ### Editing keyboard shortcuts
 
-Edit `os/mac/karabiner-goku/karabiner.edn` and run `goku`. **Never** edit `karabiner.json` directly. See the [Karabiner guide](docs/karabiner/custom-shortcuts.md).
+Edit `config/macos/karabiner-goku/karabiner.edn` and run `goku`. **Never** edit `karabiner.json` directly. See the [Karabiner guide](docs/karabiner/custom-shortcuts.md).
 
 
 ## Structure
@@ -81,7 +81,8 @@ Edit `os/mac/karabiner-goku/karabiner.edn` and run `goku`. **Never** edit `karab
 ~/.dotfiles
 ├── config/
 │   ├── agents/          # Claude/AI agent instructions and commands
-│   └── git/             # .gitconfig, .gitattributes, .gitignore_global
+│   ├── git/             # .gitconfig, .gitattributes, .gitignore_global
+│   └── macos/           # Karabiner, Ghostty, skhd, Raycast, LaunchAgents
 ├── docs/                # Guides (packages, scripts, keyboard, editors)
 ├── editors/             # VSCode, Cursor, IntelliJ, Vim, Claude Code configs
 ├── modules/
@@ -99,7 +100,6 @@ Edit `os/mac/karabiner-goku/karabiner.edn` and run `goku`. **Never** edit `karab
 │   └── system/          # System configuration
 │       ├── symlinks.nix #   All dotfile symlinks (~/.zshrc, ~/.gitconfig, etc.)
 │       └── macos-defaults.nix # macOS system preferences
-├── os/mac/              # Karabiner, Ghostty, skhd, Raycast, LaunchAgents
 ├── scripts/             # 80+ scripts organized by category
 │   ├── system/          #   rebuild, update, volume, cron...
 │   ├── github/          #   git/GitHub utilities
