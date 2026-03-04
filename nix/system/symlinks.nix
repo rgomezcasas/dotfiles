@@ -7,13 +7,13 @@ in
   ".bash_profile".source = symlink "${dotfilesPath}/shell/bash/.bash_profile";
   ".bashrc".source = symlink "${dotfilesPath}/shell/bash/.bashrc";
   ".claude.json".source = symlink "${dotfilesPath}/modules/private/claude/.claude.json";
-  ".claude/CLAUDE.md".source = symlink "${dotfilesPath}/ai/GLOBAL_AGENTS.md";
-  ".claude/commands".source = symlink "${dotfilesPath}/ai/global_commands";
+  ".claude/CLAUDE.md".source = symlink "${dotfilesPath}/agents/GLOBAL_AGENTS.md";
+  ".claude/commands".source = symlink "${dotfilesPath}/agents/global_commands";
   ".claude/settings.json".source = symlink "${dotfilesPath}/editors/claude-code/settings.json";
-  ".claude/skills".source = symlink "${dotfilesPath}/ai/global_skills";
+  ".claude/skills".source = symlink "${dotfilesPath}/agents/global_skills";
   ".claude/statusline-command.sh".source =
     symlink "${dotfilesPath}/editors/claude-code/statusline-command.sh";
-  ".codex/AGENTS.md".source = symlink "${dotfilesPath}/ai/GLOBAL_AGENTS.md";
+  ".codex/AGENTS.md".source = symlink "${dotfilesPath}/agents/GLOBAL_AGENTS.md";
   ".config/ghostty".source = symlink "${dotfilesPath}/os/mac/ghostty";
   ".config/karabiner".source = symlink "${dotfilesPath}/os/mac/karabiner-elements";
   ".config/karabiner.edn".source = symlink "${dotfilesPath}/os/mac/karabiner-goku/karabiner.edn";

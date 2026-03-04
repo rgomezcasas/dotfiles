@@ -79,7 +79,7 @@ Edit `os/mac/karabiner-goku/karabiner.edn` and run `goku`. **Never** edit `karab
 
 ```
 ~/.dotfiles
-├── ai/                  # Claude/AI agent instructions and commands
+├── agents/              # Claude/AI agent instructions and commands
 ├── docs/                # Guides (packages, scripts, keyboard, editors)
 ├── editors/             # VSCode, Cursor, IntelliJ, Vim, Claude Code configs
 ├── git/                 # .gitconfig, .gitattributes, .gitignore_global
