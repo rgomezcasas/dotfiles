@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+PATH="$HOME/.cache/npm/global/bin:$PATH"
+
 input=$(cat)
 
 theme=$(jq -r '.theme // "dark"' ~/.claude.json 2>/dev/null || echo "dark")
