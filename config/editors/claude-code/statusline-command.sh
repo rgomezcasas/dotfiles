@@ -114,8 +114,9 @@ fi
 
 session_cost_str=$(printf '$%.2f' "$session_cost")
 
-# Daily cost from ccusage with 2-minute cache
+# Daily cost from ccusage with 2-minute cache, online pricing refresh once per day
 cache_file="/tmp/.claude-statusline-daily-cost"
+pricing_stamp="/tmp/.claude-statusline-pricing-refresh"
 now=$(date +%s)
 cache_stale=1
 if [[ -f "$cache_file" ]]; then
@@ -124,7 +125,12 @@ if [[ -f "$cache_file" ]]; then
 fi
 
 if (( cache_stale )); then
-  daily_cost=$(ccusage daily --since "$(date +%Y%m%d)" --json 2>/dev/null | jq -r '.totals.totalCost // 0')
+  offline_flag="--offline"
+  if [[ ! -f "$pricing_stamp" ]] || (( now - $(stat -f %m "$pricing_stamp" 2>/dev/null || echo 0) >= 86400 )); then
+    offline_flag=""
+    touch "$pricing_stamp"
+  fi
+  daily_cost=$(ccusage daily --since "$(date +%Y%m%d)" $offline_flag --json 2>/dev/null | jq -r '.totals.totalCost // 0')
   daily_cost=${daily_cost:-0}
   echo "$daily_cost" > "$cache_file"
 else
