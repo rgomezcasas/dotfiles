@@ -78,6 +78,7 @@
       # Build darwin flake using:
       # $ darwin-rebuild build --flake .#pro
       darwinConfigurations."pro" = nix-darwin.lib.darwinSystem {
+        specialArgs = { inherit username; };
         modules = [
           configuration
           ./packages/global-npm.nix

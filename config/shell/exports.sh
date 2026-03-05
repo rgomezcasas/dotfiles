@@ -71,6 +71,7 @@ typeset -U path
 _path_candidates=(
   "$HOME/bin"
   "$DOTLY_PATH/bin"
+  "$HOME/.cache/npm/global/bin"
   "$HOME/.nix-profile/bin"
   "/etc/profiles/per-user/$USER/bin"
   "/run/current-system/sw/bin"

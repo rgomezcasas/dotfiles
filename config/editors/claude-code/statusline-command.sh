@@ -124,7 +124,7 @@ if [[ -f "$cache_file" ]]; then
 fi
 
 if (( cache_stale )); then
-  daily_cost=$(npx ccusage@latest daily --since "$(date +%Y%m%d)" --json 2>/dev/null | jq -r '.totals.totalCost // 0')
+  daily_cost=$(ccusage daily --since "$(date +%Y%m%d)" --json 2>/dev/null | jq -r '.totals.totalCost // 0')
   daily_cost=${daily_cost:-0}
   echo "$daily_cost" > "$cache_file"
 else
