@@ -10,6 +10,6 @@ in
 {
   system.activationScripts.postActivation.text = ''
     echo "Installing global npm packages: ${builtins.concatStringsSep " " packages}"
-    sudo -u ${consoleUser} ${pkgs.nodejs_24}/bin/npm install -g --prefix ${npmPrefix} ${builtins.concatStringsSep " " packages}
+    sudo -u ${consoleUser} --set-home ${pkgs.nodejs_24}/bin/npm install -g --prefix ${npmPrefix} ${builtins.concatStringsSep " " packages}
   '';
 }
