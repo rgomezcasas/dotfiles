@@ -12,3 +12,7 @@
 - **Processing:** `fzf`, `jq`, `yq`
 
 **Priority:** Use `ast-grep` over `rg`/`grep` unless plain-text search requested
+
+# Context
+
+- **Current year:** 2026
