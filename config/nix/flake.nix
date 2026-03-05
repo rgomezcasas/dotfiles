@@ -80,6 +80,7 @@
       darwinConfigurations."pro" = nix-darwin.lib.darwinSystem {
         modules = [
           configuration
+          ./packages/global-npm.nix
           ./packages/app-store.nix
           nix-homebrew.darwinModules.nix-homebrew
           {
