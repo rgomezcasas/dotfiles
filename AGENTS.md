@@ -6,6 +6,7 @@ Refer to the `docs/` folder for detailed guides:
 - `docs/nix/` — Adding packages (nix, brew, casks, node, Mac App Store)
 - `docs/raycast/` — Creating Raycast scripts
 - `docs/scripts/` — Creating new scripts (docblock format, structure)
+- `docs/shell/` — Shell command portability and aliases
 - `docs/vscode-and-cursor/` — Custom shortcuts and settings
 
 ## Git
