@@ -13,6 +13,7 @@ in
   ".claude/skills".source = symlink "${dotfilesPath}/config/agents/global_skills";
   ".claude/statusline-command.sh".source =
     symlink "${dotfilesPath}/config/editors/claude-code/statusline-command.sh";
+  ".agents/skills".source = symlink "${dotfilesPath}/config/agents/global_skills";
   ".codex/AGENTS.md".source = symlink "${dotfilesPath}/config/agents/GLOBAL_AGENTS.md";
   ".config/ghostty".source = symlink "${dotfilesPath}/config/macos/ghostty";
   ".config/karabiner".source = symlink "${dotfilesPath}/config/macos/karabiner-elements";

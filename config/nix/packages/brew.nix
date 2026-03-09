@@ -2,6 +2,7 @@
   enable = true;
   taps = [  "manaflow-ai/cmux" ];
   brews = [
+    "agent-browser"
     "bitwarden-cli"
     "choose-gui"
     "cliclick"
