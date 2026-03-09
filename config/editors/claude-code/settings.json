@@ -4,7 +4,8 @@
       "WebSearch"
     ],
     "deny": [
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(git *--amend*)"
     ],
     "defaultMode": "default"
   },
@@ -96,6 +97,5 @@
   ],
   "autoUpdatesChannel": "latest",
   "autoMemoryEnabled": false,
-  "skipDangerousModePermissionPrompt": true,
-  "effortLevel": "high"
+  "skipDangerousModePermissionPrompt": true
 }
