@@ -1,5 +1,5 @@
 ---
-name: generate-documentation
+name: generate-doc
 description: Generate documentation based on the current conversation
 allowed-tools: Bash(ls:*), Bash(tree:*), Bash(fd:*), Read, Write, Edit, Glob, Grep
 model: haiku
