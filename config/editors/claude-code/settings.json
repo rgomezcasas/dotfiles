@@ -1,11 +1,19 @@
 {
   "permissions": {
     "allow": [
+      "Bash(agent-browser *)",
+      "Bash(ast-grep *)",
+      "Bash(fd *)",
+      "Bash(find *)",
+      "Bash(git add *)",
+      "Bash(ls *)",
+      "Bash(rg *)",
+      "Grep",
       "WebSearch"
     ],
     "deny": [
-      "Bash(git push:*)",
-      "Bash(git *--amend*)"
+      "Bash(git *--amend*)",
+      "Bash(git push*)"
     ],
     "defaultMode": "default"
   },
