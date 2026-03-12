@@ -105,5 +105,6 @@
   ],
   "autoUpdatesChannel": "latest",
   "autoMemoryEnabled": false,
-  "skipDangerousModePermissionPrompt": true
+  "skipDangerousModePermissionPrompt": true,
+  "voiceEnabled": false
 }
