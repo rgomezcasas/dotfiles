@@ -3,8 +3,8 @@ alias sudo='sudo '
 
 alias ..="cd .."
 alias ...="cd ../.."
-alias ll="eza -l --icons"
-alias la="eza -la --icons"
+alias ll="eza -l --icons --group-directories-first"
+alias la="eza -la --icons --group-directories-first"
 
 # Jumps
 alias ~="cd ~"
