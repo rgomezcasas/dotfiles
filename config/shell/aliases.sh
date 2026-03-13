@@ -38,7 +38,7 @@ alias o.='open .'
 
 # Claude code
 alias cc="dot claude cc"
-alias commit="cc /global:commit"
+alias commit="cc /global-commit"
 alias ccyolo="cc --dangerously-skip-permissions --settings '{\"sandbox\":{\"enabled\":true}}'"
 alias ccupdate="claude update"
 alias ccusa='npx ccusage@latest --since $(date -d "30 days ago" +%Y%m%d 2>/dev/null || date -v-30d +%Y%m%d)'
