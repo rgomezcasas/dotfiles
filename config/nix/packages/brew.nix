@@ -59,7 +59,6 @@
     "visual-studio-code@insiders"
     "vlc"
     "wifiman"
-    "zed"
   ];
   onActivation.cleanup = "zap";
   onActivation.autoUpdate = true;
