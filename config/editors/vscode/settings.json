@@ -75,5 +75,6 @@
     "workbench.activityBar.location": "hidden",
     "workbench.navigationControl.enabled": false,
     "window.commandCenter": false,
-    "git.openRepositoryInParentFolders": "always"
+    "git.openRepositoryInParentFolders": "always",
+    "chat.tips.enabled": false
 }

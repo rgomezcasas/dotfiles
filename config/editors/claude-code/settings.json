@@ -103,7 +103,7 @@
     "💂‍♂️ Cuando hay un error de sintaxis tienes que volver caminando a casa"
   ],
   "autoUpdatesChannel": "latest",
+  "voiceEnabled": false,
   "autoMemoryEnabled": false,
-  "skipDangerousModePermissionPrompt": true,
-  "voiceEnabled": false
+  "skipDangerousModePermissionPrompt": true
 }
