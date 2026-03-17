@@ -67,10 +67,10 @@ chore(deps): update dependencies
 
 Based on the changes shown above:
 
-1. Stage relevant files if needed (ask first if there are unstaged changes)
-2. Analyze the changes to determine the appropriate commit type and scope
-3. Create a commit message following the Conventional Commits specification
-4. Execute the commit
+1. Analyze the changes to determine the appropriate commit type and scope
+2. When in doubt, prefer multiple focused commits over a single large one — do NOT ask
+3. Stage relevant files and create commit messages following the Conventional Commits specification
+4. Execute the commits
 
 ## Course Repository Scope Convention
 
