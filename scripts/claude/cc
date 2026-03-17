@@ -18,13 +18,13 @@ fi
 tmp=$(mktemp)
 jq --arg t "$theme" '.theme = $t' ~/.claude.json > "$tmp" && cat "$tmp" >| ~/.claude.json && rm "$tmp"
 
+# IS_DEMO=1 \
+#  CLAUDE_CODE_ENABLE_TELEMETRY=0 \
+#  DISABLE_TELEMETRY=1 \
 exec env -u BW_SESSION \
   ENABLE_CLAUDEAI_MCP_SERVERS=false \
   CLAUDE_CODE_HIDE_ACCOUNT_INFO=1 \
   CLAUDE_CODE_DISABLE_GIT_INSTRUCTIONS=1 \
   CLAUDE_CODE_DISABLE_FAST_MODE=1 \
-  CLAUDE_CODE_ENABLE_TELEMETRY=0 \
-  DISABLE_TELEMETRY=1 \
-  IS_DEMO=1 \
   CLAUDE_CODE_IDE_SKIP_AUTO_INSTALL=1 \
   claude --append-system-prompt 'responde siempre en castellano' "$@"
