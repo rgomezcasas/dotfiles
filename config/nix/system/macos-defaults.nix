@@ -109,4 +109,11 @@
   trackpad.TrackpadRightClick = true;
   trackpad.TrackpadThreeFingerDrag = false;
   trackpad.TrackpadThreeFingerTapGesture = 0;
+  CustomUserPreferences."com.apple.symbolichotkeys".AppleSymbolicHotKeys."7" = {
+    enabled = true;
+    value = {
+      parameters = [ 65535 120 262144 ];
+      type = "standard";
+    };
+  };
 }
