@@ -74,5 +74,6 @@
     "breadcrumbs.enabled": false,
     "git.openRepositoryInParentFolders": "never",
         "http.proxy": "http://127.0.0.1:8080",
-        "http.proxyStrictSSL": false
+        "http.proxyStrictSSL": false,
+        "window.commandCenter": true
 }
