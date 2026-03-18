@@ -78,8 +78,7 @@
             }
           },
           "to" : [ {
-            "key_code" : "f2",
-            "modifiers" : [ "left_control", "fn" ]
+            "shell_command" : "$HOME/.dotfiles/scripts/system/sdot mac show_menu_bar"
           } ],
           "type" : "basic"
         }, {
@@ -90,8 +89,7 @@
             }
           },
           "to" : [ {
-            "key_code" : "f2",
-            "modifiers" : [ "left_control", "fn" ]
+            "shell_command" : "$HOME/.dotfiles/scripts/system/sdot mac show_menu_bar"
           } ],
           "type" : "basic"
         }, {
