@@ -78,8 +78,13 @@
     FXDefaultSearchScope = "SCcf";
     FXEnableExtensionChangeWarning = false;
     FXPreferredViewStyle = "clmv";
+    NewWindowTarget = "Home";
     QuitMenuItem = false;
+    ShowExternalHardDrivesOnDesktop = true;
+    ShowHardDrivesOnDesktop = false;
+    ShowMountedServersOnDesktop = true;
     ShowPathbar = true;
+    ShowRemovableMediaOnDesktop = true;
     ShowStatusBar = true;
     _FXShowPosixPathInTitle = false;
     _FXSortFoldersFirst = true;
