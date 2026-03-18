@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-source "$HOME/.dotfiles/shell/bash/.bashrc"
+export DOTFILES_PATH="$HOME/.dotfiles"
+export DOTLY_PATH="$DOTFILES_PATH/modules/dotly"
+export PATH="/usr/bin:/usr/sbin:/bin:/sbin:/opt/homebrew/bin:$PATH"
 
 ##? dot, but without environment variables
 ##?
