@@ -67,7 +67,7 @@
    :rules [[:!Cm :!CTSm]                                        ; Disable minimize with cmd+m
            [:!Tdelete_or_backspace :delete_forward]             ; ctrl+backspace -> supr
            [:!TCdown_arrow :!TFf2]                              ; ctrl+cmd+down -> show menu bar
-           [:!TCup_arrow :!TCdown_arrow]                        ; ctrl+cmd+up -> ctrl+cmd+down
+           [:!TCup_arrow :!TFf2]                                ; ctrl+cmd+up -> show menu bar
            [:right_command :!Ospacebar]]}                       ; right cmd as opt+space
 
   {:des   "[Keyboard] Symbols"
