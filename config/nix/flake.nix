@@ -81,6 +81,7 @@
         modules = [
           configuration
           ./packages/global-npm.nix
+          ./packages/cargo.nix
           ./packages/app-store.nix
           nix-homebrew.darwinModules.nix-homebrew
           {
