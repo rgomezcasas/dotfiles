@@ -44,6 +44,8 @@
   SoftwareUpdate.AutomaticallyInstallMacOSUpdates = true;
   WindowManager.EnableStandardClickToShowDesktop = false;
   WindowManager.GloballyEnabled = false;
+  WindowManager.StandardHideWidgets = 1;
+  WindowManager.StageManagerHideWidgets = 1;
   dock = {
     enable-spring-load-actions-on-all-items = false;
     appswitcher-all-displays = true;
