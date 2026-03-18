@@ -3,6 +3,7 @@
   taps = [  "manaflow-ai/cmux" ];
   brews = [
     "agent-browser"
+    "ast-grep"
     "bitwarden-cli"
     "choose-gui"
     "cliclick"
