@@ -7,8 +7,8 @@
       "/Users/rafa.gomez/Desktop/tmp/test"
     ],
     "coworkScheduledTasksEnabled": true,
+    "ccdScheduledTasksEnabled": true,
     "sidebarMode": "chat",
-    "coworkWebSearchEnabled": true,
-    "ccdScheduledTasksEnabled": true
+    "coworkWebSearchEnabled": true
   }
 }
