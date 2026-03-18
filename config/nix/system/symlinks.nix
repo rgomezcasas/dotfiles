@@ -18,6 +18,8 @@ in
   ".config/karabiner".source = symlink "${dotfilesPath}/config/macos/karabiner-elements";
   ".config/karabiner.edn".source = symlink "${dotfilesPath}/config/macos/karabiner-goku/karabiner.edn";
   ".dotly".source = symlink "${dotfilesPath}/config/macos/.dotly";
+  ".local/bin/idea".source =
+    symlink "/Users/${username}/Library/Application Support/JetBrains/Toolbox/scripts/idea";
   ".gitattributes".source = symlink "${dotfilesPath}/config/git/.gitattributes";
   ".gitconfig".source = symlink "${dotfilesPath}/config/git/.gitconfig";
   ".gitignore_global".source = symlink "${dotfilesPath}/config/git/.gitignore_global";
