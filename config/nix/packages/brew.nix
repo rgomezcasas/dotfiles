@@ -6,7 +6,6 @@
     "bitwarden-cli"
     "choose-gui"
     "cliclick"
-    "denisidoro/tools/docpars"
     "gemini-cli"
     "jetbrains/junie/junie"
     "ollama"
