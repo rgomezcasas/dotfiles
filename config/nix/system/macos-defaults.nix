@@ -109,6 +109,7 @@
   trackpad.TrackpadRightClick = true;
   trackpad.TrackpadThreeFingerDrag = false;
   trackpad.TrackpadThreeFingerTapGesture = 0;
+  CustomUserPreferences."com.apple.finder".FinderSounds = false;
   CustomUserPreferences."com.apple.symbolichotkeys".AppleSymbolicHotKeys."7" = {
     enabled = true;
     value = {
