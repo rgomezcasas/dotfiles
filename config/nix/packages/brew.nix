@@ -55,6 +55,7 @@
     "stremio"
     "superwhisper"
     "telegram"
+    "thebrowsercompany-dia"
     "visual-studio-code"
     "visual-studio-code@insiders"
     "vlc"
