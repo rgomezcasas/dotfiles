@@ -1,3 +1,41 @@
-#!/usr/bin/env bash
+#!/usr/bin/env swift
 
-osascript -e 'tell application "System Events" to key code 120 using {control down}'
+import AppKit
+import CoreGraphics
+
+let frontApp = NSWorkspace.shared.frontmostApplication!
+let pid = frontApp.processIdentifier
+let windows = CGWindowListCopyWindowInfo([.optionOnScreenOnly, .excludeDesktopElements], kCGNullWindowID) as! [[String: Any]]
+
+var winX = 0.0
+var winY = 0.0
+var found = false
+
+for w in windows {
+    if let ownerPID = w[kCGWindowOwnerPID as String] as? Int, ownerPID == pid,
+       let bounds = w[kCGWindowBounds as String] as? [String: Double] {
+        winX = bounds["X"]!
+        winY = bounds["Y"]!
+        found = true
+        break
+    }
+}
+
+guard found else { exit(1) }
+
+let maxDisplays: UInt32 = 10
+var displayIDs = [CGDirectDisplayID](repeating: 0, count: Int(maxDisplays))
+var displayCount: UInt32 = 0
+CGGetActiveDisplayList(maxDisplays, &displayIDs, &displayCount)
+
+for i in 0..<Int(displayCount) {
+    let bounds = CGDisplayBounds(displayIDs[i])
+    if winX >= bounds.origin.x && winX < bounds.origin.x + bounds.width &&
+       winY >= bounds.origin.y && winY < bounds.origin.y + bounds.height {
+        let targetX = bounds.origin.x + bounds.width / 2
+        let targetY = bounds.origin.y + 1
+        let moveEvent = CGEvent(mouseEventSource: nil, mouseType: .mouseMoved, mouseCursorPosition: CGPoint(x: targetX, y: targetY), mouseButton: .left)
+        moveEvent?.post(tap: .cghidEventTap)
+        break
+    }
+}
