@@ -49,6 +49,8 @@ in
     symlink "${dotfilesPath}/config/editors/cursor/settings.json";
   "Library/Application Support/com.elgato.StreamDeck/ProfilesV2".source =
     symlink "${dotfilesPath}/modules/private/mac/streamdeck/ProfilesV2";
+  "Library/Application Support/com.elgato.StreamDeck/ProfilesV3".source =
+    symlink "${dotfilesPath}/modules/private/mac/streamdeck/ProfilesV3";
   "Library/Application Support/obs-studio/basic".source =
     symlink "${dotfilesPath}/modules/private/mac/obs/basic";
   "Library/LaunchAgents/com.user.cron.every_15s.plist".source =
