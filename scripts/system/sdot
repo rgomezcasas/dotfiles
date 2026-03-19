@@ -2,7 +2,7 @@
 
 export DOTFILES_PATH="$HOME/.dotfiles"
 export DOTLY_PATH="$DOTFILES_PATH/modules/dotly"
-export PATH="/usr/bin:/usr/sbin:/bin:/sbin:/opt/homebrew/bin:$PATH"
+export PATH="/run/current-system/sw/bin:/usr/bin:/usr/sbin:/bin:/sbin:/opt/homebrew/bin:$PATH"
 
 ##? dot, but without environment variables
 ##?
