@@ -27,6 +27,14 @@
     "frontend-design@claude-plugins-official": false,
     "typescript-lsp@claude-plugins-official": true
   },
+  "extraKnownMarketplaces": {
+    "home-assistant-skills": {
+      "source": {
+        "source": "github",
+        "repo": "homeassistant-ai/skills"
+      }
+    }
+  },
   "sandbox": {
     "enabled": false,
     "autoAllowBashIfSandboxed": true,
@@ -106,12 +114,5 @@
   "voiceEnabled": false,
   "autoMemoryEnabled": false,
   "skipDangerousModePermissionPrompt": true,
-  "extraKnownMarketplaces": {
-    "home-assistant-skills": {
-      "source": {
-        "source": "github",
-        "repo": "homeassistant-ai/skills"
-      }
-    }
-  }
+  "effortLevel": "high"
 }
