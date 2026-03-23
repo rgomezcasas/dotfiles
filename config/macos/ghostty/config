@@ -36,7 +36,7 @@ macos-titlebar-style = tabs
 link-url = true
 auto-update = download
 auto-update-channel = tip
-macos-option-as-alt = false
+macos-option-as-alt = true
 
 # Tabs
 window-new-tab-position = end
@@ -44,3 +44,5 @@ window-new-tab-position = end
 # Keybinding
 keybind = shift+enter=text:\n
 keybind = command+k=clear_screen
+
+scrollback-limit = 50000
