@@ -63,7 +63,7 @@
 		"typescript",
 		"typescriptreact"
 	],
-	"update.releaseTrack": "prerelease",
+	"update.releaseTrack": "dev",
 	"workbench.commandPalette.experimental.enableNaturalLanguageSearch": false,
 	"workbench.editor.showTabs": "none",
 	"workbench.colorTheme": "Cursor Light",
