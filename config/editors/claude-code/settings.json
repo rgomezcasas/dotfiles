@@ -105,5 +105,13 @@
   "autoUpdatesChannel": "latest",
   "voiceEnabled": false,
   "autoMemoryEnabled": false,
-  "skipDangerousModePermissionPrompt": true
+  "skipDangerousModePermissionPrompt": true,
+  "extraKnownMarketplaces": {
+    "home-assistant-skills": {
+      "source": {
+        "source": "github",
+        "repo": "homeassistant-ai/skills"
+      }
+    }
+  }
 }
