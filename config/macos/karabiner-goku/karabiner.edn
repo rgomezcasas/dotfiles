@@ -104,10 +104,8 @@
            [:move-prev-screen [:!CTOSleft_arrow :!SOc]]]}       ; Move app to prev screen and center
 
   {:des   "[Launch] Scripts"
-   :rules [[:!Tcaps_lock "$HOME/.dotfiles/scripts/system/sdot ui show_scripts"]                  ; Dotly UI scripts
-           [:!CTOu "$HOME/.dotfiles/scripts/system/sdot utils uuid_code"]                        ; Generate UUID
-           [:!CTgrave_accent_and_tilde "$HOME/.dotfiles/scripts/system/sdot utils open_common"]  ; Open common folders
-           [:!CTOr "$HOME/.dotfiles/scripts/system/sdot github open_codely_repo"]]}              ; Open CodelyTV repo
+   :rules [[:!CTOu "$HOME/.dotfiles/scripts/system/sdot utils uuid_code"]                         ; Generate UUID
+           [:!CTgrave_accent_and_tilde "$HOME/.dotfiles/scripts/system/sdot utils open_common"]]} ; Open common folders
 
   {:des   "[Music] Apple Music controls"
    :rules [[:!TOC9 "$HOME/.dotfiles/scripts/system/sdot apple music increase-volume"] ; Increase volume

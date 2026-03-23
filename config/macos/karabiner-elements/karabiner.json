@@ -376,17 +376,6 @@
         "description" : "[Launch] Scripts",
         "manipulators" : [ {
           "from" : {
-            "key_code" : "caps_lock",
-            "modifiers" : {
-              "mandatory" : [ "left_control" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "$HOME/.dotfiles/scripts/system/sdot ui show_scripts"
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
             "key_code" : "u",
             "modifiers" : {
               "mandatory" : [ "left_command", "left_control", "left_option" ]
@@ -405,17 +394,6 @@
           },
           "to" : [ {
             "shell_command" : "$HOME/.dotfiles/scripts/system/sdot utils open_common"
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "key_code" : "r",
-            "modifiers" : {
-              "mandatory" : [ "left_command", "left_control", "left_option" ]
-            }
-          },
-          "to" : [ {
-            "shell_command" : "$HOME/.dotfiles/scripts/system/sdot github open_codely_repo"
           } ],
           "type" : "basic"
         } ]
