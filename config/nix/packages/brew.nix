@@ -59,6 +59,7 @@
     "visual-studio-code"
     "visual-studio-code@insiders"
     "vlc"
+    "whatsapp@beta"
     "wifiman"
   ];
   onActivation.cleanup = "zap";
