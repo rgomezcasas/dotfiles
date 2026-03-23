@@ -638,6 +638,25 @@
           "type" : "basic"
         } ]
       }, {
+        "description" : "[Cmux] Shortcuts",
+        "manipulators" : [ {
+          "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_command" ]
+            },
+            "key_code" : "1"
+          },
+          "to" : [ {
+            "key_code" : "b",
+            "modifiers" : [ "left_command" ]
+          } ],
+          "conditions" : [ {
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "com.cmuxterm.app" ]
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
         "description" : "[ChatGPT] Shortcuts",
         "manipulators" : [ {
           "from" : {

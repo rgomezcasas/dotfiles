@@ -109,6 +109,21 @@
   trackpad.TrackpadRightClick = true;
   trackpad.TrackpadThreeFingerDrag = false;
   trackpad.TrackpadThreeFingerTapGesture = 0;
+  CustomUserPreferences."com.cmuxterm.app" = {
+    appearanceMode = "system";
+    browserThemeMode = "system";
+    sendAnonymousTelemetry = 0;
+    sidebarBlendMode = "withinWindow";
+    sidebarBlurOpacity = 1;
+    sidebarCornerRadius = 0;
+    sidebarMaterial = "sidebar";
+    sidebarPreset = "nativeSidebar";
+    sidebarState = "followWindow";
+    sidebarTintHex = "#000000";
+    sidebarTintOpacity = "0.18";
+    warnBeforeQuitShortcut = 0;
+    workspaceAutoReorderOnNotification = 0;
+  };
   CustomUserPreferences."com.apple.sound.uiaudio".enabled = false;
   CustomUserPreferences."com.apple.finder".FinderSounds = false;
   CustomUserPreferences."com.apple.symbolichotkeys".AppleSymbolicHotKeys."7" = {
