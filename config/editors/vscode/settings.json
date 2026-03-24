@@ -76,5 +76,8 @@
     "window.commandCenter": false,
     "git.openRepositoryInParentFolders": "always",
     "chat.tips.enabled": false,
-    "workbench.activityBar.location": "hidden"
+    "workbench.activityBar.location": "hidden",
+    "workbench.browser.openLocalhostLinks": true,
+    "workbench.browser.enableChatTools": true,
+    "github.copilot.chat.agentDebugLog.enabled": true
 }
