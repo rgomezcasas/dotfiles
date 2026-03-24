@@ -2,6 +2,7 @@
 
 let
   packages = [
+    "@github/copilot"
     "ccusage"
   ];
   consoleUser = config.system.primaryUser;
