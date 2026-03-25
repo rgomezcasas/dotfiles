@@ -27,4 +27,4 @@ exec env -u BW_SESSION \
   CLAUDE_CODE_DISABLE_GIT_INSTRUCTIONS=1 \
   CLAUDE_CODE_DISABLE_FAST_MODE=1 \
   CLAUDE_CODE_IDE_SKIP_AUTO_INSTALL=1 \
-  claude --append-system-prompt 'responde siempre en castellano' "$@"
+  claude --enable-auto-mode --append-system-prompt 'responde siempre en castellano' "$@"
