@@ -1,6 +1,6 @@
 {
   smb.NetBIOSName = "RafaComputerPro";
-  ".GlobalPreferences"."com.apple.mouse.scaling" = 0.9;
+  ".GlobalPreferences"."com.apple.mouse.scaling" = 0.5;
   ActivityMonitor.IconType = 6; # Show CPU history
   ActivityMonitor.OpenMainWindow = true;
   ActivityMonitor.ShowCategory = 101; # All Processes, Hierarchally
