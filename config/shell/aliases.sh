@@ -47,6 +47,9 @@ alias t="dot claude t"
 alias tldr="dot claude tldr"
 alias f="dot claude f"
 
+# Codely
+alias mooc="dot codely mooc"
+
 # Export credentials
 alias with_openai="dot system with_credential OPENAI_API_KEY OPENAI_API_KEY"
 alias with_github="dot system with_credential GITHUB_TOKEN GITHUB_TOKEN"
