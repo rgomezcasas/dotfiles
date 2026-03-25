@@ -47,6 +47,7 @@
           system.defaults = import ./system/macos-defaults.nix;
           system.keyboard.enableKeyMapping = true;
           system.keyboard.remapCapsLockToEscape = true;
+          system.startup.chime = false;
           system.primaryUser = username;
 
           # Necessary for using flakes on this system.

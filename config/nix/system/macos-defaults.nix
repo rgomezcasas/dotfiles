@@ -39,6 +39,8 @@
   NSGlobalDomain."com.apple.keyboard.fnState" = false;
   NSGlobalDomain."com.apple.mouse.tapBehavior" = 1;
   #	NSGlobalDomain."com.apple.mouse.linear" = false;
+  NSGlobalDomain."com.apple.sound.beep.feedback" = 0;
+  NSGlobalDomain."com.apple.sound.beep.volume" = 0.0;
   NSGlobalDomain."com.apple.swipescrolldirection" = true;
 
   SoftwareUpdate.AutomaticallyInstallMacOSUpdates = true;
@@ -124,7 +126,7 @@
     warnBeforeQuitShortcut = 0;
     workspaceAutoReorderOnNotification = 0;
   };
-  CustomUserPreferences."com.apple.sound.uiaudio".enabled = false;
+  CustomUserPreferences.NSGlobalDomain."com.apple.sound.uiaudio.enabled" = false;
   CustomUserPreferences."com.apple.finder".FinderSounds = false;
   CustomUserPreferences."com.apple.symbolichotkeys".AppleSymbolicHotKeys."7" = {
     enabled = true;
