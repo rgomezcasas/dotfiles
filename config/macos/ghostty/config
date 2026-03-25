@@ -36,7 +36,8 @@ macos-titlebar-style = tabs
 link-url = true
 auto-update = download
 auto-update-channel = tip
-macos-option-as-alt = true
+# Needed for accents
+macos-option-as-alt = false
 
 # Tabs
 window-new-tab-position = end
