@@ -1,0 +1,61 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTLY_PATH/scripts/core/_main.sh"
+
+##? Keynote utilities
+#?? 1.0.0
+##?
+##? Usage:
+##?	keynote <action>
+##?
+##? Example:
+##?	 keynote open-recent
+docs::parse "$@"
+
+function open_recent() {
+	local selected
+	selected=$(osascript <<'EOF' | grep -v -e "^missing value$" -e "^Clear Menu$" -e "^$" | choose -p "Keynote - Open Recent" -z
+tell application "Keynote" to activate
+delay 0.3
+
+tell application "System Events"
+	tell process "Keynote"
+		set recentMenu to menu 1 of menu item "Open Recent" of menu 1 of menu bar item "File" of menu bar 1
+		set menuItems to name of every menu item of recentMenu
+		set recentFiles to {}
+		repeat with anItem in menuItems
+			set end of recentFiles to anItem as text
+		end repeat
+	end tell
+end tell
+
+set output to ""
+repeat with i from 1 to count of recentFiles
+	if i is 1 then
+		set output to item i of recentFiles
+	else
+		set output to output & linefeed & item i of recentFiles
+	end if
+end repeat
+return output
+EOF
+	)
+
+	[[ -z "$selected" ]] && return
+
+	osascript -e "
+tell application \"System Events\"
+	tell process \"Keynote\"
+		click menu item \"$selected\" of menu 1 of menu item \"Open Recent\" of menu 1 of menu bar item \"File\" of menu bar 1
+	end tell
+end tell
+"
+}
+
+case $1 in
+"open-recent")
+	open_recent
+	;;
+esac

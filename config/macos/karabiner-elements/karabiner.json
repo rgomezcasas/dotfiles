@@ -1002,6 +1002,21 @@
             "bundle_identifiers" : [ "com.apple.Keynote" ]
           } ],
           "type" : "basic"
+        }, {
+          "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_control", "left_option", "left_command" ]
+            },
+            "key_code" : "o"
+          },
+          "to" : [ {
+            "shell_command" : "$HOME/.dotfiles/scripts/system/sdot apple keynote open-recent"
+          } ],
+          "conditions" : [ {
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "com.apple.Keynote" ]
+          } ],
+          "type" : "basic"
         } ]
       }, {
         "description" : "[Notion] Shortcuts",

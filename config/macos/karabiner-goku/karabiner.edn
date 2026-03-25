@@ -44,7 +44,8 @@
   :prev-workspace           {:modi [:left_command :left_option] :key :left_arrow}
   :selection-extend         {:modi :left_option :key :up_arrow}
   :selection-shrink         {:modi :left_option :key :down_arrow}
-  :show-recent              {:modi :left_command :key :e}
+  :show-recent-files        {:modi :left_command :key :e}
+  :show-recent-projects     {:modi [:left_control :left_option :left_command] :key :o}
   :sidebar-primary-toggle   {:modi :left_command :key :1}
   :sidebar-secondary-toggle {:modi :left_command :key :2}
   :switch-account           {:modi :left_command :key :caps_lock}
@@ -155,7 +156,7 @@
 
   {:des   "[Chrome] Shortcuts"
    :rules [:Chrome
-           [:show-recent :!CSa]                             ; Show recent tabs
+           [:show-recent-files :!CSa]                       ; Show recent tabs
            [:!CSi :!CSc]                                    ; Inspect element
            [:!CTOt :!COj]                                   ; Toggle console
            [:switch-account [:!CSm :return_or_enter]]       ; Switch profile
@@ -189,11 +190,12 @@
   {:des   "[Keynote] Shortcuts"
    :rules [:Keynote
            [:zoom-in :!CSperiod]   ; Zoom in
-           [:zoom-out :!CScomma]]} ; Zoom out
+           [:zoom-out :!CScomma]   ; Zoom out
+           [:show-recent-projects "$HOME/.dotfiles/scripts/system/sdot apple keynote open-recent"]]} ; Open recent
 
   {:des   "[Notion] Shortcuts"
    :rules [:Notion
-           [:show-recent :!Cp]                    ; Show recent pages
+           [:show-recent-files :!Cp]              ; Show recent pages
            [:sidebar-primary-toggle :!Cbackslash] ; Toggle sidebar
            [:copy-current-url :!Cl]               ; Copy current url
            [:selection-extend :!Sup_arrow]        ; Extend selection
@@ -213,7 +215,7 @@
 
   {:des   "[PersonalNotion] Shortcuts"
    :rules [:PersonalNotion
-           [:show-recent :!Cp]                    ; Show recent pages
+           [:show-recent-files :!Cp]              ; Show recent pages
            [:sidebar-primary-toggle :!Cbackslash] ; Toggle sidebar
            [:!CSn :!Cn]]}                         ; Open new window
 
