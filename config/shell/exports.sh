@@ -76,6 +76,7 @@ _path_candidates=(
   "/etc/profiles/per-user/$USER/bin"
   "/run/current-system/sw/bin"
   "/nix/var/nix/profiles/default/bin"
+  "/opt/homebrew/opt/libpq/bin"
   "/Applications/Ghostty.app/Contents/MacOS"
   "$JAVA_HOME/bin"
   "$HOME/.cargo/bin"

@@ -9,6 +9,7 @@
     "cliclick"
     "gemini-cli"
     "jetbrains/junie/junie"
+    "libpq"
     "ollama"
     "sst/tap/opencode"
     "switchaudio-osx"
