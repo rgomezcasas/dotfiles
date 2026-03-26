@@ -66,7 +66,7 @@
     "update.releaseTrack": "prerelease",
     "workbench.commandPalette.experimental.enableNaturalLanguageSearch": false,
     "workbench.editor.showTabs": "none",
-    "workbench.colorTheme": "Default Light+",
+    "workbench.colorTheme": "Light+",
     "editor.fontSize": 16,
     "terminal.integrated.fontSize": 16,
     "workbench.iconTheme": "vscode-jetbrains-icon-theme-2023-light",
