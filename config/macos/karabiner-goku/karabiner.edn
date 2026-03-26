@@ -191,6 +191,7 @@
    :rules [:Keynote
            [:zoom-in :!CSperiod]   ; Zoom in
            [:zoom-out :!CScomma]   ; Zoom out
+           [:!CSp :!COp]           ; Play slideshow
            [:show-recent-projects "$HOME/.dotfiles/scripts/system/sdot apple keynote open-recent"]]} ; Open recent
 
   {:des   "[Notion] Shortcuts"
