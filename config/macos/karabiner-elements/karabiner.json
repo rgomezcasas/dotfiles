@@ -547,6 +547,22 @@
             "bundle_identifiers" : [ "company.thebrowser.Browser" ]
           } ],
           "type" : "basic"
+        }, {
+          "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_command" ]
+            },
+            "key_code" : "e"
+          },
+          "to" : [ {
+            "key_code" : "6",
+            "modifiers" : [ "left_command", "left_control", "left_option" ]
+          } ],
+          "conditions" : [ {
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "company.thebrowser.Browser" ]
+          } ],
+          "type" : "basic"
         } ]
       }, {
         "description" : "[Dia] Shortcuts",

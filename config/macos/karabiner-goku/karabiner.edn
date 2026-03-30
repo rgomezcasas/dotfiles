@@ -121,7 +121,8 @@
            [:!Cp :!Cl]                           ; CMD+P shows url menu
            [:!Otab :!COdown_arrow]               ; opt+tab switch tabs down
            [:!OStab :!COup_arrow]                ; opt+shift+tab switch tabs up
-           [:!TOCSt :!COj]]}                     ; hyper+t opens terminal
+           [:!TOCSt :!COj]                       ; hyper+t opens terminal
+           [:show-recent-files :!CTO6]]}         ; cmd+e shows recent files
 
   {:des   "[Dia] Shortcuts"
    :rules [:Dia
