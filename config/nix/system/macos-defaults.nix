@@ -86,7 +86,7 @@
     QuitMenuItem = false;
     ShowExternalHardDrivesOnDesktop = true;
     ShowHardDrivesOnDesktop = false;
-    ShowMountedServersOnDesktop = true;
+    ShowMountedServersOnDesktop = false;
     ShowPathbar = true;
     ShowRemovableMediaOnDesktop = true;
     ShowStatusBar = true;
@@ -126,6 +126,7 @@
     warnBeforeQuitShortcut = 0;
     workspaceAutoReorderOnNotification = 0;
   };
+  CustomUserPreferences.NSGlobalDomain.NSMenuEnableActionImages = false;
   CustomUserPreferences.NSGlobalDomain."com.apple.sound.uiaudio.enabled" = false;
   CustomUserPreferences."com.apple.finder".FinderSounds = false;
   CustomUserPreferences."com.apple.symbolichotkeys".AppleSymbolicHotKeys."7" = { # Move focus to menu bar
