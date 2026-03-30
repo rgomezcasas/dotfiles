@@ -70,6 +70,7 @@
   },
   "syntaxHighlightingDisabled": false,
   "alwaysThinkingEnabled": true,
+  "effortLevel": "high",
   "companyAnnouncements": [
     "¿Por qué si una variable es inmutable la seguimos llamando variable?",
     "¿Qué le dice un .GIF a un .JPEG? -Anímate viejo.",
@@ -113,6 +114,6 @@
   "autoUpdatesChannel": "latest",
   "voiceEnabled": false,
   "autoMemoryEnabled": false,
-  "skipDangerousModePermissionPrompt": true,
-  "effortLevel": "high"
+  "showThinkingSummaries": true,
+  "skipDangerousModePermissionPrompt": true
 }
