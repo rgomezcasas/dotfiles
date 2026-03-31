@@ -79,5 +79,7 @@
     "workbench.activityBar.location": "hidden",
     "workbench.browser.openLocalhostLinks": true,
     "workbench.browser.enableChatTools": true,
-    "github.copilot.chat.agentDebugLog.enabled": true
+    "github.copilot.chat.agentDebugLog.enabled": true,
+    "extensions.ignoreRecommendations": true,
+    "chat.mcp.gallery.enabled": true
 }

@@ -73,5 +73,6 @@
 	"workbench.editor.editorActionsLocation": "titleBar",
 	"breadcrumbs.enabled": false,
 	"git.openRepositoryInParentFolders": "never",
-	"window.commandCenter": true
+	"window.commandCenter": true,
+	"update.mode": "silentlyApplyOnQuit"
 }
