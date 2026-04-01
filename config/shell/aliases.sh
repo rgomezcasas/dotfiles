@@ -39,8 +39,6 @@ alias o.='open .'
 # Claude code
 alias cc="dot claude cc"
 alias commit="cc /global-commit"
-alias ccyolo="cc --dangerously-skip-permissions --settings '{\"sandbox\":{\"enabled\":true}}'"
-# alias ccyolo="cc --dangerously-skip-permissions"
 alias ccupdate="claude update"
 alias ccusa='npx ccusage@latest --since $(date -d "30 days ago" +%Y%m%d 2>/dev/null || date -v-30d +%Y%m%d)'
 
@@ -50,6 +48,16 @@ alias f="dot claude f"
 
 # Codely
 alias mooc="dot codely mooc"
+
+
+
+
+
+alias ccyolo="cc --dangerously-skip-permissions --settings '{\"sandbox\":{\"enabled\":true}}'"
+
+
+
+
 
 # Export credentials
 alias with_openai="dot system with_credential OPENAI_API_KEY OPENAI_API_KEY"

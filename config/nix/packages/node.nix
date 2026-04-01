@@ -1,6 +1,6 @@
 { pkgs, ... }:
 
-with pkgs.nodePackages;
+with pkgs;
 [
   typescript
   typescript-language-server
