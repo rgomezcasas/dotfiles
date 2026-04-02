@@ -4,6 +4,7 @@ let
   packages = [
     "@github/copilot"
     "ccusage"
+    "turbo"
   ];
   consoleUser = config.system.primaryUser;
   npmPrefix = "/Users/${consoleUser}/.cache/npm/global";

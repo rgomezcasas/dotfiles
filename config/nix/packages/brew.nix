@@ -9,6 +9,7 @@
     "cliclick"
     "gemini-cli"
     "jetbrains/junie/junie"
+    "jsongrep"
     "libpq"
     "ollama"
     "sst/tap/opencode"

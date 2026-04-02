@@ -19,4 +19,4 @@ tmp=$(mktemp)
 jq --arg t "$theme" '.theme = $t' ~/.claude.json > "$tmp" && cat "$tmp" >| ~/.claude.json && rm "$tmp"
 
 #  --enable-auto-mode
-claude --append-system-prompt 'responde siempre en castellano' "$@"
+claude "$@"

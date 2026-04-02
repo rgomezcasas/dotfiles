@@ -1,5 +1,6 @@
 # Rules
 
+- Reply in the same language the user used
 - Write all code, comments, docs, commits, and tests in English
 - Write self-documenting code, never add explanatory comments
 - Use inclusive terms: allowlist/blocklist, primary/replica
@@ -9,11 +10,11 @@
 
 Instead of the following traditional commands, use faster alternatives:
 
-- `rg`/`grep` → `ast-grep`
+- `grep`|`rg` → `ast-grep`
 - `find` → `fd`
 - `grep` → `rg`
-- `tree` for structure
-- `jq` and `yq` for data
+- `jq` → `jg`
+- `tree` → `exa --tree`
 
 # Context
 
