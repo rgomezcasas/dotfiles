@@ -32,6 +32,8 @@
   :VSCode         ["com.microsoft.VSCode"]
   :Vlc            ["org.videolan.vlc"]
 }
+ :devices
+ {:external-kb [{:vendor_id 1121 :product_id 16386 :is_keyboard true}]}
  :froms
  {:clipboard-history        {:modi [:left_command :left_shift] :key :v}
   :change-current-page      {:modi :left_command :key :l}
@@ -62,7 +64,7 @@
  [{:des   "[Mouse] Navigation"
    :rules [[{:pkey :button5} :!Ctab]                            ; Up key -> Restore last hidden
            [{:pkey :button4} [{:pkey :button1} :!Ch]]           ; Down key -> Hide
-           [:!SOd :!Cmission_control]]}                         ; Show desktop
+]}
 
   {:des   "[Keyboard] Global shortcuts"
    :rules [[:!Cm :!CTSm]                                        ; Disable minimize with cmd+m
@@ -82,7 +84,7 @@
            [:!Oa [:type "á"]]]}
 
   {:des   "[Keyboard] Hyper key remaps"
-   :rules [[:escape :!TOCleft_shift nil {:alone :escape}]       ; escape alone -> esc, held -> hyper
+   :rules [[:escape :!TOCleft_shift [:!external-kb] {:alone :escape}] ; escape alone -> esc, held -> hyper (not external kb)
            [:caps_lock :!TOCleft_shift nil {:alone :escape}]]}  ; caps_lock alone -> esc, held -> hyper
 
   {:des   "[Util] Brightness and zoom with wheel"
@@ -242,7 +244,13 @@
            [:!COd [:paste-and-return "+:thumbsdown:"]]          ; React: thumbsdown
            [:!COp [:paste-and-return "+:heavy_plus_sign:"]]     ; React: plus
            [:!COg [:paste-and-return "+:grimacing:"]]           ; React: grimacing
-           [:!COl [:paste-and-return "+:joy:"]]]}]              ; React: joy
+           [:!COl [:paste-and-return "+:joy:"]]]}              ; React: joy
+
+  {:des   "[External Keyboard] Swap CMD and OPT"
+     :rules [:external-kb
+              [:left_command :left_option]
+              [:left_option :left_command]
+              [:escape :grave_accent_and_tilde]]}]
 
  :cheatsheet
  {:!Ca        "command a"
