@@ -8,7 +8,10 @@
     ],
     "coworkScheduledTasksEnabled": true,
     "ccdScheduledTasksEnabled": true,
-    "sidebarMode": "chat",
-    "coworkWebSearchEnabled": true
+    "sidebarMode": "code",
+    "coworkWebSearchEnabled": true,
+    "coworkOnboardingResumeStep": null,
+    "keepAwakeEnabled": true,
+    "chicagoEnabled": false
   }
 }
