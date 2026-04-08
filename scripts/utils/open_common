@@ -22,7 +22,7 @@ folders=(
 	["🎥 Screencasts"]="$HOME/Desktop/tmp/screencasts"
 	["🤏 Thumbnails"]="$GOOGLE_DRIVE_PATH/Shared drives/👑 Contents/🔖 Pro/Design/Thumbnails Cursos"
 	["🔴 Recordings"]="$GOOGLE_DRIVE_PATH/Shared drives/👑 Contents/🔴 Recordings"
-	["📽️ Slides"]="BROWSE:$HOME/Library/Mobile Documents/com~apple~CloudDocs/🍍 Codely/🔖 Cursos"
+	["📽️ Slides cursos"]="BROWSE:$HOME/Library/Mobile Documents/com~apple~CloudDocs/🍍 Codely/Cursos"
 )
 
 folder=$(printf "%s\n" "${!folders[@]}" | choose)
