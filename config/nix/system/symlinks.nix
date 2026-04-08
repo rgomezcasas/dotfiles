@@ -14,6 +14,7 @@ in
     symlink "${dotfilesPath}/config/editors/claude-code/statusline-command.sh";
   ".agents/skills".source = symlink "${dotfilesPath}/config/agents/global_skills";
   ".codex/AGENTS.md".source = symlink "${dotfilesPath}/config/agents/GLOBAL_AGENTS.md";
+  ".codex/config.toml".source = symlink "${dotfilesPath}/config/editors/codex/config.toml";
   ".config/ghostty".source = symlink "${dotfilesPath}/config/macos/ghostty";
   ".config/karabiner".source = symlink "${dotfilesPath}/config/macos/karabiner-elements";
   ".config/karabiner.edn".source = symlink "${dotfilesPath}/config/macos/karabiner-goku/karabiner.edn";

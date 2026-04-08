@@ -1,0 +1,15 @@
+model = "gpt-5.4"
+[projects."/Users/rafa.gomez/Code/codely/ai_design_and_architecture-workshop"]
+trust_level = "trusted"
+
+[projects."/Users/rafa.gomez/Code/codely/ai_for_progremming-course"]
+trust_level = "trusted"
+
+[projects."/Users/rafa.gomez/.dotfiles"]
+trust_level = "trusted"
+
+[notice.model_migrations]
+"gpt-5.3-codex" = "gpt-5.4"
+
+[tui]
+status_line = ["model-with-reasoning", "git-branch", "context-used", "five-hour-limit"]
