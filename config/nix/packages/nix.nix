@@ -43,6 +43,13 @@ with pkgs;
   yarn
   z-lua
   zsh
+  ast-grep
+  bitwarden-cli
+  libpq
+  mitmproxy
+  ollama
+  switchaudio-osx
+  yt-dlp
 
   # gui
   gum

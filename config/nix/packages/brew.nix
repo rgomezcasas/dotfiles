@@ -3,18 +3,12 @@
   taps = [  "manaflow-ai/cmux" "typewhisper/tap" ];
   brews = [
     "agent-browser"
-    "ast-grep"
-    "bitwarden-cli"
     "choose-gui"
     "cliclick"
     "gemini-cli"
     "jetbrains/junie/junie"
     "jsongrep"
-    "libpq"
-    "ollama"
     "sst/tap/opencode"
-    "switchaudio-osx"
-    "yt-dlp"
   ];
   casks = [
     "adobe-creative-cloud"
@@ -46,7 +40,6 @@
     "karabiner-elements"
     "manaflow-ai/cmux/cmux"
     "meld-studio"
-    "mitmproxy"
     "mqtt-explorer"
     "notion"
     "obs"

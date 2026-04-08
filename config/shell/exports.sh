@@ -57,6 +57,8 @@ export HOMEBREW_NO_ENV_HINTS=1
 export HOMEBREW_PREFIX="/opt/homebrew"
 export HOMEBREW_CELLAR="$HOMEBREW_PREFIX/Cellar"
 
+export OLLAMA_KEEP_ALIVE="3h"
+
 export EZA_COLORS="di=34:ln=36:ex=32:fi=0:uu=33:gu=33:sn=0:sb=0:da=36:hd=4:bu=4;33:ur=33:uw=31:ux=32:ue=32:gr=33:gw=31:gx=32:tr=33:tw=31:tx=32:xx=90"
 
 export LANG="en_US.UTF-8"
