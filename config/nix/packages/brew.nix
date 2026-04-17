@@ -35,6 +35,7 @@
     "google-drive"
     "grandperspective"
     "handbrake-app"
+    "helium-browser"
     "imaging-edge"
     "jetbrains-toolbox"
     "karabiner-elements"
