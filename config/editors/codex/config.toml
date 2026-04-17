@@ -8,6 +8,12 @@ trust_level = "trusted"
 [projects."/Users/rafa.gomez/.dotfiles"]
 trust_level = "trusted"
 
+[projects."/Users/rafa.gomez/Code/codely/codely"]
+trust_level = "trusted"
+
+[projects."/Users/rafa.gomez/Code/codely/dependabot-course"]
+trust_level = "trusted"
+
 [notice.model_migrations]
 "gpt-5.3-codex" = "gpt-5.4"
 
