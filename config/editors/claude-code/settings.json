@@ -1,4 +1,21 @@
 {
+  "env": {
+    "CLAUDE_CODE_DISABLE_AUTO_MEMORY": "1",
+    "CLAUDE_CODE_DISABLE_FAST_MODE": "1",
+    "CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY": "1",
+    "CLAUDE_CODE_DISABLE_GIT_INSTRUCTIONS": "1",
+    "CLAUDE_CODE_HIDE_ACCOUNT_INFO": "1",
+    "CLAUDE_CODE_IDE_SKIP_AUTO_INSTALL": "1",
+    "CLAUDE_CODE_NO_FLICKER": "1",
+    "DISABLE_FEEDBACK_COMMAND": "1",
+    "_DISABLE_TELEMETRY": "1",
+    "ENABLE_CLAUDEAI_MCP_SERVERS": "false",
+    "ENABLE_LSP_TOOL": "1",
+    "ENABLE_TOOL_SEARCH": "true",
+    "FORCE_AUTOUPDATE_PLUGINS": "true",
+    "CLAUDE_CODE_DISABLE_ADAPTIVE_THINKING": "1",
+    "MAX_THINKING_TOKENS": "128000"
+  },
   "permissions": {
     "allow": [
       "Bash(agent-browser *)",
@@ -9,13 +26,52 @@
       "Bash(ls *)",
       "Bash(rg *)",
       "Grep",
-      "WebSearch"
+      "WebSearch",
+      "Bash(sudo darwin-rebuild:*)",
+      "WebFetch(domain:nix-darwin.github.io)",
+      "Read(//Users/rafa.gomez/.config/**)",
+      "Read(//Users/rafa.gomez/**)",
+      "Bash(find /nix/store -type f \\\\\\(-name *finder* -o -name *defaults* \\\\\\))",
+      "Bash(git commit:*)",
+      "Bash(defaults read:*)",
+      "Bash($HOME/.dotfiles/scripts/system/sdot mac:*)",
+      "Bash(gpgconf --kill gpg-agent)",
+      "Bash(gpg-agent --daemon)",
+      "Bash(grep -v \"^$\")",
+      "Bash(swift:*)",
+      "Bash(plutil -p /Library/Preferences/com.apple.ncprefs.plist)",
+      "Bash(plutil -p ~/Library/Preferences/com.apple.notificationcenterui.plist)",
+      "Bash(defaults domains:*)",
+      "WebFetch(domain:derflounder.wordpress.com)",
+      "WebFetch(domain:docs.automox.com)",
+      "WebFetch(domain:gist.github.com)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:developer.okta.com)",
+      "Bash(nix eval:*)",
+      "Bash(mdfind -name ncprefs.plist)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(nm /System/Library/ExtensionKit/Extensions/NotificationsSettings.appex/Contents/MacOS/NotificationsSettings)",
+      "Bash(defaults -currentHost read com.apple.notificationcenterui turnOnDNDWhenMirroring)",
+      "Bash(plutil:*)",
+      "WebFetch(domain:droidwin.com)",
+      "WebFetch(domain:community.jamf.com)",
+      "Bash(defaults find:*)",
+      "Bash(grep -r npo /Users/rafa.gomez/.dotfiles --include=*.sh --include=*.json --include=*.edn)",
+      "WebFetch(domain:ghostty.org)",
+      "Bash(curl -s https://ghostty.org/docs/features/applescript)",
+      "Bash(grep -r alias /Users/rafa.gomez/.dotfiles/config/shell/ --include=*.sh)",
+      "Bash(sdef /Applications/Ghostty.app)",
+      "Bash(/Applications/Ghostty.app/Contents/MacOS/ghostty +list-actions)",
+      "Bash(networksetup -listallhardwareports)",
+      "Bash(networksetup -getairportnetwork en0)",
+      "Bash(route -n get default)",
+      "Bash(nix-env -qaP)"
     ],
     "deny": [
       "Bash(git *--amend*)",
       "Bash(git push*)"
     ],
-    "defaultMode": "default"
+    "defaultMode": "auto"
   },
   "statusLine": {
     "type": "command",
@@ -70,7 +126,7 @@
   },
   "syntaxHighlightingDisabled": false,
   "alwaysThinkingEnabled": true,
-  "effortLevel": "medium",
+  "effortLevel": "xhigh",
   "companyAnnouncements": [
     "¿Por qué si una variable es inmutable la seguimos llamando variable?",
     "¿Qué le dice un .GIF a un .JPEG? -Anímate viejo.",
@@ -109,28 +165,16 @@
     "¿Cómo aprendieron los hippies sobre las transacciones en base de datos? ¡Tomando ACID!",
     "¿Sabes algún chiste bueno sobre DNSs? - Si, pero tardarías 24h en pillarlo.",
     "💂‍♂️ LaIA es el nombre de persona más preparado para el futuro.",
-    "💂‍♂️ Cuando hay un error de sintaxis tienes que volver caminando a casa"
+    "💂‍♂️ Cuando hay un error de sintaxis tienes que volver caminando a casa",
+    "¿Cómo se llamaba a la gente que usaba internet antes de que fuera mainstream? - Httpsters",
+    "¿Por qué si programas con Java tienes que llevar gafas de sol? ¡Porque miras directo al Eclipse!",
+    "Tengo un chiste sobre la documentación… pero no está hecho aún.",
+    "Si escribo un código excepcional… ¿Eso es bueno o malo?"
   ],
   "autoUpdatesChannel": "latest",
-  "voiceEnabled": false,
   "autoMemoryEnabled": false,
   "showThinkingSummaries": true,
   "skipDangerousModePermissionPrompt": true,
-	"env": {
-		"CLAUDE_CODE_DISABLE_AUTO_MEMORY": "1",
-		"CLAUDE_CODE_DISABLE_FAST_MODE": "1",
-		"CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY": "1",
-		"CLAUDE_CODE_DISABLE_GIT_INSTRUCTIONS": "1",
-		"CLAUDE_CODE_HIDE_ACCOUNT_INFO": "1",
-		"CLAUDE_CODE_IDE_SKIP_AUTO_INSTALL": "1",
-		"CLAUDE_CODE_NO_FLICKER": "1",
-		"DISABLE_FEEDBACK_COMMAND": "1",
-		"_DISABLE_TELEMETRY": "1",
-		"ENABLE_CLAUDEAI_MCP_SERVERS": "false",
-		"ENABLE_LSP_TOOL": "1",
-		"ENABLE_TOOL_SEARCH": "true",
-		"FORCE_AUTOUPDATE_PLUGINS": "true",
-		"CLAUDE_CODE_DISABLE_ADAPTIVE_THINKING": 1,
-		"MAX_THINKING_TOKENS": "128000"
-	}
+  "voiceEnabled": false,
+  "skipAutoPermissionPrompt": true
 }
