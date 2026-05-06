@@ -14,6 +14,6 @@ docs::parse "$@"
 nix flake update --flake "$DOTFILES_PATH/config/nix"
 git -C "$DOTFILES_PATH" add config/nix/flake.lock
 git -C "$DOTFILES_PATH" commit -m "chore(nix): update flake.lock"
-nvd diff $(ls -dt /nix/var/nix/profiles/system-*-link | head -n2)
 sudo darwin-rebuild switch --flake "$DOTFILES_PATH/config/nix#pro" --impure
+nvd diff $(ls -dt /nix/var/nix/profiles/system-*-link | head -n2)
 zimfw upgrade
