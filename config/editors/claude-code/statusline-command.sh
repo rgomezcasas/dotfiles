@@ -14,16 +14,22 @@ context_used=$(( context_pct * context_size / 100 ))
 session_cost=$(echo "$input" | jq -r '.cost.total_cost_usd // 0')
 duration_ms=$(echo "$input" | jq -r '.cost.total_duration_ms // 0')
 
+model_family=""
 case "$model" in
-  *opus*4-6*|*opus*4.6*) model_name="Opus 4.6" ;;
-  *opus*4-5*|*opus*4.5*) model_name="Opus 4.5" ;;
-  *opus*) model_name="Opus" ;;
-  *sonnet*4-5*|*sonnet*4.5*) model_name="Sonnet 4.5" ;;
-  *sonnet*) model_name="Sonnet" ;;
-  *haiku*4-5*|*haiku*4.5*) model_name="Haiku 4.5" ;;
-  *haiku*) model_name="Haiku" ;;
-  *) model_name="$model" ;;
+  *opus*) model_family="Opus" ;;
+  *sonnet*) model_family="Sonnet" ;;
+  *haiku*) model_family="Haiku" ;;
 esac
+
+model_version=$(echo "$model" | grep -oE '[0-9]+[-.][0-9]+' | head -1 | tr '-' '.')
+
+if [[ -n "$model_family" && -n "$model_version" ]]; then
+  model_name="$model_family $model_version"
+elif [[ -n "$model_family" ]]; then
+  model_name="$model_family"
+else
+  model_name="$model"
+fi
 
 git_branch=""
 if git -C "$cwd" rev-parse --is-inside-work-tree &>/dev/null; then

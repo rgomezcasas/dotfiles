@@ -54,6 +54,7 @@
     "thebrowsercompany-dia"
     "visual-studio-code"
     "visual-studio-code@insiders"
+    "vivaldi"
     "vlc"
     "whatsapp@beta"
     "wifiman"
