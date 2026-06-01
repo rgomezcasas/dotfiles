@@ -89,6 +89,12 @@
         "source": "github",
         "repo": "homeassistant-ai/skills"
       }
+    },
+    "unifi-plugins": {
+      "source": {
+        "source": "github",
+        "repo": "sirkirby/unifi-mcp"
+      }
     }
   },
   "sandbox": {
@@ -175,6 +181,6 @@
   "autoMemoryEnabled": false,
   "showThinkingSummaries": true,
   "skipDangerousModePermissionPrompt": true,
-  "voiceEnabled": false,
-  "skipAutoPermissionPrompt": true
+  "skipAutoPermissionPrompt": true,
+  "voiceEnabled": false
 }

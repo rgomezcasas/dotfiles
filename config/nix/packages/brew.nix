@@ -1,6 +1,6 @@
 {
   enable = true;
-  taps = [  "manaflow-ai/cmux" "typewhisper/tap" ];
+  taps = [  "manaflow-ai/cmux" ];
   brews = [
     "agent-browser"
     "choose-gui"
@@ -50,10 +50,8 @@
     "shottr"
     "slack"
     "stremio"
-    "superwhisper"
     "telegram"
     "thebrowsercompany-dia"
-    "typewhisper/tap/typewhisper"
     "visual-studio-code"
     "visual-studio-code@insiders"
     "vlc"
