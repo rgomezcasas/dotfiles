@@ -20,7 +20,7 @@
     "claude"
     "cloudflare-warp"
     "codex"
-    "comfyui"
+    "comfy"
     "contexts"
     "cursor"
     "displaylink"
