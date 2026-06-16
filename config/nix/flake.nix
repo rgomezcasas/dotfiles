@@ -28,6 +28,20 @@
         {
           nixpkgs.config.allowUnfree = true;
 
+          nixpkgs.overlays = [
+            (final: prev: {
+              pythonPackagesExtensions = prev.pythonPackagesExtensions ++ [
+                (pythonFinal: pythonPrev: {
+                  pipx = pythonPrev.pipx.overridePythonAttrs (old: {
+                    disabledTestPaths = (old.disabledTestPaths or [ ]) ++ [
+                      "tests/test_package_specifier.py"
+                    ];
+                  });
+                })
+              ];
+            })
+          ];
+
           networking.hostName = hostname;
           networking.computerName = hostname;
 

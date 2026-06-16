@@ -631,6 +631,25 @@
           "type" : "basic"
         } ]
       }, {
+        "description" : "[Vivaldi] Shortcuts",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "1",
+            "modifiers" : {
+              "mandatory" : [ "left_command" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "b",
+            "modifiers" : [ "left_command" ]
+          } ],
+          "conditions" : [ {
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "com.vivaldi.Vivaldi" ]
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
         "description" : "[Claude] Shortcuts",
         "manipulators" : [ {
           "from" : {

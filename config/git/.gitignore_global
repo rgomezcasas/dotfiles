@@ -39,3 +39,5 @@ __pycache__
 *.no-commit.*
 *.local.*
 tsconfig.tsbuildinfo
+
+**/.claude/settings.local.json

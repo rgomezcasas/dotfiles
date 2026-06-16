@@ -30,6 +30,7 @@
   :Safari         ["com.apple.Safari"]
   :Slack          ["com.tinyspeck.slackmacgap"]
   :VSCode         ["com.microsoft.VSCode"]
+  :Vivaldi        ["com.vivaldi.Vivaldi"]
   :Vlc            ["org.videolan.vlc"]
 }
  :devices
@@ -135,6 +136,10 @@
            [:sidebar-primary-toggle :!TCs] ; Toggle sidebar
            [:next-workspace :!STCc]        ; Next profile
            [:prev-workspace :!STCp]]}      ; Previous profile
+
+  {:des   "[Vivaldi] Shortcuts"
+   :rules [:Vivaldi
+           [:!C1 :!Cb]]} ; cmd+1 as cmd+b
 
   {:des   "[Claude] Shortcuts"
    :rules [:Claude
