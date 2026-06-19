@@ -8,6 +8,7 @@
     "gemini-cli"
     "jetbrains/junie/junie"
     "jsongrep"
+    "node@24"
     "sst/tap/opencode"
   ];
   casks = [

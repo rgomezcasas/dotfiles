@@ -25,7 +25,6 @@ with pkgs;
   jdk21
   lazygit
   nixfmt
-  nodejs_24
   nvd
   pipx
   python313

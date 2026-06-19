@@ -85,6 +85,7 @@ _path_candidates=(
   "$HOME/.orbstack/bin"
   "$HOME/Library/pnpm"
   "$HOME/.local/bin"
+  "$HOMEBREW_PREFIX/opt/node@24/bin"
   "$HOMEBREW_PREFIX/bin"
   "$HOMEBREW_PREFIX/sbin"
   "/usr/local/bin"

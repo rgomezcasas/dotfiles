@@ -30,14 +30,6 @@
 
           nixpkgs.overlays = [
             (final: prev: {
-              nodejs_24 = prev.nodejs_24.overrideAttrs (old: rec {
-                version = "24.14.0";
-                src = prev.fetchurl {
-                  url = "https://nodejs.org/dist/v${version}/node-v${version}.tar.xz";
-                  hash = "sha256-n+Al70Aoq6ldFueBBRi/Sl6Kv7C9wH2KP9uwr9U4138=";
-                };
-              });
-
               pythonPackagesExtensions = prev.pythonPackagesExtensions ++ [
                 (pythonFinal: pythonPrev: {
                   pipx = pythonPrev.pipx.overridePythonAttrs (old: {
