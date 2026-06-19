@@ -12,8 +12,9 @@ context_pct=$(echo "$input" | jq -r '.context_window.used_percentage // 0')
 context_size=$(echo "$input" | jq -r '.context_window.context_window_size // 200000')
 context_used=$(( context_pct * context_size / 100 ))
 session_cost=$(echo "$input" | jq -r '.cost.total_cost_usd // 0')
-duration_ms=$(echo "$input" | jq -r '.cost.total_duration_ms // 0')
 effort_level=$(echo "$input" | jq -r '.effort.level // empty')
+limit_5h=$(echo "$input" | jq -r '.rate_limits.five_hour.used_percentage // empty')
+limit_7d=$(echo "$input" | jq -r '.rate_limits.seven_day.used_percentage // empty')
 
 model_family=""
 case "$model" in
@@ -109,17 +110,10 @@ for ((i=0; i<bar_width; i++)); do
 done
 bar+="\033[0m"
 
-total_secs=$(( duration_ms / 1000 ))
-hours=$(( total_secs / 3600 ))
-minutes=$(( (total_secs % 3600) / 60 ))
-seconds=$(( total_secs % 60 ))
-if (( hours > 0 )); then
-  duration_str="${hours}h ${minutes}m"
-elif (( minutes > 0 )); then
-  duration_str="${minutes}m ${seconds}s"
-else
-  duration_str="${seconds}s"
-fi
+limit_5h_str=""
+[[ -n "$limit_5h" ]] && limit_5h_str=$(printf '%.0f%%' "$limit_5h")
+limit_7d_str=""
+[[ -n "$limit_7d" ]] && limit_7d_str=$(printf '%.0f%%' "$limit_7d")
 
 session_cost_str=$(printf '$%.2f' "$session_cost")
 
@@ -192,6 +186,10 @@ if (( context_used > 0 )); then
   line+=" ${TEXT}${context_used_str}${RESET}"
 fi
 line+="${SEP}${ACCENT}${session_cost_str}${RESET}${MSEP}${TEXT}${daily_cost_str} today${RESET}"
-line+="${SEP}${GRAY}\uf017  ${TEXT}${duration_str}${RESET}"
+
+limits=""
+[[ -n "$limit_5h_str" ]] && limits="${GRAY}5h ${TEXT}${limit_5h_str}${RESET}"
+[[ -n "$limit_7d_str" ]] && limits="${limits:+$limits${MSEP}}${GRAY}7d ${TEXT}${limit_7d_str}${RESET}"
+[[ -n "$limits" ]] && line+="${SEP}${limits}"
 
 printf "%b" "$line"
