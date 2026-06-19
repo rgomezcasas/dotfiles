@@ -14,7 +14,9 @@ context_used=$(( context_pct * context_size / 100 ))
 session_cost=$(echo "$input" | jq -r '.cost.total_cost_usd // 0')
 effort_level=$(echo "$input" | jq -r '.effort.level // empty')
 limit_5h=$(echo "$input" | jq -r '.rate_limits.five_hour.used_percentage // empty')
+limit_5h_reset=$(echo "$input" | jq -r '.rate_limits.five_hour.resets_at // empty')
 limit_7d=$(echo "$input" | jq -r '.rate_limits.seven_day.used_percentage // empty')
+limit_7d_reset=$(echo "$input" | jq -r '.rate_limits.seven_day.resets_at // empty')
 
 model_family=""
 case "$model" in
@@ -168,6 +170,48 @@ case "$effort_level" in
   *)      effort_color="$TEXT" ;;
 esac
 
+# Color a rate limit by burn pace: project current usage to the end of the
+# window based on how much of it has elapsed, with an absolute-usage safety net
+# for windows that are nearly exhausted right now.
+limit_color() {
+  local used=$1 resets_at=$2 window=$3
+  local used_int abs=0 pace=0
+  used_int=$(printf '%.0f' "$used")
+
+  if   (( used_int >= 90 )); then abs=3
+  elif (( used_int >= 80 )); then abs=2
+  fi
+
+  if [[ -n "$resets_at" ]]; then
+    local now remaining elapsed expected projected
+    now=$(date +%s)
+    remaining=$(( resets_at - now ))
+    (( remaining < 0 )) && remaining=0
+    elapsed=$(( window - remaining ))
+    (( elapsed < 0 )) && elapsed=0
+    expected=$(( elapsed * 100 / window ))
+    (( expected < 1 )) && expected=1
+    projected=$(( used_int * 100 / expected ))
+    if   (( projected >= 250 )); then pace=3
+    elif (( projected >= 175 )); then pace=2
+    elif (( projected >= 110 )); then pace=1
+    fi
+  else
+    if   (( used_int >= 90 )); then pace=3
+    elif (( used_int >= 75 )); then pace=2
+    elif (( used_int >= 50 )); then pace=1
+    fi
+  fi
+
+  local rank=$(( abs > pace ? abs : pace ))
+  case $rank in
+    3) printf '%s' '\033[38;2;239;68;68m' ;;
+    2) printf '%s' '\033[38;2;249;115;22m' ;;
+    1) printf '%s' '\033[38;2;234;179;8m' ;;
+    *) printf '%s' "$TEXT" ;;
+  esac
+}
+
 SEP=" ${GRAY}⎮${RESET} "
 MSEP=" ${GRAY}∘${RESET} "
 
@@ -188,8 +232,8 @@ fi
 line+="${SEP}${ACCENT}${session_cost_str}${RESET}${MSEP}${TEXT}${daily_cost_str} today${RESET}"
 
 limits=""
-[[ -n "$limit_5h_str" ]] && limits="${GRAY}5h ${TEXT}${limit_5h_str}${RESET}"
-[[ -n "$limit_7d_str" ]] && limits="${limits:+$limits${MSEP}}${GRAY}7d ${TEXT}${limit_7d_str}${RESET}"
+[[ -n "$limit_5h_str" ]] && limits="${GRAY}5h $(limit_color "$limit_5h" "$limit_5h_reset" 18000)${limit_5h_str}${RESET}"
+[[ -n "$limit_7d_str" ]] && limits="${limits:+$limits${MSEP}}${GRAY}7d $(limit_color "$limit_7d" "$limit_7d_reset" 604800)${limit_7d_str}${RESET}"
 [[ -n "$limits" ]] && line+="${SEP}${limits}"
 
 printf "%b" "$line"
