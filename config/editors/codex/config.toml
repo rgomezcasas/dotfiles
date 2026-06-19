@@ -1,4 +1,5 @@
-model = "gpt-5.4"
+model = "gpt-5.5"
+model_reasoning_effort = "xhigh"
 [projects."/Users/rafa.gomez/Code/codely/ai_design_and_architecture-workshop"]
 trust_level = "trusted"
 
@@ -16,6 +17,10 @@ trust_level = "trusted"
 
 [notice.model_migrations]
 "gpt-5.3-codex" = "gpt-5.4"
+"gpt-5.4" = "gpt-5.5"
 
 [tui]
 status_line = ["model-with-reasoning", "git-branch", "context-used", "five-hour-limit"]
+
+[tui.model_availability_nux]
+"gpt-5.5" = 1

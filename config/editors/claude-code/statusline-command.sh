@@ -13,6 +13,7 @@ context_size=$(echo "$input" | jq -r '.context_window.context_window_size // 200
 context_used=$(( context_pct * context_size / 100 ))
 session_cost=$(echo "$input" | jq -r '.cost.total_cost_usd // 0')
 duration_ms=$(echo "$input" | jq -r '.cost.total_duration_ms // 0')
+effort_level=$(echo "$input" | jq -r '.effort.level // empty')
 
 model_family=""
 case "$model" in
@@ -163,11 +164,24 @@ else
   ACCENT='\033[32m'
   TEXT='\033[37m'
 fi
+
+case "$effort_level" in
+  low)    effort_color="$TEXT" ;;
+  medium) effort_color='\033[38;2;74;222;128m' ;;
+  high)   effort_color='\033[38;2;234;179;8m' ;;
+  xhigh)  effort_color='\033[38;2;249;115;22m' ;;
+  max)    effort_color='\033[38;2;239;68;68m' ;;
+  *)      effort_color="$TEXT" ;;
+esac
+
 SEP=" ${GRAY}⎮${RESET} "
 MSEP=" ${GRAY}∘${RESET} "
 
 _branding_unused="${TEXT}<${GREEN}${RESET}${TEXT}>${RESET}"
 line="${GREEN}${model_name}${RESET}"
+if [[ -n "$effort_level" ]]; then
+  line+=" ${effort_color}${effort_level}${RESET}"
+fi
 
 if [[ -n "$git_branch" ]]; then
   line+=" ${GRAY}@${RESET} ${TEXT}${git_branch}${RESET}"
