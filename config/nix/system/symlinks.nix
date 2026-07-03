@@ -1,6 +1,10 @@
 { config, username, ... }:
 let
   dotfilesPath = "/Users/${username}/.dotfiles";
+  # mkOutOfStoreSymlink points each target straight at the file in ~/.dotfiles
+  # (not at an immutable nix store copy), so editing the source files here takes
+  # effect immediately without a home-manager rebuild. A rebuild is only needed
+  # when adding, removing, or repointing a symlink entry below.
   symlink = config.lib.file.mkOutOfStoreSymlink;
 in
 {

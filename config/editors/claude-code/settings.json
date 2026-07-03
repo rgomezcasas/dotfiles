@@ -182,5 +182,13 @@
   "showThinkingSummaries": true,
   "skipDangerousModePermissionPrompt": true,
   "skipAutoPermissionPrompt": true,
-  "voiceEnabled": false
+  "voiceEnabled": false,
+	"agentPushNotifEnabled": true,
+	"autoScrollEnabled": true,
+	"awaySummaryEnabled": true,
+	"defaultShell": "bash",
+	"editorMode": "normal",
+	"effortLevel": "high",
+	"feedbackSurveyRate": 0,
+	"language": "spanish"
 }

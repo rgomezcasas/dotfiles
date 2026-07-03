@@ -163,8 +163,8 @@ fi
 
 case "$effort_level" in
   low)    effort_color="$TEXT" ;;
-  medium) effort_color='\033[38;2;74;222;128m' ;;
-  high)   effort_color='\033[38;2;234;179;8m' ;;
+  medium) effort_color='\033[38;2;234;179;8m' ;;
+  high)   effort_color="$GREEN" ;;
   xhigh)  effort_color='\033[38;2;249;115;22m' ;;
   max)    effort_color='\033[38;2;239;68;68m' ;;
   *)      effort_color="$TEXT" ;;
