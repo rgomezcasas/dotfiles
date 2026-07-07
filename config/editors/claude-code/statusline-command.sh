@@ -23,9 +23,10 @@ case "$model" in
   *opus*) model_family="Opus" ;;
   *sonnet*) model_family="Sonnet" ;;
   *haiku*) model_family="Haiku" ;;
+  *fable*) model_family="Fable" ;;
 esac
 
-model_version=$(echo "$model" | grep -oE '[0-9]+[-.][0-9]+' | head -1 | tr '-' '.')
+model_version=$(echo "$model" | grep -oE '[0-9]+[-.][0-9]+|[0-9]+' | head -1 | tr '-' '.')
 
 if [[ -n "$model_family" && -n "$model_version" ]]; then
   model_name="$model_family $model_version"
