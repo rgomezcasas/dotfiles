@@ -1,20 +1,14 @@
 {
   "env": {
-    "CLAUDE_CODE_DISABLE_AUTO_MEMORY": "1",
+    "CLAUDE_CODE_DISABLE_ADAPTIVE_THINKING": "1",
     "CLAUDE_CODE_DISABLE_FAST_MODE": "1",
-    "CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY": "1",
-    "CLAUDE_CODE_DISABLE_GIT_INSTRUCTIONS": "1",
-    "CLAUDE_CODE_HIDE_ACCOUNT_INFO": "1",
     "CLAUDE_CODE_IDE_SKIP_AUTO_INSTALL": "1",
-    "CLAUDE_CODE_NO_FLICKER": "1",
     "DISABLE_FEEDBACK_COMMAND": "1",
-    "_DISABLE_TELEMETRY": "1",
-    "ENABLE_CLAUDEAI_MCP_SERVERS": "false",
     "ENABLE_LSP_TOOL": "1",
     "ENABLE_TOOL_SEARCH": "true",
     "FORCE_AUTOUPDATE_PLUGINS": "true",
-    "CLAUDE_CODE_DISABLE_ADAPTIVE_THINKING": "1",
-    "MAX_THINKING_TOKENS": "128000"
+    "IS_DEMO": "1",
+    "MAX_THINKING_TOKENS": "64000"
   },
   "permissions": {
     "allow": [
@@ -74,6 +68,9 @@
     "defaultMode": "auto"
   },
   "model": "opus[1m]",
+  "tui": "fullscreen",
+  "includeGitInstructions": false,
+  "disableClaudeAiConnectors": true,
   "enableArtifact": false,
   "defaultShell": "bash",
   "statusLine": {
