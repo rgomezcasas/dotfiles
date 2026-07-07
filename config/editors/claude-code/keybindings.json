@@ -6,7 +6,7 @@
       "context": "Chat",
       "bindings": {
         "ctrl+p": "chat:modelPicker",
-        "ctrl+t": "chat:thinkingToggle"
+        "ctrl+i": "chat:thinkingToggle"
       }
     }
   ]
