@@ -45,6 +45,5 @@ window-new-tab-position = end
 # Keybinding
 keybind = shift+enter=text:\n
 keybind = command+k=clear_screen
-keybind = ctrl+b=text:/tasks\r
 
 scrollback-limit = 50000
