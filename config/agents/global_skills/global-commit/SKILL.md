@@ -3,7 +3,6 @@ name: global-commit
 description: Create a git commit following Conventional Commits specification
 allowed-tools: Bash(git add:*), Bash(git status:*), Bash(git commit:*), Bash(git diff:*), Bash(git log:*), Bash(git rev-parse:*), Bash(git branch:*), Bash(git stash:*), Bash(git rm:*)
 disable-model-invocation: true
-model: haiku
 ---
 
 ## Context
@@ -62,6 +61,26 @@ docs: update installation instructions
 refactor!: drop support for Node 14
 chore(deps): update dependencies
 ```
+
+## Co-authors
+
+Always add a co-author trailer to the commit message with the following format:
+
+```text
+Co-Authored-By: {tool} - {model.name} {model.version} ({model.reasoning_effort}) <{tooling_email}>
+```
+
+- `tool`: The AI coding tool used (e.g. `Claude Code`, `Cursor`, `Copilot`, `Codex`)
+- `model.name`: The name of the model used to make the change (e.g. `Claude Opus`, `Cursor Composer`, `OpenAI GPT`)
+- `model.version`: The version of the model used to make the change (e.g. `4.6`, `1.5`, `5.4`)
+- `model.reasoning_effort`: The reasoning effort of the model used to make the change (e.g. `low`, `medium`, `high`)
+- `tooling_email`:
+  - Claude Code: `noreply@anthropic.com`
+  - Cursor: `cursoragent@cursor.com`
+  - Copilot: `copilot@github.com`
+  - Codex: `codex@openai.com`
+
+NEVER guess or hardcode these values. They MUST reflect the tool, model, version, and reasoning effort actually running this session and producing the changes — including the real, currently selected `reasoning_effort`. If you cannot determine a value with certainty, ask instead of inventing one.
 
 ## Task
 
