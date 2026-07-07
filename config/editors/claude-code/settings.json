@@ -73,7 +73,7 @@
     ],
     "defaultMode": "auto"
   },
-  "model": "opus[1m]",
+  "model": "claude-fable-5[1m]",
   "defaultShell": "bash",
   "statusLine": {
     "type": "command",
@@ -136,7 +136,7 @@
   },
   "syntaxHighlightingDisabled": false,
   "alwaysThinkingEnabled": true,
-  "effortLevel": "high",
+  "effortLevel": "xhigh",
   "awaySummaryEnabled": true,
   "companyAnnouncements": [
     "¿Por qué si una variable es inmutable la seguimos llamando variable?",
