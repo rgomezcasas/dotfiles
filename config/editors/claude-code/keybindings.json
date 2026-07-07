@@ -5,7 +5,7 @@
     {
       "context": "Chat",
       "bindings": {
-        "cmd+m": "chat:modelPicker"
+        "ctrl+p": "chat:modelPicker"
       }
     }
   ]
