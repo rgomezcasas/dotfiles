@@ -121,8 +121,9 @@ limit_7d_str=""
 session_cost_str=$(printf '$%.2f' "$session_cost")
 
 # Daily cost from ccusage with 2-minute cache, online pricing refresh once per day
-cache_file="/tmp/.claude-statusline-daily-cost"
-pricing_stamp="/tmp/.claude-statusline-pricing-refresh"
+cache_dir="${TMPDIR:-/tmp}"
+cache_file="$cache_dir/.claude-statusline-daily-cost"
+pricing_stamp="$cache_dir/.claude-statusline-pricing-refresh"
 now=$(date +%s)
 cache_stale=1
 if [[ -f "$cache_file" ]]; then
