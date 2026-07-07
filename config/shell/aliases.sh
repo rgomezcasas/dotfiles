@@ -9,6 +9,7 @@ alias la="eza -la --icons --group-directories-first"
 # Jumps
 alias ~="cd ~"
 alias tmp="cd ~/Desktop/tmp"
+alias cod="cd ~/Code/codely/codely"
 
 # Git
 alias gaa="git add -A"
@@ -48,16 +49,7 @@ alias f="dot claude f"
 
 # Codely
 alias mooc="dot codely mooc"
-
-
-
-
-
 alias ccyolo="cc --dangerously-skip-permissions --settings '{\"sandbox\":{\"enabled\":true}}'"
-
-
-
-
 
 # Export credentials
 alias with_openai="dot system with_credential OPENAI_API_KEY OPENAI_API_KEY"
