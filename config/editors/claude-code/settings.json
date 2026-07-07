@@ -73,6 +73,8 @@
     ],
     "defaultMode": "auto"
   },
+  "model": "opus[1m]",
+  "defaultShell": "bash",
   "statusLine": {
     "type": "command",
     "command": "bash /Users/rafa.gomez/.claude/statusline-command.sh",
@@ -97,6 +99,7 @@
       }
     }
   },
+  "language": "spanish",
   "sandbox": {
     "enabled": false,
     "autoAllowBashIfSandboxed": true,
@@ -116,6 +119,7 @@
       "git"
     ]
   },
+  "feedbackSurveyRate": 0,
   "spinnerTipsEnabled": false,
   "spinnerVerbs": {
     "mode": "replace",
@@ -132,7 +136,8 @@
   },
   "syntaxHighlightingDisabled": false,
   "alwaysThinkingEnabled": true,
-  "effortLevel": "xhigh",
+  "effortLevel": "high",
+  "awaySummaryEnabled": true,
   "companyAnnouncements": [
     "¿Por qué si una variable es inmutable la seguimos llamando variable?",
     "¿Qué le dice un .GIF a un .JPEG? -Anímate viejo.",
@@ -181,14 +186,9 @@
   "autoMemoryEnabled": false,
   "showThinkingSummaries": true,
   "skipDangerousModePermissionPrompt": true,
+  "editorMode": "normal",
+  "autoScrollEnabled": true,
+  "agentPushNotifEnabled": true,
   "skipAutoPermissionPrompt": true,
-  "voiceEnabled": false,
-	"agentPushNotifEnabled": true,
-	"autoScrollEnabled": true,
-	"awaySummaryEnabled": true,
-	"defaultShell": "bash",
-	"editorMode": "normal",
-	"effortLevel": "high",
-	"feedbackSurveyRate": 0,
-	"language": "spanish"
+  "voiceEnabled": false
 }
