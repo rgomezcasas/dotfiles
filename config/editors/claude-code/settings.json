@@ -74,6 +74,7 @@
     "defaultMode": "auto"
   },
   "model": "opus[1m]",
+  "enableArtifact": false,
   "defaultShell": "bash",
   "statusLine": {
     "type": "command",
