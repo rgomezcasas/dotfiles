@@ -68,6 +68,9 @@
     "defaultMode": "auto"
   },
   "model": "opus[1m]",
+  "fallbackModel": ["default"],
+  "preferredNotifChannel": "ghostty",
+  "fileCheckpointingEnabled": true,
   "tui": "fullscreen",
   "includeGitInstructions": false,
   "disableClaudeAiConnectors": true,
