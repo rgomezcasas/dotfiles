@@ -171,11 +171,11 @@ case "$effort_level" in
   *)      effort_color="$TEXT" ;;
 esac
 
-# Color a rate limit by burn pace: project current usage to the end of the
+# Rank a rate limit 0-4 by burn pace: project current usage to the end of the
 # window based on how much of it has elapsed, with an absolute-usage safety net
 # for windows that are nearly exhausted right now. Ranks map to gray (idle) →
-# white (on pace) → yellow → orange → red (critical).
-limit_color() {
+# white (on pace) → yellow → orange → red (critical). Result is set in LIMIT_RANK.
+limit_rank() {
   local used=$1 resets_at=$2 window=$3
   local used_int abs=0 pace=0
   used_int=$(printf '%.0f' "$used")
@@ -207,14 +207,33 @@ limit_color() {
     fi
   fi
 
-  local rank=$(( abs > pace ? abs : pace ))
-  case $rank in
+  LIMIT_RANK=$(( abs > pace ? abs : pace ))
+}
+
+rank_color() {
+  case $1 in
     4) printf '%s' '\033[38;2;239;68;68m' ;;
     3) printf '%s' '\033[38;2;249;115;22m' ;;
     2) printf '%s' '\033[38;2;234;179;8m' ;;
     1) printf '%s' "$TEXT" ;;
     *) printf '%s' "$GRAY" ;;
   esac
+}
+
+format_reset() {
+  local resets_at=$1
+  [[ -z "$resets_at" ]] && return
+  local now diff d h m
+  now=$(date +%s)
+  diff=$(( resets_at - now ))
+  (( diff < 0 )) && diff=0
+  d=$(( diff / 86400 ))
+  h=$(( (diff % 86400) / 3600 ))
+  m=$(( (diff % 3600) / 60 ))
+  if   (( d > 0 )); then printf 'resets in %dd %dh' "$d" "$h"
+  elif (( h > 0 )); then printf 'resets in %dh %dm' "$h" "$m"
+  else                   printf 'resets in %dm' "$m"
+  fi
 }
 
 SEP=" ${GRAY}⎮${RESET} "
@@ -237,8 +256,18 @@ fi
 line+="${SEP}${ACCENT}${session_cost_str}${RESET}${MSEP}${TEXT}${daily_cost_str} today${RESET}"
 
 limits=""
-[[ -n "$limit_5h_str" ]] && limits="${GRAY}5h $(limit_color "$limit_5h" "$limit_5h_reset" 18000)${limit_5h_str}${RESET}"
-[[ -n "$limit_7d_str" ]] && limits="${limits:+$limits${MSEP}}${GRAY}7d $(limit_color "$limit_7d" "$limit_7d_reset" 604800)${limit_7d_str}${RESET}"
+if [[ -n "$limit_5h_str" ]]; then
+  limit_rank "$limit_5h" "$limit_5h_reset" 18000
+  seg="${GRAY}5h $(rank_color "$LIMIT_RANK")${limit_5h_str}${RESET}"
+  (( LIMIT_RANK >= 2 )) && [[ -n "$limit_5h_reset" ]] && seg+=" ${TEXT}$(format_reset "$limit_5h_reset")${RESET}"
+  limits="$seg"
+fi
+if [[ -n "$limit_7d_str" ]]; then
+  limit_rank "$limit_7d" "$limit_7d_reset" 604800
+  seg="${GRAY}7d $(rank_color "$LIMIT_RANK")${limit_7d_str}${RESET}"
+  (( LIMIT_RANK >= 2 )) && [[ -n "$limit_7d_reset" ]] && seg+=" ${TEXT}$(format_reset "$limit_7d_reset")${RESET}"
+  limits="${limits:+$limits${MSEP}}$seg"
+fi
 [[ -n "$limits" ]] && line+="${SEP}${limits}"
 
 printf "%b" "$line"
