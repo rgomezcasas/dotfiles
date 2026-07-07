@@ -39,7 +39,6 @@ with pkgs;
   uv
   watch
   wget
-  yarn
   z-lua
   zsh
   ast-grep
