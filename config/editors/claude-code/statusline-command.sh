@@ -173,14 +173,15 @@ esac
 
 # Color a rate limit by burn pace: project current usage to the end of the
 # window based on how much of it has elapsed, with an absolute-usage safety net
-# for windows that are nearly exhausted right now.
+# for windows that are nearly exhausted right now. Ranks map to gray (idle) →
+# white (on pace) → yellow → orange → red (critical).
 limit_color() {
   local used=$1 resets_at=$2 window=$3
   local used_int abs=0 pace=0
   used_int=$(printf '%.0f' "$used")
 
-  if   (( used_int >= 90 )); then abs=3
-  elif (( used_int >= 80 )); then abs=2
+  if   (( used_int >= 90 )); then abs=4
+  elif (( used_int >= 80 )); then abs=3
   fi
 
   if [[ -n "$resets_at" ]]; then
@@ -193,23 +194,26 @@ limit_color() {
     expected=$(( elapsed * 100 / window ))
     (( expected < 1 )) && expected=1
     projected=$(( used_int * 100 / expected ))
-    if   (( projected >= 250 )); then pace=3
-    elif (( projected >= 175 )); then pace=2
-    elif (( projected >= 110 )); then pace=1
+    if   (( projected >= 250 )); then pace=4
+    elif (( projected >= 175 )); then pace=3
+    elif (( projected >= 110 )); then pace=2
+    elif (( projected >=  75 )); then pace=1
     fi
   else
-    if   (( used_int >= 90 )); then pace=3
-    elif (( used_int >= 75 )); then pace=2
-    elif (( used_int >= 50 )); then pace=1
+    if   (( used_int >= 90 )); then pace=4
+    elif (( used_int >= 75 )); then pace=3
+    elif (( used_int >= 50 )); then pace=2
+    elif (( used_int >= 25 )); then pace=1
     fi
   fi
 
   local rank=$(( abs > pace ? abs : pace ))
   case $rank in
-    3) printf '%s' '\033[38;2;239;68;68m' ;;
-    2) printf '%s' '\033[38;2;249;115;22m' ;;
-    1) printf '%s' '\033[38;2;234;179;8m' ;;
-    *) printf '%s' "$TEXT" ;;
+    4) printf '%s' '\033[38;2;239;68;68m' ;;
+    3) printf '%s' '\033[38;2;249;115;22m' ;;
+    2) printf '%s' '\033[38;2;234;179;8m' ;;
+    1) printf '%s' "$TEXT" ;;
+    *) printf '%s' "$GRAY" ;;
   esac
 }
 
