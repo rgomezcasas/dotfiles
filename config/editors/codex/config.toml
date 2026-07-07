@@ -23,4 +23,4 @@ trust_level = "trusted"
 status_line = ["model-with-reasoning", "git-branch", "context-used", "five-hour-limit"]
 
 [tui.model_availability_nux]
-"gpt-5.5" = 3
+"gpt-5.5" = 4
