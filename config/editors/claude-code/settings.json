@@ -189,6 +189,7 @@
   "skipDangerousModePermissionPrompt": true,
   "editorMode": "normal",
   "autoScrollEnabled": true,
+  "inputNeededNotifEnabled": true,
   "agentPushNotifEnabled": true,
   "skipAutoPermissionPrompt": true,
   "voiceEnabled": false
