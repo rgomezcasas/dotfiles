@@ -10,6 +10,7 @@
     "IS_DEMO": "1",
     "MAX_THINKING_TOKENS": "64000"
   },
+  "includeGitInstructions": false,
   "permissions": {
     "allow": [
       "Bash(agent-browser *)",
@@ -68,11 +69,9 @@
     "defaultMode": "auto"
   },
   "model": "opus[1m]",
-  "fallbackModel": ["default"],
-  "preferredNotifChannel": "ghostty",
-  "fileCheckpointingEnabled": true,
-  "tui": "fullscreen",
-  "includeGitInstructions": false,
+  "fallbackModel": [
+    "default"
+  ],
   "disableClaudeAiConnectors": true,
   "enableArtifact": false,
   "defaultShell": "bash",
@@ -183,14 +182,17 @@
     "Si escribo un código excepcional… ¿Eso es bueno o malo?"
   ],
   "autoUpdatesChannel": "latest",
+  "tui": "fullscreen",
   "autoMemoryEnabled": false,
   "showThinkingSummaries": true,
   "skipDangerousModePermissionPrompt": true,
   "editorMode": "normal",
+  "preferredNotifChannel": "ghostty",
   "autoScrollEnabled": true,
+  "fileCheckpointingEnabled": true,
+  "remoteControlAtStartup": false,
   "inputNeededNotifEnabled": true,
   "agentPushNotifEnabled": true,
   "skipAutoPermissionPrompt": true,
-  "voiceEnabled": false,
-  "remoteControlAtStartup": true
+  "voiceEnabled": false
 }
