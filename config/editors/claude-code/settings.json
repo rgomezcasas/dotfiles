@@ -136,7 +136,7 @@
   },
   "syntaxHighlightingDisabled": false,
   "alwaysThinkingEnabled": true,
-  "effortLevel": "high",
+  "effortLevel": "xhigh",
   "awaySummaryEnabled": true,
   "companyAnnouncements": [
     "¿Por qué si una variable es inmutable la seguimos llamando variable?",
