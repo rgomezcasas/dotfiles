@@ -323,6 +323,44 @@ if [[ -n "$limit_7d_str" ]]; then
   (( LIMIT_RANK >= 2 )) && [[ -n "$limit_7d_reset" ]] && seg+=" ${TEXT}$(format_reset "$limit_7d_reset")${RESET}"
   limits="${limits:+$limits${MSEP}}$seg"
 fi
-[[ -n "$limits" ]] && line+="${SEP}${limits}"
+
+# Display width of a rendered segment: strip the literal \033[…m color codes,
+# then count the East-Asian-ambiguous glyphs this line emits (█ ∘ ⎮) as 2 columns,
+# since this terminal renders them wide and they would otherwise overflow.
+visible_len() {
+  local stripped narrow
+  stripped=$(printf '%s' "$1" | sed -E 's/\\033\[[0-9;]*m//g')
+  narrow=${stripped//[█∘⎮]/}
+  printf '%s' "$(( 2 * ${#stripped} - ${#narrow} ))"
+}
+
+# Terminal columns, since the status line JSON does not expose the width. Prefer
+# COLUMNS, then the controlling tty; empty when neither is available.
+detect_cols() {
+  if [[ "$COLUMNS" =~ ^[0-9]+$ ]] && (( COLUMNS > 0 )); then
+    printf '%s' "$COLUMNS"
+    return
+  fi
+  local size
+  size=$(stty size </dev/tty 2>/dev/null)
+  [[ "$size" =~ [0-9]+$ ]] && printf '%s' "${size##* }"
+}
+
+# Push the rate limits to the far right when the width is known, otherwise drop
+# them onto their own line so they never collide with the inline content.
+if [[ -n "$limits" ]]; then
+  term_cols=$(detect_cols)
+  right_margin=-3
+  gap=-1
+  if [[ "$term_cols" =~ ^[0-9]+$ ]]; then
+    gap=$(( term_cols - $(visible_len "$line") - $(visible_len "$limits") - right_margin ))
+  fi
+  if (( gap >= 1 )); then
+    printf -v pad '%*s' "$gap" ''
+    line+="${pad}${limits}"
+  else
+    line+=$'\n'"${limits}"
+  fi
+fi
 
 printf "%b" "$line"
