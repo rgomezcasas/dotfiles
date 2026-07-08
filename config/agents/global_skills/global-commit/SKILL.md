@@ -82,6 +82,8 @@ Co-Authored-By: {tool} - {model.name} {model.version} ({model.reasoning_effort})
 
 NEVER guess or hardcode these values. They MUST reflect the tool, model, version, and reasoning effort actually running this session and producing the changes — including the real, currently selected `reasoning_effort`. If you cannot determine a value with certainty, ask instead of inventing one.
 
+When the tool is Claude Code, read the currently selected `reasoning_effort` from the Claude Code status line, which reflects the effort active for this session.
+
 ## Task
 
 Based on the changes shown above:
