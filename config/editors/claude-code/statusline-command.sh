@@ -13,6 +13,7 @@ context_pct=$(echo "$input" | jq -r '.context_window.used_percentage // 0')
 context_size=$(echo "$input" | jq -r '.context_window.context_window_size // 200000')
 context_used=$(( context_pct * context_size / 100 ))
 session_cost=$(echo "$input" | jq -r '.cost.total_cost_usd // 0')
+session_id=$(echo "$input" | jq -r '.session_id // empty')
 effort_level=$(echo "$input" | jq -r '.effort.level // empty')
 limit_5h=$(echo "$input" | jq -r '.rate_limits.five_hour.used_percentage // empty')
 limit_5h_reset=$(echo "$input" | jq -r '.rate_limits.five_hour.resets_at // empty')
@@ -155,6 +156,33 @@ if (( $(echo "$session_cost > $daily_cost" | bc -l) )); then
 fi
 daily_cost_str=$(printf '$%.2f' "$daily_cost")
 
+# Warn when the next request will miss the prompt cache. State is per-session
+# (parallel Claude Code sessions each keep their own file, keyed by session_id).
+# The session cost only grows when a request completes, so a cost increase means
+# the current model just got cached — commit it and reset the TTL clock. If the
+# model differs from the committed value, no request has run since the change, so
+# the next one breaks the cache. Changing effort does not break the cache, so it
+# is not tracked here. Otherwise count down the 5m TTL.
+cache_ttl=300
+cache_warn_threshold=90
+cache_warning=""
+if [[ -n "$session_id" ]]; then
+  state_file="$cache_dir/.claude-statusline-cache-${session_id//[^A-Za-z0-9_-]/_}"
+  prev_model="" prev_cost="" commit_time=""
+  [[ -f "$state_file" ]] && IFS=$'\t' read -r prev_model prev_cost commit_time < "$state_file"
+  if [[ -z "$prev_cost" ]] || (( $(echo "$session_cost > $prev_cost" | bc -l) )); then
+    prev_model="$model" prev_cost="$session_cost" commit_time="$now"
+    printf '%s\t%s\t%s\n' "$model" "$session_cost" "$now" > "$state_file" 2>/dev/null
+  fi
+  if [[ "$model" != "$prev_model" ]]; then
+    cache_warning="You've changed model so cache is gonna break"
+  elif [[ -n "$commit_time" ]]; then
+    remaining=$(( cache_ttl - (now - commit_time) ))
+    (( remaining > 0 && remaining < cache_warn_threshold )) && \
+      cache_warning=$(printf '%d:%02d remaining to use cache' $(( remaining / 60 )) $(( remaining % 60 )))
+  fi
+fi
+
 
 RESET='\033[0m'
 
@@ -169,6 +197,8 @@ else
   ACCENT='\033[32m'
   TEXT='\033[37m'
 fi
+
+RED='\033[38;2;239;68;68m'
 
 case "$effort_level" in
   low)    effort_color="$TEXT" ;;
@@ -309,6 +339,7 @@ fi
 
 line+="${SEP}${bar}"
 line+="${SEP}${ACCENT}${session_cost_str}${RESET}${MSEP}${TEXT}${daily_cost_str} today${RESET}"
+[[ -n "$cache_warning" ]] && line+="${SEP}${RED}${cache_warning}${RESET}"
 
 limits=""
 if [[ -n "$limit_5h_str" ]]; then
