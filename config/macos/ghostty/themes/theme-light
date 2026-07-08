@@ -19,7 +19,7 @@ palette = 12=#076678
 palette = 13=#8f3f71
 palette = 14=#427b58
 palette = 15=#1d2021
-background-opacity = 0.95
+background-opacity = 1
 background-blur-radius = 20
-unfocused-split-opacity = 0.85
+unfocused-split-opacity = 0.95
 unfocused-split-fill = #ebdbb2
