@@ -78,7 +78,8 @@
   "statusLine": {
     "type": "command",
     "command": "bash /Users/rafa.gomez/.claude/statusline-command.sh",
-    "padding": 0
+    "padding": 0,
+    "refreshInterval": 1
   },
   "enabledPlugins": {
     "swift-lsp@claude-plugins-official": false,

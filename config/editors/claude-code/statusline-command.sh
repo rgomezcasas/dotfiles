@@ -244,13 +244,63 @@ format_reset() {
   fi
 }
 
+# Sweep a bright glint across the text, then rest, on a loop. The frame is keyed
+# to wall-clock seconds so it advances via statusLine refreshInterval (capped at
+# 1s); each tick moves the glint center by `speed` chars, blending base->highlight
+# per char by triangular distance. Emits literal \033 escapes for printf "%b".
+shimmer_text() {
+  local text=$1 br=$2 bg=$3 bb=$4 hr=$5 hg=$6 hb=$7 sec=$8
+  local n=${#text} spread=2 rest=2 speed=2 scale=100
+  local period=$(( (n + 2 * spread) / speed + rest ))
+  local center=$(( -spread + (sec % period) * speed ))
+  local out="" i dist inten r g b
+  for (( i = 0; i < n; i++ )); do
+    dist=$(( i - center )); (( dist < 0 )) && dist=$(( -dist ))
+    inten=$(( scale - dist * scale / spread ))
+    (( inten < 0 )) && inten=0
+    r=$(( br + (hr - br) * inten / scale ))
+    g=$(( bg + (hg - bg) * inten / scale ))
+    b=$(( bb + (hb - bb) * inten / scale ))
+    out+="\033[38;2;${r};${g};${b}m${text:i:1}"
+  done
+  printf '%s' "$out"
+}
+
+# Scrolling rainbow, matching /effort's "max": each char takes palette[(i-offset)
+# % 7] and the offset advances over time so the band slides left-to-right. Bold
+# like the menu. Offset is keyed to seconds (statusLine caps refresh at 1s); it is
+# normalized into [0,6] so bash never indexes the array with a negative value.
+rainbow_text() {
+  local text=$1 offset=$2
+  local pr=(235 245 250 145 130 155 200)
+  local pg=(95 139 195 200 170 130 130)
+  local pb=(87 87 95 130 220 200 180)
+  local n=${#text} out="" i k
+  for (( i = 0; i < n; i++ )); do
+    k=$(( (i - offset % 7 + 7) % 7 ))
+    out+="\033[1;38;2;${pr[k]};${pg[k]};${pb[k]}m${text:i:1}"
+  done
+  printf '%s' "$out"
+}
+
 SEP=" ${GRAY}⎮${RESET} "
 MSEP=" ${GRAY}∘${RESET} "
 
 _branding_unused="${TEXT}<${GREEN}${RESET}${TEXT}>${RESET}"
 line="${GREEN}${model_name}${RESET}"
 if [[ -n "$effort_level" ]]; then
-  line+=" ${effort_color}${effort_level}${RESET}"
+  if [[ "$effort_level" == "xhigh" ]]; then
+    if [[ "$theme" == "light" ]]; then
+      effort_render=$(shimmer_text "$effort_level" 249 115 22 194 65 12 "$now")
+    else
+      effort_render=$(shimmer_text "$effort_level" 249 115 22 255 244 224 "$now")
+    fi
+  elif [[ "$effort_level" == "max" ]]; then
+    effort_render=$(rainbow_text "$effort_level" "$now")
+  else
+    effort_render="${effort_color}${effort_level}"
+  fi
+  line+=" ${effort_render}${RESET}"
 fi
 
 if [[ -n "$git_branch" ]]; then
