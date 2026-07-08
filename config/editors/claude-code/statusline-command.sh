@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 PATH="$HOME/.cache/npm/global/bin:$PATH"
+export LC_ALL="${LC_ALL:-en_US.UTF-8}"
 
 input=$(cat)
 
@@ -52,10 +53,16 @@ format_tokens() {
 context_used_str=$(format_tokens "$context_used")
 context_size_str=$(format_tokens "$context_size")
 
-bar_width=10
-filled=$(( context_pct * bar_width / 100 ))
 pct_str="${context_pct}%"
-pct_len=${#pct_str}
+if (( context_used > 0 )); then
+  label="${pct_str} ∘ ${context_used_str}"
+else
+  label="${pct_str}"
+fi
+label_len=${#label}
+bar_width=$(( label_len + 2 ))
+filled=$(( context_pct * bar_width / 100 ))
+pct_len=$label_len
 pct_start=$(( (bar_width - pct_len + 1) / 2 ))
 
 if [[ "$theme" == "light" ]]; then
@@ -97,7 +104,7 @@ fi
 bar=""
 for ((i=0; i<bar_width; i++)); do
   if (( i >= pct_start && i < pct_start + pct_len )); then
-    char="${pct_str:$(( i - pct_start )):1}"
+    char="${label:$(( i - pct_start )):1}"
     if (( i < filled )); then
       bar+="${bar_filled_bg}${char}"
     else
@@ -251,9 +258,6 @@ if [[ -n "$git_branch" ]]; then
 fi
 
 line+="${SEP}${bar}"
-if (( context_used > 0 )); then
-  line+=" ${TEXT}${context_used_str}${RESET}"
-fi
 line+="${SEP}${ACCENT}${session_cost_str}${RESET}${MSEP}${TEXT}${daily_cost_str} today${RESET}"
 
 limits=""
