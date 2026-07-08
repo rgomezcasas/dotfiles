@@ -93,6 +93,8 @@ Based on the changes shown above:
 3. Stage relevant files and create commit messages following the Conventional Commits specification
 4. Execute the commits
 
+Always run `git commit` outside the sandbox, since GPG signing needs access to the gpg-agent and `~/.gnupg`, which the sandbox blocks.
+
 ## Course Repository Scope Convention
 
 This section ONLY applies when the last segment of the repository root path (shown above) ends in `-course`.
