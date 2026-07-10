@@ -726,6 +726,25 @@
           "type" : "basic"
         } ]
       }, {
+        "description" : "[Codex] Shortcuts",
+        "manipulators" : [ {
+          "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_command" ]
+            },
+            "key_code" : "1"
+          },
+          "to" : [ {
+            "key_code" : "b",
+            "modifiers" : [ "left_command" ]
+          } ],
+          "conditions" : [ {
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "com.openai.codex" ]
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
         "description" : "[Notes] Shortcuts",
         "manipulators" : [ {
           "from" : {

@@ -13,6 +13,7 @@
   :Chrome         ["com.google.Chrome", "com.google.Chrome.beta"]
   :Claude         ["com.anthropic.claudefordesktop"]
  :Cmux           ["com.cmuxterm.app"]
+  :Codex          ["com.openai.codex"]
   :Contexts       ["com.contextsformac.Contexts"]
   :Dia            ["company.thebrowser.dia"]
   :Finder         ["com.apple.finder"]
@@ -156,6 +157,10 @@
   {:des   "[Atlas] Shortcuts"
    :rules [:Atlas
            [:sidebar-primary-toggle :!COt]]} ; Toggle sidebar
+
+  {:des   "[Codex] Shortcuts"
+   :rules [:Codex
+           [:sidebar-primary-toggle :!Cb]]} ; Toggle sidebar
 
 
   {:des   "[Notes] Shortcuts"
