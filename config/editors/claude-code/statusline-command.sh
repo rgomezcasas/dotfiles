@@ -161,8 +161,10 @@ daily_cost_str=$(printf '$%.2f' "$daily_cost")
 # The session cost only grows when a request completes, so a cost increase means
 # the current model just got cached — commit it and reset the TTL clock. If the
 # model differs from the committed value, no request has run since the change, so
-# the next one breaks the cache. Changing effort does not break the cache, so it
-# is not tracked here. Otherwise count down the 5m TTL.
+# the next one breaks the cache — but only once a real request has completed
+# (prev_cost > 0), since switching model before sending any message has no cache
+# to break. Changing effort does not break the cache, so it is not tracked here.
+# Otherwise count down the 5m TTL.
 cache_ttl=300
 cache_warn_threshold=90
 cache_warning=""
@@ -174,7 +176,7 @@ if [[ -n "$session_id" ]]; then
     prev_model="$model" prev_cost="$session_cost" commit_time="$now"
     printf '%s\t%s\t%s\n' "$model" "$session_cost" "$now" > "$state_file" 2>/dev/null
   fi
-  if [[ "$model" != "$prev_model" ]]; then
+  if [[ "$model" != "$prev_model" ]] && (( $(echo "$prev_cost > 0" | bc -l) )); then
     cache_warning="You've changed model so cache is gonna break"
   elif [[ -n "$commit_time" ]]; then
     remaining=$(( cache_ttl - (now - commit_time) ))
