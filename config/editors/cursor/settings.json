@@ -74,5 +74,6 @@
 	"breadcrumbs.enabled": false,
 	"git.openRepositoryInParentFolders": "never",
 	"window.commandCenter": true,
-	"update.mode": "silentlyApplyOnQuit"
+	"update.mode": "silentlyApplyOnQuit",
+	"window.autoDetectColorScheme": false
 }
