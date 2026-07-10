@@ -10,6 +10,7 @@
     "jsongrep"
     "node@24"
     "sst/tap/opencode"
+    "stablyai/orca/orca"
     "yarn"
   ];
   casks = [
