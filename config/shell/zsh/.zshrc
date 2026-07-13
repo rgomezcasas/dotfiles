@@ -57,8 +57,6 @@ zsh-defer source "$ZIM_HOME/modules/zsh-autosuggestions/zsh-autosuggestions.zsh"
 zsh-defer source "$ZIM_HOME/modules/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 zsh-defer -c "ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=red'"
 
-zsh-defer -c '[[ ! -f "$ZIM_HOME/init.zsh.zwc" || "$ZIM_HOME/init.zsh" -nt "$ZIM_HOME/init.zsh.zwc" ]] && zcompile "$ZIM_HOME/init.zsh"'
-
 # Lazy load fzf-tab on first TAB press (more efficient)
 _lazy_load_fzf_tab() {
   unset POSTDISPLAY
@@ -92,13 +90,6 @@ source "$DOTFILES_PATH/modules/private/shell/exports.sh"
 source "$DOTFILES_PATH/config/shell/exports.sh"
 zsh-defer source "$DOTFILES_PATH/config/shell/aliases.sh"
 zsh-defer source "$DOTFILES_PATH/config/shell/functions.sh"
-
-zsh-defer -c '
-  local f
-  for f in "$DOTFILES_PATH/config/shell"/{aliases,exports,functions}.sh; do
-    [[ -f $f && (! -f $f.zwc || $f -nt $f.zwc) ]] && zcompile $f 2>/dev/null
-  done
-'
 
 setopt PROMPT_CR PROMPT_PERCENT PROMPT_SP PROMPT_SUBST
 source "$DOTLY_PATH/shell/zsh/themes/prompt_${DOTLY_THEME:-codely}_setup"
