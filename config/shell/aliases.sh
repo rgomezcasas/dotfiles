@@ -43,6 +43,9 @@ alias commit="cc /global-commit"
 alias ccupdate="claude update"
 alias ccusa='npx ccusage@latest --since $(date -d "30 days ago" +%Y%m%d 2>/dev/null || date -v-30d +%Y%m%d)'
 
+# Codex
+alias codexupdate="brew update && brew upgrade --cask codex"
+
 alias t="dot claude t"
 alias tldr="dot claude tldr"
 alias f="dot claude f"
