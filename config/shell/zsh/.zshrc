@@ -51,8 +51,8 @@ autoload -Uz -- coalesce git-action git-info
 source "$ZIM_HOME/modules/zsh-defer/zsh-defer.plugin.zsh"
 zsh-defer source "$ZIM_HOME/modules/completion/init.zsh"
 source "$ZIM_HOME/modules/environment/init.zsh"
-source "$ZIM_HOME/modules/input/init.zsh"
-source "$ZIM_HOME/modules/zsh-autosuggestions/zsh-autosuggestions.zsh"
+zsh-defer source "$ZIM_HOME/modules/input/init.zsh"
+zsh-defer source "$ZIM_HOME/modules/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
 zsh-defer source "$ZIM_HOME/modules/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 zsh-defer -c "ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=red'"
