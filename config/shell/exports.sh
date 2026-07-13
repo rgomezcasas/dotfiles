@@ -34,18 +34,6 @@ fi
 unset _bundle_jetbrains _bundle_vscode _bundle_cursor
 
 # ------------------------------------------------------------------------------
-# Languages
-# ------------------------------------------------------------------------------
-_java_home_cache="$HOME/.cache/java_home"
-[[ -s "$_java_home_cache" ]] && IFS= read -r JAVA_HOME <"$_java_home_cache"
-if [[ ! -d "${JAVA_HOME:-}" ]]; then
-  JAVA_HOME="$(/usr/libexec/java_home 2>/dev/null)"
-  [[ -d "$JAVA_HOME" ]] && mkdir -p "$HOME/.cache" && printf '%s\n' "$JAVA_HOME" >"$_java_home_cache"
-fi
-export JAVA_HOME
-unset _java_home_cache
-
-# ------------------------------------------------------------------------------
 # Apps
 # ------------------------------------------------------------------------------
 if [ "$CODELY_THEME_MODE" = "dark" ]; then
@@ -88,7 +76,6 @@ _path_candidates=(
   "/opt/homebrew/opt/node@24/bin"
   "/opt/homebrew/opt/libpq/bin"
   "/Applications/Ghostty.app/Contents/MacOS"
-  "$JAVA_HOME/bin"
   "$HOME/.cargo/bin"
   "$HOME/.orbstack/bin"
   "$HOME/Library/pnpm"
