@@ -46,7 +46,7 @@ function decrease() {
 	end tell
 EOF
 
-echo "done"
+	echo "done"
 }
 
 function toggle_play() {
@@ -60,7 +60,7 @@ function toggle_play() {
 	end tell
 EOF
 
-echo "done"
+	echo "done"
 }
 
 case $1 in

@@ -9,14 +9,13 @@ set -euo pipefail
 ##?   cc [ARGS...]
 
 if [[ $(defaults read -g AppleInterfaceStyle 2>/dev/null) == "Dark" ]]; then
-  theme="dark"
+	theme="dark"
 else
-  theme="light"
+	theme="light"
 fi
 
-
 tmp=$(mktemp)
-jq --arg t "$theme" '.theme = $t' ~/.claude.json > "$tmp" && cat "$tmp" >| ~/.claude.json && rm "$tmp"
+jq --arg t "$theme" '.theme = $t' ~/.claude.json >"$tmp" && cat "$tmp" >|~/.claude.json && rm "$tmp"
 
 #  --enable-auto-mode
 claude "$@"

@@ -12,12 +12,12 @@ source "$DOTLY_PATH/scripts/core/_main.sh"
 docs::parse "$@"
 
 extract_lists() {
-  local text="$1"
-  echo "$text" | \
-    awk 'NF && !/^ {6,}[-\[]/' | \
-    sed -E $'s/[✅☑️🎥🖼️]//g' | \
-    sed 's/YouTube //g' | \
-    sed 's/\xC2\xA0/ /g'
+	local text="$1"
+	echo "$text" |
+		awk 'NF && !/^ {6,}[-\[]/' |
+		sed -E $'s/[✅☑️🎥🖼️]//g' |
+		sed 's/YouTube //g' |
+		sed 's/\xC2\xA0/ /g'
 }
 
 extract_lists "$(pbpaste)"

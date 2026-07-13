@@ -12,13 +12,13 @@ source "$DOTLY_PATH/scripts/core/_main.sh"
 docs::parse "$@"
 
 print_range() {
-  local label=$1 start=$2 end=$3
-  printf '\n\033[32m── %s ──\033[0m\n' "$label"
-  for ((i=start; i<=end; i++)); do
-    printf ' \033[90m%04X\033[0m %b' "$i" "$(printf '\\U%08X' "$i")"
-    (( (i - start + 1) % 8 == 0 )) && echo
-  done
-  echo
+	local label=$1 start=$2 end=$3
+	printf '\n\033[32m── %s ──\033[0m\n' "$label"
+	for ((i = start; i <= end; i++)); do
+		printf ' \033[90m%04X\033[0m %b' "$i" "$(printf '\\U%08X' "$i")"
+		(((i - start + 1) % 8 == 0)) && echo
+	done
+	echo
 }
 
 print_range "General Punctuation" 0x2000 0x206F

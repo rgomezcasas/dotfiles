@@ -13,24 +13,24 @@ AGENT_LABEL="com.user.cron.every_15s"
 PLIST_PATH="$HOME/Library/LaunchAgents/${AGENT_LABEL}.plist"
 
 main() {
-    if ! launchctl list "$AGENT_LABEL" >/dev/null 2>&1; then
-        log::warning "LaunchAgent $AGENT_LABEL is not running. Reloading..."
+	if ! launchctl list "$AGENT_LABEL" >/dev/null 2>&1; then
+		log::warning "LaunchAgent $AGENT_LABEL is not running. Reloading..."
 
-        if [[ -f "$PLIST_PATH" ]]; then
-            launchctl load "$PLIST_PATH" 2>/dev/null || {
-                log::error "Failed to load LaunchAgent"
-                exit 1
-            }
+		if [[ -f $PLIST_PATH ]]; then
+			launchctl load "$PLIST_PATH" 2>/dev/null || {
+				log::error "Failed to load LaunchAgent"
+				exit 1
+			}
 
-            log::success "LaunchAgent reloaded successfully"
-        else
-            log::error "Plist file not found: $PLIST_PATH"
+			log::success "LaunchAgent reloaded successfully"
+		else
+			log::error "Plist file not found: $PLIST_PATH"
 
-            exit 1
-        fi
-    else
-        log::success "LaunchAgent $AGENT_LABEL is running"
-    fi
+			exit 1
+		fi
+	else
+		log::success "LaunchAgent $AGENT_LABEL is running"
+	fi
 }
 
 main "$@"

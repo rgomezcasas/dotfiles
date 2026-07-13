@@ -21,7 +21,7 @@ while IFS= read -r script; do
 		errors=$((errors + 1))
 	fi
 
-	if [[ ! -x "$script" ]]; then
+	if [[ ! -x $script ]]; then
 		echo "FAIL [permissions] $script"
 		errors=$((errors + 1))
 	fi

@@ -19,23 +19,23 @@ source "$DOTLY_PATH/scripts/core/_main.sh"
 docs::parse "$@"
 
 if $nocopy; then
-	osascript -e "
-    tell application \"System Events\"
-        keystroke \"v\" using command down
-    end tell"
+	osascript -e '
+    tell application "System Events"
+        keystroke "v" using command down
+    end tell'
 else
-  if $returning; then
-  	osascript -e "
+	if $returning; then
+		osascript -e "
   set the clipboard to \"$1\"
   tell application \"System Events\"
       keystroke \"v\" using command down
       key code 36
   end tell"
-  else
-  	osascript -e "
+	else
+		osascript -e "
   set the clipboard to \"$1\"
   tell application \"System Events\"
       keystroke \"v\" using command down
   end tell"
-  fi
+	fi
 fi

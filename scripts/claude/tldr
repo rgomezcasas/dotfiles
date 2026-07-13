@@ -12,9 +12,9 @@ source "$DOTLY_PATH/scripts/core/_main.sh"
 docs::parse "$@"
 
 CLAUDE_CODE_SIMPLE=1 dot claude cc \
-  --model "haiku" \
-  --append-system-prompt 'El output se mostrará directamente en una terminal, así que:
+	--model "haiku" \
+	--append-system-prompt 'El output se mostrará directamente en una terminal, así que:
 - Responde con texto sin formatear.
 - MUY IMPORTANTE: No uses formato markdown NI backticks.
 - Usa ejemplos y títulos claros.' \
-  -p "Dame 3 ejemplos de uso para el comando ${command[*]}."
+	-p "Dame 3 ejemplos de uso para el comando ${command[*]}."

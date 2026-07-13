@@ -16,7 +16,8 @@ docs::parse "$@"
 
 function open_recent() {
 	local selected
-	selected=$(osascript <<'EOF' | grep -v -e "^missing value$" -e "^Clear Menu$" -e "^$" | choose -p "Keynote - Open Recent" -z
+	selected=$(
+		osascript <<'EOF' | grep -v -e "^missing value$" -e "^Clear Menu$" -e "^$" | choose -p "Keynote - Open Recent" -z
 tell application "Keynote" to activate
 delay 0.3
 
@@ -43,7 +44,7 @@ return output
 EOF
 	)
 
-	[[ -z "$selected" ]] && return
+	[[ -z $selected ]] && return
 
 	osascript -e "
 tell application \"System Events\"
