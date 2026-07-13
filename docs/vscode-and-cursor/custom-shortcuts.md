@@ -21,4 +21,4 @@ Disable a default shortcut by prefixing the command with `-`:
 }
 ```
 
-Run `rebuild` after changes.
+Changes apply immediately — the file is symlinked into place, no rebuild needed.

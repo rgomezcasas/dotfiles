@@ -7,4 +7,4 @@ Each editor has its own settings file:
 
 Both share most configuration but can diverge for editor-specific features. If a setting should apply to both, update both files.
 
-Run `rebuild` after changes.
+Changes apply immediately — the file is symlinked into place, no rebuild needed.
