@@ -1,6 +1,6 @@
 {
   enable = true;
-  taps = [  "manaflow-ai/cmux" ];
+  taps = [ "manaflow-ai/cmux" ];
   brews = [
     "agent-browser"
     "choose-gui"

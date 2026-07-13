@@ -129,20 +129,28 @@
   CustomUserPreferences.NSGlobalDomain.NSMenuEnableActionImages = false;
   CustomUserPreferences.NSGlobalDomain."com.apple.sound.uiaudio.enabled" = false;
   CustomUserPreferences."com.apple.finder".FinderSounds = false;
-  CustomUserPreferences."com.apple.symbolichotkeys".AppleSymbolicHotKeys."7" = { # Move focus to menu bar
+  CustomUserPreferences."com.apple.symbolichotkeys".AppleSymbolicHotKeys."7" = {
+    # Move focus to menu bar
     enabled = true;
     value = {
-      parameters = [ 65535 120 262144 ];
+      parameters = [
+        65535
+        120
+        262144
+      ];
       type = "standard";
     };
   };
-  CustomUserPreferences."com.apple.symbolichotkeys".AppleSymbolicHotKeys."52" = { # Turn Dock hiding on/off
+  CustomUserPreferences."com.apple.symbolichotkeys".AppleSymbolicHotKeys."52" = {
+    # Turn Dock hiding on/off
     enabled = false;
   };
-  CustomUserPreferences."com.apple.symbolichotkeys".AppleSymbolicHotKeys."64" = { # Spotlight
+  CustomUserPreferences."com.apple.symbolichotkeys".AppleSymbolicHotKeys."64" = {
+    # Spotlight
     enabled = false;
   };
-  CustomUserPreferences."com.apple.symbolichotkeys".AppleSymbolicHotKeys."184" = { # Screenshot and recording options
+  CustomUserPreferences."com.apple.symbolichotkeys".AppleSymbolicHotKeys."184" = {
+    # Screenshot and recording options
     enabled = false;
   };
   CustomUserPreferences."com.apple.Keynote".NSUserKeyEquivalents = {

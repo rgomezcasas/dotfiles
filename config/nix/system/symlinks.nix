@@ -23,7 +23,8 @@ in
   ".codex/config.toml".source = symlink "${dotfilesPath}/config/editors/codex/config.toml";
   ".config/ghostty".source = symlink "${dotfilesPath}/config/macos/ghostty";
   ".config/karabiner".source = symlink "${dotfilesPath}/config/macos/karabiner-elements";
-  ".config/karabiner.edn".source = symlink "${dotfilesPath}/config/macos/karabiner-goku/karabiner.edn";
+  ".config/karabiner.edn".source =
+    symlink "${dotfilesPath}/config/macos/karabiner-goku/karabiner.edn";
   ".dotly".source = symlink "${dotfilesPath}/config/macos/.dotly";
   ".local/bin/idea".source =
     symlink "/Users/${username}/Library/Application Support/JetBrains/Toolbox/scripts/idea";
