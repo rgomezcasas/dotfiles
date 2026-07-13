@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(sudo darwin-rebuild:*)",
+      "Bash(git commit:*)",
+      "Bash(nix eval:*)",
+      "Bash(nix-env -qaP)",
+      "Bash(defaults read:*)",
+      "Bash(defaults domains:*)",
+      "Bash(defaults find:*)",
+      "Bash(plutil:*)",
+      "Bash($HOME/.dotfiles/scripts/system/sdot mac:*)",
+      "Bash(gpgconf --kill gpg-agent)",
+      "Bash(gpg-agent --daemon)",
+      "Read(//Users/rafa.gomez/**)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:nix-darwin.github.io)",
+      "WebFetch(domain:ghostty.org)",
+      "WebFetch(domain:determinate.systems)"
+    ]
+  }
+}

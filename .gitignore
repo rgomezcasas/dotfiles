@@ -14,3 +14,7 @@ config/shell/zsh/.zim
 # Agents
 # ----------------------------------
 !CLAUDE.md
+# Re-include the .claude dir first: a path can't be unignored while its parent dir is excluded (~/.gitignore_global ignores .claude)
+!.claude/
+.claude/*
+!.claude/settings.json
