@@ -11,7 +11,6 @@ model=$(echo "$input" | jq -r 'if .model | type == "object" then .model.id else 
 cwd=$(echo "$input" | jq -r '.workspace.current_dir // "."')
 context_pct=$(echo "$input" | jq -r '.context_window.used_percentage // 0')
 context_size=$(echo "$input" | jq -r '.context_window.context_window_size // 200000')
-context_used=$(( context_pct * context_size / 100 ))
 session_cost=$(echo "$input" | jq -r '.cost.total_cost_usd // 0')
 session_id=$(echo "$input" | jq -r '.session_id // empty')
 effort_level=$(echo "$input" | jq -r '.effort.level // empty')
@@ -45,21 +44,18 @@ fi
 
 format_tokens() {
   local n=$1
-  if (( n >= 1000 )); then
+  if (( n >= 1000000 )); then
+    printf '%dM' $(( n / 1000000 ))
+  elif (( n >= 1000 )); then
     printf '%dk' $(( n / 1000 ))
   else
     printf '%d' "$n"
   fi
 }
-context_used_str=$(format_tokens "$context_used")
 context_size_str=$(format_tokens "$context_size")
 
 pct_str="${context_pct}%"
-if (( context_used > 0 )); then
-  label="${pct_str} ∘ ${context_used_str}"
-else
-  label="${pct_str}"
-fi
+label="${pct_str} / ${context_size_str}"
 label_len=${#label}
 bar_width=$(( label_len + 2 ))
 filled=$(( context_pct * bar_width / 100 ))
