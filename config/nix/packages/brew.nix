@@ -1,6 +1,6 @@
 {
   enable = true;
-  taps = [ "manaflow-ai/cmux" ];
+  taps = [ "stablyai/orca" ];
   brews = [
     "agent-browser"
     "choose-gui"
@@ -10,7 +10,6 @@
     "jsongrep"
     "node@24"
     "sst/tap/opencode"
-    "stablyai/orca/orca"
     "yarn"
   ];
   casks = [
@@ -22,6 +21,7 @@
     "chatgpt"
     "claude"
     "cloudflare-warp"
+    "cmux"
     "codex"
     "comfy"
     "contexts"
@@ -42,7 +42,6 @@
     "imaging-edge"
     "jetbrains-toolbox"
     "karabiner-elements"
-    "manaflow-ai/cmux/cmux"
     "meld-studio"
     "mqtt-explorer"
     "notion"
@@ -52,6 +51,7 @@
     "raycast"
     "shottr"
     "slack"
+    "stablyai/orca/orca"
     "stremio"
     "telegram"
     "thebrowsercompany-dia"
