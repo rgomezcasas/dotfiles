@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+##? List all bash files in scripts/ (by shebang or .sh extension)
+#?? 1.0.0
+##?
+##? Usage:
+##?   list_bash_files
+
+SCRIPTS_DIR="${DOTFILES_PATH:-$(cd "$(dirname "$0")/../.." && pwd)}/scripts"
+
+{
+	grep -rl '^#!/usr/bin/env bash' "$SCRIPTS_DIR"
+	find "$SCRIPTS_DIR" -type f -name '*.sh'
+} | sort -u

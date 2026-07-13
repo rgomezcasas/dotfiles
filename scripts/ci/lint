@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+##? Check formatting of all bash files in scripts/ with shfmt
+#?? 1.0.0
+##?
+##? Usage:
+##?   lint [--fix]
+
+shfmt_args=(-i 0 -s -d)
+if [[ ${1:-} == "--fix" ]]; then
+	shfmt_args=(-i 0 -s -w)
+fi
+
+"$(dirname "$0")/list_bash_files" | xargs shfmt "${shfmt_args[@]}"
+
+echo "Lint OK"

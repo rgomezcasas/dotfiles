@@ -1,5 +1,9 @@
 name: CI
 
+# Submodules are intentionally never initialized: modules/private is not
+# clonable from this public repo, and the CI checks are self-contained in
+# scripts/ci/ so they don't need modules/dotly either.
+
 on:
   push:
     branches:
@@ -13,18 +17,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install dependencies
-        run: |
-          git submodule update --init modules/dotly
-          git submodule update --init modules/ghostty-cursor-shaders
-
-      - name: Set needed environment variables
-        run: |
-          echo "DOTFILES_PATH=$PWD" >> $GITHUB_ENV
-          echo "DOTLY_PATH=$PWD/modules/dotly" >> $GITHUB_ENV
-
       - name: 💿 Static analysis
-        run: bash "$DOTLY_PATH/scripts/self/static_analysis"
+        run: bash scripts/ci/static_analysis
 
   lint:
     runs-on: ubuntu-latest
@@ -32,43 +26,24 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install dependencies
-        run: |
-          git submodule update --init modules/dotly
-          git submodule update --init modules/ghostty-cursor-shaders
-
-      - name: Set needed environment variables
-        run: |
-          echo "DOTFILES_PATH=$PWD" >> $GITHUB_ENV
-          echo "DOTLY_PATH=$PWD/modules/dotly" >> $GITHUB_ENV
-          echo "PATH=$PATH:$HOME/go/bin" >> $GITHUB_ENV
-
       - name: 📥 Install shfmt
         run: go install mvdan.cc/sh/v3/cmd/shfmt@latest
 
       - name: 💅 Lint bash files
-        run: bash "$DOTLY_PATH/scripts/self/lint"
+        run: PATH="$PATH:$HOME/go/bin" bash scripts/ci/lint
 
       - uses: cachix/install-nix-action@v31
+        with:
+          nix_path: nixpkgs=channel:nixos-unstable
 
       - name: 💅 Lint nix files
-        run: nix-shell -p nixfmt --run "nixfmt --check nix/*.nix"
+        run: nix-shell -p nixfmt --run "find config/nix -name '*.nix' -exec nixfmt --check {} +"
 
   validate-scripts:
     runs-on: ubuntu-latest
     name: 📝 Validate scripts
     steps:
       - uses: actions/checkout@v4
-
-      - name: Install dependencies
-        run: |
-          git submodule update --init modules/dotly
-          git submodule update --init modules/ghostty-cursor-shaders
-
-      - name: Set needed environment variables
-        run: |
-          echo "DOTFILES_PATH=$PWD" >> $GITHUB_ENV
-          echo "DOTLY_PATH=$PWD/modules/dotly" >> $GITHUB_ENV
 
       - name: 📝 Validate scripts
         run: bash scripts/ci/validate_scripts

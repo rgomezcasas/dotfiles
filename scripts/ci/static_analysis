@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+##? Static analysis of all bash files in scripts/ with shellcheck
+#?? 1.0.0
+##?
+##? Usage:
+##?   static_analysis
+
+"$(dirname "$0")/list_bash_files" | xargs shellcheck -s bash -S warning -e SC1090 -e SC2010 -e SC2154
+
+echo "Static analysis OK"
