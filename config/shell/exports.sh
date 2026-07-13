@@ -36,7 +36,14 @@ unset _bundle_jetbrains _bundle_vscode _bundle_cursor
 # ------------------------------------------------------------------------------
 # Languages
 # ------------------------------------------------------------------------------
-export JAVA_HOME="$(/usr/libexec/java_home 2>/dev/null)"
+_java_home_cache="$HOME/.cache/java_home"
+[[ -s "$_java_home_cache" ]] && IFS= read -r JAVA_HOME <"$_java_home_cache"
+if [[ ! -d "${JAVA_HOME:-}" ]]; then
+  JAVA_HOME="$(/usr/libexec/java_home 2>/dev/null)"
+  [[ -d "$JAVA_HOME" ]] && mkdir -p "$HOME/.cache" && printf '%s\n' "$JAVA_HOME" >"$_java_home_cache"
+fi
+export JAVA_HOME
+unset _java_home_cache
 
 # ------------------------------------------------------------------------------
 # Apps
