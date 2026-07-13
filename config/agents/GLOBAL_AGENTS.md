@@ -1,6 +1,6 @@
 # Rules
 
-- Reply in the same language the user used
+- Reply in the same language the user used (if it's Spanish, use Spain Spanish)
 - Write all code, comments, docs, commits, and tests in English
 - Write self-documenting code, never add explanatory comments
 - Use inclusive terms: allowlist/blocklist, primary/replica
