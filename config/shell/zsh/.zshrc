@@ -95,8 +95,8 @@ zsh-defer source "$DOTFILES_PATH/config/shell/functions.sh"
 
 zsh-defer -c '
   local f
-  for f in "$DOTFILES_PATH/shell"/{aliases,exports,functions}.sh; do
-    [[ -f $f && $f -nt $f.zwc ]] && zcompile $f 2>/dev/null
+  for f in "$DOTFILES_PATH/config/shell"/{aliases,exports,functions}.sh; do
+    [[ -f $f && (! -f $f.zwc || $f -nt $f.zwc) ]] && zcompile $f 2>/dev/null
   done
 '
 

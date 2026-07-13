@@ -68,7 +68,7 @@ export PRIVATE_TOKEN="THIS-IS-A-LEAK"
 # ------------------------------------------------------------------------------
 # Path - The higher it is, the more priority it has
 # ------------------------------------------------------------------------------
-typeset -U path
+[[ -n "${ZSH_VERSION:-}" ]] && typeset -U path
 
 _path_candidates=(
   "$HOME/bin"

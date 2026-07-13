@@ -14,7 +14,10 @@ if [[ "$(ps -p $$ -ocomm=)" =~ (bash$) ]]; then
   export PROMPT_COMMAND="__right_prompt"
 fi
 
-source "$DOTFILES_PATH/shell/init.sh"
+source "$DOTFILES_PATH/modules/private/shell/exports.sh"
+source "$DOTFILES_PATH/config/shell/exports.sh"
+source "$DOTFILES_PATH/config/shell/aliases.sh"
+source "$DOTFILES_PATH/config/shell/functions.sh"
 
 PATH=$(
   IFS=":"
@@ -23,7 +26,7 @@ PATH=$(
 export PATH
 
 themes_paths=(
-  "$DOTFILES_PATH/shell/bash/themes"
+  "$DOTFILES_PATH/config/shell/bash/themes"
   "$DOTLY_PATH/shell/bash/themes"
 )
 
