@@ -4,9 +4,8 @@ export DOTFILES_PATH="$HOME/.dotfiles"
 export DOTLY_PATH="$DOTFILES_PATH/modules/dotly"
 export PATH="$HOME/.cargo/bin:/run/current-system/sw/bin:/usr/bin:/usr/sbin:/bin:/sbin:/opt/homebrew/bin:$PATH"
 
-for export_file in "$DOTFILES_PATH"/modules/private/shell/exports.sh; do
-  [ -f "$export_file" ] && source "$export_file"
-done
+private_exports="$DOTFILES_PATH/modules/private/shell/exports.sh"
+[ -f "$private_exports" ] && source "$private_exports"
 
 ##? dot, but without environment variables
 ##?

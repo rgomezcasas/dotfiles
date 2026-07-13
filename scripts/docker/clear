@@ -13,12 +13,12 @@ source "$DOTLY_PATH/scripts/core/_main.sh"
 docs::parse "$@"
 
 echo "🐳 Stopping all running containers..."
-docker stop $(docker ps -aq) 2>/dev/null || echo "No containers to stop"
+docker ps -aq | xargs docker stop 2>/dev/null || echo "No containers to stop"
 
 echo "🗑️  Removing all containers..."
-docker rm $(docker ps -aq) 2>/dev/null || echo "No containers to remove"
+docker ps -aq | xargs docker rm 2>/dev/null || echo "No containers to remove"
 
 echo "💾 Removing all volumes..."
-docker volume rm $(docker volume ls -q) 2>/dev/null || echo "No volumes to remove"
+docker volume ls -q | xargs docker volume rm 2>/dev/null || echo "No volumes to remove"
 
 echo "✅ Docker cleanup complete!"
