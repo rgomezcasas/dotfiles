@@ -11,10 +11,10 @@
 
 Instead of the following traditional commands, use faster alternatives:
 
-- `grep`|`rg` → `ast-grep`
+- Structural code search (`grep` for code patterns) → `ast-grep`
+- Plain-text search (`grep`) → `rg`
 - `find` → `fd`
-- `grep` → `rg`
-- `jq` → `jg`
+- `jq` → `jg` (drop-in `jq` replacement)
 - `tree` → `exa --tree`
 
 # Context
