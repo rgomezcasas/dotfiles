@@ -73,6 +73,11 @@
     "default"
   ],
   "disableClaudeAiConnectors": true,
+  "skillOverrides": {
+    "generate-doc": "off",
+    "global-clean-pr-commits": "off",
+    "agent-browser": "off"
+  },
   "enableArtifact": false,
   "defaultShell": "bash",
   "statusLine": {
