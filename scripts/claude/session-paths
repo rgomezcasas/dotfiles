@@ -1,0 +1,68 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTLY_PATH/scripts/core/_main.sh"
+
+##? List ccusage sessions with their cost, last activity and working directory
+#?? 1.0.0
+##?
+##? Usage:
+##?   session-paths
+##?   session-paths -h | --help
+docs::parse "$@"
+
+claude_dir="${CLAUDE_CONFIG_DIR:-$HOME/.claude}"
+sessions_file="$(mktemp)"
+
+command ccusage claude session --json >"$sessions_file" || {
+	rm -f "$sessions_file"
+	exit 1
+}
+
+printf 'COST\tLAST ACTIVITY\tPROJECT\tSESSION\n'
+
+jq -r '
+	.sessions
+	| sort_by(.lastActivity)
+	| reverse
+	| .[]
+	| [
+		.sessionId,
+		(.totalCost | tostring),
+		.lastActivity
+	]
+	| @tsv
+' "$sessions_file" |
+	while IFS=$'\t' read -r session_id cost last_activity; do
+		transcript="$(
+			find "$claude_dir/projects" \
+				-type f \
+				-name "${session_id}.jsonl" \
+				-print \
+				-quit 2>/dev/null
+		)"
+
+		if [[ -n "$transcript" ]]; then
+			cwd="$(
+				jq -r '
+					select(.cwd? | type == "string")
+					| .cwd
+				' "$transcript" 2>/dev/null |
+					tail -n 1
+			)"
+
+			[[ -z "$cwd" ]] && cwd="$(dirname "$transcript")"
+		else
+			cwd="<not found>"
+		fi
+
+		printf '$%.4f\t%s\t%s\t%s\n' \
+			"$cost" \
+			"$last_activity" \
+			"$cwd" \
+			"$session_id"
+	done |
+	column -t -s $'\t'
+
+rm -f "$sessions_file"
