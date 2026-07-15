@@ -31,6 +31,9 @@ trust_level = "trusted"
 [projects."/Users/rafa.gomez/Documents/Codex/2026-07-10/qu-2"]
 trust_level = "trusted"
 
+[projects."/Users/rafa.gomez/Code/codely/idealista/figma-plugin-codex-sol-xhigh"]
+trust_level = "trusted"
+
 [notice.model_migrations]
 "gpt-5.3-codex" = "gpt-5.4"
 "gpt-5.4" = "gpt-5.5"
