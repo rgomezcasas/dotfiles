@@ -5,17 +5,19 @@ set -euo pipefail
 source "$DOTLY_PATH/scripts/core/_main.sh"
 
 ##? List Claude Code and Codex sessions with their cost, activity and directory
-#?? 2.0.0
+#?? 3.0.0
+##?
+##? By default only today's sessions are shown; pass --all to list every session.
 ##?
 ##? Usage:
-##?   session-paths
-##?   session-paths -h | --help
+##?   usage [--all]
+##?   usage -h | --help
 docs::parse "$@"
 
 claude_dir="${CLAUDE_CONFIG_DIR:-$HOME/.claude}"
 codex_dir="${CODEX_HOME:-$HOME/.codex}"
 
-format_date='sub("T"; " ") | sub("\\.[0-9]+"; "") | sub("Z$"; "")'
+format_date='sub("\\.[0-9]+"; "") | fromdateiso8601 | strflocaltime("%Y-%m-%d %H:%M:%S")'
 
 emit_claude_rows() {
 	command ccusage claude session --json 2>/dev/null |
@@ -124,10 +126,21 @@ print_row() {
 		"$last_activity" "$harness" "${model:-<unknown>}" "${effort:--}" "$cost" "$title" "$cwd"
 }
 
-{
-	printf 'LAST ACTIVITY\tHARNESS\tMODEL\tEFFORT\tCOST\tTITLE\tPROJECT\n'
+rows="$(
 	{
 		emit_claude_rows
 		emit_codex_rows
 	} | sort -t $'\t' -k1,1 -r
+)"
+
+if [[ "$all" == "false" ]]; then
+	rows="$(
+		printf '%s\n' "$rows" |
+			awk -F'\t' -v today="$(date +%F)" 'substr($1, 1, 10) == today'
+	)"
+fi
+
+{
+	printf 'LAST ACTIVITY\tHARNESS\tMODEL\tEFFORT\tCOST\tTITLE\tPROJECT\n'
+	[[ -n "$rows" ]] && printf '%s\n' "$rows"
 } | column -t -s $'\t'
