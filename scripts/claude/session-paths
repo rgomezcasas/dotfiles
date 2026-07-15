@@ -4,8 +4,8 @@ set -euo pipefail
 
 source "$DOTLY_PATH/scripts/core/_main.sh"
 
-##? List ccusage sessions with their cost, last activity and working directory
-#?? 1.0.0
+##? List Claude Code and Codex sessions with their cost, activity and directory
+#?? 2.0.0
 ##?
 ##? Usage:
 ##?   session-paths
@@ -13,67 +13,105 @@ source "$DOTLY_PATH/scripts/core/_main.sh"
 docs::parse "$@"
 
 claude_dir="${CLAUDE_CONFIG_DIR:-$HOME/.claude}"
-sessions_file="$(mktemp)"
+codex_dir="${CODEX_HOME:-$HOME/.codex}"
 
-command ccusage claude session --json >"$sessions_file" || {
-	rm -f "$sessions_file"
-	exit 1
+format_date='sub("T"; " ") | sub("\\.[0-9]+"; "") | sub("Z$"; "")'
+
+emit_claude_rows() {
+	command ccusage claude session --json 2>/dev/null |
+		jq -r "
+			.sessions[]
+			| [
+				.sessionId,
+				(.totalCost | tostring),
+				(.lastActivity | $format_date)
+			]
+			| @tsv
+		" |
+		while IFS=$'\t' read -r session_id cost last_activity; do
+			transcript="$(
+				find "$claude_dir/projects" \
+					-type f \
+					-name "${session_id}.jsonl" \
+					-print \
+					-quit 2>/dev/null
+			)"
+
+			if [[ -n "$transcript" ]]; then
+				cwd="$(
+					jq -r 'select(.cwd? | type == "string") | .cwd' \
+						"$transcript" 2>/dev/null | tail -n 1
+				)"
+				[[ -z "$cwd" ]] && cwd="$(dirname "$transcript")"
+
+				title="$(
+					jq -r 'select(.aiTitle? | type == "string") | .aiTitle' \
+						"$transcript" 2>/dev/null | tail -n 1
+				)"
+			else
+				cwd="<not found>"
+			fi
+
+			print_row "$last_activity" "cc" "$cost" "${title:-}" "$cwd"
+		done
 }
 
-printf 'COST\tLAST ACTIVITY\tTITLE\tPROJECT\n'
-
-jq -r '
-	.sessions
-	| sort_by(.lastActivity)
-	| reverse
-	| .[]
-	| [
-		.sessionId,
-		(.totalCost | tostring),
-		(.lastActivity | sub("T"; " ") | sub("\\.[0-9]+"; "") | sub("Z$"; ""))
-	]
-	| @tsv
-' "$sessions_file" |
-	while IFS=$'\t' read -r session_id cost last_activity; do
-		transcript="$(
-			find "$claude_dir/projects" \
-				-type f \
-				-name "${session_id}.jsonl" \
-				-print \
-				-quit 2>/dev/null
-		)"
-
-		if [[ -n "$transcript" ]]; then
-			cwd="$(
-				jq -r '
-					select(.cwd? | type == "string")
-					| .cwd
-				' "$transcript" 2>/dev/null |
-					tail -n 1
+emit_codex_rows() {
+	command ccusage codex session --json 2>/dev/null |
+		jq -r "
+			.sessions[]
+			| [
+				.sessionFile,
+				(.costUSD | tostring),
+				(.lastActivity | $format_date)
+			]
+			| @tsv
+		" |
+		while IFS=$'\t' read -r session_file cost last_activity; do
+			transcript="$(
+				find "$codex_dir" \
+					-type f \
+					-name "${session_file}.jsonl" \
+					-print \
+					-quit 2>/dev/null
 			)"
 
-			[[ -z "$cwd" ]] && cwd="$(dirname "$transcript")"
+			if [[ -n "$transcript" ]]; then
+				cwd="$(
+					jq -r 'select(.type == "session_meta") | .payload.cwd' \
+						"$transcript" 2>/dev/null | head -n 1
+				)"
+				[[ -z "$cwd" ]] && cwd="<unknown>"
 
-			title="$(
-				jq -r '
-					select(.aiTitle? | type == "string")
-					| .aiTitle
-				' "$transcript" 2>/dev/null |
-					tail -n 1
-			)"
+				title="$(
+					jq -r '
+						select(.type == "event_msg" and .payload.type == "user_message")
+						| .payload.message
+					' "$transcript" 2>/dev/null | head -n 1
+				)"
+			else
+				cwd="<not found>"
+			fi
 
-			[[ -z "$title" ]] && title="<untitled>"
-		else
-			cwd="<not found>"
-			title="<untitled>"
-		fi
+			print_row "$last_activity" "codex" "$cost" "${title:-}" "$cwd"
+		done
+}
 
-		printf '$%.4f\t%s\t%s\t%s\n' \
-			"$cost" \
-			"$last_activity" \
-			"$title" \
-			"$cwd"
-	done |
-	column -t -s $'\t'
+print_row() {
+	local last_activity="$1" harness="$2" cost="$3" title="$4" cwd="$5"
 
-rm -f "$sessions_file"
+	title="$(printf '%s' "$title" | tr '\t\n' '  ')"
+	[[ -z "$title" ]] && title="<untitled>"
+	(( ${#title} > 70 )) && title="${title:0:69}…"
+
+	printf '%s\t%s\t$%.4f\t%s\t%s\n' \
+		"$last_activity" "$harness" "$cost" "$title" "$cwd"
+}
+
+{
+	printf 'LAST ACTIVITY\tHARNESS\tCOST\tTITLE\tPROJECT\n'
+	{
+		emit_claude_rows
+		emit_codex_rows
+	} | sort -t $'\t' -k1,1 -r
+} | column -t -s $'\t'
