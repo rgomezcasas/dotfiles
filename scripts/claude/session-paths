@@ -20,7 +20,7 @@ command ccusage claude session --json >"$sessions_file" || {
 	exit 1
 }
 
-printf 'COST\tLAST ACTIVITY\tPROJECT\tSESSION\n'
+printf 'COST\tLAST ACTIVITY\tTITLE\tPROJECT\n'
 
 jq -r '
 	.sessions
@@ -30,7 +30,7 @@ jq -r '
 	| [
 		.sessionId,
 		(.totalCost | tostring),
-		.lastActivity
+		(.lastActivity | sub("T"; " ") | sub("\\.[0-9]+"; "") | sub("Z$"; ""))
 	]
 	| @tsv
 ' "$sessions_file" |
@@ -53,15 +53,26 @@ jq -r '
 			)"
 
 			[[ -z "$cwd" ]] && cwd="$(dirname "$transcript")"
+
+			title="$(
+				jq -r '
+					select(.aiTitle? | type == "string")
+					| .aiTitle
+				' "$transcript" 2>/dev/null |
+					tail -n 1
+			)"
+
+			[[ -z "$title" ]] && title="<untitled>"
 		else
 			cwd="<not found>"
+			title="<untitled>"
 		fi
 
 		printf '$%.4f\t%s\t%s\t%s\n' \
 			"$cost" \
 			"$last_activity" \
-			"$cwd" \
-			"$session_id"
+			"$title" \
+			"$cwd"
 	done |
 	column -t -s $'\t'
 
