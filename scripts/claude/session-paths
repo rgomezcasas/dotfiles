@@ -48,11 +48,18 @@ emit_claude_rows() {
 					jq -r 'select(.aiTitle? | type == "string") | .aiTitle' \
 						"$transcript" 2>/dev/null | tail -n 1
 				)"
+
+				model="$(
+					jq -r 'select(.type == "assistant") | .message.model // empty' \
+						"$transcript" 2>/dev/null |
+						sort | uniq -c | sort -rn | head -n 1 | awk '{print $2}'
+				)"
+				model="${model#claude-}"
 			else
 				cwd="<not found>"
 			fi
 
-			print_row "$last_activity" "cc" "$cost" "${title:-}" "$cwd"
+			print_row "$last_activity" "cc" "${model:-}" "-" "$cost" "${title:-}" "$cwd"
 		done
 }
 
@@ -89,27 +96,36 @@ emit_codex_rows() {
 						| .payload.message
 					' "$transcript" 2>/dev/null | head -n 1
 				)"
+
+				model="$(
+					jq -r 'select(.type == "turn_context") | .payload.model // empty' \
+						"$transcript" 2>/dev/null | tail -n 1
+				)"
+				effort="$(
+					jq -r 'select(.type == "turn_context") | .payload.effort // empty' \
+						"$transcript" 2>/dev/null | tail -n 1
+				)"
 			else
 				cwd="<not found>"
 			fi
 
-			print_row "$last_activity" "codex" "$cost" "${title:-}" "$cwd"
+			print_row "$last_activity" "codex" "${model:-}" "${effort:-}" "$cost" "${title:-}" "$cwd"
 		done
 }
 
 print_row() {
-	local last_activity="$1" harness="$2" cost="$3" title="$4" cwd="$5"
+	local last_activity="$1" harness="$2" model="$3" effort="$4" cost="$5" title="$6" cwd="$7"
 
 	title="$(printf '%s' "$title" | tr '\t\n' '  ')"
 	[[ -z "$title" ]] && title="<untitled>"
 	(( ${#title} > 70 )) && title="${title:0:69}…"
 
-	printf '%s\t%s\t$%.4f\t%s\t%s\n' \
-		"$last_activity" "$harness" "$cost" "$title" "$cwd"
+	printf '%s\t%s\t%s\t%s\t$%.4f\t%s\t%s\n' \
+		"$last_activity" "$harness" "${model:-<unknown>}" "${effort:--}" "$cost" "$title" "$cwd"
 }
 
 {
-	printf 'LAST ACTIVITY\tHARNESS\tCOST\tTITLE\tPROJECT\n'
+	printf 'LAST ACTIVITY\tHARNESS\tMODEL\tEFFORT\tCOST\tTITLE\tPROJECT\n'
 	{
 		emit_claude_rows
 		emit_codex_rows
