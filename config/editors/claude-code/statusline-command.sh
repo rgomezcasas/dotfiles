@@ -11,6 +11,8 @@ model=$(echo "$input" | jq -r 'if .model | type == "object" then .model.id else 
 cwd=$(echo "$input" | jq -r '.workspace.current_dir // "."')
 context_pct=$(echo "$input" | jq -r '.context_window.used_percentage // 0')
 context_size=$(echo "$input" | jq -r '.context_window.context_window_size // 200000')
+cache_read=$(echo "$input" | jq -r '.context_window.current_usage.cache_read_input_tokens // 0')
+cache_write=$(echo "$input" | jq -r '.context_window.current_usage.cache_creation_input_tokens // 0')
 session_cost=$(echo "$input" | jq -r '.cost.total_cost_usd // 0')
 session_id=$(echo "$input" | jq -r '.session_id // empty')
 effort_level=$(echo "$input" | jq -r '.effort.level // empty')
@@ -53,6 +55,16 @@ format_tokens() {
   fi
 }
 context_size_str=$(format_tokens "$context_size")
+cache_read_str=$(format_tokens "$cache_read")
+cache_write_str=$(format_tokens "$cache_write")
+
+cache_total=$(( cache_read + cache_write ))
+if (( cache_total > 0 )); then
+  cache_read_pct=$(( cache_read * 100 / cache_total ))
+else
+  cache_read_pct=0
+fi
+cache_ratio_str="${cache_read_pct}%"
 
 pct_str="${context_pct}%"
 label="${pct_str} / ${context_size_str}"
@@ -336,6 +348,15 @@ if [[ -n "$git_branch" ]]; then
 fi
 
 line+="${SEP}${bar}"
+if (( cache_read_pct >= 95 )); then
+  cache_ratio_color="$GREEN"
+elif (( cache_read_pct >= 90 )); then
+  cache_ratio_color='\033[38;2;234;179;8m'
+else
+  cache_ratio_color="$RED"
+fi
+cache_seg="${GREEN}↓${RESET} ${TEXT}${cache_read_str}${RESET}${MSEP}${ACCENT}↑${RESET} ${TEXT}${cache_write_str}${RESET}${MSEP}${cache_ratio_color}${cache_ratio_str}${RESET}"
+line+="${SEP}${cache_seg}"
 line+="${SEP}${ACCENT}${session_cost_str}${RESET}${MSEP}${TEXT}${daily_cost_str} today${RESET}"
 [[ -n "$cache_warning" ]] && line+="${SEP}${RED}${cache_warning}${RESET}"
 
@@ -354,12 +375,12 @@ if [[ -n "$limit_7d_str" ]]; then
 fi
 
 # Display width of a rendered segment: strip the literal \033[…m color codes,
-# then count the East-Asian-ambiguous glyphs this line emits (█ ∘ ⎮) as 2 columns,
-# since this terminal renders them wide and they would otherwise overflow.
+# then count the East-Asian-ambiguous glyphs this line emits (█ ∘ ⎮ ↑ ↓) as 2
+# columns, since this terminal renders them wide and they would otherwise overflow.
 visible_len() {
   local stripped narrow
   stripped=$(printf '%s' "$1" | sed -E 's/\\033\[[0-9;]*m//g')
-  narrow=${stripped//[█∘⎮]/}
+  narrow=${stripped//[█∘⎮↑↓]/}
   printf '%s' "$(( 2 * ${#stripped} - ${#narrow} ))"
 }
 
