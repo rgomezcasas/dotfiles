@@ -3,10 +3,7 @@
 
   inputs = {
     nixpkgs.url = "https://flakehub.com/f/DeterminateSystems/nixpkgs-weekly/0.1";
-    # Pinned before commit 320cbf5 (`--sidebar-depth`), which needs a
-    # nixos-render-docs (nixpkgs#537810) newer than the current weekly pin.
-    # Drop the pin once nixpkgs-weekly catches up.
-    nix-darwin.url = "github:LnL7/nix-darwin/a1fa429e945becaf60468600daf649be4ba0350c";
+    nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
     home-manager = {
