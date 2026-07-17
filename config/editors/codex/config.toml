@@ -3,6 +3,7 @@ model_reasoning_effort = "xhigh"
 notify = ["/Users/rafa.gomez/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
 service_tier = "default"
 model_verbosity = "low"
+sandbox_mode = "workspace-write"
 
 [projects."/Users/rafa.gomez/Code/codely/ai_design_and_architecture-workshop"]
 trust_level = "trusted"
@@ -34,6 +35,24 @@ trust_level = "trusted"
 [projects."/Users/rafa.gomez/Code/codely/idealista/figma-plugin-codex-sol-xhigh"]
 trust_level = "trusted"
 
+[projects."/Users/rafa.gomez/Code/codely/idealista/figma-plugin-codex-luna-max-agent_browser"]
+trust_level = "trusted"
+
+[projects."/Users/rafa.gomez/Code/codely/idealista/figma-plugin-codex-terra-high-agent_browser"]
+trust_level = "trusted"
+
+[projects."/Users/rafa.gomez/Code/codely/idealista/figma-plugin-codex-terra-xhigh-agent_browser"]
+trust_level = "trusted"
+
+[projects."/Users/rafa.gomez/Documents/Codex/2026-07-17/ki"]
+trust_level = "trusted"
+
+[projects."/Users/rafa.gomez/Documents/Codex/2026-07-17/dim"]
+trust_level = "trusted"
+
+[projects."/Users/rafa.gomez/Documents/Codex/2026-07-17/com"]
+trust_level = "trusted"
+
 [notice.model_migrations]
 "gpt-5.3-codex" = "gpt-5.4"
 "gpt-5.4" = "gpt-5.5"
@@ -46,12 +65,12 @@ status_line = ["model-with-reasoning", "git-branch", "context-used", "five-hour-
 "gpt-5.6-sol" = 4
 
 [marketplaces.openai-bundled]
-last_updated = "2026-07-13T10:12:00Z"
+last_updated = "2026-07-17T13:10:27Z"
 source_type = "local"
 source = "/Users/rafa.gomez/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
 [marketplaces.openai-primary-runtime]
-last_updated = "2026-07-10T10:26:55Z"
+last_updated = "2026-07-16T08:20:36Z"
 source_type = "local"
 source = "/Users/rafa.gomez/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
 
@@ -80,7 +99,7 @@ enabled = true
 enabled = true
 
 [desktop]
-conversationDetailMode = "STEPS_COMMANDS"
+conversationDetailMode = "STEPS_PROSE"
 sansFontSize = 14
 codeFontSize = 13
 ambient-suggestions-enabled = false
@@ -88,6 +107,40 @@ followUpQueueMode = "queue"
 dock-icon-preference = "app-default"
 mac-menu-bar-enabled = false
 selected-avatar-id = "hoots"
+preventSleepWhileRunning = true
+appearanceDarkCodeThemeId = "oscurange"
+appearanceLightCodeThemeId = "one"
+appearanceTheme = "system"
+enabled-reasoning-efforts = ["low", "medium", "high", "xhigh", "ultra", "max"]
+
+[desktop.appearanceDarkChromeTheme]
+accent = "#f9b98c"
+contrast = 50
+ink = "#e6e6e6"
+opaqueWindows = false
+surface = "#0b0b0f"
+
+[desktop.appearanceDarkChromeTheme.fonts]
+ui = "-apple-system"
+
+[desktop.appearanceDarkChromeTheme.semanticColors]
+diffAdded = "#40c977"
+diffRemoved = "#fa423e"
+skill = "#479ffa"
+
+[desktop.appearanceLightChromeTheme]
+accent = "#526fff"
+contrast = 45
+ink = "#383a42"
+opaqueWindows = false
+surface = "#fafafa"
+
+[desktop.appearanceLightChromeTheme.fonts]
+
+[desktop.appearanceLightChromeTheme.semanticColors]
+diffAdded = "#3bba54"
+diffRemoved = "#e45649"
+skill = "#526fff"
 
 [features]
 js_repl = false
@@ -103,13 +156,13 @@ NODE_REPL_NODE_MODULE_DIRS = "/Applications/ChatGPT.app/Contents/Resources/cua_n
 NODE_REPL_NODE_PATH = "/Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node"
 NODE_REPL_TRUSTED_CODE_PATHS = "/Users/rafa.gomez/.codex"
 CODEX_HOME = "/Users/rafa.gomez/.codex"
-NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "6d25aa7656feac858f3a3bdaea5bcbab0dbfd426c9de8e6931ce90c399ee8e4f,e2cad16d8d9f60f09c9f0951ec7dfdd9e8f59dedd06045c0b6827dc8fa8322f0"
+NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "5b74180ac40ca4cf726cad15c5ff886f159224f1c0306ea364ad9eea6a7e7ac2,6d25aa7656feac858f3a3bdaea5bcbab0dbfd426c9de8e6931ce90c399ee8e4f"
 BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
 NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunction with the Browser Plugin."
 NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
 NODE_REPL_INSTRUCTIONS_USE_CASE_COMPUTER_USE = "Control desktop apps on macOS through Computer Use."
 BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
-BROWSER_USE_CODEX_APP_VERSION = "26.707.62119"
+BROWSER_USE_CODEX_APP_VERSION = "26.715.21425"
 CODEX_CLI_PATH = "/Applications/ChatGPT.app/Contents/Resources/codex"
 
 [mcp_servers.computer-use]
@@ -117,3 +170,11 @@ command = "./Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.
 args = ["mcp"]
 cwd = "."
 enabled = false
+
+[shell_environment_policy.set]
+BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
+NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "5b74180ac40ca4cf726cad15c5ff886f159224f1c0306ea364ad9eea6a7e7ac2,6d25aa7656feac858f3a3bdaea5bcbab0dbfd426c9de8e6931ce90c399ee8e4f"
+NODE_REPL_TRUSTED_CODE_PATHS = "/Users/rafa.gomez/.codex"
+
+[sandbox_workspace_write]
+network_access = true
