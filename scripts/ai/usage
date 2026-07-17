@@ -5,9 +5,9 @@ set -euo pipefail
 source "$DOTLY_PATH/scripts/core/_main.sh"
 
 ##? List Claude Code and Codex sessions with their cost, activity and directory
-#?? 3.0.0
+#?? 3.2.0
 ##?
-##? By default only today's sessions are shown; pass --all to list every session.
+##? By default only the last 7 days of sessions are shown; pass --all to list every session.
 ##?
 ##? Usage:
 ##?   usage [--all]
@@ -18,6 +18,42 @@ claude_dir="${CLAUDE_CONFIG_DIR:-$HOME/.claude}"
 codex_dir="${CODEX_HOME:-$HOME/.codex}"
 
 format_date='sub("\\.[0-9]+"; "") | fromdateiso8601 | strflocaltime("%Y-%m-%d %H:%M:%S")'
+
+format_duration() {
+	local s="$1" h m
+	h=$(( s / 3600 ))
+	m=$(( (s % 3600) / 60 ))
+	s=$(( s % 60 ))
+
+	if (( h > 0 )); then
+		printf '%dh%02dm' "$h" "$m"
+	elif (( m > 0 )); then
+		printf '%dm%02ds' "$m" "$s"
+	else
+		printf '%ds' "$s"
+	fi
+}
+
+session_duration() {
+	local transcript="$1" secs
+
+	[[ -z "$transcript" || ! -f "$transcript" ]] && { printf -- '-'; return; }
+
+	secs="$(
+		jq -rs '
+			[
+				.[]
+				| select((.type == "system" and .subtype == "away_summary") | not)
+				| .timestamp? // empty
+				| sub("\\.[0-9]+"; "") | fromdateiso8601
+			] as $t
+			| if ($t | length) < 2 then empty else (($t | max) - ($t | min)) end
+		' "$transcript" 2>/dev/null
+	)"
+
+	[[ -z "$secs" ]] && { printf -- '-'; return; }
+	format_duration "$secs"
+}
 
 emit_claude_rows() {
 	command ccusage claude session --json 2>/dev/null |
@@ -61,7 +97,9 @@ emit_claude_rows() {
 				cwd="<not found>"
 			fi
 
-			print_row "$last_activity" "cc" "${model:-}" "-" "$cost" "${title:-}" "$cwd"
+			duration="$(session_duration "$transcript")"
+
+			print_row "$last_activity" "cc" "${model:-}" "-" "$duration" "$cost" "${title:-}" "$cwd"
 		done
 }
 
@@ -111,19 +149,23 @@ emit_codex_rows() {
 				cwd="<not found>"
 			fi
 
-			print_row "$last_activity" "codex" "${model:-}" "${effort:-}" "$cost" "${title:-}" "$cwd"
+			duration="$(session_duration "$transcript")"
+
+			print_row "$last_activity" "codex" "${model:-}" "${effort:-}" "$duration" "$cost" "${title:-}" "$cwd"
 		done
 }
 
 print_row() {
-	local last_activity="$1" harness="$2" model="$3" effort="$4" cost="$5" title="$6" cwd="$7"
+	local last_activity="$1" harness="$2" model="$3" effort="$4" duration="$5" cost="$6" title="$7" cwd="$8"
 
 	title="$(printf '%s' "$title" | tr '\t\n' '  ')"
 	[[ -z "$title" ]] && title="<untitled>"
 	(( ${#title} > 70 )) && title="${title:0:69}…"
 
-	printf '%s\t%s\t%s\t%s\t$%.4f\t%s\t%s\n' \
-		"$last_activity" "$harness" "${model:-<unknown>}" "${effort:--}" "$cost" "$title" "$cwd"
+	[[ "$cwd" == "$HOME"* ]] && cwd="~${cwd#"$HOME"}"
+
+	printf '%s\t%s\t%s\t%s\t%s\t$%.2f\t%s\t%s\n' \
+		"$last_activity" "$harness" "${model:-<unknown>}" "${effort:--}" "${duration:--}" "$cost" "$title" "$cwd"
 }
 
 rows="$(
@@ -134,13 +176,14 @@ rows="$(
 )"
 
 if [[ "$all" == "false" ]]; then
+	cutoff="$(date -d '7 days ago' +%F 2>/dev/null || date -v-7d +%F)"
 	rows="$(
 		printf '%s\n' "$rows" |
-			awk -F'\t' -v today="$(date +%F)" 'substr($1, 1, 10) == today'
+			awk -F'\t' -v cutoff="$cutoff" 'substr($1, 1, 10) >= cutoff'
 	)"
 fi
 
 {
-	printf 'LAST ACTIVITY\tHARNESS\tMODEL\tEFFORT\tCOST\tTITLE\tPROJECT\n'
+	printf 'LAST ACTIVITY\tHARNESS\tMODEL\tEFFORT\tDURATION\tCOST\tTITLE\tPROJECT\n'
 	[[ -n "$rows" ]] && printf '%s\n' "$rows"
 } | column -t -s $'\t'
