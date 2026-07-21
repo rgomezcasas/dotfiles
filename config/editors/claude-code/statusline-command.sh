@@ -348,7 +348,9 @@ if [[ -n "$git_branch" ]]; then
 fi
 
 line+="${SEP}${bar}"
-if (( cache_read_pct >= 95 )); then
+if (( cache_total == 0 )); then
+  cache_ratio_color="$GRAY"
+elif (( cache_read_pct >= 95 )); then
   cache_ratio_color="$GREEN"
 elif (( cache_read_pct >= 90 )); then
   cache_ratio_color='\033[38;2;234;179;8m'
