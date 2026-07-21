@@ -348,16 +348,10 @@ if [[ -n "$git_branch" ]]; then
 fi
 
 line+="${SEP}${bar}"
-if (( cache_total == 0 )); then
-  cache_ratio_color="$GRAY"
-elif (( cache_read_pct >= 95 )); then
-  cache_ratio_color="$GREEN"
-elif (( cache_read_pct >= 90 )); then
-  cache_ratio_color='\033[38;2;234;179;8m'
-else
-  cache_ratio_color="$RED"
+cache_seg="${GREEN}↓${RESET} ${TEXT}${cache_read_str}${RESET}${MSEP}${ACCENT}↑${RESET} ${TEXT}${cache_write_str}${RESET}"
+if (( cache_read > 0 && cache_read_pct < 80 )); then
+  cache_seg+="${MSEP}${RED}${cache_ratio_str}${RESET}"
 fi
-cache_seg="${GREEN}↓${RESET} ${TEXT}${cache_read_str}${RESET}${MSEP}${ACCENT}↑${RESET} ${TEXT}${cache_write_str}${RESET}${MSEP}${cache_ratio_color}${cache_ratio_str}${RESET}"
 line+="${SEP}${cache_seg}"
 line+="${SEP}${ACCENT}${session_cost_str}${RESET}${MSEP}${TEXT}${daily_cost_str} today${RESET}"
 [[ -n "$cache_warning" ]] && line+="${SEP}${RED}${cache_warning}${RESET}"
