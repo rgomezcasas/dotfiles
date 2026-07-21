@@ -402,7 +402,7 @@ detect_cols() {
 # them onto their own line so they never collide with the inline content.
 if [[ -n "$limits" ]]; then
   term_cols=$(detect_cols)
-  right_margin=-3
+  right_margin=-7
   gap=-1
   if [[ "$term_cols" =~ ^[0-9]+$ ]]; then
     gap=$(( term_cols - $(visible_len "$line") - $(visible_len "$limits") - right_margin ))
