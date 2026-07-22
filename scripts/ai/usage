@@ -21,13 +21,13 @@ format_date='sub("\\.[0-9]+"; "") | fromdateiso8601 | strflocaltime("%Y-%m-%d %H
 
 format_duration() {
 	local s="$1" h m
-	h=$(( s / 3600 ))
-	m=$(( (s % 3600) / 60 ))
-	s=$(( s % 60 ))
+	h=$((s / 3600))
+	m=$(((s % 3600) / 60))
+	s=$((s % 60))
 
-	if (( h > 0 )); then
+	if ((h > 0)); then
 		printf '%dh%02dm' "$h" "$m"
-	elif (( m > 0 )); then
+	elif ((m > 0)); then
 		printf '%dm%02ds' "$m" "$s"
 	else
 		printf '%ds' "$s"
@@ -37,7 +37,10 @@ format_duration() {
 session_duration() {
 	local transcript="$1" secs
 
-	[[ -z "$transcript" || ! -f "$transcript" ]] && { printf -- '-'; return; }
+	[[ -z $transcript || ! -f $transcript ]] && {
+		printf -- '-'
+		return
+	}
 
 	secs="$(
 		jq -rs '
@@ -51,7 +54,10 @@ session_duration() {
 		' "$transcript" 2>/dev/null
 	)"
 
-	[[ -z "$secs" ]] && { printf -- '-'; return; }
+	[[ -z $secs ]] && {
+		printf -- '-'
+		return
+	}
 	format_duration "$secs"
 }
 
@@ -75,12 +81,12 @@ emit_claude_rows() {
 					-quit 2>/dev/null
 			)"
 
-			if [[ -n "$transcript" ]]; then
+			if [[ -n $transcript ]]; then
 				cwd="$(
 					jq -r 'select(.cwd? | type == "string") | .cwd' \
 						"$transcript" 2>/dev/null | tail -n 1
 				)"
-				[[ -z "$cwd" ]] && cwd="$(dirname "$transcript")"
+				[[ -z $cwd ]] && cwd="$(dirname "$transcript")"
 
 				title="$(
 					jq -r 'select(.aiTitle? | type == "string") | .aiTitle' \
@@ -123,12 +129,12 @@ emit_codex_rows() {
 					-quit 2>/dev/null
 			)"
 
-			if [[ -n "$transcript" ]]; then
+			if [[ -n $transcript ]]; then
 				cwd="$(
 					jq -r 'select(.type == "session_meta") | .payload.cwd' \
 						"$transcript" 2>/dev/null | head -n 1
 				)"
-				[[ -z "$cwd" ]] && cwd="<unknown>"
+				[[ -z $cwd ]] && cwd="<unknown>"
 
 				title="$(
 					jq -r '
@@ -159,10 +165,10 @@ print_row() {
 	local last_activity="$1" harness="$2" model="$3" effort="$4" duration="$5" cost="$6" title="$7" cwd="$8"
 
 	title="$(printf '%s' "$title" | tr '\t\n' '  ')"
-	[[ -z "$title" ]] && title="<untitled>"
-	(( ${#title} > 70 )) && title="${title:0:69}…"
+	[[ -z $title ]] && title="<untitled>"
+	((${#title} > 70)) && title="${title:0:69}…"
 
-	[[ "$cwd" == "$HOME"* ]] && cwd="~${cwd#"$HOME"}"
+	[[ $cwd == "$HOME"* ]] && cwd="~${cwd#"$HOME"}"
 
 	printf '%s\t%s\t%s\t%s\t%s\t$%.2f\t%s\t%s\n' \
 		"$last_activity" "$harness" "${model:-<unknown>}" "${effort:--}" "${duration:--}" "$cost" "$title" "$cwd"
@@ -175,7 +181,7 @@ rows="$(
 	} | sort -t $'\t' -k1,1 -r
 )"
 
-if [[ "$all" == "false" ]]; then
+if [[ $all == "false" ]]; then
 	cutoff="$(date -d '7 days ago' +%F 2>/dev/null || date -v-7d +%F)"
 	rows="$(
 		printf '%s\n' "$rows" |
@@ -185,5 +191,5 @@ fi
 
 {
 	printf 'LAST ACTIVITY\tHARNESS\tMODEL\tEFFORT\tDURATION\tCOST\tTITLE\tPROJECT\n'
-	[[ -n "$rows" ]] && printf '%s\n' "$rows"
+	[[ -n $rows ]] && printf '%s\n' "$rows"
 } | column -t -s $'\t'
