@@ -4,8 +4,3 @@ function j() {
   fi
   _zlua "$1"
 }
-
-gpg() {
-  export GPG_TTY=${GPG_TTY:-$(tty)}
-  command gpg "$@"
-}
