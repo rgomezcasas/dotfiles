@@ -361,7 +361,7 @@ if [[ -n "$git_branch" ]]; then
 fi
 
 line+="${SEP}${bar}"
-cache_seg="${GREEN}↓${RESET} ${TEXT}${cache_read_str}${RESET}${MSEP}${ACCENT}↑${RESET} ${TEXT}${cache_write_str}${RESET}"
+cache_seg="${ACCENT}↑${RESET} ${TEXT}${cache_write_str}${RESET}${MSEP}${GREEN}↓${RESET} ${TEXT}${cache_read_str}${RESET}"
 if (( cache_read > 0 && cache_read_pct < 80 )); then
   cache_seg+="${MSEP}${RED}${cache_ratio_str}${RESET}"
 fi
