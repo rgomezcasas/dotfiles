@@ -93,7 +93,7 @@ Based on the changes shown above:
 3. Stage relevant files and create commit messages following the Conventional Commits specification
 4. Execute the commits
 
-Always run `git commit` outside the sandbox, since GPG signing needs access to the gpg-agent and `~/.gnupg`, which the sandbox blocks.
+Always run `git commit` outside the sandbox, since SSH signing needs access to `~/.ssh`, which the sandbox blocks.
 
 ## Course Repository Scope Convention
 

@@ -93,7 +93,7 @@ Edit `config/macos/karabiner-goku/karabiner.edn` and run `goku`. **Never** edit 
 ├── docs/                # Guides (packages, scripts, keyboard, editors)
 ├── modules/
 │   ├── dotly/           # Shell script framework (submodule)
-│   ├── private/         # Credentials, GPG, private configs (submodule)
+│   ├── private/         # Credentials, private configs (submodule)
 │   └── ghostty-cursor-shaders/
 ├── scripts/             # 80+ scripts organized by category
 │   ├── system/          #   rebuild, update, volume, cron...
