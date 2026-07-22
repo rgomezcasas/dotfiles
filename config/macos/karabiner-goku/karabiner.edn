@@ -9,11 +9,10 @@
  {:Arc            ["company.thebrowser.Browser"]
   :Atlas          ["com.openai.atlas"]
   :Bitwarden      ["com.bitwarden.desktop"]
-  :ChatGPT        ["com.openai.chat"]
   :Chrome         ["com.google.Chrome", "com.google.Chrome.beta"]
   :Claude         ["com.anthropic.claudefordesktop"]
- :Cmux           ["com.cmuxterm.app"]
-  :Codex          ["com.openai.codex"]
+  :Cmux           ["com.cmuxterm.app"]
+  :ChatGPT        ["com.openai.codex"]
   :Contexts       ["com.contextsformac.Contexts"]
   :Dia            ["company.thebrowser.dia"]
   :Finder         ["com.apple.finder"]
@@ -150,17 +149,14 @@
    :rules [:Cmux
            [:sidebar-primary-toggle :!Cb]]} ; Toggle sidebar
 
-  {:des   "[ChatGPT] Shortcuts"
-   :rules [:ChatGPT
-           [:sidebar-primary-toggle :!CTs]]} ; Toggle sidebar
-
   {:des   "[Atlas] Shortcuts"
    :rules [:Atlas
            [:sidebar-primary-toggle :!COt]]} ; Toggle sidebar
 
-  {:des   "[Codex] Shortcuts"
-   :rules [:Codex
-           [:sidebar-primary-toggle :!Cb]]} ; Toggle sidebar
+  {:des   "[ChatGPT] Shortcuts"
+   :rules [:ChatGPT
+           [:sidebar-primary-toggle :!Cb]   ; Toggle sidebar
+           [:!C4 :!CSb]]}                   ; cmd+4 as cmd+shift+b
 
 
   {:des   "[Notes] Shortcuts"
