@@ -88,7 +88,8 @@
   },
   "enabledPlugins": {
     "swift-lsp@claude-plugins-official": false,
-    "typescript-lsp@claude-plugins-official": true
+    "typescript-lsp@claude-plugins-official": false,
+    "tsgo-lsp@dotfiles": true
   },
   "extraKnownMarketplaces": {
     "home-assistant-skills": {
@@ -101,6 +102,12 @@
       "source": {
         "source": "github",
         "repo": "sirkirby/unifi-mcp"
+      }
+    },
+    "dotfiles": {
+      "source": {
+        "source": "directory",
+        "path": "/Users/rafa.gomez/.dotfiles/config/agents/plugins"
       }
     }
   },
