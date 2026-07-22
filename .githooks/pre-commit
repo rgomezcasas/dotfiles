@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+##? Run make prep (lint, static analysis, script validation) before committing
+#?? 1.0.0
+##?
+##? Usage:
+##?   pre-commit
+
+cd "$(git rev-parse --show-toplevel)"
+
+if ! make prep; then
+	echo ""
+	echo "make prep failed. Fix the issues (try: make lint-fix) or commit with --no-verify"
+	exit 1
+fi
