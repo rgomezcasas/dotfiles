@@ -51,8 +51,7 @@
             description = username;
           };
 
-          environment.systemPackages =
-            (import ./packages/nix.nix { inherit pkgs; }) ++ (import ./packages/node.nix { inherit pkgs; });
+          environment.systemPackages = import ./packages/nix.nix { inherit pkgs; };
           homebrew = import ./packages/brew.nix;
 
           home-manager.backupFileExtension = "bkp_" + builtins.toString builtins.currentTime;

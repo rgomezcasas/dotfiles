@@ -67,7 +67,7 @@ See the [nix docs](docs/nix/) for step-by-step guides:
 - [Nix packages](docs/nix/add-nix-packages.md) — CLI tools managed by Nix
 - [Homebrew packages](docs/nix/add-brew-packages.md) — brews not available in nixpkgs
 - [Homebrew casks](docs/nix/add-brew-casks.md) — GUI applications
-- [Node packages](docs/nix/add-node-packages.md) — global Node.js tools
+- [Global npm packages](docs/nix/add-global-npm-packages.md) — global Node.js tools
 - [Mac App Store apps](docs/nix/add-macos-apps.md) — apps via `mas`
 
 ### Editing keyboard shortcuts

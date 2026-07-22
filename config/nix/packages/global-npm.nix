@@ -5,6 +5,7 @@ let
     "@github/copilot"
     "ccusage"
     "turbo"
+    "typescript"
   ];
   consoleUser = config.system.primaryUser;
   npmPrefix = "/Users/${consoleUser}/.cache/npm/global";
