@@ -88,8 +88,13 @@ ZSH_HIGHLIGHT_MAXLENGTH=100
 
 source "$DOTFILES_PATH/modules/private/shell/exports.sh"
 source "$DOTFILES_PATH/config/shell/exports.sh"
-zsh-defer source "$DOTFILES_PATH/config/shell/aliases.sh"
-zsh-defer source "$DOTFILES_PATH/config/shell/functions.sh"
+if [[ -o interactive ]]; then
+  zsh-defer source "$DOTFILES_PATH/config/shell/aliases.sh"
+  zsh-defer source "$DOTFILES_PATH/config/shell/functions.sh"
+else
+  source "$DOTFILES_PATH/config/shell/aliases.sh"
+  source "$DOTFILES_PATH/config/shell/functions.sh"
+fi
 
 setopt PROMPT_CR PROMPT_PERCENT PROMPT_SP PROMPT_SUBST
 source "$DOTLY_PATH/shell/zsh/themes/prompt_${DOTLY_THEME:-codely}_setup"
