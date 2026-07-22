@@ -136,28 +136,44 @@ limit_7d_str=""
 
 session_cost_str=$(printf '$%.2f' "$session_cost")
 
-# Daily cost from ccusage with 2-minute cache, online pricing refresh once per day
+# Daily cost from ccusage, recomputed only when this session completes a turn
+# (the session cost only grows when a request finishes) or on day rollover,
+# instead of on a time-based TTL that the 1s refresh loop keeps re-triggering.
+# Timestamps live inside the cache files, not in mtimes: stat flags differ
+# between the GNU coreutils on PATH and BSD stat, and mtime-based checks
+# silently failed with GNU stat. The session state file is shared with the
+# cache-warning block below. Online pricing refresh happens at most once a day.
 cache_dir="${TMPDIR:-/tmp}"
 cache_file="$cache_dir/.claude-statusline-daily-cost"
 pricing_stamp="$cache_dir/.claude-statusline-pricing-refresh"
 now=$(date +%s)
-cache_stale=1
-if [[ -f "$cache_file" ]]; then
-  cache_mtime=$(stat -f %m "$cache_file" 2>/dev/null || echo 0)
-  (( now - cache_mtime < 120 )) && cache_stale=0
+today=$(date +%Y%m%d)
+
+state_file="" prev_model="" prev_cost="" commit_time=""
+if [[ -n "$session_id" ]]; then
+  state_file="$cache_dir/.claude-statusline-cache-${session_id//[^A-Za-z0-9_-]/_}"
+  [[ -f "$state_file" ]] && IFS=$'\t' read -r prev_model prev_cost commit_time < "$state_file"
+fi
+turn_completed=0
+if [[ -z "$prev_cost" ]] || (( $(echo "$session_cost > $prev_cost" | bc -l) )); then
+  turn_completed=1
 fi
 
-if (( cache_stale )); then
+cache_day="" cached_cost=""
+[[ -f "$cache_file" ]] && IFS=$'\t' read -r cache_day cached_cost < "$cache_file"
+
+if (( turn_completed )) || [[ "$cache_day" != "$today" || -z "$cached_cost" ]]; then
   offline_flag="--offline"
-  if [[ ! -f "$pricing_stamp" ]] || (( now - $(stat -f %m "$pricing_stamp" 2>/dev/null || echo 0) >= 86400 )); then
+  last_pricing=$(cat "$pricing_stamp" 2>/dev/null)
+  if [[ ! "$last_pricing" =~ ^[0-9]+$ ]] || (( now - last_pricing >= 86400 )); then
     offline_flag=""
-    touch "$pricing_stamp"
+    echo "$now" > "$pricing_stamp"
   fi
-  daily_cost=$(ccusage daily --since "$(date +%Y%m%d)" $offline_flag --json 2>/dev/null | jq -r '.totals.totalCost // 0')
+  daily_cost=$(ccusage daily --since "$today" $offline_flag --json 2>/dev/null | jq -r '.totals.totalCost // 0')
   daily_cost=${daily_cost:-0}
-  echo "$daily_cost" > "$cache_file"
+  printf '%s\t%s\n' "$today" "$daily_cost" > "$cache_file"
 else
-  daily_cost=$(cat "$cache_file")
+  daily_cost=$cached_cost
 fi
 if (( $(echo "$session_cost > $daily_cost" | bc -l) )); then
   daily_cost=$session_cost
@@ -177,10 +193,7 @@ cache_ttl=300
 cache_warn_threshold=90
 cache_warning=""
 if [[ -n "$session_id" ]]; then
-  state_file="$cache_dir/.claude-statusline-cache-${session_id//[^A-Za-z0-9_-]/_}"
-  prev_model="" prev_cost="" commit_time=""
-  [[ -f "$state_file" ]] && IFS=$'\t' read -r prev_model prev_cost commit_time < "$state_file"
-  if [[ -z "$prev_cost" ]] || (( $(echo "$session_cost > $prev_cost" | bc -l) )); then
+  if (( turn_completed )); then
     prev_model="$model" prev_cost="$session_cost" commit_time="$now"
     printf '%s\t%s\t%s\n' "$model" "$session_cost" "$now" > "$state_file" 2>/dev/null
   fi
