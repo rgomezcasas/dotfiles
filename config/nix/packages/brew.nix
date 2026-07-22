@@ -1,12 +1,11 @@
 {
   enable = true;
-  taps = [ "stablyai/orca" ];
+  taps = [ ];
   brews = [
     "agent-browser"
     "choose-gui"
     "cliclick"
     "gemini-cli"
-    "jetbrains/junie/junie"
     "jsongrep"
     "node@24"
     "sst/tap/opencode"
@@ -15,7 +14,6 @@
   casks = [
     "adobe-creative-cloud"
     "arc"
-    "betterdisplay"
     "bettermouse"
     "bitwarden"
     "chatgpt"
@@ -27,7 +25,6 @@
     "contexts"
     "cursor"
     "displaylink"
-    "elgato-camera-hub"
     "elgato-control-center"
     "elgato-stream-deck"
     "elgato-wave-link"
@@ -42,21 +39,16 @@
     "jetbrains-toolbox"
     "karabiner-elements"
     "meld-studio"
-    "mqtt-explorer"
     "notion"
     "obs"
     "orbstack"
-    "orion"
     "raycast"
     "shottr"
     "slack"
-    "stablyai/orca/orca"
     "stremio"
     "telegram"
     "thebrowsercompany-dia"
     "visual-studio-code"
-    "visual-studio-code@insiders"
-    "vivaldi"
     "vlc"
     "whatsapp@beta"
     "wifiman"
