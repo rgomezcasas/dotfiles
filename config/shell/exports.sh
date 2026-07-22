@@ -61,7 +61,7 @@ export LANG="en_US.UTF-8"
 export SSH_AUTH_SOCK=/Users/rafa.gomez/.bitwarden-ssh-agent.sock
 
 export EDITOR="idea -e --wait"
-export PRIVATE_TOKEN="THIS-IS-A-LEAK"
+
 # ------------------------------------------------------------------------------
 # Path - The higher it is, the more priority it has
 # ------------------------------------------------------------------------------
