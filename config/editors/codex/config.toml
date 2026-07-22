@@ -77,6 +77,15 @@ trust_level = "trusted"
 [projects."/Users/rafa.gomez/Documents/Codex/2026-07-21/teng"]
 trust_level = "trusted"
 
+[projects."/Users/rafa.gomez/Documents/Codex/2026-07-21/mira"]
+trust_level = "trusted"
+
+[projects."/Users/rafa.gomez/Documents/Codex/2026-07-21/se"]
+trust_level = "trusted"
+
+[projects."/Users/rafa.gomez/Documents/Codex/2026-07-21/un"]
+trust_level = "trusted"
+
 [notice.model_migrations]
 "gpt-5.3-codex" = "gpt-5.4"
 "gpt-5.4" = "gpt-5.5"
@@ -89,7 +98,7 @@ status_line = ["model-with-reasoning", "git-branch", "context-used", "five-hour-
 "gpt-5.6-sol" = 4
 
 [marketplaces.openai-bundled]
-last_updated = "2026-07-20T16:48:49Z"
+last_updated = "2026-07-22T06:41:36Z"
 source_type = "local"
 source = "/Users/rafa.gomez/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
@@ -181,13 +190,13 @@ NODE_REPL_NODE_MODULE_DIRS = "/Applications/ChatGPT.app/Contents/Resources/cua_n
 NODE_REPL_NODE_PATH = "/Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node"
 NODE_REPL_TRUSTED_CODE_PATHS = "/Users/rafa.gomez/.codex"
 CODEX_HOME = "/Users/rafa.gomez/.codex"
-NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "583bf903a6cfb9b00a01e1583381ce921c71d7585085c6fa6b805baa0f60230b,6d25aa7656feac858f3a3bdaea5bcbab0dbfd426c9de8e6931ce90c399ee8e4f"
+NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "6d25aa7656feac858f3a3bdaea5bcbab0dbfd426c9de8e6931ce90c399ee8e4f,f6a4312a0a663361556224da122fe509c001f3641aaeee81b402813ccbf63121"
 BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
 NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunction with the Browser Plugin."
 NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
 NODE_REPL_INSTRUCTIONS_USE_CASE_COMPUTER_USE = "Control desktop apps on macOS through Computer Use."
 BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
-BROWSER_USE_CODEX_APP_VERSION = "26.715.52143"
+BROWSER_USE_CODEX_APP_VERSION = "26.715.72028"
 CODEX_CLI_PATH = "/Applications/ChatGPT.app/Contents/Resources/codex"
 
 [mcp_servers.computer-use]
@@ -198,7 +207,7 @@ enabled = false
 
 [shell_environment_policy.set]
 BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
-NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "583bf903a6cfb9b00a01e1583381ce921c71d7585085c6fa6b805baa0f60230b,6d25aa7656feac858f3a3bdaea5bcbab0dbfd426c9de8e6931ce90c399ee8e4f"
+NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "6d25aa7656feac858f3a3bdaea5bcbab0dbfd426c9de8e6931ce90c399ee8e4f,f6a4312a0a663361556224da122fe509c001f3641aaeee81b402813ccbf63121"
 NODE_REPL_TRUSTED_CODE_PATHS = "/Users/rafa.gomez/.codex"
 
 [sandbox_workspace_write]
