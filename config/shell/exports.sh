@@ -58,6 +58,8 @@ export EZA_COLORS="di=34:ln=36:ex=32:fi=0:uu=33:gu=33:sn=0:sb=0:da=36:hd=4:bu=4;
 
 export LANG="en_US.UTF-8"
 
+export SSH_AUTH_SOCK=/Users/rafa.gomez/.bitwarden-ssh-agent.sock
+
 export EDITOR="idea -e --wait"
 export PRIVATE_TOKEN="THIS-IS-A-LEAK"
 # ------------------------------------------------------------------------------
