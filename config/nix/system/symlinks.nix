@@ -31,7 +31,6 @@ in
   ".gitattributes".source = symlink "${dotfilesPath}/config/git/.gitattributes";
   ".gitconfig".source = symlink "${dotfilesPath}/config/git/.gitconfig";
   ".gitignore_global".source = symlink "${dotfilesPath}/config/git/.gitignore_global";
-  ".gnupg/gpg-agent.conf".source = symlink "${dotfilesPath}/modules/private/gnupg/gpg-agent.conf";
   ".npmrc".source = symlink "${dotfilesPath}/modules/private/js/.npmrc";
   ".profile".source = symlink "${dotfilesPath}/config/shell/bash/.profile";
   ".skhdrc".source = symlink "${dotfilesPath}/config/macos/skhd/.skhdrc";

@@ -16,7 +16,6 @@ with pkgs;
   gh
   git
   git-lfs
-  gnupg
   go
   goku
   gradle
@@ -52,6 +51,5 @@ with pkgs;
   # gui
   gum
   mas
-  pinentry_mac
   skhd
 ]
