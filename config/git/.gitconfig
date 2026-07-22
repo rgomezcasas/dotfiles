@@ -1,7 +1,7 @@
 [user]
 	name = Rafa Gómez
 	email = rgomezcasas@gmail.com
-	signingkey = AC2C04F065F7ADB8
+	signingkey = key::ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOfzY37WZAIm9N70unVwmjiC1E0txaZPAW2Au7P228qo
 
 [fetch]
 	prune = true
@@ -83,7 +83,10 @@
 	gpgsign = true
 
 [gpg]
-	program = gpg
+	format = ssh
+
+[gpg "ssh"]
+	allowedSignersFile = ~/.ssh/allowed_signers
 
 [pull]
 	rebase = true
