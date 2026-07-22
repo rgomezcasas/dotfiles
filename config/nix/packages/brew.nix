@@ -34,7 +34,6 @@
     "figma"
     "ghostty@tip"
     "google-chrome"
-    "google-chrome@canary"
     "google-drive"
     "grandperspective"
     "handbrake-app"
