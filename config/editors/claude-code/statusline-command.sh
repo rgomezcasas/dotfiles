@@ -188,9 +188,9 @@ daily_cost_str=$(printf '$%.2f' "$daily_cost")
 # the next one breaks the cache — but only once a real request has completed
 # (prev_cost > 0), since switching model before sending any message has no cache
 # to break. Changing effort does not break the cache, so it is not tracked here.
-# Otherwise count down the 5m TTL.
-cache_ttl=300
-cache_warn_threshold=90
+# Otherwise count down the 1h TTL.
+cache_ttl=3600
+cache_warn_threshold=300
 cache_warning=""
 if [[ -n "$session_id" ]]; then
   if (( turn_completed )); then
