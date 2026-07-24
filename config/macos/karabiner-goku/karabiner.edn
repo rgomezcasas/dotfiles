@@ -143,7 +143,9 @@
 
   {:des   "[Claude] Shortcuts"
    :rules [:Claude
-           [:sidebar-primary-toggle :!Cperiod]]} ; Toggle sidebar
+           [:sidebar-primary-toggle :!Cperiod]              ; Toggle sidebar
+           [:!C4 :!CSb]                                     ; cmd+4 as cmd+shift+b
+           [:!TOCSt :!Tgrave_accent_and_tilde]]}            ; hyper+t as ctrl+`
 
   {:des   "[Cmux] Shortcuts"
    :rules [:Cmux
