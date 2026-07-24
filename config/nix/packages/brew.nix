@@ -24,6 +24,7 @@
     "comfy"
     "contexts"
     "cursor"
+    "darrylmorley/whatcable/whatcable"
     "displaylink"
     "elgato-control-center"
     "elgato-stream-deck"
