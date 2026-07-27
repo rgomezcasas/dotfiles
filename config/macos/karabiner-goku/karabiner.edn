@@ -125,6 +125,7 @@
            [:!Otab :!COdown_arrow]               ; opt+tab switch tabs down
            [:!OStab :!COup_arrow]                ; opt+shift+tab switch tabs up
            [:!TOCSt :!COj]                       ; hyper+t opens terminal
+           [:!CSl :!TCb]                         ; cmd+shift+l as ctrl+cmd+b
            [:show-recent-files :!CTO6]]}         ; cmd+e shows recent files
 
   {:des   "[Dia] Shortcuts"
@@ -182,7 +183,8 @@
   {:des   "[Bitwarden] Shortcuts"
    :rules [:Bitwarden
            [:switch-account "$HOME/.dotfiles/scripts/system/sdot bitwarden switch_account"]       ; Switch account
-           [:switch-account-esc "$HOME/.dotfiles/scripts/system/sdot bitwarden switch_account"]]} ; Switch account (esc)
+           [:switch-account-esc "$HOME/.dotfiles/scripts/system/sdot bitwarden switch_account"] ; Switch account (esc)
+           [:!Cq :!Cw]]}                                                                       ; Close window with cmd+q
 
   {:des   "[Finder] Shortcuts"
    :rules [:Finder
