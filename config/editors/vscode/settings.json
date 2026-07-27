@@ -81,5 +81,6 @@
     "workbench.browser.enableChatTools": true,
     "github.copilot.chat.agentDebugLog.enabled": true,
     "extensions.ignoreRecommendations": true,
-    "chat.mcp.gallery.enabled": true
+    "chat.mcp.gallery.enabled": true,
+    "chat.viewSessions.orientation": "stacked"
 }
