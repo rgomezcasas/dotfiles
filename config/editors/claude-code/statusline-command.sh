@@ -361,11 +361,11 @@ if [[ -n "$git_branch" ]]; then
 fi
 
 line+="${SEP}${bar}"
-cache_seg="${ACCENT}↑${RESET} ${TEXT}${cache_write_str}${RESET}${MSEP}${GREEN}↓${RESET} ${TEXT}${cache_read_str}${RESET}"
 if (( cache_read > 0 && cache_read_pct < 80 && cache_write >= 30000 )); then
+  cache_seg="${ACCENT}↑${RESET} ${TEXT}${cache_write_str}${RESET}${MSEP}${GREEN}↓${RESET} ${TEXT}${cache_read_str}${RESET}"
   cache_seg+="${MSEP}${RED}${cache_ratio_str}${RESET}"
+  line+="${SEP}${cache_seg}"
 fi
-line+="${SEP}${cache_seg}"
 line+="${SEP}${ACCENT}${session_cost_str}${RESET}${MSEP}${TEXT}${daily_cost_str} today${RESET}"
 [[ -n "$cache_warning" ]] && line+="${SEP}${RED}${cache_warning}${RESET}"
 
