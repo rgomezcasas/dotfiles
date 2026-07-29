@@ -10,6 +10,8 @@ CLAUDE.md
 .cursor
 .junie
 .agent-workspace
+.worktreeinclude
+.claude/worktrees
 
 # Mac
 .DS_Store
