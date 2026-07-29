@@ -142,10 +142,11 @@ session_cost_str=$(printf '$%.2f' "$session_cost")
 # Timestamps live inside the cache files, not in mtimes: stat flags differ
 # between the GNU coreutils on PATH and BSD stat, and mtime-based checks
 # silently failed with GNU stat. The session state file is shared with the
-# cache-warning block below. Online pricing refresh happens at most once a day.
+# cache-warning block below. ccusage always runs online: its bundled offline
+# price table has no entry for the newest models and silently prices them at
+# zero, and the fetched table is cached on disk so online costs no extra time.
 cache_dir="${TMPDIR:-/tmp}"
 cache_file="$cache_dir/.claude-statusline-daily-cost"
-pricing_stamp="$cache_dir/.claude-statusline-pricing-refresh"
 now=$(date +%s)
 today=$(date +%Y%m%d)
 
@@ -163,14 +164,13 @@ cache_day="" cached_cost=""
 [[ -f "$cache_file" ]] && IFS=$'\t' read -r cache_day cached_cost < "$cache_file"
 
 if (( turn_completed )) || [[ "$cache_day" != "$today" || -z "$cached_cost" ]]; then
-  offline_flag="--offline"
-  last_pricing=$(cat "$pricing_stamp" 2>/dev/null)
-  if [[ ! "$last_pricing" =~ ^[0-9]+$ ]] || (( now - last_pricing >= 86400 )); then
-    offline_flag=""
-    echo "$now" > "$pricing_stamp"
+  daily_cost=$(ccusage daily --since "$today" --json 2>/dev/null | jq -r '.totals.totalCost // 0')
+  [[ "$daily_cost" =~ ^[0-9.]+$ ]] || daily_cost=0
+  # Within a day the total only grows, so a drop means this run failed (no
+  # network, no output): keep the last good value instead of caching the drop.
+  if [[ "$cache_day" == "$today" && -n "$cached_cost" ]] && (( $(echo "$daily_cost < $cached_cost" | bc -l) )); then
+    daily_cost=$cached_cost
   fi
-  daily_cost=$(ccusage daily --since "$today" $offline_flag --json 2>/dev/null | jq -r '.totals.totalCost // 0')
-  daily_cost=${daily_cost:-0}
   printf '%s\t%s\n' "$today" "$daily_cost" > "$cache_file"
 else
   daily_cost=$cached_cost
