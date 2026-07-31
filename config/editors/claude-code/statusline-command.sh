@@ -366,7 +366,9 @@ if [[ -n "$git_branch" ]]; then
 fi
 
 line+="${SEP}${bar}"
-if (( cache_read > 0 && cache_read_pct < 80 && cache_write >= 30000 )); then
+# Only worth showing when the read ratio is bad enough to be flagged in red:
+# a healthy cache needs no space on the line.
+if (( cache_total > 0 && cache_read_pct < 80 )); then
   cache_seg="${ACCENT}↑${RESET} ${TEXT}${cache_write_str}${RESET}${MSEP}${GREEN}↓${RESET} ${TEXT}${cache_read_str}${RESET}"
   cache_seg+="${MSEP}${RED}${cache_ratio_str}${RESET}"
   line+="${SEP}${cache_seg}"
