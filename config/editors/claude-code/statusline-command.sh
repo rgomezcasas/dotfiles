@@ -150,10 +150,10 @@ cache_file="$cache_dir/.claude-statusline-daily-cost"
 now=$(date +%s)
 today=$(date +%Y%m%d)
 
-state_file="" prev_model="" prev_cost="" commit_time=""
+state_file="" prev_model="" prev_cost="" commit_time="" prev_effort=""
 if [[ -n "$session_id" ]]; then
   state_file="$cache_dir/.claude-statusline-cache-${session_id//[^A-Za-z0-9_-]/_}"
-  [[ -f "$state_file" ]] && IFS=$'\t' read -r prev_model prev_cost commit_time < "$state_file"
+  [[ -f "$state_file" ]] && IFS=$'\t' read -r prev_model prev_cost commit_time prev_effort < "$state_file"
 fi
 turn_completed=0
 if [[ -z "$prev_cost" ]] || (( $(echo "$session_cost > $prev_cost" | bc -l) )); then
@@ -183,22 +183,27 @@ daily_cost_str=$(printf '$%.2f' "$daily_cost")
 # Warn when the next request will miss the prompt cache. State is per-session
 # (parallel Claude Code sessions each keep their own file, keyed by session_id).
 # The session cost only grows when a request completes, so a cost increase means
-# the current model just got cached — commit it and reset the TTL clock. If the
-# model differs from the committed value, no request has run since the change, so
-# the next one breaks the cache — but only once a real request has completed
-# (prev_cost > 0), since switching model before sending any message has no cache
-# to break. Changing effort does not break the cache, so it is not tracked here.
+# the current model and effort just got cached — commit them and reset the TTL
+# clock. If either differs from the committed value, no request has run since the
+# change, so the next one breaks the cache — but only once a real request has
+# completed (prev_cost > 0), since switching before sending any message has no
+# cache to break. Effort is only compared when both values are known, so state
+# files written before effort was tracked never trigger a false warning.
 # Otherwise count down the 1h TTL.
 cache_ttl=3600
 cache_warn_threshold=300
 cache_warning=""
 if [[ -n "$session_id" ]]; then
   if (( turn_completed )); then
-    prev_model="$model" prev_cost="$session_cost" commit_time="$now"
-    printf '%s\t%s\t%s\n' "$model" "$session_cost" "$now" > "$state_file" 2>/dev/null
+    prev_model="$model" prev_cost="$session_cost" commit_time="$now" prev_effort="$effort_level"
+    printf '%s\t%s\t%s\t%s\n' "$model" "$session_cost" "$now" "$effort_level" > "$state_file" 2>/dev/null
   fi
-  if [[ "$model" != "$prev_model" ]] && (( $(echo "$prev_cost > 0" | bc -l) )); then
-    cache_warning="You've changed model so cache is gonna break"
+  cache_break=""
+  [[ "$model" != "$prev_model" ]] && cache_break="model"
+  [[ -n "$prev_effort" && -n "$effort_level" && "$effort_level" != "$prev_effort" ]] && \
+    cache_break="${cache_break:+$cache_break and }effort"
+  if [[ -n "$cache_break" ]] && (( $(echo "$prev_cost > 0" | bc -l) )); then
+    cache_warning="You've changed $cache_break so cache is gonna break"
   elif [[ -n "$commit_time" ]]; then
     remaining=$(( cache_ttl - (now - commit_time) ))
     (( remaining > 0 && remaining < cache_warn_threshold )) && \
