@@ -62,11 +62,13 @@
     ],
     "deny": [
       "Bash(git *--amend*)",
-      "Bash(git push*)"
+      "Bash(git push -f*)",
+      "Bash(git push --force*)",
+      "Bash(git push --no-verify*)"
     ],
     "defaultMode": "auto"
   },
-  "model": "claude-fable-5[1m]",
+  "model": "opus[1m]",
   "fallbackModel": [
     "default"
   ],
@@ -87,7 +89,8 @@
   "enabledPlugins": {
     "swift-lsp@claude-plugins-official": false,
     "typescript-lsp@claude-plugins-official": false,
-    "tsgo-lsp@dotfiles": true
+    "tsgo-lsp@dotfiles": true,
+    "vercel@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "home-assistant-skills": {
