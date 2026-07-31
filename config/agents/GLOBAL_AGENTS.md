@@ -17,6 +17,10 @@ Instead of the following traditional commands, use faster alternatives:
 - `jq` → `jg` (drop-in `jq` replacement)
 - `tree` → `exa --tree`
 
+# Preview
+
+You have access to the `agent-browser` tool. Prefer using it over Playwright whenever possible.
+
 # Context
 
 - **Current year:** 2026
