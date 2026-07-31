@@ -82,5 +82,7 @@
     "github.copilot.chat.agentDebugLog.enabled": true,
     "extensions.ignoreRecommendations": true,
     "chat.mcp.gallery.enabled": true,
-    "chat.viewSessions.orientation": "stacked"
+    "chat.viewSessions.orientation": "stacked",
+	"github.copilot.chat.agentDebugLog.fileLogging.enabled": true,
+	"github.copilot.chat.skillTool.enabled": true
 }
