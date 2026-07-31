@@ -9,7 +9,7 @@
     "jsongrep"
     "node@24"
     "sst/tap/opencode"
-    "yarn"
+    "pnpm"
   ];
   casks = [
     "adobe-creative-cloud"
