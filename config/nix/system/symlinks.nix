@@ -14,6 +14,7 @@ in
   ".claude/CLAUDE.md".source = symlink "${dotfilesPath}/config/agents/GLOBAL_AGENTS.md";
   ".claude/keybindings.json".source =
     symlink "${dotfilesPath}/config/editors/claude-code/keybindings.json";
+  ".claude/output-styles".source = symlink "${dotfilesPath}/config/editors/claude-code/output-styles";
   ".claude/settings.json".source = symlink "${dotfilesPath}/config/editors/claude-code/settings.json";
   ".claude/skills".source = symlink "${dotfilesPath}/config/agents/global_skills";
   ".claude/statusline-command.sh".source =
