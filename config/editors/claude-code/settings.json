@@ -89,7 +89,8 @@
   "enabledPlugins": {
     "swift-lsp@claude-plugins-official": false,
     "typescript-lsp@claude-plugins-official": false,
-    "tsgo-lsp@dotfiles": true
+    "ste100@codely": true,
+    "ts7-lsp@codely": true
   },
   "extraKnownMarketplaces": {
     "home-assistant-skills": {
@@ -104,10 +105,10 @@
         "repo": "sirkirby/unifi-mcp"
       }
     },
-    "dotfiles": {
+    "codely": {
       "source": {
-        "source": "directory",
-        "path": "/Users/rafa.gomez/.dotfiles/config/agents/plugins"
+        "source": "github",
+        "repo": "CodelyTV/agent-harness"
       }
     }
   },
