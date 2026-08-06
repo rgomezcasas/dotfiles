@@ -146,6 +146,8 @@
    :rules [:Claude
            [:sidebar-primary-toggle :!Cperiod]              ; Toggle sidebar
            [:!C4 :!CSb]                                     ; cmd+4 as cmd+shift+b
+           [:!Tm :!CSi]                                     ; ctrl+m as cmd+shift+i
+           [:!Te :!CSe]                                     ; ctrl+e as cmd+shift+e
            [:!TOCSt :!Tgrave_accent_and_tilde]]}            ; hyper+t as ctrl+`
 
   {:des   "[Cmux] Shortcuts"
