@@ -140,6 +140,9 @@ trust_level = "trusted"
 [projects."/Users/rafa.gomez/Documents/Codex/2026-08-04/referenced-chatgpt-conversation-this-is-an"]
 trust_level = "trusted"
 
+[projects."/Users/rafa.gomez/Documents/Codex/2026-08-06/po"]
+trust_level = "trusted"
+
 [notice.model_migrations]
 "gpt-5.3-codex" = "gpt-5.4"
 "gpt-5.4" = "gpt-5.5"
