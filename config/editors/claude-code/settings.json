@@ -7,7 +7,7 @@
     "ENABLE_LSP_TOOL": "1",
     "ENABLE_TOOL_SEARCH": "true",
     "FORCE_AUTOUPDATE_PLUGINS": "true",
-    "IS_DEMO": "1",
+    "IS_DEMO": "0",
     "MAX_THINKING_TOKENS": "64000"
   },
   "includeGitInstructions": false,
@@ -68,7 +68,7 @@
     ],
     "defaultMode": "auto"
   },
-  "model": "opus[1m]",
+  "model": "claude-fable-5[1m]",
   "fallbackModel": [
     "default"
   ],
@@ -89,8 +89,7 @@
   "enabledPlugins": {
     "swift-lsp@claude-plugins-official": false,
     "typescript-lsp@claude-plugins-official": false,
-    "tsgo-lsp@dotfiles": true,
-    "vercel@claude-plugins-official": true
+    "tsgo-lsp@dotfiles": true
   },
   "extraKnownMarketplaces": {
     "home-assistant-skills": {
