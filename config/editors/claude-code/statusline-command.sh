@@ -136,49 +136,115 @@ limit_7d_str=""
 
 session_cost_str=$(printf '$%.2f' "$session_cost")
 
-# Daily cost from ccusage, recomputed only when this session completes a turn
-# (the session cost only grows when a request finishes) or on day rollover,
-# instead of on a time-based TTL that the 1s refresh loop keeps re-triggering.
-# Timestamps live inside the cache files, not in mtimes: stat flags differ
-# between the GNU coreutils on PATH and BSD stat, and mtime-based checks
-# silently failed with GNU stat. The session state file is shared with the
-# cache-warning block below. ccusage always runs online: its bundled offline
-# price table has no entry for the newest models and silently prices them at
-# zero, and the fetched table is cached on disk so online costs no extra time.
+# Per-session state, shared by the daily cost and the cache warning below. Rewrites
+# happen only when this session completes a turn (the session cost only grows when a
+# request finishes), never on the 1s refresh tick. Timestamps live inside the file,
+# not in mtimes: stat flags differ between the GNU coreutils on PATH and BSD stat,
+# and mtime-based checks silently failed with GNU stat. Writes go through a temp
+# file plus mv so a concurrent session never reads a half-written line.
 cache_dir="${TMPDIR:-/tmp}"
-cache_file="$cache_dir/.claude-statusline-daily-cost"
 now=$(date +%s)
 today=$(date +%Y%m%d)
+state_ttl=172800
 
-state_file="" prev_model="" prev_cost="" commit_time="" prev_effort=""
+state_file="" prev_model="" prev_cost="" commit_time="" prev_effort="" prev_day="" baseline=""
 if [[ -n "$session_id" ]]; then
   state_file="$cache_dir/.claude-statusline-cache-${session_id//[^A-Za-z0-9_-]/_}"
-  [[ -f "$state_file" ]] && IFS=$'\t' read -r prev_model prev_cost commit_time prev_effort < "$state_file"
+  [[ -f "$state_file" ]] && \
+    IFS=$'\t' read -r prev_model prev_cost commit_time prev_effort prev_day baseline < "$state_file"
 fi
 turn_completed=0
 if [[ -z "$prev_cost" ]] || (( $(echo "$session_cost > $prev_cost" | bc -l) )); then
   turn_completed=1
 fi
 
+# baseline is what this session had already spent before today, so a session
+# resumed across midnight contributes only today's delta. A session seen for the
+# first time is baselined at its current cost: whatever it spent before this status
+# line ever saw it cannot be attributed to today.
+if [[ -n "$state_file" ]] && (( turn_completed )); then
+  if [[ "$prev_day" != "$today" ]]; then
+    baseline=${prev_cost:-$session_cost}
+  fi
+  tmp_file="$cache_dir/.claude-statusline-tmp-$$"
+  if printf '%s\t%s\t%s\t%s\t%s\t%s\n' \
+      "$model" "$session_cost" "$now" "$effort_level" "$today" "$baseline" > "$tmp_file" 2>/dev/null; then
+    mv -f "$tmp_file" "$state_file" 2>/dev/null || rm -f "$tmp_file"
+  fi
+fi
+
+# Daily cost takes the higher of two views. Both are whole-day totals rather than
+# anything session-specific, so every concurrent session renders the same number —
+# comparing against this session's own cost is what used to make each one show a
+# different "today". ccusage reads the transcripts, so it covers sessions this
+# status line never saw; the live sum of the state files covers spend ccusage has
+# not picked up yet and prices models missing from its table.
+shopt -s nullglob
+state_files=("$cache_dir"/.claude-statusline-cache-*)
+shopt -u nullglob
+
+live_cost=$session_cost
+if (( ${#state_files[@]} )); then
+  live_cost=$(awk -F'\t' -v today="$today" '
+    $5 == today { delta = $2 - $6; if (delta > 0) total += delta }
+    END { printf "%.6f", total + 0 }
+  ' "${state_files[@]}" 2>/dev/null)
+  [[ "$live_cost" =~ ^[0-9.]+$ ]] || live_cost=$session_cost
+  # A session with no id writes no state file, so it is missing from the sum above.
+  [[ -z "$session_id" ]] && live_cost=$(echo "$live_cost + $session_cost" | bc -l)
+fi
+
+# ccusage is recomputed only when this session completes a turn or on day rollover,
+# never on the 1s refresh tick. It always runs online: its bundled offline price
+# table has no entry for the newest models and silently prices them at zero, and the
+# fetched table is cached on disk so online costs no extra time.
+cache_file="$cache_dir/.claude-statusline-daily-cost"
 cache_day="" cached_cost=""
 [[ -f "$cache_file" ]] && IFS=$'\t' read -r cache_day cached_cost < "$cache_file"
 
-if (( turn_completed )) || [[ "$cache_day" != "$today" || -z "$cached_cost" ]]; then
-  daily_cost=$(ccusage daily --since "$today" --json 2>/dev/null | jq -r '.totals.totalCost // 0')
-  [[ "$daily_cost" =~ ^[0-9.]+$ ]] || daily_cost=0
-  # Within a day the total only grows, so a drop means this run failed (no
-  # network, no output): keep the last good value instead of caching the drop.
-  if [[ "$cache_day" == "$today" && -n "$cached_cost" ]] && (( $(echo "$daily_cost < $cached_cost" | bc -l) )); then
-    daily_cost=$cached_cost
+# The global npm install lives outside the nix store and has gone missing without
+# a word before, which silently collapses the daily cost onto the live sum. npx
+# runs from the local cache when the binary is not on PATH.
+ccusage_daily() {
+  if command -v ccusage &>/dev/null; then
+    ccusage daily --since "$1" --json 2>/dev/null
+  else
+    npx -y ccusage@latest daily --since "$1" --json 2>/dev/null
   fi
-  printf '%s\t%s\n' "$today" "$daily_cost" > "$cache_file"
+}
+
+if (( turn_completed )) || [[ "$cache_day" != "$today" || -z "$cached_cost" ]]; then
+  ccusage_cost=$(ccusage_daily "$today" | jq -r '.totals.totalCost // 0')
+  [[ "$ccusage_cost" =~ ^[0-9.]+$ ]] || ccusage_cost=0
+  # Within a day the total only grows, so a drop means this run failed (no binary on
+  # PATH, no network, no output): keep the last good value instead of caching the
+  # drop. The live sum below is what keeps the number moving while ccusage is broken.
+  if [[ "$cache_day" == "$today" && -n "$cached_cost" ]] && (( $(echo "$ccusage_cost < $cached_cost" | bc -l) )); then
+    ccusage_cost=$cached_cost
+  fi
+  daily_tmp="$cache_dir/.claude-statusline-tmp-$$-daily"
+  if printf '%s\t%s\n' "$today" "$ccusage_cost" > "$daily_tmp" 2>/dev/null; then
+    mv -f "$daily_tmp" "$cache_file" 2>/dev/null || rm -f "$daily_tmp"
+  fi
 else
-  daily_cost=$cached_cost
+  ccusage_cost=$cached_cost
 fi
-if (( $(echo "$session_cost > $daily_cost" | bc -l) )); then
-  daily_cost=$session_cost
-fi
+
+daily_cost=$live_cost
+(( $(echo "$ccusage_cost > $live_cost" | bc -l) )) && daily_cost=$ccusage_cost
 daily_cost_str=$(printf '$%.2f' "$daily_cost")
+
+# Sessions that went stale days ago keep no useful state: a resume re-baselines
+# from scratch anyway. Pruned on turn completion, not on every refresh tick.
+if (( turn_completed )); then
+  for f in "${state_files[@]}"; do
+    [[ "$f" == "$state_file" ]] && continue
+    IFS=$'\t' read -r _ _ f_time _ f_day _ < "$f" 2>/dev/null || continue
+    [[ "$f_day" == "$today" ]] && continue
+    [[ "$f_time" =~ ^[0-9]+$ ]] && (( now - f_time < state_ttl )) && continue
+    rm -f "$f"
+  done
+fi
 
 # Warn when the next request will miss the prompt cache. State is per-session
 # (parallel Claude Code sessions each keep their own file, keyed by session_id).
@@ -196,7 +262,6 @@ cache_warning=""
 if [[ -n "$session_id" ]]; then
   if (( turn_completed )); then
     prev_model="$model" prev_cost="$session_cost" commit_time="$now" prev_effort="$effort_level"
-    printf '%s\t%s\t%s\t%s\n' "$model" "$session_cost" "$now" "$effort_level" > "$state_file" 2>/dev/null
   fi
   cache_break=""
   [[ "$model" != "$prev_model" ]] && cache_break="model"
