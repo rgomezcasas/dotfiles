@@ -10,6 +10,7 @@
     "node@24"
     "sst/tap/opencode"
     "pnpm"
+    "herdr"
   ];
   casks = [
     "adobe-creative-cloud"
@@ -36,7 +37,6 @@
     "grandperspective"
     "handbrake-app"
     "helium-browser"
-    "herd"
     "imaging-edge"
     "jetbrains-toolbox"
     "karabiner-elements"
