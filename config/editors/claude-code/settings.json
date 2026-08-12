@@ -7,7 +7,6 @@
     "ENABLE_LSP_TOOL": "1",
     "ENABLE_TOOL_SEARCH": "true",
     "FORCE_AUTOUPDATE_PLUGINS": "true",
-    "IS_DEMO": "0",
     "MAX_THINKING_TOKENS": "64000"
   },
   "includeGitInstructions": false,
@@ -68,7 +67,7 @@
     ],
     "defaultMode": "auto"
   },
-  "model": "claude-fable-5[1m]",
+  "model": "opus[1m]",
   "fallbackModel": [
     "default"
   ],
@@ -200,6 +199,7 @@
   "autoMemoryEnabled": false,
   "showThinkingSummaries": true,
   "skipDangerousModePermissionPrompt": true,
+  "theme": "dark",
   "editorMode": "normal",
   "preferredNotifChannel": "ghostty",
   "autoScrollEnabled": true,
