@@ -1,0 +1,59 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTLY_PATH/scripts/core/_main.sh"
+
+##? Remove zsh history entries from the last N hours
+#?? 1.0.0
+##?
+##? Usage:
+##?   clear_last_history_hours [<hours>]
+##?   clear_last_history_hours -h | --help
+
+docs::parse "$@"
+
+hours_to_remove=${hours:-12}
+zsh_history="${HISTFILE:-$HOME/.zhistory}"
+
+if [[ ! -f $zsh_history ]]; then
+	echo "History file not found ($zsh_history)"
+	exit 1
+fi
+
+if ! grep -qE '^: [0-9]+:[0-9]+;' "$zsh_history"; then
+	echo "History file has no timestamps, cannot filter by time ($zsh_history)"
+	exit 1
+fi
+
+cutoff=$(($(date +%s) - hours_to_remove * 3600))
+
+entries_to_remove=$(awk -v cutoff="$cutoff" '
+	/^: [0-9]+:[0-9]+;/ {
+		split(substr($0, 3), entry, ":")
+		if (entry[1] + 0 >= cutoff) count++
+	}
+	END { print count + 0 }
+' "$zsh_history")
+
+if ((entries_to_remove == 0)); then
+	echo "No entries from the last $hours_to_remove hours in $zsh_history"
+	exit 0
+fi
+
+tmp=$(mktemp "$zsh_history.XXXXXX")
+trap 'rm -f "$tmp"' EXIT
+
+awk -v cutoff="$cutoff" '
+	BEGIN { keep = 1 }
+	/^: [0-9]+:[0-9]+;/ {
+		split(substr($0, 3), entry, ":")
+		keep = (entry[1] + 0 < cutoff)
+	}
+	keep
+' "$zsh_history" >"$tmp"
+mv "$tmp" "$zsh_history"
+chmod 600 "$zsh_history"
+
+echo "Removed $entries_to_remove entries from the last $hours_to_remove hours in $zsh_history"
+echo "Close this tab and open a new one to see the changes"
