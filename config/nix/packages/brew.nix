@@ -26,6 +26,7 @@
     "contexts"
     "cursor"
     "darrylmorley/whatcable/whatcable"
+    "detachhead/tap/rebased"
     "displaylink"
     "elgato-control-center"
     "elgato-stream-deck"
