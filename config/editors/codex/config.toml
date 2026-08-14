@@ -158,12 +158,12 @@ status_line = ["model-with-reasoning", "git-branch", "context-used", "five-hour-
 "gpt-5.6-sol" = 4
 
 [marketplaces.openai-bundled]
-last_updated = "2026-08-11T10:02:49Z"
+last_updated = "2026-08-12T13:18:33Z"
 source_type = "local"
 source = "/Users/rafa.gomez/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
 [marketplaces.openai-primary-runtime]
-last_updated = "2026-08-06T03:43:33Z"
+last_updated = "2026-08-14T08:20:39Z"
 source_type = "local"
 source = "/Users/rafa.gomez/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
 
