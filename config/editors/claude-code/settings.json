@@ -89,7 +89,8 @@
     "swift-lsp@claude-plugins-official": false,
     "typescript-lsp@claude-plugins-official": false,
     "ste100@codely": true,
-    "ts7-lsp@codely": true
+    "ts7-lsp@codely": true,
+    "skill-creator@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "home-assistant-skills": {
