@@ -63,7 +63,19 @@
       "Bash(git *--amend*)",
       "Bash(git push -f*)",
       "Bash(git push --force*)",
-      "Bash(git push --no-verify*)"
+      "Bash(git push --no-verify*)",
+      "EnterPlanMode",
+      "ExitPlanMode",
+      "DesignSync",
+      "NotebookEdit",
+      "SendMessage",
+      "PushNotification",
+      "RemoteTrigger",
+      "ReportFindings",
+      "ScheduleWakeup",
+      "CronCreate",
+      "CronDelete",
+      "CronList"
     ],
     "defaultMode": "auto"
   },
@@ -71,7 +83,11 @@
   "fallbackModel": [
     "default"
   ],
+  "disableBundledSkills": false,
+  "disableWorkflows": true,
+  "disableRemoteControl": false,
   "disableClaudeAiConnectors": true,
+  "disableArtifact": true,
   "skillOverrides": {
     "generate-doc": "off",
     "global-clean-pr-commits": "off",
