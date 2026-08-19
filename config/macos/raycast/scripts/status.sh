@@ -36,8 +36,8 @@ if [[ -z "$default_iface" ]]; then
 	link_speed="unknown"
 elif [[ "$hardware_port" == "Wi-Fi" ]]; then
 	connection="📶 Wi-Fi"
-	transmit_rate=$(system_profiler SPAirPortDataType 2>/dev/null |
-		awk '/Current Network Information:/,0' | awk '/Transmit Rate:/ {print $3; exit}')
+	transmit_rate=$(osascript -l JavaScript -e \
+		'ObjC.import("CoreWLAN"); $.CWWiFiClient.sharedWiFiClient.interface.transmitRate' 2>/dev/null)
 	link_speed="${transmit_rate:+$transmit_rate Mbps}"
 	link_speed="${link_speed:-unknown}"
 else
