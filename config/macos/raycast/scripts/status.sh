@@ -33,14 +33,22 @@ hardware_port=$(networksetup -listallhardwareports | awk -v dev="$default_iface"
 
 if [[ -z "$default_iface" ]]; then
 	connection="❌ No network"
+	link_speed="unknown"
 elif [[ "$hardware_port" == "Wi-Fi" ]]; then
 	connection="📶 Wi-Fi"
+	transmit_rate=$(system_profiler SPAirPortDataType 2>/dev/null |
+		awk '/Current Network Information:/,0' | awk '/Transmit Rate:/ {print $3; exit}')
+	link_speed="${transmit_rate:+$transmit_rate Mbps}"
+	link_speed="${link_speed:-unknown}"
 else
 	connection="🔌 Cable (${hardware_port:-$default_iface})"
+	link_speed=$(ifconfig "$default_iface" 2>/dev/null | awk -F'[()]' '/media:/ {print $2}' | sed 's/ <full-duplex>/ full-duplex/')
+	link_speed="${link_speed:-unknown}"
 fi
 
 echo "GlobalProtect:   $global_protect_status"
 echo "Cloudflare WARP: $warp_status"
 echo "Connection:      $connection"
+echo "Link speed:      $link_speed"
 echo "Public IP:       ${public_ip:-unknown}"
 echo "Local IP:        ${local_ip:-unknown}"
