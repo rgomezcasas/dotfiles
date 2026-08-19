@@ -2,6 +2,7 @@
   enable = true;
   taps = [ ];
   brews = [
+    "asdf"
     "agent-browser"
     "choose-gui"
     "cliclick"
@@ -22,7 +23,6 @@
     "cloudflare-warp"
     "cmux"
     "codex"
-    "comfy"
     "contexts"
     "cursor"
     "darrylmorley/whatcable/whatcable"

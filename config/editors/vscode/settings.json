@@ -84,5 +84,7 @@
     "chat.mcp.gallery.enabled": true,
     "chat.viewSessions.orientation": "stacked",
 	"github.copilot.chat.agentDebugLog.fileLogging.enabled": true,
-	"github.copilot.chat.skillTool.enabled": true
+	"github.copilot.chat.skillTool.enabled": true,
+    "chat.useHooks": true,
+    "github.copilot.chat.otel.dbSpanExporter.enabled": true
 }

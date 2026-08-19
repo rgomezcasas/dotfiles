@@ -70,6 +70,7 @@ export EDITOR="idea -e --wait"
 _path_candidates=(
   "$HOME/bin"
   "$DOTLY_PATH/bin"
+  "$ASDF_DATA_DIR/shims"
   "$HOME/.cache/npm/global/bin"
   "$HOME/.nix-profile/bin"
   "/etc/profiles/per-user/$USER/bin"
