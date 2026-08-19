@@ -3,7 +3,9 @@
 
 with pkgs;
 [
+  ast-grep
   bat
+  bitwarden-cli
   cargo
   cmatrix
   coreutils
@@ -23,30 +25,27 @@ with pkgs;
   hyperfine
   jdk21
   lazygit
+  libpq
+  mitmproxy
   nixfmt
   nvd
+  ollama
   pipx
-  python313
-  python3Packages.pip
+  (python313.withPackages (ps: [ ps.pip ]))
   ripgrep
   shellcheck
   shfmt
   sl
+  switchaudio-osx
   terminal-notifier
   tree
   unrar
   uv
   watch
   wget
+  yt-dlp
   z-lua
   zsh
-  ast-grep
-  bitwarden-cli
-  libpq
-  mitmproxy
-  ollama
-  switchaudio-osx
-  yt-dlp
 
   # gui
   gum
