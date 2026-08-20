@@ -68,6 +68,7 @@ export EDITOR="idea -e --wait"
 [[ -n "${ZSH_VERSION:-}" ]] && typeset -U path
 
 _path_candidates=(
+  # "$ASDF_DATA_DIR/shims"
   "$HOME/bin"
   "$DOTLY_PATH/bin"
   "$HOME/.cache/npm/global/bin"
@@ -84,7 +85,6 @@ _path_candidates=(
   "$HOME/.local/bin"
   "$HOMEBREW_PREFIX/bin"
   "$HOMEBREW_PREFIX/sbin"
-  "$ASDF_DATA_DIR/shims"
   "/usr/local/bin"
   "/bin"
   "/usr/bin"

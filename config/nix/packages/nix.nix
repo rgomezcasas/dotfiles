@@ -23,9 +23,10 @@ with pkgs;
   gradle
   htop
   hyperfine
-  jdk21
+  jdk25
   lazygit
   libpq
+  maven
   mitmproxy
   nixfmt
   nvd
