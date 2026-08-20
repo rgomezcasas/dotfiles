@@ -35,9 +35,21 @@ if [[ -z "$default_iface" ]]; then
 	connection="❌ No network"
 	link_speed="unknown"
 elif [[ "$hardware_port" == "Wi-Fi" ]]; then
-	connection="📶 Wi-Fi"
-	transmit_rate=$(osascript -l JavaScript -e \
-		'ObjC.import("CoreWLAN"); $.CWWiFiClient.sharedWiFiClient.interface.transmitRate' 2>/dev/null)
+	wifi_info=$(osascript -l JavaScript -e \
+		'ObjC.import("CoreWLAN"); var i = $.CWWiFiClient.sharedWiFiClient.interface; i.transmitRate + "|" + i.activePHYMode' 2>/dev/null)
+	transmit_rate="${wifi_info%%|*}"
+	phy_mode="${wifi_info##*|}"
+	case "$phy_mode" in
+	1) wifi_generation="802.11a" ;;
+	2) wifi_generation="802.11b" ;;
+	3) wifi_generation="802.11g" ;;
+	4) wifi_generation="Wi-Fi 4" ;;
+	5) wifi_generation="Wi-Fi 5" ;;
+	6) wifi_generation="Wi-Fi 6" ;;
+	7) wifi_generation="Wi-Fi 7" ;;
+	*) wifi_generation="" ;;
+	esac
+	connection="📶 ${wifi_generation:-Wi-Fi}"
 	link_speed="${transmit_rate:+$transmit_rate Mbps}"
 	link_speed="${link_speed:-unknown}"
 else
