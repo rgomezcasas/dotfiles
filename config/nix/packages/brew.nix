@@ -34,6 +34,7 @@
     "elgato-wave-link"
     "figma"
     "ghostty@tip"
+    "github-copilot-app"
     "google-chrome"
     "google-drive"
     "grandperspective"
