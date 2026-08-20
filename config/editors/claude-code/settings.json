@@ -1,69 +1,4 @@
 {
-  "agentPushNotifEnabled": true,
-  "alwaysThinkingEnabled": true,
-  "autoMemoryEnabled": false,
-  "autoScrollEnabled": true,
-  "autoUpdatesChannel": "latest",
-  "awaySummaryEnabled": true,
-  "companyAnnouncements": [
-    "¿Por qué si una variable es inmutable la seguimos llamando variable?",
-    "¿Qué le dice un .GIF a un .JPEG? -Anímate viejo.",
-    "¿Qué le dijo el código Java al código C? No tienes clase.",
-    "¿Sabes por qué C no puede ir a un restaurante estrella Michelin? ¡Porque no tiene clase!",
-    "Dos programadores java charlando: «la excepción confirma la regla» «pues si hay una excepción, la capturamos».",
-    "¿Cuál es la forma orientada a objetos para volverse rico? Herencia",
-    "Están 1023 gigabytes en una fiesta, llegan 1048576 más y dicen: ¿Nos hacemos un peta?.",
-    "¿Pero qué haces tirando esos portátiles al río? – ¡pero mira como beben los PC,s en el rio!.",
-    "💂‍♂️ ¿Me das un consejo informático? -Setup mismo.",
-    "Sabes que si trabajais con PHP, vereis muchos $",
-    "¿Por qué los containers de Docker no tienen amigos? Porque siempre están aislados.",
-    "Estoy cansado de que los DevOps me manden todo el rato a callar. Están todo el día `ssh` 🤫",
-    "¿Sabes por qué los chistes de git no tienen gracia? Porque cada persona tiene su versión.",
-    "💂‍♂️ Te contaría un chiste de git… ¡pero es que te vas por las ramas!",
-    "Toc toc - Una función asíncrona - ¿Quién es?",
-    "Si una persona consigue una entrevista de programación gracias a una recomendación, ¿la están pasando por referencia?",
-    "¿Qué lenguaje de programación usan en IKEA? - Assembly",
-    "¿Cuánto dinero vale el primer parámetro de un script en bash? $1",
-    "¿Por qué el gestor de tareas puede matar aplicaciones? ¡Porque son ejecutables!",
-    "💂‍♂️ Cuándo es el mejor momento para despegar un Container de producción cuan*docker*ais",
-    "💂‍♂️ Se ve que Bash está ingresado en el hospital… Tiene una enfermedad Terminal",
-    "Donde guarda USA sus backups? En USB",
-    "¿Por qué el administrador de base de datos dejó a su pareja? Porque tenía una relación one-to-many",
-    "Mi pareja me dejó después de que le pusiera su nombre a una clase. - Me dijo que le estaba tratando como a un objeto.",
-    "¿Por qué el God Object está deprimido? Porque tiene demasiadas responsabilidades.",
-    "¿Por qué Redis es la base de datos más respetada? ¡Porque tiene mucho caché!",
-    "¿Por qué los developers siempre nos quejamos en los hoteles? ¡Porque no podemos encontrar la habitación 404!",
-    "¿Por qué los developers siempre vamos a la habitación incorrecta en los hoteles? ¡Porque nos dan la habitación 301!",
-    "Hemos detenido a un programador por hacer código ilegible. Cuando le hemos preguntado si tenía algo que declarar ha dicho que \"no comentarios\".",
-    "💂‍♂️ ¿A dónde va la API a comer? ¡Al RESTaurante!",
-    "💂‍♂️ ¿Cuál es el género preferido de películas de React? ¡De suspense!",
-    "💂‍♂️ ¿Por qué los modelos de programación están tan fuertes? ¡Porque entrenan con pesos!",
-    "¿De qué están hecha las nubes? ¡Pues de servidores linux!",
-    "💂‍♂️ ¿Por qué los programadores usan teclados mecánicos? ¡Para que su código sea fuertemente tipado!",
-    "¿Cómo aprendieron los hippies sobre las transacciones en base de datos? ¡Tomando ACID!",
-    "¿Sabes algún chiste bueno sobre DNSs? - Si, pero tardarías 24h en pillarlo.",
-    "💂‍♂️ LaIA es el nombre de persona más preparado para el futuro.",
-    "💂‍♂️ Cuando hay un error de sintaxis tienes que volver caminando a casa",
-    "¿Cómo se llamaba a la gente que usaba internet antes de que fuera mainstream? - Httpsters",
-    "¿Por qué si programas con Java tienes que llevar gafas de sol? ¡Porque miras directo al Eclipse!",
-    "Tengo un chiste sobre la documentación… pero no está hecho aún.",
-    "Si escribo un código excepcional… ¿Eso es bueno o malo?"
-  ],
-  "defaultShell": "bash",
-  "disableBundledSkills": false,
-  "disableClaudeAiConnectors": true,
-  "disableRemoteControl": false,
-  "disableWorkflows": true,
-  "editorMode": "normal",
-  "effortLevel": "medium",
-  "enableArtifact": true,
-  "enabledPlugins": {
-    "skill-creator@claude-plugins-official": true,
-    "ste100@codely": true,
-    "swift-lsp@claude-plugins-official": false,
-    "ts7-lsp@codely": true,
-    "typescript-lsp@claude-plugins-official": false
-  },
   "env": {
     "CLAUDE_CODE_DISABLE_ADAPTIVE_THINKING": "1",
     "CLAUDE_CODE_DISABLE_FAST_MODE": "1",
@@ -74,35 +9,7 @@
     "FORCE_AUTOUPDATE_PLUGINS": "true",
     "MAX_THINKING_TOKENS": "64000"
   },
-  "extraKnownMarketplaces": {
-    "codely": {
-      "source": {
-        "repo": "CodelyTV/agent-harness",
-        "source": "github"
-      }
-    },
-    "home-assistant-skills": {
-      "source": {
-        "repo": "homeassistant-ai/skills",
-        "source": "github"
-      }
-    },
-    "unifi-plugins": {
-      "source": {
-        "repo": "sirkirby/unifi-mcp",
-        "source": "github"
-      }
-    }
-  },
-  "fallbackModel": [
-    "default"
-  ],
-  "feedbackSurveyRate": 0,
-  "fileCheckpointingEnabled": true,
   "includeGitInstructions": false,
-  "inputNeededNotifEnabled": true,
-  "language": "spanish",
-  "model": "claude-fable-5[1m]",
   "permissions": {
     "allow": [
       "Bash(agent-browser *)",
@@ -152,50 +59,89 @@
       "Bash(route -n get default)",
       "Bash(nix-env -qaP)"
     ],
-    "defaultMode": "auto",
     "deny": [
       "Bash(git *--amend*)",
       "Bash(git push -f*)",
       "Bash(git push --force*)",
       "Bash(git push --no-verify*)",
-      "EnterPlanMode",
-      "ExitPlanMode",
       "NotebookEdit",
       "ScheduleWakeup",
       "CronCreate",
       "CronDelete",
       "CronList"
-    ]
-  },
-  "preferredNotifChannel": "ghostty",
-  "remoteControlAtStartup": false,
-  "sandbox": {
-    "autoAllowBashIfSandboxed": true,
-    "enabled": false,
-    "excludedCommands": [
-      "docker",
-      "git"
     ],
-    "network": {
-      "allowLocalBinding": true,
-      "allowUnixSockets": [
-        "/var/run/docker.sock"
-      ],
-      "allowedDomains": [
-        "github.com",
-        "*.npmjs.org",
-        "registry.yarnpkg.com"
-      ]
-    }
+    "defaultMode": "auto"
   },
-  "showThinkingSummaries": true,
+  "model": "opus[1m]",
+  "fallbackModel": [
+    "default"
+  ],
+  "disableClaudeAiConnectors": true,
   "skillOverrides": {
     "agent-browser": "off",
     "generate-doc": "off",
     "global-clean-pr-commits": "off"
   },
-  "skipAutoPermissionPrompt": true,
-  "skipDangerousModePermissionPrompt": true,
+  "disableBundledSkills": false,
+  "disableRemoteControl": false,
+  "disableWorkflows": true,
+  "enableArtifact": true,
+  "defaultShell": "bash",
+  "statusLine": {
+    "type": "command",
+    "command": "bash /Users/rafa.gomez/.claude/statusline-command.sh",
+    "padding": 0,
+    "refreshInterval": 1
+  },
+  "enabledPlugins": {
+    "skill-creator@claude-plugins-official": true,
+    "ste100@codely": true,
+    "swift-lsp@claude-plugins-official": false,
+    "ts7-lsp@codely": true,
+    "typescript-lsp@claude-plugins-official": false
+  },
+  "extraKnownMarketplaces": {
+    "codely": {
+      "source": {
+        "source": "github",
+        "repo": "CodelyTV/agent-harness"
+      }
+    },
+    "home-assistant-skills": {
+      "source": {
+        "source": "github",
+        "repo": "homeassistant-ai/skills"
+      }
+    },
+    "unifi-plugins": {
+      "source": {
+        "source": "github",
+        "repo": "sirkirby/unifi-mcp"
+      }
+    }
+  },
+  "outputStyle": "ste100:ASD-STE100",
+  "language": "spanish",
+  "sandbox": {
+    "enabled": false,
+    "autoAllowBashIfSandboxed": true,
+    "network": {
+      "allowedDomains": [
+        "github.com",
+        "*.npmjs.org",
+        "registry.yarnpkg.com"
+      ],
+      "allowUnixSockets": [
+        "/var/run/docker.sock"
+      ],
+      "allowLocalBinding": true
+    },
+    "excludedCommands": [
+      "docker",
+      "git"
+    ]
+  },
+  "feedbackSurveyRate": 0,
   "spinnerTipsEnabled": false,
   "spinnerVerbs": {
     "mode": "replace",
@@ -210,14 +156,67 @@
       "Niño, niño, niño"
     ]
   },
-  "statusLine": {
-    "command": "bash /Users/rafa.gomez/.claude/statusline-command.sh",
-    "padding": 0,
-    "refreshInterval": 1,
-    "type": "command"
-  },
   "syntaxHighlightingDisabled": false,
-  "theme": "dark",
+  "alwaysThinkingEnabled": true,
+  "effortLevel": "medium",
+  "awaySummaryEnabled": true,
+  "companyAnnouncements": [
+    "¿Por qué si una variable es inmutable la seguimos llamando variable?",
+    "¿Qué le dice un .GIF a un .JPEG? -Anímate viejo.",
+    "¿Qué le dijo el código Java al código C? No tienes clase.",
+    "¿Sabes por qué C no puede ir a un restaurante estrella Michelin? ¡Porque no tiene clase!",
+    "Dos programadores java charlando: «la excepción confirma la regla» «pues si hay una excepción, la capturamos».",
+    "¿Cuál es la forma orientada a objetos para volverse rico? Herencia",
+    "Están 1023 gigabytes en una fiesta, llegan 1048576 más y dicen: ¿Nos hacemos un peta?.",
+    "¿Pero qué haces tirando esos portátiles al río? – ¡pero mira como beben los PC,s en el rio!.",
+    "💂‍♂️ ¿Me das un consejo informático? -Setup mismo.",
+    "Sabes que si trabajais con PHP, vereis muchos $",
+    "¿Por qué los containers de Docker no tienen amigos? Porque siempre están aislados.",
+    "Estoy cansado de que los DevOps me manden todo el rato a callar. Están todo el día `ssh` 🤫",
+    "¿Sabes por qué los chistes de git no tienen gracia? Porque cada persona tiene su versión.",
+    "💂‍♂️ Te contaría un chiste de git… ¡pero es que te vas por las ramas!",
+    "Toc toc - Una función asíncrona - ¿Quién es?",
+    "Si una persona consigue una entrevista de programación gracias a una recomendación, ¿la están pasando por referencia?",
+    "¿Qué lenguaje de programación usan en IKEA? - Assembly",
+    "¿Cuánto dinero vale el primer parámetro de un script en bash? $1",
+    "¿Por qué el gestor de tareas puede matar aplicaciones? ¡Porque son ejecutables!",
+    "💂‍♂️ Cuándo es el mejor momento para despegar un Container de producción cuan*docker*ais",
+    "💂‍♂️ Se ve que Bash está ingresado en el hospital… Tiene una enfermedad Terminal",
+    "Donde guarda USA sus backups? En USB",
+    "¿Por qué el administrador de base de datos dejó a su pareja? Porque tenía una relación one-to-many",
+    "Mi pareja me dejó después de que le pusiera su nombre a una clase. - Me dijo que le estaba tratando como a un objeto.",
+    "¿Por qué el God Object está deprimido? Porque tiene demasiadas responsabilidades.",
+    "¿Por qué Redis es la base de datos más respetada? ¡Porque tiene mucho caché!",
+    "¿Por qué los developers siempre nos quejamos en los hoteles? ¡Porque no podemos encontrar la habitación 404!",
+    "¿Por qué los developers siempre vamos a la habitación incorrecta en los hoteles? ¡Porque nos dan la habitación 301!",
+    "Hemos detenido a un programador por hacer código ilegible. Cuando le hemos preguntado si tenía algo que declarar ha dicho que \"no comentarios\".",
+    "💂‍♂️ ¿A dónde va la API a comer? ¡Al RESTaurante!",
+    "💂‍♂️ ¿Cuál es el género preferido de películas de React? ¡De suspense!",
+    "💂‍♂️ ¿Por qué los modelos de programación están tan fuertes? ¡Porque entrenan con pesos!",
+    "¿De qué están hecha las nubes? ¡Pues de servidores linux!",
+    "💂‍♂️ ¿Por qué los programadores usan teclados mecánicos? ¡Para que su código sea fuertemente tipado!",
+    "¿Cómo aprendieron los hippies sobre las transacciones en base de datos? ¡Tomando ACID!",
+    "¿Sabes algún chiste bueno sobre DNSs? - Si, pero tardarías 24h en pillarlo.",
+    "💂‍♂️ LaIA es el nombre de persona más preparado para el futuro.",
+    "💂‍♂️ Cuando hay un error de sintaxis tienes que volver caminando a casa",
+    "¿Cómo se llamaba a la gente que usaba internet antes de que fuera mainstream? - Httpsters",
+    "¿Por qué si programas con Java tienes que llevar gafas de sol? ¡Porque miras directo al Eclipse!",
+    "Tengo un chiste sobre la documentación… pero no está hecho aún.",
+    "Si escribo un código excepcional… ¿Eso es bueno o malo?"
+  ],
+  "autoUpdatesChannel": "latest",
   "tui": "fullscreen",
+  "autoMemoryEnabled": false,
+  "showThinkingSummaries": true,
+  "skipDangerousModePermissionPrompt": true,
+  "theme": "dark",
+  "editorMode": "normal",
+  "preferredNotifChannel": "ghostty",
+  "autoScrollEnabled": true,
+  "fileCheckpointingEnabled": true,
+  "remoteControlAtStartup": false,
+  "inputNeededNotifEnabled": true,
+  "agentPushNotifEnabled": true,
+  "skipAutoPermissionPrompt": true,
   "voiceEnabled": false
 }
