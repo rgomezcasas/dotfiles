@@ -10,16 +10,23 @@
 export LC_ALL=en_US.UTF-8
 
 dotfiles_path="$HOME/.dotfiles"
-private_exports="$dotfiles_path/modules/private/shell/exports.sh"
-shell_exports="$dotfiles_path/config/shell/exports.sh"
+zshrc="$dotfiles_path/config/shell/zsh/.zshrc"
+bashrc="$dotfiles_path/config/shell/bash/.bashrc"
+rc_files=("$zshrc" "$bashrc")
+idx_source_pattern='^\(# \)\?source "\$DOTFILES_PATH/modules/private/shell/idx\.sh"$'
 
 notify() {
 	osascript -e "display notification \"$2\" with title \"$1\"" >/dev/null 2>&1
 }
 
-for file in "$private_exports" "$shell_exports"; do
+for file in "${rc_files[@]}"; do
 	if [[ ! -f "$file" ]]; then
 		notify "IDX environment" "File not found: $file"
+		exit 1
+	fi
+
+	if ! grep -q "$idx_source_pattern" "$file"; then
+		notify "IDX environment" "No idx.sh source line in $file"
 		exit 1
 	fi
 done
@@ -35,30 +42,12 @@ rewrite_file() {
 	rm -f "$tmp"
 }
 
-uncomment_idx_block() {
-	awk '
-		/^# IDX/ { print; in_block = 1; next }
-		/^# \/IDX/ { print; in_block = 0; next }
-		in_block { sub(/^# ?/, ""); print; next }
-		{ print }
-	' "$1"
+uncomment_idx_source() {
+	sed 's|^# \(source "\$DOTFILES_PATH/modules/private/shell/idx\.sh"\)$|\1|' "$1"
 }
 
-comment_idx_block() {
-	awk '
-		/^# IDX/ { print; in_block = 1; next }
-		/^# \/IDX/ { print; in_block = 0; next }
-		in_block { print ($0 == "" ? "#" : "# " $0); next }
-		{ print }
-	' "$1"
-}
-
-uncomment_asdf_shims() {
-	sed 's|^\([[:space:]]*\)# \("\$ASDF_DATA_DIR/shims"\)|\1\2|' "$1"
-}
-
-comment_asdf_shims() {
-	sed 's|^\([[:space:]]*\)\("\$ASDF_DATA_DIR/shims"\)|\1# \2|' "$1"
+comment_idx_source() {
+	sed 's|^\(source "\$DOTFILES_PATH/modules/private/shell/idx\.sh"\)$|# \1|' "$1"
 }
 
 wait_for_globalprotect() {
@@ -156,9 +145,10 @@ end close_panel
 APPLESCRIPT
 }
 
-if grep -q '^export ITX_GITHUB_PAT' "$private_exports"; then
-	rewrite_file "$private_exports" comment_idx_block
-	rewrite_file "$shell_exports" comment_asdf_shims
+if grep -q '^source "\$DOTFILES_PATH/modules/private/shell/idx\.sh"$' "$zshrc"; then
+	for file in "${rc_files[@]}"; do
+		rewrite_file "$file" comment_idx_source
+	done
 
 	if vpn_control "Disconnect"; then
 		notify "IDX environment disabled" "GlobalProtect is disconnecting"
@@ -166,8 +156,9 @@ if grep -q '^export ITX_GITHUB_PAT' "$private_exports"; then
 		notify "IDX environment disabled" "Disconnect GlobalProtect manually"
 	fi
 else
-	rewrite_file "$private_exports" uncomment_idx_block
-	rewrite_file "$shell_exports" uncomment_asdf_shims
+	for file in "${rc_files[@]}"; do
+		rewrite_file "$file" uncomment_idx_source
+	done
 
 	if vpn_control "Connect"; then
 		notify "IDX environment enabled" "GlobalProtect is connecting"
