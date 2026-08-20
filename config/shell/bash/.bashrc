@@ -39,3 +39,4 @@ for bash_file in "$DOTLY_PATH"/shell/bash/completions/*; do
   source "$bash_file"
 done
 
+# source "$DOTFILES_PATH/modules/private/shell/idx.sh"

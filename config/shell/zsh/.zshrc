@@ -105,3 +105,5 @@ zsh-defer source "$DOTLY_PATH/shell/zsh/bindings/reverse_search.zsh"
 bindkey -s '^[[27;2;13~' '^[^M'
 
 # zprof
+
+# source "$DOTFILES_PATH/modules/private/shell/idx.sh"
