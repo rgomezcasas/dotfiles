@@ -37,8 +37,8 @@ rewrite_file() {
 
 uncomment_idx_block() {
 	awk '
-		/^# Inditex$/ { print; in_block = 1; next }
-		/^# \/Inditex$/ { print; in_block = 0; next }
+		/^# IDX/ { print; in_block = 1; next }
+		/^# \/IDX/ { print; in_block = 0; next }
 		in_block { sub(/^# ?/, ""); print; next }
 		{ print }
 	' "$1"
@@ -46,8 +46,8 @@ uncomment_idx_block() {
 
 comment_idx_block() {
 	awk '
-		/^# Inditex$/ { print; in_block = 1; next }
-		/^# \/Inditex$/ { print; in_block = 0; next }
+		/^# IDX/ { print; in_block = 1; next }
+		/^# \/IDX/ { print; in_block = 0; next }
 		in_block { print ($0 == "" ? "#" : "# " $0); next }
 		{ print }
 	' "$1"
