@@ -7,6 +7,7 @@
     "choose-gui"
     "cliclick"
     "gemini-cli"
+    "go-task"
     "jsongrep"
     "node@24"
     "sst/tap/opencode"
