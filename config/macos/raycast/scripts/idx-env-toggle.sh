@@ -15,6 +15,10 @@ bashrc="$dotfiles_path/config/shell/bash/.bashrc"
 rc_files=("$zshrc" "$bashrc")
 idx_source_pattern='^\(# \)\?source "\$DOTFILES_PATH/modules/private/shell/idx\.sh"$'
 
+npmrc="$HOME/.npmrc"
+npmrc_idx="$npmrc.idx"
+npmrc_original="$npmrc.original"
+
 notify() {
 	osascript -e "display notification \"$2\" with title \"$1\"" >/dev/null 2>&1
 }
@@ -48,6 +52,18 @@ uncomment_idx_source() {
 
 comment_idx_source() {
 	sed 's|^\(source "\$DOTFILES_PATH/modules/private/shell/idx\.sh"\)$|# \1|' "$1"
+}
+
+swap_npmrc() {
+	local incoming="$1"
+	local outgoing="$2"
+
+	[[ -e "$npmrc" || -L "$npmrc" ]] || return 1
+	[[ -e "$incoming" || -L "$incoming" ]] || return 1
+	[[ -e "$outgoing" || -L "$outgoing" ]] && return 1
+
+	mv "$npmrc" "$outgoing" || return 1
+	mv "$incoming" "$npmrc" || return 1
 }
 
 wait_for_globalprotect() {
@@ -150,19 +166,25 @@ if grep -q '^source "\$DOTFILES_PATH/modules/private/shell/idx\.sh"$' "$zshrc"; 
 		rewrite_file "$file" comment_idx_source
 	done
 
+	npmrc_warning=""
+	swap_npmrc "$npmrc_original" "$npmrc_idx" || npmrc_warning=", npmrc unchanged"
+
 	if vpn_control "Disconnect"; then
-		notify "IDX environment disabled" "GlobalProtect is disconnecting"
+		notify "IDX environment disabled" "GlobalProtect is disconnecting$npmrc_warning"
 	else
-		notify "IDX environment disabled" "Disconnect GlobalProtect manually"
+		notify "IDX environment disabled" "Disconnect GlobalProtect manually$npmrc_warning"
 	fi
 else
 	for file in "${rc_files[@]}"; do
 		rewrite_file "$file" uncomment_idx_source
 	done
 
+	npmrc_warning=""
+	swap_npmrc "$npmrc_idx" "$npmrc_original" || npmrc_warning=", npmrc unchanged"
+
 	if vpn_control "Connect"; then
-		notify "IDX environment enabled" "GlobalProtect is connecting"
+		notify "IDX environment enabled" "GlobalProtect is connecting$npmrc_warning"
 	else
-		notify "IDX environment enabled" "Connect GlobalProtect manually"
+		notify "IDX environment enabled" "Connect GlobalProtect manually$npmrc_warning"
 	fi
 fi
