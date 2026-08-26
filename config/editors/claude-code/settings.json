@@ -159,6 +159,14 @@
   "syntaxHighlightingDisabled": false,
   "alwaysThinkingEnabled": true,
   "effortLevel": "medium",
+  "modelSettings": {
+    "claude-fable-5": {
+      "effortLevel": "high"
+    },
+    "claude-opus-5": {
+      "effortLevel": "medium"
+    }
+  },
   "awaySummaryEnabled": true,
   "companyAnnouncements": [
     "¿Por qué si una variable es inmutable la seguimos llamando variable?",
