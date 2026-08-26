@@ -8,12 +8,12 @@
 		"preferredEditor": "",
 		"menuBarOnly": false,
 		"confirmQuit": "always",
-		"focusPaneOnFirstClick": false,
-		"minimalMode": false,
+		"focusPaneOnFirstClick": true,
+		"minimalMode": true,
 		"renameSelectsExistingName": true,
-		"commandPaletteSearchesAllSurfaces": false,
+		"commandPaletteSearchesAllSurfaces": true,
 		"openSupportedFilesInCmux": true,
-		"newWorkspacePlacement": "afterCurrent",
+		"newWorkspacePlacement": "end",
 		"workspaceInheritWorkingDirectory": true,
 		"language": "system",
 		"windowTitleTemplate": "",
@@ -21,13 +21,13 @@
 		"sendAnonymousTelemetry": true,
 		"iMessageMode": false,
 		"warnBeforeClosingTab": true,
-		"hideTabCloseButton": false,
+		"hideTabCloseButton": true,
 		"appearance": "system",
 		"reorderOnNotification": true,
 		"appIcon": "automatic"
 	},
 	"workspaceGroups": {
-		"newWorkspacePlacement": "afterCurrent"
+		"newWorkspacePlacement": "end"
 	},
 	"terminal": {
 		"resumeCommands": [
@@ -108,7 +108,7 @@
 	"sidebarAppearance": {
 		"tintOpacity": 0.17999999999999999,
 		"darkModeTintColor": null,
-		"matchTerminalBackground": false,
+		"matchTerminalBackground": true,
 		"tintColor": "#000000",
 		"lightModeTintColor": null
 	},
