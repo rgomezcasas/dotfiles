@@ -124,6 +124,8 @@
 		"kiroNotificationLevel": "standard",
 		"suppressSubagentNotifications": true,
 		"claudeCodeIntegration": true,
+		"workspaceAutoNaming": true,
+		"autoNamingAgent": "auto",
 		"portBase": 9100,
 		"geminiIntegration": true,
 		"claudeBinaryPath": "",
