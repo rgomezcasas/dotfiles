@@ -28,7 +28,17 @@
 		"appIcon": "automatic"
 	},
 	"workspaceGroups": {
-		"newWorkspacePlacement": "end"
+		"newWorkspacePlacement": "end",
+		"byCwd": {
+			"~/.dotfiles": {
+				"icon": "gearshape.fill",
+				"color": "#7026F4"
+			},
+			"~/Code/codely": {
+				"icon": "graduationcap.fill",
+				"color": "#3CFF64"
+			}
+		}
 	},
 	"terminal": {
 		"resumeCommands": [
