@@ -46,7 +46,7 @@
 	prompt = false
 
 [diff "json"]
-	textconv = python -m json.tool
+	textconv = sh -c 'python -m json.tool "$1" 2>/dev/null || cat "$1"' -
 
 [diff "word"]
 	textconv = docx2txt
