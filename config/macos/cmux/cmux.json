@@ -61,7 +61,10 @@
 		],
 		"command": "",
 		"hooksMode": "append",
-		"dockBadge": true
+		"dockBadge": true,
+		"agentTurnComplete": "whenIdle",
+		"agentIdleReminder": false,
+		"agentPermissionPrompt": true
 	},
 	"sidebar": {
 		"openPullRequestLinksInCmuxBrowser": true,
