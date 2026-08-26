@@ -191,6 +191,7 @@
   {:des   "[Finder] Shortcuts"
    :rules [:Finder
            [:create-folder :!CSn]            ; Create folder
+           [:show-recent-files :!COSf]       ; Show recent files and folders (Raycast)
            [:sidebar-primary-toggle :!CTs]]} ; Toggle sidebar
 
   {:des   "[GuitarPro] Shortcuts"
