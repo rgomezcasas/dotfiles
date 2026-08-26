@@ -2,7 +2,7 @@
 name: global-commit
 description: Create a git commit following Conventional Commits specification
 allowed-tools: Bash(git add:*), Bash(git status:*), Bash(git commit:*), Bash(git diff:*), Bash(git log:*), Bash(git rev-parse:*), Bash(git branch:*), Bash(git stash:*), Bash(git rm:*)
-disable-model-invocation: true
+disable-model-invocation: false
 ---
 
 ## Context
