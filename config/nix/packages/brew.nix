@@ -17,6 +17,7 @@
   casks = [
     "adobe-creative-cloud"
     "arc"
+    "Augani/dory/dory"
     "avg-antivirus"
     "bettermouse"
     "bitwarden"

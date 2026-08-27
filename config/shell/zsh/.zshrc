@@ -107,3 +107,10 @@ bindkey -s '^[[27;2;13~' '^[^M'
 # zprof
 
 # source "$DOTFILES_PATH/modules/private/shell/idx.sh"
+# >>> dory cli >>>
+DORY_CLI_BIN="/Users/rafa.gomez/.dory/bin"
+case ":$PATH:" in
+  *":$DORY_CLI_BIN:"*) ;;
+  *) export PATH="$DORY_CLI_BIN:$PATH" ;;
+esac
+# <<< dory cli <<<

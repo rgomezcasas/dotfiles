@@ -5,8 +5,8 @@
     {
       "context": "Chat",
       "bindings": {
-        "ctrl+m": "chat:modelPicker",
-        "ctrl+i": "chat:thinkingToggle"
+        "meta+m": "chat:modelPicker",
+        "meta+i": "chat:thinkingToggle"
       }
     }
   ]

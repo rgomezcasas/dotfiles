@@ -72,7 +72,7 @@
     ],
     "defaultMode": "auto"
   },
-  "model": "opus[1m]",
+  "model": "claude-fable-5[1m]",
   "fallbackModel": [
     "default"
   ],
@@ -161,7 +161,7 @@
   "effortLevel": "medium",
   "modelSettings": {
     "claude-fable-5": {
-      "effortLevel": "high"
+      "effortLevel": "medium"
     },
     "claude-opus-5": {
       "effortLevel": "medium"
