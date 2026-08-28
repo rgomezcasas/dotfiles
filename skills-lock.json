@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "skills": {
+    "cmux-customization": {
+      "source": "manaflow-ai/cmux",
+      "sourceType": "github",
+      "skillPath": "skills/cmux-customization/SKILL.md",
+      "computedHash": "13c8870cff261c2b0cb54727c2549311740dbd3a1df047673c88d36727933003"
+    },
+    "cmux-settings": {
+      "source": "manaflow-ai/cmux",
+      "sourceType": "github",
+      "skillPath": "skills/cmux-settings/SKILL.md",
+      "computedHash": "1b7626d6db05ea9692857124a678cdae766dee61f1b19fd2ec763d28adacd720"
+    }
+  }
+}

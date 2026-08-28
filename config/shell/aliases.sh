@@ -47,6 +47,9 @@ alias ccusa='npx ccusage@latest --since $(date -d "30 days ago" +%Y%m%d 2>/dev/n
 # Codex
 alias codexupdate="brew update && brew upgrade --cask codex"
 
+# OpenCode
+alias oc="opencode2"
+
 alias t="dot claude t"
 alias tldr="dot claude tldr"
 alias f="dot claude f"

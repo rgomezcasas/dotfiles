@@ -15,9 +15,9 @@
     "herdr"
   ];
   casks = [
+    "Augani/dory/dory"
     "adobe-creative-cloud"
     "arc"
-    "Augani/dory/dory"
     "avg-antivirus"
     "bettermouse"
     "bitwarden"
@@ -49,7 +49,6 @@
     "microsoft-teams"
     "notion"
     "obs"
-    "orbstack"
     "raycast"
     "shottr"
     "slack"
@@ -59,6 +58,7 @@
     "utm"
     "visual-studio-code"
     "vlc"
+    "vorssaint"
     "whatsapp@beta"
     "wifiman"
   ];
