@@ -1,1 +1,2 @@
-theme = light
+theme = system
+switcher-delay-ms = 80
