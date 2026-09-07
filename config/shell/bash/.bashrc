@@ -47,3 +47,6 @@ case ":$PATH:" in
   *) export PATH="$DORY_CLI_BIN:$PATH" ;;
 esac
 # <<< dory cli <<<
+
+# Added by aidevtracker
+# source "/Users/rafa.gomez/.config/inditex/aidevtracker/scripts/init.sh"

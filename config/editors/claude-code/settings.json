@@ -72,7 +72,7 @@
     ],
     "defaultMode": "auto"
   },
-  "model": "opus[1m]",
+  "model": "claude-fable-5-1[1m]",
   "fallbackModel": [
     "default"
   ],
@@ -150,6 +150,7 @@
       "<🦄> Codelyteando",
       "🫧 Javiersiteandooo",
       "🐾 Rubényveteando",
+      "💃 Pabloeandooo",
       "💂‍♂️ Rafiteandooo",
       "🐢💨 Turbotugueando",
       "{▸} CodelyTVing",
@@ -165,6 +166,9 @@
     },
     "claude-opus-5": {
       "effortLevel": "medium"
+    },
+    "claude-fable-5-1": {
+      "effortLevel": "high"
     }
   },
   "awaySummaryEnabled": true,

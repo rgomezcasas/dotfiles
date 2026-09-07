@@ -10,6 +10,7 @@ with pkgs;
   cmatrix
   coreutils
   delta
+  docker-credential-helpers
   eza
   fd
   ffmpeg

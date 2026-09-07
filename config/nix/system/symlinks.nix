@@ -23,6 +23,7 @@ in
   ".codex/AGENTS.md".source = symlink "${dotfilesPath}/config/agents/GLOBAL_AGENTS.md";
   ".codex/config.toml".source = symlink "${dotfilesPath}/config/editors/codex/config.toml";
   ".config/cmux/cmux.json".source = symlink "${dotfilesPath}/config/macos/cmux/cmux.json";
+  ".config/codely/switchly/config".source = symlink "${dotfilesPath}/config/macos/switchly/config";
   ".config/ghostty".source = symlink "${dotfilesPath}/config/macos/ghostty";
   ".config/karabiner".source = symlink "${dotfilesPath}/config/macos/karabiner-elements";
   ".config/karabiner.edn".source =

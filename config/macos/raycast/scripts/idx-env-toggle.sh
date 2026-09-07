@@ -14,6 +14,7 @@ zshrc="$dotfiles_path/config/shell/zsh/.zshrc"
 bashrc="$dotfiles_path/config/shell/bash/.bashrc"
 rc_files=("$zshrc" "$bashrc")
 idx_source_pattern='^\(# \)\?source "\$DOTFILES_PATH/modules/private/shell/idx\.sh"$'
+aidevtracker_init="$HOME/.config/inditex/aidevtracker/scripts/init.sh"
 
 npmrc="$HOME/.npmrc"
 npmrc_idx="$npmrc.idx"
@@ -52,6 +53,14 @@ uncomment_idx_source() {
 
 comment_idx_source() {
 	sed 's|^\(source "\$DOTFILES_PATH/modules/private/shell/idx\.sh"\)$|# \1|' "$1"
+}
+
+uncomment_aidevtracker_source() {
+	sed 's|^# \(source "'"$aidevtracker_init"'"\)$|\1|' "$1"
+}
+
+comment_aidevtracker_source() {
+	sed 's|^\(source "'"$aidevtracker_init"'"\)$|# \1|' "$1"
 }
 
 swap_npmrc() {
@@ -164,6 +173,7 @@ APPLESCRIPT
 if grep -q '^source "\$DOTFILES_PATH/modules/private/shell/idx\.sh"$' "$zshrc"; then
 	for file in "${rc_files[@]}"; do
 		rewrite_file "$file" comment_idx_source
+		rewrite_file "$file" comment_aidevtracker_source
 	done
 
 	npmrc_warning=""
@@ -177,6 +187,7 @@ if grep -q '^source "\$DOTFILES_PATH/modules/private/shell/idx\.sh"$' "$zshrc"; 
 else
 	for file in "${rc_files[@]}"; do
 		rewrite_file "$file" uncomment_idx_source
+		rewrite_file "$file" uncomment_aidevtracker_source
 	done
 
 	npmrc_warning=""

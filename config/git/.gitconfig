@@ -101,3 +101,9 @@
 	defaultBranch = main
 [safe]
 	directory = /Users/rafa.gomez/.dotfiles
+[credential "https://github.com"]
+	helper =
+	helper = !/nix/store/9q6i0m1x1wx24vknbs3iglvnr5aw1hxb-gh-2.97.0/bin/.gh-wrapped auth git-credential
+[credential "https://gist.github.com"]
+	helper =
+	helper = !/nix/store/9q6i0m1x1wx24vknbs3iglvnr5aw1hxb-gh-2.97.0/bin/.gh-wrapped auth git-credential

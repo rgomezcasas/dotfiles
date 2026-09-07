@@ -15,7 +15,7 @@
     "herdr"
   ];
   casks = [
-    "Augani/dory/dory"
+    "augani/dory/dory"
     "adobe-creative-cloud"
     "arc"
     "avg-antivirus"
@@ -23,6 +23,7 @@
     "bitwarden"
     "chatgpt"
     "claude"
+    "cleanshot"
     "cloudflare-warp"
     "cmux"
     "codex"
@@ -50,7 +51,6 @@
     "notion"
     "obs"
     "raycast"
-    "shottr"
     "slack"
     "stremio"
     "telegram"

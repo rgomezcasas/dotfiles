@@ -1,4 +1,4 @@
-model = "gpt-5.6-sol"
+model = "gpt-6-astra"
 model_reasoning_effort = "high"
 notify = ["/Users/rafa.gomez/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
 service_tier = "default"
@@ -149,6 +149,33 @@ trust_level = "trusted"
 [projects."/Users/rafa.gomez/Library/Mobile Documents/com~apple~CloudDocs/etc/Viviendas/Tercera Avinguda, 35 - Torrelles de Llobregat/Facturas/Electricidad"]
 trust_level = "trusted"
 
+[projects."/Users/rafa.gomez/Documents/Codex/2026-09-01/record-replay-plugin-record-and-replay"]
+trust_level = "trusted"
+
+[projects."/private/tmp/claude-501/-Users-rafa-gomez-Code-rgomezcasas-home-assistant/51e52e1e-2c82-4894-8d9f-b5661b4e6b37/scratchpad/render"]
+trust_level = "trusted"
+
+[projects."/Users/rafa.gomez/Documents/Codex/2026-09-05/en-el-keynote-tengo-ahora-mismo"]
+trust_level = "trusted"
+
+[projects."/Users/rafa.gomez/Documents/Codex/2026-09-05/en-el-keynote-modifica-todos-los"]
+trust_level = "trusted"
+
+[projects."/Users/rafa.gomez/Documents/Codex/2026-09-05/en-la-slate-que-tengo-abierta"]
+trust_level = "trusted"
+
+[projects."/Users/rafa.gomez/Documents/Codex/2026-09-05/en-la-aplicaci-n-de-keynote"]
+trust_level = "trusted"
+
+[projects."/Users/rafa.gomez/Documents/Codex/2026-09-05/qu"]
+trust_level = "trusted"
+
+[projects."/Users/rafa.gomez/Downloads/new-v/session-5-sdd-workshop"]
+trust_level = "trusted"
+
+[projects."/Users/rafa.gomez/Code/codely/switchly"]
+trust_level = "trusted"
+
 [notice.model_migrations]
 "gpt-5.3-codex" = "gpt-5.4"
 "gpt-5.4" = "gpt-5.5"
@@ -159,6 +186,7 @@ status_line = ["model-with-reasoning", "git-branch", "context-used", "five-hour-
 [tui.model_availability_nux]
 "gpt-5.5" = 4
 "gpt-5.6-sol" = 4
+gpt-6-astra = 2
 
 [marketplaces.openai-bundled]
 source_type = "local"
@@ -195,8 +223,17 @@ enabled = true
 [plugins."codex-app-tools@openai-bundled"]
 enabled = true
 
+[plugins."record-and-replay@openai-bundled"]
+enabled = true
+
+[plugins."unified-computer-use@openai-bundled"]
+enabled = true
+
+[plugins."computer-use@openai-bundled"]
+enabled = true
+
 [desktop]
-conversationDetailMode = "STEPS_PROSE"
+conversationDetailMode = "STEPS_COMMANDS"
 sansFontSize = 14
 codeFontSize = 13
 ambient-suggestions-enabled = false
@@ -255,23 +292,20 @@ NODE_REPL_NODE_PATH = "/Applications/ChatGPT.app/Contents/Resources/cua_node/bin
 NODE_REPL_TRUSTED_CODE_PATHS = "/Users/rafa.gomez/.codex:/Applications/ChatGPT.app/Contents/Resources/cua_node/lib/node_modules"
 CODEX_HOME = "/Users/rafa.gomez/.codex"
 BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
-BROWSER_USE_TINYSKY_ENABLED = "0"
-NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunction with the Browser Plugin."
-NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
-NODE_REPL_INSTRUCTIONS_USE_CASE_COMPUTER_USE = "Control desktop apps on macOS through Computer Use."
+BROWSER_USE_TINYSKY_ENABLED = "1"
+NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = ""
+NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = ""
+NODE_REPL_INSTRUCTIONS_USE_CASE_COMPUTER_USE = ""
 BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
-BROWSER_USE_CODEX_APP_VERSION = "26.825.31414"
-NODE_REPL_TRUSTED_SERVICES = '{"browser":"/Users/rafa.gomez/.codex/plugins/cache/openai-bundled/browser/26.825.31414/scripts/browser-service.mjs","sky":"@oai/sky/service"}'
+BROWSER_USE_CODEX_APP_VERSION = "26.901.51231"
+NODE_REPL_TRUSTED_SERVICES = '{"browser":"/Users/rafa.gomez/.codex/plugins/cache/openai-bundled/browser/26.901.51231/scripts/browser-service.mjs","sky":"@oai/sky/service"}'
+SKY_CUA_SERVICE_PATH = "/Users/rafa.gomez/.codex/computer-use/Codex Computer Use.app"
 CODEX_CLI_PATH = "/Applications/ChatGPT.app/Contents/Resources/codex"
 
 [mcp_servers.computer-use]
 command = "./Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient"
 args = ["mcp"]
 cwd = "."
-enabled = false
-
-[mcp_servers.cua_repl]
-command = "/Applications/ChatGPT.app/Contents/MacOS/ChatGPT"
 enabled = false
 
 [shell_environment_policy.set]
