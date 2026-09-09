@@ -1,2 +1,3 @@
 theme = system
 switcher-delay-ms = 80
+include-apps = com.bitwarden.desktop, pl.maketheweb.cleanshotx
