@@ -5,6 +5,7 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ll="eza -l --icons --group-directories-first"
 alias la="eza -la --icons --group-directories-first"
+alias tree="eza --tree --level=4 --color=always --icons=always --git-ignore --group-directories-first"
 
 # Jumps
 alias ~="cd ~"
