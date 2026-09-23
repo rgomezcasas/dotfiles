@@ -35,7 +35,7 @@ skillLinksIn ".claude/skills"
   ".claude/statusline-command.sh".source =
     symlink "${dotfilesPath}/config/editors/claude-code/statusline-command.sh";
   ".codex/AGENTS.md".source = symlink "${dotfilesPath}/config/agents/GLOBAL_AGENTS.md";
-  ".codex/config.toml".source = symlink "${dotfilesPath}/config/editors/codex/config.toml";
+  ".codex/config.toml".source = symlink "${dotfilesPath}/modules/private/codex/config.toml";
   ".config/cmux/cmux.json".source = symlink "${dotfilesPath}/config/macos/cmux/cmux.json";
   ".config/codely/switchly/config".source = symlink "${dotfilesPath}/config/macos/switchly/config";
   ".config/ghostty".source = symlink "${dotfilesPath}/config/macos/ghostty";
