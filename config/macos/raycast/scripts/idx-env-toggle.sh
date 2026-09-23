@@ -22,6 +22,9 @@ npmrc_original="$npmrc.original"
 
 globalprotect_agents=(/Library/LaunchAgents/com.paloaltonetworks.gp.pangp*.plist)
 
+avg_hub="/Applications/AVGAntivirus.app/Contents/Backend/hub"
+avg_user_agent="gui/$(id -u)/com.avg.userinit"
+
 notify() {
 	osascript -e "display notification \"$2\" with title \"$1\"" >/dev/null 2>&1
 }
@@ -94,6 +97,59 @@ unload_globalprotect_agents() {
 		globalprotect_agent_loaded "$agent" && { launchctl unload "$agent" || return 1; }
 	done
 	return 0
+}
+
+run_as_admin() {
+	local result
+	result=$(osascript - "$1" "$2" 2>/dev/null <<'APPLESCRIPT'
+on run argv
+	try
+		do shell script (item 1 of argv) with prompt (item 2 of argv) with administrator privileges
+	on error number errorNumber
+		if errorNumber is -128 then return "cancelled"
+		return "failed"
+	end try
+	return "done"
+end run
+APPLESCRIPT
+)
+
+	case "$result" in
+	done) return 0 ;;
+	cancelled) return 2 ;;
+	*) return 1 ;;
+	esac
+}
+
+start_avg() {
+	[[ -d "$avg_hub" ]] || return 0
+
+	run_as_admin "launchctl enable system/com.avg.init && '$avg_hub/init.sh' >/dev/null 2>&1" \
+		"The IDX environment needs to start AVG." || return
+
+	launchctl enable "$avg_user_agent"
+	"$avg_hub/userinit.sh" start >/dev/null 2>&1
+}
+
+stop_avg() {
+	[[ -d "$avg_hub" ]] || return 0
+
+	run_as_admin "launchctl disable system/com.avg.init; status=0; for module in \$(ls -r '$avg_hub/modules'); do '$avg_hub/modules/'\$module stop >/dev/null 2>&1 || status=1; done; exit \$status" \
+		"The IDX environment needs to stop AVG."
+	local admin_status=$?
+	(( admin_status == 2 )) && return 2
+
+	launchctl disable "$avg_user_agent"
+	"$avg_hub/userinit.sh" stop >/dev/null 2>&1
+
+	return $admin_status
+}
+
+abort_if_cancelled() {
+	if (( $1 == 2 )); then
+		notify "IDX environment unchanged" "Password prompt cancelled"
+		exit 1
+	fi
 }
 
 wait_for_globalprotect() {
@@ -190,6 +246,12 @@ APPLESCRIPT
 }
 
 if grep -q '^source "\$DOTFILES_PATH/modules/private/shell/idx\.sh"$' "$zshrc"; then
+	avg_warning=""
+	stop_avg
+	avg_status=$?
+	abort_if_cancelled "$avg_status"
+	(( avg_status == 0 )) || avg_warning=", AVG still running"
+
 	for file in "${rc_files[@]}"; do
 		rewrite_file "$file" comment_idx_source
 		rewrite_file "$file" comment_aidevtracker_source
@@ -199,11 +261,19 @@ if grep -q '^source "\$DOTFILES_PATH/modules/private/shell/idx\.sh"$' "$zshrc"; 
 	swap_npmrc "$npmrc_original" "$npmrc_idx" || npmrc_warning=", npmrc unchanged"
 
 	if unload_globalprotect_agents; then
-		notify "IDX environment disabled" "GlobalProtect closed$npmrc_warning"
+		globalprotect_result="GlobalProtect closed"
 	else
-		notify "IDX environment disabled" "Could not close GlobalProtect$npmrc_warning"
+		globalprotect_result="Could not close GlobalProtect"
 	fi
+
+	notify "IDX environment disabled" "$globalprotect_result$avg_warning$npmrc_warning"
 else
+	avg_warning=""
+	start_avg
+	avg_status=$?
+	abort_if_cancelled "$avg_status"
+	(( avg_status == 0 )) || avg_warning=", AVG not started"
+
 	for file in "${rc_files[@]}"; do
 		rewrite_file "$file" uncomment_idx_source
 		rewrite_file "$file" uncomment_aidevtracker_source
@@ -213,10 +283,10 @@ else
 	swap_npmrc "$npmrc_idx" "$npmrc_original" || npmrc_warning=", npmrc unchanged"
 
 	if ! load_globalprotect_agents; then
-		notify "IDX environment enabled" "Could not start GlobalProtect$npmrc_warning"
+		notify "IDX environment enabled" "Could not start GlobalProtect$avg_warning$npmrc_warning"
 	elif vpn_control "Connect"; then
-		notify "IDX environment enabled" "GlobalProtect is connecting$npmrc_warning"
+		notify "IDX environment enabled" "GlobalProtect is connecting$avg_warning$npmrc_warning"
 	else
-		notify "IDX environment enabled" "Connect GlobalProtect manually$npmrc_warning"
+		notify "IDX environment enabled" "Connect GlobalProtect manually$avg_warning$npmrc_warning"
 	fi
 fi
