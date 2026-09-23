@@ -97,8 +97,6 @@ unload_globalprotect_agents() {
 }
 
 wait_for_globalprotect() {
-	open -a GlobalProtect || return 1
-
 	local attempt
 	for attempt in {1..20}; do
 		if osascript -e 'tell application "System Events" to exists process "GlobalProtect"' 2>/dev/null | grep -q true; then
