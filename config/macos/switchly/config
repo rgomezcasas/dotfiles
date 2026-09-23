@@ -1,10 +1,10 @@
-theme = elegant
+theme = macOS
 switcher-delay-ms = 80
 include-apps = com.bitwarden.desktop, pl.maketheweb.cleanshotx
-layout = vertical
+layout = horizontal
 mouse-selection = false
 window-previews = false
-stack-windows = false
-appearance = system
+stack-windows = true
+appearance = light
 screens = all
 type-to-filter = true
