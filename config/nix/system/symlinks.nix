@@ -6,8 +6,24 @@ let
   # effect immediately without a home-manager rebuild. A rebuild is only needed
   # when adding, removing, or repointing a symlink entry below.
   symlink = config.lib.file.mkOutOfStoreSymlink;
+
+  skillsPath = "${dotfilesPath}/config/agents/global_skills";
+  skillEntries = builtins.readDir ../../agents/global_skills;
+  skillNames = builtins.filter (name: skillEntries.${name} == "directory" && name != "synced") (
+    builtins.attrNames skillEntries
+  );
+  skillLinksIn =
+    skillsDir:
+    builtins.listToAttrs (
+      map (name: {
+        name = "${skillsDir}/${name}";
+        value.source = symlink "${skillsPath}/${name}";
+      }) skillNames
+    );
 in
-{
+skillLinksIn ".claude/skills"
+// skillLinksIn ".agents/skills"
+// {
   ".bash_profile".source = symlink "${dotfilesPath}/config/shell/bash/.bash_profile";
   ".bashrc".source = symlink "${dotfilesPath}/config/shell/bash/.bashrc";
   ".claude.json".source = symlink "${dotfilesPath}/modules/private/claude/.claude.json";
@@ -16,10 +32,8 @@ in
     symlink "${dotfilesPath}/config/editors/claude-code/keybindings.json";
   ".claude/output-styles".source = symlink "${dotfilesPath}/config/editors/claude-code/output-styles";
   ".claude/settings.json".source = symlink "${dotfilesPath}/config/editors/claude-code/settings.json";
-  ".claude/skills".source = symlink "${dotfilesPath}/config/agents/global_skills";
   ".claude/statusline-command.sh".source =
     symlink "${dotfilesPath}/config/editors/claude-code/statusline-command.sh";
-  ".agents/skills".source = symlink "${dotfilesPath}/config/agents/global_skills";
   ".codex/AGENTS.md".source = symlink "${dotfilesPath}/config/agents/GLOBAL_AGENTS.md";
   ".codex/config.toml".source = symlink "${dotfilesPath}/config/editors/codex/config.toml";
   ".config/cmux/cmux.json".source = symlink "${dotfilesPath}/config/macos/cmux/cmux.json";

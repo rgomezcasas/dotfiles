@@ -22,6 +22,7 @@ Almost every file under `config/` (shell, editors, macos, git, agents) is symlin
 Special cases:
 
 - `karabiner.edn` → run `goku` (never edit `karabiner.json`)
+- `config/agents/global_skills/` → each skill directory is linked one by one into `~/.claude/skills` and `~/.agents/skills`, so adding or removing a skill needs `git add` + `rebuild`; editing an existing skill does not
 - Shell config (aliases, functions, zshrc) → only affects new shell sessions
 
 ## Git
