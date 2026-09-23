@@ -20,6 +20,8 @@ npmrc="$HOME/.npmrc"
 npmrc_idx="$npmrc.idx"
 npmrc_original="$npmrc.original"
 
+globalprotect_agents=(/Library/LaunchAgents/com.paloaltonetworks.gp.pangp*.plist)
+
 notify() {
 	osascript -e "display notification \"$2\" with title \"$1\"" >/dev/null 2>&1
 }
@@ -73,6 +75,25 @@ swap_npmrc() {
 
 	mv "$npmrc" "$outgoing" || return 1
 	mv "$incoming" "$npmrc" || return 1
+}
+
+globalprotect_agent_loaded() {
+	launchctl print "gui/$(id -u)/$(basename "$1" .plist)" >/dev/null 2>&1
+}
+
+load_globalprotect_agents() {
+	local agent
+	for agent in "${globalprotect_agents[@]}"; do
+		globalprotect_agent_loaded "$agent" || launchctl load "$agent" || return 1
+	done
+}
+
+unload_globalprotect_agents() {
+	local agent
+	for agent in "${globalprotect_agents[@]}"; do
+		globalprotect_agent_loaded "$agent" && { launchctl unload "$agent" || return 1; }
+	done
+	return 0
 }
 
 wait_for_globalprotect() {
@@ -179,10 +200,10 @@ if grep -q '^source "\$DOTFILES_PATH/modules/private/shell/idx\.sh"$' "$zshrc"; 
 	npmrc_warning=""
 	swap_npmrc "$npmrc_original" "$npmrc_idx" || npmrc_warning=", npmrc unchanged"
 
-	if vpn_control "Disconnect"; then
-		notify "IDX environment disabled" "GlobalProtect is disconnecting$npmrc_warning"
+	if unload_globalprotect_agents; then
+		notify "IDX environment disabled" "GlobalProtect closed$npmrc_warning"
 	else
-		notify "IDX environment disabled" "Disconnect GlobalProtect manually$npmrc_warning"
+		notify "IDX environment disabled" "Could not close GlobalProtect$npmrc_warning"
 	fi
 else
 	for file in "${rc_files[@]}"; do
@@ -193,7 +214,9 @@ else
 	npmrc_warning=""
 	swap_npmrc "$npmrc_idx" "$npmrc_original" || npmrc_warning=", npmrc unchanged"
 
-	if vpn_control "Connect"; then
+	if ! load_globalprotect_agents; then
+		notify "IDX environment enabled" "Could not start GlobalProtect$npmrc_warning"
+	elif vpn_control "Connect"; then
 		notify "IDX environment enabled" "GlobalProtect is connecting$npmrc_warning"
 	else
 		notify "IDX environment enabled" "Connect GlobalProtect manually$npmrc_warning"
