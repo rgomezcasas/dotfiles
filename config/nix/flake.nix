@@ -7,7 +7,7 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
     nix-homebrew.inputs.brew-src = {
-      url = "github:Homebrew/brew/6.0.14";
+      url = "github:Homebrew/brew/7.0.1";
       flake = false;
     };
     home-manager = {
