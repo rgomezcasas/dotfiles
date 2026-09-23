@@ -13,7 +13,6 @@
   :Claude         ["com.anthropic.claudefordesktop"]
   :Cmux           ["com.cmuxterm.app"]
   :ChatGPT        ["com.openai.codex"]
-  :Contexts       ["com.contextsformac.Contexts"]
   :Dia            ["company.thebrowser.dia"]
   :Finder         ["com.apple.finder"]
   :Gather         ["com.gather.Gather"]
@@ -100,7 +99,7 @@
             [:!IntelliJ :!VSCode :!GuitarPro]]
            [:line-delete                                        ; Delete line
             [:!Cright_arrow :!Cdelete_or_backspace :delete_or_backspace]
-            [:!IntelliJ :!Notion :!Finder :!Contexts]]]}
+            [:!IntelliJ :!Notion :!Finder]]]}
 
   {:des   "[Util] Window management"
    :rules [[:clipboard-history [:!CTO0]]                        ; Clipboard history

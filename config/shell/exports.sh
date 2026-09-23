@@ -80,7 +80,6 @@ _path_candidates=(
   "/Applications/Ghostty.app/Contents/MacOS"
   "$HOME/.opencode/bin"
   "$HOME/.cargo/bin"
-  "$HOME/.orbstack/bin"
   "$HOME/Library/pnpm"
   "$HOME/.local/bin"
   "$HOMEBREW_PREFIX/bin"
