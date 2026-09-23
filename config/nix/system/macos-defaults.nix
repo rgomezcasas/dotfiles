@@ -126,6 +126,13 @@
     warnBeforeQuitShortcut = 0;
     workspaceAutoReorderOnNotification = 0;
   };
+  CustomUserPreferences."com.unpeel.native" = {
+    frame_background_opacity = 0;
+    terminal_background_opacity = 0.25;
+    terminal_font_family = "DankMono Nerd Font";
+    terminal_font_size = 16;
+    "unpeel.native.appTint" = "none";
+  };
   CustomUserPreferences.NSGlobalDomain.NSMenuEnableActionImages = false;
   CustomUserPreferences.NSGlobalDomain."com.apple.sound.uiaudio.enabled" = false;
   CustomUserPreferences."com.apple.finder".FinderSounds = false;
