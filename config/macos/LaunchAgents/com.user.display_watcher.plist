@@ -3,23 +3,25 @@
 <plist version="1.0">
 	<dict>
 		<key>Label</key>
-		<string>com.user.cron.every_15s</string>
+		<string>com.user.display_watcher</string>
 		<key>ProgramArguments</key>
 		<array>
 			<string>/Users/rafa.gomez/.dotfiles/scripts/system/sdot</string>
-			<string>system</string>
-			<string>cron</string>
+			<string>mac</string>
+			<string>display_watcher</string>
 		</array>
-		<key>StartInterval</key>
-		<integer>15</integer>
 		<key>RunAtLoad</key>
 		<true/>
 		<key>KeepAlive</key>
 		<true/>
+		<key>ThrottleInterval</key>
+		<integer>60</integer>
+		<key>ProcessType</key>
+		<string>Background</string>
 		<key>StandardErrorPath</key>
-		<string>/Users/rafa.gomez/Library/Logs/cron.every_15s.error.log</string>
+		<string>/Users/rafa.gomez/Library/Logs/display_watcher.error.log</string>
 		<key>StandardOutPath</key>
-		<string>/Users/rafa.gomez/Library/Logs/cron.every_15s.out.log</string>
+		<string>/Users/rafa.gomez/Library/Logs/display_watcher.out.log</string>
 		<key>EnvironmentVariables</key>
 		<dict>
 			<key>PATH</key>

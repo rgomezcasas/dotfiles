@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTLY_PATH/scripts/core/_main.sh"
+
+##? Watch display changes and sync the menu bar visibility on each connect or disconnect
+#?? 1.0.0
+##?
+##? Usage:
+##?   display_watcher
+docs::parse "$@"
+
+source_file="$DOTFILES_PATH/config/macos/display-watcher/display_watcher.swift"
+binary_file="$HOME/Library/Caches/com.user.display_watcher/display_watcher"
+
+if [[ ! -x $binary_file || $source_file -nt $binary_file ]]; then
+	mkdir -p "$(dirname "$binary_file")"
+	swiftc -O "$source_file" -o "$binary_file"
+fi
+
+exec "$binary_file"
