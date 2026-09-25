@@ -8,3 +8,5 @@ stack-windows = true
 appearance = system
 screens = all
 type-to-filter = true
+menu-bar-icon = false
+vertical-max-width = 700
