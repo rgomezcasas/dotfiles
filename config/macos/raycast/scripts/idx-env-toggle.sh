@@ -15,6 +15,26 @@ bashrc="$dotfiles_path/config/shell/bash/.bashrc"
 rc_files=("$zshrc" "$bashrc")
 idx_source_pattern='^\(# \)\?source "\$DOTFILES_PATH/modules/private/shell/idx\.sh"$'
 aidevtracker_init="$HOME/.config/inditex/aidevtracker/scripts/init.sh"
+gitconfig="$dotfiles_path/config/git/.gitconfig"
+
+git_ai="$HOME/.config/inditex/aidevtracker/providers/git-ai/current/git-ai"
+git_ai_hook_configs=(
+	"$HOME/.claude/settings.json"
+	"$HOME/.cursor/hooks.json"
+	"$HOME/.gemini/settings.json"
+	"$HOME/.factory/settings.json"
+)
+git_ai_plugins=(
+	"$HOME/.copilot/hooks/git-ai.json"
+	"$HOME/.config/amp/plugins/git-ai.ts"
+	"$HOME/.config/opencode/plugins/git-ai.ts"
+)
+git_ai_hooks_filter='
+	walk(if type == "array" then
+		map(select(((.command? // "") | tostring | contains("git-ai")) | not) | select((.hooks? // null) != []))
+	else . end)
+	| if (.hooks | type) == "object" then .hooks |= with_entries(select(.value != [])) else . end
+'
 
 npmrc="$HOME/.npmrc"
 npmrc_idx="$npmrc.idx"
@@ -66,6 +86,25 @@ uncomment_aidevtracker_source() {
 
 comment_aidevtracker_source() {
 	sed 's|^\(source "'"$aidevtracker_init"'"\)$|# \1|' "$1"
+}
+
+strip_git_ai_hooks() {
+	jq "$git_ai_hooks_filter" "$1"
+}
+
+disable_git_ai() {
+	[[ -x "$git_ai" ]] && "$git_ai" bg shutdown >/dev/null 2>&1
+
+	local file
+	for file in "${git_ai_hook_configs[@]}"; do
+		[[ -f "$file" ]] && grep -q "git-ai" "$file" && rewrite_file "$file" strip_git_ai_hooks
+	done
+
+	rm -f "${git_ai_plugins[@]}"
+
+	if git config --file "$gitconfig" --get trace2.eventTarget | grep -q "git-ai"; then
+		git config --file "$gitconfig" --remove-section trace2
+	fi
 }
 
 swap_npmrc() {
@@ -256,6 +295,8 @@ if grep -q '^source "\$DOTFILES_PATH/modules/private/shell/idx\.sh"$' "$zshrc"; 
 		rewrite_file "$file" comment_idx_source
 		rewrite_file "$file" comment_aidevtracker_source
 	done
+
+	disable_git_ai
 
 	npmrc_warning=""
 	swap_npmrc "$npmrc_original" "$npmrc_idx" || npmrc_warning=", npmrc unchanged"
