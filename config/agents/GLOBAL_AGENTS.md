@@ -6,6 +6,7 @@
 - Use inclusive terms: allowlist/blocklist, primary/replica
 - If I send you a Twitter link and you can’t access it, replace x.com with nitter.net so you can open it.
 - If you can't access to another web, use `cmux browser`
+- To copy files or directories, use macOS native `/bin/cp -c` (APFS clone) instead of the `cp` in `PATH` (GNU coreutils)
 
 # Preview
 
