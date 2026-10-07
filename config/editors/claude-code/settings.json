@@ -72,6 +72,7 @@
     ],
     "defaultMode": "auto"
   },
+  "model": "opus",
   "fallbackModel": [
     "default"
   ],
@@ -170,6 +171,9 @@
       "effortLevel": "low"
     },
     "claude-opus-5-5": {
+      "effortLevel": "medium"
+    },
+    "claude-sonnet-5-5": {
       "effortLevel": "medium"
     }
   },
