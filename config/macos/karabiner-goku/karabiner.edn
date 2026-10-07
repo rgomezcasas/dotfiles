@@ -22,6 +22,7 @@
   :Keynote        ["com.apple.Keynote"]
   :Notes          ["com.apple.Notes"]
   :Notion         ["notion.id"]
+  :Search   ["com.officecommun.search"]
   :Orion          ["com.kagi.kagimacOS"]
   :PersonalNotion ["com.apple.Safari.WebApp.5201A944-EF60-472C-80BB-F173D751027E"]
   :Raycast        ["com.raycast.macos"]
@@ -143,7 +144,7 @@
 
   {:des   "[Claude] Shortcuts"
    :rules [:Claude
-           [:sidebar-primary-toggle :!Cperiod]              ; Toggle sidebar
+           [:sidebar-primary-toggle :!Cb]                   ; Toggle sidebar
            [:!C4 :!CSb]                                     ; cmd+4 as cmd+shift+b
            [:!Tm :!CSi]                                     ; ctrl+m as cmd+shift+i
            [:!Te :!CSe]                                     ; ctrl+e as cmd+shift+e
@@ -219,6 +220,10 @@
            [:selection-shrink :!Sdown_arrow]      ; Shrink selection
            [:change-current-page :!Cp]            ; Cmd+L -> Cmd+P (search)
            [:!Co :!Creturn_or_enter]]}            ; Open current page
+
+  {:des   "[Search] Shortcuts"
+   :rules [:Search
+           [:sidebar-primary-toggle :!Cs]]} ; Toggle sidebar
 
   {:des   "[Raycast] Shortcuts"
    :rules [:Raycast
