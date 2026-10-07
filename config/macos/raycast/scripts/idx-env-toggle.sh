@@ -88,6 +88,10 @@ comment_aidevtracker_source() {
 	sed 's|^\(source "'"$aidevtracker_init"'"\)$|# \1|' "$1"
 }
 
+strip_aicontext_completion() {
+	sed '/^# >>> aicontext completion >>>$/,/^# <<< aicontext completion <<<$/d' "$1"
+}
+
 strip_git_ai_hooks() {
 	jq "$git_ai_hooks_filter" "$1"
 }
@@ -294,6 +298,7 @@ if grep -q '^source "\$DOTFILES_PATH/modules/private/shell/idx\.sh"$' "$zshrc"; 
 	for file in "${rc_files[@]}"; do
 		rewrite_file "$file" comment_idx_source
 		rewrite_file "$file" comment_aidevtracker_source
+		rewrite_file "$file" strip_aicontext_completion
 	done
 
 	disable_git_ai
