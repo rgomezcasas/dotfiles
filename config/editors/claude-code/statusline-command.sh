@@ -20,6 +20,7 @@ limit_5h=$(echo "$input" | jq -r '.rate_limits.five_hour.used_percentage // empt
 limit_5h_reset=$(echo "$input" | jq -r '.rate_limits.five_hour.resets_at // empty')
 limit_7d=$(echo "$input" | jq -r '.rate_limits.seven_day.used_percentage // empty')
 limit_7d_reset=$(echo "$input" | jq -r '.rate_limits.seven_day.resets_at // empty')
+fast_mode=$(echo "$input" | jq -r '.fast_mode // false')
 cache_hit_ratio=$(echo "$input" | jq -r '.prompt_cache.hit_ratio // empty')
 cache_expires_at=$(echo "$input" | jq -r '.prompt_cache.expires_at // empty')
 cache_ttl_label=$(echo "$input" | jq -r '.prompt_cache.ttl // empty')
@@ -420,6 +421,7 @@ MSEP=" ${GRAY}∘${RESET} "
 
 _branding_unused="${TEXT}<${GREEN}${RESET}${TEXT}>${RESET}"
 line="${GREEN}${model_name}${RESET}"
+[[ "$fast_mode" == "true" ]] && line+=" ${ACCENT}⚡${RESET}"
 if [[ -n "$effort_level" ]]; then
   if [[ "$effort_level" == "xhigh" ]]; then
     if [[ "$theme" == "light" ]]; then
@@ -466,12 +468,12 @@ if [[ -n "$limit_7d_str" ]]; then
 fi
 
 # Display width of a rendered segment: strip the literal \033[…m color codes,
-# then count the East-Asian-ambiguous glyphs this line emits (█ ∘ ⎮ ↑ ↓) as 2
-# columns, since this terminal renders them wide and they would otherwise overflow.
+# then count the wide or East-Asian-ambiguous glyphs this line emits (█ ∘ ⎮ ↑ ↓ ⚡)
+# as 2 columns, since this terminal renders them wide and they would otherwise overflow.
 visible_len() {
   local stripped narrow
   stripped=$(printf '%s' "$1" | sed -E 's/\\033\[[0-9;]*m//g')
-  narrow=${stripped//[█∘⎮↑↓]/}
+  narrow=${stripped//[█∘⎮↑↓⚡]/}
   printf '%s' "$(( 2 * ${#stripped} - ${#narrow} ))"
 }
 
