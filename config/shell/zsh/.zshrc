@@ -29,6 +29,9 @@ setopt EXTENDED_HISTORY
 setopt HIST_FCNTL_LOCK
 setopt HIST_NO_STORE
 
+## Redirection
+setopt APPEND_CREATE
+
 ## Autocd
 setopt +o nomatch
 # setopt autopushd
