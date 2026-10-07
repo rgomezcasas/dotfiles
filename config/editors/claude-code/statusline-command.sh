@@ -20,6 +20,10 @@ limit_5h=$(echo "$input" | jq -r '.rate_limits.five_hour.used_percentage // empt
 limit_5h_reset=$(echo "$input" | jq -r '.rate_limits.five_hour.resets_at // empty')
 limit_7d=$(echo "$input" | jq -r '.rate_limits.seven_day.used_percentage // empty')
 limit_7d_reset=$(echo "$input" | jq -r '.rate_limits.seven_day.resets_at // empty')
+cache_hit_ratio=$(echo "$input" | jq -r '.prompt_cache.hit_ratio // empty')
+cache_expires_at=$(echo "$input" | jq -r '.prompt_cache.expires_at // empty')
+cache_ttl_label=$(echo "$input" | jq -r '.prompt_cache.ttl // empty')
+cache_miss_cause=$(echo "$input" | jq -r '.prompt_cache.last_miss_cause // empty')
 
 model_family=""
 case "$model" in
@@ -59,7 +63,9 @@ cache_read_str=$(format_tokens "$cache_read")
 cache_write_str=$(format_tokens "$cache_write")
 
 cache_total=$(( cache_read + cache_write ))
-if (( cache_total > 0 )); then
+if [[ "$cache_hit_ratio" =~ ^[0-9.]+$ ]]; then
+  cache_read_pct=$(printf '%.0f' "$(echo "$cache_hit_ratio * 100" | bc -l)")
+elif (( cache_total > 0 )); then
   cache_read_pct=$(( cache_read * 100 / cache_total ))
 else
   cache_read_pct=0
@@ -249,23 +255,31 @@ fi
 # Warn when the next request will miss the prompt cache. State is per-session
 # (parallel Claude Code sessions each keep their own file, keyed by session_id).
 # The session cost only grows when a request completes, so a cost increase means
-# the current model just got cached — commit it and reset the TTL clock. If it
-# differs from the committed value, no request has run since the change, so the
-# next one breaks the cache — but only once a real request has completed
-# (prev_cost > 0), since switching before sending any message has no cache to
-# break. Effort changes keep the cache on current models, so they are ignored.
-# Otherwise count down the 1h TTL.
-cache_ttl=3600
-cache_warn_threshold=300
+# the current model just got cached — commit it. If it differs from the committed
+# value, no request has run since the change, so the next one breaks the cache —
+# but only once a real request has completed (prev_cost > 0), since switching
+# before sending any message has no cache to break. Effort changes keep the cache
+# on current models, so they are ignored. Otherwise count down to the expiry that
+# Claude Code reports in prompt_cache, falling back to a 1h TTL from the last
+# completed turn on versions that do not send it. The warning window scales with
+# the TTL so a 5m cache does not warn for its whole lifetime.
 cache_warning=""
 if [[ -n "$session_id" ]]; then
   if (( turn_completed )); then
     prev_model="$model" prev_cost="$session_cost" commit_time="$now"
   fi
+  cache_expiry=""
+  if [[ "$cache_expires_at" =~ ^[0-9]+$ ]]; then
+    cache_expiry=$cache_expires_at
+  elif [[ -n "$commit_time" ]]; then
+    cache_expiry=$(( commit_time + 3600 ))
+  fi
+  cache_warn_threshold=300
+  [[ "$cache_ttl_label" == "5m" ]] && cache_warn_threshold=60
   if [[ "$model" != "$prev_model" ]] && (( $(echo "$prev_cost > 0" | bc -l) )); then
     cache_warning="You've changed model so cache is gonna break"
-  elif [[ -n "$commit_time" ]]; then
-    remaining=$(( cache_ttl - (now - commit_time) ))
+  elif [[ -n "$cache_expiry" ]]; then
+    remaining=$(( cache_expiry - now ))
     (( remaining > 0 && remaining < cache_warn_threshold )) && \
       cache_warning=$(printf '%d:%02d remaining to use cache' $(( remaining / 60 )) $(( remaining % 60 )))
   fi
@@ -431,6 +445,7 @@ line+="${SEP}${bar}"
 if (( cache_total > 0 && cache_read_pct < 80 )); then
   cache_seg="${ACCENT}↑${RESET} ${TEXT}${cache_write_str}${RESET}${MSEP}${GREEN}↓${RESET} ${TEXT}${cache_read_str}${RESET}"
   cache_seg+="${MSEP}${RED}${cache_ratio_str}${RESET}"
+  [[ -n "$cache_miss_cause" ]] && cache_seg+=" ${GRAY}(${cache_miss_cause//_/ })${RESET}"
   line+="${SEP}${cache_seg}"
 fi
 line+="${SEP}${ACCENT}${session_cost_str}${RESET}${MSEP}${TEXT}${daily_cost_str} today${RESET}"
