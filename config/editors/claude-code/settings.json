@@ -232,7 +232,7 @@
   "preferredNotifChannel": "ghostty",
   "autoScrollEnabled": true,
   "fileCheckpointingEnabled": true,
-  "remoteControlAtStartup": false,
+  "remoteControlAtStartup": true,
   "inputNeededNotifEnabled": true,
   "agentPushNotifEnabled": true,
   "skipAutoPermissionPrompt": true,
