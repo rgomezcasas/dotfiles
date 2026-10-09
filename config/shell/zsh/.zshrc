@@ -54,6 +54,7 @@ autoload -Uz -- coalesce git-action git-info
 source "$ZIM_HOME/modules/zsh-defer/zsh-defer.plugin.zsh"
 zsh-defer source "$ZIM_HOME/modules/completion/init.zsh"
 source "$ZIM_HOME/modules/environment/init.zsh"
+setopt CLOBBER
 zsh-defer source "$ZIM_HOME/modules/input/init.zsh"
 zsh-defer source "$ZIM_HOME/modules/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
