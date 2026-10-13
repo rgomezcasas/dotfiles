@@ -50,6 +50,7 @@
     "microsoft-teams"
     "notion"
     "obs"
+    "quicklook-video"
     "raycast"
     "slack"
     "stremio"
