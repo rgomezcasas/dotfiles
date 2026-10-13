@@ -41,7 +41,7 @@ alias o.='open .'
 # Claude code
 alias cc="dot claude cc"
 alias ccw="gpl && cc --worktree"
-alias commit="cc /global-commit"
+alias commit="cc 'haz commit de los cambios. si son diversos haz diversos commits'"
 alias ccupdate="claude update"
 alias ccusa='npx ccusage@latest --since $(date -d "30 days ago" +%Y%m%d 2>/dev/null || date -v-30d +%Y%m%d)'
 
