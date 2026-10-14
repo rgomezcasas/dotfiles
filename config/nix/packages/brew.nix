@@ -17,7 +17,6 @@
   casks = [
     "adobe-creative-cloud"
     "arc"
-    "augani/dory/dory"
     "avg-antivirus"
     "bettermouse"
     "bitwarden"
@@ -50,6 +49,7 @@
     "microsoft-teams"
     "notion"
     "obs"
+    "orbstack"
     "quicklook-video"
     "raycast"
     "slack"
