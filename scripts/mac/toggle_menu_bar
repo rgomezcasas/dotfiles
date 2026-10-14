@@ -5,7 +5,7 @@ set -euo pipefail
 source "$DOTLY_PATH/scripts/core/_main.sh"
 
 ##? Ensure menu bar is visible only when there is one screen.
-#?? 1.1.0
+#?? 1.2.0
 ##?
 ##? Usage:
 ##?   sync_menu_bar_visibility
@@ -19,8 +19,14 @@ function is_menu_bar_hidden() {
 	defaults read NSGlobalDomain _HIHideMenuBar
 }
 
-function toggle_menu_bar() {
-	open -g "raycast://extensions/iamyeizi/toggle-menu-bar/toggle"
+function set_menu_bar_hidden() {
+	local hidden=$1
+	local visible_in_fullscreen=$((1 - hidden))
+	local autohide
+	autohide=$([[ $hidden -eq 1 ]] && echo "true" || echo "false")
+
+	defaults write NSGlobalDomain AppleMenuBarVisibleInFullscreen -int "$visible_in_fullscreen"
+	osascript -e "tell application \"System Events\" to set autohide menu bar of dock preferences to $autohide"
 }
 
 monitors_file="$HOME/.dotly__total_monitors"
@@ -42,5 +48,5 @@ is_menu_bar_hidden=$(is_menu_bar_hidden)
 should_be_hidden=$((total_screens > 1))
 
 if [[ $is_menu_bar_hidden -ne $should_be_hidden ]]; then
-	toggle_menu_bar
+	set_menu_bar_hidden "$should_be_hidden"
 fi
