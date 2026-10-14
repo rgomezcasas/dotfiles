@@ -94,7 +94,6 @@
     "refreshInterval": 1
   },
   "enabledPlugins": {
-    "skill-creator@claude-plugins-official": true,
     "ste100@codely": true,
     "swift-lsp@claude-plugins-official": false,
     "ts7-lsp@codely": true,
