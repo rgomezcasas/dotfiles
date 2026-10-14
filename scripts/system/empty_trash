@@ -133,9 +133,6 @@ echo '🐳  Docker data, cache & models cleared'
 rm -rf ~/Library/Group\ Containers/HUAQ24HBR6.dev.orbstack/data/ 2>/dev/null || true
 echo '🌀  OrbStack data cleared'
 
-rm -rf ~/.ollama/models/ 2>/dev/null || true
-echo '🤖  Ollama models removed'
-
 nix-collect-garbage -d
 echo '❄️  Nix store cleaned'
 

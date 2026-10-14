@@ -31,7 +31,6 @@ with pkgs;
   mitmproxy
   nixfmt
   nvd
-  ollama
   pipx
   (python313.withPackages (ps: [ ps.pip ]))
   ripgrep
