@@ -5,11 +5,14 @@ set -euo pipefail
 source "$DOTLY_PATH/scripts/core/_main.sh"
 
 ##? Show my list of programming jokes grouped by tier (1 is the best)
-#?? 1.0.0
+#?? 1.1.0
 ##?
 ##? Usage:
-##?   chistes
+##?   chistes [--random]
 ##?   chistes -h | --help
+##?
+##? Options:
+##?   --random  Show a single random joke with its tier
 
 docs::parse "$@"
 
@@ -70,6 +73,20 @@ jokes() {
 3 Mi contraseña es «incorrecta». Así, cuando la olvido, el ordenador me la dice: «Su contraseña es incorrecta».
 JOKES
 }
+
+if [[ $random == true ]]; then
+	jokes | awk -v seed="$RANDOM" '{ lines[NR] = $0 } END {
+    srand(seed)
+    line = lines[int(rand() * NR) + 1]
+    tier = line
+    sub(/ .*/, "", tier)
+    sub(/^[0-9]+ /, "", line)
+    print line
+    print ""
+    print "Tier " tier
+  }'
+	exit
+fi
 
 jokes | sort -s -n -k1,1 | awk '
   {
