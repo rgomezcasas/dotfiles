@@ -65,6 +65,7 @@ export EDITOR="idea -e --wait"
 
 _path_candidates=(
   "$HOME/bin"
+  "$DOTFILES_PATH/bin"
   "$DOTLY_PATH/bin"
   "$HOME/.cache/npm/global/bin"
   "$HOME/.nix-profile/bin"

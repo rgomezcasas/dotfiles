@@ -1,0 +1,327 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+if [[ ${1:-} != "-h" || ${3:-} != ":" ]]; then
+	echo "Usage: docpars -h <docstring> : [<args>...]" >&2
+	exit 2
+fi
+
+doc="$2"
+shift 3
+argv=("$@")
+
+usage_lines=()
+option_lines=()
+in_usage=false
+
+while IFS= read -r line; do
+	if [[ $line =~ ^[[:space:]]*[Uu]sage:(.*)$ ]]; then
+		in_usage=true
+		[[ -n ${BASH_REMATCH[1]// /} ]] && usage_lines+=("${BASH_REMATCH[1]}")
+		continue
+	fi
+
+	if $in_usage; then
+		if [[ -z ${line//[[:space:]]/} || $line =~ ^[^[:space:]].*:[[:space:]]*$ ]]; then
+			in_usage=false
+		else
+			usage_lines+=("$line")
+			continue
+		fi
+	fi
+
+	[[ $line =~ ^[[:space:]]*- ]] && option_lines+=("$line")
+done <<<"$doc"
+
+alias_from=()
+alias_to=()
+
+for line in ${option_lines[@]+"${option_lines[@]}"}; do
+	spec="${line#"${line%%[![:space:]]*}"}"
+	spec="${spec%%  *}"
+	spec="${spec//,/ }"
+	read -ra flags <<<"$spec"
+	canonical=""
+	for flag in "${flags[@]}"; do
+		[[ $flag == --* ]] && canonical="$flag" && break
+	done
+	[[ -z $canonical ]] && canonical="${flags[0]}"
+	for flag in "${flags[@]}"; do
+		[[ $flag == -* ]] && alias_from+=("$flag") && alias_to+=("$canonical")
+	done
+done
+
+canonical_option() {
+	local i
+	for i in "${!alias_from[@]}"; do
+		[[ ${alias_from[$i]} == "$1" ]] && echo "${alias_to[$i]}" && return
+	done
+	echo "$1"
+}
+
+var_name() {
+	local name="$1"
+	case "$name" in
+	--*) name="${name#--}" ;;
+	-*) name="_${name#-}" ;;
+	"<"*">") name="${name#<}" && name="${name%>}" ;;
+	esac
+	echo "${name//[^A-Za-z0-9_]/_}"
+}
+
+registry_names=()
+registry_kinds=()
+
+register() {
+	local name="$1" kind="$2" i
+	for i in "${!registry_names[@]}"; do
+		if [[ ${registry_names[$i]} == "$name" ]]; then
+			[[ $kind == "list" ]] && registry_kinds[i]="list"
+			return 0
+		fi
+	done
+	registry_names+=("$name")
+	registry_kinds+=("$kind")
+}
+
+patterns=()
+
+for line in ${usage_lines[@]+"${usage_lines[@]}"}; do
+	spaced="$line"
+	for char in "[" "]" "(" ")" "|"; do
+		spaced="${spaced//"$char"/ $char }"
+	done
+	read -ra tokens <<<"$spaced"
+	tokens=("${tokens[@]:1}")
+
+	alternative=()
+	depth=0
+	optional_depth=()
+	for token in ${tokens[@]+"${tokens[@]}"} "|"; do
+		case "$token" in
+		"|")
+			if [[ $depth -eq 0 ]]; then
+				patterns+=("${alternative[*]-}")
+				alternative=()
+			fi
+			continue
+			;;
+		"[")
+			depth=$((depth + 1))
+			optional_depth+=(1)
+			continue
+			;;
+		"(")
+			depth=$((depth + 1))
+			optional_depth+=(0)
+			continue
+			;;
+		"]" | ")")
+			depth=$((depth - 1))
+			unset 'optional_depth[${#optional_depth[@]}-1]'
+			continue
+			;;
+		"...")
+			last=$((${#alternative[@]} - 1))
+			alternative[last]="${alternative[last]%:*}:1"
+			continue
+			;;
+		esac
+
+		optional=0
+		[[ " ${optional_depth[*]-} " == *" 1 "* ]] && optional=1
+		repeat=0
+		[[ $token == *... ]] && repeat=1 && token="${token%...}"
+
+		if [[ $token == "<"*">" ]]; then
+			kind="arg"
+		elif [[ $token == -* ]]; then
+			kind="opt"
+			token="$(canonical_option "$token")"
+		else
+			kind="cmd"
+		fi
+
+		alternative+=("$kind:$token:$optional:$repeat")
+	done
+done
+
+for pattern in ${patterns[@]+"${patterns[@]}"}; do
+	for element in $pattern; do
+		IFS=: read -r kind name _ repeat <<<"$element"
+		if [[ $kind == "arg" ]]; then
+			if [[ $repeat == 1 ]]; then
+				register "$name" list
+			else
+				register "$name" value
+			fi
+		else
+			register "$name" bool
+		fi
+	done
+done
+
+for canonical in ${alias_to[@]+"${alias_to[@]}"}; do
+	register "$canonical" bool
+done
+
+print_usage() {
+	printf 'Usage:\n' >&2
+	printf '%s\n' ${usage_lines[@]+"${usage_lines[@]}"} >&2
+}
+
+fail() {
+	echo "exit 1"
+	printf '%s\n\n' "$1" >&2
+	print_usage
+	exit 1
+}
+
+given_options=()
+positionals=()
+end_of_options=false
+
+for arg in ${argv[@]+"${argv[@]}"}; do
+	if $end_of_options || [[ $arg != -?* ]]; then
+		positionals+=("$arg")
+	elif [[ $arg == "--" ]]; then
+		end_of_options=true
+	elif [[ $arg == "-h" || $arg == "--help" ]]; then
+		printf "cat <<'DOCPARSEOF'\n%s\nDOCPARSEOF\nexit 0\n" "$doc"
+		exit 0
+	else
+		given_options+=("$(canonical_option "$arg")")
+	fi
+done
+
+for option in ${given_options[@]+"${given_options[@]}"}; do
+	known=false
+	for name in ${registry_names[@]+"${registry_names[@]}"}; do
+		[[ $name == "$option" ]] && known=true && break
+	done
+	$known || fail "Unknown flag: '$option'"
+done
+
+elements=()
+element_starts=()
+element_counts=()
+
+match_positionals() {
+	local index="$1" position="$2"
+	local total="${#positionals[@]}"
+
+	if [[ $index -eq ${#elements[@]} ]]; then
+		[[ $position -eq $total ]]
+		return
+	fi
+
+	local kind name optional repeat
+	IFS=: read -r kind name optional repeat <<<"${elements[$index]}"
+
+	local max=0 min=1 count
+	if [[ $kind == "cmd" ]]; then
+		[[ $position -lt $total && ${positionals[$position]} == "$name" ]] && max=1
+	elif [[ $repeat == 1 ]]; then
+		max=$((total - position))
+	elif [[ $position -lt $total ]]; then
+		max=1
+	fi
+	[[ $optional == 1 ]] && min=0
+
+	for ((count = max; count >= min; count--)); do
+		element_starts[index]="$position"
+		element_counts[index]="$count"
+		match_positionals $((index + 1)) $((position + count)) && return 0
+	done
+
+	return 1
+}
+
+matched_options=()
+
+try_pattern() {
+	local pattern="$1" element kind name optional option found
+	elements=()
+	element_starts=()
+	element_counts=()
+	matched_options=()
+
+	for element in $pattern; do
+		IFS=: read -r kind name optional _ <<<"$element"
+		if [[ $kind == "opt" ]]; then
+			matched_options+=("$name")
+			if [[ $optional == 0 ]]; then
+				found=false
+				for option in ${given_options[@]+"${given_options[@]}"}; do
+					[[ $option == "$name" ]] && found=true
+				done
+				$found || return 1
+			fi
+		else
+			elements+=("$element")
+		fi
+	done
+
+	for option in ${given_options[@]+"${given_options[@]}"}; do
+		found=false
+		for name in ${matched_options[@]+"${matched_options[@]}"}; do
+			[[ $option == "$name" ]] && found=true
+		done
+		$found || return 1
+	done
+
+	match_positionals 0 0
+}
+
+matched=false
+for pattern in ${patterns[@]+"${patterns[@]}"}; do
+	if try_pattern "$pattern"; then
+		matched=true
+		break
+	fi
+done
+
+$matched || fail "Invalid arguments."
+
+quote() {
+	printf "'%s'" "${1//\'/\'\\\'\'}"
+}
+
+value_of() {
+	local name="$1" kind="$2" i j name_i
+
+	if [[ $kind == "bool" ]]; then
+		for option in ${given_options[@]+"${given_options[@]}"}; do
+			[[ $option == "$name" ]] && echo true && return
+		done
+	fi
+
+	for i in "${!elements[@]}"; do
+		IFS=: read -r _ name_i _ _ <<<"${elements[$i]}"
+		[[ $name_i != "$name" || ${element_counts[$i]} -eq 0 ]] && continue
+		case "$kind" in
+		bool) echo true ;;
+		value) quote "${positionals[${element_starts[$i]}]}" ;;
+		list)
+			local items=()
+			for ((j = element_starts[i]; j < element_starts[i] + element_counts[i]; j++)); do
+				items+=("$(quote "${positionals[$j]}")")
+			done
+			echo "(${items[*]})"
+			;;
+		esac
+		return
+	done
+
+	case "$kind" in
+	bool) echo false ;;
+	value) echo "" ;;
+	list) echo "()" ;;
+	esac
+}
+
+for i in "${!registry_names[@]}"; do
+	name="${registry_names[$i]}"
+	printf '%s=%s\n' "$(var_name "$name")" "$(value_of "$name" "${registry_kinds[$i]}")"
+done
