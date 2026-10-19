@@ -44,6 +44,8 @@ globalprotect_agents=(/Library/LaunchAgents/com.paloaltonetworks.gp.pangp*.plist
 
 avg_hub="/Applications/AVGAntivirus.app/Contents/Backend/hub"
 avg_user_agent="gui/$(id -u)/com.avg.userinit"
+avg_hub_agent="com.avg.hub"
+avg_hub_daemons="com.avg.hub.schedule com.avg.hub.xpc"
 
 notify() {
 	osascript -e "display notification \"$2\" with title \"$1\"" >/dev/null 2>&1
@@ -167,8 +169,11 @@ APPLESCRIPT
 start_avg() {
 	[[ -d "$avg_hub" ]] || return 0
 
-	run_as_admin "launchctl enable system/com.avg.init && '$avg_hub/init.sh' >/dev/null 2>&1" \
+	run_as_admin "for job in $avg_hub_daemons; do launchctl enable system/\$job; launchctl bootstrap system /Library/LaunchDaemons/\$job.plist 2>/dev/null; done; launchctl enable system/com.avg.init && '$avg_hub/init.sh' >/dev/null 2>&1" \
 		"The IDX environment needs to start AVG." || return
+
+	launchctl enable "gui/$(id -u)/$avg_hub_agent"
+	launchctl bootstrap "gui/$(id -u)" "/Library/LaunchAgents/$avg_hub_agent.plist" 2>/dev/null
 
 	launchctl enable "$avg_user_agent"
 	"$avg_hub/userinit.sh" start >/dev/null 2>&1
@@ -177,13 +182,16 @@ start_avg() {
 stop_avg() {
 	[[ -d "$avg_hub" ]] || return 0
 
-	run_as_admin "launchctl disable system/com.avg.init; status=0; for module in \$(ls -r '$avg_hub/modules'); do '$avg_hub/modules/'\$module stop >/dev/null 2>&1 || status=1; done; exit \$status" \
+	run_as_admin "launchctl disable system/com.avg.init; status=0; for module in \$(ls -r '$avg_hub/modules'); do '$avg_hub/modules/'\$module stop >/dev/null 2>&1 || status=1; done; for job in $avg_hub_daemons; do launchctl disable system/\$job; launchctl bootout system/\$job 2>/dev/null; done; exit \$status" \
 		"The IDX environment needs to stop AVG."
 	local admin_status=$?
 	(( admin_status == 2 )) && return 2
 
 	launchctl disable "$avg_user_agent"
 	"$avg_hub/userinit.sh" stop >/dev/null 2>&1
+
+	launchctl disable "gui/$(id -u)/$avg_hub_agent"
+	launchctl bootout "gui/$(id -u)/$avg_hub_agent" 2>/dev/null
 
 	return $admin_status
 }
