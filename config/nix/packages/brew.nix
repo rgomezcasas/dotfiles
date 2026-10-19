@@ -24,7 +24,6 @@
     "claude"
     "cleanshot"
     "cloudflare-warp"
-    "cmux"
     "codex"
     "cursor"
     "darrylmorley/whatcable/whatcable"

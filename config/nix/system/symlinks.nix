@@ -8,7 +8,9 @@ let
   symlink = config.lib.file.mkOutOfStoreSymlink;
 
   skillsPath = "${dotfilesPath}/config/agents/global_skills";
-  skillEntries = builtins.readDir ../../agents/global_skills;
+  globalSkillsDir = ../../agents/global_skills;
+  skillEntries =
+    if builtins.pathExists globalSkillsDir then builtins.readDir globalSkillsDir else { };
   skillNames = builtins.filter (name: skillEntries.${name} == "directory" && name != "synced") (
     builtins.attrNames skillEntries
   );
@@ -36,7 +38,6 @@ skillLinksIn ".claude/skills"
     symlink "${dotfilesPath}/config/editors/claude-code/statusline-command.sh";
   ".codex/AGENTS.md".source = symlink "${dotfilesPath}/config/agents/GLOBAL_AGENTS.md";
   ".codex/config.toml".source = symlink "${dotfilesPath}/modules/private/codex/config.toml";
-  ".config/cmux/cmux.json".source = symlink "${dotfilesPath}/config/macos/cmux/cmux.json";
   ".config/codely/switchly/config".source = symlink "${dotfilesPath}/config/macos/switchly/config";
   ".config/ghostty".source = symlink "${dotfilesPath}/config/macos/ghostty";
   ".config/karabiner".source = symlink "${dotfilesPath}/config/macos/karabiner-elements";

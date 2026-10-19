@@ -11,7 +11,6 @@
   :Bitwarden      ["com.bitwarden.desktop"]
   :Chrome         ["com.google.Chrome", "com.google.Chrome.beta"]
   :Claude         ["com.anthropic.claudefordesktop"]
-  :Cmux           ["com.cmuxterm.app"]
   :ChatGPT        ["com.openai.codex"]
   :Dia            ["company.thebrowser.dia"]
   :Finder         ["com.apple.finder"]
@@ -149,10 +148,6 @@
            [:!Tm :!CSi]                                     ; ctrl+m as cmd+shift+i
            [:!Te :!CSe]                                     ; ctrl+e as cmd+shift+e
            [:!TOCSt :!Tgrave_accent_and_tilde]]}            ; hyper+t as ctrl+`
-
-  {:des   "[Cmux] Shortcuts"
-   :rules [:Cmux
-           [:sidebar-primary-toggle :!Cb]]} ; Toggle sidebar
 
   {:des   "[Atlas] Shortcuts"
    :rules [:Atlas

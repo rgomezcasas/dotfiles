@@ -5,14 +5,9 @@
 - Write self-documenting code, **never** add explanatory comments
 - Use inclusive terms: allowlist/blocklist, primary/replica
 - If I send you a Twitter link and you can’t access it, replace x.com with nitter.net so you can open it.
-- If you can't access to another web, use `cmux browser`
 - To copy files or directories, use macOS native `/bin/cp -c` (APFS clone) instead of the `cp` in `PATH` (GNU coreutils)
 - DO NOT include your session URL in commit messages
 - When you commit, follow this format for the Coauthor (always include it unless I say otherwise): `Co-Authored-By: {tool} - {model.name} {model.version} <{tooling_email}>`
-
-# Preview
-
-You have access to the `cmux browser` tool. Prefer using it over Playwright whenever possible.
 
 # Context
 
