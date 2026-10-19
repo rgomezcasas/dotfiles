@@ -120,9 +120,13 @@ Shell startup consistently under 10ms thanks to Zim + `zsh-defer` lazy loading:
 
 ```
 λ ~ dot shell zsh test_performance
-real 0.01s      user 0.00s      sys 0.00s
-real 0.01s      user 0.00s      sys 0.00s
-real 0.01s      user 0.00s      sys 0.00s
+# ZSH startup time
+
+Shell  Version     Median    Stddev       Min       Max  Runs
+macOS  5.9         9.1 ms    4.5 ms    8.6 ms   42.3 ms    56  ← login shell
+Nix    5.9.2      12.7 ms    0.4 ms   11.9 ms   14.6 ms    55
+
+🏆 macOS is 1.39× faster than Nix
 ```
 
 
