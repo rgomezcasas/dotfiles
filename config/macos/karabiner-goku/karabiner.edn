@@ -12,7 +12,6 @@
   :Chrome         ["com.google.Chrome", "com.google.Chrome.beta"]
   :Claude         ["com.anthropic.claudefordesktop"]
   :ChatGPT        ["com.openai.codex"]
-  :Dia            ["company.thebrowser.dia"]
   :Finder         ["com.apple.finder"]
   :Gather         ["com.gather.Gather"]
   :GoogleMeet     ["com.google.Chrome.app.kjgfgldnnfoeklkmfkjfagphfepbbdan"]
@@ -127,10 +126,6 @@
            [:!TOCSt :!COj]                       ; hyper+t opens terminal
            [:!CSl :!TCb]                         ; cmd+shift+l as ctrl+cmd+b
            [:show-recent-files :!CTO6]]}         ; cmd+e shows recent files
-
-  {:des   "[Dia] Shortcuts"
-   :rules [:Dia
-           [:sidebar-primary-toggle :!Cs]]} ; Toggle sidebar
 
   {:des   "[Orion] Shortcuts"
    :rules [:Orion

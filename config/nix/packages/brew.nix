@@ -49,7 +49,6 @@
     "slack"
     "stremio"
     "telegram"
-    "thebrowsercompany-dia"
     "visual-studio-code"
     "vlc"
     "vorssaint"
