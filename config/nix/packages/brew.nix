@@ -62,6 +62,4 @@
     "wifiman"
   ];
   onActivation.cleanup = "zap";
-  onActivation.autoUpdate = true;
-  onActivation.upgrade = true;
 }

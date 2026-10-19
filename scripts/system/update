@@ -19,4 +19,6 @@ fi
 sudo darwin-rebuild switch --flake "$DOTFILES_PATH/config/nix#pro" --impure
 mapfile -t system_profiles < <(ls -dt /nix/var/nix/profiles/system-*-link | head -n2)
 nvd diff "${system_profiles[@]}"
+brew update
+brew upgrade
 zimfw upgrade
