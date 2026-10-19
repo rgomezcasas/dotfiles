@@ -14,7 +14,6 @@
       "WebFetch(domain:github.com)",
       "WebFetch(domain:raw.githubusercontent.com)",
       "WebFetch(domain:nix-darwin.github.io)",
-      "WebFetch(domain:ghostty.org)",
       "WebFetch(domain:determinate.systems)"
     ]
   }

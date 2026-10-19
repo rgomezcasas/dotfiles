@@ -74,7 +74,6 @@ _path_candidates=(
   "/nix/var/nix/profiles/default/bin"
   "/opt/homebrew/opt/node@24/bin"
   "/opt/homebrew/opt/libpq/bin"
-  "/Applications/Ghostty.app/Contents/MacOS"
   "/Applications/Rex Beta.app/Contents/Helpers/Rex Server.rex/Contents/MacOS"
   "$HOME/.opencode/bin"
   "$HOME/.cargo/bin"

@@ -39,7 +39,6 @@ skillLinksIn ".claude/skills"
   ".codex/AGENTS.md".source = symlink "${dotfilesPath}/config/agents/GLOBAL_AGENTS.md";
   ".codex/config.toml".source = symlink "${dotfilesPath}/modules/private/codex/config.toml";
   ".config/codely/switchly/config".source = symlink "${dotfilesPath}/config/macos/switchly/config";
-  ".config/ghostty".source = symlink "${dotfilesPath}/config/macos/ghostty";
   ".config/karabiner".source = symlink "${dotfilesPath}/config/macos/karabiner-elements";
   ".config/karabiner.edn".source =
     symlink "${dotfilesPath}/config/macos/karabiner-goku/karabiner.edn";

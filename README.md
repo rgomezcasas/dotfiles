@@ -23,7 +23,7 @@
 | User config   | [home-manager](https://github.com/nix-community/home-manager) (symlinks, session)                                   |
 | GUI packages  | [Homebrew](https://brew.sh) via [nix-homebrew](https://github.com/zhaofengli-wip/nix-homebrew)                      |
 | Shell         | Zsh + plugins via Nix and [Zim](https://zimfw.sh) modules (<10ms startup)                                           |
-| Terminal      | [Ghostty](https://ghostty.org)                                                                                      |
+| Terminal      | Rex                                                                                                                 |
 | Keyboard      | [Karabiner-Elements](https://karabiner-elements.pqrs.org) via [Goku](https://github.com/yqrashawn/GokuRakuJoketsu)  |
 | Scripts       | 80+ bash scripts via [dotly](https://github.com/codelytv/dotly) framework                                           |
 
@@ -82,7 +82,7 @@ Edit `config/macos/karabiner-goku/karabiner.edn` and run `goku`. **Never** edit 
 ├── config/
 │   ├── agents/          # Claude/AI agent instructions and commands
 │   ├── git/             # .gitconfig, .gitattributes, .gitignore_global
-│   ├── macos/           # Karabiner, Ghostty, skhd, Raycast, LaunchAgents
+│   ├── macos/           # Karabiner, Rex, skhd, Raycast, LaunchAgents
 │   ├── editors/          # VSCode, Cursor, IntelliJ, Vim, Claude Code configs
 │   ├── nix/             # Nix flake, home-manager, packages, system config
 │   │   ├── flake.nix    #   Main flake: nix-darwin + home-manager + nix-homebrew
@@ -93,8 +93,7 @@ Edit `config/macos/karabiner-goku/karabiner.edn` and run `goku`. **Never** edit 
 ├── docs/                # Guides (packages, scripts, keyboard, editors)
 ├── modules/
 │   ├── dotly/           # Shell script framework (submodule)
-│   ├── private/         # Credentials, private configs (submodule)
-│   └── ghostty-cursor-shaders/
+│   └── private/         # Credentials, private configs (submodule)
 ├── scripts/             # 80+ scripts organized by category
 │   ├── system/          #   rebuild, update, volume, cron...
 │   ├── github/          #   git/GitHub utilities

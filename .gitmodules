@@ -7,8 +7,3 @@
 	path = modules/private
 	url = git@github.com:rgomezcasas/dotfiles-private.git
 	ignore = dirty
-
-[submodule "modules/ghostty-cursor-shaders"]
-	path = modules/ghostty-cursor-shaders
-	url = https://github.com/sahaj-b/ghostty-cursor-shaders.git
-	ignore = dirty
