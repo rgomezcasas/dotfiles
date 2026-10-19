@@ -22,7 +22,7 @@
 | System config | [nix-darwin](https://github.com/LnL7/nix-darwin) flake                                                              |
 | User config   | [home-manager](https://github.com/nix-community/home-manager) (symlinks, session)                                   |
 | GUI packages  | [Homebrew](https://brew.sh) via [nix-homebrew](https://github.com/zhaofengli-wip/nix-homebrew)                      |
-| Shell         | Zsh + [Zim](https://zimfw.sh) (<10ms startup)                                                                       |
+| Shell         | Zsh + plugins via Nix and [Zim](https://zimfw.sh) modules (<10ms startup)                                           |
 | Terminal      | [Ghostty](https://ghostty.org)                                                                                      |
 | Keyboard      | [Karabiner-Elements](https://karabiner-elements.pqrs.org) via [Goku](https://github.com/yqrashawn/GokuRakuJoketsu)  |
 | Scripts       | 80+ bash scripts via [dotly](https://github.com/codelytv/dotly) framework                                           |
@@ -57,7 +57,7 @@ This single command installs all Nix packages, Homebrew formulas/casks, Mac App 
 | Command              | Alias     | What it does                                                        |
 |----------------------|-----------|---------------------------------------------------------------------|
 | `dot system rebuild` | `rebuild` | Rebuild system with current Nix flake                               |
-| `dot system update`  | `up`      | Update flake inputs, diff changes, rebuild, and upgrade Zim plugins |
+| `dot system update`  | `up`      | Update flake inputs, diff changes, rebuild, and upgrade Homebrew    |
 | `dot`                | —         | Browse all available scripts interactively                          |
 
 ### Adding packages
@@ -116,7 +116,7 @@ Edit `config/macos/karabiner-goku/karabiner.edn` and run `goku`. **Never** edit 
 
 ## Performance
 
-Shell startup consistently under 10ms thanks to Zim + `zsh-defer` lazy loading:
+Shell startup consistently under 10ms thanks to `zsh-defer` lazy loading:
 
 ```
 λ ~ dot shell zsh test_performance

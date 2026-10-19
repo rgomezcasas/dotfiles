@@ -46,25 +46,25 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 
 fpath=("$DOTLY_PATH/shell/zsh/completions" "$HOMEBREW_PREFIX/share/zsh/site-functions" $fpath)
 
-# Start zim (inline instead of init.zsh to defer heavy modules for faster startup)
-# After `zimfw build`, update this block if modules change in .zimrc
-if [[ -e ${ZIM_CONFIG_FILE:-${ZDOTDIR:-${HOME}}/.zimrc} ]] zimfw() { source "$ZIM_HOME/zimfw.zsh" "${@}" }
-fpath=("$ZIM_HOME/modules/git-info/functions" $fpath)
-autoload -Uz -- coalesce git-action git-info
-source "$ZIM_HOME/modules/zsh-defer/zsh-defer.plugin.zsh"
-zsh-defer source "$ZIM_HOME/modules/completion/init.zsh"
-source "$ZIM_HOME/modules/environment/init.zsh"
-setopt CLOBBER
-zsh-defer source "$ZIM_HOME/modules/input/init.zsh"
-zsh-defer source "$ZIM_HOME/modules/zsh-autosuggestions/zsh-autosuggestions.zsh"
+zsh_plugins="/run/current-system/sw/share"
+zsh_modules="$DOTFILES_PATH/config/shell/zsh/modules"
 
-zsh-defer source "$ZIM_HOME/modules/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+fpath=("$zsh_modules/git-info/functions" $fpath)
+autoload -Uz -- coalesce git-action git-info
+source "$zsh_plugins/zsh-defer/zsh-defer.plugin.zsh"
+zsh-defer source "$zsh_modules/completion/init.zsh"
+source "$zsh_modules/environment/init.zsh"
+setopt CLOBBER
+zsh-defer source "$zsh_modules/input/init.zsh"
+zsh-defer source "$zsh_plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
+
+zsh-defer source "$zsh_plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 zsh-defer -c "ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=red'"
 
 # Lazy load fzf-tab on first TAB press (more efficient)
 _lazy_load_fzf_tab() {
   unset POSTDISPLAY
-  source "$ZIM_HOME/modules/fzf-tab/fzf-tab.zsh" 2>/dev/null
+  source "$zsh_plugins/fzf-tab/fzf-tab.zsh" 2>/dev/null
   [[ ${+functions[enable-fzf-tab]} ]] && enable-fzf-tab
 
   # Configure fzf-tab after loading

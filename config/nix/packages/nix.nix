@@ -49,6 +49,10 @@ with pkgs;
   yt-dlp
   z-lua
   zsh
+  zsh-autosuggestions
+  zsh-defer
+  zsh-fzf-tab
+  zsh-syntax-highlighting
 
   # gui
   gum

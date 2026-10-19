@@ -80,6 +80,12 @@
           programs.zsh.enable = true;
           programs.zsh.enableCompletion = true;
           programs.zsh.enableBashCompletion = true;
+          environment.pathsToLink = [
+            "/share/fzf-tab"
+            "/share/zsh-autosuggestions"
+            "/share/zsh-defer"
+            "/share/zsh-syntax-highlighting"
+          ];
 
           # Set Git commit hash for darwin-version.
           system.configurationRevision = self.rev or self.dirtyRev or null;

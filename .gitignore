@@ -9,7 +9,6 @@
 config/shell/**/**/**.zwc
 config/shell/**/**/**.zwc.old
 *.zsh.old
-config/shell/zsh/.zim
 
 # Agents
 # ----------------------------------

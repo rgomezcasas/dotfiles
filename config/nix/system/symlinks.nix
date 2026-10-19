@@ -54,7 +54,6 @@ skillLinksIn ".claude/skills"
   ".profile".source = symlink "${dotfilesPath}/config/shell/bash/.profile";
   ".skhdrc".source = symlink "${dotfilesPath}/config/macos/skhd/.skhdrc";
   ".vimrc".source = symlink "${dotfilesPath}/config/editors/vim/.vimrc";
-  ".zimrc".source = symlink "${dotfilesPath}/config/shell/zsh/.zimrc";
   ".zlogin".source = symlink "${dotfilesPath}/config/shell/zsh/.zlogin";
   ".zprofile".source = symlink "${dotfilesPath}/config/shell/zsh/.zprofile";
   ".zshenv".source = symlink "${dotfilesPath}/config/shell/zsh/.zshenv";
