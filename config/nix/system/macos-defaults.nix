@@ -138,7 +138,4 @@
     # Screenshot and recording options
     enabled = false;
   };
-  CustomUserPreferences."com.apple.Keynote".NSUserKeyEquivalents = {
-    "Show Build Order" = "@$o";
-  };
 }
