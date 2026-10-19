@@ -1,8 +1,6 @@
 import AppKit
 
 let debounceSeconds = 1.0
-let dotfilesPath = ProcessInfo.processInfo.environment["DOTFILES_PATH"] ?? "\(NSHomeDirectory())/.dotfiles"
-let sdotPath = "\(dotfilesPath)/scripts/system/sdot"
 
 var pendingSync: DispatchWorkItem?
 
@@ -11,18 +9,41 @@ func log(_ message: String) {
     FileHandle.standardOutput.write(Data("\(timestamp) \(message)\n".utf8))
 }
 
+func readGlobalBool(_ key: String) -> Bool {
+    CFPreferencesCopyAppValue(key as CFString, kCFPreferencesAnyApplication) as? Bool ?? false
+}
+
+func writeGlobalBool(_ key: String, _ value: Bool) {
+    CFPreferencesSetValue(
+        key as CFString,
+        value as CFBoolean,
+        kCFPreferencesAnyApplication,
+        kCFPreferencesCurrentUser,
+        kCFPreferencesAnyHost
+    )
+}
+
+func setMenuBarHidden(_ hidden: Bool) {
+    writeGlobalBool("_HIHideMenuBar", hidden)
+    writeGlobalBool("AppleMenuBarVisibleInFullscreen", !hidden)
+    CFPreferencesAppSynchronize(kCFPreferencesAnyApplication)
+
+    DistributedNotificationCenter.default().postNotificationName(
+        NSNotification.Name("AppleInterfaceMenuBarHidingChangedNotification"),
+        object: nil,
+        userInfo: nil,
+        deliverImmediately: true
+    )
+}
+
 func syncMenuBarVisibility() {
-    log("Syncing menu bar visibility")
+    let screensCount = NSScreen.screens.count
+    let shouldBeHidden = screensCount > 1
 
-    let process = Process()
-    process.executableURL = URL(fileURLWithPath: sdotPath)
-    process.arguments = ["mac", "toggle_menu_bar"]
+    guard readGlobalBool("_HIHideMenuBar") != shouldBeHidden else { return }
 
-    do {
-        try process.run()
-    } catch {
-        FileHandle.standardError.write(Data("Failed to run \(sdotPath): \(error)\n".utf8))
-    }
+    log("\(screensCount) screens connected, \(shouldBeHidden ? "hiding" : "showing") menu bar")
+    setMenuBarHidden(shouldBeHidden)
 }
 
 func scheduleSync() {
@@ -42,7 +63,6 @@ NotificationCenter.default.addObserver(
     object: nil,
     queue: .main
 ) { _ in
-    log("Screen parameters changed, \(NSScreen.screens.count) screens connected")
     scheduleSync()
 }
 
