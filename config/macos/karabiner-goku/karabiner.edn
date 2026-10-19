@@ -26,6 +26,7 @@
   :PersonalNotion ["com.apple.Safari.WebApp.5201A944-EF60-472C-80BB-F173D751027E"]
   :Raycast        ["com.raycast.macos"]
   :Reminders      ["com.apple.reminders"]
+  :Rex            ["com.superlogical.rex"]
   :Safari         ["com.apple.Safari"]
   :Slack          ["com.tinyspeck.slackmacgap"]
   :VSCode         ["com.microsoft.VSCode"]
@@ -162,6 +163,10 @@
   {:des   "[Notes] Shortcuts"
    :rules [:Notes
            [:sidebar-primary-toggle :!CTs]]} ; Toggle sidebar
+
+  {:des   "[Rex] Shortcuts"
+   :rules [:Rex
+           [:sidebar-primary-toggle :!Cslash]]} ; Toggle sidebar
 
   {:des   "[Chrome] Shortcuts"
    :rules [:Chrome

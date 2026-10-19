@@ -43,6 +43,7 @@ skillLinksIn ".claude/skills"
   ".config/karabiner".source = symlink "${dotfilesPath}/config/macos/karabiner-elements";
   ".config/karabiner.edn".source =
     symlink "${dotfilesPath}/config/macos/karabiner-goku/karabiner.edn";
+  ".config/rex".source = symlink "${dotfilesPath}/config/macos/rex";
   ".dotly".source = symlink "${dotfilesPath}/config/macos/.dotly";
   ".local/bin/idea".source =
     symlink "/Users/${username}/Library/Application Support/JetBrains/Toolbox/scripts/idea";
