@@ -7,6 +7,7 @@ with pkgs;
   bat
   bitwarden-cli
   cargo
+  choose-gui
   cmatrix
   coreutils
   delta
@@ -25,6 +26,7 @@ with pkgs;
   htop
   hyperfine
   jdk25
+  jsongrep
   lazygit
   libpq
   maven

@@ -4,15 +4,11 @@
   brews = [
     "asdf"
     "agent-browser"
-    "choose-gui"
     "cliclick"
-    "gemini-cli"
     "go-task"
-    "jsongrep"
     "node@24"
     "sst/tap/opencode"
     "pnpm"
-    "herdr"
   ];
   casks = [
     "adobe-creative-cloud"
