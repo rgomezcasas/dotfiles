@@ -51,7 +51,6 @@
     "telegram"
     "visual-studio-code"
     "vlc"
-    "vorssaint"
     "whatsapp@beta"
     "wifiman"
   ];
