@@ -72,11 +72,10 @@
     ],
     "defaultMode": "auto"
   },
-  "model": "opus",
+  "model": "opus[1m]",
   "fallbackModel": [
     "default"
   ],
-  "disableClaudeAiConnectors": true,
   "skillOverrides": {
     "agent-browser": "off",
     "generate-doc": "off",
@@ -119,10 +118,9 @@
       }
     }
   },
-  "outputStyle": "ste100:ASD-STE100",
   "language": "spanish",
   "sandbox": {
-    "enabled": false,
+    "enabled": true,
     "autoAllowBashIfSandboxed": true,
     "network": {
       "allowedDomains": [
@@ -131,7 +129,8 @@
         "registry.yarnpkg.com"
       ],
       "allowUnixSockets": [
-        "/var/run/docker.sock"
+        "/var/run/docker.sock",
+        "/Users/rafa.gomez/.bitwarden-ssh-agent.sock"
       ],
       "allowLocalBinding": true
     },
