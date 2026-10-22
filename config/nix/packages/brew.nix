@@ -28,7 +28,6 @@
     "elgato-stream-deck"
     "elgato-wave-link"
     "figma"
-    "github-copilot-app"
     "google-chrome"
     "google-drive"
     "grandperspective"
