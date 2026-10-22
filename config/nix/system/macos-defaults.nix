@@ -111,6 +111,7 @@
   trackpad.TrackpadRightClick = true;
   trackpad.TrackpadThreeFingerDrag = false;
   trackpad.TrackpadThreeFingerTapGesture = 0;
+  CustomUserPreferences.NSGlobalDomain.AppleMenuBarVisibleInFullscreen = false;
   CustomUserPreferences.NSGlobalDomain.NSMenuEnableActionImages = false;
   CustomUserPreferences.NSGlobalDomain."com.apple.sound.uiaudio.enabled" = false;
   CustomUserPreferences."com.apple.finder".FinderSounds = false;

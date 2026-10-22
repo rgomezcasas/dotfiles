@@ -25,7 +25,7 @@ func writeGlobalBool(_ key: String, _ value: Bool) {
 
 func setMenuBarHidden(_ hidden: Bool) {
     writeGlobalBool("_HIHideMenuBar", hidden)
-    writeGlobalBool("AppleMenuBarVisibleInFullscreen", !hidden)
+    writeGlobalBool("AppleMenuBarVisibleInFullscreen", false)
     CFPreferencesAppSynchronize(kCFPreferencesAnyApplication)
 
     DistributedNotificationCenter.default().postNotificationName(
@@ -40,7 +40,10 @@ func syncMenuBarVisibility() {
     let screensCount = NSScreen.screens.count
     let shouldBeHidden = screensCount > 1
 
-    guard readGlobalBool("_HIHideMenuBar") != shouldBeHidden else { return }
+    let isInDesiredState = readGlobalBool("_HIHideMenuBar") == shouldBeHidden
+        && !readGlobalBool("AppleMenuBarVisibleInFullscreen")
+
+    guard !isInDesiredState else { return }
 
     log("\(screensCount) screens connected, \(shouldBeHidden ? "hiding" : "showing") menu bar")
     setMenuBarHidden(shouldBeHidden)
