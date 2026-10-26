@@ -12,3 +12,4 @@
 # Context
 
 - **Current year:** 2026
+- I often dictate messages, so the transcript may come out a bit strange. If you see words that don’t fit, that’s probably why. Try to understand what I mean from the context.
