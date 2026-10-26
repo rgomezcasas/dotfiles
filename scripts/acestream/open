@@ -1,0 +1,55 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTLY_PATH/scripts/core/_main.sh"
+
+##? Start the Ace Stream engine in Docker and open a stream in VLC.
+##? Stays in the foreground: Ctrl+C stops the engine.
+#?? 1.1.0
+##?
+##? Usage:
+##?   open <id>
+##?   open -h | --help
+docs::parse "$@"
+
+readonly engine_image="blaiseio/acelink"
+readonly engine_url="http://127.0.0.1:6878"
+readonly container_name="acestream-$$"
+readonly stream_id="${1#acestream://}"
+
+engine_is_ready() {
+	curl -sf -m 2 -o /dev/null "$engine_url/webui/api/service?method=get_version"
+}
+
+stop_running_engines() {
+	docker ps -q --filter "ancestor=$engine_image" | xargs -r docker stop >/dev/null
+}
+
+stop_engine() {
+	echo
+	echo "Stopping Ace Stream engine…"
+	docker stop "$container_name" >/dev/null 2>&1 || true
+}
+
+stop_running_engines
+
+echo "Starting Ace Stream engine…"
+docker run -d --rm --platform linux/amd64 -p 6878:6878 --name "$container_name" "$engine_image" >/dev/null
+trap stop_engine EXIT
+trap 'exit 130' INT TERM
+
+for _ in $(seq 1 30); do
+	engine_is_ready && break
+	sleep 1
+done
+
+if ! engine_is_ready; then
+	echo "Ace Stream engine is not responding on $engine_url" >&2
+	exit 1
+fi
+
+/usr/bin/open -a VLC "$engine_url/ace/getstream?id=$stream_id"
+
+echo "Streaming $stream_id. Press Ctrl+C to stop."
+docker wait "$container_name" >/dev/null
