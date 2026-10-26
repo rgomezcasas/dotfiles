@@ -574,6 +574,57 @@
           "type" : "basic"
         } ]
       }, {
+        "description" : "[Ardia] Shortcuts",
+        "manipulators" : [ {
+          "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_command" ]
+            },
+            "key_code" : "1"
+          },
+          "to" : [ {
+            "key_code" : "s",
+            "modifiers" : [ "left_command" ]
+          } ],
+          "conditions" : [ {
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "com.ardia.browser" ]
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_command" ]
+            },
+            "key_code" : "caps_lock"
+          },
+          "to" : [ {
+            "key_code" : "j",
+            "modifiers" : [ "left_command", "left_control", "left_option", "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "com.ardia.browser" ]
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_command" ]
+            },
+            "key_code" : "escape"
+          },
+          "to" : [ {
+            "key_code" : "j",
+            "modifiers" : [ "left_command", "left_control", "left_option", "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "com.ardia.browser" ]
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
         "description" : "[Orion] Shortcuts",
         "manipulators" : [ {
           "from" : {

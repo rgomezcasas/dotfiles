@@ -7,6 +7,7 @@
    :sim     8100}}
  :applications
  {:Arc            ["company.thebrowser.Browser"]
+  :Ardia          ["com.ardia.browser"]
   :Atlas          ["com.openai.atlas"]
   :Bitwarden      ["com.bitwarden.desktop"]
   :Chrome         ["com.google.Chrome", "com.google.Chrome.beta"]
@@ -126,6 +127,12 @@
            [:!TOCSt :!COj]                       ; hyper+t opens terminal
            [:!CSl :!TCb]                         ; cmd+shift+l as ctrl+cmd+b
            [:show-recent-files :!CTO6]]}         ; cmd+e shows recent files
+
+  {:des   "[Ardia] Shortcuts"
+   :rules [:Ardia
+           [:sidebar-primary-toggle :!Cs]  ; Toggle sidebar
+           [:switch-account :!TOCSj]       ; Switch profile
+           [:switch-account-esc :!TOCSj]]} ; Switch profile (esc)
 
   {:des   "[Orion] Shortcuts"
    :rules [:Orion
