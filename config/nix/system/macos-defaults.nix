@@ -115,6 +115,7 @@
   CustomUserPreferences.NSGlobalDomain.NSMenuEnableActionImages = false;
   CustomUserPreferences.NSGlobalDomain."com.apple.sound.uiaudio.enabled" = false;
   CustomUserPreferences."com.apple.finder".FinderSounds = false;
+  CustomUserPreferences."com.apple.finder".QLInlinePreviewMinimumSupportedSize = 512;
   CustomUserPreferences."com.apple.symbolichotkeys".AppleSymbolicHotKeys."7" = {
     # Move focus to menu bar
     enabled = true;
