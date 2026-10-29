@@ -126,6 +126,7 @@
       ],
       "allowUnixSockets": [
         "/var/run/docker.sock",
+        "/Users/rafa.gomez/.orbstack/run/docker.sock",
         "/Users/rafa.gomez/.bitwarden-ssh-agent.sock"
       ],
       "allowLocalBinding": true
