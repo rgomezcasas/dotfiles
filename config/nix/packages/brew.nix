@@ -38,6 +38,7 @@
     "ivg-design/tap/sidebarfavorites"
     "jetbrains-toolbox"
     "karabiner-elements"
+    "mantrakp04/tap/ardia@nightly"
     "meld-studio"
     "microsoft-teams"
     "notion"
