@@ -38,6 +38,7 @@ skillLinksIn ".claude/skills"
     symlink "${dotfilesPath}/config/editors/claude-code/statusline-command.sh";
   ".codex/AGENTS.md".source = symlink "${dotfilesPath}/config/agents/GLOBAL_AGENTS.md";
   ".codex/config.toml".source = symlink "${dotfilesPath}/modules/private/codex/config.toml";
+  ".config/ardia".source = symlink "${dotfilesPath}/config/macos/ardia";
   ".config/codely/switchly/config".source = symlink "${dotfilesPath}/config/macos/switchly/config";
   ".config/karabiner".source = symlink "${dotfilesPath}/config/macos/karabiner-elements";
   ".config/karabiner.edn".source =

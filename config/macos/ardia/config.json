@@ -1,0 +1,27 @@
+{
+  "$schema": "./config.schema.json",
+  "theme": null,
+  "settings": {
+    "warnBeforeClosingWindow": false,
+    "searchSuggestions": false,
+    "newTabPosition": "nextToCurrent",
+    "newTabOpens": "commandBar",
+    "shareTabsAcrossWindows": true,
+    "cmdClickCreatesTabGroup": false,
+    "peekLinksToOtherSites": true,
+    "autoPictureInPicture": false,
+    "sidebarWidth": 326,
+    "balancedTopApps": true,
+    "showAdvancedSettings": true,
+    "showFullUrl": true,
+    "addressBar": "sidebar",
+    "compactToolbar": true,
+    "commandBarPlacement": "centred",
+    "profileSwitcherIcons": true,
+    "littleArdiaSize": [1512, 949],
+    "shortcuts": {
+      "nextProfile": "ctrl+opt+shift+cmd+j",
+      "renameTab": "opt+cmd+r"
+    }
+  }
+}
