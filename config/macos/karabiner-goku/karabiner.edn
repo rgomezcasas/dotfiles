@@ -24,6 +24,7 @@
   :Search   ["com.officecommun.search"]
   :Orion          ["com.kagi.kagimacOS"]
   :PersonalNotion ["com.apple.Safari.WebApp.5201A944-EF60-472C-80BB-F173D751027E"]
+  :QuickTime      ["com.apple.QuickTimePlayerX"]
   :Raycast        ["com.raycast.macos"]
   :Reminders      ["com.apple.reminders"]
   :Rex            ["com.superlogical.rex"]
@@ -203,6 +204,10 @@
 
   {:des   "[VLC] Shortcuts"
    :rules [:Vlc
+           [:f :!CTf]]} ; Fullscreen
+
+  {:des   "[QuickTime] Shortcuts"
+   :rules [:QuickTime
            [:f :!CTf]]} ; Fullscreen
 
   {:des   "[Keynote] Shortcuts"

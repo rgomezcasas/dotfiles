@@ -1157,6 +1157,22 @@
           "type" : "basic"
         } ]
       }, {
+        "description" : "[QuickTime] Shortcuts",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "f"
+          },
+          "to" : [ {
+            "key_code" : "f",
+            "modifiers" : [ "left_command", "left_control" ]
+          } ],
+          "conditions" : [ {
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "com.apple.QuickTimePlayerX" ]
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
         "description" : "[Keynote] Shortcuts",
         "manipulators" : [ {
           "from" : {
