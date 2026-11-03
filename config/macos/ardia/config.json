@@ -21,7 +21,9 @@
     "littleArdiaSize": [1512, 949],
     "shortcuts": {
       "nextProfile": "ctrl+opt+shift+cmd+j",
-      "renameTab": "opt+cmd+r"
+      "renameTab": "opt+cmd+r",
+      "searchTabs": "cmd+e",
+      "useSelectionForFind": ""
     }
   }
 }
