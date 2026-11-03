@@ -4,7 +4,7 @@
    :alone   200
    :delay   200
    :held    100
-   :sim     8100}}
+   :sim     50}}
  :applications
  {:Arc            ["company.thebrowser.Browser"]
   :Ardia          ["com.ardia.browser"]
