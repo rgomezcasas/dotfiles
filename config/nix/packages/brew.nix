@@ -12,7 +12,6 @@
   ];
   casks = [
     "adobe-creative-cloud"
-    "arc"
     "avg-antivirus"
     "bettermouse"
     "bitwarden"
@@ -32,7 +31,6 @@
     "google-drive"
     "grandperspective"
     "handbrake-app"
-    "helium-browser"
     "homebrew-app"
     "imaging-edge"
     "ivg-design/tap/sidebarfavorites"
