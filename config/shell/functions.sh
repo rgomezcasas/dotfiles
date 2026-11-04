@@ -43,8 +43,8 @@ function ccusa() {
   fi
   [[ -t 1 && -z "$NO_COLOR" ]] && color=1
   local report prices codex
-  report=$(NPM_CONFIG_LOGLEVEL=error npx ccusage@latest daily "${range[@]}" --json "$@") || return
-  codex=$(NPM_CONFIG_LOGLEVEL=error npx ccusage@latest codex daily "${range[@]}" --json 2>/dev/null)
+  report=$(NPM_CONFIG_LOGLEVEL=error npx -y ccusage@latest daily "${range[@]}" --json "$@") || return
+  codex=$(NPM_CONFIG_LOGLEVEL=error npx -y ccusage@latest codex daily "${range[@]}" --json 2>/dev/null)
   jq -e .daily >/dev/null 2>&1 <<< "$codex" || codex='{"daily": []}'
   prices=$(find "${XDG_CACHE_HOME:-$HOME/.cache}/ccusage/http-cache" -name '*model_prices*' 2>/dev/null | head -1)
   jq -r --slurpfile prices_file <(sed -n '/^{/,$p' "$prices" 2>/dev/null) '
@@ -55,7 +55,9 @@ function ccusa() {
       if test("^[a-z]+(-[0-9]+)+$") then capture("^(?<family>[a-z]+)-(?<variant>.+)$") | .variant |= gsub("-"; ".")
       elif test("^gpt-[0-9.]+-") then capture("^(?<family>gpt-[0-9.]+)-(?<variant>.+)$")
       else {family: ., variant: null} end;
-    def models: map(model_parts) | group_by(.family) | map(.[0].family + ([.[].variant // empty] | if length > 0 then " " + join("/") else "" end)) | join("; ");
+    def models: map(model_parts) | group_by(.family) | map(.[0].family as $family | [.[].variant // empty] as $variants |
+      if ($family | startswith("gpt-")) and $variants != [] then ($variants | join("/")) + " " + ($family | ltrimstr("gpt-"))
+      else $family + (if $variants != [] then " " + ($variants | join("/")) else "" end) end) | sort | join("; ");
     def percent($part; $whole): if $whole > 0 then ($part * 1000 / $whole | round) as $tenths | "\($tenths / 10 | floor).\($tenths % 10)%" else "-" end;
     def write_cost: [.modelBreakdowns[] | ($prices[.modelName] // $prices["claude-" + .modelName]) as $price | select($price.input_cost_per_token != null) | [.cost - .inputTokens * $price.input_cost_per_token - .outputTokens * ($price.output_cost_per_token // 0) - .cacheReadTokens * ($price.cache_read_input_token_cost // 0), 0] | max] | add // 0;
     def without_auto_review:
@@ -80,7 +82,7 @@ function ccusa() {
       cacheReadTokens: (map(.cacheReadTokens) | add // 0),
       totalCost: (map(.totalCost) | add // 0)
     }) as $totals |
-    ($days[] | [.period, (.period | strptime("%Y-%m-%d") | mktime | strftime("%a")), (.metadata.agents | join(", ")), (.modelsUsed | models)] + usage(write_cost) | @tsv),
+    ($days[] | [.period, (.period | strptime("%Y-%m-%d") | mktime | strftime("%a")), (.metadata.agents | map(.[:3]) | join(", ")), (.modelsUsed | models)] + usage(write_cost) | @tsv),
     (["Total", "", "", ""] + ($totals | usage([$days[] | write_cost] | add // 0)) | @tsv)
   ' --argjson codex "$codex" <<< "$report" | awk -F'\t' -v color="$color" -v period="$period" '
     BEGIN {
@@ -90,9 +92,9 @@ function ccusa() {
       split("▏ ▎ ▍ ▌ ▋ ▊ ▉", partial, " ")
       split("72 61 139|94 96 206|157 78 221|247 37 133|255 158 0", stops, "|")
       for (i = 1; i <= 5; i++) { split(stops[i], rgb, " "); R[i] = rgb[1]; G[i] = rgb[2]; B[i] = rgb[3] }
-      agent_rgb["claude"] = "217;119;87"
-      agent_rgb["codex"] = "16;163;127"
-      agent_rgb["opencode"] = "86;182;194"
+      agent_rgb["cla"] = "217;119;87"
+      agent_rgb["cod"] = "16;163;127"
+      agent_rgb["ope"] = "86;182;194"
       for (i = 1; i <= columns_count; i++) width[i] = length(header[i])
       width[5] = bar_width
     }
