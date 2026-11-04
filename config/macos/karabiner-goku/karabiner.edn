@@ -131,7 +131,6 @@
 
   {:des   "[Ardia] Shortcuts"
    :rules [:Ardia
-           [:sidebar-primary-toggle :!Cs]  ; Toggle sidebar
            [:switch-account :!TOCSj]       ; Switch profile
            [:switch-account-esc :!TOCSj]]} ; Switch profile (esc)
 

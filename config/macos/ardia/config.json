@@ -23,6 +23,8 @@
       "nextProfile": "ctrl+opt+shift+cmd+j",
       "renameTab": "opt+cmd+r",
       "searchTabs": "cmd+e",
+      "toggleSidebar": "cmd+1",
+      "selectTab:1": "",
       "useSelectionForFind": ""
     }
   }

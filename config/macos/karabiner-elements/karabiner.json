@@ -580,22 +580,6 @@
             "modifiers" : {
               "mandatory" : [ "left_command" ]
             },
-            "key_code" : "1"
-          },
-          "to" : [ {
-            "key_code" : "s",
-            "modifiers" : [ "left_command" ]
-          } ],
-          "conditions" : [ {
-            "type" : "frontmost_application_if",
-            "bundle_identifiers" : [ "com.ardia.browser" ]
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "modifiers" : {
-              "mandatory" : [ "left_command" ]
-            },
             "key_code" : "caps_lock"
           },
           "to" : [ {
