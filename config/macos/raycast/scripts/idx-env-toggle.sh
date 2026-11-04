@@ -18,20 +18,26 @@ aidevtracker_init="$HOME/.config/inditex/aidevtracker/scripts/init.sh"
 gitconfig="$dotfiles_path/config/git/.gitconfig"
 
 git_ai="$HOME/.config/inditex/aidevtracker/providers/git-ai/current/git-ai"
-git_ai_hook_configs=(
+ai_tracker_hook_configs=(
 	"$HOME/.claude/settings.json"
 	"$HOME/.cursor/hooks.json"
 	"$HOME/.gemini/settings.json"
 	"$HOME/.factory/settings.json"
 )
-git_ai_plugins=(
+ai_tracker_plugins=(
 	"$HOME/.copilot/hooks/git-ai.json"
+	"$HOME/.copilot/hooks/gptoaudit.json"
 	"$HOME/.config/amp/plugins/git-ai.ts"
 	"$HOME/.config/opencode/plugins/git-ai.ts"
+	"$HOME/.config/opencode/plugins/gptoaudit.js"
+	"$HOME/.pi/agent/extensions/git-ai.ts"
+	"$HOME/.pi/agent/extensions/gptoaudit.ts"
 )
-git_ai_hooks_filter='
+gptoaudit_agent="com.gptoaudit.metrics-drain"
+gptoaudit_agent_plist="$HOME/Library/LaunchAgents/$gptoaudit_agent.plist"
+ai_tracker_hooks_filter='
 	walk(if type == "array" then
-		map(select(((.command? // "") | tostring | contains("git-ai")) | not) | select((.hooks? // null) != []))
+		map(select(((.command? // "") | tostring | test("git-ai|gptoaudit")) | not) | select((.hooks? // null) != []))
 	else . end)
 	| if (.hooks | type) == "object" then .hooks |= with_entries(select(.value != [])) else . end
 '
@@ -94,19 +100,22 @@ strip_aicontext_completion() {
 	sed '/^# >>> aicontext completion >>>$/,/^# <<< aicontext completion <<<$/d' "$1"
 }
 
-strip_git_ai_hooks() {
-	jq "$git_ai_hooks_filter" "$1"
+strip_ai_tracker_hooks() {
+	jq "$ai_tracker_hooks_filter" "$1"
 }
 
-disable_git_ai() {
+disable_ai_trackers() {
 	[[ -x "$git_ai" ]] && "$git_ai" bg shutdown >/dev/null 2>&1
 
 	local file
-	for file in "${git_ai_hook_configs[@]}"; do
-		[[ -f "$file" ]] && grep -q "git-ai" "$file" && rewrite_file "$file" strip_git_ai_hooks
+	for file in "${ai_tracker_hook_configs[@]}"; do
+		[[ -f "$file" ]] && grep -qE "git-ai|gptoaudit" "$file" && rewrite_file "$file" strip_ai_tracker_hooks
 	done
 
-	rm -f "${git_ai_plugins[@]}"
+	rm -f "${ai_tracker_plugins[@]}"
+
+	launchctl bootout "gui/$(id -u)/$gptoaudit_agent" 2>/dev/null
+	rm -f "$gptoaudit_agent_plist"
 
 	if git config --file "$gitconfig" --get trace2.eventTarget | grep -q "git-ai"; then
 		git config --file "$gitconfig" --remove-section trace2
@@ -309,7 +318,7 @@ if grep -q '^source "\$DOTFILES_PATH/modules/private/shell/idx\.sh"$' "$zshrc"; 
 		rewrite_file "$file" strip_aicontext_completion
 	done
 
-	disable_git_ai
+	disable_ai_trackers
 
 	npmrc_warning=""
 	swap_npmrc "$npmrc_original" "$npmrc_idx" || npmrc_warning=", npmrc unchanged"
