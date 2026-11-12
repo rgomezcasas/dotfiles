@@ -607,6 +607,21 @@
             "bundle_identifiers" : [ "com.ardia.browser" ]
           } ],
           "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "b",
+            "modifiers" : {
+              "mandatory" : [ "left_command" ]
+            }
+          },
+          "to" : [ {
+            "shell_command" : "$HOME/.dotfiles/scripts/system/sdot ardia toggle_borderless"
+          } ],
+          "conditions" : [ {
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "com.ardia.browser" ]
+          } ],
+          "type" : "basic"
         } ]
       }, {
         "description" : "[Orion] Shortcuts",

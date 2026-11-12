@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTLY_PATH/scripts/core/_main.sh"
+
+##? Toggle Ardia's borderless mode through ~/.config/ardia/config.json
+#?? 1.0.0
+##?
+##? Usage:
+##?   toggle_borderless
+docs::parse "$@"
+
+ardia_bin="$HOME/.local/bin/ardia"
+
+current=$("$ardia_bin" config get borderlessMode 2>/dev/null || echo false)
+
+if [[ $current == "true" ]]; then
+	"$ardia_bin" config set borderlessMode false >/dev/null
+else
+	"$ardia_bin" config set borderlessMode true >/dev/null
+fi
