@@ -75,7 +75,6 @@ _path_candidates=(
   "/opt/homebrew/opt/node@24/bin"
   "/opt/homebrew/opt/libpq/bin"
   "/Applications/Rex Beta.app/Contents/Helpers/Rex Server.rex/Contents/MacOS"
-  "$HOME/.opencode/bin"
   "$HOME/.cargo/bin"
   "$HOME/Library/pnpm"
   "$HOME/.local/bin"

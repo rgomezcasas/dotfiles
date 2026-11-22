@@ -7,7 +7,6 @@
     "cliclick"
     "go-task"
     "node@24"
-    "sst/tap/opencode"
     "pnpm"
   ];
   casks = [

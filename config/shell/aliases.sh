@@ -48,9 +48,6 @@ alias ccupdate="claude update"
 alias cx="codex --dangerously-bypass-approvals-and-sandbox"
 alias codexupdate="brew update && brew upgrade --cask codex"
 
-# OpenCode
-alias oc="opencode"
-
 alias t="dot claude t"
 alias tldr="dot claude tldr"
 alias f="dot claude f"
