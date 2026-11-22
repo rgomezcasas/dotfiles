@@ -12,20 +12,34 @@
     "autoPictureInPicture": false,
     "sidebarWidth": 326,
     "balancedTopApps": true,
-    "showAdvancedSettings": true,
     "showFullUrl": true,
     "addressBar": "sidebar",
     "compactToolbar": true,
     "commandBarPlacement": "centred",
+    "commandBarStart": {
+      "openTabs": {
+        "hidePinned": true,
+        "hideTopApps": true,
+        "limit": 5
+      }
+    },
     "profileSwitcherIcons": true,
-    "littleArdiaSize": [1512, 949],
+    "littleArdiaSize": [
+      1512,
+      949
+    ],
     "shortcuts": {
+      "bookmarkPage": "",
       "nextProfile": "ctrl+opt+shift+cmd+j",
       "renameTab": "opt+cmd+r",
       "searchTabs": "cmd+e",
       "toggleSidebar": "cmd+1",
       "selectTab:1": "",
-      "useSelectionForFind": ""
-    }
+      "tabSwitcher:forward": "ctrl+tab",
+      "tabSwitcher:backward": "ctrl+shift+tab",
+      "useSelectionForFind": "",
+      "showHiddenElements": "ctrl+shift+cmd+h"
+    },
+    "borderlessMode": false
   }
 }
