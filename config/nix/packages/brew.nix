@@ -2,16 +2,18 @@
   enable = true;
   taps = [ ];
   brews = [
-    "asdf"
     "agent-browser"
+    "agent-desktop"
+    "apm"
     "cliclick"
+    "cloudflared"
     "go-task"
     "node@24"
     "pnpm"
   ];
   casks = [
     "adobe-creative-cloud"
-    "avg-antivirus"
+    "ardia-browser/tap/ardia@nightly"
     "bettermouse"
     "bitwarden"
     "chatgpt"
@@ -35,7 +37,6 @@
     "ivg-design/tap/sidebarfavorites"
     "jetbrains-toolbox"
     "karabiner-elements"
-    "mantrakp04/tap/ardia@nightly"
     "meld-studio"
     "microsoft-teams"
     "notion"
