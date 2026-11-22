@@ -1,0 +1,136 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+usage() {
+  echo "Usage: delegate-review [--from claude|codex] [extra instructions...]" >&2
+  exit 1
+}
+
+detect_host() {
+  if [[ "${CLAUDECODE:-}" == "1" ]]; then
+    echo "claude"
+  else
+    echo "codex"
+  fi
+}
+
+find_project_review_skill() {
+  local root="$1"
+  local skills_dir skill_file
+
+  for skills_dir in .claude/skills .agents/skills .codex/skills; do
+    for skill_file in "$root/$skills_dir"/*review*/SKILL.md; do
+      if [[ -f "$skill_file" ]]; then
+        echo "$skill_file"
+        return
+      fi
+    done
+  done
+}
+
+find_review_guidelines() {
+  local root="$1"
+  local dir match
+
+  for dir in "$PWD" "$root" "$root/.github" "$root/docs"; do
+    [[ -d "$dir" ]] || continue
+    match="$(find "$dir" -maxdepth 1 -type f -iname review.md -print -quit)"
+    if [[ -n "$match" ]]; then
+      echo "$match"
+      return
+    fi
+  done
+}
+
+build_prompt() {
+  local skill_file="$1"
+  local guidelines_file="$2"
+  local extra_instructions="$3"
+
+  if [[ -n "$skill_file" ]]; then
+    cat <<EOF
+Review the code changes in this repository by following the review skill defined in $skill_file. Read that file first and follow its instructions exactly.
+EOF
+  else
+    cat <<'EOF'
+Review the code changes in this repository.
+
+Scope: uncommitted changes (staged and unstaged) plus the commits on the current branch that are not on the default branch. If the working tree is clean and the branch has no own commits, review the latest commit.
+
+Focus on, in this order:
+1. Correctness bugs and regressions, with a concrete failing scenario.
+2. Security issues.
+3. Missing or broken tests for the changed behavior.
+4. Simplification, duplication and readability problems worth fixing.
+
+Read the surrounding code before judging a change. Skip style nitpicks a linter would catch.
+EOF
+  fi
+
+  if [[ -n "$guidelines_file" ]]; then
+    cat <<EOF
+
+This project has review guidelines in $guidelines_file. Read it and make sure the review checks every point it lists.
+EOF
+  fi
+
+  if [[ -n "$extra_instructions" ]]; then
+    cat <<EOF
+
+Additional instructions from the user: $extra_instructions
+EOF
+  fi
+
+  cat <<'EOF'
+
+Do not modify any file. Report the findings ordered by severity, each with file:line, what is wrong, why it matters and a suggested fix. If you find nothing worth reporting, say so explicitly.
+
+Tag every finding with exactly one severity: [high] (bugs, security issues or regressions that must be fixed), [medium] (real problems worth fixing before merging) or [low] (nice to have, minor cleanups). Do not inflate severities.
+
+End your answer with a single line in the form `MAX_SEVERITY: high|medium|low|none` with the highest severity you reported.
+EOF
+}
+
+host=""
+if [[ "${1:-}" == "--from" ]]; then
+  [[ $# -ge 2 ]] || usage
+  host="$2"
+  shift 2
+fi
+host="${host:-$(detect_host)}"
+[[ "$host" == "claude" || "$host" == "codex" ]] || usage
+
+if [[ "${CROSS_REVIEW_DELEGATED:-}" == "1" ]]; then
+  echo "Already running as a delegated reviewer: do the review directly instead of delegating again." >&2
+  exit 1
+fi
+
+root="$(git rev-parse --show-toplevel 2>/dev/null || pwd)"
+skill_file="$(find_project_review_skill "$root")"
+guidelines_file="$(find_review_guidelines "$root")"
+prompt="$(build_prompt "$skill_file" "$guidelines_file" "$*")"
+
+echo "Project review skill: ${skill_file:-none (generic review prompt)}"
+echo "Review guidelines: ${guidelines_file:-none}"
+
+export CROSS_REVIEW_DELEGATED=1
+
+if [[ "$host" == "claude" ]]; then
+  echo "Reviewer: Codex"
+  echo
+  log_file="$(mktemp "${TMPDIR:-/tmp}/delegate-review-log.XXXXXX")"
+  review_file="$(mktemp "${TMPDIR:-/tmp}/delegate-review-output.XXXXXX")"
+  if ! codex exec --sandbox read-only --cd "$root" --output-last-message "$review_file" "$prompt" >"$log_file" 2>&1; then
+    tail -n 40 "$log_file" >&2
+    exit 1
+  fi
+  cat "$review_file"
+else
+  echo "Reviewer: Claude Code"
+  echo
+  cd "$root"
+  claude -p "$prompt" \
+    --permission-mode plan \
+    --allowedTools "Read" "Grep" "Glob" "Bash(git diff:*)" "Bash(git log:*)" "Bash(git show:*)" "Bash(git status:*)" "Bash(git branch:*)" "Bash(git merge-base:*)" "Bash(git rev-parse:*)"
+fi
