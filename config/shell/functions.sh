@@ -90,7 +90,7 @@ function ccusa() {
       columns_count = split("Date|Day|Agents|Models|Usage|Uncached|Cached|Cached %|Write %|Total Tokens|Cost (USD)", header, "|")
       fields_count = split("1 2 3 4 6 7 8 9 10 11", target, " ")
       split("▏ ▎ ▍ ▌ ▋ ▊ ▉", partial, " ")
-      split("72 61 139|94 96 206|157 78 221|247 37 133|255 158 0", stops, "|")
+      split("72 61 139|94 96 206|157 78 221|255 158 0|237 28 36", stops, "|")
       for (i = 1; i <= 5; i++) { split(stops[i], rgb, " "); R[i] = rgb[1]; G[i] = rgb[2]; B[i] = rgb[3] }
       agent_rgb["cla"] = "217;119;87"
       agent_rgb["cod"] = "16;163;127"
