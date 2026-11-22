@@ -58,8 +58,6 @@ skillLinksIn ".claude/skills"
   ".zprofile".source = symlink "${dotfilesPath}/config/shell/zsh/.zprofile";
   ".zshenv".source = symlink "${dotfilesPath}/config/shell/zsh/.zshenv";
   ".zshrc".source = symlink "${dotfilesPath}/config/shell/zsh/.zshrc";
-  "Library/Application Support/Claude/claude_desktop_config.json".source =
-    symlink "${dotfilesPath}/config/macos/claude-desktop/claude_desktop_config.json";
   "Library/Application Support/Code - Insiders/User/keybindings.json".source =
     symlink "${dotfilesPath}/config/editors/code-oss/keybindings.json";
   "Library/Application Support/Code - Insiders/User/settings.json".source =

@@ -6,6 +6,8 @@
 }:
 
 {
+  imports = [ ./system/claude-desktop.nix ];
+
   home.username = username;
   home.homeDirectory = "/Users/${username}";
   home.stateVersion = "24.05";
