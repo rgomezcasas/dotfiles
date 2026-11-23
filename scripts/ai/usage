@@ -62,7 +62,7 @@ session_duration() {
 }
 
 emit_claude_rows() {
-	command ccusage claude session --json 2>/dev/null |
+	CCUSAGE_TELEMETRY_DISABLED=1 command ccusage claude session --json 2>/dev/null |
 		jq -r "
 			.sessions[]
 			| [
@@ -110,7 +110,7 @@ emit_claude_rows() {
 }
 
 emit_codex_rows() {
-	command ccusage codex session --json 2>/dev/null |
+	CCUSAGE_TELEMETRY_DISABLED=1 command ccusage codex session --json 2>/dev/null |
 		jq -r "
 			.sessions[]
 			| [

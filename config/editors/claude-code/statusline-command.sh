@@ -214,9 +214,9 @@ cache_day="" cached_cost=""
 # runs from the local cache when the binary is not on PATH.
 ccusage_daily() {
   if command -v ccusage &>/dev/null; then
-    ccusage daily --since "$1" --json 2>/dev/null
+    CCUSAGE_TELEMETRY_DISABLED=1 ccusage daily --since "$1" --json 2>/dev/null
   else
-    npx -y ccusage@latest daily --since "$1" --json 2>/dev/null
+    CCUSAGE_TELEMETRY_DISABLED=1 npx -y ccusage@latest daily --since "$1" --json 2>/dev/null
   fi
 }
 

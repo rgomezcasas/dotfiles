@@ -43,8 +43,8 @@ function ccusa() {
   fi
   [[ -t 1 && -z "$NO_COLOR" ]] && color=1
   local report prices codex
-  report=$(NPM_CONFIG_LOGLEVEL=error npx -y ccusage@latest daily "${range[@]}" --json "$@") || return
-  codex=$(NPM_CONFIG_LOGLEVEL=error npx -y ccusage@latest codex daily "${range[@]}" --json 2>/dev/null)
+  report=$(CCUSAGE_TELEMETRY_DISABLED=1 NPM_CONFIG_LOGLEVEL=error npx -y ccusage@latest daily "${range[@]}" --json "$@") || return
+  codex=$(CCUSAGE_TELEMETRY_DISABLED=1 NPM_CONFIG_LOGLEVEL=error npx -y ccusage@latest codex daily "${range[@]}" --json 2>/dev/null)
   jq -e .daily >/dev/null 2>&1 <<< "$codex" || codex='{"daily": []}'
   prices=$(find "${XDG_CACHE_HOME:-$HOME/.cache}/ccusage/http-cache" -name '*model_prices*' 2>/dev/null | head -1)
   jq -r --slurpfile prices_file <(sed -n '/^{/,$p' "$prices" 2>/dev/null) '
