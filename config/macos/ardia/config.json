@@ -40,6 +40,6 @@
       "useSelectionForFind": "",
       "showHiddenElements": "ctrl+shift+cmd+h"
     },
-    "borderlessMode": false
+    "pageFrame": 3
   }
 }

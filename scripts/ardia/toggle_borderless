@@ -4,19 +4,21 @@ set -euo pipefail
 
 source "$DOTLY_PATH/scripts/core/_main.sh"
 
-##? Toggle Ardia's borderless mode through ~/.config/ardia/config.json
-#?? 1.0.0
+##? Toggle Ardia's frame around the page between 0 (borderless) and 3 through ~/.config/ardia/config.json
+#?? 2.0.0
 ##?
 ##? Usage:
 ##?   toggle_borderless
 docs::parse "$@"
 
-ardia_bin="$HOME/.local/bin/ardia"
+ardia_bin="$HOME/Library/Application Support/Ardia/Programs/cli/current/bin/ardia"
+borderless_frame=0
+default_frame=3
 
-current=$("$ardia_bin" config get borderlessMode 2>/dev/null || echo false)
+current=$("$ardia_bin" config get pageFrame 2>/dev/null || echo "")
 
-if [[ $current == "true" ]]; then
-	"$ardia_bin" config set borderlessMode false >/dev/null
+if [[ $current == "$borderless_frame" ]]; then
+	"$ardia_bin" config set pageFrame "$default_frame" >/dev/null
 else
-	"$ardia_bin" config set borderlessMode true >/dev/null
+	"$ardia_bin" config set pageFrame "$borderless_frame" >/dev/null
 fi
