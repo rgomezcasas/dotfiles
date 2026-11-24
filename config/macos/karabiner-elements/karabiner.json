@@ -1768,7 +1768,10 @@
         "description" : "[External Keyboard] Swap CMD and OPT",
         "manipulators" : [ {
           "from" : {
-            "key_code" : "left_command"
+            "key_code" : "left_command",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
           },
           "to" : [ {
             "key_code" : "left_option"
@@ -1784,7 +1787,10 @@
           "type" : "basic"
         }, {
           "from" : {
-            "key_code" : "left_option"
+            "key_code" : "left_option",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
           },
           "to" : [ {
             "key_code" : "left_command"
@@ -1800,7 +1806,10 @@
           "type" : "basic"
         }, {
           "from" : {
-            "key_code" : "escape"
+            "key_code" : "escape",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
           },
           "to" : [ {
             "key_code" : "grave_accent_and_tilde"

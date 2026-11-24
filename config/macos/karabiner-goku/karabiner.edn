@@ -272,9 +272,9 @@
 
   {:des   "[External Keyboard] Swap CMD and OPT"
      :rules [:external-kb
-              [:left_command :left_option]
-              [:left_option :left_command]
-              [:escape :grave_accent_and_tilde]]}]
+              [:##left_command :left_option]
+              [:##left_option :left_command]
+              [:##escape :grave_accent_and_tilde]]}]
 
  :cheatsheet
  {:!Ca        "command a"
